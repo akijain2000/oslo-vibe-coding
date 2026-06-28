@@ -1,7 +1,7 @@
 // Single source of truth for the brand. Change the name in ONE place and it
 // propagates across the whole site, metadata, and structured data.
 
-export const SITE_URL = "https://oslo-vibe-coding.vercel.app";
+export const SITE_URL = "https://oslovibecoding.tech";
 
 export const brand = {
   name: "Oslo Vibe Coding",

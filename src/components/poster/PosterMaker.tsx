@@ -24,12 +24,12 @@ const fromEvent = (slug: string): Fields => {
     timeLabel: e.timeLabel,
     venue: e.venue,
     address: e.address,
-    rsvpLabel: stripUrl(e.rsvpUrl ?? "oslo-vibe-coding.vercel.app"),
+    rsvpLabel: stripUrl(e.rsvpUrl ?? "oslovibecoding.tech"),
     footer: "Free · Beginners welcome",
   };
 };
 
-const defaultRsvpUrl = events.find((e) => e.status === "upcoming")?.rsvpUrl ?? "https://oslo-vibe-coding.vercel.app";
+const defaultRsvpUrl = events.find((e) => e.status === "upcoming")?.rsvpUrl ?? "https://oslovibecoding.tech";
 
 const FIELD_LABELS: { key: keyof Fields; label: string; full?: boolean }[] = [
   { key: "title", label: "Event title", full: true },
@@ -53,7 +53,7 @@ export default function PosterMaker() {
   // Regenerate the QR whenever the RSVP link changes.
   useEffect(() => {
     let alive = true;
-    QRCode.toDataURL(rsvpUrl || "https://oslo-vibe-coding.vercel.app", {
+    QRCode.toDataURL(rsvpUrl || "https://oslovibecoding.tech", {
       margin: 1,
       width: 600,
       color: { dark: "#16151c", light: "#ffffff" },
@@ -74,7 +74,7 @@ export default function PosterMaker() {
   const loadPreset = (slug: string) => {
     setFields(fromEvent(slug));
     const e = events.find((ev) => ev.slug === slug);
-    setRsvpUrl(e?.rsvpUrl ?? "https://oslo-vibe-coding.vercel.app");
+    setRsvpUrl(e?.rsvpUrl ?? "https://oslovibecoding.tech");
   };
 
   const download = async () => {

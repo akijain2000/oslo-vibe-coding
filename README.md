@@ -1,6 +1,6 @@
 # Oslo Vibe Coding
 
-The website for [Oslo Vibe Coding](https://oslo-vibe-coding.vercel.app) — a free, open community
+The website for [Oslo Vibe Coding](https://oslovibecoding.tech) — a free, open community
 for building software with AI in Oslo. No gatekeeping, beginners welcome.
 
 Bold-but-simple Scandinavian identity. See [`BRAND.md`](BRAND.md) for the full brand guide.
@@ -45,5 +45,5 @@ for the Organization and the next Event are all built in.
 vercel --prod
 ```
 
-Production: `https://oslo-vibe-coding.vercel.app`. To attach a custom domain later, add it in the
+Production: `https://oslovibecoding.tech`. To attach a custom domain later, add it in the
 Vercel project and update `SITE_URL` in `src/lib/brand.ts`.

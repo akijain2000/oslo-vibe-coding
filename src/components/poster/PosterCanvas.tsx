@@ -18,8 +18,6 @@ export type PosterData = {
   footer: string;
 };
 
-const ink = "#16151c";
-
 const PosterCanvas = forwardRef<HTMLDivElement, { data: PosterData }>(function PosterCanvas(
   { data },
   ref,
@@ -166,8 +164,8 @@ const PosterCanvas = forwardRef<HTMLDivElement, { data: PosterData }>(function P
           background: "transparent",
         }}
       >
-        <span style={{ color: ink === ink ? "#d9d2c6" : "#d9d2c6" }}>{data.footer}</span>
-        <span>oslo-vibe-coding.vercel.app</span>
+        <span style={{ color: "#d9d2c6" }}>{data.footer}</span>
+        <span>oslovibecoding.tech</span>
       </div>
     </div>
   );
