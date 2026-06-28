@@ -1,22 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Eyebrow } from "@/components/Section";
 import SparkMark from "@/components/SparkMark";
-import { resourceSections } from "@/content/resources";
+import { resourceSections, type Resource } from "@/content/resources";
+import { DIAGRAMS } from "@/components/resources/Diagrams";
 import { SITE_URL } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Resources: learn vibe coding from zero",
   description:
-    "A free, curated on-ramp to building software with AI: what vibe coding is, the tools, free courses from zero, and why AI should reach everyone. Picked by Oslo Vibe Coding.",
+    "A free, curated on-ramp to building software with AI: what vibe coding is, the tools, free courses from zero, and why AI should reach everyone. Each with a TL;DR. Picked by Oslo Vibe Coding.",
   alternates: { canonical: "/resources" },
   openGraph: {
     title: "Resources: learn vibe coding from zero · Oslo Vibe Coding",
     description:
-      "A free, curated on-ramp to building software with AI. What vibe coding is, the tools, free courses, and the safety reading.",
+      "A free, curated on-ramp to building software with AI, each with a TL;DR so you can read before you click.",
     url: `${SITE_URL}/resources`,
   },
 };
+
+function ResourceVisual({ item }: { item: Resource }) {
+  if (item.image) {
+    return (
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        sizes="(max-width: 640px) 100vw, 50vw"
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+    );
+  }
+  const Diagram = item.diagram ? DIAGRAMS[item.diagram] : undefined;
+  if (Diagram) return <Diagram />;
+  return (
+    <div className="flex h-full items-center justify-center">
+      <SparkMark className="h-8 w-8 text-ember" />
+    </div>
+  );
+}
 
 export default function ResourcesPage() {
   return (
@@ -29,7 +52,8 @@ export default function ResourcesPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">
             The resources we actually point newcomers to. High-signal, mostly free, and arranged so
-            you can start tonight, even if you have never written a line of code.
+            you can start tonight, even if you have never written a line of code. Each has a TL;DR, so
+            read before you click.
           </p>
           <Link
             href="/#next"
@@ -45,38 +69,38 @@ export default function ResourcesPage() {
         <div className="space-y-20">
           {resourceSections.map((section) => (
             <section key={section.id} id={section.id} className="scroll-mt-24">
-              <div className="flex items-baseline gap-3">
-                <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
-                  {section.title}
-                </h2>
-              </div>
+              <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+                {section.title}
+              </h2>
               <p className="mt-2 max-w-2xl text-ink-soft">{section.intro}</p>
 
-              <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-7 grid gap-5 sm:grid-cols-2">
                 {section.items.map((item) => (
                   <a
                     key={item.title}
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20"
+                    className="group flex flex-col overflow-hidden rounded-card border border-line bg-mist transition-colors hover:border-ink/20"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <SparkMark className="mt-1 h-4 w-4 text-ember" />
+                    <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-night">
+                      <ResourceVisual item={item} />
                       {item.free && (
-                        <span className="rounded-pill bg-ink/[0.06] px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-ink-soft">
+                        <span className="absolute right-3 top-3 rounded-pill bg-night/75 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-paper backdrop-blur-sm">
                           Free
                         </span>
                       )}
                     </div>
-                    <h3 className="mt-3 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-ink-faint">{item.by}</p>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{item.blurb}</p>
-                    <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
-                      Open <span aria-hidden>→</span>
-                    </span>
+                    <div className="flex flex-1 flex-col p-6">
+                      <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{item.by}</p>
+                      <h3 className="mt-1.5 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{item.tldr}</p>
+                      <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
+                        Open the source <span aria-hidden>→</span>
+                      </span>
+                    </div>
                   </a>
                 ))}
               </div>
