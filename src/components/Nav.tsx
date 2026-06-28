@@ -7,8 +7,8 @@ import { links } from "@/content/links";
 
 const NAV = [
   { label: "Next session", href: "/#next" },
-  { label: "How it works", href: "/#how" },
-  { label: "Talks", href: "/#talks" },
+  { label: "Start here", href: "/start" },
+  { label: "Articles", href: "/articles" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/#about" },
 ];

@@ -74,6 +74,20 @@ export const resourceSections: ResourceSection[] = [
         blurb: "Describe an app, get a deployed one. Great for a first win with zero setup.",
         free: true,
       },
+      {
+        title: "GitHub Copilot",
+        by: "GitHub",
+        url: "https://github.com/features/copilot",
+        blurb: "Autocomplete on steroids inside your editor. A gentle on-ramp if you already write a little code.",
+        free: true,
+      },
+      {
+        title: "v0",
+        by: "Vercel",
+        url: "https://v0.dev/",
+        blurb: "Describe a UI, get React components you can ship. Handy for the front-end of your first app.",
+        free: true,
+      },
     ],
   },
   {
@@ -151,6 +165,34 @@ export const resourceSections: ResourceSection[] = [
         url: "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
         blurb:
           "The idea behind our talks: methods that lean on computation win. Bet on the model, keep your cleverness thin.",
+        free: true,
+      },
+    ],
+  },
+  {
+    id: "oslo-scene",
+    title: "Other places to learn in Oslo",
+    intro: "We are not the only room in town, and that is a good thing. Go to these too.",
+    items: [
+      {
+        title: "Oslo AI",
+        by: "Meetup",
+        url: "https://www.meetup.com/oslo-ai/",
+        blurb: "The largest AI community in Norway. Bigger talks, more of an industry crowd. Worth following.",
+        free: true,
+      },
+      {
+        title: "AI Tinkerers Oslo",
+        by: "AI Tinkerers",
+        url: "https://oslo.aitinkerers.org/",
+        blurb: "Hands-on builder meetups for people shipping with AI. Demo-friendly and practical.",
+        free: true,
+      },
+      {
+        title: "Vibe Coding Collective",
+        by: "Meetup",
+        url: "https://www.meetup.com/vibe-coding-collective/",
+        blurb: "An international community running relaxed social coding jams. Good if you travel or want the wider scene.",
         free: true,
       },
     ],

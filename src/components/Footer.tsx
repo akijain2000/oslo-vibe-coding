@@ -17,9 +17,10 @@ const COLS = [
     title: "On this site",
     items: [
       { label: "Next session", href: "/#next", external: false },
-      { label: "How it works", href: "/#how", external: false },
-      { label: "Talks", href: "/#talks", external: false },
+      { label: "Start here", href: "/start", external: false },
+      { label: "Articles", href: "/articles", external: false },
       { label: "Resources", href: "/resources", external: false },
+      { label: "Poster maker", href: "/poster", external: false },
     ],
   },
 ];

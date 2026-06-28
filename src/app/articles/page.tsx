@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Eyebrow } from "@/components/Section";
+import { articles } from "@/content/articles";
+import { SITE_URL } from "@/lib/brand";
+
+export const metadata: Metadata = {
+  title: "Articles",
+  description:
+    "In-depth, source-backed writing from Oslo Vibe Coding: what cheap AI does to the developer's job, and an honest breakdown of real agentic engineering spend.",
+  alternates: { canonical: "/articles" },
+  openGraph: {
+    title: "Articles · Oslo Vibe Coding",
+    description: "In-depth, source-backed writing on building with AI.",
+    url: `${SITE_URL}/articles`,
+  },
+};
+
+export default function ArticlesPage() {
+  return (
+    <>
+      <header className="bg-night text-paper">
+        <div className="mx-auto max-w-4xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40">
+          <Eyebrow dark>Articles</Eyebrow>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+            The <span className="spark-text">good stuff</span>, written out in full.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">
+            Our talks, expanded into proper essays you can actually read. Honest, source-backed, and
+            free, like everything else here.
+          </p>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="space-y-5">
+          {articles.map((a) => (
+            <Link
+              key={a.slug}
+              href={`/articles/${a.slug}`}
+              className="group block rounded-card border border-line bg-mist p-7 transition-colors hover:border-ink/20 sm:p-9"
+            >
+              <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-wider text-ink-faint">
+                <span>{a.author}</span>
+                <span aria-hidden>·</span>
+                <span>{a.readingTimeMin} min read</span>
+                <span aria-hidden>·</span>
+                <span>from a {a.deckPages}-page talk</span>
+              </div>
+              <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight group-hover:text-ember-ink sm:text-3xl">
+                {a.title}
+              </h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">{a.dek}</p>
+              <span className="mt-5 inline-block text-sm font-semibold text-ember-ink">
+                Read the article <span aria-hidden>→</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

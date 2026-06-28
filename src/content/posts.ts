@@ -40,6 +40,22 @@ export const posts: Post[] = [
     when: "3 weeks ago",
     excerpt:
       "Cheap code moves the work up the stack, toward specifying, reviewing and judging. ATMs did it to tellers. Spreadsheets did it to accountants. Compilers did it to programmers. Thanks to everyone who came.",
-    url: "https://www.linkedin.com/in/akijain2000/",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7469147112270798848/",
+  },
+  {
+    author: "Akshat Jain",
+    authorHandle: "akijain2000",
+    when: "2 weeks ago",
+    excerpt:
+      "Take advantage of the tokens the labs are offering. Think of this as your seed round. Use it to build, experiment and learn before the cost of acquiring the same knowledge becomes much higher.",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7471486687756394497/",
+  },
+  {
+    author: "Harsh Trivedi",
+    authorHandle: "harshtrivedi13",
+    when: "1 month ago",
+    excerpt:
+      "We ran our first AI Vibes session and honestly, it was a blast. Come with an idea, a messy project, a random question, or just curiosity. No one should code alone or sit on an idea because they do not know where to start.",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7465073264382455808/",
   },
 ];

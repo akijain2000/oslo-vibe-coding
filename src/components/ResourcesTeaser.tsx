@@ -25,7 +25,27 @@ export default function ResourcesTeaser() {
         </Link>
       </div>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <Link
+        href="/start"
+        className="group mt-12 flex flex-col items-start justify-between gap-5 rounded-card bg-night p-7 text-paper transition-colors hover:bg-night-2 sm:flex-row sm:items-center sm:p-9"
+      >
+        <div>
+          <p className="font-mono text-xs uppercase tracking-wider text-glow">New to all this?</p>
+          <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+            Getting started with vibe coding
+          </h3>
+          <p className="mt-2 max-w-xl text-cream-dim">
+            The whole thing from zero, in one read. Never written a line of code? Start here and ship
+            something tonight.
+          </p>
+        </div>
+        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white">
+          Read the guide <span aria-hidden>→</span>
+        </span>
+      </Link>
+
+      <p className="mt-12 font-mono text-xs uppercase tracking-wider text-ink-faint">Or browse by topic</p>
+      <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {resourceSections.map((s) => (
           <Link
             key={s.id}

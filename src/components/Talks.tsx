@@ -1,55 +1,50 @@
+import Link from "next/link";
 import { Section, Eyebrow, SectionHeading, Lede } from "./Section";
-import { talks } from "@/content/talks";
+import { articles } from "@/content/articles";
 
+// Home teaser for the long-form articles (expanded from the organisers' talks).
 export default function Talks() {
   return (
-    <Section id="talks" tone="paper">
-      <div className="max-w-2xl">
-        <Eyebrow>Talks &amp; decks</Eyebrow>
-        <SectionHeading className="mt-4">We don&apos;t just hang out. We share what we learn.</SectionHeading>
-        <div className="mt-5">
-          <Lede>
-            Some sessions come with a short talk. Here are a couple worth reading even if you never
-            make it to a Thursday.
-          </Lede>
+    <Section id="writing" tone="paper">
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="max-w-2xl">
+          <Eyebrow>Articles</Eyebrow>
+          <SectionHeading className="mt-4">We don&apos;t just hang out. We write it down.</SectionHeading>
+          <div className="mt-5">
+            <Lede>
+              Our talks, expanded into proper essays. Worth reading even if you never make it to a
+              Thursday.
+            </Lede>
+          </div>
         </div>
+        <Link
+          href="/articles"
+          className="inline-flex items-center gap-1.5 rounded-pill border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink/[0.03]"
+        >
+          All articles
+          <span aria-hidden>→</span>
+        </Link>
       </div>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        {talks.map((t) => (
-          <article
-            key={t.title}
-            className="flex flex-col rounded-card border border-line bg-mist p-7 transition-colors hover:border-ink/20"
+        {articles.map((a) => (
+          <Link
+            key={a.slug}
+            href={`/articles/${a.slug}`}
+            className="group flex flex-col rounded-card border border-line bg-mist p-7 transition-colors hover:border-ink/20"
           >
-            <div className="flex items-center justify-between gap-4">
-              <span className="rounded-pill bg-ember/10 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-ember-ink">
-                {t.pages} pages
-              </span>
-              <span className="text-sm text-ink-faint">{t.author}</span>
+            <div className="flex items-center justify-between gap-4 font-mono text-xs uppercase tracking-wider text-ink-faint">
+              <span>{a.readingTimeMin} min read</span>
+              <span>{a.author}</span>
             </div>
-
-            <h3 className="mt-5 font-display text-2xl font-semibold leading-tight">{t.title}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t.summary}</p>
-
-            <ul className="mt-5 space-y-2">
-              {t.takeaways.map((point) => (
-                <li key={point} className="flex gap-2.5 text-sm text-ink-soft">
-                  <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href={t.postUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-ember-ink hover:underline"
-            >
-              Read the deck on LinkedIn
-              <span aria-hidden>→</span>
-            </a>
-          </article>
+            <h3 className="mt-5 font-display text-2xl font-semibold leading-tight group-hover:text-ember-ink">
+              {a.title}
+            </h3>
+            <p className="mt-3 flex-1 leading-relaxed text-ink-soft">{a.dek}</p>
+            <span className="mt-6 inline-block text-sm font-semibold text-ember-ink">
+              Read the article <span aria-hidden>→</span>
+            </span>
+          </Link>
         ))}
       </div>
     </Section>
