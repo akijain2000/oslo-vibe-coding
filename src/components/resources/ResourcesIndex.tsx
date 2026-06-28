@@ -1,15 +1,32 @@
 import Link from "next/link";
 import { Eyebrow } from "../Section";
 import ResourceVisual from "./ResourceVisual";
-import { resourceSections, resourceSlug } from "@/content/resources";
+import ResourceSectionNav from "./ResourceSectionNav";
+import { resourceSections, resourceSlug, type Resource } from "@/content/resources";
 import { getExplainer } from "@/content/explainers";
 import { ui, sectionMeta, localePath, type Locale } from "@/lib/i18n";
 import { links } from "@/content/links";
+
+// The index is for scanning and routing, so each item shows a one-line gloss
+// (its first sentence); the full explainer lives on the per-resource page.
+const firstSentence = (s: string) => {
+  const m = s.match(/^.*?[.!?](\s|$)/);
+  return (m ? m[0] : s).trim();
+};
 
 export default function ResourcesIndex({ locale }: { locale: Locale }) {
   const t = ui[locale];
   const readMore = locale === "no" ? "Les mer" : "Read more";
   const comeToSession = locale === "no" ? "Eller bare kom på en samling" : "Or just come to a session";
+
+  const gloss = (item: Resource) => firstSentence(getExplainer(locale, resourceSlug(item.title))?.lead ?? item.tldr);
+  const href = (item: Resource) => localePath(locale, `/resources/${resourceSlug(item.title)}`);
+
+  const navSections = resourceSections.map((s) => ({
+    id: s.id,
+    title: sectionMeta[locale][s.id].title,
+    count: s.items.length,
+  }));
 
   return (
     <>
@@ -32,30 +49,59 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
         </div>
       </header>
 
+      <ResourceSectionNav sections={navSections} label={t.onThisPage} />
+
       <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
         <div className="space-y-20">
           {resourceSections.map((section) => {
             const meta = sectionMeta[locale][section.id];
             return (
-              <section key={section.id} id={section.id} className="scroll-mt-24">
-                <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{meta.title}</h2>
+              <section key={section.id} id={section.id} className="scroll-mt-32">
+                <div className="flex items-baseline gap-3">
+                  <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{meta.title}</h2>
+                  <span className="font-mono text-sm text-ink-faint">{section.items.length}</span>
+                </div>
                 <p className="mt-2 max-w-2xl text-ink-soft">{meta.intro}</p>
 
-                <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                  {section.items.map((item) => {
-                    const slug = resourceSlug(item.title);
-                    const preview = getExplainer(locale, slug)?.lead ?? item.tldr;
-                    return (
+                {section.layout === "list" ? (
+                  <ul className="mt-7 divide-y divide-line border-t border-line">
+                    {section.items.map((item) => (
+                      <li key={item.title}>
+                        <Link href={href(item)} className="group flex items-center gap-4 py-4">
+                          <div className="min-w-0 flex-1">
+                            <div className="flex flex-wrap items-baseline gap-x-2.5">
+                              <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
+                                {item.title}
+                              </h3>
+                              <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                                {item.by}
+                              </span>
+                            </div>
+                            <p className="mt-1 truncate text-sm text-ink-soft">{gloss(item)}</p>
+                          </div>
+                          <span
+                            aria-hidden
+                            className="shrink-0 text-ember-ink transition-transform group-hover:translate-x-0.5"
+                          >
+                            →
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="mt-7 grid gap-5 sm:grid-cols-2">
+                    {section.items.map((item) => (
                       <Link
                         key={item.title}
-                        href={localePath(locale, `/resources/${slug}`)}
+                        href={href(item)}
                         className="group flex flex-col overflow-hidden rounded-card border border-line bg-mist transition-colors hover:border-ink/20"
                       >
                         <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-night">
                           <ResourceVisual item={item} />
-                          {item.free && (
+                          {section.id === "tools" && (
                             <span className="absolute right-3 top-3 rounded-pill bg-night/75 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-paper backdrop-blur-sm">
-                              {t.free}
+                              {item.free ? t.free : t.paid}
                             </span>
                           )}
                         </div>
@@ -64,15 +110,17 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
                           <h3 className="mt-1.5 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
                             {item.title}
                           </h3>
-                          <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{preview}</p>
+                          <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-2">
+                            {gloss(item)}
+                          </p>
                           <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
                             {readMore} <span aria-hidden>→</span>
                           </span>
                         </div>
                       </Link>
-                    );
-                  })}
-                </div>
+                    ))}
+                  </div>
+                )}
               </section>
             );
           })}

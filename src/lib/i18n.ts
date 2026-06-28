@@ -31,6 +31,8 @@ type Strings = {
   keyPoints: string;
   openSource: string;
   free: string;
+  paid: string;
+  onThisPage: string;
   ctaTitle: string;
   ctaBody: string;
   rsvp: string;
@@ -49,6 +51,8 @@ export const ui: Record<Locale, Strings> = {
     keyPoints: "Key points",
     openSource: "Open the original source",
     free: "Free",
+    paid: "Paid",
+    onThisPage: "On this page",
     ctaTitle: "New to this? Come build with us.",
     ctaBody: "Reading is good. Building with people is better. Our drop-ins are free and open to total beginners.",
     rsvp: "RSVP for the next session",
@@ -65,6 +69,8 @@ export const ui: Record<Locale, Strings> = {
     keyPoints: "Hovedpunkter",
     openSource: "Åpne originalkilden",
     free: "Gratis",
+    paid: "Betalt",
+    onThisPage: "På denne siden",
     ctaTitle: "Ny til dette? Kom og bygg med oss.",
     ctaBody: "Å lese er bra. Å bygge sammen med andre er bedre. Samlingene våre er gratis og åpne for helt ferske.",
     rsvp: "Meld deg på neste samling",
