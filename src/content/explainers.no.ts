@@ -3,12 +3,12 @@ import type { Explainer } from "./explainers";
 // Generated explainers keyed by resource slug.
 export const explainersNo: Record<string, Explainer> = {
   "the-original-vibe-coding-note": {
-    "lead": "Tidlig i 2025 la AI-forskeren Andrej Karpathy ut et kort innlegg som beskrev en ny måte å skrive programvare på: la modellen gjøre nesten alt arbeidet, og bare følg strømmen. Uttrykket han brukte, «vibe coding», slo raskt an.",
+    "lead": "Tidlig i 2025 la KI-forskeren Andrej Karpathy ut et kort innlegg som beskrev en ny måte å skrive programvare på: la modellen gjøre nesten alt arbeidet, og bare følg strømmen. Uttrykket han brukte, «vibe coding», slo raskt an.",
     "sections": [
       {
         "heading": "Hva han faktisk sa",
         "paragraphs": [
-          "Karpathy la ut notatet sitt 2. februar 2025. Han beskrev en måte å bygge på der du lener deg fullt og helt på AI-modellen, godtar forslagene den gir deg, og slutter å bekymre deg for koden under panseret. Du snakker med verktøyet, ofte med stemmen, beskriver hva du vil ha, og lar det generere og kjøre programmet. Hvis noe knekker, limer du feilmeldingen tilbake inn og ber om en fiks i stedet for å lese deg gjennom logikken selv.",
+          "Karpathy la ut notatet sitt 2. februar 2025. Han beskrev en måte å bygge på der du lener deg fullt og helt på KI-modellen, godtar forslagene den gir deg, og slutter å bekymre deg for koden under panseret. Du snakker med verktøyet, ofte med stemmen, beskriver hva du vil ha, og lar det generere og kjøre programmet. Hvis noe knekker, limer du feilmeldingen tilbake inn og ber om en fiks i stedet for å lese deg gjennom logikken selv.",
           "Han fremstilte det som noe som først ble mulig fordi modellene hadde blitt gode nok til å håndtere små prosjekter på egen hånd. Det var en uformell, nesten leken observasjon, ikke et manifest. Senere kalte han det en kjapp innskytelse han kastet ut. Men navnet bet seg fast, og i løpet av noen måneder brukte folk overalt det."
         ]
       },
@@ -20,7 +20,7 @@ export const explainersNo: Record<string, Explainer> = {
         ]
       },
       {
-        "heading": "Hvorfor det betyr noe når du bygger med AI",
+        "heading": "Hvorfor det betyr noe når du bygger med KI",
         "paragraphs": [
           "Dette lille notatet satte ord på noe mange allerede hadde begynt å kjenne på. Når du først kan beskrive programvare med vanlige ord og se det dukke opp, faller terskelen for å lage et lite verktøy, et kjapt spill eller en helgeprototype kraftig. Folk som aldri har sett på seg selv som programmerere, kan bygge ting som faktisk virker.",
           "Det betyr noe for fellesskapet vårt fordi det setter en startstrek. Vibe coding er en glimrende måte å lære på, å leke seg på, og å få en grov idé foran ekte brukere raskt. Forbeholdet, som Karpathy selv antydet og andre formulerte tydeligere senere, er at det å gå rent på magefølelse fungerer best for prosjekter der lite står på spill. I det øyeblikket noe må være pålitelig, trygt eller vedlikeholdes over tid, vil du som regel senke farten og forstå koden, ikke bare føle den."
@@ -29,40 +29,40 @@ export const explainersNo: Record<string, Explainer> = {
     ],
     "keyPoints": [
       "Lansert av Andrej Karpathy i et kort innlegg 2. februar 2025.",
-      "Idéen: beskriv hva du vil ha, la AI-en skrive det, og vurder ut fra resultatet i stedet for å lese koden.",
+      "Idéen: beskriv hva du vil ha, la KI-en skrive det, og vurder ut fra resultatet i stedet for å lese koden.",
       "Gjøres ofte ved å snakke med verktøyet og lime feilmeldinger tilbake inn så det kan fikse dem.",
       "Senker terskelen for å bygge, noe som gjør det glimrende til læring og kjappe prototyper.",
       "Best når lite står på spill; pålitelighet og sikkerhet krever som regel at du faktisk forstår koden."
     ]
   },
   "not-all-ai-assisted-programming-is-vibe-coding": {
-    "lead": "Kort tid etter at uttrykket slo an, gikk utvikleren og skribenten Simon Willison inn for å rydde opp i en voksende forvirring: å bruke AI til å hjelpe deg å kode er ikke det samme som vibe coding. Han ville holde de to ideene fra hverandre.",
+    "lead": "Kort tid etter at uttrykket slo an, gikk utvikleren og skribenten Simon Willison inn for å rydde opp i en voksende forvirring: å bruke KI til å hjelpe deg å kode er ikke det samme som vibe coding. Han ville holde de to ideene fra hverandre.",
     "sections": [
       {
         "heading": "Skillet han trakk opp",
         "paragraphs": [
-          "I et innlegg fra mars 2025 la Willison merke til at folk hadde begynt å kalle all AI-assistert koding for «vibe coding», og han mente det visket ut noe viktig. For ham har ekte vibe coding en bestemt betydning: du bygger med en AI-modell og du gjennomgår ikke koden den lager. Du godtar den, kjører den og går videre. Det definerende trekket er at du verken leser eller eier linjene.",
-          "Det, argumenterte han, er noe helt annet enn det seriøse arbeidet de fleste profesjonelle utviklere gjør med AI. I den modusen bruker du fremdeles modellen for å gå raskere, men du leser hver eneste endring, du forstår den, og du tar ansvar for den. AI-en er en rask assistent, ikke en erstatning for dømmekraften din."
+          "I et innlegg fra mars 2025 la Willison merke til at folk hadde begynt å kalle all KI-assistert koding for «vibe coding», og han mente det visket ut noe viktig. For ham har ekte vibe coding en bestemt betydning: du bygger med en KI-modell og du gjennomgår ikke koden den lager. Du godtar den, kjører den og går videre. Det definerende trekket er at du verken leser eller eier linjene.",
+          "Det, argumenterte han, er noe helt annet enn det seriøse arbeidet de fleste profesjonelle utviklere gjør med KI. I den modusen bruker du fremdeles modellen for å gå raskere, men du leser hver eneste endring, du forstår den, og du tar ansvar for den. KI-en er en rask assistent, ikke en erstatning for dømmekraften din."
         ]
       },
       {
         "heading": "Gullregelen hans",
         "paragraphs": [
-          "Willison tilbød en enkel test for om AI-assistert arbeid holder profesjonell standard: han legger ikke kode inn i prosjektet sitt hvis han ikke kunne forklart nøyaktig hva den gjør til en annen person. Hvis du kan forklare den, forstår du den, og du kan stå inne for den. Hvis ikke, håper du bare at den virker.",
-          "Legg merke til at dette ikke er AI-fiendtlig. Han var tydelig på at vibe coding i seg selv er både nyttig og morsomt. Poenget hans var snevrere. Ekte programvare som andre er avhengige av, må være forståelig, må fortsette å virke etter hvert som den vokser, og må ta høyde for ting som sikkerhet, ytelse og kostnad. Ingenting av det skjer på magefølelse alene."
+          "Willison tilbød en enkel test for om KI-assistert arbeid holder profesjonell standard: han legger ikke kode inn i prosjektet sitt hvis han ikke kunne forklart nøyaktig hva den gjør til en annen person. Hvis du kan forklare den, forstår du den, og du kan stå inne for den. Hvis ikke, håper du bare at den virker.",
+          "Legg merke til at dette ikke er KI-fiendtlig. Han var tydelig på at vibe coding i seg selv er både nyttig og morsomt. Poenget hans var snevrere. Ekte programvare som andre er avhengige av, må være forståelig, må fortsette å virke etter hvert som den vokser, og må ta høyde for ting som sikkerhet, ytelse og kostnad. Ingenting av det skjer på magefølelse alene."
         ]
       },
       {
         "heading": "Hvorfor forskjellen er verdt å holde fast ved",
         "paragraphs": [
-          "Å blande de to begrepene kan villede nybegynnere i begge retninger. Det kan få ansvarlig AI-assistert programmering til å høres uvarsomt ut, som om profesjonelle bare godtar hva enn modellen spytter ut. Og det kan få vibe coding til å høres mer skuddsikkert ut enn det er, og skjuler at ingen sjekket koden.",
-          "For fellesskapet vårt er konklusjonen frigjørende heller enn streng. Vibe-kod i vei når du utforsker, lærer eller lager prototyper. Når du krysser over i noe ekte, skifter du gir: les hva AI-en skrev, be den forklare alt som er uklart, og behold bare det du faktisk forstår. Samme verktøy, ulik grad av eierskap."
+          "Å blande de to begrepene kan villede nybegynnere i begge retninger. Det kan få ansvarlig KI-assistert programmering til å høres uvarsomt ut, som om profesjonelle bare godtar hva enn modellen spytter ut. Og det kan få vibe coding til å høres mer skuddsikkert ut enn det er, og skjuler at ingen sjekket koden.",
+          "For fellesskapet vårt er konklusjonen frigjørende heller enn streng. Vibe-kod i vei når du utforsker, lærer eller lager prototyper. Når du krysser over i noe ekte, skifter du gir: les hva KI-en skrev, be den forklare alt som er uklart, og behold bare det du faktisk forstår. Samme verktøy, ulik grad av eierskap."
         ]
       }
     ],
     "keyPoints": [
       "Willisons artikkel (mars 2025) skiller to ting folk stadig blandet sammen.",
-      "Ekte vibe coding betyr at du ikke gjennomgår AI-ens kode; seriøst AI-assistert arbeid betyr at du leser og eier hver linje.",
+      "Ekte vibe coding betyr at du ikke gjennomgår KI-ens kode; seriøst KI-assistert arbeid betyr at du leser og eier hver linje.",
       "Gullregelen hans: ikke behold kode du ikke kunne forklart til noen andre.",
       "Han er for vibe coding til lek og prototyper, ikke som en erstatning for forståelse.",
       "Tilpass gjennomgangsnivået til hva som står på spill: magefølelse når du utforsker, eierskap når noe er ekte."
@@ -74,14 +74,14 @@ export const explainersNo: Record<string, Explainer> = {
       {
         "heading": "En definisjon for dem som ikke programmerer",
         "paragraphs": [
-          "Artikkelen tar en vanlig leser gjennom grunnidéen. Vibe coding er å bruke et AI-verktøy til å bygge programvare ved å beskrive hva du vil ha med vanlig språk, for så å lene seg på modellen for å lage det ferdige programmet. Du styrer den med tilbakemeldinger i stedet for å skrive koden linje for linje selv. For noen som aldri har programmert, er det nettopp dette som lokker: du kan lage en fungerende app ved å snakke med et verktøy i stedet for å lære et programmeringsspråk først.",
-          "Artikkelen sporer også opphavet. Begrepet kom fra et kort innlegg av AI-forskeren Andrej Karpathy tidlig i 2025, og derfra spredte det seg raskt til alminnelig dekning og hverdagssamtaler. Et kjapt uttrykk ble en merkelapp som både nyhetsmedier, selskaper og nykommere begynte å bruke."
+          "Artikkelen tar en vanlig leser gjennom grunnidéen. Vibe coding er å bruke et KI-verktøy til å bygge programvare ved å beskrive hva du vil ha med vanlig språk, for så å lene seg på modellen for å lage det ferdige programmet. Du styrer den med tilbakemeldinger i stedet for å skrive koden linje for linje selv. For noen som aldri har programmert, er det nettopp dette som lokker: du kan lage en fungerende app ved å snakke med et verktøy i stedet for å lære et programmeringsspråk først.",
+          "Artikkelen sporer også opphavet. Begrepet kom fra et kort innlegg av KI-forskeren Andrej Karpathy tidlig i 2025, og derfra spredte det seg raskt til alminnelig dekning og hverdagssamtaler. Et kjapt uttrykk ble en merkelapp som både nyhetsmedier, selskaper og nykommere begynte å bruke."
         ]
       },
       {
         "heading": "Hvorfor et begrep sprer seg, og hva som blir uklart",
         "paragraphs": [
-          "Noe av det artikkelen fanger opp, er hvor glatt et populært ord kan bli. Etter hvert som flere tok i bruk «vibe coding», tøyde de det til å dekke alle slags AI-og-kode-aktiviteter, ikke bare den opprinnelige, snevre betydningen om å ikke se på koden i det hele tatt. Artikkelen hjelper leserne å se både den stramme definisjonen og den løsere hverdagsbruken, så de ikke blir forvirret når det samme uttrykket ser ut til å bety forskjellige ting.",
+          "Noe av det artikkelen fanger opp, er hvor glatt et populært ord kan bli. Etter hvert som flere tok i bruk «vibe coding», tøyde de det til å dekke alle slags KI-og-kode-aktiviteter, ikke bare den opprinnelige, snevre betydningen om å ikke se på koden i det hele tatt. Artikkelen hjelper leserne å se både den stramme definisjonen og den løsere hverdagsbruken, så de ikke blir forvirret når det samme uttrykket ser ut til å bety forskjellige ting.",
           "Det er nyttig bakgrunn for alle som er nye. Når et begrep er på moten, følger hypen og den presise betydningen hverandre. Å kjenne forskjellen hindrer deg i å stole for mye på et moteord."
         ]
       },
@@ -95,10 +95,10 @@ export const explainersNo: Record<string, Explainer> = {
     ],
     "keyPoints": [
       "En forklarende artikkel fra MIT Technology Review (2025) rettet mot vanlige lesere, ikke bare utviklere.",
-      "Definerer vibe coding som å bygge programvare ved å beskrive hva du vil ha og la en AI-modell lage det.",
+      "Definerer vibe coding som å bygge programvare ved å beskrive hva du vil ha og la en KI-modell lage det.",
       "Sporer begrepet tilbake til Andrej Karpathys innlegg tidlig i 2025 og dets raske spredning til allmennheten.",
       "Viser hvordan ordet tøyde seg fra en snever betydning til løsere hverdagsbruk.",
-      "Et godt første lesestoff for å få oversikt før du selv prøver å bygge med AI."
+      "Et godt første lesestoff for å få oversikt før du selv prøver å bygge med KI."
     ]
   },
   "claude-code": {
@@ -267,24 +267,24 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "vibe-coding-essentials": {
-    "lead": "Dette er et nybegynnerspor på Coursera, laget av Scrimba, som lærer deg å bygge ekte apper ved å jobbe side om side med AI-verktøy for koding. Du tar med deg nysgjerrigheten. Du trenger ingen bakgrunn innen koding for å komme i gang.",
+    "lead": "Dette er et nybegynnerspor på Coursera, laget av Scrimba, som lærer deg å bygge ekte apper ved å jobbe side om side med KI-verktøy for koding. Du tar med deg nysgjerrigheten. Du trenger ingen bakgrunn innen koding for å komme i gang.",
     "sections": [
       {
         "heading": "Hva det er",
         "paragraphs": [
-          "Vibe Coding Essentials er en kort og strukturert kursrekke som ligger på Coursera og er laget av Scrimba, en plattform kjent for interaktive leksjoner der du skriver kode rett inne i leksjonsvinduet. Kurset bygger på ideen om vibe coding, som betyr at du beskriver det du vil ha med vanlige ord og lar en AI-assistent hjelpe deg å skrive, rette og forme selve koden.",
-          "Du lærer ved å bruke de samme verktøyene som profesjonelle utviklere griper til i dag: Cursor, en editor med AI vevd inn i seg; GitHub Copilot, som foreslår kode mens du skriver; Claude Code, en assistent som kan lese og endre et helt prosjekt; og MCP, en standard for koblinger som lar disse assistentene nå ut til andre verktøy og data. Når du er ferdig, får du et kursbevis du kan dele."
+          "Vibe Coding Essentials er en kort og strukturert kursrekke som ligger på Coursera og er laget av Scrimba, en plattform kjent for interaktive leksjoner der du skriver kode rett inne i leksjonsvinduet. Kurset bygger på ideen om vibe coding, som betyr at du beskriver det du vil ha med vanlige ord og lar en KI-assistent hjelpe deg å skrive, rette og forme selve koden.",
+          "Du lærer ved å bruke de samme verktøyene som profesjonelle utviklere griper til i dag: Cursor, en editor med KI vevd inn i seg; GitHub Copilot, som foreslår kode mens du skriver; Claude Code, en assistent som kan lese og endre et helt prosjekt; og MCP, en standard for koblinger som lar disse assistentene nå ut til andre verktøy og data. Når du er ferdig, får du et kursbevis du kan dele."
         ]
       },
       {
         "heading": "Kjernen i det, enkelt forklart",
         "paragraphs": [
-          "Den gamle måten å lære programmering på var å pugge syntaks først og bygge ting mye senere. Vibe coding snur dette på hodet. Du starter med å si hva du vil ha, med dine egne ord, og AI-en lager et førsteutkast. Så leser du det, kjører det, ser hva som er feil og ber om endringer. Bit for bit styrer du prosjektet mot noe som fungerer.",
-          "Dette er viktig fordi det senker terskelen mellom å ha en idé og å se den kjøre. Ferdigheten du egentlig bygger, er ikke å skrive raskt. Det er å lære å beskrive et mål tydelig, vurdere det AI-en gir tilbake og fortsette å justere helt til resultatet stemmer. Det er en ferdighet hvem som helst kan øve på, og den blir skarpere jo mer du bygger."
+          "Den gamle måten å lære programmering på var å pugge syntaks først og bygge ting mye senere. Vibe coding snur dette på hodet. Du starter med å si hva du vil ha, med dine egne ord, og KI-en lager et førsteutkast. Så leser du det, kjører det, ser hva som er feil og ber om endringer. Bit for bit styrer du prosjektet mot noe som fungerer.",
+          "Dette er viktig fordi det senker terskelen mellom å ha en idé og å se den kjøre. Ferdigheten du egentlig bygger, er ikke å skrive raskt. Det er å lære å beskrive et mål tydelig, vurdere det KI-en gir tilbake og fortsette å justere helt til resultatet stemmer. Det er en ferdighet hvem som helst kan øve på, og den blir skarpere jo mer du bygger."
         ]
       },
       {
-        "heading": "Hvorfor det henger sammen med å bygge med AI",
+        "heading": "Hvorfor det henger sammen med å bygge med KI",
         "paragraphs": [
           "Å kjenne verktøyene er halve verdien. Den andre halvparten er arbeidsrytmen: prompt, gjennomgang, kjøring, finpuss. Når denne rytmen sitter naturlig, kan du gå fra ett verktøy til det neste uten å starte på nytt, fordi den underliggende vanen følger med deg.",
           "For fellesskapet vårt er dette en vennlig inngangsport. Hvis du har hatt lyst til å lage en liten app, men følt deg stengt ute av fagsjargong, gir et kurs som dette deg en veiledet første runde med ekte verktøy, slik at neste prosjekt blir noe du bygger selv i stedet for noe du bare leser om."
@@ -300,7 +300,7 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "easy-vibe-your-first-modern-coding-course": {
-    "lead": "Easy-Vibe er et gratis kurs med åpen kildekode fra Datawhale som tar deg fra første idé hele veien til en ferdig AI-app. Det er åpent for alle, og hele pensum ligger åpent slik at hvem som helst kan lese og forbedre det.",
+    "lead": "Easy-Vibe er et gratis kurs med åpen kildekode fra Datawhale som tar deg fra første idé hele veien til en ferdig KI-app. Det er åpent for alle, og hele pensum ligger åpent slik at hvem som helst kan lese og forbedre det.",
     "sections": [
       {
         "heading": "Hva det er",
@@ -320,32 +320,32 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Hvorfor åpen kildekode betyr noe her",
         "paragraphs": [
           "Åpen kildekode betyr at kurset ikke er et lukket produkt. Hvem som helst kan lese det, lære av det, foreslå rettelser eller oversette det. Det har en tendens til å holde materialet ærlig og oppdatert, fordi feil er synlige og fellesskapet kan rette dem.",
-          "For de som lærer, betyr gratis og åpent også lav risiko. Du kan prøve et trinn, se om undervisningsstilen passer deg, og fortsette bare hvis den gjør det, alt uten å bruke en krone. For fellesskapet vårt er det en påminnelse om at noen av de beste startpunktene for å bygge med AI deles fritt og forbedres av folkene som bruker dem."
+          "For de som lærer, betyr gratis og åpent også lav risiko. Du kan prøve et trinn, se om undervisningsstilen passer deg, og fortsette bare hvis den gjør det, alt uten å bruke en krone. For fellesskapet vårt er det en påminnelse om at noen av de beste startpunktene for å bygge med KI deles fritt og forbedres av folkene som bruker dem."
         ]
       }
     ],
     "keyPoints": [
       "Helt gratis og med åpen kildekode, vedlikeholdt av Datawhale-fellesskapet.",
-      "Laget for nybegynnere, med en ferdig AI-app som mål.",
+      "Laget for nybegynnere, med en ferdig KI-app som mål.",
       "Tre trinn: idé og prototype, deretter full-stack, deretter avansert.",
       "Trappestrukturen gir deg et fungerende resultat før vanskelighetsgraden øker.",
       "Åpent innhold betyr at du kan lese, gjenbruke og bidra med forbedringer."
     ]
   },
   "vibe-code-source": {
-    "lead": "Vibe Code Source er et gratis bibliotek med åpen kildekode av kopiklare prompter parret med praktiske veiledninger. Tenk på det som en felles verktøykasse du kan grave i når du bygger med AI og vil ha et utprøvd utgangspunkt.",
+    "lead": "Vibe Code Source er et gratis bibliotek med åpen kildekode av kopiklare prompter parret med praktiske veiledninger. Tenk på det som en felles verktøykasse du kan grave i når du bygger med KI og vil ha et utprøvd utgangspunkt.",
     "sections": [
       {
         "heading": "Hva det er",
         "paragraphs": [
-          "Vibe Code Source er en samling med åpen kildekode som du kan bla i og bruke gratis. Kjernen er et sett med prompter skrevet for å kopieres rett inn i AI-assistenten din. I stedet for å stirre på en tom boks og lure på hvordan du skal formulere en forespørsel, henter du en prompt som allerede fungerer og tilpasser den til oppgaven din.",
+          "Vibe Code Source er en samling med åpen kildekode som du kan bla i og bruke gratis. Kjernen er et sett med prompter skrevet for å kopieres rett inn i KI-assistenten din. I stedet for å stirre på en tom boks og lure på hvordan du skal formulere en forespørsel, henter du en prompt som allerede fungerer og tilpasser den til oppgaven din.",
           "Ved siden av promptene ligger veiledninger om de delene av byggingen som nybegynnere ofte snubler i: arbeidsflyter, altså trinnene du følger for å komme fra idé til resultat; feilsøking, altså å finne og rette det som gikk i stykker; sikkerhet, altså å holde appen og dataene dine trygge; og utrulling, altså å legge appen ut på nett så andre kan bruke den."
         ]
       },
       {
         "heading": "Kjernen i det, enkelt forklart",
         "paragraphs": [
-          "Når du jobber med AI, endrer ordene du velger resultatet. En vag forespørsel gir et vagt svar. En tydelig og godt formet prompt gir noe du faktisk kan bruke. Vibe Code Source fanger opp gode formuleringer slik at du ikke trenger å finne dem på nytt hver gang. Promptene er som oppskrifter: et pålitelig grunnlag du kan krydre etter smak.",
+          "Når du jobber med KI, endrer ordene du velger resultatet. En vag forespørsel gir et vagt svar. En tydelig og godt formet prompt gir noe du faktisk kan bruke. Vibe Code Source fanger opp gode formuleringer slik at du ikke trenger å finne dem på nytt hver gang. Promptene er som oppskrifter: et pålitelig grunnlag du kan krydre etter smak.",
           "Veiledningene betyr like mye. Det er én ting å få en funksjon til å dukke opp. Det er noe annet å rette den når den oppfører seg rart, holde den sikker og få den ut på nett uten å ødelegge noe. Det er i disse senere stegene mange nybegynnere setter seg fast, og det å ha enkel veiledning for hvert av dem gjør en vegg om til en rekke gjennomførbare steg."
         ]
       },
@@ -353,7 +353,7 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Hvorfor det henger sammen med fellesskapet vårt",
         "paragraphs": [
           "Et promptbibliotek er den typen ressurs som blir mer nyttig jo flere som bruker og bidrar til det. Fordi det har åpen kildekode, kan utviklere bidra med prompter som fungerte for dem, slik at verktøykassen stadig blir bedre for alle som kommer etter.",
-          "For alle som lærer å bygge med AI, er dette ressursen du holder åpen i en annen fane mens du jobber. Kursene lærer deg rytmen. Dette gir deg fungerende biter å sette inn underveis, og trygt fotfeste for de vanskeligere stegene med feilsøking, sikring og utrulling."
+          "For alle som lærer å bygge med KI, er dette ressursen du holder åpen i en annen fane mens du jobber. Kursene lærer deg rytmen. Dette gir deg fungerende biter å sette inn underveis, og trygt fotfeste for de vanskeligere stegene med feilsøking, sikring og utrulling."
         ]
       }
     ],
@@ -379,14 +379,14 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Et lite sett av byggeklosser du kan kombinere",
         "paragraphs": [
           "I stedet for ett storslått design tilbyr veilederen en håndfull byggeklosser du kan sette sammen. Prompt-lenking deler en jobb opp i en rekke modellkall, der hvert steg jobber videre på resultatet fra det forrige. Ruting ser på en innkommende forespørsel og sender den til riktig behandler, slik en resepsjonist viser deg til rett skranke. Orchestrator-worker-mønsteret bruker én modell til å planlegge og dele opp en oppgave, og overlater så bitene til andre modellkall før resultatene settes sammen igjen.",
-          "Disse mønstrene er bevisst enkle, og det er hele poenget. Du kan begynne med det enkleste mønsteret som løser problemet ditt, og bare ta i bruk mer struktur når du virkelig kjører deg fast. For alle som bygger med AI, er dette en vennligere måte å tenke på enn å prøve å designe en smart hjerne fra dag én. Du setter sammen små, forståelige deler."
+          "Disse mønstrene er bevisst enkle, og det er hele poenget. Du kan begynne med det enkleste mønsteret som løser problemet ditt, og bare ta i bruk mer struktur når du virkelig kjører deg fast. For alle som bygger med KI, er dette en vennligere måte å tenke på enn å prøve å designe en smart hjerne fra dag én. Du setter sammen små, forståelige deler."
         ]
       },
       {
         "heading": "Hvorfor det lønner seg å holde det enkelt",
         "paragraphs": [
           "Den røde tråden gjennom hele veilederen er måtehold. Legg bare til kompleksitet når den gjør seg fortjent til plassen, for hvert ekstra lag er enda en ting som kan ryke, koste mer eller oppføre seg på måter du ikke kan forklare til en kollega eller en kunde. Et enkelt system du stoler på, slår et avansert system du ikke klarer å resonnere om.",
-          "Dette betyr noe for et miljø som lærer seg å bygge med AI, fordi det senker terskelen på den beste måten. Du trenger ikke å beherske autonome agenter for å lage noe nyttig. Du trenger tydelige steg, gode verktøy og disiplinen til å holde ting leselig. Det er en standard hvem som helst kan vokse inn i."
+          "Dette betyr noe for et miljø som lærer seg å bygge med KI, fordi det senker terskelen på den beste måten. Du trenger ikke å beherske autonome agenter for å lage noe nyttig. Du trenger tydelige steg, gode verktøy og disiplinen til å holde ting leselig. Det er en standard hvem som helst kan vokse inn i."
         ]
       }
     ],
@@ -399,13 +399,13 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "from-vibe-coding-to-agentic-engineering": {
-    "lead": "I denne samtalen med Sequoia og Stephanie Zhan beskriver Andrej Karpathy hvordan det å bygge programvare med AI er i ferd med å bli voksent. Den lekne, improviserte stilen han en gang kalte vibe coding, gir nå plass til noe mer bevisst, der et menneske styrer dyktige agenter og fortsatt står ansvarlig for resultatet.",
+    "lead": "I denne samtalen med Sequoia og Stephanie Zhan beskriver Andrej Karpathy hvordan det å bygge programvare med KI er i ferd med å bli voksent. Den lekne, improviserte stilen han en gang kalte vibe coding, gir nå plass til noe mer bevisst, der et menneske styrer dyktige agenter og fortsatt står ansvarlig for resultatet.",
     "sections": [
       {
         "heading": "Hva som endrer seg fra vibe coding til agentic engineering",
         "paragraphs": [
           "Vibe coding er den løse, raske måten mange møter først: du beskriver hva du vil ha, modellen skriver kode, og du fortsetter å dytte den i riktig retning til noe fungerer. Det er fantastisk til å skissere ideer og lære, og det senket terskelen for å lage ting på en måte som føltes nesten magisk.",
-          "Agentic engineering er den mer voksne fetteren. AI-en er ikke lenger en smart autofullføring, men en agent som kan ta på seg reelle deler av arbeidet. Mennesket går fra å skrive hver linje til å lede innsatsen: ramme inn oppgaven, sette grenser og avgjøre hva som er bra nok. Ferdigheten det spørres etter, handler mindre om syntaks og mer om klar tenkning og god dømmekraft."
+          "Agentic engineering er den mer voksne fetteren. KI-en er ikke lenger en smart autofullføring, men en agent som kan ta på seg reelle deler av arbeidet. Mennesket går fra å skrive hver linje til å lede innsatsen: ramme inn oppgaven, sette grenser og avgjøre hva som er bra nok. Ferdigheten det spørres etter, handler mindre om syntaks og mer om klar tenkning og god dømmekraft."
         ]
       },
       {
@@ -419,12 +419,12 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Verifisering som den egentlige disiplinen",
         "paragraphs": [
           "Disiplinen Karpathy stadig vender tilbake til, er verifisering. Det er lett å generere kode; den vanskelige og verdifulle delen er å bekrefte at den gjør det du faktisk ville. Det betyr å lese det agenten produserte, teste det og bygge tette tilbakemeldingssløyfer slik at feil dukker opp raskt i stedet for å hope seg opp ubemerket.",
-          "For alle som bygger med AI, setter dette hele jobben i et håpefullt lys. Flaskehalsen er ikke lenger hvor fort du klarer å skrive kode. Den er hvor godt du klarer å beskrive hva du vil ha, og hvor nøye du klarer å sjekke det som kommer tilbake. Det er vaner man kan lære seg, og de belønner tålmodighet og klarhet framfor ren hastighet."
+          "For alle som bygger med KI, setter dette hele jobben i et håpefullt lys. Flaskehalsen er ikke lenger hvor fort du klarer å skrive kode. Den er hvor godt du klarer å beskrive hva du vil ha, og hvor nøye du klarer å sjekke det som kommer tilbake. Det er vaner man kan lære seg, og de belønner tålmodighet og klarhet framfor ren hastighet."
         ]
       }
     ],
     "keyPoints": [
-      "Vibe coding er den raske, improviserte måten å bygge med AI på; agentic engineering er den disiplinerte versjonen der du styrer dyktige agenter.",
+      "Vibe coding er den raske, improviserte måten å bygge med KI på; agentic engineering er den disiplinerte versjonen der du styrer dyktige agenter.",
       "Menneskets rolle går fra å skrive hver linje til å ramme inn oppgaver, sette grenser og vurdere kvalitet.",
       "Å holde et menneske i loopen og jobbe i små biter hindrer store mengder plausible, men feilaktige resultater.",
       "Hvor mye autonomi du gir, bør stå i forhold til risikoen i oppgaven, ikke følge en fast regel.",
@@ -432,34 +432,34 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "vibe-coding-the-academic-version": {
-    "lead": "I 2025 publiserte forskerne Advait Sarkar og Ian Drosos den første empiriske studien av vibe coding, den nye vanen med å bygge programvare hovedsakelig ved å snakke med en AI i stedet for å skrive kode for hånd. I stedet for å gjette på hvordan folk gjør det, så de på dem mens de gjorde det og lyttet til dem tenke høyt.",
+    "lead": "I 2025 publiserte forskerne Advait Sarkar og Ian Drosos den første empiriske studien av vibe coding, den nye vanen med å bygge programvare hovedsakelig ved å snakke med en KI i stedet for å skrive kode for hånd. I stedet for å gjette på hvordan folk gjør det, så de på dem mens de gjorde det og lyttet til dem tenke høyt.",
     "sections": [
       {
         "heading": "Hva studien undersøkte, og hvordan",
         "paragraphs": [
-          "Vibe coding er praksisen med å styre en kodegenererende AI gjennom samtale, gi den instruksjoner, kaste et blikk på det den leverer tilbake, og instruere på nytt, ofte uten å lese hver linje nøye. Fordi praksisen var så ny, var nesten alt som var skrevet om den, meninger eller enkelthistorier. Denne studien fra 2025 satte seg fore å samle inn reelle bevis.",
+          "Vibe coding er praksisen med å styre en kodegenererende KI gjennom samtale, gi den instruksjoner, kaste et blikk på det den leverer tilbake, og instruere på nytt, ofte uten å lese hver linje nøye. Fordi praksisen var så ny, var nesten alt som var skrevet om den, meninger eller enkelthistorier. Denne studien fra 2025 satte seg fore å samle inn reelle bevis.",
           "Metoden var grundig og menneskelig. Forskerne samlet kuraterte opptak av folk i lengre vibe coding-økter som fortalte hva de tenkte mens de jobbet, en teknikk som lenge har vært brukt for å studere hvordan folk programmerer. Deretter analyserte de disse tenk-høyt-øktene systematisk, og lette etter tilbakevendende mål, arbeidsflyter, instruksjonsvaner, feilsøkingsgrep og punktene der ting gikk galt."
         ]
       },
       {
         "heading": "Hovedfunnet: en sløyfe, ikke en rett linje",
         "paragraphs": [
-          "Det de så, var ikke en ryddig marsj fra idé til ferdig program. Det var en gjentakende syklus. En person setter seg et lite mål, instruerer AI-en, og vurderer så raskt resultatet ved å skumlese koden eller rett og slett kjøre applikasjonen for å se om den oppfører seg. Ut fra det de observerer, instruerer de på nytt, redigerer for hånd, eller tar et steg tilbake og prøver en annen vinkel.",
-          "Hver runde i sløyfen skyver arbeidet litt nærmere det personen ønsket seg. Forskerne registrerte også friksjonen i denne syklusen, øyeblikkene der AI-en misforsto, der feil skjulte seg bak kode som så plausibel ut, eller der utvikleren strevde med å uttrykke nøyaktig hva hun mente. Å sette ord på disse smertepunktene er en del av det som gjør studien nyttig."
+          "Det de så, var ikke en ryddig marsj fra idé til ferdig program. Det var en gjentakende syklus. En person setter seg et lite mål, instruerer KI-en, og vurderer så raskt resultatet ved å skumlese koden eller rett og slett kjøre applikasjonen for å se om den oppfører seg. Ut fra det de observerer, instruerer de på nytt, redigerer for hånd, eller tar et steg tilbake og prøver en annen vinkel.",
+          "Hver runde i sløyfen skyver arbeidet litt nærmere det personen ønsket seg. Forskerne registrerte også friksjonen i denne syklusen, øyeblikkene der KI-en misforsto, der feil skjulte seg bak kode som så plausibel ut, eller der utvikleren strevde med å uttrykke nøyaktig hva hun mente. Å sette ord på disse smertepunktene er en del av det som gjør studien nyttig."
         ]
       },
       {
-        "heading": "Hvorfor dette betyr noe for å bygge med AI",
+        "heading": "Hvorfor dette betyr noe for å bygge med KI",
         "paragraphs": [
           "Denne artikkelen betyr noe fordi den gjør et moteord om til noe du kan undersøke og lære bort. Når du kan beskrive den faktiske sløyfen folk følger, kan du oppdage hvor sløyfen ryker og designe bedre verktøy, instruksjoner og vaner rundt den. Det er langt mer nyttig enn slagord om kodingens framtid.",
-          "For et miljø som lærer seg å bygge med AI, er den milde lærdommen betryggende. Vibe coding er ikke ett magisk triks; det er en iterativ samtale full av små sjekker og korrigeringer. Å bli god på det betyr å bli god på å sette tydelige mål og verifisere resultater, de samme disiplinerte vanene som dukker opp overalt ellers i arbeidet med disse verktøyene."
+          "For et miljø som lærer seg å bygge med KI, er den milde lærdommen betryggende. Vibe coding er ikke ett magisk triks; det er en iterativ samtale full av små sjekker og korrigeringer. Å bli god på det betyr å bli god på å sette tydelige mål og verifisere resultater, de samme disiplinerte vanene som dukker opp overalt ellers i arbeidet med disse verktøyene."
         ]
       }
     ],
     "keyPoints": [
       "Publisert i 2025 av Advait Sarkar og Ian Drosos, dette er den første empiriske studien av vibe coding.",
       "Bevisene kom fra å observere kuraterte tenk-høyt-økter med folk som kodet gjennom samtale, ikke fra meninger eller teori.",
-      "Hovedfunnet er en iterativ sløyfe: sett et mål, instruer AI-en, vurder ved å skumlese eller kjøre den, og instruer eller rediger på nytt.",
+      "Hovedfunnet er en iterativ sløyfe: sett et mål, instruer KI-en, vurder ved å skumlese eller kjøre den, og instruer eller rediger på nytt.",
       "Studien setter ord på vanlige friksjonspunkter, blant annet misforståelser og feil skjult inne i kode som ser plausibel ut.",
       "Å se den faktiske sløyfen gjør vibe coding mulig å lære bort og peker mot bedre verktøy, instruksjoner og vanen med å verifisere resultater."
     ]
@@ -1059,45 +1059,45 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "oslo-ai": {
-    "lead": "Oslo AI er et veletablert meetup der folk i og rundt byen møtes for å snakke om kunstig intelligens på en jordnær og praktisk måte. Det drives av frivillige, det er gratis å bli med, og det er et av de større AI-miljøene i Norge.",
+    "lead": "Oslo AI er et veletablert meetup der folk i og rundt byen møtes for å snakke om kunstig intelligens på en jordnær og praktisk måte. Det drives av frivillige, det er gratis å bli med, og det er et av de større KI-miljøene i Norge.",
     "sections": [
       {
         "heading": "Hva det er",
         "paragraphs": [
-          "Oslo AI er et fellesskap som møtes fysisk, vanligvis på kveldstid, for å dele hva folk faktisk driver med innen AI. En typisk samling har én eller to foredragsholdere, en avslappet gjeng og tid til å prate etterpå. Det er ikke-kommersielt, noe som betyr at ingen er der for å selge deg et kurs eller et produkt. De frivillige som arrangerer det, gjør det fordi de er glade i temaet og ønsker at andre skal lære.",
+          "Oslo AI er et fellesskap som møtes fysisk, vanligvis på kveldstid, for å dele hva folk faktisk driver med innen KI. En typisk samling har én eller to foredragsholdere, en avslappet gjeng og tid til å prate etterpå. Det er ikke-kommersielt, noe som betyr at ingen er der for å selge deg et kurs eller et produkt. De frivillige som arrangerer det, gjør det fordi de er glade i temaet og ønsker at andre skal lære.",
           "Gruppen har holdt på i flere år, og har derfor bygget opp en stabil tilhengerskare av ingeniører, forskere, studenter og nysgjerrige nykommere. Du trenger ingen teknisk bakgrunn for å komme innom. Klarer du å følge et foredrag og stille et spørsmål, hører du hjemme der."
         ]
       },
       {
         "heading": "Kjernetanken",
         "paragraphs": [
-          "Hele poenget er å holde AI forankret i ekte arbeid. I stedet for abstrakt hype om hva maskiner kanskje kan gjøre en gang i framtiden, handler foredragene gjerne om ting folk har bygget og problemene de støtte på underveis. Du får høre hvordan en modell ble trent, hvorfor et prosjekt feilet, hvordan et datasett så ut, og hvordan et team fikset en gjenstridig feil.",
-          "Det er nettopp dette fokuset på historier fra virkeligheten som gjør et slikt meetup verdifullt. Å bare lese om AI kan gi deg et ryddig, men urealistisk bilde. Å sitte i et rom mens noen forteller om sin rotete og ærlige erfaring, gir deg en langt bedre forståelse av hvordan feltet faktisk fungerer."
+          "Hele poenget er å holde KI forankret i ekte arbeid. I stedet for abstrakt hype om hva maskiner kanskje kan gjøre en gang i framtiden, handler foredragene gjerne om ting folk har bygget og problemene de støtte på underveis. Du får høre hvordan en modell ble trent, hvorfor et prosjekt feilet, hvordan et datasett så ut, og hvordan et team fikset en gjenstridig feil.",
+          "Det er nettopp dette fokuset på historier fra virkeligheten som gjør et slikt meetup verdifullt. Å bare lese om KI kan gi deg et ryddig, men urealistisk bilde. Å sitte i et rom mens noen forteller om sin rotete og ærlige erfaring, gir deg en langt bedre forståelse av hvordan feltet faktisk fungerer."
         ]
       },
       {
         "heading": "Hvorfor det betyr noe",
         "paragraphs": [
-          "Hvis du så vidt har begynt å bygge med AI, er den raskeste måten å lære på å være tett på folk som er noen skritt foran og villige til å dele. Oslo AI er akkurat et sånt sted. Du plukker opp begreper, du ser hvilke verktøy folk stoler på, og du finner samarbeidspartnere eller mentorer uten å måtte betale for det.",
-          "Det betyr også noe fordi det er lokalt. Forbindelsene du knytter, er med folk du kan møte igjen over en kaffe, og det gjør et engangsforedrag om til et fellesskap som varer. For alle i Oslo-området som vil ta AI på alvor, er dette et naturlig første stoppested."
+          "Hvis du så vidt har begynt å bygge med KI, er den raskeste måten å lære på å være tett på folk som er noen skritt foran og villige til å dele. Oslo AI er akkurat et sånt sted. Du plukker opp begreper, du ser hvilke verktøy folk stoler på, og du finner samarbeidspartnere eller mentorer uten å måtte betale for det.",
+          "Det betyr også noe fordi det er lokalt. Forbindelsene du knytter, er med folk du kan møte igjen over en kaffe, og det gjør et engangsforedrag om til et fellesskap som varer. For alle i Oslo-området som vil ta KI på alvor, er dette et naturlig første stoppested."
         ]
       }
     ],
     "keyPoints": [
       "Gratis å delta på og drevet helt av frivillige, uten noe salgssnakk på lasset.",
-      "Et av de større AI-miljøene i Norge, så publikum er variert og aktivt.",
+      "Et av de større KI-miljøene i Norge, så publikum er variert og aktivt.",
       "Foredragene handler om praktisk arbeid fra virkeligheten, ikke abstrakt hype.",
       "Inkluderende både for nybegynnere og for ingeniører og forskere.",
       "At man møtes fysisk gjør det lett å bygge varige lokale forbindelser."
     ]
   },
   "ai-tinkerers-oslo": {
-    "lead": "AI Tinkerers Oslo er den lokale avleggeren av et verdensomspennende nettverk for folk som liker å bygge ting med AI framfor bare å snakke om det. Forvent demokvelder, hackathon og en praktisk stemning der man bretter opp ermene.",
+    "lead": "AI Tinkerers Oslo er den lokale avleggeren av et verdensomspennende nettverk for folk som liker å bygge ting med KI framfor bare å snakke om det. Forvent demokvelder, hackathon og en praktisk stemning der man bretter opp ermene.",
     "sections": [
       {
         "heading": "Hva det er",
         "paragraphs": [
-          "AI Tinkerers er et globalt byggermiljø med avdelinger i mange byer, og Oslo har en av dem. Formatet er enkelt: folk som lager noe med AI, kommer sammen, viser fram det de har, og lærer av hverandre. Ordet tinkerer avslører det hele. Dette er en gjeng som heller vil ha en fungerende prototype enn en velpolert lysbildepresentasjon.",
+          "AI Tinkerers er et globalt byggermiljø med avdelinger i mange byer, og Oslo har en av dem. Formatet er enkelt: folk som lager noe med KI, kommer sammen, viser fram det de har, og lærer av hverandre. Ordet tinkerer avslører det hele. Dette er en gjeng som heller vil ha en fungerende prototype enn en velpolert lysbildepresentasjon.",
           "Hver avdeling formes av sine lokale arrangører og medlemmer, så arrangementene i Oslo har sitt eget preg samtidig som de er en del av noe større. Fordi det inngår i et globalt nettverk, knytter det du lærer lokalt seg ofte til idéer og folk langt utenfor Norges grenser."
         ]
       },
@@ -1111,13 +1111,13 @@ export const explainersNo: Record<string, Explainer> = {
       {
         "heading": "Hvorfor det betyr noe",
         "paragraphs": [
-          "Hvis målet ditt er å bygge med AI, er dette den typen fellesskap som dytter deg til faktisk å levere. Det å ta med selv en bitte liten demo å vise fram er en sterk motivasjon, og responsen du får, gjør neste versjon skarpere. Du går derfra med konkrete idéer i stedet for en vag følelse av at du burde prøve noe en gang.",
+          "Hvis målet ditt er å bygge med KI, er dette den typen fellesskap som dytter deg til faktisk å levere. Det å ta med selv en bitte liten demo å vise fram er en sterk motivasjon, og responsen du får, gjør neste versjon skarpere. Du går derfra med konkrete idéer i stedet for en vag følelse av at du burde prøve noe en gang.",
           "Det betyr også noe på grunn av folkene du møter. Demokvelder og hackathon løfter fram dem som faktisk gjør noe i en by, de som gjerne sitter og feilsøker sammen med deg eller starter et sideprosjekt med deg. For byggere spesielt er det et nettverk som er vanskelig å finne andre steder."
         ]
       }
     ],
     "keyPoints": [
-      "Del av et globalt byggermiljø innen AI, med en avdeling forankret i Oslo.",
+      "Del av et globalt byggermiljø innen KI, med en avdeling forankret i Oslo.",
       "Sentrert rundt demokvelder der folk viser fram fungerende prototyper.",
       "Hackathon gir deg et konsentrert tidsrom til å bygge noe fra bunnen av.",
       "Praktisk anlagt fra grunnen av, der ekte prosjekter går foran lysbilder.",
@@ -1125,26 +1125,26 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "vibe-coding-collective": {
-    "lead": "Vibe Coding Collective er et internasjonalt fellesskap bygget rundt avslappede, sosiale kodeøkter der folk bygger med AI i godt selskap. Det er vennlig overfor nybegynnere og lener seg mer mot lett stemning enn mot skremmende ekspertise.",
+    "lead": "Vibe Coding Collective er et internasjonalt fellesskap bygget rundt avslappede, sosiale kodeøkter der folk bygger med KI i godt selskap. Det er vennlig overfor nybegynnere og lener seg mer mot lett stemning enn mot skremmende ekspertise.",
     "sections": [
       {
         "heading": "Hva det er",
         "paragraphs": [
-          "Vibe Coding Collective samler folk som vil kode sammen i lavterskelomgivelser. Navnet fanger ånden. Stemningen betyr like mye som resultatet. Øktene føles mindre som en formell undervisningstime og mer som en gjeng venner som setter seg ned for å lage ting, ofte med AI-verktøy til hjelp underveis.",
+          "Vibe Coding Collective samler folk som vil kode sammen i lavterskelomgivelser. Navnet fanger ånden. Stemningen betyr like mye som resultatet. Øktene føles mindre som en formell undervisningstime og mer som en gjeng venner som setter seg ned for å lage ting, ofte med KI-verktøy til hjelp underveis.",
           "Fordi det er internasjonalt, er fellesskapet ikke knyttet til én enkelt by, noe som betyr at en bred miks av bakgrunner og tidssoner dukker opp. Den åpenheten er en del av sjarmen. Enten du er en erfaren utvikler eller noen som aldri har skrevet en linje kode, skal døren være lett å gå inn av."
         ]
       },
       {
         "heading": "Kjernetanken",
         "paragraphs": [
-          "Vibe coding beskriver en nyere måte å bygge programvare på, der du lener deg på AI for å skrive mye av koden mens du styrer med beskrivelser av hva du vil ha, formulert i vanlig språk. I stedet for å pugge syntaks, beskriver du en idé, ser hva AI-en produserer, prøver det ut og justerer. Kollektivet gjør den ellers ensomme praksisen til noe delt og sosialt.",
+          "Vibe coding beskriver en nyere måte å bygge programvare på, der du lener deg på KI for å skrive mye av koden mens du styrer med beskrivelser av hva du vil ha, formulert i vanlig språk. I stedet for å pugge syntaks, beskriver du en idé, ser hva KI-en produserer, prøver det ut og justerer. Kollektivet gjør den ellers ensomme praksisen til noe delt og sosialt.",
           "Grunnen til at dette slår an, er at det senker terskelen for å lage noe ekte. Folk som tidligere ble stengt ute av den bratte læringskurven i programmering, kan nå få et fungerende resultat allerede første kveld. Å gjøre det sammen med andre gjør de uunngåelige forvirrende øyeblikkene til en del av moroa snarere enn en grunn til å gi opp."
         ]
       },
       {
         "heading": "Hvorfor det betyr noe",
         "paragraphs": [
-          "For alle som er nysgjerrige på å bygge med AI, men usikre på hvor de skal begynne, er en nybegynnervennlig, sosial gruppe nesten ideelt. Du får stille de angivelig dumme spørsmålene, se hvordan andre folk lager prompter og itererer, og avslutte en økt med noe du faktisk har laget selv. Oppmuntring, ikke portvokting, er den rådende tonen.",
+          "For alle som er nysgjerrige på å bygge med KI, men usikre på hvor de skal begynne, er en nybegynnervennlig, sosial gruppe nesten ideelt. Du får stille de angivelig dumme spørsmålene, se hvordan andre folk lager prompter og itererer, og avslutte en økt med noe du faktisk har laget selv. Oppmuntring, ikke portvokting, er den rådende tonen.",
           "Det betyr også noe fordi det rammer inn koding som en kreativ, felles aktivitet snarere enn et ensomt teknisk slit. Den vridningen får folk til å komme tilbake, og det er nettopp den typen imøtekommende fellesskap som hjelper nykommere med å finne fotfeste i et felt som beveger seg raskt."
         ]
       }
@@ -1152,7 +1152,7 @@ export const explainersNo: Record<string, Explainer> = {
     "keyPoints": [
       "Et internasjonalt fellesskap organisert rundt avslappede, sosiale kodeøkter.",
       "Uttalt nybegynnervennlig, med en varm framfor skremmende tone.",
-      "Laget for å bygge med AI, der du beskriver idéer og lar AI hjelpe til med å skrive koden.",
+      "Laget for å bygge med KI, der du beskriver idéer og lar KI hjelpe til med å skrive koden.",
       "Senker terskelen så nykommere kan avslutte en økt med noe ekte.",
       "Behandler koding som en kreativ, felles aktivitet i stedet for et ensomt slit."
     ]

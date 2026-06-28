@@ -75,7 +75,9 @@ export default function ResourcesTeaser() {
 
       <p className="mt-12 font-mono text-xs uppercase tracking-wider text-ink-faint">Or browse by topic</p>
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {resourceSections.map((s) => (
+        {resourceSections
+          .filter((s) => s.id !== "frontier")
+          .map((s) => (
           <Link
             key={s.id}
             href={`/resources#${s.id}`}

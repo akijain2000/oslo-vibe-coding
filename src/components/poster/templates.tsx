@@ -574,7 +574,7 @@ function Terminal({ data }: { data: PosterData }) {
           {data.title}
           <span style={{ color: C.ember }}>_</span>
         </h1>
-        <p style={{ marginTop: 30, fontFamily: MONO, fontSize: 34, color: C.cream, maxWidth: 820 }}>// {data.tagline}</p>
+        <p style={{ marginTop: 30, fontFamily: MONO, fontSize: 34, color: C.cream, maxWidth: 820 }}>{"// "}{data.tagline}</p>
         <div style={{ marginTop: 44, display: "flex", flexDirection: "column", gap: 16 }}>
           {row("when:", `${data.dateLabel}, ${data.timeLabel}`)}
           {row("where:", `${data.venue}, ${data.address}`)}

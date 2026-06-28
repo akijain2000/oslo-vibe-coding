@@ -10,16 +10,24 @@ type Props = {
   mark?: boolean;
   className?: string;
   href?: string | null;
+  /* Unique per usage so the SVG gradient id does not collide (Nav + Footer both render Logo) */
+  gradientId?: string;
 };
 
-export default function Logo({ tone = "light", mark = false, className = "", href = "/" }: Props) {
+export default function Logo({
+  tone = "light",
+  mark = false,
+  className = "",
+  href = "/",
+  gradientId = "logo-spark",
+}: Props) {
   const word = tone === "dark" ? "text-paper" : "text-ink";
 
   const inner = (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <SparkMark
         className="h-6 w-6 shrink-0 flicker"
-        gradientId="logo-spark"
+        gradientId={gradientId}
         title={mark ? brand.name : undefined}
       />
       {!mark && (
@@ -35,7 +43,7 @@ export default function Logo({ tone = "light", mark = false, className = "", hre
   if (href === null) return inner;
 
   return (
-    <Link href={href} aria-label={`${brand.name} — home`} className="inline-flex">
+    <Link href={href} aria-label={`${brand.name} home`} className="inline-flex">
       {inner}
     </Link>
   );

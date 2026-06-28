@@ -11,14 +11,14 @@ const C = {
   glow: "#ff7a4d",
   cream: "#fbf7f0",
   dim: "#b8b2c0",
-  faint: "#7d7888",
+  faint: "#9590a0",
 };
 const MONO = "var(--font-geist-mono), monospace";
 const VB = "0 0 320 200";
 
 function Svg({ children }: { children: React.ReactNode }) {
   return (
-    <svg viewBox={VB} className="h-full w-full" preserveAspectRatio="xMidYMid slice" role="img">
+    <svg viewBox={VB} className="h-full w-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <rect width="320" height="200" fill={C.bg} />
       {children}
     </svg>

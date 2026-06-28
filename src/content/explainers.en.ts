@@ -234,7 +234,7 @@ export const explainersEn: Record<string, Explainer> = {
     ]
   },
   "v0": {
-    "lead": "v0 turns a written prompt into front end user interface. You describe a screen, and it produces React components you can copy straight into your own project.",
+    "lead": "v0 turns a written prompt into a front-end user interface. You describe a screen, and it produces React components you can copy straight into your own project.",
     "sections": [
       {
         "heading": "What it actually is",
@@ -259,7 +259,7 @@ export const explainersEn: Record<string, Explainer> = {
       }
     ],
     "keyPoints": [
-      "Turns a text prompt into front end user interface.",
+      "Turns a text prompt into a front-end user interface.",
       "Made by Vercel.",
       "Outputs real React components you can copy into your own project.",
       "Gives you an editable draft you own, not a fixed image.",

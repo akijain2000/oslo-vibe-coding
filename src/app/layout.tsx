@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     title: "Oslo Vibe Coding: no one codes alone",
     description: brand.description,
   },
+  // No static title/description here, so each page's openGraph values flow into the
+  // Twitter card via Next's fallback (otherwise every subpage shows the homepage card).
   twitter: {
     card: "summary_large_image",
-    title: "Oslo Vibe Coding: no one codes alone",
-    description: brand.description,
   },
   robots: {
     index: true,

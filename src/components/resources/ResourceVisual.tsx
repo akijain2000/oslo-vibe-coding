@@ -10,7 +10,7 @@ export default function ResourceVisual({ item }: { item: Resource }) {
     return (
       <Image
         src={item.image}
-        alt={item.title}
+        alt=""
         fill
         sizes="(max-width: 768px) 100vw, 768px"
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

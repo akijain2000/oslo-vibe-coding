@@ -13,7 +13,7 @@
   --color-line: #e7ddcd; /* hairline borders on paper */
   --color-ink: #16151c; /* near-black, warm — text + dark sections */
   --color-ink-soft: #4b4956; /* secondary text */
-  --color-ink-faint: #8a8694; /* muted text */
+  --color-ink-faint: #6b6776; /* muted text (AA on cream) */
 
   --color-night: #110f17; /* deepest dark — hero, mission */
   --color-night-2: #1b1822; /* dark card */
@@ -22,7 +22,7 @@
 
   /* The spark */
   --color-ember: #ff5a2c; /* signature accent */
-  --color-ember-ink: #d83c12; /* ember text on cream (AA contrast) */
+  --color-ember-ink: #b8300c; /* ember text on cream + mist (AA) */
   --color-amber: #ffb020; /* spark gradient partner */
   --color-glow: #ff7a4d; /* lighter ember for dark backgrounds */
 
@@ -60,9 +60,11 @@ body {
 
 /* Keyboard focus ring */
 :focus-visible {
-  outline: 2px solid var(--color-ember);
-  outline-offset: 3px;
-  border-radius: 4px;
+  /* Dual ring stays visible on cream, night, and ember-filled buttons */
+  outline: 2px solid var(--color-paper);
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px var(--color-ember);
+  border-radius: 6px;
 }
 
 /* Gradient spark text */
