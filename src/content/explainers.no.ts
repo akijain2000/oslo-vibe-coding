@@ -134,6 +134,39 @@ export const explainersNo: Record<string, Explainer> = {
       "Et tydelig eksempel på KI som handler, ikke bare gir forslag."
     ]
   },
+  "codex": {
+    "lead": "Codex er OpenAIs kodeagent. Den leser, redigerer og kjører koden din, og du når den fra terminalen, redigeringsprogrammet ditt, en skrivebordsapp, nettet og inne i ChatGPT.",
+    "sections": [
+      {
+        "heading": "Hva det egentlig er",
+        "paragraphs": [
+          "Codex er én agent du møter gjennom flere dører. Terminalversjonen, kalt Codex CLI, kjører på din egen maskin i kommandolinjevinduet der utviklere skriver instruksjoner, og der kan den inspisere et repositorium, endre filer og kjøre kommandoer. Et repositorium, eller repo, er mappen som rommer all koden i et prosjekt og historikken til prosjektet. Det finnes også en utvidelse for redigeringsprogrammet som virker inne i VS Code, Cursor og JetBrains-verktøy, en skrivebordsapp og en skyversjon du åpner i nettleseren eller inne i ChatGPT.",
+          "OpenAI lager Codex, og den kjører på selskapets ferske frontmodeller i GPT-5-serien, med GPT-5.5 som standard. I tillegg til å skrive kode kan den forklare en ukjent kodebase, se gjennom kode og hjelpe med å feilsøke problemer. CLI-en er åpen kildekode under Apache-2.0-lisensen, så hvem som helst kan lese hvordan den fungerer, og du kan logge inn med et ChatGPT-abonnement eller med en API-nøkkel."
+        ]
+      },
+      {
+        "heading": "Kjernetanken, enkelt forklart",
+        "paragraphs": [
+          "Du gir Codex et mål med vanlige ord, og den jobber i en løkke: den leser de relevante filene, gjør en endring, kjører noe for å sjekke resultatet, og bestemmer deretter hva den skal gjøre videre. På din egen maskin jobber den inne i en sandkasse, et avgrenset rom som begrenser hva den kan ta i, noe som senker sjansen for en uønsket endring mens den prøver seg fram.",
+          "Skyversjonen går et steg lenger. Du gir den en oppgave, og den kjører på egen hånd i et isolert miljø, før den leverer tilbake en ferdig endring du kan se gjennom. Den kan kjøre flere oppgaver samtidig, og den lager en tydelig diff, en side-om-side-visning av hva som ble endret, sammen med en pull request. En pull request, eller PR, er den vanlige måten å foreslå endringer i en delt kodebase på, slik at andre kan se på dem før de blir flettet inn."
+        ]
+      },
+      {
+        "heading": "Hvorfor det betyr noe når du bygger med KI",
+        "paragraphs": [
+          "Codex viser hvor fleksibelt en KI-agent kan tilpasse seg måten du allerede jobber på. Du kan starte en oppgave i redigeringsprogrammet, la skyen fullføre den mens du gjør noe annet, og deretter se gjennom resultatet når det er klart. Du kan også koble Codex til GitHub-kontoen din, tjenesten der mye av verdens kode ligger, og gi den arbeid ved å nevne den på en sak eller en pull request, som den tar tak i og gjør om til et forslag til endring.",
+          "For en nybegynner er lærdommen at den samme agenten kan sitte stille i terminalen din eller ta en hel jobb av hendene dine i bakgrunnen. Du velger hvor mye du gir fra deg, og du forblir den som ser gjennom og godkjenner det som kommer tilbake."
+        ]
+      }
+    ],
+    "keyPoints": [
+      "Laget av OpenAI, og tilgjengelig fra terminalen, en utvidelse for redigeringsprogrammet, en skrivebordsapp, nettet og inne i ChatGPT.",
+      "Jobber i en løkke på det virkelige prosjektet ditt: leser filer, redigerer kode og kjører kommandoer for å sjekke seg selv.",
+      "Skymodusen kan ta en oppgave, jobbe med den på egen hånd i et isolert miljø, og levere tilbake en ferdig endring.",
+      "Kobler seg til GitHub: nevn den på en sak eller en pull request, så tar den oppgaven og foreslår en endring.",
+      "Kjører lokalt inne i en sandkasse for å begrense uønskede endringer, og terminalversjonen er åpen kildekode under Apache-2.0."
+    ]
+  },
   "cursor": {
     "lead": "Cursor er et kodeeditor med KI bygget inn i kjernen. Det ser ut og føles som en kjent editor, men en modell er vevd gjennom hver del av hvordan du skriver og endrer kode.",
     "sections": [

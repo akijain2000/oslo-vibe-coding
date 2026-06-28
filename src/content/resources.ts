@@ -70,6 +70,15 @@ export const resourceSections: ResourceSection[] = [
         free: false,
       },
       {
+        title: "Codex",
+        by: "OpenAI",
+        url: "https://developers.openai.com/codex/",
+        image: "/resources/codex.png",
+        tldr:
+          "OpenAI's coding agent that reads, edits, and runs your code, reachable from your terminal, your editor, a desktop app, the web, and inside ChatGPT. Its cloud mode can take a task, work on it on its own, and hand back a finished change, and it connects to GitHub so you can hand it work by tagging it on an issue or a pull request. Try it if you want one agent that fits around how you already work and can run jobs in the background while you do something else.",
+        free: false,
+      },
+      {
         title: "Cursor",
         by: "Anysphere",
         url: "https://docs.cursor.com/",
