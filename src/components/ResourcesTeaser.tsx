@@ -25,24 +25,53 @@ export default function ResourcesTeaser() {
         </Link>
       </div>
 
-      <Link
-        href="/start"
-        className="group mt-12 flex flex-col items-start justify-between gap-5 rounded-card bg-night p-7 text-paper transition-colors hover:bg-night-2 sm:flex-row sm:items-center sm:p-9"
-      >
-        <div>
-          <p className="font-mono text-xs uppercase tracking-wider text-glow">New to all this?</p>
-          <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">
-            Getting started with vibe coding
-          </h3>
-          <p className="mt-2 max-w-xl text-cream-dim">
-            The whole thing from zero, in one read. Never written a line of code? Start here and ship
-            something tonight.
-          </p>
-        </div>
-        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white">
-          Read the guide <span aria-hidden>→</span>
-        </span>
-      </Link>
+      <div className="mt-12 grid gap-4 lg:grid-cols-2">
+        <Link
+          href="/start"
+          className="group flex flex-col justify-between gap-6 rounded-card bg-night p-7 text-paper transition-colors hover:bg-night-2 sm:p-9"
+        >
+          <div>
+            <p className="font-mono text-xs uppercase tracking-wider text-glow">New to all this?</p>
+            <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+              Getting started with vibe coding
+            </h3>
+            <p className="mt-2 text-cream-dim">
+              The whole thing from zero, in one read. Never written a line of code? Start here and ship
+              something tonight.
+            </p>
+          </div>
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white">
+            Read the guide <span aria-hidden>→</span>
+          </span>
+        </Link>
+
+        <Link
+          href="/resources#frontier"
+          className="group flex flex-col justify-between gap-6 rounded-card border border-line bg-mist p-7 transition-colors hover:border-ink/20 sm:p-9"
+        >
+          <div>
+            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">Ready for the deep end?</p>
+            <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Frontier reading</h3>
+            <p className="mt-2 text-ink-soft">
+              The papers that built modern AI, curated from Stanford&apos;s CS 153, each with a
+              plain-English TL;DR.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["Attention", "GPT-3", "Scaling Laws", "Chinchilla", "Diffusion", "RLHF"].map((t) => (
+                <span
+                  key={t}
+                  className="rounded-pill border border-line bg-paper px-3 py-1 font-mono text-xs text-ink-soft"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-paper">
+            Read the canon <span aria-hidden>→</span>
+          </span>
+        </Link>
+      </div>
 
       <p className="mt-12 font-mono text-xs uppercase tracking-wider text-ink-faint">Or browse by topic</p>
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

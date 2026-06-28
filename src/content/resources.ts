@@ -283,6 +283,59 @@ export const resourceSections: ResourceSection[] = [
     ],
   },
   {
+    id: "guest-lectures",
+    title: "From the guest lectures",
+    intro:
+      "CS 153 puts you in the room with the people building the frontier. Here is some of the work behind them: generative images, video, and voice.",
+    items: [
+      {
+        title: "High-Resolution Image Synthesis with Latent Diffusion Models",
+        by: "Rombach, Blattmann et al.",
+        url: "https://arxiv.org/abs/2112.10752",
+        diagram: "diffusion",
+        tldr:
+          "The 2022 paper behind Stable Diffusion, co-authored by CS 153 guest Andreas Blattmann. Its key move was running the diffusion process in a compressed latent space rather than on raw pixels, which made high-quality image generation fast enough for consumer hardware and cheap enough to open up to everyone. A big reason AI image generation went mainstream.",
+        free: true,
+      },
+      {
+        title: "Stable Video Diffusion",
+        by: "Blattmann et al., Stability AI",
+        url: "https://arxiv.org/abs/2311.15127",
+        diagram: "diffusion",
+        tldr:
+          "A 2023 paper that extends the Stable Diffusion approach from still images to short video, learning to produce consistent motion across frames. It shares authors with the original Stable Diffusion work and was an important step toward open, practical video generation.",
+        free: true,
+      },
+      {
+        title: "Luma AI",
+        by: "Amit Jain",
+        url: "https://lumalabs.ai/",
+        image: "/resources/luma.jpg",
+        tldr:
+          "The company founded by CS 153 guest Amit Jain, building multimodal AI for video and 3D, including the Dream Machine video generator and research on simulating the world. A good look at where generative media is heading beyond text and images.",
+        free: true,
+      },
+      {
+        title: "ElevenLabs",
+        by: "Mati Staniszewski",
+        url: "https://elevenlabs.io/",
+        image: "/resources/elevenlabs.png",
+        tldr:
+          "The AI audio company co-founded by CS 153 guest Mati Staniszewski, known for natural text-to-speech, voice cloning, and real-time translation. A clear example of a frontier company that stays focused on one modality, voice, rather than chasing every modality at once.",
+        free: true,
+      },
+      {
+        title: "Why voice will be the core interface",
+        by: "Sequoia · Training Data",
+        url: "https://sequoiacap.com/podcast/training-data-mati-staniszewski/",
+        image: "/resources/elevenlabs-pod.png",
+        tldr:
+          "A 2025 Training Data podcast conversation with ElevenLabs CEO Mati Staniszewski on why he thinks voice will become a core interface for technology, and how a small, focused team competed with much larger labs. A good listen on building a frontier company around a narrow bet.",
+        free: true,
+      },
+    ],
+  },
+  {
     id: "for-everyone",
     title: "AI for everyone",
     intro: "Why we run this for free and in the open. Cheap, safe access to AI should not be a privilege.",
