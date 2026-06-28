@@ -47,9 +47,6 @@ export default function Hero() {
             </svg>
             Join the community
           </CTAButton>
-          <CTAButton href="/#how" variant="ghost-dark">
-            What actually happens?
-          </CTAButton>
         </div>
 
         {upcomingEvent && (

@@ -1,5 +1,7 @@
 import { Section, Eyebrow, SectionHeading } from "./Section";
 
+// One dark "why this exists" moment. Merges the old Ethos beliefs and the
+// Mission pillars so the page makes the argument once, not twice.
 const pillars = [
   {
     title: "Free, always",
@@ -7,7 +9,7 @@ const pillars = [
   },
   {
     title: "Open in public",
-    body: "We share the decks, the recaps and the resources. Take them, use them, pass them on.",
+    body: "We share the decks, the recaps, and the resources. Take them, use them, pass them on.",
   },
   {
     title: "For everyone",
@@ -15,22 +17,24 @@ const pillars = [
   },
 ];
 
-export default function Mission() {
+export default function Belief() {
   return (
-    <Section id="mission" tone="night">
+    <Section id="why" tone="night">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <div>
           <Eyebrow dark>Why it&apos;s free</Eyebrow>
           <SectionHeading className="mt-4 text-paper">
-            AI for everyone. <span className="spark-text">We mean it.</span>
+            The hard part was never the code. <span className="spark-text">It was doing it alone.</span>
           </SectionHeading>
           <p className="mt-6 text-lg leading-relaxed text-cream-dim">
-            Cheap, safe access to AI should not be a privilege. We run this as a nonprofit, in the
-            open, because the most powerful tools in a generation are landing right now, and whether
-            they reach everyone is partly a question of who gets shown the door in.
+            The tools got good. Anyone can build now, and curiosity is the only thing you need at the
+            door. What is usually missing is a room, a few hours, and some company.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-cream-dim">
-            So we keep the door open. That is the whole idea.
+            Cheap, safe access to AI should not be a privilege. We run this as a nonprofit, in the
+            open, because the most powerful tools in a generation are landing right now, and whether
+            they reach everyone is partly a question of who gets shown the door in. So we keep the
+            door open.
           </p>
         </div>
 

@@ -1,18 +1,23 @@
 import Link from "next/link";
 import { Section, Eyebrow, SectionHeading, Lede } from "./Section";
+import Carousel from "./Carousel";
 import { resourceSections } from "@/content/resources";
 
-export default function ResourcesTeaser() {
+// The on-ramp: two signpost banners, then the topics as a swipeable strip.
+// The full library lives on /resources; the home only sets the direction.
+export default function Learn() {
+  const topics = resourceSections.filter((s) => s.id !== "frontier");
+
   return (
     <Section id="resources" tone="paper">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div className="max-w-2xl">
           <Eyebrow>Start anywhere</Eyebrow>
-          <SectionHeading className="mt-4">A free on-ramp, even if Thursday is far away.</SectionHeading>
+          <SectionHeading className="mt-4">A free on-ramp, even when Thursday is far away.</SectionHeading>
           <div className="mt-5">
             <Lede>
-              The resources we actually point newcomers to. What vibe coding is, the tools, free
-              courses from zero, and why we think AI should reach everyone.
+              What vibe coding is, the tools, free courses from zero, and the papers behind modern
+              AI. The things we actually point newcomers to.
             </Lede>
           </div>
         </div>
@@ -20,7 +25,7 @@ export default function ResourcesTeaser() {
           href="/resources"
           className="inline-flex items-center gap-1.5 rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#26242f]"
         >
-          Open the resource library
+          Open the library
           <span aria-hidden>→</span>
         </Link>
       </div>
@@ -36,8 +41,8 @@ export default function ResourcesTeaser() {
               Getting started with vibe coding
             </h3>
             <p className="mt-2 text-cream-dim">
-              The whole thing from zero, in one read. Never written a line of code? Start here and ship
-              something tonight.
+              The whole thing from zero, in one read. Never written a line of code? Start here and
+              ship something tonight.
             </p>
           </div>
           <span className="inline-flex w-fit items-center gap-1.5 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white">
@@ -73,25 +78,29 @@ export default function ResourcesTeaser() {
         </Link>
       </div>
 
-      <p className="mt-12 font-mono text-xs uppercase tracking-wider text-ink-faint">Or browse by topic</p>
-      <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {resourceSections
-          .filter((s) => s.id !== "frontier")
-          .map((s) => (
-          <Link
-            key={s.id}
-            href={`/resources#${s.id}`}
-            className="group rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20"
-          >
-            <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
-              {s.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.intro}</p>
-            <span className="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-ink-faint">
-              {s.items.length} links →
-            </span>
-          </Link>
-        ))}
+      <div className="mt-12">
+        <Carousel
+          ariaLabel="Resource topics"
+          header={
+            <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">Or browse by topic</p>
+          }
+        >
+          {topics.map((s) => (
+            <Link
+              key={s.id}
+              href={`/resources#${s.id}`}
+              className="group flex w-[260px] shrink-0 snap-start flex-col rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20 sm:w-[300px]"
+            >
+              <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
+                {s.title}
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">{s.intro}</p>
+              <span className="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-ink-faint">
+                {s.items.length} links →
+              </span>
+            </Link>
+          ))}
+        </Carousel>
       </div>
     </Section>
   );
