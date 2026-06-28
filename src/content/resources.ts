@@ -147,6 +147,96 @@ export const resourceSections: ResourceSection[] = [
     ],
   },
   {
+    id: "frontier",
+    title: "Go to the frontier",
+    intro:
+      "Curated from Stanford's CS 153: Frontier Systems. This is the deep end, research papers, and you do not need any of it to start. But if you want to understand where all of this came from, here is the canon.",
+    items: [
+      {
+        title: "CS 153: Frontier Systems",
+        by: "Stanford",
+        url: "https://cs153.stanford.edu/",
+        blurb:
+          "The Stanford course this list comes from: the whole AI stack, from silicon to policy, with the people building the frontier.",
+        free: true,
+      },
+      {
+        title: "AlexNet: ImageNet classification with deep CNNs",
+        by: "Krizhevsky, Sutskever & Hinton",
+        url: "https://proceedings.neurips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+        blurb:
+          "2012. The result that started the modern era by crushing image recognition. The moment “just train a big neural net” began to win.",
+        free: true,
+      },
+      {
+        title: "Word2Vec: Efficient Estimation of Word Representations",
+        by: "Mikolov et al., Google",
+        url: "https://arxiv.org/abs/1301.3781",
+        blurb:
+          "2013. Words become vectors with meaning, where king minus man plus woman lands near queen. The seed of modern embeddings.",
+        free: true,
+      },
+      {
+        title: "Playing Atari with Deep Reinforcement Learning",
+        by: "DeepMind",
+        url: "https://arxiv.org/abs/1312.5602",
+        blurb: "2013. A network learns to play Atari from raw pixels. An early glimpse of agents that learn by doing.",
+        free: true,
+      },
+      {
+        title: "Attention Is All You Need",
+        by: "Vaswani et al., Google",
+        url: "https://arxiv.org/abs/1706.03762",
+        blurb: "2017. Introduced the transformer. Every model you touch at a session descends from this one paper.",
+        free: true,
+      },
+      {
+        title: "BERT: Pre-training of Deep Bidirectional Transformers",
+        by: "Google",
+        url: "https://arxiv.org/abs/1810.04805",
+        blurb: "2018. Pre-train on a mountain of text, then fine-tune. Made transfer learning the default in language.",
+        free: true,
+      },
+      {
+        title: "Scaling Laws for Neural Language Models",
+        by: "OpenAI",
+        url: "https://arxiv.org/abs/2001.08361",
+        blurb: "2020. Why more compute, more data and bigger models kept winning. The empirical backbone of the boom.",
+        free: true,
+      },
+      {
+        title: "Language Models are Few-Shot Learners (GPT-3)",
+        by: "OpenAI",
+        url: "https://arxiv.org/abs/2005.14165",
+        blurb:
+          "2020. A big enough model can do new tasks from a couple of examples. The moment language models started to feel general.",
+        free: true,
+      },
+      {
+        title: "Denoising Diffusion Probabilistic Models",
+        by: "Ho, Jain & Abbeel",
+        url: "https://arxiv.org/abs/2006.11239",
+        blurb: "2020. The math behind today's image and video generators.",
+        free: true,
+      },
+      {
+        title: "Training Language Models to Follow Instructions (InstructGPT)",
+        by: "OpenAI",
+        url: "https://arxiv.org/abs/2203.02155",
+        blurb:
+          "2022. How raw models became helpful assistants that do what you ask. The RLHF technique behind the chat era.",
+        free: true,
+      },
+      {
+        title: "Training Compute-Optimal LLMs (Chinchilla)",
+        by: "DeepMind",
+        url: "https://arxiv.org/abs/2203.15556",
+        blurb: "2022. The correction to scaling laws: for a given budget, train on far more data than people assumed.",
+        free: true,
+      },
+    ],
+  },
+  {
     id: "for-everyone",
     title: "AI for everyone",
     intro:
