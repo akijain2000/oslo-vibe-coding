@@ -395,3 +395,19 @@ export const resourceSections: ResourceSection[] = [
     ],
   },
 ];
+
+// Stable slug from a title, used for the per-resource explainer pages.
+export const resourceSlug = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[“”"’']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+export type FlatResource = Resource & { sectionId: string; sectionTitle: string; slug: string };
+
+export const allResources: FlatResource[] = resourceSections.flatMap((s) =>
+  s.items.map((it) => ({ ...it, sectionId: s.id, sectionTitle: s.title, slug: resourceSlug(it.title) })),
+);
+
+export const getResourceBySlug = (slug: string) => allResources.find((r) => r.slug === slug);
