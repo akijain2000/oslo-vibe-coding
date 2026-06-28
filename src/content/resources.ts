@@ -17,9 +17,10 @@ export type ResourceSection = {
   id: string;
   title: string;
   intro: string;
-  // "cards" (rich image grid, default) where the visual drives the choice,
-  // "list" (compact rows) for reference-heavy sections that just need scanning.
-  layout?: "cards" | "list";
+  // "grid" (2-col image cards, default) for short sections, "carousel" (a
+  // swipeable row of image cards) for the long sections so they stay visual
+  // without an endless scroll.
+  layout?: "grid" | "carousel";
   items: Resource[];
 };
 
@@ -60,6 +61,7 @@ export const resourceSections: ResourceSection[] = [
   },
   {
     id: "tools",
+    layout: "carousel",
     title: "The tools we use",
     intro: "You only need one to start. Pick whatever gets you building tonight.",
     items: [
@@ -155,7 +157,6 @@ export const resourceSections: ResourceSection[] = [
   },
   {
     id: "deeper",
-    layout: "list",
     title: "When you want to go deeper",
     intro: "For when the vibes meet a real codebase and you want to understand what is happening.",
     items: [
@@ -190,7 +191,7 @@ export const resourceSections: ResourceSection[] = [
   },
   {
     id: "frontier",
-    layout: "list",
+    layout: "carousel",
     title: "Go to the frontier",
     intro:
       "Curated from Stanford's CS 153: Frontier Systems. This is the deep end, research papers, and you do not need any of it to start. But if you want to understand where all of this came from, here is the canon.",
@@ -298,7 +299,7 @@ export const resourceSections: ResourceSection[] = [
   },
   {
     id: "guest-lectures",
-    layout: "list",
+    layout: "carousel",
     title: "From the guest lectures",
     intro:
       "CS 153 puts you in the room with the people building the frontier. Here is some of the work behind them: generative images, video, and voice.",

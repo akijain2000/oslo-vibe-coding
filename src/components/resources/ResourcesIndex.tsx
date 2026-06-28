@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Eyebrow } from "../Section";
+import Carousel from "../Carousel";
 import ResourceVisual from "./ResourceVisual";
 import ResourceSectionNav from "./ResourceSectionNav";
 import { resourceSections, resourceSlug, type Resource } from "@/content/resources";
@@ -7,20 +8,61 @@ import { getExplainer } from "@/content/explainers";
 import { ui, sectionMeta, localePath, type Locale } from "@/lib/i18n";
 import { links } from "@/content/links";
 
-// The index is for scanning and routing, so each item shows a one-line gloss
-// (its first sentence); the full explainer lives on the per-resource page.
-const firstSentence = (s: string) => {
-  const m = s.match(/^.*?[.!?](\s|$)/);
-  return (m ? m[0] : s).trim();
-};
+// One image card. The same card renders in both the 2-col grids and the
+// swipeable carousels; `inCarousel` just gives it a fixed width to snap to.
+function ResourceCard({
+  item,
+  href,
+  summary,
+  readMore,
+  badge,
+  inCarousel,
+}: {
+  item: Resource;
+  href: string;
+  summary: string;
+  readMore: string;
+  badge: string | null;
+  inCarousel: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`group flex flex-col overflow-hidden rounded-card border border-line bg-mist transition-colors hover:border-ink/20 ${
+        inCarousel ? "w-[280px] shrink-0 snap-start sm:w-[320px]" : ""
+      }`}
+    >
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-night">
+        <ResourceVisual item={item} />
+        {badge && (
+          <span className="absolute right-3 top-3 rounded-pill bg-night/75 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-paper backdrop-blur-sm">
+            {badge}
+          </span>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{item.by}</p>
+        <h3 className="mt-1.5 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
+          {item.title}
+        </h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-2">{summary}</p>
+        <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
+          {readMore} <span aria-hidden>→</span>
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export default function ResourcesIndex({ locale }: { locale: Locale }) {
   const t = ui[locale];
   const readMore = locale === "no" ? "Les mer" : "Read more";
   const comeToSession = locale === "no" ? "Eller bare kom på en samling" : "Or just come to a session";
 
-  const gloss = (item: Resource) => firstSentence(getExplainer(locale, resourceSlug(item.title))?.lead ?? item.tldr);
-  const href = (item: Resource) => localePath(locale, `/resources/${resourceSlug(item.title)}`);
+  const summaryOf = (item: Resource) => getExplainer(locale, resourceSlug(item.title))?.lead ?? item.tldr;
+  const hrefOf = (item: Resource) => localePath(locale, `/resources/${resourceSlug(item.title)}`);
+  const badgeOf = (sectionId: string, item: Resource) =>
+    sectionId === "tools" ? (item.free ? t.free : t.paid) : null;
 
   const navSections = resourceSections.map((s) => ({
     id: s.id,
@@ -55,71 +97,41 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
         <div className="space-y-20">
           {resourceSections.map((section) => {
             const meta = sectionMeta[locale][section.id];
-            return (
-              <section key={section.id} id={section.id} className="scroll-mt-32">
+            const isCarousel = section.layout === "carousel";
+
+            const heading = (
+              <div className="max-w-2xl">
                 <div className="flex items-baseline gap-3">
                   <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{meta.title}</h2>
                   <span className="font-mono text-sm text-ink-faint">{section.items.length}</span>
                 </div>
-                <p className="mt-2 max-w-2xl text-ink-soft">{meta.intro}</p>
+                <p className="mt-2 text-ink-soft">{meta.intro}</p>
+              </div>
+            );
 
-                {section.layout === "list" ? (
-                  <ul className="mt-7 divide-y divide-line border-t border-line">
-                    {section.items.map((item) => (
-                      <li key={item.title}>
-                        <Link href={href(item)} className="group flex items-center gap-4 py-4">
-                          <div className="min-w-0 flex-1">
-                            <div className="flex flex-wrap items-baseline gap-x-2.5">
-                              <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
-                                {item.title}
-                              </h3>
-                              <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">
-                                {item.by}
-                              </span>
-                            </div>
-                            <p className="mt-1 truncate text-sm text-ink-soft">{gloss(item)}</p>
-                          </div>
-                          <span
-                            aria-hidden
-                            className="shrink-0 text-ember-ink transition-transform group-hover:translate-x-0.5"
-                          >
-                            →
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+            const cards = section.items.map((item) => (
+              <ResourceCard
+                key={item.title}
+                item={item}
+                href={hrefOf(item)}
+                summary={summaryOf(item)}
+                readMore={readMore}
+                badge={badgeOf(section.id, item)}
+                inCarousel={isCarousel}
+              />
+            ));
+
+            return (
+              <section key={section.id} id={section.id} className="scroll-mt-32">
+                {isCarousel ? (
+                  <Carousel ariaLabel={meta.title} header={heading}>
+                    {cards}
+                  </Carousel>
                 ) : (
-                  <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                    {section.items.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={href(item)}
-                        className="group flex flex-col overflow-hidden rounded-card border border-line bg-mist transition-colors hover:border-ink/20"
-                      >
-                        <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-night">
-                          <ResourceVisual item={item} />
-                          {section.id === "tools" && (
-                            <span className="absolute right-3 top-3 rounded-pill bg-night/75 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-paper backdrop-blur-sm">
-                              {item.free ? t.free : t.paid}
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex flex-1 flex-col p-6">
-                          <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{item.by}</p>
-                          <h3 className="mt-1.5 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
-                            {item.title}
-                          </h3>
-                          <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-2">
-                            {gloss(item)}
-                          </p>
-                          <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
-                            {readMore} <span aria-hidden>→</span>
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                  <>
+                    {heading}
+                    <div className="mt-7 grid gap-5 sm:grid-cols-2">{cards}</div>
+                  </>
                 )}
               </section>
             );
