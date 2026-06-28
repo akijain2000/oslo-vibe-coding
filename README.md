@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Oslo Vibe Coding
 
-## Getting Started
+The website for [Oslo Vibe Coding](https://oslo-vibe-coding.vercel.app) — a free, open community
+for building software with AI in Oslo. No gatekeeping, beginners welcome.
 
-First, run the development server:
+Bold-but-simple Scandinavian identity. See [`BRAND.md`](BRAND.md) for the full brand guide.
+
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4 (CSS-first tokens in `src/app/globals.css`)
+- Deployed on Vercel
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit the content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Everything is content-driven and typed. No code changes needed to update the site:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Change | File |
+|---|---|
+| The next session, past events | `src/content/events.ts` |
+| Talks and decks | `src/content/talks.ts` |
+| Resource library | `src/content/resources.ts` |
+| Organisers | `src/content/people.ts` |
+| LinkedIn updates (drop in a post URN to embed it live) | `src/content/posts.ts` |
+| Community links | `src/content/links.ts` |
+| Name, tagline, SEO copy | `src/lib/brand.ts` |
 
-## Learn More
+## SEO
 
-To learn more about Next.js, take a look at the following resources:
+Metadata, canonical URLs, `sitemap.xml`, `robots.txt`, a dynamic Open Graph image
+(`src/app/opengraph-image.tsx`), a generated favicon, a web manifest, and JSON-LD structured data
+for the Organization and the next Event are all built in.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+vercel --prod
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Production: `https://oslo-vibe-coding.vercel.app`. To attach a custom domain later, add it in the
+Vercel project and update `SITE_URL` in `src/lib/brand.ts`.

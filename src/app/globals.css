@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Oslo Vibe Coding — design tokens.
+  Bold but simple. Warm cream paper, near-black ink, an ember spark accent.
+  A lit room in the dark: "no one codes alone."
+*/
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  /* Core palette */
+  --color-paper: #fbf7f0; /* warm cream — default background */
+  --color-mist: #f3ede1; /* slightly deeper cream — cards, washes */
+  --color-line: #e7ddcd; /* hairline borders on paper */
+  --color-ink: #16151c; /* near-black, warm — text + dark sections */
+  --color-ink-soft: #4b4956; /* secondary text */
+  --color-ink-faint: #8a8694; /* muted text */
+
+  --color-night: #110f17; /* deepest dark — hero, mission */
+  --color-night-2: #1b1822; /* dark card */
+  --color-night-line: #2e2a39; /* borders on dark */
+  --color-cream-dim: #d9d2c6; /* body text on dark */
+
+  /* The spark */
+  --color-ember: #ff5a2c; /* signature accent */
+  --color-ember-ink: #d83c12; /* ember text on cream (AA contrast) */
+  --color-amber: #ffb020; /* spark gradient partner */
+  --color-glow: #ff7a4d; /* lighter ember for dark backgrounds */
+
+  /* Type */
+  --font-display: var(--font-space-grotesk);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Radii */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky nav when jumping to anchors */
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: #fff;
+}
+
+/* Keyboard focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Gradient spark text */
+.spark-text {
+  background: linear-gradient(100deg, var(--color-ember), var(--color-amber));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle entrance */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.7s var(--ease-out-soft) both;
+}
+
+/* Spark flicker for the mark */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(0.94);
+  }
+}
+
+.flicker {
+  animation: flicker 3.2s var(--ease-out-soft) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .flicker {
+    animation: none;
+  }
 }
