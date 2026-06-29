@@ -12,6 +12,7 @@ import { links } from "@/content/links";
 // swipeable carousels; `inCarousel` just gives it a fixed width to snap to.
 function ResourceCard({
   item,
+  title,
   href,
   summary,
   readMore,
@@ -19,6 +20,7 @@ function ResourceCard({
   inCarousel,
 }: {
   item: Resource;
+  title: string;
   href: string;
   summary: string;
   readMore: string;
@@ -43,7 +45,7 @@ function ResourceCard({
       <div className="flex flex-1 flex-col p-6">
         <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{item.by}</p>
         <h3 className="mt-1.5 font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">
-          {item.title}
+          {title}
         </h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft line-clamp-2">{summary}</p>
         <span className="mt-4 inline-block text-sm font-semibold text-ember-ink">
@@ -113,6 +115,7 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
               <ResourceCard
                 key={item.title}
                 item={item}
+                title={locale === "no" ? item.titleNo ?? item.title : item.title}
                 href={hrefOf(item)}
                 summary={summaryOf(item)}
                 readMore={readMore}

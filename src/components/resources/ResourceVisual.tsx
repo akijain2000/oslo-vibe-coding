@@ -5,12 +5,12 @@ import { DIAGRAMS } from "./Diagrams";
 
 // The card/header visual for a resource: a self-hosted source preview image,
 // an original concept diagram, or the spark fallback.
-export default function ResourceVisual({ item }: { item: Resource }) {
+export default function ResourceVisual({ item, alt = "" }: { item: Resource; alt?: string }) {
   if (item.image) {
     return (
       <Image
         src={item.image}
-        alt=""
+        alt={alt}
         fill
         sizes="(max-width: 768px) 100vw, 768px"
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

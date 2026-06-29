@@ -5,6 +5,9 @@
 
 export type Resource = {
   title: string;
+  // Norwegian title for descriptive resources; proper nouns / paper titles omit
+  // it and fall back to `title`. Used on /no/resources pages.
+  titleNo?: string;
   by: string;
   url: string;
   tldr: string;
@@ -32,6 +35,7 @@ export const resourceSections: ResourceSection[] = [
     items: [
       {
         title: "The original “vibe coding” note",
+        titleNo: "Det opprinnelige «vibe coding»-notatet",
         by: "Andrej Karpathy",
         url: "https://x.com/karpathy/status/1886192184808149383",
         diagram: "vibe-loop",
@@ -41,6 +45,7 @@ export const resourceSections: ResourceSection[] = [
       },
       {
         title: "Not all AI-assisted programming is vibe coding",
+        titleNo: "Ikke all KI-assistert programmering er vibe coding",
         by: "Simon Willison",
         url: "https://simonwillison.net/2025/Mar/19/vibe-coding/",
         diagram: "vibe-vs-eng",
@@ -50,6 +55,7 @@ export const resourceSections: ResourceSection[] = [
       },
       {
         title: "What is vibe coding, exactly?",
+        titleNo: "Hva er vibe coding, egentlig?",
         by: "MIT Technology Review",
         url: "https://www.technologyreview.com/2025/04/16/1115135/what-is-vibe-coding-exactly/",
         image: "/resources/mit.jpg",

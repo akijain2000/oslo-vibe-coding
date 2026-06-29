@@ -19,14 +19,15 @@ export async function generateMetadata({
   const e = getExplainer("no", slug);
   if (!r) return {};
   const path = `/resources/${slug}`;
+  const title = r.titleNo ?? r.title;
   const description = e?.lead ?? r.tldr;
   return {
-    title: r.title,
+    title,
     description,
     alternates: { canonical: `/no${path}`, languages: hreflangAlternates(path) },
     openGraph: {
       type: "article",
-      title: `${r.title} · Oslo Vibe Coding`,
+      title: `${title} · Oslo Vibe Coding`,
       description,
       url: `${SITE_URL}/no${path}`,
       locale: "nb_NO",

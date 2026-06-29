@@ -17,12 +17,14 @@ export type Article = {
   readingTimeMin: number;
   takeaway: string;
   sourceUrl: string;
+  datePublished: string; // ISO date, used for Article structured data
   sections: ProseBlock[];
 };
 
 export const articles: Article[] = [
   {
     slug: "cheap-ai-developers-job",
+    datePublished: "2026-05-15",
     title: "What cheap AI does to the developer's job",
     dek: "Two old ideas, one from AI research and one from economics, explain why writing code got cheap and what that means for someone learning to build today.",
     author: "Akshat Jain",
@@ -107,6 +109,7 @@ export const articles: Article[] = [
   },
   {
     slug: "25507-on-ai-coding-agents",
+    datePublished: "2026-06-05",
     title: "I spent $25,507 on AI coding agents in twelve weeks",
     dek: "A twelve-week receipt from real agentic engineering, and what the numbers actually mean for your own spend.",
     author: "Akshat Jain",

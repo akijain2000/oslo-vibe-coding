@@ -35,7 +35,7 @@ export default function StartPage() {
           {/* table of contents */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">On this page</p>
-            <nav className="mt-4 flex flex-col gap-2.5">
+            <nav aria-label="On this page" className="mt-4 flex flex-col gap-2.5">
               {guide.sections.map((s, i) => (
                 <a
                   key={s.id}

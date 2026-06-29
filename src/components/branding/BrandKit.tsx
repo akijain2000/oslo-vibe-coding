@@ -184,6 +184,7 @@ export default function BrandKit() {
             <input
               value={data.headline}
               onChange={(e) => setData((d) => ({ ...d, headline: e.target.value }))}
+              maxLength={44}
               className="mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink"
             />
           </label>
@@ -192,6 +193,7 @@ export default function BrandKit() {
             <input
               value={data.subline}
               onChange={(e) => setData((d) => ({ ...d, subline: e.target.value }))}
+              maxLength={120}
               className="mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink"
             />
           </label>

@@ -13,6 +13,7 @@ export default function ResourceExplainer({ locale, slug }: { locale: Locale; sl
   if (!r || !e) notFound();
   const t = ui[locale];
   const section = sectionMeta[locale][r.sectionId];
+  const title = locale === "no" ? r.titleNo ?? r.title : r.title;
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function ResourceExplainer({ locale, slug }: { locale: Locale; sl
           </Link>
           <p className="mt-6 font-mono text-xs uppercase tracking-wider text-glow">{section?.title}</p>
           <h1 className="mt-2 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
-            {r.title}
+            {title}
           </h1>
           <div className="mt-5 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-wider text-cream-dim/70">
             <span>{r.by}</span>
@@ -44,7 +45,7 @@ export default function ResourceExplainer({ locale, slug }: { locale: Locale; sl
 
       <article className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-16">
         <div className="relative aspect-[16/10] overflow-hidden rounded-card border border-line bg-night">
-          <ResourceVisual item={r} />
+          <ResourceVisual item={r} alt={r.image ? `${title} preview` : ""} />
         </div>
 
         <p className="mt-4 font-mono text-xs uppercase tracking-wider text-ink-faint">{t.tldrNote}</p>

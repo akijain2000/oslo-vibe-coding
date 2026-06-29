@@ -157,6 +157,7 @@ export default function PosterMaker() {
                 <input
                   value={fields[f.key]}
                   onChange={(e) => set(f.key, e.target.value)}
+                  maxLength={f.key === "title" || f.key === "tagline" ? 80 : f.key === "address" ? 64 : 44}
                   className="mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink"
                 />
               </label>
@@ -168,6 +169,7 @@ export default function PosterMaker() {
               <input
                 value={rsvpUrl}
                 onChange={(e) => setRsvpUrl(e.target.value)}
+                maxLength={120}
                 className="mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink"
               />
             </label>

@@ -1,6 +1,7 @@
 import { brand, SITE_URL } from "@/lib/brand";
 import { links } from "@/content/links";
 import type { EventItem } from "@/content/events";
+import type { Article } from "@/content/articles";
 
 // Helper: render a JSON-LD block. Data is ours (not user input), so this is safe.
 function Ld({ data }: { data: object }) {
@@ -81,6 +82,28 @@ export function EventJsonLd({ event }: { event: EventItem }) {
           availability: "https://schema.org/InStock",
           url: event.rsvpUrl ?? SITE_URL,
         },
+      }}
+    />
+  );
+}
+
+// Article — emitted on each /articles/[slug] page for rich results.
+export function ArticleJsonLd({ article }: { article: Article }) {
+  const url = `${SITE_URL}/articles/${article.slug}`;
+  return (
+    <Ld
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.dek,
+        author: { "@type": "Person", name: article.author },
+        datePublished: article.datePublished,
+        dateModified: article.datePublished,
+        publisher: { "@id": `${SITE_URL}/#org` },
+        mainEntityOfPage: url,
+        image: `${SITE_URL}/opengraph-image`,
+        url,
       }}
     />
   );

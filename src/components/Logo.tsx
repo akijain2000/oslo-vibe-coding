@@ -43,7 +43,7 @@ export default function Logo({
   if (href === null) return inner;
 
   return (
-    <Link href={href} aria-label={`${brand.name} home`} className="inline-flex">
+    <Link href={href} aria-label={brand.name} className="inline-flex">
       {inner}
     </Link>
   );

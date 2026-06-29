@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Prose from "@/components/Prose";
 import SparkMark from "@/components/SparkMark";
 import { articles, getArticle } from "@/content/articles";
+import { ArticleJsonLd } from "@/components/JsonLd";
 import { links } from "@/content/links";
 import { SITE_URL } from "@/lib/brand";
 
@@ -40,6 +41,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
+      <ArticleJsonLd article={article} />
       <header className="bg-night text-paper">
         <div className="mx-auto max-w-3xl px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-40">
           <Link
@@ -92,7 +94,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
 
         <div className="mt-12 rounded-card bg-night p-8 text-center text-paper sm:p-10">
-          <h2 className="font-display text-2xl font-bold tracking-tight">Reading is good. Building is better.</h2>
+          <h2 className="font-display text-2xl font-bold tracking-tight">Read it, then build it with people.</h2>
           <p className="mx-auto mt-3 max-w-md text-cream-dim">
             Bring this to a free Oslo Vibe Coding drop-in and put it to work with people around you.
           </p>

@@ -25,7 +25,6 @@ const COLS_EN: Col[] = [
       { label: "Start here", href: "/start", external: false },
       { label: "Articles", href: "/articles", external: false },
       { label: "Resources", href: "/resources", external: false },
-      { label: "Poster maker", href: "/poster", external: false },
     ],
   },
 ];
@@ -87,7 +86,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-night-line pt-6 text-xs text-cream-dim/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-night-line pt-6 text-xs text-cream-dim/75 sm:flex-row sm:items-center sm:justify-between">
           <p>{closing}</p>
           <p>{built}</p>
         </div>
