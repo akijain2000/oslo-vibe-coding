@@ -72,34 +72,41 @@ const URL = "oslovibecoding.tech";
    Company pages crop hard and mobile keeps only the center ~900px, so content is
    centered inside the safe middle and the bottom-left is left clear for the logo. */
 
+// Crop-proof: a compact, dead-centered brand block with large margins on every
+// side, so LinkedIn's aggressive company-page crop (and mobile's center-only
+// view) can never cut the wordmark or the line. The logo sits over empty corner.
 function LinkedInCompanyEmber() {
   return (
-    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: `linear-gradient(110deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 360px" }}>
-      <Glow style={{ width: 540, height: 540, top: -260, right: 200, background: "radial-gradient(circle, rgba(255,255,255,0.22), transparent 65%)" }} />
-      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 18 }}>
-        <Spark size={46} id="li-co-ember-spark" solid={C.night} />
-        <span style={{ fontFamily: MONO, fontSize: 24, letterSpacing: "0.2em", textTransform: "uppercase", color: C.night }}>Code · Chill · Learn</span>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: `linear-gradient(110deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
+      <Glow style={{ width: 560, height: 560, top: -260, right: 320, background: "radial-gradient(circle, rgba(255,255,255,0.2), transparent 65%)" }} />
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+          <Spark size={58} id="li-co-ember-spark" solid={C.night} />
+          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 86, letterSpacing: "-0.02em", color: C.night }}>Oslo Vibe Coding</span>
+        </div>
+        <span style={{ fontFamily: MONO, fontSize: 30, letterSpacing: "0.04em", color: C.night, opacity: 0.85 }}>
+          Free AI coding sessions · {URL}
+        </span>
       </div>
-      <div style={{ position: "relative", marginTop: 22, fontFamily: DISPLAY, fontWeight: 700, fontSize: 92, lineHeight: 1, letterSpacing: "-0.025em", color: C.night, whiteSpace: "nowrap" }}>
-        Free AI coding sessions in Oslo
-      </div>
-      <div style={{ position: "relative", marginTop: 20, fontFamily: MONO, fontSize: 26, color: C.night, opacity: 0.82 }}>{URL}</div>
     </div>
   );
 }
 
 function LinkedInCompanyNight() {
   return (
-    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: C.night, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 360px" }}>
-      <Glow style={{ width: 760, height: 760, top: -260, left: "50%", marginLeft: -380, background: "radial-gradient(circle, rgba(255,90,44,0.4), transparent 62%)" }} />
-      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
-        <Spark size={44} id="li-co-night-spark" />
-        <span style={{ fontFamily: MONO, fontSize: 24, letterSpacing: "0.2em", textTransform: "uppercase", color: C.glow }}>Oslo Vibe Coding</span>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: C.night, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
+      <Glow style={{ width: 780, height: 780, top: -250, left: "50%", marginLeft: -390, background: "radial-gradient(circle, rgba(255,90,44,0.4), transparent 62%)" }} />
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+          <Spark size={58} id="li-co-night-spark" />
+          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 86, letterSpacing: "-0.02em", color: C.paper }}>
+            Oslo <span style={{ color: C.glow }}>Vibe</span> Coding
+          </span>
+        </div>
+        <span style={{ fontFamily: MONO, fontSize: 30, letterSpacing: "0.04em", color: C.creamDim }}>
+          No one codes alone. · {URL}
+        </span>
       </div>
-      <div style={{ position: "relative", marginTop: 20, fontFamily: DISPLAY, fontWeight: 700, fontSize: 104, lineHeight: 1, letterSpacing: "-0.03em", color: C.paper, whiteSpace: "nowrap" }}>
-        No one codes <span style={{ color: C.glow }}>alone</span>.
-      </div>
-      <div style={{ position: "relative", marginTop: 20, fontFamily: MONO, fontSize: 26, color: C.creamDim }}>Free AI coding sessions · {URL}</div>
     </div>
   );
 }
