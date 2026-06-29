@@ -206,7 +206,7 @@ export const explainersNo: Record<string, Explainer> = {
       {
         "heading": "Hva det egentlig er",
         "paragraphs": [
-          "Vanligvis betyr det å gjøre en idé om til en levende nettapp at du må installere verktøy, sette opp en server, skrive koden og finne ut hvordan du publiserer den. Lovable, fra selskapet med samme navn, kokes alt dette ned til en samtale. Du skriver hva du har i tankene, for eksempel en enkel side der folk kan melde seg på et kurs, og den genererer appen for deg.",
+          "Vanligvis betyr det å gjøre en idé om til en levende nettapp at du må installere verktøy, sette opp en server, skrive koden og finne ut hvordan du publiserer den. Lovable, fra selskapet med samme navn, koker alt dette ned til en samtale. Du skriver hva du har i tankene, for eksempel en enkel side der folk kan melde seg på et kurs, og den genererer appen for deg.",
           "Like viktig er det at den publiserer resultatet. Å publisere betyr å gjøre appen tilgjengelig på internett på en ekte adresse, slik at du og andre kan åpne den i en nettleser med en gang, i stedet for bare å se den på din egen maskin."
         ]
       },
@@ -442,9 +442,9 @@ export const explainersNo: Record<string, Explainer> = {
         ]
       },
       {
-        "heading": "Mennesket i loopen, og prisen for å ta feil",
+        "heading": "Mennesket tett på, og prisen for å ta feil",
         "paragraphs": [
-          "Et gjennomgående tema er at mennesket ikke trekker seg unna. Karpathy er skeptisk til å overlate for mye på én gang, fordi en agent som kjører uten tilsyn kan produsere en stor mengde plausibelt arbeid som er subtilt feil, og da må du nøste opp i alt sammen. Å holde et menneske i loopen betyr å jobbe i mindre biter du faktisk klarer å følge med på.",
+          "Et gjennomgående tema er at mennesket ikke trekker seg unna. Karpathy er skeptisk til å overlate for mye på én gang, fordi en agent som kjører uten tilsyn kan produsere en stor mengde plausibelt arbeid som er subtilt feil, og da må du nøste opp i alt sammen. Å holde et menneske tett på betyr å jobbe i mindre biter du faktisk klarer å følge med på.",
           "Dette handler om tillit kalibrert til situasjonen. Noen oppgaver er trygge å la en agent løpe med, mens andre rører ved ting som er dyre eller farlige å bomme på, og de fortjener en fastere hånd på rattet. Dømmekraften til å vite hvor grensen skal gå, er en del av det nye håndverket."
         ]
       },
@@ -459,7 +459,7 @@ export const explainersNo: Record<string, Explainer> = {
     "keyPoints": [
       "Vibe coding er den raske, improviserte måten å bygge med KI på; agentic engineering er den disiplinerte versjonen der du styrer dyktige agenter.",
       "Menneskets rolle går fra å skrive hver linje til å ramme inn oppgaver, sette grenser og vurdere kvalitet.",
-      "Å holde et menneske i loopen og jobbe i små biter hindrer store mengder plausible, men feilaktige resultater.",
+      "Å holde et menneske tett på og jobbe i små biter hindrer store mengder plausible, men feilaktige resultater.",
       "Hvor mye autonomi du gir, bør stå i forhold til risikoen i oppgaven, ikke følge en fast regel.",
       "Verifisering, det å lese og teste det agenten produserer, er i ferd med å bli kjerneferdigheten, ikke skrivehastighet."
     ]
@@ -593,7 +593,7 @@ export const explainersNo: Record<string, Explainer> = {
       "Gjør hvert ord om til en vektor av tall som gjenspeiler betydningen.",
       "Lærer av ordkonteksten i rå tekst, uten menneskelige merkelapper.",
       "Forholdene viser seg som retninger, så konge minus mann pluss kvinne lander nær dronning.",
-      "Lanserte embeddings-ideen som ligger til grunn for søk, anbefalinger og LLM-er."
+      "Populariserte effektive ordembeddinger som ligger til grunn for søk, anbefalinger og LLM-er."
     ]
   },
   "playing-atari-with-deep-reinforcement-learning": {

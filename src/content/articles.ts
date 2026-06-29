@@ -122,7 +122,7 @@ export const articles: Article[] = [
       {
         heading: "The number, said plainly",
         paragraphs: [
-          "Akshat Jain spent $25,507 on AI coding agents over twelve weeks. That is the whole headline. Not a projection, not a pitch for a tool, just what the meter read after three months of building.",
+          "Akshat Jain ran up about $25,507 in AI coding-agent usage over twelve weeks, by his own tooling's estimate. Not a projection, not a pitch for a tool, just what the meter read after three months of building.",
           "Two agents did the work: Codex and Claude Code. Between them they moved 34.2 billion tokens and produced about 2,250 commits. That is the raw shape of it. Big numbers, but numbers you can hold.",
           "Before going further, the honest caveats, because they change how much weight any of this carries. These are ccusage estimates derived from model pricing, not a bill from a provider. Commits are a rough proxy for output, not a clean measure of value. And the repo has a second contributor, so not every line traces back to one person and one agent. Keep all three in mind as you read.",
         ],
@@ -152,7 +152,7 @@ export const articles: Article[] = [
         paragraphs: [
           "Here is the part that surprises most people. The cost was not spread evenly across the work. It clumped. Of 596 sessions, the 20 largest accounted for 85% of all tokens. A small handful of runs ate almost the entire budget.",
           "The single biggest run makes the point on its own. A $5,203 Codex session did exactly one job: open every page of the app in a browser and test it. That one session was 19% of the whole bill. One run, nearly a fifth of three months of spending, just to walk the product like a user and check that it worked.",
-          "This is worth sitting with. The expensive thing was not writing code. It was thorough, exhaustive verification. The agent did the kind of QA pass a human tester would do, except it did all of it, every page, without getting bored or cutting corners. That completeness costs tokens, and the tokens cost money.",
+          "This is worth sitting with. The expensive thing was not writing code. It was thorough, exhaustive verification. The agent ran a broad browser-QA pass across the app, opening page after page to check it worked. That kind of coverage costs tokens, and the tokens cost money.",
         ],
         pullquote: "One session, $5,203, did one job: open every page and test it. That was 19% of the whole bill.",
         bullets: [

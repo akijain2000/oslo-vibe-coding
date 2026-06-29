@@ -42,7 +42,7 @@ export default function Footer() {
     ? "Ingen koder alene. Gratis, åpent, og drevet av ren glede i Oslo."
     : `${brand.tagline} Free, open, and run for the love of it in ${brand.city}.`;
   const closing = isNo
-    ? `© ${brand.founded} ${brand.name}. Et ideelt fellesskap. AI for alle.`
+    ? `© ${brand.founded} ${brand.name}. Et ideelt fellesskap. KI for alle.`
     : `© ${brand.founded} ${brand.name}. A nonprofit community. AI for everyone.`;
   const built = isNo ? "Bygget i det åpne i Oslo." : "Built in the open in Oslo.";
 

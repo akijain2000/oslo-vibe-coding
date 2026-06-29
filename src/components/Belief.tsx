@@ -27,7 +27,7 @@ export default function Belief() {
             Coding is easier <span className="spark-text">when you are not doing it alone.</span>
           </SectionHeading>
           <p className="mt-6 text-lg leading-relaxed text-cream-dim">
-            The tools got good. Anyone can build now, and curiosity is the only thing you need at the
+            The tools got good. Many more people can build now, and curiosity is the only thing you need at the
             door. What is usually missing is a room, a few hours, and some company.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-cream-dim">

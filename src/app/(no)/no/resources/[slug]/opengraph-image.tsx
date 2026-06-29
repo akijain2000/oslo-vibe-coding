@@ -12,5 +12,5 @@ export function generateStaticParams() {
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const r = getResourceBySlug(slug);
-  return resourceOg(r?.title ?? "Ressurs", "Ressurs", r?.by ?? "Oslo Vibe Coding");
+  return resourceOg(r?.titleNo ?? r?.title ?? "Ressurs", "Ressurs", r?.by ?? "Oslo Vibe Coding");
 }

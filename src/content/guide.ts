@@ -42,7 +42,7 @@ export const guide = {
       heading: "Why this is possible now",
       paragraphs: [
         "A few years ago, building software meant learning syntax, setup, tooling, and a long list of small frustrations before you could make anything at all. That wall is mostly gone, and the reason is simple: intelligence got cheap.",
-        "Here is the one number worth knowing. In roughly eighteen months, the cost of GPT-3.5-level intelligence fell from about $20 per million tokens to about $0.07 per million tokens. The capability that used to be expensive is now close to free. That collapse is what makes a beginner-friendly model patient enough to walk you through a build at almost no cost.",
+        "Here is the one number worth knowing. By one common comparison, taking the cheapest model that cleared that capability bar at each point, the cost of GPT-3.5-level capability fell from about $20 per million tokens to about $0.07 in roughly eighteen months. The capability that used to be expensive became much cheaper to use. That drop is what makes a beginner-friendly model patient enough to walk you through a build at almost no cost.",
         "What that means for you tonight: the barrier to building something is lower than it has ever been. You do not need to be the kind of person who codes. You need a small idea and a willingness to go back and forth a few times.",
       ],
       pullquote: "GPT-3.5-level intelligence fell from about $20 to about $0.07 per million tokens in roughly eighteen months.",

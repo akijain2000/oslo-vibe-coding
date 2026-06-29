@@ -98,7 +98,7 @@ export const sectionMeta: Record<Locale, Record<string, { title: string; intro: 
     deeper: { title: "Når du vil gå dypere", intro: "For når vibene møter en ekte kodebase og du vil forstå hva som skjer." },
     frontier: { title: "Ut til fronten", intro: "Hentet fra Stanfords CS 153. Den dype enden, artiklene som bygde moderne AI." },
     "guest-lectures": { title: "Fra gjesteforelesningene", intro: "Arbeidet bak folkene som bygger fronten: generative bilder, video og stemme." },
-    "for-everyone": { title: "AI for alle", intro: "Hvorfor vi gjør dette gratis og åpent. Billig, trygg tilgang bør ikke være et privilegium." },
+    "for-everyone": { title: "KI for alle", intro: "Hvorfor vi gjør dette gratis og åpent. Billig, trygg tilgang bør ikke være et privilegium." },
     "oslo-scene": { title: "Andre steder å lære i Oslo", intro: "Vi er ikke det eneste rommet i byen, og det er en god ting." },
   },
 };

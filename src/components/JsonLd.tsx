@@ -102,7 +102,7 @@ export function ArticleJsonLd({ article }: { article: Article }) {
         dateModified: article.datePublished,
         publisher: { "@id": `${SITE_URL}/#org` },
         mainEntityOfPage: url,
-        image: `${SITE_URL}/opengraph-image`,
+        image: `${url}/opengraph-image`,
         url,
       }}
     />

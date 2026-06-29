@@ -593,7 +593,7 @@ export const explainersEn: Record<string, Explainer> = {
       "Turns each word into a vector of numbers that reflects its meaning.",
       "Learns from word context in raw text, with no human labels.",
       "Relationships appear as directions, so king minus man plus woman lands near queen.",
-      "Launched the embeddings idea that underpins search, recommendations, and LLMs."
+      "Popularized efficient word embeddings that underpin search, recommendations, and LLMs."
     ]
   },
   "playing-atari-with-deep-reinforcement-learning": {

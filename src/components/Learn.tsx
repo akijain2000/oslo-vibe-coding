@@ -42,7 +42,7 @@ export default function Learn() {
             </h3>
             <p className="mt-2 text-cream-dim">
               The whole thing from zero, in one read. Never written a line of code? Start here and
-              ship something tonight.
+              make a first small thing tonight.
             </p>
           </div>
           <span className="inline-flex w-fit items-center gap-1.5 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white">
