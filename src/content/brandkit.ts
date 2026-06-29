@@ -32,7 +32,7 @@ export const dimensions: SizeSpec[] = [
   { name: "Instagram story / Reel", size: "1080 × 1920", where: "Stories and Reels cover." },
   { name: "Instagram profile photo", size: "320 × 320", where: "Upload at 1080, shows as a circle." },
   { name: "LinkedIn profile banner", size: "1584 × 396", where: "Personal profile cover." },
-  { name: "LinkedIn page cover", size: "1128 × 191", where: "Company page cover." },
+  { name: "LinkedIn page cover", size: "1128 × 191 (6:1)", where: "Company page. Crops hard, keep text centered." },
   { name: "LinkedIn page logo", size: "300 × 300", where: "Company page avatar." },
   { name: "LinkedIn post image", size: "1200 × 627", where: "Shared link / image post." },
 ];

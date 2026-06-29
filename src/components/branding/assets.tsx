@@ -1,9 +1,9 @@
+import type { CSSProperties, ReactNode } from "react";
+
 // Exportable social brand assets. Each Render is a fixed, true-size DOM node so
 // html-to-image (see BrandKit) can rasterize it crisp. Colors are inline hex
 // (the design tokens) and fonts use the next/font CSS vars, so exports match the
 // site exactly. Editable assets read data.headline / data.subline.
-
-import type { CSSProperties, ReactNode } from "react";
 
 const C = {
   paper: "#fbf7f0",
@@ -68,44 +68,72 @@ function Wordmark({ size, color, accent }: { size: number; color: string; accent
 const HANDLE = "@vibesoslo";
 const URL = "oslovibecoding.tech";
 
-/* ---------------- LinkedIn banners (1584 x 396) ---------------- */
+/* ----- LinkedIn company covers (2400 x 400, 6:1) -----
+   Company pages crop hard and mobile keeps only the center ~900px, so content is
+   centered inside the safe middle and the bottom-left is left clear for the logo. */
 
-function LinkedInBannerDark() {
+function LinkedInCompanyEmber() {
   return (
-    <div style={{ width: 1584, height: 396, background: C.night, position: "relative", overflow: "hidden", boxSizing: "border-box", display: "flex", alignItems: "center", padding: "0 110px" }}>
-      <Glow style={{ width: 680, height: 680, top: -300, right: -180, background: "radial-gradient(circle, rgba(255,90,44,0.55), transparent 65%)" }} />
-      <Glow style={{ width: 460, height: 460, bottom: -260, left: 280, background: "radial-gradient(circle, rgba(255,176,32,0.32), transparent 65%)" }} />
-      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 34 }}>
-        <Spark size={104} id="li-dark-spark" />
-        <div>
-          <div style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 78, lineHeight: 0.98, letterSpacing: "-0.025em", color: C.paper }}>
-            No one codes <span style={{ color: C.glow }}>alone</span>.
-          </div>
-          <div style={{ marginTop: 20, fontFamily: MONO, fontSize: 23, letterSpacing: "0.14em", textTransform: "uppercase", color: C.creamDim }}>
-            Free AI coding sessions · Oslo
-          </div>
-        </div>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: `linear-gradient(110deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 360px" }}>
+      <Glow style={{ width: 540, height: 540, top: -260, right: 200, background: "radial-gradient(circle, rgba(255,255,255,0.22), transparent 65%)" }} />
+      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 18 }}>
+        <Spark size={46} id="li-co-ember-spark" solid={C.night} />
+        <span style={{ fontFamily: MONO, fontSize: 24, letterSpacing: "0.2em", textTransform: "uppercase", color: C.night }}>Code · Chill · Learn</span>
       </div>
-      <div style={{ position: "absolute", right: 110, bottom: 44, fontFamily: MONO, fontSize: 24, letterSpacing: "0.04em", color: C.glow }}>{URL}</div>
+      <div style={{ position: "relative", marginTop: 22, fontFamily: DISPLAY, fontWeight: 700, fontSize: 92, lineHeight: 1, letterSpacing: "-0.025em", color: C.night, whiteSpace: "nowrap" }}>
+        Free AI coding sessions in Oslo
+      </div>
+      <div style={{ position: "relative", marginTop: 20, fontFamily: MONO, fontSize: 26, color: C.night, opacity: 0.82 }}>{URL}</div>
     </div>
   );
 }
 
-function LinkedInBannerEmber() {
+function LinkedInCompanyNight() {
   return (
-    <div style={{ width: 1584, height: 396, background: `linear-gradient(115deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 130%)`, position: "relative", overflow: "hidden", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 110px" }}>
-      <Glow style={{ width: 520, height: 520, top: -240, right: 120, background: "radial-gradient(circle, rgba(255,255,255,0.25), transparent 65%)" }} />
-      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 20 }}>
-        <Spark size={56} id="li-ember-spark" solid={C.night} />
-        <span style={{ fontFamily: MONO, fontSize: 24, letterSpacing: "0.16em", textTransform: "uppercase", color: C.night }}>Code · Chill · Learn</span>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: C.night, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 360px" }}>
+      <Glow style={{ width: 760, height: 760, top: -260, left: "50%", marginLeft: -380, background: "radial-gradient(circle, rgba(255,90,44,0.4), transparent 62%)" }} />
+      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
+        <Spark size={44} id="li-co-night-spark" />
+        <span style={{ fontFamily: MONO, fontSize: 24, letterSpacing: "0.2em", textTransform: "uppercase", color: C.glow }}>Oslo Vibe Coding</span>
       </div>
-      <div style={{ position: "relative", marginTop: 22, fontFamily: DISPLAY, fontWeight: 700, fontSize: 70, lineHeight: 1, letterSpacing: "-0.025em", color: C.night, maxWidth: 1150 }}>
-        Free, drop-in AI coding sessions in Oslo.
+      <div style={{ position: "relative", marginTop: 20, fontFamily: DISPLAY, fontWeight: 700, fontSize: 104, lineHeight: 1, letterSpacing: "-0.03em", color: C.paper, whiteSpace: "nowrap" }}>
+        No one codes <span style={{ color: C.glow }}>alone</span>.
       </div>
-      <div style={{ position: "relative", marginTop: 20, display: "flex", alignItems: "center", gap: 18, fontFamily: DISPLAY, fontWeight: 600, fontSize: 28, color: C.night }}>
-        <span>Bring a laptop and an idea.</span>
-        <span style={{ opacity: 0.5 }}>·</span>
-        <span style={{ fontFamily: MONO, fontSize: 24 }}>{URL}</span>
+      <div style={{ position: "relative", marginTop: 20, fontFamily: MONO, fontSize: 26, color: C.creamDim }}>Free AI coding sessions · {URL}</div>
+    </div>
+  );
+}
+
+function LinkedInPersonalNight() {
+  return (
+    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: C.night, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 150px" }}>
+      <Glow style={{ width: 540, height: 540, top: -240, right: -120, background: "radial-gradient(circle, rgba(255,90,44,0.45), transparent 65%)" }} />
+      <Glow style={{ width: 360, height: 360, bottom: -200, left: 120, background: "radial-gradient(circle, rgba(255,176,32,0.28), transparent 65%)" }} />
+      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
+        <Spark size={44} id="li-pn-spark" />
+        <span style={{ fontFamily: MONO, fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: C.glow }}>Code · Chill · Learn</span>
+      </div>
+      <div style={{ position: "relative", marginTop: 20, fontFamily: DISPLAY, fontWeight: 700, fontSize: 84, lineHeight: 1, letterSpacing: "-0.03em", color: C.paper, whiteSpace: "nowrap" }}>
+        No one codes <span style={{ color: C.glow }}>alone</span>.
+      </div>
+      <div style={{ position: "relative", marginTop: 18, fontFamily: MONO, fontSize: 24, color: C.creamDim }}>Free AI coding sessions · {URL}</div>
+    </div>
+  );
+}
+
+function LinkedInPersonalEmber() {
+  return (
+    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: `linear-gradient(115deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 120px" }}>
+      <Glow style={{ width: 480, height: 480, top: -220, right: 60, background: "radial-gradient(circle, rgba(255,255,255,0.22), transparent 65%)" }} />
+      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
+        <Spark size={40} id="li-pe-spark" solid={C.night} />
+        <span style={{ fontFamily: MONO, fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: C.night }}>Code · Chill · Learn</span>
+      </div>
+      <div style={{ position: "relative", marginTop: 20, fontFamily: DISPLAY, fontWeight: 700, fontSize: 54, lineHeight: 1.04, letterSpacing: "-0.02em", color: C.night, whiteSpace: "nowrap" }}>
+        Free, drop-in AI coding sessions in Oslo
+      </div>
+      <div style={{ position: "relative", marginTop: 16, fontFamily: DISPLAY, fontWeight: 500, fontSize: 26, color: C.night, opacity: 0.85 }}>
+        Bring a laptop and an idea · {URL}
       </div>
     </div>
   );
@@ -226,8 +254,10 @@ function StoryQuote({ data }: { data: AssetData }) {
 }
 
 export const BRAND_ASSETS: BrandAsset[] = [
-  { id: "linkedin-banner-dark", name: "Banner · statement", group: "LinkedIn", w: 1584, h: 396, editable: false, note: "Profile / page cover. 1584×396.", Render: LinkedInBannerDark },
-  { id: "linkedin-banner-ember", name: "Banner · what we are", group: "LinkedIn", w: 1584, h: 396, editable: false, note: "Profile / page cover. 1584×396.", Render: LinkedInBannerEmber },
+  { id: "linkedin-company-ember", name: "Company cover · ember", group: "LinkedIn", w: 2400, h: 400, editable: false, note: "Company page cover (6:1). Centered for LinkedIn's crop; logo sits bottom-left.", Render: LinkedInCompanyEmber },
+  { id: "linkedin-company-night", name: "Company cover · night", group: "LinkedIn", w: 2400, h: 400, editable: false, note: "Company page cover (6:1). Centered for LinkedIn's crop.", Render: LinkedInCompanyNight },
+  { id: "linkedin-personal-night", name: "Personal banner · night", group: "LinkedIn", w: 1584, h: 396, editable: false, note: "Founders' personal profiles. 1584×396.", Render: LinkedInPersonalNight },
+  { id: "linkedin-personal-ember", name: "Personal banner · ember", group: "LinkedIn", w: 1584, h: 396, editable: false, note: "Founders' personal profiles. 1584×396.", Render: LinkedInPersonalEmber },
   { id: "avatar-ember", name: "Profile photo · ember", group: "Instagram", w: 1080, h: 1080, editable: false, note: "DP / logo. Shows as a circle, mark stays centered.", Render: AvatarEmber },
   { id: "avatar-night", name: "Profile photo · night", group: "Instagram", w: 1080, h: 1080, editable: false, note: "DP / logo. Shows as a circle, mark stays centered.", Render: AvatarNight },
   { id: "post-quote", name: "Post · statement", group: "Instagram", w: 1080, h: 1080, editable: true, note: "1080×1080. Edit the headline above.", Render: PostQuote },
