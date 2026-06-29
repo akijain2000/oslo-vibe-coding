@@ -1,20 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { brand, SITE_URL } from "@/lib/brand";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import { SiteJsonLd } from "@/components/JsonLd";
+import { fontClass } from "@/lib/fonts";
+import SiteBody from "@/components/SiteBody";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
-
+// English root layout. Ships <html lang="en">. The Norwegian routes live under
+// the (no) group with their own root layout (lang="nb-NO").
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -58,26 +49,10 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function EnLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-paper text-ink">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper"
-        >
-          Skip to content
-        </a>
-        <Nav />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <SiteJsonLd />
-      </body>
+    <html lang="en" className={fontClass}>
+      <SiteBody>{children}</SiteBody>
     </html>
   );
 }

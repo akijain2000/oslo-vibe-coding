@@ -34,11 +34,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Set the document language for the current locale (the root layout ships lang="en").
-  useEffect(() => {
-    document.documentElement.lang = isNo ? "nb-NO" : "en";
-  }, [isNo]);
-
   // Close the mobile menu on Escape.
   useEffect(() => {
     if (!open) return;
