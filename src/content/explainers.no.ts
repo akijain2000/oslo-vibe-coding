@@ -141,7 +141,7 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Hva det egentlig er",
         "paragraphs": [
           "Codex er én agent du møter gjennom flere dører. Terminalversjonen, kalt Codex CLI, kjører på din egen maskin i kommandolinjevinduet der utviklere skriver instruksjoner, og der kan den inspisere et repositorium, endre filer og kjøre kommandoer. Et repositorium, eller repo, er mappen som rommer all koden i et prosjekt og historikken til prosjektet. Det finnes også en utvidelse for redigeringsprogrammet som virker inne i VS Code, Cursor og JetBrains-verktøy, en skrivebordsapp og en skyversjon du åpner i nettleseren eller inne i ChatGPT.",
-          "Codex er laget av OpenAI, og den kjører på selskapets nyeste frontmodeller i GPT-5-serien, med GPT-5.5 som standard. I tillegg til å skrive kode kan den forklare en ukjent kodebase, se gjennom kode og hjelpe med å feilsøke problemer. CLI-en er åpen kildekode under Apache-2.0-lisensen, så hvem som helst kan lese hvordan den fungerer, og du kan logge inn med et ChatGPT-abonnement eller med en API-nøkkel."
+          "Codex er laget av OpenAI, og den kjører på selskapets nyeste kodemodeller i GPT-5-serien. I tillegg til å skrive kode kan den forklare en ukjent kodebase, se gjennom kode og hjelpe med å feilsøke problemer. CLI-en er åpen kildekode under Apache-2.0-lisensen, så hvem som helst kan lese hvordan den fungerer, og du kan logge inn med et ChatGPT-abonnement eller med en API-nøkkel."
         ]
       },
       {
@@ -873,7 +873,7 @@ export const explainersNo: Record<string, Explainer> = {
       {
         "heading": "Kjerneideen",
         "paragraphs": [
-          "Forfatternes grep var å slutte å jobbe med bildet på pikselnivå, og i stedet jobbe i et komprimert rom de kaller latensrommet. Først presser et eget lite nettverk bildet ned til en mye mindre kode som beholder den meningsfulle strukturen og kaster bort fine detaljer som kan fylles inn igjen senere. Diffusjonen skjer inne i denne komprimerte koden, som er langt mindre, slik at hvert steg blir mye raskere og lettere.",
+          "Forfatternes grep var å slutte å jobbe med bildet på pikselnivå, og i stedet jobbe i et komprimert rom de kaller det latente rommet. Først presser et eget lite nettverk bildet ned til en mye mindre kode som beholder den meningsfulle strukturen og kaster bort fine detaljer som kan fylles inn igjen senere. Diffusjonen skjer inne i denne komprimerte koden, som er langt mindre, slik at hvert steg blir mye raskere og lettere.",
           "Når modellen har laget en ferdig kode, utvider en dekoder den igjen til et fullt, skarpt bilde. De la også til en ryddig måte å styre resultatet på med en tekstinstruksjon, slik at du kan be om det du vil ha med ord. Samme kvalitet, en brøkdel av regnekraften."
         ]
       },
@@ -890,7 +890,7 @@ export const explainersNo: Record<string, Explainer> = {
       "Den viktigste nyvinningen er å gjøre dette i et lite, komprimert latensrom i stedet for på piksler i full oppløsning, noe som drastisk reduserer regnekraften som trengs.",
       "En koder komprimerer, diffusjonen kjører på koden, og en dekoder utvider den tilbake til et fullt bilde.",
       "Tekstinstruksjoner er koblet inn slik at du kan beskrive det du vil ha med vanlige ord.",
-      "Lav nok kostnad til å kjøre på ett enkelt forbruker-GPU, og det er grunnen til at den kunne slippes åpent som Stable Diffusion og sette i gang et stort fellesskap."
+      "Lav nok kostnad til å kjøre på en vanlig GPU, og det er grunnen til at den kunne slippes åpent som Stable Diffusion og sette i gang et stort fellesskap."
     ]
   },
   "stable-video-diffusion": {
@@ -1177,7 +1177,7 @@ export const explainersNo: Record<string, Explainer> = {
       {
         "heading": "Hvorfor det betyr noe",
         "paragraphs": [
-          "For alle som er nysgjerrige på å bygge med KI, men usikre på hvor de skal begynne, er en nybegynnervennlig, sosial gruppe nesten ideelt. Du får stille de angivelig dumme spørsmålene, se hvordan andre folk lager prompter og itererer, og avslutte en økt med noe du faktisk har laget selv. Oppmuntring, ikke portvokting, er den rådende tonen.",
+          "For alle som er nysgjerrige på å bygge med KI, men usikre på hvor de skal begynne, er en nybegynnervennlig, sosial gruppe nesten ideelt. Du får stille de angivelig dumme spørsmålene, se hvordan andre folk lager prompter og itererer, og avslutte en økt med noe du faktisk har laget selv. Oppmuntring, ikke ekskludering, er den rådende tonen.",
           "Det betyr også noe fordi det rammer inn koding som en kreativ, felles aktivitet snarere enn et ensomt teknisk slit. Den vridningen får folk til å komme tilbake, og det er nettopp den typen imøtekommende fellesskap som hjelper nykommere med å finne fotfeste i et felt som beveger seg raskt."
         ]
       }

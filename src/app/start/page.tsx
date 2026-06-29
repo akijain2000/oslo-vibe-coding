@@ -24,7 +24,7 @@ export default function StartPage() {
         <div className="mx-auto max-w-5xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40">
           <Eyebrow dark>Getting started · {guide.readingTimeMin} min read</Eyebrow>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-            From never having coded to <span className="spark-text">shipping tonight</span>.
+            From never having coded to <span className="spark-text">a first build</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">{guide.dek}</p>
         </div>
@@ -58,7 +58,7 @@ export default function StartPage() {
             <div className="rounded-card bg-night p-8 text-center text-paper sm:p-10">
               <h2 className="font-display text-2xl font-bold tracking-tight">Now do it with people.</h2>
               <p className="mx-auto mt-3 max-w-md text-cream-dim">
-                You have the loop. The fastest way to get good is a room full of others doing the same.
+                Once you have tried the loop, the fastest way to get good is a room full of others doing the same.
               </p>
               <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
                 <a

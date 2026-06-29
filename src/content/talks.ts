@@ -1,4 +1,4 @@
-// Talks + decks the organisers have shared. These are the "presentations" section —
+// Talks + decks the organisers have shared. These are the "presentations" section,
 // proof that this community produces real, useful material, not just hangouts.
 // `postUrl` points at the LinkedIn post where the deck lives (until self-hosted PDFs exist).
 

@@ -238,7 +238,7 @@ export const resourceSections: ResourceSection[] = [
         url: "https://arxiv.org/abs/1706.03762",
         diagram: "transformer",
         tldr:
-          "The 2017 Google paper that introduced the Transformer, an architecture built entirely on attention rather than the recurrent networks used before. By processing sequences in parallel and letting each token weigh every other token, it trained faster and scaled better. It became the foundation for nearly every large language model that followed.",
+          "The 2017 Google paper that introduced the Transformer, an architecture built entirely on attention rather than the recurrent networks used before. By processing sequences in parallel and letting each token weigh every other token, it trained faster and scaled better. It became the foundation for most large language models that followed.",
         free: true,
       },
       {
@@ -265,7 +265,7 @@ export const resourceSections: ResourceSection[] = [
         url: "https://arxiv.org/abs/2005.14165",
         diagram: "few-shot",
         tldr:
-          "The 2020 OpenAI paper introducing GPT-3, a 175-billion-parameter language model that could perform new tasks from just a few examples given in the prompt, with no retraining. It demonstrated that scale alone unlocked surprising general-purpose abilities, and reframed how people think about what a single model can do.",
+          "The 2020 OpenAI paper introducing GPT-3, a 175-billion-parameter language model that could perform new tasks from just a few examples given in the prompt, with no retraining. It showed that very large pretrained models could handle many tasks from prompted examples alone, and reframed how people think about what a single model can do.",
         free: true,
       },
       {

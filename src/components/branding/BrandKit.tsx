@@ -302,7 +302,8 @@ export default function BrandKit() {
       {/* PLAYBOOK */}
       <section>
         <SectionTitle kicker="What works" title="The playbook.">
-          The short version of what we found, so the feed stays consistent without much effort.
+          The short version of what we found, drawn from 2026 social-media reporting. Treat it as
+          guidance, not guarantees, and adjust as the platforms change.
         </SectionTitle>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">

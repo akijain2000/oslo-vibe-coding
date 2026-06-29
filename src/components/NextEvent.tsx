@@ -63,7 +63,7 @@ export default function NextEvent() {
         <div className="rounded-card bg-night p-7 text-paper">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-glow">Save your spot</p>
           <p className="mt-2 text-cream-dim">
-            Free, but RSVP helps us bring enough chairs and good energy.
+            Free, but an RSVP helps us plan seating.
           </p>
 
           <div className="mt-6 grid grid-cols-2 gap-4">

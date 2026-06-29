@@ -24,7 +24,7 @@ export default function Belief() {
         <div>
           <Eyebrow dark>Why it&apos;s free</Eyebrow>
           <SectionHeading className="mt-4 text-paper">
-            The hard part was never the code. <span className="spark-text">It was doing it alone.</span>
+            Coding is easier <span className="spark-text">when you are not doing it alone.</span>
           </SectionHeading>
           <p className="mt-6 text-lg leading-relaxed text-cream-dim">
             The tools got good. Anyone can build now, and curiosity is the only thing you need at the

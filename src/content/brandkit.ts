@@ -46,15 +46,15 @@ export type Bios = {
 };
 
 export const bios: Bios = {
-  instagram: `Free vibe coding meetups in Oslo. Build software with AI.
-Beginners, devs & the curious. No gatekeeping.
+  instagram: `Free vibe coding meetups in Oslo. Build with AI.
+Beginners, developers, the curious. No gatekeeping.
 Next session + guide ↓
 oslovibecoding.tech`,
   instagramShort: `Free AI coding meetups in Oslo. Beginners welcome, no gatekeeping.
 Bring a laptop and an idea ↓
 oslovibecoding.tech`,
   linkedinTagline: "A free, beginner-first community in Oslo for building software with AI. Drop-in sessions, no gatekeeping.",
-  linkedinAbout: `Oslo Vibe Coding is a free, open community for building software with AI in Oslo. We run drop-in sessions where you bring a laptop and an idea, and leave having built or fixed something. No pressure, no gatekeeping, no "you need five years of React to sit here" energy.
+  linkedinAbout: `Oslo Vibe Coding is a free, open community for building software with AI in Oslo. We run drop-in sessions where you bring a laptop and an idea, and leave with progress on something. No pressure and no gatekeeping.
 
 It is for everyone. Beginners trying their first project with tools like Claude Code and Cursor, developers sharpening their workflow, designers and product people who want to ship, and curious people who just want to see what AI coding is. You do not need to know anything before you walk in.
 
@@ -109,7 +109,7 @@ Next session is [NEXT DATE]. Save this post so the date's there when you need it
     when: "Once or twice a month as a carousel. The save-and-share content that explains who you are.",
     text: `You do not need to know how to code to come to Oslo Vibe Coding.
 
-That's the actual rule, not a slogan. Bring an idea, a half-broken app, or just curiosity. We'll figure the rest out in the room.
+That is the actual rule. Bring an idea, a half-broken app, or just curiosity. We'll figure the rest out in the room.
 
 No pressure. No gatekeeping. No "you need five years of React to sit here" energy. Just people building software with AI and helping each other get unstuck.
 

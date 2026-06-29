@@ -1,4 +1,4 @@
-// Organisers. Kept human and short — this is a community, not a company.
+// Organisers. Kept human and short. This is a community, not a company.
 
 export type Person = {
   name: string;
@@ -19,7 +19,7 @@ export const organisers: Person[] = [
   {
     name: "Harsh Trivedi",
     role: "Organiser",
-    bio: "Data scientist who mapped 5.9 million schools worldwide for social good. Believes information, and AI, should reach everyone.",
+    bio: "Data scientist who worked on mapping millions of schools worldwide for social good. Believes information, and AI, should reach everyone.",
     linkedin: "https://www.linkedin.com/in/harshtrivedi13/",
     initials: "HT",
   },

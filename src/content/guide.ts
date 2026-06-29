@@ -14,7 +14,7 @@ export type GuideSection = {
 
 export const guide = {
   title: "Getting started with vibe coding",
-  dek: "Vibe coding means building software by describing what you want to a model and steering it with feedback. This is the page that takes you from never having coded to shipping your first small thing tonight.",
+  dek: "Vibe coding means building software by describing what you want to a model and steering it with feedback. This is the page that takes you from never having coded to building your first small thing.",
   readingTimeMin: 11,
   sections: [
     {
@@ -22,7 +22,7 @@ export const guide = {
       heading: "What vibe coding actually is",
       paragraphs: [
         "Vibe coding is building software by describing what you want to an AI model and letting it write the code, then guiding it with feedback instead of typing every line yourself. You say what you want in plain language, the model produces code, you run it, you tell it what is wrong, and you go around again.",
-        "Andrej Karpathy named it in early 2025. The idea caught on fast enough that Collins made it their word of the year for 2025. So if it feels new, that is because it is. You are not behind.",
+        "Andrej Karpathy named it in early 2025. The idea caught on fast enough that Collins made it their word of the year for 2025. So if it feels new, that is because it is.",
         "The honest part most people skip: not every kind of AI-assisted programming is vibe coding. Simon Willison drew a useful line. True vibe coding means you lean on the model and trust the result without reading every line. That is great for playing, learning, and throwaway prototypes. But for anything you will keep maintaining or put in front of real users, you still need to read and understand the code the model wrote. We will come back to where that line sits, because it is the difference between fun and getting burned.",
       ],
       pullquote: "You say what you want, the model writes it, you run it, you tell it what is wrong, and you go around again.",
@@ -98,11 +98,11 @@ export const guide = {
       heading: "How to not get burned",
       paragraphs: [
         "Vibe coding is genuinely great for prototypes, learning, and small personal tools. It gets risky when you stop reading and the thing starts touching something that matters. A few simple habits keep you safe.",
-        "Read what it gives you when it matters. For a hobby calculator, you can trust the output and move on. For anything you will maintain or hand to other people, slow down and actually understand what the code does. If you cannot explain roughly what a piece does, that is your signal to ask the model to explain it before you keep going.",
+        "Read what it gives you when it matters. For a throwaway toy, a light read may be enough. For anything you will share, maintain, or hand to other people, slow down and actually understand what the code does. If you cannot explain roughly what a piece does, that is your signal to ask the model to explain it before you keep going.",
         "Test it. Click the buttons. Try the weird input. Try the empty input. The model will tell you it works; you confirm it works.",
         "Be especially careful with anything touching passwords, payments, or other people's data. That is the zone where a confident wrong answer causes real harm, not just a broken page. When you are there, do not vibe past it. Read the code, ask what it does, and ask someone if you are unsure. There is no shame in that. It is what experienced people do too.",
       ],
-      pullquote: "For a hobby calculator, trust the output and move on. For anything real, read the code and understand it.",
+      pullquote: "For a throwaway toy, a light read may be enough. For anything real, read the code and understand it.",
       bullets: [
         "Read the code when it matters; trust freely only for throwaway and learning projects.",
         "Test it yourself: real input, weird input, empty input.",
@@ -133,7 +133,7 @@ export const guide = {
       id: "why-we-do-this",
       heading: "Why we do this for free",
       paragraphs: [
-        "Oslo Vibe Coding is a free, nonprofit, beginner-first community. We exist because cheap, safe access to AI should not be a privilege. The tools just got powerful enough that anyone can build, and we do not think the people who get to use that should only be the people who already knew how to code or could pay to learn.",
+        "Oslo Vibe Coding is a free, nonprofit, beginner-first community. We exist because cheap, safe access to AI should not be a privilege. The tools got good enough that many more people can build, and we do not think the people who get to use that should only be the people who already knew how to code or could pay to learn.",
         "We are also honest about something: the best way to learn this is in a room with other people. You hit a wall, someone next to you has hit the same one, and you are unstuck in two minutes instead of two hours. That is hard to get alone at a desk at midnight.",
         "So this guide is the start, not the whole thing. Build something tonight using one tool and one tiny idea. Then come to a free Oslo Vibe Coding drop-in and build the next thing with people around you. No one should code alone.",
       ],

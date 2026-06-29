@@ -114,7 +114,7 @@ export const explainersEn: Record<string, Explainer> = {
       {
         "heading": "The core idea, in plain terms",
         "paragraphs": [
-          "Think of it less like autocomplete and more like a capable junior teammate who can open the project, look around, make changes, and check whether those changes worked. You might say something like, find why the login page is slow and fix it. Claude Code will search the code, form a guess, try a change, run the app to see if the guess held up, and report back.",
+          "Think of it less like autocomplete and more like an assistant that can open the project, look around, make changes, and check whether those changes worked. You might say something like, find why the login page is slow and fix it. Claude Code will search the code, form a guess, try a change, run the app to see if the guess held up, and report back.",
           "Because it operates on the real codebase rather than a chat box copy, it keeps context across many files. That is what lets it handle bigger jobs than a single suggestion at a time."
         ]
       },
@@ -141,7 +141,7 @@ export const explainersEn: Record<string, Explainer> = {
         "heading": "What it actually is",
         "paragraphs": [
           "Codex is one agent you meet through several doors. The terminal version, called the Codex CLI, runs on your own machine in the command-line window where developers type instructions, and it can inspect a repository, change files, and run commands there. A repository, or repo, is the folder that holds all of a project's code and its history. There is also an editor extension that works inside VS Code, Cursor, and JetBrains tools, a desktop app, and a cloud version you open in your browser or inside ChatGPT.",
-          "OpenAI builds Codex, and it runs on the company's recent GPT-5 series frontier models, with GPT-5.5 as the default. Beyond writing code, it can explain an unfamiliar codebase, review code, and help debug problems. The CLI is open source under the Apache-2.0 license, so anyone can read how it works, and you can sign in with a ChatGPT plan or with an API key."
+          "OpenAI builds Codex, and it runs on the company's recent GPT-5 series coding models. Beyond writing code, it can explain an unfamiliar codebase, review code, and help debug problems. The CLI is open source under the Apache-2.0 license, so anyone can read how it works, and you can sign in with a ChatGPT plan or with an API key."
         ]
       },
       {
@@ -808,7 +808,7 @@ export const explainersEn: Record<string, Explainer> = {
         "heading": "The core idea",
         "paragraphs": [
           "Rather than only learning from raw text, the model learns from human judgments about quality. Reviewers rank responses, those rankings train a model of what people like, and that preference model then guides the language model toward more helpful, honest, and on-target replies.",
-          "The result is a model that actually does what you ask. A smaller model tuned this way can feel more useful than a larger one that was only trained to predict text, because following the instruction is what people care about."
+          "The result is a model that follows many instructions far better. A smaller model tuned this way can feel more useful than a larger one that was only trained to predict text, because following the instruction is what people care about."
         ]
       },
       {

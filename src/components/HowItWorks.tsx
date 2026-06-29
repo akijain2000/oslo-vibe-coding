@@ -14,12 +14,12 @@ const steps = [
   {
     n: "03",
     title: "Build, break, fix",
-    body: "Work on your own thing, pair up, or join someone else's. We compare tools like Claude Code, Cursor and Lovable and actually ship.",
+    body: "Work on your own thing, pair up, or join someone else's. We compare tools like Claude Code, Cursor and Lovable and work toward something usable.",
   },
   {
     n: "04",
     title: "Leave with something",
-    body: "A deployed app, a new friend, or a question finally answered. Usually all three.",
+    body: "A clearer next step, a problem fixed, or a first prototype. Often more than one.",
   },
 ];
 

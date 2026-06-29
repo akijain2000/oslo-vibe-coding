@@ -61,7 +61,7 @@ export const articles: Article[] = [
         paragraphs: [
           "The second idea is from a 19th-century economist named William Stanley Jevons. He noticed something odd about coal. When engines got more efficient and used less coal per unit of work, people did not burn less coal. They burned far more. Efficiency made coal cheaper to use, so it got used everywhere, and total demand went up.",
           "That is Jevons Paradox: making something more efficient often raises its total use rather than lowering it. It feels backwards the first time you hear it, and then you start seeing it everywhere.",
-          "Now put intelligence in place of coal. The price of GPT-3.5-level intelligence fell from about 20 dollars per million tokens to about 0.07 dollars per million tokens in roughly eighteen months. That is not a discount. That is the floor dropping out. And true to Jevons, we did not use less of it. We used far more. Things that were never worth paying a person to do, or never worth the engineering time, suddenly became cheap enough to just do.",
+          "Now put intelligence in place of coal. By one common comparison, the price of GPT-3.5-level capability fell from roughly 20 dollars per million tokens to roughly 0.07 dollars in about eighteen months, taking the cheapest model that cleared that bar at each point. That is not a discount. That is the floor dropping out. And usage rose rather than fell, much as Jevons would predict. Things that were never worth paying a person to do, or never worth the engineering time, suddenly became cheap enough to just do.",
           "So the cheaper code gets, the more code gets written, generated, and thrown away. Demand for the output goes up, not down. The work does not evaporate. It floods in. The question is what kind of work it becomes.",
         ],
         pullquote:
@@ -76,13 +76,13 @@ export const articles: Article[] = [
         heading: "The work moves up the stack",
         paragraphs: [
           "Put the two ideas together. Compute keeps winning, so the model does more of the typing. Intelligence gets cheap, so we ask for far more of it. The result is that the work does not disappear, it moves up a level. It moves toward specifying what you want, reviewing what comes back, and judging whether it is right. It moves away from typing every line yourself.",
-          "This is not the first time a tool has done this to a job. ATMs did it to bank tellers: the machine handled the cash, and the teller's work moved toward the things a machine could not do. Spreadsheets did it to accountants: the formula did the arithmetic, and the accountant moved up to judgment and analysis. Compilers did it to programmers: nobody hand-writes machine code anymore, because the compiler does the tedious translation and the programmer works at a higher level.",
+          "This is not the first time a tool has done this to a job, at least by a comparison often cited. ATMs did it to bank tellers: the machine handled the cash, and the teller's work moved toward the things a machine could not do. Spreadsheets did it to accountants: the formula did the arithmetic, and the accountant moved up to judgment and analysis. Compilers did it to programmers: nobody hand-writes machine code anymore, because the compiler does the tedious translation and the programmer works at a higher level.",
           "In none of those cases did the tool simply delete the job. Each time, it moved the job up a level. The boring, mechanical part got automated, and the part that needed a human moved to where the human was still needed. Cheap AI is the same shape of change, pointed at writing code.",
-          "If that pattern holds, the fear that the job vanishes is aimed at the wrong thing. The typing was never the job. The typing was the cost of doing the job.",
+          "If that pattern holds, the fear that the job vanishes is aimed at the wrong thing. Typing is becoming a smaller share of the work. It was always the cost of doing the job, not the job itself.",
         ],
-        pullquote: "The typing was never the job. The typing was the cost of doing the job.",
+        pullquote: "Typing was always the cost of doing the job, not the job itself.",
         bullets: [
-          "ATMs moved the bank teller's work up a level instead of deleting it.",
+          "ATMs are often cited as moving the bank teller's work up a level instead of deleting it.",
           "Spreadsheets moved accountants from arithmetic to judgment.",
           "Compilers moved programmers off machine code to higher-level work.",
         ],

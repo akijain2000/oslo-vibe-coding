@@ -1,4 +1,4 @@
-// Events — upcoming + past. The upcoming event drives the homepage hero,
+// Events, upcoming + past. The upcoming event drives the homepage hero,
 // the JSON-LD Event schema, and the dynamic OG image. Keep `upcoming` first.
 
 export type EventItem = {

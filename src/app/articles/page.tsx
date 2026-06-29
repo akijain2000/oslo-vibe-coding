@@ -7,11 +7,11 @@ import { SITE_URL } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Articles",
   description:
-    "In-depth, source-backed writing from Oslo Vibe Coding: what cheap AI does to the developer's job, and an honest breakdown of real agentic engineering spend.",
+    "In-depth writing from Oslo Vibe Coding: what cheap AI does to the developer's job, and an honest breakdown of real agentic engineering spend.",
   alternates: { canonical: "/articles" },
   openGraph: {
     title: "Articles · Oslo Vibe Coding",
-    description: "In-depth, source-backed writing on building with AI.",
+    description: "In-depth writing on building with AI.",
     url: `${SITE_URL}/articles`,
   },
 };
@@ -23,11 +23,11 @@ export default function ArticlesPage() {
         <div className="mx-auto max-w-4xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40">
           <Eyebrow dark>Articles</Eyebrow>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-            The <span className="spark-text">good stuff</span>, written out in full.
+            <span className="spark-text">Talks and essays</span>, written out in full.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">
-            Our talks, expanded into proper essays you can actually read. Honest, source-backed, and
-            free, like everything else here.
+            Our talks, expanded into proper essays you can actually read. Honest, in-depth, and free,
+            like everything else here.
           </p>
         </div>
       </header>

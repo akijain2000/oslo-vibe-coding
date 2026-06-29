@@ -9,7 +9,7 @@ export default function Organisers() {
         <SectionHeading className="mt-4">Two people who think this should exist.</SectionHeading>
         <p className="mt-5 text-lg leading-relaxed text-ink-soft">
           No company behind it, no sponsor to please. Just two builders in Oslo who got tired of
-          coding alone and decided to fix it.
+          coding alone and started a meetup.
         </p>
       </div>
 

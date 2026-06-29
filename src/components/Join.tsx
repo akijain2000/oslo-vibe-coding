@@ -9,7 +9,7 @@ export default function Join() {
       <div className="rounded-card bg-ember px-6 py-14 text-center text-white sm:px-12 sm:py-20">
         <SparkMark className="mx-auto h-9 w-9 text-white" />
         <SectionHeading className="mx-auto mt-6 max-w-3xl text-white">
-          Bring a spark. Leave with something you built.
+          Bring a laptop and an idea. Leave with something you started.
         </SectionHeading>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/90">
           {upcomingEvent

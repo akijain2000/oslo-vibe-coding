@@ -55,7 +55,7 @@ export default function Learn() {
           className="group flex flex-col justify-between gap-6 rounded-card border border-line bg-mist p-7 transition-colors hover:border-ink/20 sm:p-9"
         >
           <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">Ready for the deep end?</p>
+            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">Research reading</p>
             <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Frontier reading</h3>
             <p className="mt-2 text-ink-soft">
               The papers that built modern AI, curated from Stanford&apos;s CS 153, each with a
@@ -73,7 +73,7 @@ export default function Learn() {
             </div>
           </div>
           <span className="inline-flex w-fit items-center gap-1.5 rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-paper">
-            Read the canon <span aria-hidden>→</span>
+            Read the papers <span aria-hidden>→</span>
           </span>
         </Link>
       </div>
