@@ -141,7 +141,7 @@ export const explainersNo: Record<string, Explainer> = {
         "heading": "Hva det egentlig er",
         "paragraphs": [
           "Codex er én agent du møter gjennom flere dører. Terminalversjonen, kalt Codex CLI, kjører på din egen maskin i kommandolinjevinduet der utviklere skriver instruksjoner, og der kan den inspisere et repositorium, endre filer og kjøre kommandoer. Et repositorium, eller repo, er mappen som rommer all koden i et prosjekt og historikken til prosjektet. Det finnes også en utvidelse for redigeringsprogrammet som virker inne i VS Code, Cursor og JetBrains-verktøy, en skrivebordsapp og en skyversjon du åpner i nettleseren eller inne i ChatGPT.",
-          "OpenAI lager Codex, og den kjører på selskapets ferske frontmodeller i GPT-5-serien, med GPT-5.5 som standard. I tillegg til å skrive kode kan den forklare en ukjent kodebase, se gjennom kode og hjelpe med å feilsøke problemer. CLI-en er åpen kildekode under Apache-2.0-lisensen, så hvem som helst kan lese hvordan den fungerer, og du kan logge inn med et ChatGPT-abonnement eller med en API-nøkkel."
+          "Codex er laget av OpenAI, og den kjører på selskapets nyeste frontmodeller i GPT-5-serien, med GPT-5.5 som standard. I tillegg til å skrive kode kan den forklare en ukjent kodebase, se gjennom kode og hjelpe med å feilsøke problemer. CLI-en er åpen kildekode under Apache-2.0-lisensen, så hvem som helst kan lese hvordan den fungerer, og du kan logge inn med et ChatGPT-abonnement eller med en API-nøkkel."
         ]
       },
       {
@@ -168,7 +168,7 @@ export const explainersNo: Record<string, Explainer> = {
     ]
   },
   "cursor": {
-    "lead": "Cursor er et kodeeditor med KI bygget inn i kjernen. Det ser ut og føles som en kjent editor, men en modell er vevd gjennom hver del av hvordan du skriver og endrer kode.",
+    "lead": "Cursor er en kodeeditor med KI bygget inn i kjernen. Den ser ut og føles som en kjent editor, men en modell er vevd gjennom hver del av hvordan du skriver og endrer kode.",
     "sections": [
       {
         "heading": "Hva det egentlig er",

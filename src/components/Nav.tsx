@@ -39,6 +39,16 @@ export default function Nav() {
     document.documentElement.lang = isNo ? "nb-NO" : "en";
   }, [isNo]);
 
+  // Close the mobile menu on Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const solid = scrolled || open;
   const overDark = !solid;
 
@@ -79,6 +89,7 @@ export default function Nav() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
           className={`flex h-10 w-10 items-center justify-center rounded-full md:hidden ${
             overDark ? "text-paper" : "text-ink"
@@ -91,7 +102,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="border-t border-line bg-paper px-5 pb-5 pt-2 md:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-paper px-5 pb-5 pt-2 md:hidden">
           <div className="flex flex-col">
             {nav.map((item) => (
               <Link

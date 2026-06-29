@@ -10,7 +10,7 @@ export const brand = {
   handle: "vibesoslo",
   // Functional eyebrow, straight off the poster.
   eyebrow: "Code. Chill. Learn.",
-  // The emotional line. Earned, not invented — it's how the founders actually talk.
+  // The emotional line. Earned, not invented, it's how the founders actually talk.
   tagline: "No one codes alone.",
   // The plain-English what-is-this, Norwegian-functional: says exactly what it is.
   oneLiner:

@@ -551,7 +551,7 @@ export const explainersEn: Record<string, Explainer> = {
         "heading": "Why it matters",
         "paragraphs": [
           "AlexNet is widely seen as the spark of the deep learning era. After it, researchers and companies poured effort into neural networks, and progress in vision, speech, and eventually language followed.",
-          "For anyone building with AI today, this paper is the origin story of the tools you use. The lesson it teaches, that scale of data and compute can unlock learning that hand-tuned methods cannot, has guided almost everything since."
+          "For anyone building with AI today, this paper is the origin story of the tools you use. The lesson it teaches, that scale of data and compute can lead to learning that hand-tuned methods cannot, has guided almost everything since."
         ]
       }
     ],
@@ -881,7 +881,7 @@ export const explainersEn: Record<string, Explainer> = {
         "heading": "Why it matters",
         "paragraphs": [
           "Because the math now fit on a consumer machine, the model could be released openly. That is what turned image generation from a lab demo into a tool that students, artists, and small teams could actually use and build on. A whole ecosystem of tools and fine-tuned variants grew out of it.",
-          "For anyone learning to build with AI, this is a clean example of a recurring lesson. A smart change in where you do the work, rather than a bigger model, can unlock something for an entire community."
+          "For anyone learning to build with AI, this is a clean example of a recurring lesson. A smart change in where you do the work, rather than a bigger model, can make something available to a whole community."
         ]
       }
     ],

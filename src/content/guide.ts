@@ -112,7 +112,7 @@ export const guide = {
     },
     {
       id: "levelling-up",
-      heading: "Levelling up: from prompts to agents",
+      heading: "From prompts to agents",
       paragraphs: [
         "Once the basic loop feels natural, the next step is moving from one-shot prompts to agents. A one-shot prompt is you asking for one thing and getting one answer. An agent plans, takes several actions on its own, and checks its own work before handing it back. You describe a goal, and it works through the steps.",
         "If you want to understand how this works under the hood, read Anthropic's writeup “Building effective agents”. It is a clear explanation of how these systems are put together, and it will make you much better at directing them.",
@@ -154,7 +154,7 @@ export const guide = {
       ],
       pullquote: "Pick one tool, pick one tiny real thing, and go around the loop until it works.",
       bullets: [
-        "Pick one tool: Lovable for the easiest start, Cursor to see the code, Claude Code when you are ready to level up.",
+        "Pick one tool: Lovable for the easiest start, Cursor to see the code, Claude Code when you are ready for agents.",
         "Pick one tiny, real thing to build.",
         "Describe it in plain language; let the model write it.",
         "Run it, look at it, say what is wrong, repeat.",
