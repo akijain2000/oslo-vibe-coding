@@ -65,21 +65,21 @@ function Wordmark({ size, color, accent }: { size: number; color: string; accent
   );
 }
 
-const HANDLE = "@vibesoslo";
+const BRAND = "Oslo Vibe Coding";
 const URL = "oslovibecoding.tech";
 
 /* ----- LinkedIn company covers (2400 x 400, 6:1) -----
    Company pages crop hard and mobile keeps only the center ~900px, so content is
    centered inside the safe middle and the bottom-left is left clear for the logo. */
 
-// Crop-proof: a compact, dead-centered brand block with large margins on every
-// side, so LinkedIn's aggressive company-page crop (and mobile's center-only
-// view) can never cut the wordmark or the line. The logo sits over empty corner.
+// Right-leaning: the brand block sits in the right portion of the cover, so the
+// company-page logo (which overlaps the bottom-LEFT) never touches the text. A
+// comfortable right margin keeps it clear of the edge too.
 function LinkedInCompanyEmber() {
   return (
-    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: `linear-gradient(110deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-      <Glow style={{ width: 560, height: 560, top: -260, right: 320, background: "radial-gradient(circle, rgba(255,255,255,0.2), transparent 65%)" }} />
-      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 16 }}>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: `linear-gradient(110deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", alignItems: "center", justifyContent: "flex-end", boxSizing: "border-box", paddingRight: 220 }}>
+      <Glow style={{ width: 560, height: 560, top: -260, left: 120, background: "radial-gradient(circle, rgba(255,255,255,0.18), transparent 65%)" }} />
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "flex-end", textAlign: "right", gap: 16 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <Spark size={58} id="li-co-ember-spark" solid={C.night} />
           <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 86, letterSpacing: "-0.02em", color: C.night }}>Oslo Vibe Coding</span>
@@ -94,9 +94,9 @@ function LinkedInCompanyEmber() {
 
 function LinkedInCompanyNight() {
   return (
-    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: C.night, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-      <Glow style={{ width: 780, height: 780, top: -250, left: "50%", marginLeft: -390, background: "radial-gradient(circle, rgba(255,90,44,0.4), transparent 62%)" }} />
-      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 16 }}>
+    <div style={{ width: 2400, height: 400, position: "relative", overflow: "hidden", background: C.night, display: "flex", alignItems: "center", justifyContent: "flex-end", boxSizing: "border-box", paddingRight: 220 }}>
+      <Glow style={{ width: 780, height: 780, top: -250, right: 80, background: "radial-gradient(circle, rgba(255,90,44,0.42), transparent 62%)" }} />
+      <div style={{ position: "relative", display: "flex", flexDirection: "column", alignItems: "flex-end", textAlign: "right", gap: 16 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <Spark size={58} id="li-co-night-spark" />
           <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 86, letterSpacing: "-0.02em", color: C.paper }}>
@@ -179,7 +179,7 @@ function PostQuote({ data }: { data: AssetData }) {
         {data.headline}
       </div>
       <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 28, color: C.creamDim }}>
-        <span>{HANDLE}</span>
+        <span>{BRAND}</span>
         <span style={{ color: C.glow }}>{URL}</span>
       </div>
     </div>
@@ -202,7 +202,7 @@ function PostAnnounce({ data }: { data: AssetData }) {
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: `2px solid ${C.line}`, paddingTop: 32, fontFamily: MONO, fontSize: 28, color: C.inkSoft }}>
-        <span style={{ fontWeight: 600, color: C.ink }}>{HANDLE}</span>
+        <span style={{ fontWeight: 600, color: C.ink }}>{BRAND}</span>
         <span style={{ color: C.emberInk }}>{URL}</span>
       </div>
     </div>
@@ -226,7 +226,7 @@ function PostInvite({ data }: { data: AssetData }) {
         </div>
       </div>
       <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 28 }}>
-        <span style={{ fontWeight: 600 }}>{HANDLE}</span>
+        <span style={{ fontWeight: 600 }}>{BRAND}</span>
         <span>{URL}</span>
       </div>
     </div>
@@ -253,7 +253,7 @@ function StoryQuote({ data }: { data: AssetData }) {
         </div>
       </div>
       <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: MONO, fontSize: 32, color: C.creamDim }}>
-        <span>{HANDLE}</span>
+        <span>{BRAND}</span>
         <span style={{ color: C.glow }}>{URL}</span>
       </div>
     </div>
