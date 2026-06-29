@@ -111,11 +111,13 @@ function LinkedInCompanyNight() {
   );
 }
 
+// Personal profiles also place the avatar bottom-LEFT, so the content leans
+// right here too, clear of it.
 function LinkedInPersonalNight() {
   return (
-    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: C.night, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 150px" }}>
-      <Glow style={{ width: 540, height: 540, top: -240, right: -120, background: "radial-gradient(circle, rgba(255,90,44,0.45), transparent 65%)" }} />
-      <Glow style={{ width: 360, height: 360, bottom: -200, left: 120, background: "radial-gradient(circle, rgba(255,176,32,0.28), transparent 65%)" }} />
+    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: C.night, display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", textAlign: "right", boxSizing: "border-box", padding: "0 130px" }}>
+      <Glow style={{ width: 540, height: 540, top: -240, right: -80, background: "radial-gradient(circle, rgba(255,90,44,0.45), transparent 65%)" }} />
+      <Glow style={{ width: 360, height: 360, bottom: -220, left: -80, background: "radial-gradient(circle, rgba(255,176,32,0.24), transparent 65%)" }} />
       <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
         <Spark size={44} id="li-pn-spark" />
         <span style={{ fontFamily: MONO, fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: C.glow }}>Code · Chill · Learn</span>
@@ -130,16 +132,16 @@ function LinkedInPersonalNight() {
 
 function LinkedInPersonalEmber() {
   return (
-    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: `linear-gradient(115deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", boxSizing: "border-box", padding: "0 120px" }}>
-      <Glow style={{ width: 480, height: 480, top: -220, right: 60, background: "radial-gradient(circle, rgba(255,255,255,0.22), transparent 65%)" }} />
+    <div style={{ width: 1584, height: 396, position: "relative", overflow: "hidden", background: `linear-gradient(115deg, ${C.ember} 0%, #ff7a33 55%, ${C.amber} 135%)`, display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", textAlign: "right", boxSizing: "border-box", padding: "0 120px" }}>
+      <Glow style={{ width: 480, height: 480, top: -220, left: 60, background: "radial-gradient(circle, rgba(255,255,255,0.2), transparent 65%)" }} />
       <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 16 }}>
         <Spark size={40} id="li-pe-spark" solid={C.night} />
         <span style={{ fontFamily: MONO, fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: C.night }}>Code · Chill · Learn</span>
       </div>
-      <div style={{ position: "relative", marginTop: 20, fontFamily: DISPLAY, fontWeight: 700, fontSize: 54, lineHeight: 1.04, letterSpacing: "-0.02em", color: C.night, whiteSpace: "nowrap" }}>
+      <div style={{ position: "relative", marginTop: 18, fontFamily: DISPLAY, fontWeight: 700, fontSize: 50, lineHeight: 1.04, letterSpacing: "-0.02em", color: C.night, whiteSpace: "nowrap" }}>
         Free, drop-in AI coding sessions in Oslo
       </div>
-      <div style={{ position: "relative", marginTop: 16, fontFamily: DISPLAY, fontWeight: 500, fontSize: 26, color: C.night, opacity: 0.85 }}>
+      <div style={{ position: "relative", marginTop: 16, fontFamily: DISPLAY, fontWeight: 500, fontSize: 25, color: C.night, opacity: 0.85 }}>
         Bring a laptop and an idea · {URL}
       </div>
     </div>
