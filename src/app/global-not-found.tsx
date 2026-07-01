@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 import { fontClass } from "@/lib/fonts";
 
@@ -19,12 +20,12 @@ export default function GlobalNotFound() {
         <p className="mt-4 max-w-md leading-relaxed text-cream-dim">
           The link is broken or the page moved. Head back and find your way from there.
         </p>
-        <a
+        <Link
           href="/"
           className="mt-8 rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#ff6f47]"
         >
           Back to the home page
-        </a>
+        </Link>
       </body>
     </html>
   );

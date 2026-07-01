@@ -2,6 +2,7 @@ import { brand, SITE_URL } from "@/lib/brand";
 import { links } from "@/content/links";
 import type { EventItem } from "@/content/events";
 import type { Article } from "@/content/articles";
+import type { Lecture } from "@/content/frontier";
 
 // Helper: render a JSON-LD block. Data is ours (not user input), so this is safe.
 function Ld({ data }: { data: object }) {
@@ -101,6 +102,32 @@ export function ArticleJsonLd({ article }: { article: Article }) {
         datePublished: article.datePublished,
         dateModified: article.datePublished,
         publisher: { "@id": `${SITE_URL}/#org` },
+        mainEntityOfPage: url,
+        image: `${url}/opengraph-image`,
+        url,
+      }}
+    />
+  );
+}
+
+// LearningResource — emitted on each /frontier/[slug] lecture study guide.
+export function LectureJsonLd({ lecture }: { lecture: Lecture }) {
+  const url = `${SITE_URL}/frontier/${lecture.slug}`;
+  return (
+    <Ld
+      data={{
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        name: `${lecture.title} — ${lecture.speaker}`,
+        description: lecture.lead,
+        learningResourceType: "Lecture notes",
+        educationalLevel: "Beginner",
+        about: "Stanford CS 153: Frontier Systems",
+        creator: { "@type": "Person", name: lecture.speaker },
+        publisher: { "@id": `${SITE_URL}/#org` },
+        isBasedOn: `https://www.youtube.com/watch?v=${lecture.youtubeId}`,
+        inLanguage: "en",
+        isAccessibleForFree: true,
         mainEntityOfPage: url,
         image: `${url}/opengraph-image`,
         url,

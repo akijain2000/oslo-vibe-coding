@@ -28,10 +28,20 @@ Everything is content-driven and typed. No code changes needed to update the sit
 | The next session, past events | `src/content/events.ts` |
 | Talks and decks | `src/content/talks.ts` |
 | Resource library | `src/content/resources.ts` |
+| Frontier Systems lecture notes (`/frontier`) | `src/content/frontier.ts` |
 | Organisers | `src/content/people.ts` |
 | LinkedIn updates (drop in a post URN to embed it live) | `src/content/posts.ts` |
 | Community links | `src/content/links.ts` |
 | Name, tagline, SEO copy | `src/lib/brand.ts` |
+
+### Frontier Systems lecture notes
+
+`/frontier` is a set of study guides distilled from Stanford's [CS 153: Frontier Systems](https://cs153.stanford.edu/)
+guest lectures (Nadella, Altman, Huang, Horowitz and more). Each lecture in
+`src/content/frontier.ts` carries a big idea, themed sections, takeaways, a glossary, quotes, and an
+on-brand concept diagram. The diagrams are parameterized archetypes (stack, loop, curve, bottleneck,
+network, spectrum, pipeline, contrast) rendered by `src/components/frontier/FrontierDiagrams.tsx` — pick
+an archetype and supply short labels, no per-lecture SVG needed.
 
 ## SEO
 

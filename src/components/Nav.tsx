@@ -11,6 +11,7 @@ import { links } from "@/content/links";
 const NAV_EN = [
   { label: "Next session", href: "/#next" },
   { label: "Start here", href: "/start" },
+  { label: "Frontier", href: "/frontier" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/#about" },
 ];

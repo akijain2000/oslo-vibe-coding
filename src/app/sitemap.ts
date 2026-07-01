@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/brand";
 import { articles } from "@/content/articles";
 import { allResources } from "@/content/resources";
+import { lectures } from "@/content/frontier";
 
 // lastModified is intentionally omitted: a build-time `new Date()` would claim
 // every page changed on every deploy (fake freshness). Add real per-content
@@ -15,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/articles/${a.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    { url: `${SITE_URL}/frontier`, changeFrequency: "monthly", priority: 0.8 },
+    ...lectures.map((l) => ({
+      url: `${SITE_URL}/frontier/${l.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     {
       url: `${SITE_URL}/resources`,
