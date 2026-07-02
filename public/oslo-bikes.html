@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bysykler nå · Oslo — free bikes near you (Bysykkel open data)</title>
+<meta name="description" content="A tiny demo built at Oslo Vibe Coding: live Oslo city-bike stations near you, from the free Oslo Bysykkel open data. One HTML file, no backend, no API key." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#fbf7f0;--mist:#f3ede1;--line:#e7ddcd;--ink:#16151c;--ink-soft:#4b4956;--ink-faint:#6b6776;
+    --night:#110f17;--ember:#ff5a2c;--ember-ink:#b8300c;--glow:#ff7a4d;--green:#1a9e57;
+    --display:'Space Grotesk',system-ui,sans-serif;--sans:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:680px;margin:0 auto;padding:clamp(1.5rem,5vw,3.5rem) 1.25rem 4rem}
+  .spark{width:.9em;height:.9em;color:var(--ember);vertical-align:-.1em}
+  header{margin-bottom:1.4rem}
+  .kicker{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ember-ink);font-weight:600}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,7vw,3rem);letter-spacing:-.02em;line-height:1.02;margin-top:.35rem}
+  .sub{color:var(--ink-soft);margin-top:.5rem;font-size:1.02rem}
+
+  .controls{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1.3rem 0 1rem;font-size:.9rem}
+  .near{font-weight:500}
+  .near b{color:var(--ember-ink)}
+  button{font-family:var(--sans);font-size:.85rem;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+  button:hover{border-color:var(--ember)}
+  .refresh{margin-left:auto;display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;color:var(--ink-faint)}
+  .dot{width:.5rem;height:.5rem;border-radius:999px;background:var(--ember);display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .board{border:1px solid var(--line);border-radius:1rem;overflow:hidden;background:#fff}
+  .row{display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:center;padding:.85rem 1rem;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row.closed{opacity:.5}
+  .count{text-align:center;min-width:3rem}
+  .count .num{font-family:var(--display);font-weight:700;font-size:1.5rem;line-height:1;color:var(--ember-ink)}
+  .count .num.zero{color:var(--ink-faint)}
+  .count .lbl{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint);margin-top:.15rem}
+  .st{min-width:0}
+  .st .nm{font-weight:600;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .st .di{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);margin-top:.1rem}
+  .docks{text-align:right;white-space:nowrap;font-family:var(--mono);font-size:.8rem;color:var(--ink-soft)}
+  .docks b{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink)}
+
+  .state{padding:2.2rem 1rem;text-align:center;color:var(--ink-faint);font-size:.95rem}
+  footer{margin-top:1.6rem;font-size:.85rem;color:var(--ink-faint);line-height:1.6}
+  footer b{color:var(--ink-soft);font-weight:600}
+  footer a{color:var(--ember-ink);text-decoration:none} footer a:hover{text-decoration:underline}
+  .note{margin-top:1rem;border:1px dashed var(--line);border-radius:.8rem;padding:.85rem 1rem;font-size:.85rem;color:var(--ink-soft);background:var(--mist)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker"><svg class="spark"><use href="#s"/></svg> Oslo Vibe Coding · demo</div>
+    <h1>Bysykler nå.</h1>
+    <p class="sub">Available bikes and open docks near you, live from the free <b>Oslo Bysykkel</b> open data. One HTML file. No backend, no key.</p>
+  </header>
+
+  <div class="controls">
+    <span class="near" id="near">Finding your location…</span>
+    <button id="locate" type="button">Use my location</button>
+    <span class="refresh"><span class="dot" title="auto-refreshing"></span><span id="updated">loading…</span></span>
+  </div>
+
+  <div class="board" id="board"><div class="state">Loading stations…</div></div>
+
+  <div class="note">This page joins two open feeds (stations and live counts), sorts by distance, and draws the list. <b>You could build this tonight.</b> More free Oslo data is linked below.</div>
+
+  <footer>
+    <p>Data from <a href="https://oslobysykkel.no/en/open-data" target="_blank" rel="noopener">Oslo Bysykkel</a> (open, free). More to build on: <a href="https://developer.entur.org" target="_blank" rel="noopener">transport (Entur)</a>, <a href="https://api.met.no" target="_blank" rel="noopener">weather (MET/Yr)</a>.</p>
+    <p style="margin-top:.5rem"><b>Built at <a href="https://oslovibecoding.tech" target="_blank" rel="noopener">Oslo Vibe Coding</a>.</b> No one codes alone.</p>
+  </footer>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="s" viewBox="-8 -8 16 16"><path d="M0 -7c.5 3.1 2.4 5 5.5 5.5C2.4 -1 .5 1 0 7c-.5-6-2.4-8-5.5-8.5C-2.4 -2-.5 -3.9 0 -7Z" fill="currentColor"/></symbol></defs></svg>
+
+<script>
+// A tiny demo: find where you are, ask Oslo Bysykkel which stations are near,
+// join in the live bike counts, and draw the closest ones.
+var INFO = "https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json";
+var STATUS = "https://gbfs.urbansharing.com/oslobysykkel.no/station_status.json";
+var CLIENT = "oslovibecoding-demo";
+// Fallback point if location is off: Nydalen, a central Oslo hub.
+var FALLBACK = { lat: 59.9494, lon: 10.7649, label: "Nydalen" };
+
+var board = document.getElementById("board");
+var updated = document.getElementById("updated");
+var nearEl = document.getElementById("near");
+var here = null; // {lat, lon, label}
+var reqId = 0;
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]; }); }
+function two(n){ return (n<10?"0":"") + n; }
+function clockNow(){ var d = new Date(); return two(d.getHours()) + ":" + two(d.getMinutes()); }
+
+function metres(aLat, aLon, bLat, bLon){
+  var R = 6371000, p = Math.PI/180;
+  var dLat = (bLat-aLat)*p, dLon = (bLon-aLon)*p;
+  var h = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(aLat*p)*Math.cos(bLat*p)*Math.sin(dLon/2)*Math.sin(dLon/2);
+  return 2*R*Math.asin(Math.sqrt(h));
+}
+function farLabel(m){ return m < 1000 ? Math.round(m/10)*10 + " m" : (m/1000).toFixed(1) + " km"; }
+
+function get(url){
+  return fetch(url, { headers: { "Client-Identifier": CLIENT } }).then(function(r){
+    if(!r.ok) throw new Error("HTTP " + r.status); return r.json();
+  });
+}
+
+function draw(rows){
+  if(!rows.length){ board.innerHTML = '<div class="state">No stations found nearby.</div>'; return; }
+  var html = "";
+  rows.forEach(function(s){
+    var bikes = s.bikes | 0;
+    var closed = !s.renting;
+    html += '<div class="row' + (closed ? " closed" : "") + '">'
+      + '<span class="count"><div class="num ' + (bikes ? "" : "zero") + '">' + bikes + '</div><div class="lbl">bikes</div></span>'
+      + '<span class="st"><div class="nm">' + esc(s.name) + '</div><div class="di">' + farLabel(s.dist) + ' away' + (closed ? ' · closed' : '') + '</div></span>'
+      + '<span class="docks"><b>' + (s.docks | 0) + '</b> docks</span>'
+      + '</div>';
+  });
+  board.innerHTML = html;
+}
+
+function load(){
+  if(!here) return;
+  var mine = ++reqId;
+  Promise.all([ get(INFO), get(STATUS) ]).then(function(res){
+    if (mine !== reqId) return;
+    var info = res[0].data.stations, status = res[1].data.stations;
+    var byId = {};
+    status.forEach(function(s){ byId[s.station_id] = s; });
+    var rows = info.map(function(s){
+      var st = byId[s.station_id];
+      if (!st) return null; // no live status for this station, skip it
+      var open = st.is_renting !== 0 && st.is_renting !== false && st.is_installed !== 0 && st.is_installed !== false;
+      return {
+        name: s.name,
+        bikes: st.num_bikes_available | 0, docks: st.num_docks_available | 0,
+        renting: open,
+        dist: metres(here.lat, here.lon, s.lat, s.lon)
+      };
+    }).filter(Boolean).sort(function(a,b){ return a.dist - b.dist; }).slice(0, 8);
+    draw(rows);
+    updated.textContent = "updated " + clockNow();
+  }).catch(function(e){
+    if (mine !== reqId) return;
+    board.innerHTML = '<div class="state">Could not reach Bysykkel just now.<br><small>' + esc(e.message) + '</small></div>';
+    updated.textContent = "offline";
+  });
+}
+
+var locId = 0;
+function setHere(h){ here = h; nearEl.innerHTML = "Near <b>" + esc(h.label) + "</b>"; load(); }
+
+function locate(){
+  var mine = ++locId; // ignore a stale geolocation callback if you click again
+  nearEl.textContent = "Finding your location…";
+  if(!navigator.geolocation){ setHere(FALLBACK); return; }
+  navigator.geolocation.getCurrentPosition(
+    function(pos){ if(mine !== locId) return; setHere({ lat: pos.coords.latitude, lon: pos.coords.longitude, label: "you" }); },
+    function(){ if(mine !== locId) return; setHere(FALLBACK); },
+    { timeout: 8000, maximumAge: 60000 }
+  );
+}
+
+document.getElementById("locate").addEventListener("click", locate);
+document.addEventListener("visibilitychange", function(){ if(!document.hidden) load(); });
+setInterval(function(){ if(!document.hidden) load(); }, 30000);
+locate();
+</script>
+</body>
+</html>
