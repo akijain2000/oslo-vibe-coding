@@ -96,8 +96,8 @@ var here = null; // {lat, lon, label}
 var reqId = 0;
 
 function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]; }); }
-function two(n){ return (n<10?"0":"") + n; }
-function clockNow(){ var d = new Date(); return two(d.getHours()) + ":" + two(d.getMinutes()); }
+var OSLO = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Oslo", hour: "2-digit", minute: "2-digit", hour12: false });
+function clockNow(){ return OSLO.format(new Date()); }
 
 function metres(aLat, aLon, bLat, bLon){
   var R = 6371000, p = Math.PI/180;
@@ -173,7 +173,8 @@ function locate(){
 document.getElementById("locate").addEventListener("click", locate);
 document.addEventListener("visibilitychange", function(){ if(!document.hidden) load(); });
 setInterval(function(){ if(!document.hidden) load(); }, 30000);
-locate();
+// Show the Nydalen fallback right away; only ask for location when the user opts in.
+setHere(FALLBACK);
 </script>
 </body>
 </html>

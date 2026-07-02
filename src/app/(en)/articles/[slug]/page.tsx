@@ -58,8 +58,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <span>{article.author}</span>
             <span aria-hidden>·</span>
             <span>{article.readingTimeMin} min read</span>
-            <span aria-hidden>·</span>
-            <span>from a {article.deckPages}-page talk</span>
+            {(article.kicker || article.deckPages) && (
+              <>
+                <span aria-hidden>·</span>
+                <span>{article.kicker ?? `from a ${article.deckPages}-page talk`}</span>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -88,7 +92,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
           >
-            {article.sourceLabel ?? `Originally shared as a ${article.deckPages}-page talk on LinkedIn`}
+            {article.sourceLabel ??
+              (article.deckPages ? `Originally shared as a ${article.deckPages}-page talk on LinkedIn` : "View the source")}
             <span aria-hidden>→</span>
           </a>
         </div>
