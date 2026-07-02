@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Section, Eyebrow } from "./Section";
 import CTAButton from "./CTAButton";
 import { upcomingEvent } from "@/content/events";
+import { brand } from "@/lib/brand";
 import { links } from "@/content/links";
 
 const copy = {
@@ -26,6 +27,10 @@ const copy = {
     joinWhatsapp: "Join WhatsApp",
     rsvpOnLuma: "RSVP on Luma",
     whatsappCommunity: "WhatsApp community",
+    betweenTitle: "We're between sessions right now",
+    betweenBody:
+      "The next date always lands on Luma first. Join there or on WhatsApp and you'll be the first to know when it's set.",
+    betweenWhen: "Roughly weekly, always free",
   },
   no: {
     eyebrow: "Neste samling",
@@ -48,6 +53,10 @@ const copy = {
     joinWhatsapp: "Bli med på WhatsApp",
     rsvpOnLuma: "Meld deg på på Luma",
     whatsappCommunity: "WhatsApp-fellesskap",
+    betweenTitle: "Vi er mellom samlinger akkurat nå",
+    betweenBody:
+      "Neste dato dukker alltid opp på Luma først. Bli med der eller på WhatsApp, så er du blant de første som får vite det.",
+    betweenWhen: "Omtrent ukentlig, alltid gratis",
   },
 } as const;
 
@@ -59,12 +68,11 @@ const detail = (label: string, value: string) => (
 );
 
 export default function NextEvent({ locale = "en" }: { locale?: "en" | "no" }) {
-  if (!upcomingEvent) return null;
   const e = upcomingEvent;
   const t = copy[locale];
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${e.venue}, ${e.address}`,
-  )}`;
+  const mapsUrl = e
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${e.venue}, ${e.address}`)}`
+    : "";
 
   return (
     <Section id="next" tone="mist">
@@ -72,39 +80,55 @@ export default function NextEvent({ locale = "en" }: { locale?: "en" | "no" }) {
         {/* details */}
         <div>
           <Eyebrow>{t.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-            {e.title}
-          </h2>
-          <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{e.blurb}</p>
 
-          <dl className="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-4">
-            {detail(t.dateLabel, e.dateLabel.replace(" 2026", ""))}
-            {detail(t.timeLabel, e.timeLabel)}
-            {detail(t.costLabel, t.costValue)}
-            {detail(t.whoLabel, t.whoValue)}
-          </dl>
+          {e ? (
+            <>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                {e.title}
+              </h2>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{e.blurb}</p>
 
-          <div className="mt-8 rounded-card border border-line bg-paper p-5">
-            <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.whereLabel}</p>
-            <p className="mt-1 font-display text-lg font-semibold">{e.venue}</p>
-            <p className="text-ink-soft">{e.address}</p>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
-            >
-              {t.openInMaps}
-              <span aria-hidden>→</span>
-            </a>
-          </div>
+              <dl className="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-4">
+                {detail(t.dateLabel, e.dateLabel.replace(" 2026", ""))}
+                {detail(t.timeLabel, e.timeLabel)}
+                {detail(t.costLabel, t.costValue)}
+                {detail(t.whoLabel, t.whoValue)}
+              </dl>
 
-          <div className="mt-8">
-            <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.bringLabel}</p>
-            <p className="mt-2 text-ink-soft">
-              {t.bringBody}
-            </p>
-          </div>
+              <div className="mt-8 rounded-card border border-line bg-paper p-5">
+                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.whereLabel}</p>
+                <p className="mt-1 font-display text-lg font-semibold">{e.venue}</p>
+                <p className="text-ink-soft">{e.address}</p>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
+                >
+                  {t.openInMaps}
+                  <span aria-hidden>→</span>
+                </a>
+              </div>
+
+              <div className="mt-8">
+                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.bringLabel}</p>
+                <p className="mt-2 text-ink-soft">{t.bringBody}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                {t.betweenTitle}
+              </h2>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{t.betweenBody}</p>
+
+              <div className="mt-8 rounded-card border border-line bg-paper p-5">
+                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.whereLabel}</p>
+                <p className="mt-1 font-display text-lg font-semibold">{brand.city}</p>
+                <p className="text-ink-soft">{t.betweenWhen}</p>
+              </div>
+            </>
+          )}
         </div>
 
         {/* ticket card */}

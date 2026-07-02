@@ -35,7 +35,7 @@ function ResourceCard({
       }`}
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-night">
-        <ResourceVisual item={item} />
+        <ResourceVisual item={item} alt={item.image ? `${title} preview` : ""} />
         {badge && (
           <span className="absolute right-3 top-3 rounded-pill bg-night/75 px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-paper backdrop-blur-sm">
             {badge}

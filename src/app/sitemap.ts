@@ -9,7 +9,18 @@ import { lectures } from "@/content/frontier";
 // dates here if/when content gains them.
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
-    { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
+    {
+      url: SITE_URL,
+      changeFrequency: "weekly",
+      priority: 1,
+      alternates: { languages: { en: SITE_URL, "nb-NO": `${SITE_URL}/no`, "x-default": SITE_URL } },
+    },
+    {
+      url: `${SITE_URL}/no`,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { en: SITE_URL, "nb-NO": `${SITE_URL}/no`, "x-default": SITE_URL } },
+    },
     { url: `${SITE_URL}/start`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/articles`, changeFrequency: "monthly", priority: 0.8 },
     ...articles.map((a) => ({

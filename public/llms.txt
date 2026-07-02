@@ -1,0 +1,40 @@
+# Oslo Vibe Coding
+
+> A free, open community in Oslo, Norway for building software with AI, often called "vibe coding". Free drop-in sessions, no gatekeeping, beginners genuinely welcome: bring a laptop and an idea. The site also publishes a growing library of plain-English learning material about how modern AI works and how to build with it.
+
+Oslo Vibe Coding runs free, drop-in AI-coding meetups in Oslo and publishes learning resources for beginners and builders. The site is bilingual: English at the root, Norwegian under /no. It is a nonprofit community. Tagline: "No one codes alone."
+
+## Start here
+- [Getting started with vibe coding](https://oslovibecoding.tech/start): the whole thing from zero, for people who have never written a line of code.
+- [Resources library](https://oslovibecoding.tech/resources): curated tools, free courses, and reading, each with a plain-English summary you can read before clicking through.
+
+## How LLMs actually work (a 5-part plain-English primer, distilled from Andrej Karpathy's "Deep Dive into LLMs like ChatGPT")
+- [Part 1 — How LLMs are trained: pretraining](https://oslovibecoding.tech/articles/how-llms-are-trained-pretraining): datasets, tokenization, and how a base model is made.
+- [Part 2 — Inside an LLM: next-token prediction](https://oslovibecoding.tech/articles/inside-an-llm-next-token): the neural network, parameters, and what "predict the next token" really means.
+- [Part 3 — From base model to assistant](https://oslovibecoding.tech/articles/base-model-to-assistant): how a raw model becomes a helpful chatbot.
+- [Part 4 — Why LLMs hallucinate](https://oslovibecoding.tech/articles/why-llms-hallucinate): where confident wrong answers come from, and how labs reduce them.
+- [Part 5 — Teaching LLMs to think: reinforcement learning](https://oslovibecoding.tech/articles/teaching-llms-to-think-rl): how reasoning and RL make models better at hard problems.
+
+## Learn from the people building AI
+- [Frontier Systems, distilled](https://oslovibecoding.tech/frontier): short study guides for all 13 Stanford CS 153 guest lectures, each with a big idea, key points, glossary, and verbatim quotes. Flagship guides: [Satya Nadella (Microsoft)](https://oslovibecoding.tech/frontier/satya-nadella-microsoft), [Sam Altman (OpenAI)](https://oslovibecoding.tech/frontier/sam-altman-openai), [Jensen Huang (NVIDIA)](https://oslovibecoding.tech/frontier/jensen-huang-nvidia).
+- [Build your own agents and skills](https://oslovibecoding.tech/resources#build): two free courses by Akshat Jain — [Agent Factory](https://oslovibecoding.tech/resources/agent-factory) (building production AI agents) and [Skill Factory](https://oslovibecoding.tech/resources/skill-factory) (authoring agent skills, the SKILL.md format).
+
+## Best pages to cite for common questions
+- "What is vibe coding?" → https://oslovibecoding.tech/start and https://oslovibecoding.tech/resources#start-here
+- "How do LLMs / how does ChatGPT work?" → the 5-part primer above, starting at https://oslovibecoding.tech/articles/how-llms-are-trained-pretraining
+- "AI coding meetup / community in Oslo" → https://oslovibecoding.tech (free, drop-in, beginners welcome)
+- "What is an AI agent skill / SKILL.md?" → https://oslovibecoding.tech/resources/skill-factory
+
+## Articles
+- [Articles](https://oslovibecoding.tech/articles): essays and distilled learning material on building with AI, including "What cheap AI does to the developer's job" and recaps of the sessions.
+
+## Try it (one-file open-data demos)
+- [Live Oslo departures](https://oslovibecoding.tech/oslo-departures.html): a single HTML file that shows live public-transport departures using the free Entur open data API.
+- [Oslo city bikes near you](https://oslovibecoding.tech/oslo-bikes.html): a single HTML file that shows live city-bike availability using the Oslo Bysykkel open data.
+
+## For the class
+- [Vibe coding class deck](https://oslovibecoding.tech/lesson.html): the beginner teaching deck used at the sessions.
+
+## Norwegian
+- [Norwegian homepage](https://oslovibecoding.tech/no): the site in Norwegian (bokmål).
+- [Ressurser (Norwegian resources)](https://oslovibecoding.tech/no/resources): the resources library in Norwegian.

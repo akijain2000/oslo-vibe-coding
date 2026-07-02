@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ResourcesIndex from "@/components/resources/ResourcesIndex";
+import { CollectionPageJsonLd } from "@/components/JsonLd";
+import { allResources } from "@/content/resources";
 import { hreflangAlternates } from "@/lib/i18n";
 import { SITE_URL } from "@/lib/brand";
 
@@ -20,6 +22,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div lang="nb-NO">
+      <CollectionPageJsonLd
+        locale="no"
+        name="Ressurser: lær vibe coding fra null"
+        description="En gratis, kuratert inngang til å bygge programvare med AI, hver med et sammendrag på norsk."
+        path="/resources"
+        items={allResources.map((r) => ({ name: r.titleNo ?? r.title, path: `/resources/${r.slug}` }))}
+      />
       <ResourcesIndex locale="no" />
     </div>
   );

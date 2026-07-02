@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/Section";
+import { CollectionPageJsonLd } from "@/components/JsonLd";
 import { articles } from "@/content/articles";
 import { SITE_URL } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Articles",
+  title: "Articles on AI coding, agents, and how LLMs work",
   description:
-    "In-depth writing from Oslo Vibe Coding: what cheap AI does to the developer's job, and an honest breakdown of real agentic engineering spend.",
-  alternates: { canonical: "/articles" },
+    "Plain-English essays and distilled learning from Oslo Vibe Coding: how LLMs actually work (a 5-part Karpathy primer), what cheap AI does to the developer's job, and honest notes on agentic engineering.",
+  alternates: {
+    canonical: "/articles",
+    languages: { en: "/articles", "x-default": "/articles" },
+  },
   openGraph: {
     title: "Articles · Oslo Vibe Coding",
-    description: "In-depth writing on building with AI.",
+    description: "Plain-English essays and distilled learning on building with AI.",
     url: `${SITE_URL}/articles`,
   },
 };
@@ -19,6 +23,12 @@ export const metadata: Metadata = {
 export default function ArticlesPage() {
   return (
     <>
+      <CollectionPageJsonLd
+        name="Articles on AI coding, agents, and how LLMs work"
+        description="Plain-English essays and distilled learning on building with AI, from Oslo Vibe Coding."
+        path="/articles"
+        items={articles.map((a) => ({ name: a.title, path: `/articles/${a.slug}` }))}
+      />
       <header className="bg-night text-paper">
         <div className="mx-auto max-w-4xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40">
           <Eyebrow dark>Articles</Eyebrow>
@@ -44,8 +54,12 @@ export default function ArticlesPage() {
                 <span>{a.author}</span>
                 <span aria-hidden>·</span>
                 <span>{a.readingTimeMin} min read</span>
-                <span aria-hidden>·</span>
-                <span>from a {a.deckPages}-page talk</span>
+                {(a.deckPages || a.kicker) && (
+                  <>
+                    <span aria-hidden>·</span>
+                    <span>{a.deckPages ? `from a ${a.deckPages}-page talk` : a.kicker}</span>
+                  </>
+                )}
               </div>
               <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight group-hover:text-ember-ink sm:text-3xl">
                 {a.title}

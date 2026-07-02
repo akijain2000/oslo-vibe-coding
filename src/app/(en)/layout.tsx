@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   creator: "Oslo Vibe Coding",
   publisher: "Oslo Vibe Coding",
   category: "technology",
-  alternates: { canonical: "/" },
+  // No layout-level canonical: each page owns its own canonical + hreflang
+  // languages. A default `canonical: "/"` here would silently make any page that
+  // forgets its own canonical self-canonicalize to the homepage.
   openGraph: {
     type: "website",
     locale: "en_US",

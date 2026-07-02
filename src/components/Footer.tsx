@@ -51,7 +51,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Logo tone="dark" gradientId="logo-spark-footer" href={isNo ? "/no/resources" : "/"} />
+            <Logo tone="dark" gradientId="logo-spark-footer" href={isNo ? "/no" : "/"} />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-dim/80">{tagline}</p>
           </div>
 

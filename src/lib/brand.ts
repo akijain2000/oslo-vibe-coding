@@ -14,7 +14,7 @@ export const brand = {
   tagline: "No one codes alone.",
   // The plain-English what-is-this, Norwegian-functional: says exactly what it is.
   oneLiner:
-    "Free, drop-in AI coding sessions in Oslo. Bring a laptop and an idea. Beginners genuinely welcome.",
+    "Free, drop-in vibe coding meetups in Oslo — build software with AI. Bring a laptop and an idea. Beginners genuinely welcome.",
   city: "Oslo",
   country: "Norway",
   url: SITE_URL,

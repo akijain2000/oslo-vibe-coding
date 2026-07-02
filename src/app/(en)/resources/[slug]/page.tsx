@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ResourceExplainer from "@/components/resources/ResourceExplainer";
+import { ResourceJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { allResources, getResourceBySlug } from "@/content/resources";
 import { getExplainer } from "@/content/explainers";
 import { hreflangAlternates } from "@/lib/i18n";
@@ -37,8 +38,22 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const r = getResourceBySlug(slug);
+  const e = getExplainer("en", slug);
   return (
     <div lang="en">
+      {r && (
+        <>
+          <ResourceJsonLd resource={r} locale="en" title={r.title} description={e?.lead ?? r.tldr} />
+          <BreadcrumbJsonLd
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Resources", path: "/resources" },
+              { name: r.title, path: `/resources/${slug}` },
+            ]}
+          />
+        </>
+      )}
       <ResourceExplainer locale="en" slug={slug} />
     </div>
   );

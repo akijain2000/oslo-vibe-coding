@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import FrontierIndex from "@/components/frontier/FrontierIndex";
+import { CollectionPageJsonLd, Cs153CourseJsonLd } from "@/components/JsonLd";
+import { lectures } from "@/content/frontier";
 import { SITE_URL } from "@/lib/brand";
 
 export const metadata: Metadata = {
@@ -19,6 +21,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div lang="en">
+      <Cs153CourseJsonLd />
+      <CollectionPageJsonLd
+        name="Frontier Systems, distilled"
+        description="Study guides for all 13 guest lectures from Stanford's CS 153: Frontier Systems."
+        path="/frontier"
+        items={lectures.map((l) => ({ name: `${l.title} — ${l.speaker}`, path: `/frontier/${l.slug}` }))}
+      />
       <FrontierIndex />
     </div>
   );

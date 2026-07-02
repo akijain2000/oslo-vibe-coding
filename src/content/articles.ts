@@ -28,6 +28,12 @@ export type Article = {
   // source is something else, such as a class deck or a video.
   sourceLabel?: string;
   datePublished: string; // ISO date, used for Article structured data
+  // Ordered-series membership (e.g. the 5-part "How LLMs work" primer). Powers
+  // isPartOf structured data and prev/next navigation.
+  series?: { name: string; part: number; of: number };
+  // Optional schema hints: `about` (the subject) and `keywords` (search terms).
+  about?: string;
+  keywords?: string[];
   sections: ProseBlock[];
 };
 
@@ -316,6 +322,9 @@ export const articles: Article[] = [
     "author": "Oslo Vibe Coding",
     "readingTimeMin": 8,
     "kicker": "Karpathy’s deep dive · part 1 of 5",
+    "series": { "name": "How LLMs work, from Karpathy", "part": 1, "of": 5 },
+    "about": "Large language models",
+    "keywords": ["how LLMs work", "large language models", "ChatGPT", "pretraining", "Andrej Karpathy"],
     "takeaway": "Pretraining takes a filtered copy of the public internet, chops it into tokens, and trains a giant neural network to predict the next token over and over. What comes out is a base model: a statistical simulator of internet documents that has absorbed a rough, lossy picture of the world, but does not yet answer your questions.",
     "sourceUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
     "sourceLabel": "Watch the full 3.5-hour video",
@@ -394,6 +403,9 @@ export const articles: Article[] = [
     "author": "Oslo Vibe Coding",
     "readingTimeMin": 8,
     "kicker": "Karpathy’s deep dive · part 2 of 5",
+    "series": { "name": "How LLMs work, from Karpathy", "part": 2, "of": 5 },
+    "about": "Large language models",
+    "keywords": ["how LLMs work", "neural network", "next-token prediction", "transformer", "tokens"],
     "takeaway": "An LLM is a fixed mathematical function with billions of tunable numbers that only ever does one thing: read the tokens so far and output a probability for every possible next token. It has no memory, no tools, and no internet inside it, and each step gets a fixed, small budget of computation. That is why the same prompt gives different answers, why it recalls facts vaguely rather than exactly, and why it works better when it spreads its thinking across many tokens instead of jumping to an answer.",
     "sourceUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
     "sourceLabel": "Watch the full 3.5-hour video",
@@ -472,6 +484,9 @@ export const articles: Article[] = [
     "author": "Oslo Vibe Coding",
     "readingTimeMin": 8,
     "kicker": "Karpathy’s deep dive · part 3 of 5",
+    "series": { "name": "How LLMs work, from Karpathy", "part": 3, "of": 5 },
+    "about": "Large language models",
+    "keywords": ["how LLMs work", "base model", "AI assistant", "fine-tuning", "instruction tuning"],
     "takeaway": "The assistant you chat with is a statistical simulation of a helpful, knowledgeable human labeler, built by training the base model on example conversations that labelers wrote by hand following company guidelines. It is not a person and it is not a database. It is a statistical average of what skilled labelers would write. Read its answers that way.",
     "sourceUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
     "sourceLabel": "Watch the full 3.5-hour video",
@@ -548,6 +563,9 @@ export const articles: Article[] = [
     "author": "Oslo Vibe Coding",
     "readingTimeMin": 8,
     "kicker": "Karpathy’s deep dive · part 4 of 5",
+    "series": { "name": "How LLMs work, from Karpathy", "part": 4, "of": 5 },
+    "about": "Large language models",
+    "keywords": ["why LLMs hallucinate", "AI hallucination", "large language models", "model knowledge", "ChatGPT"],
     "takeaway": "The model has no built-in sense of \"I don't know,\" so it fills gaps with confident guesses. Its baked-in knowledge is a vague recollection; the words in front of it are precise working memory. Put the facts in the context, tell it to use tools for anything factual or numerical, and verify the result.",
     "sourceUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
     "sourceLabel": "Watch the full 3.5-hour video",
@@ -630,6 +648,9 @@ export const articles: Article[] = [
     "author": "Oslo Vibe Coding",
     "readingTimeMin": 9,
     "kicker": "Karpathy’s deep dive · part 5 of 5",
+    "series": { "name": "How LLMs work, from Karpathy", "part": 5, "of": 5 },
+    "about": "Reinforcement learning for language models",
+    "keywords": ["reinforcement learning", "reasoning models", "how LLMs think", "RLHF", "chain of thought"],
     "takeaway": "Reinforcement learning is the practice-problem stage: the model tries many solutions, keeps the ones that reach the right answer, and discovers its own problem-solving moves instead of only imitating humans. On verifiable problems like math and code this produces real reasoning, long internal chains of thought that emerge on their own. On fuzzy tasks, where a reward has to be simulated, the same process eventually games the simulator, so it cannot be run forever.",
     "sourceUrl": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
     "sourceLabel": "Watch the full 3.5-hour video",
@@ -709,6 +730,13 @@ export const articles: Article[] = [
 ];
 
 export const getArticle = (slug: string) => articles.find((a) => a.slug === slug);
+
+// All parts of a named series, in reading order. Used for prev/next links and
+// the series hub.
+export const seriesParts = (name: string) =>
+  articles
+    .filter((a) => a.series?.name === name)
+    .sort((a, b) => (a.series!.part ?? 0) - (b.series!.part ?? 0));
 
 // A hero concept diagram per article, drawn with the same engine as the frontier
 // study guides. Keyed by slug; the article page renders it under the takeaway.

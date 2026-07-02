@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import FrontierLecture from "@/components/frontier/FrontierLecture";
-import { LectureJsonLd } from "@/components/JsonLd";
+import { LectureJsonLd, BreadcrumbJsonLd, DefinedTermSetJsonLd } from "@/components/JsonLd";
 import { lectures, getLectureBySlug } from "@/content/frontier";
 import { SITE_URL } from "@/lib/brand";
 
@@ -36,7 +36,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const l = getLectureBySlug(slug);
   return (
     <div lang="en">
-      {l && <LectureJsonLd lecture={l} />}
+      {l && (
+        <>
+          <LectureJsonLd lecture={l} />
+          <DefinedTermSetJsonLd lecture={l} />
+          <BreadcrumbJsonLd
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Frontier Systems", path: "/frontier" },
+              { name: `${l.title} — ${l.speaker}`, path: `/frontier/${l.slug}` },
+            ]}
+          />
+        </>
+      )}
       <FrontierLecture slug={slug} />
     </div>
   );

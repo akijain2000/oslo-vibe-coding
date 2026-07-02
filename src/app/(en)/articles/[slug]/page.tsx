@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import Prose from "@/components/Prose";
 import SparkMark from "@/components/SparkMark";
 import { FrontierDiagram } from "@/components/frontier/FrontierDiagrams";
-import { articles, getArticle, articleDiagram } from "@/content/articles";
-import { ArticleJsonLd } from "@/components/JsonLd";
+import { articles, getArticle, articleDiagram, seriesParts } from "@/content/articles";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { links } from "@/content/links";
 import { SITE_URL } from "@/lib/brand";
 
@@ -40,9 +40,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = getArticle(slug);
   if (!article) notFound();
 
+  const parts = article.series ? seriesParts(article.series.name) : [];
+  const idx = parts.findIndex((p) => p.slug === article.slug);
+  const prev = idx > 0 ? parts[idx - 1] : null;
+  const next = idx >= 0 && idx < parts.length - 1 ? parts[idx + 1] : null;
+
   return (
     <>
       <ArticleJsonLd article={article} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Articles", path: "/articles" },
+          { name: article.title, path: `/articles/${article.slug}` },
+        ]}
+      />
       <header className="bg-night text-paper">
         <div className="mx-auto max-w-3xl px-5 pb-14 pt-32 sm:px-8 sm:pb-16 sm:pt-40">
           <Link
@@ -91,6 +103,49 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <Prose key={i} section={s} />
           ))}
         </div>
+
+        {article.series && (
+          <nav aria-label="Series navigation" className="mt-14 rounded-card border border-line bg-mist p-6 sm:p-7">
+            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">
+              {article.series.name} · part {article.series.part} of {article.series.of}
+            </p>
+            <ol className="mt-4 space-y-2">
+              {parts.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/articles/${p.slug}`}
+                    className={`flex items-baseline gap-3 text-sm leading-snug ${
+                      p.slug === article.slug
+                        ? "font-semibold text-ink"
+                        : "text-ink-soft hover:text-ember-ink"
+                    }`}
+                  >
+                    <span className="font-mono text-xs text-ink-faint">{p.series!.part}</span>
+                    <span>{p.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            {(prev || next) && (
+              <div className="mt-5 flex items-baseline justify-between gap-4 border-t border-line pt-4 text-sm font-semibold">
+                {prev ? (
+                  <Link href={`/articles/${prev.slug}`} className="text-ember-ink hover:underline">
+                    ← {prev.title}
+                  </Link>
+                ) : (
+                  <span />
+                )}
+                {next ? (
+                  <Link href={`/articles/${next.slug}`} className="text-right text-ember-ink hover:underline">
+                    {next.title} →
+                  </Link>
+                ) : (
+                  <span />
+                )}
+              </div>
+            )}
+          </nav>
+        )}
 
         <div className="mt-14 border-t border-line pt-8">
           <a

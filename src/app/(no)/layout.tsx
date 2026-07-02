@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     default: "Oslo Vibe Coding: gratis vibe coding-samlinger i Oslo",
     template: "%s · Oslo Vibe Coding",
   },
-  description: brand.description,
+  description:
+    "Oslo Vibe Coding er et gratis, åpent fellesskap for å bygge programvare med AI. Drop-in-samlinger, ingen portvakt, nybegynnere er velkomne. Ta med en laptop og en idé.",
   applicationName: brand.name,
   openGraph: {
     type: "website",
@@ -42,7 +43,7 @@ export const viewport: Viewport = {
 export default function NoLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="nb-NO" className={fontClass}>
-      <SiteBody>{children}</SiteBody>
+      <SiteBody locale="no">{children}</SiteBody>
     </html>
   );
 }
