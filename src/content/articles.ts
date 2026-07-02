@@ -100,7 +100,7 @@ export const articles: Article[] = [
         heading: "Where this is going",
         paragraphs: [
           "This was our first session at Spaces Stortorvet, and we liked it there. We are going to keep the drop-ins at Spaces and settle into a regular time, so you can plan around it instead of watching for the next announcement.",
-          "We are also putting together a curriculum. Instead of starting from zero every week, the sessions will build on each other: set up your tools, ship a first small thing, then work up to a real project you care about. Come to one, then the next, and you will have something real by the end.",
+          "We are also putting together a curriculum, so the sessions build on each other instead of starting from zero every week. Come to one, then the next, and you will keep building instead of repeating the basics.",
         ],
       },
       {
