@@ -22,6 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { en: SITE_URL, "nb-NO": `${SITE_URL}/no`, "x-default": SITE_URL } },
     },
     { url: `${SITE_URL}/start`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/what-is-vibe-coding`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/faq`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/llms`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/articles`, changeFrequency: "monthly", priority: 0.8 },
     ...articles.map((a) => ({
       url: `${SITE_URL}/articles/${a.slug}`,

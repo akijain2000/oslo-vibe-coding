@@ -43,6 +43,19 @@ export default function ArticlesPage() {
       </header>
 
       <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+        <Link
+          href="/llms"
+          className="group mb-8 flex flex-wrap items-center justify-between gap-3 rounded-card border border-ember/30 bg-ember/[0.06] p-5 transition-colors hover:border-ember/50 sm:p-6"
+        >
+          <div>
+            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">A 5-part primer</p>
+            <p className="mt-1 font-display text-lg font-bold tracking-tight text-ink">
+              How do LLMs work? Start the series →
+            </p>
+          </div>
+          <span className="font-mono text-xs uppercase tracking-wider text-ink-faint">/llms</span>
+        </Link>
+
         <div className="space-y-5">
           {articles.map((a) => (
             <Link

@@ -23,8 +23,11 @@ const COLS_EN: Col[] = [
     items: [
       { label: "Next session", href: "/#next", external: false },
       { label: "Start here", href: "/start", external: false },
+      { label: "What is vibe coding?", href: "/what-is-vibe-coding", external: false },
+      { label: "How LLMs work", href: "/llms", external: false },
       { label: "Articles", href: "/articles", external: false },
       { label: "Resources", href: "/resources", external: false },
+      { label: "FAQ", href: "/faq", external: false },
     ],
   },
 ];
