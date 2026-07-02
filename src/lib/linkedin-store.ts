@@ -43,16 +43,25 @@ export function decrypt(b64: string): string {
 /* ---------- signed OAuth state (CSRF guard) ---------- */
 
 function hmac(data: string): string {
-  return crypto.createHmac("sha256", process.env.ADMIN_TOKEN || "").update(data).digest("base64url");
+  // Keyed on ADMIN_TOKEN. Throw (rather than sign with an empty key) if it is
+  // unset, so state can never be forged with a known-empty HMAC key.
+  const secret = process.env.ADMIN_TOKEN;
+  if (!secret) throw new Error("ADMIN_TOKEN is required to sign OAuth state");
+  return crypto.createHmac("sha256", secret).update(data).digest("base64url");
 }
 export function signState(payload: object): string {
   const data = Buffer.from(JSON.stringify(payload)).toString("base64url");
   return `${data}.${hmac(data)}`;
 }
 export function verifyState<T>(state: string): T | null {
-  const [data, sig] = (state || "").split(".");
-  if (!data || !sig || !crypto.timingSafeEqual(Buffer.from(hmac(data)), Buffer.from(sig))) return null;
   try {
+    const [data, sig] = (state || "").split(".");
+    if (!data || !sig) return null;
+    const expected = Buffer.from(hmac(data));
+    const got = Buffer.from(sig);
+    // Length-guard before timingSafeEqual (it throws on a length mismatch), so a
+    // crafted state returns a clean null instead of an uncaught 500.
+    if (expected.length !== got.length || !crypto.timingSafeEqual(expected, got)) return null;
     return JSON.parse(Buffer.from(data, "base64url").toString("utf8")) as T;
   } catch {
     return null;

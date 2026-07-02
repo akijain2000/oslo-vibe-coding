@@ -8,8 +8,10 @@ export const dynamic = "force-dynamic";
 // Daily Vercel cron (see vercel.json). Publishes every queued post whose
 // publishAt has passed. LinkedIn has no scheduled state, so this IS the schedule.
 export async function GET(req: Request) {
+  // Fail closed: an unset CRON_SECRET must NOT open this publish endpoint to the
+  // public (Vercel does not inject it automatically). Require it, always.
   const secret = process.env.CRON_SECRET;
-  if (secret && req.headers.get("authorization") !== `Bearer ${secret}`) {
+  if (!secret || req.headers.get("authorization") !== `Bearer ${secret}`) {
     return new NextResponse("unauthorized", { status: 401 });
   }
 

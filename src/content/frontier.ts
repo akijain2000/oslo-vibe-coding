@@ -527,17 +527,17 @@ export const lectures: Lecture[] = [
       "a": [
         "Raise, then hire",
         "Open loop, lossy",
-        "Middle managers route info",
-        "4-5 yrs to Series B",
-        "Revenue/head < $100k"
+        "Middle managers",
+        "4-5 yrs to scale",
+        "Rev/head < $100k"
       ],
       "bTitle": "AI-native company",
       "b": [
-        "Founder plus agents",
-        "Closed feedback loop",
-        "ICs, DRIs, AI founder",
-        "Zero to tens of M in 1 yr",
-        "Revenue/head $1-2M"
+        "Founder + agents",
+        "Closed feedback",
+        "Flat, few people",
+        "Tens of $M in 1yr",
+        "Rev/head $1-2M"
       ]
     },
     "minutes": 4
@@ -1025,15 +1025,15 @@ export const lectures: Lecture[] = [
         "Language tower",
         "Image tower",
         "Video tower",
-        "Thin fusion bridge",
-        "No shared reasoning"
+        "Thin bridge",
+        "Can't co-reason"
       ],
       "bTitle": "Unified model",
       "b": [
-        "One encoder space",
+        "One latent space",
         "One transformer",
-        "Reason across modalities",
-        "Understand + generate",
+        "Cross-modal reason",
+        "Sees + makes",
         "Multi-turn memory"
       ]
     },
@@ -1119,10 +1119,6 @@ export const lectures: Lecture[] = [
       {
         "text": "We're training a unified multimodal model for natural representations on natural data that then can give rise to so much more.",
         "speaker": "Andreas Blattmann"
-      },
-      {
-        "text": "The mark of a good leader is to not panic, keep calm, look at the data, assess the landscape, and then come up with a plan step by step.",
-        "speaker": "Anshul Ramachandran"
       }
     ],
     "diagram": {

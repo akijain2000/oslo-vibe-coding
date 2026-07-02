@@ -282,17 +282,25 @@ function PipelineD({ title, stages }: { title: string; stages: string[] }) {
 }
 
 function ContrastD({ title, aTitle, a, bTitle, b }: { title: string; aTitle: string; a: string[]; bTitle: string; b: string[] }) {
-  const col = (cx: number, head: string, items: string[], headFill: string) => (
-    <>
-      {text(cx, 50, head, { fill: headFill, size: 10.5, max: 18, maxLines: 1 })}
-      {items.slice(0, 4).map((it, i) => (
-        <g key={i}>
-          <circle cx={cx - 58} cy={70 + i * 27} r="2" fill={headFill} />
-          {text(cx - 50, 73 + i * 27, it, { fill: C.dim, size: 9, anchor: "start", max: 18, lh: 10 })}
-        </g>
-      ))}
-    </>
-  );
+  const col = (cx: number, head: string, items: string[], headFill: string) => {
+    const rows = items.slice(0, 5);
+    const dense = rows.length > 4;
+    const pitch = dense ? 24 : 27;
+    return (
+      <>
+        {text(cx, 50, head, { fill: headFill, size: 10.5, max: 18, maxLines: 1 })}
+        {rows.map((it, i) => {
+          const y = 71 + i * pitch;
+          return (
+            <g key={i}>
+              <circle cx={cx - 58} cy={y - 3} r="2" fill={headFill} />
+              {text(cx - 50, y, it, { fill: C.dim, size: dense ? 8.5 : 9, anchor: "start", max: dense ? 20 : 18, lh: 9.5 })}
+            </g>
+          );
+        })}
+      </>
+    );
+  };
   return (
     <Svg title={title}>
       {line(160, 42, 160, 186, C.line, 1.2)}

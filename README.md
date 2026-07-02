@@ -26,11 +26,9 @@ Everything is content-driven and typed. No code changes needed to update the sit
 | Change | File |
 |---|---|
 | The next session, past events | `src/content/events.ts` |
-| Talks and decks | `src/content/talks.ts` |
 | Resource library | `src/content/resources.ts` |
 | Frontier Systems lecture notes (`/frontier`) | `src/content/frontier.ts` |
 | Organisers | `src/content/people.ts` |
-| LinkedIn updates (drop in a post URN to embed it live) | `src/content/posts.ts` |
 | Community links | `src/content/links.ts` |
 | Name, tagline, SEO copy | `src/lib/brand.ts` |
 

@@ -17,7 +17,9 @@ export async function GET(req: Request) {
     return NextResponse.redirect(dash);
   }
   const parsed = verifyState<{ who: FounderId; ts: number }>(state);
-  if (!parsed || !FOUNDERS.some((f) => f.id === parsed.who)) {
+  // Reject unknown founders and stale states (signed > 10 min ago) to limit replay.
+  const fresh = parsed && Date.now() - parsed.ts <= 10 * 60 * 1000;
+  if (!parsed || !fresh || !FOUNDERS.some((f) => f.id === parsed.who)) {
     dash.searchParams.set("error", "state");
     return NextResponse.redirect(dash);
   }
