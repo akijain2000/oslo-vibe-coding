@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
           >
-            Originally shared as a {article.deckPages}-page talk on LinkedIn
+            {article.sourceLabel ?? `Originally shared as a ${article.deckPages}-page talk on LinkedIn`}
             <span aria-hidden>→</span>
           </a>
         </div>

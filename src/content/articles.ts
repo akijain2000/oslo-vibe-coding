@@ -6,6 +6,7 @@ export type ProseBlock = {
   paragraphs: string[];
   pullquote?: string;
   bullets?: string[];
+  links?: { label: string; url: string }[];
 };
 
 export type Article = {
@@ -17,11 +18,99 @@ export type Article = {
   readingTimeMin: number;
   takeaway: string;
   sourceUrl: string;
+  // Overrides the default "shared as a talk on LinkedIn" footer label when the
+  // source is something else, such as a class deck.
+  sourceLabel?: string;
   datePublished: string; // ISO date, used for Article structured data
   sections: ProseBlock[];
 };
 
 export const articles: Article[] = [
+  {
+    slug: "first-vibe-coding-class",
+    datePublished: "2026-07-02",
+    title: "Our first vibe coding class, in full",
+    dek: "A free, hands-on night in Oslo: what vibe coding is, where AI is heading, how to set up your own tools, and two small apps we built from open Oslo data. The whole session, for anyone who missed it.",
+    author: "Akshat Jain",
+    deckPages: 22,
+    readingTimeMin: 6,
+    takeaway:
+      "You do not need to know how to code to build something real. You describe what you want, an AI writes it, and you steer with judgment. We set up the tools together and built two live apps from open Oslo data, each one HTML file.",
+    sourceUrl: "https://oslovibecoding.tech/lesson.html",
+    sourceLabel: "Open the full class deck",
+    sections: [
+      {
+        heading: "What the night was",
+        paragraphs: [
+          "We ran the first Oslo Vibe Coding class this week. Free, drop-in, laptops out. People who had never written a line of code showed up, set up real tools, and left with something that runs. This is the whole session written down, so anyone who could not make it can catch up and try it at home.",
+          "The plan was simple. Spend the first stretch on how this works and where AI is heading, then spend the rest building. Most of the hour was building.",
+        ],
+        pullquote: "People who had never written a line of code left with something that runs.",
+      },
+      {
+        heading: "Vibe coding, in plain words",
+        paragraphs: [
+          "Vibe coding means you build by describing. You say what you want in plain language, an AI writes the code and runs it, and you look at the result and steer. You do not learn a language first. You build first, and pick things up as you go. Andrej Karpathy named the idea in 2025, and the tools caught up fast.",
+          "The loop is the job: describe, build, run, steer. You go around it until the result matches what you meant. You are the director. The model types. Most of your time goes into the steering, not the first prompt.",
+          "The skill worth practising is not syntax. It is judgment: deciding what good looks like, then checking that you got it. One honest note. The model writes code that looks right and can be wrong, so you work in small steps, run it every time, and read the parts that touch data or money.",
+        ],
+        bullets: [
+          "Describe, build, run, steer. Repeat until it matches what you meant.",
+          "You direct; the model types. The steering is the work.",
+          "Judgment beats syntax. Small steps, run it, check the risky parts.",
+        ],
+      },
+      {
+        heading: "A map of the frontier, minus the hype",
+        paragraphs: [
+          "Before building, we handed out a map. We had watched all 13 guest lectures from Stanford's CS 153, the people building modern AI, from Satya Nadella and Sam Altman to Jensen Huang, and distilled them into short notes. Two points from that map matter most for a beginner.",
+          "First, the bottleneck is no longer code. Writing software is the cheap part now. Energy, compute, and knowing what to build are the scarce parts. Amin Vahdat from Google put a number on it: one gigawatt of AI costs about forty billion dollars and takes two to three years, and energy is the one thing money cannot rush. If code is cheap, your ideas and judgment are the valuable part.",
+          "Second, small teams do enormous things. Garry Tan from Y Combinator said one person at a terminal can now do the work of hundreds. You do not need a company or permission. One person and a laptop is a real team.",
+        ],
+        pullquote: "The bottleneck is no longer code. Your ideas and judgment are the valuable part.",
+        links: [{ label: "The distilled lectures", url: "https://oslovibecoding.tech/frontier" }],
+      },
+      {
+        heading: "Set up your own tools",
+        paragraphs: [
+          "Then laptops out. The mental model we taught is that your setup has four parts: a model that does the reasoning, tools that read and write your files and run commands, context about your project, and the loop you drive. Claude Code, Cursor, and similar tools all share these four parts.",
+          "Setup is quick. For Claude Code, install it with npm and run claude in a folder. For Cursor, download the app and open a folder. Then give it context: a folder, a one-sentence goal, and for anything bigger a short rules file. Ask for the smallest useful version, look at what it made, ask for the next small change, and reject what you did not want.",
+        ],
+        bullets: [
+          "Your setup: a model, tools, context, and the loop you drive.",
+          "Claude Code: npm install -g @anthropic-ai/claude-code, then run claude.",
+          "Cursor: download from cursor.com and open a folder.",
+          "Give it a folder, a one-sentence goal, and a short rules file for bigger work.",
+        ],
+      },
+      {
+        heading: "Two things we built from open data",
+        paragraphs: [
+          "To show what one evening can produce, we built two small apps and left them running. Each is a single HTML file. No backend, no account, no API key. Each asks one free, open Oslo data source a question and draws the answer.",
+          "The first shows live public-transport departures from any Oslo stop, using Entur, the national open transport data. The second shows the city-bike stations near you with live bike and dock counts, using Oslo Bysykkel open data and your browser location. Different data, same recipe: pick an open API, ask it one question, draw the answer on a page.",
+          "That recipe is the point. Norway publishes a lot of free, open data. Transport, weather from Yr, city bikes, maps. Any of it is a first project. Open one of the demos, see how small it is, and you will believe you could build it tonight.",
+        ],
+        pullquote: "Pick an open API, ask it one question, draw the answer on a page.",
+        links: [
+          { label: "Live Oslo departures", url: "https://oslovibecoding.tech/oslo-departures.html" },
+          { label: "City bikes near you", url: "https://oslovibecoding.tech/oslo-bikes.html" },
+        ],
+      },
+      {
+        heading: "Try it, then come build with us",
+        paragraphs: [
+          "If you missed the class, you can still do the whole thing. Open the deck, try the two demos, and pick a small idea of your own. Take one of the open data sources and make it show you something you actually want to see.",
+          "Then come to the next session. Reading is a fine start. Building in a room with other people is better, and it is free. No one codes alone.",
+        ],
+        links: [
+          { label: "The class deck", url: "https://oslovibecoding.tech/lesson.html" },
+          { label: "Live departures demo", url: "https://oslovibecoding.tech/oslo-departures.html" },
+          { label: "City bikes demo", url: "https://oslovibecoding.tech/oslo-bikes.html" },
+          { label: "The distilled lectures", url: "https://oslovibecoding.tech/frontier" },
+        ],
+      },
+    ],
+  },
   {
     slug: "cheap-ai-developers-job",
     datePublished: "2026-05-15",
