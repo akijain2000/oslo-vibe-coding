@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Neste avganger · Oslo — live departures (Entur open data)</title>
+<meta name="description" content="A tiny demo built at Oslo Vibe Coding: live public-transport departures across Oslo, straight from the free Entur open data API. One HTML file, no backend, no API key." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#fbf7f0;--mist:#f3ede1;--line:#e7ddcd;--ink:#16151c;--ink-soft:#4b4956;--ink-faint:#6b6776;
+    --night:#110f17;--ember:#ff5a2c;--ember-ink:#b8300c;--glow:#ff7a4d;
+    --metro:#ec7000;--tram:#1f7ec2;--bus:#e2231a;--rail:#6c4a9c;--water:#00a0df;
+    --display:'Space Grotesk',system-ui,sans-serif;--sans:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:680px;margin:0 auto;padding:clamp(1.5rem,5vw,3.5rem) 1.25rem 4rem}
+  .spark{width:1.5rem;height:1.5rem;color:var(--ember);vertical-align:-.2em}
+  header{margin-bottom:1.5rem}
+  .kicker{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ember-ink);font-weight:600}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,7vw,3rem);letter-spacing:-.02em;line-height:1.02;margin-top:.35rem}
+  .sub{color:var(--ink-soft);margin-top:.5rem;font-size:1.02rem}
+
+  .controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1.4rem 0 1rem}
+  select{font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:.7rem;padding:.6rem 2.2rem .6rem .9rem;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' stroke='%236b6776' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:right .8rem center;cursor:pointer}
+  .refresh{margin-left:auto;display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.75rem;color:var(--ink-faint)}
+  .refresh button{font-family:var(--mono);font-size:.75rem;color:var(--ember-ink);background:none;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;cursor:pointer}
+  .refresh button:hover{border-color:var(--ember)}
+  .dot{width:.5rem;height:.5rem;border-radius:999px;background:var(--ember);display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  .board{border:1px solid var(--line);border-radius:1rem;overflow:hidden;background:#fff}
+  .row{display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:center;padding:.85rem 1rem;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .badge{font-family:var(--mono);font-weight:600;font-size:.9rem;color:#fff;background:var(--ink-soft);border-radius:.5rem;min-width:2.4rem;text-align:center;padding:.3rem .5rem;white-space:nowrap}
+  .badge.metro{background:var(--metro)} .badge.tram{background:var(--tram)} .badge.bus{background:var(--bus)}
+  .badge.rail{background:var(--rail)} .badge.water{background:var(--water)}
+  .dest{min-width:0}
+  .dest .to{font-weight:600;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dest .mode{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint);margin-top:.1rem}
+  .when{text-align:right;white-space:nowrap}
+  .when .big{font-family:var(--display);font-weight:600;font-size:1.15rem}
+  .when .clock{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);display:flex;align-items:center;gap:.35rem;justify-content:flex-end;margin-top:.05rem}
+  .rt{width:.42rem;height:.42rem;border-radius:999px;background:#1a9e57;display:inline-block}
+  .rt.sched{background:var(--ink-faint);opacity:.5}
+
+  .state{padding:2.2rem 1rem;text-align:center;color:var(--ink-faint);font-size:.95rem}
+  footer{margin-top:1.6rem;font-size:.85rem;color:var(--ink-faint);line-height:1.6}
+  footer b{color:var(--ink-soft);font-weight:600}
+  footer a{color:var(--ember-ink);text-decoration:none} footer a:hover{text-decoration:underline}
+  .note{margin-top:1rem;border:1px dashed var(--line);border-radius:.8rem;padding:.85rem 1rem;font-size:.85rem;color:var(--ink-soft);background:var(--mist)}
+  .note code{font-family:var(--mono);font-size:.82em;color:var(--ember-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker"><svg class="spark" style="width:.9em;height:.9em"><use href="#s"/></svg> Oslo Vibe Coding · demo</div>
+    <h1>Neste avganger.</h1>
+    <p class="sub">Live departures across Oslo, straight from the free <b>Entur</b> open data API. One HTML file. No backend, no key.</p>
+  </header>
+
+  <div class="controls">
+    <label for="stop" style="font-weight:500">Stop</label>
+    <select id="stop" aria-label="Choose a stop"></select>
+    <span class="refresh"><span class="dot" id="live" title="auto-refreshing"></span><span id="updated">loading…</span><button id="reload" type="button">Refresh</button></span>
+  </div>
+
+  <div class="board" id="board"><div class="state">Loading departures…</div></div>
+
+  <div class="note">This whole page is one file that asks Entur one question and shows the answer. That is a real first project. <b>You could build this tonight.</b> More free Oslo data is linked below.</div>
+
+  <footer>
+    <p>Data from <a href="https://developer.entur.org" target="_blank" rel="noopener">Entur</a> (open, free, NLOD licence). Other free Oslo data to build on: <a href="https://api.met.no" target="_blank" rel="noopener">weather (MET/Yr)</a>, <a href="https://oslobysykkel.no/en/open-data" target="_blank" rel="noopener">city bikes (Bysykkel)</a>.</p>
+    <p style="margin-top:.5rem"><b>Built at <a href="https://oslovibecoding.tech" target="_blank" rel="noopener">Oslo Vibe Coding</a>.</b> No one codes alone.</p>
+  </footer>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="s" viewBox="-8 -8 16 16"><path d="M0 -7c.5 3.1 2.4 5 5.5 5.5C2.4 -1 .5 1 0 7c-.5-6-2.4-8-5.5-8.5C-2.4 -2-.5 -3.9 0 -7Z" fill="currentColor"/></symbol></defs></svg>
+
+<script>
+// A tiny demo: pick a stop, ask Entur for the next departures, draw a board.
+// The only "API knowledge" you need: POST a GraphQL query with an ET-Client-Name header.
+var ENDPOINT = "https://api.entur.io/journey-planner/v3/graphql";
+var CLIENT = "oslovibecoding-demo";
+
+var STOPS = [
+  { id: "NSR:StopPlace:58366", name: "Jernbanetorget" },
+  { id: "NSR:StopPlace:58404", name: "Nationaltheatret" },
+  { id: "NSR:StopPlace:59872", name: "Oslo S" },
+  { id: "NSR:StopPlace:58381", name: "Majorstuen" },
+  { id: "NSR:StopPlace:4029",  name: "Stortinget" },
+  { id: "NSR:StopPlace:58258", name: "Olaf Ryes plass" },
+  { id: "NSR:StopPlace:59604", name: "Tøyen" },
+  { id: "NSR:StopPlace:58189", name: "Carl Berners plass" },
+  { id: "NSR:StopPlace:58382", name: "Aker brygge" },
+  { id: "NSR:StopPlace:6332",  name: "Blindern" },
+  { id: "NSR:StopPlace:59600", name: "Forskningsparken" },
+  { id: "NSR:StopPlace:58195", name: "Storo" }
+];
+
+var QUERY = "query($id:String!){stopPlace(id:$id){name estimatedCalls(numberOfDepartures:14,timeRange:43200){realtime aimedDepartureTime expectedDepartureTime destinationDisplay{frontText} serviceJourney{line{publicCode transportMode}}}}}";
+
+var sel = document.getElementById("stop");
+STOPS.forEach(function(s){ var o = document.createElement("option"); o.value = s.id; o.textContent = s.name; sel.appendChild(o); });
+
+var board = document.getElementById("board");
+var updated = document.getElementById("updated");
+var MODE = { metro:"metro", tram:"tram", bus:"bus", rail:"rail", water:"water", coach:"bus", funicular:"tram", cableway:"tram" };
+
+// Always show Oslo wall-clock time, whoever is watching and wherever they are.
+var OSLO = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Oslo", hour: "2-digit", minute: "2-digit", hour12: false });
+function clockOf(iso){ return OSLO.format(new Date(iso)); }
+function minsOf(iso){ return Math.round((new Date(iso).getTime() - Date.now()) / 60000); }
+
+function draw(name, calls){
+  if(!calls || !calls.length){ board.innerHTML = '<div class="state">No departures in the next few hours.</div>'; return; }
+  var html = "";
+  calls.forEach(function(c){
+    var line = (c.serviceJourney && c.serviceJourney.line) || {};
+    var tmode = line.transportMode || "unknown";
+    var mode = MODE[tmode] || "";
+    var code = line.publicCode || tmode.slice(0,3).toUpperCase();
+    var dest = (c.destinationDisplay && c.destinationDisplay.frontText) || "Unknown";
+    var m = minsOf(c.expectedDepartureTime);
+    var big = m <= 0 ? "now" : (m < 60 ? m + " min" : clockOf(c.expectedDepartureTime));
+    html += '<div class="row">'
+      + '<span class="badge ' + mode + '">' + esc(code) + '</span>'
+      + '<span class="dest"><div class="to">' + esc(dest) + '</div>'
+      + '<div class="mode">' + esc(tmode) + '</div></span>'
+      + '<span class="when"><div class="big">' + big + '</div>'
+      + '<div class="clock"><span class="rt ' + (c.realtime ? "" : "sched") + '" title="' + (c.realtime ? "live" : "scheduled") + '"></span>' + clockOf(c.expectedDepartureTime) + '</div></span>'
+      + '</div>';
+  });
+  board.innerHTML = html;
+}
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]; }); }
+
+var reqId = 0;
+function load(){
+  var id = sel.value;
+  var mine = ++reqId; // ignore any response that a newer request has superseded
+  fetch(ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "ET-Client-Name": CLIENT },
+    body: JSON.stringify({ query: QUERY, variables: { id: id } })
+  })
+  .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(function(res){
+    if (mine !== reqId) return;
+    var sp = res.data && res.data.stopPlace;
+    if(!sp) throw new Error("no data");
+    draw(sp.name, sp.estimatedCalls);
+    updated.textContent = "updated " + clockOf(new Date().toISOString());
+  })
+  .catch(function(e){
+    if (mine !== reqId) return;
+    board.innerHTML = '<div class="state">Could not reach Entur just now. Try Refresh.<br><small>' + esc(e.message) + '</small></div>';
+    updated.textContent = "offline";
+  });
+}
+
+sel.addEventListener("change", load);
+document.getElementById("reload").addEventListener("click", load);
+document.addEventListener("visibilitychange", function(){ if (!document.hidden) load(); });
+load();
+setInterval(function(){ if (!document.hidden) load(); }, 30000); // pause auto-refresh in a hidden tab
+</script>
+</body>
+</html>
