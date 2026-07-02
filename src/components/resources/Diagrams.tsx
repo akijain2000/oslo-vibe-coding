@@ -263,6 +263,33 @@ const Community = () => (
   </Svg>
 );
 
+const AgentLoop = () => (
+  <Svg>
+    <circle cx="160" cy="98" r="52" fill="none" stroke={C.ember} strokeWidth="2.5" strokeDasharray="3 7" />
+    {arrow(206, 70, 213, 84, C.ember, 2)}
+    <circle cx="160" cy="98" r="17" fill="#2c2233" stroke={C.ember} strokeWidth="1.4" />
+    {label(160, 102, "LLM", C.cream, 11)}
+    {label(160, 34, "reason", C.cream)}
+    {label(244, 102, "act", C.cream)}
+    {label(160, 168, "observe", C.cream)}
+    {label(160, 190, "loop until the goal is met", C.faint, 10)}
+  </Svg>
+);
+
+const SkillFile = () => (
+  <Svg>
+    {label(160, 30, "SKILL.md", C.faint, 10)}
+    {box(102, 40, 116, 120, C.panel, C.line)}
+    <rect x="112" y="50" width="96" height="34" rx="5" fill="#2c2233" stroke={C.ember} strokeWidth="1.3" />
+    {label(160, 64, "name", C.glow, 9)}
+    {label(160, 77, "description", C.dim, 9)}
+    {[98, 110, 122, 134].map((y, i) => (
+      <rect key={y} x="114" y={y} width={i === 3 ? 62 : 92} height="4" rx="2" fill={C.line} />
+    ))}
+    {label(160, 176, "read only when needed", C.faint, 10)}
+  </Svg>
+);
+
 export const DIAGRAMS: Record<string, () => React.ReactElement> = {
   "vibe-loop": VibeLoop,
   "vibe-vs-eng": VibeVsEng,
@@ -277,4 +304,6 @@ export const DIAGRAMS: Record<string, () => React.ReactElement> = {
   rlhf: Rlhf,
   "compute-curve": ComputeCurve,
   community: Community,
+  "agent-loop": AgentLoop,
+  "skill-file": SkillFile,
 };

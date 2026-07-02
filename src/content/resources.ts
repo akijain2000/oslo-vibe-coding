@@ -196,6 +196,34 @@ export const resourceSections: ResourceSection[] = [
     ],
   },
   {
+    id: "build",
+    title: "Build your own agents and skills",
+    intro:
+      "When you are ready to build the tools themselves. Two hands-on courses by Akshat: one on AI agents, one on the skills that make them better.",
+    items: [
+      {
+        title: "Skill Factory",
+        titleNo: "Skill Factory",
+        by: "Akshat Jain",
+        url: "https://github.com/akijain2000/skill-factory",
+        diagram: "skill-file",
+        tldr:
+          "A free zero-to-hero course for writing skills: the small SKILL.md files that teach an AI coding agent a repeatable habit once, so it applies it every time. Eleven modules plus a compiled wiki, covering the format, writing descriptions that actually get picked up, progressive disclosure, the patterns that work, and the anti-patterns that do not. If you have ever wished your agent would just remember how you like things done, this is how.",
+        free: true,
+      },
+      {
+        title: "Agent Factory",
+        titleNo: "Agent Factory",
+        by: "Akshat Jain",
+        url: "https://github.com/akijain2000/agent-factory",
+        diagram: "agent-loop",
+        tldr:
+          "A free 23-module course and knowledge base for building real AI agents: systems that reason, act, and observe in a loop until a goal is reached, not just chatbots. It covers the anatomy of an agent (the model, its tools, memory, state, and the loop), the design patterns, error handling, evaluation, safety, and building with the major frameworks. The deep version of the harness idea from the class.",
+        free: true,
+      },
+    ],
+  },
+  {
     id: "frontier",
     layout: "carousel",
     title: "Go to the frontier",

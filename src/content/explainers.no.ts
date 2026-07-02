@@ -2,6 +2,72 @@ import type { Explainer } from "./explainers";
 
 // Generated explainers keyed by resource slug.
 export const explainersNo: Record<string, Explainer> = {
+  "skill-factory": {
+    "lead": "En skill er en liten mappe med en SKILL.md-fil som lærer en AI-kodeagent en vane én gang, slik at den bruker den hver gang. Dette gratis kurset lærer deg å skrive skills som faktisk blir brukt.",
+    "sections": [
+      {
+        "heading": "Hva en skill er",
+        "paragraphs": [
+          "En skill er en mappe med én SKILL.md-fil: litt metadata som gir skillen et navn og sier når den skal brukes, pluss en tekst med instruksjoner i Markdown. Agenten leser alle navnene og beskrivelsene ved oppstart, og laster hele innholdet bare når en oppgave passer. Denne todelte lastingen kalles progressiv avdekking, og den holder agentens begrensede kontekst fri til selve arbeidet.",
+          "Poenget er enkelt. Du pakker en regel én gang, på vanlig språk, og enhver kompatibel agent plukker den opp automatisk. Ikke mer gjentakelse hver økt."
+        ]
+      },
+      {
+        "heading": "Hva kurset dekker",
+        "paragraphs": [
+          "Elleve korte moduler tar deg fra formatet til en ferdig, validert skill. De dekker SKILL.md-spesifikasjonen, hvordan du skriver beskrivelser som faktisk blir plukket opp (det vanligste feilpunktet), progressiv avdekking og token-økonomi, mønstrene som fungerer og anti-mønstrene som ikke gjør det, hvordan du får den til å virke på tvers av verktøy, og hvordan du vedlikeholder et bibliotek over tid.",
+          "Ved siden av modulene ligger en kompilert wiki med mer enn førti artikler, destillert fra nitten ekte kodebaser. Kurset avsluttes med en guidet bygging ved hjelp av en Skill Maker, så du sitter igjen med en ekte skill, ikke bare notater."
+        ]
+      },
+      {
+        "heading": "Hvorfor det er verdt tiden",
+        "paragraphs": [
+          "Hvis du noen gang har gjentatt deg selv til en AI-agent (bruk pnpm, ikke npm, kjør testene før du committer, sjekk auth-koden), er skills måten du slutter med det på. Å skrive gode skills er et håndverk: beskrivelsen må fortjene plassen sin, innholdet må være stramt, og den må fungere på tvers av verktøy.",
+          "Dette er den grundigste gratis guiden til det håndverket, skrevet for folk som vil ha produksjonskvalitet, ikke et leketøy. Den er laget av Akshat, en av arrangørene bak Oslo Vibe Coding."
+        ]
+      }
+    ],
+    "keyPoints": [
+      "En skill er en mappe med en SKILL.md: metadata pluss instruksjoner.",
+      "Progressiv avdekking laster navnet først, innholdet bare når det trengs.",
+      "Beskrivelsen er det viktigste å få riktig.",
+      "Elleve moduler pluss en wiki på førti artikler, gratis og praktisk.",
+      "Laget av Akshat, en av arrangørene bak Oslo Vibe Coding."
+    ]
+  },
+  "agent-factory": {
+    "lead": "En agent er en AI som resonnerer, handler og observerer i en løkke til den når et mål, ikke bare en chatbot som svarer på ett spørsmål. Dette gratis kurset på 23 moduler lærer deg å bygge ekte agenter.",
+    "sections": [
+      {
+        "heading": "Hva en agent er",
+        "paragraphs": [
+          "En agent er en språkmodell koblet inn i en løkke. Den leser situasjonen, bestemmer hvilket verktøy den skal bruke, bruker det, ser på resultatet, og gjør det igjen til målet er nådd eller en stoppregel slår inn. Den løkken er det som skiller en agent fra en chatbot, som gir ett svar per melding, en copilot, som foreslår ved siden av deg, og en fast arbeidsflyt, som kjører steg du har hardkodet.",
+          "Modellen velger stegene, innenfor grenser du setter. Det er samme form som harnesset fra klassen (en modell, verktøyene dens, litt kontekst og en løkke), tatt helt ut i produksjon."
+        ]
+      },
+      {
+        "heading": "Anatomien",
+        "paragraphs": [
+          "Kurset deler en agent i deler du kan resonnere om: modellen i kjernen, verktøyene den kan bruke, minnet som varer på tvers av runder, tilstanden harnesset holder styr på, og løkken som binder det sammen. Får du disse riktig, holder oppførselen seg sammenhengende. Får du dem feil, blir den skjør eller endeløs.",
+          "Derfra går det videre gjennom designmønstre, planlegging, feilhåndtering, evaluering og testing, sikkerhet og rammer, observasjon, og bygging med de store rammeverkene. Til sammen 23 moduler og mer enn åtti wiki-artikler."
+        ]
+      },
+      {
+        "heading": "Hvorfor det er verdt tiden",
+        "paragraphs": [
+          "De fleste agent-veiledninger stopper ved en demo. Denne sikter mot produksjon: delene som faktisk ryker, hvordan du tester dem, og hvordan du holder dem trygge.",
+          "Hvis du forsto harness-ideen fra økten og vil bygge selve verktøyene i stedet for bare å bruke dem, er dette den dype versjonen. Den er laget av Akshat, en av arrangørene bak Oslo Vibe Coding."
+        ]
+      }
+    ],
+    "keyPoints": [
+      "En agent resonnerer, handler og observerer i en løkke til et mål er nådd.",
+      "Ikke en chatbot, copilot eller fast arbeidsflyt: modellen velger stegene.",
+      "Anatomi: modell, verktøy, minne, tilstand, løkke.",
+      "23 moduler pluss over åtti wiki-artikler, rettet mot produksjon.",
+      "Den dype versjonen av harness-ideen fra klassen."
+    ]
+  },
   "the-original-vibe-coding-note": {
     "lead": "Tidlig i 2025 la KI-forskeren Andrej Karpathy ut et kort innlegg som beskrev en ny måte å skrive programvare på: la modellen gjøre nesten alt arbeidet, og bare følg strømmen. Uttrykket han brukte, «vibe coding», slo raskt an.",
     "sections": [

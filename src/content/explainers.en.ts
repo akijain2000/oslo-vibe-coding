@@ -2,6 +2,72 @@ import type { Explainer } from "./explainers";
 
 // Generated explainers keyed by resource slug.
 export const explainersEn: Record<string, Explainer> = {
+  "skill-factory": {
+    "lead": "A skill is a small folder with a SKILL.md file that teaches an AI coding agent a habit once, so it applies it every time. This free course teaches you to write ones that actually get used.",
+    "sections": [
+      {
+        "heading": "What a skill is",
+        "paragraphs": [
+          "A skill is a folder with a single SKILL.md file: a short piece of metadata that names the skill and says when to use it, plus a body of Markdown instructions. The agent reads all the names and descriptions at startup, and loads the full body only when a task matches. That two-step loading is called progressive disclosure, and it keeps the agent's limited context free for the actual work.",
+          "The upshot is simple. You package a rule once, in plain language, and any compatible agent picks it up automatically. No more repeating yourself every session."
+        ]
+      },
+      {
+        "heading": "What the course covers",
+        "paragraphs": [
+          "Eleven short modules take you from the format to a finished, validated skill. They cover the SKILL.md spec, writing descriptions that get picked up (the most common failure point), progressive disclosure and token economics, the patterns that work and the anti-patterns that do not, shipping across different hosts, and maintaining a library over time.",
+          "Alongside the modules sits a compiled wiki of more than forty articles, distilled from nineteen real repositories. It ends with a guided build using a Skill Maker, so you finish with a real skill, not just notes."
+        ]
+      },
+      {
+        "heading": "Why it is worth your time",
+        "paragraphs": [
+          "If you have ever repeated yourself to an AI agent (use pnpm not npm, run the tests before committing, check the auth code), skills are how you stop. Writing good ones is a craft: the description has to earn its place, the body has to stay lean, and it has to work across tools.",
+          "This is the most thorough free guide to that craft, written for people who want production quality rather than a toy. It is by Akshat, one of the Oslo Vibe Coding organisers."
+        ]
+      }
+    ],
+    "keyPoints": [
+      "A skill is a folder with a SKILL.md: metadata plus instructions.",
+      "Progressive disclosure loads the name first, the body only when needed.",
+      "The description is the number-one thing to get right.",
+      "Eleven modules plus a forty-article wiki, free and hands-on.",
+      "By Akshat, one of the Oslo Vibe Coding organisers."
+    ]
+  },
+  "agent-factory": {
+    "lead": "An agent is an AI that reasons, acts, and observes in a loop until it reaches a goal, not just a chatbot that answers one question. This free 23-module course teaches you to build real ones.",
+    "sections": [
+      {
+        "heading": "What an agent is",
+        "paragraphs": [
+          "An agent is an LLM wired into a loop. It reads the situation, decides which tool to call, calls it, looks at the result, and goes again until the goal is met or a stop rule fires. That loop is what separates an agent from a chatbot, which gives one answer per message, a copilot, which suggests alongside you, and a fixed workflow, which runs steps you hardcoded.",
+          "The model chooses the steps, inside boundaries you set. It is the same shape as the harness from the class (a model, its tools, some context, and a loop), taken all the way to production."
+        ]
+      },
+      {
+        "heading": "The anatomy",
+        "paragraphs": [
+          "The course breaks an agent into parts you can reason about: the model at the core, the tools it can call, the memory that persists across turns, the state the harness tracks, and the loop that ties them together. Get those right and the behaviour stays coherent. Get them wrong and it turns fragile or endless.",
+          "From there it moves through design patterns, planning, error handling and recovery, evaluation and testing, safety and guardrails, observability, and building with the major frameworks. Twenty-three modules and more than eighty wiki articles in all."
+        ]
+      },
+      {
+        "heading": "Why it is worth your time",
+        "paragraphs": [
+          "Most agent tutorials stop at a demo. This one aims at production: the parts that actually break, how to test them, and how to keep them safe.",
+          "If you understood the harness idea from the session and want to build the tools themselves rather than just use them, this is the deep version. It is by Akshat, one of the Oslo Vibe Coding organisers."
+        ]
+      }
+    ],
+    "keyPoints": [
+      "An agent reasons, acts, and observes in a loop until a goal is met.",
+      "Not a chatbot, copilot, or fixed workflow: the model picks the steps.",
+      "Anatomy: model, tools, memory, state, loop.",
+      "Twenty-three modules plus eighty-plus wiki articles, aimed at production.",
+      "The deep version of the harness idea from the class."
+    ]
+  },
   "the-original-vibe-coding-note": {
     "lead": "In early 2025, the AI researcher Andrej Karpathy fired off a short post describing a new way to write software: let the model do almost all the work and just go with the flow. The phrase he used, \"vibe coding,\" caught on fast.",
     "sections": [
