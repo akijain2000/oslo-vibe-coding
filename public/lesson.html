@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Vibe Coding · Lesson 01 — Oslo Vibe Coding</title>
+<meta name="description" content="A hands-on beginner class: the philosophy of vibe coding, a map of the frontier from 13 Stanford CS 153 talks, and how to set up your own coding harness and build your first thing." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#fbf7f0; --mist:#f3ede1; --line:#e7ddcd;
+    --ink:#16151c; --ink-soft:#4b4956; --ink-faint:#6b6776;
+    --night:#110f17; --night-2:#1b1822; --night-line:#2e2a39; --cream-dim:#d9d2c6;
+    --ember:#ff5a2c; --ember-ink:#b8300c; --amber:#ffb020; --glow:#ff7a4d;
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --sans:'Geist',system-ui,sans-serif;
+    --mono:'Geist Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--sans);background:var(--night);color:var(--ink);overflow:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .deck{position:fixed;inset:0}
+  .slide{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(2rem,5.5vw,5.5rem) clamp(2rem,6vw,6rem);
+    opacity:0;pointer-events:none;transform:translateY(10px) scale(0.997);
+    transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .slide.active{opacity:1;pointer-events:auto;transform:none}
+  .wrap{width:100%;max-width:1180px;margin:0 auto}
+
+  .s-paper{background:var(--paper);color:var(--ink)}
+  .s-mist{background:var(--mist);color:var(--ink)}
+  .s-night{background:var(--night);color:var(--paper);background-image:radial-gradient(1100px circle at 84% 8%,rgba(255,90,44,.2),transparent 58%)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:clamp(.72rem,1.15vw,.9rem);font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:var(--ember-ink)}
+  .s-night .eyebrow{color:var(--glow)}
+  .eyebrow .spark{width:.9em;height:.9em;flex:none}
+  h1{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.02;font-size:clamp(2.5rem,6.6vw,5.4rem);margin-top:.5em}
+  h2{font-family:var(--display);font-weight:700;letter-spacing:-.015em;line-height:1.06;font-size:clamp(1.9rem,4.6vw,3.6rem);margin-top:.42em}
+  h3{font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,1.7vw,1.35rem);letter-spacing:-.01em}
+  .lede{font-size:clamp(1.08rem,2vw,1.6rem);line-height:1.5;color:var(--ink-soft);margin-top:1em;max-width:36ch}
+  .s-night .lede{color:var(--cream-dim)}
+  .lede.wide{max-width:46ch}
+  .muted{color:var(--ink-faint)} .s-night .muted{color:var(--cream-dim);opacity:.72}
+  .accent{color:var(--ember-ink)} .s-night .accent{color:var(--glow)}
+  .attrib{margin-top:1.3em;font-family:var(--mono);font-size:.82rem;letter-spacing:.03em;color:var(--ink-faint)}
+  .s-night .attrib{color:var(--cream-dim);opacity:.7}
+
+  .url{display:inline-flex;align-items:center;gap:.5em;margin-top:1.5em;font-family:var(--mono);font-size:clamp(.9rem,1.6vw,1.15rem);color:var(--ember-ink);border:1px solid var(--ember);border-radius:999px;padding:.5em 1.15em}
+  .s-night .url{color:var(--glow);border-color:var(--glow)}
+
+  /* section divider */
+  .partnum{font-family:var(--mono);font-size:clamp(3.5rem,12vw,9rem);font-weight:500;color:var(--glow);opacity:.9;line-height:1}
+  .parttitle{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:-.02em;margin-top:.1em}
+  .partsub{margin-top:1em;font-size:clamp(1rem,1.7vw,1.35rem);color:var(--cream-dim);max-width:40ch}
+
+  /* objectives / numbered lists */
+  .list{margin-top:1.6em;display:flex;flex-direction:column;gap:1.05em;max-width:44ch}
+  .list .row{display:flex;gap:1em;align-items:flex-start}
+  .list .k{font-family:var(--mono);font-size:.9rem;color:var(--ember-ink);border:1px solid var(--line);border-radius:999px;min-width:2.1em;height:2.1em;display:grid;place-items:center;flex:none}
+  .s-night .list .k{color:var(--glow);border-color:var(--night-line)}
+  .list .t{font-size:clamp(1.02rem,1.7vw,1.35rem);line-height:1.4}
+  .list .t b{font-weight:600}
+  .list .t .s{display:block;color:var(--ink-faint);font-size:.86em;margin-top:.15em}
+  .s-night .list .t .s{color:var(--cream-dim);opacity:.72}
+
+  .two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+  @media(max-width:900px){.two{grid-template-columns:1fr;gap:1.6rem}}
+
+  /* code block */
+  .code{margin-top:1.4em;font-family:var(--mono);font-size:clamp(.85rem,1.5vw,1.1rem);background:var(--night-2);border:1px solid var(--night-line);border-radius:.9rem;padding:1em 1.2em;color:var(--cream-dim);line-height:1.7;max-width:40ch}
+  .s-paper .code{color:#e9e3d8}
+  .code .p{color:var(--glow);user-select:none}
+  .code .c{color:var(--ink-faint);opacity:.8}
+  .code b{color:#fff;font-weight:500}
+
+  /* stack / map */
+  .stack{margin-top:1.4em;display:flex;flex-direction:column;gap:.5rem}
+  .layer{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;align-items:center;border:1px solid var(--line);background:var(--mist);border-radius:.8rem;padding:.7em 1em}
+  .s-night .layer{border-color:var(--night-line);background:var(--night-2)}
+  .layer.hot{border-color:var(--ember)}
+  .layer .lb{font-family:var(--display);font-weight:600;font-size:clamp(.95rem,1.5vw,1.2rem)}
+  .layer.hot .lb{color:var(--ember-ink)} .s-night .layer.hot .lb{color:var(--glow)}
+  .layer .ln{font-size:clamp(.85rem,1.4vw,1.05rem);color:var(--ink-soft)}
+  .s-night .layer .ln{color:var(--cream-dim)}
+
+  /* anatomy 2x2 */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5em}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .cell{border:1px solid var(--line);background:var(--mist);border-radius:1rem;padding:clamp(1rem,2vw,1.5rem)}
+  .s-night .cell{border-color:var(--night-line);background:var(--night-2)}
+  .cell .n{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-ink)}
+  .s-night .cell .n{color:var(--glow)}
+  .cell h3{margin-top:.3em}
+  .cell p{margin-top:.45em;font-size:.98rem;line-height:1.45;color:var(--ink-soft)}
+  .s-night .cell p{color:var(--cream-dim);opacity:.85}
+
+  /* evidence callout + so-what */
+  .evidence{margin-top:1.5em;border-left:2px solid var(--ember);padding:.2em 0 .2em 1.1em;max-width:44ch}
+  .evidence .d{font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,1.8vw,1.5rem);line-height:1.25}
+  .evidence .src{margin-top:.5em;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint)}
+  .s-night .evidence .src{color:var(--cream-dim);opacity:.7}
+  .sowhat{margin-top:1.4em;display:flex;gap:.7em;align-items:flex-start;font-size:clamp(1rem,1.6vw,1.28rem);line-height:1.4;max-width:44ch}
+  .sowhat .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ember-ink);border:1px solid var(--line);border-radius:999px;padding:.35em .7em;flex:none;margin-top:.15em}
+  .s-night .sowhat .tag{color:var(--glow);border-color:var(--night-line)}
+
+  /* facts grid */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8em}
+  @media(max-width:820px){.facts{grid-template-columns:1fr}}
+  .fact{border:1px solid var(--line);background:var(--mist);border-radius:1rem;padding:clamp(1rem,2vw,1.4rem)}
+  .s-night .fact{border-color:var(--night-line);background:var(--night-2)}
+  .fact .f{font-family:var(--display);font-weight:600;font-size:clamp(1rem,1.6vw,1.3rem);line-height:1.2}
+  .fact .src{margin-top:.6em;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint)}
+  .s-night .fact .src{color:var(--cream-dim);opacity:.7}
+
+  .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5em}
+  .chip{font-family:var(--mono);font-size:clamp(.78rem,1.4vw,.98rem);border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);padding:.45em .95em;border-radius:999px}
+  .s-night .chip{border-color:var(--night-line);background:var(--night-2);color:var(--cream-dim)}
+  .chip.hot{border-color:var(--ember);color:var(--ember-ink)}
+
+  .hero-spark{width:clamp(52px,6vw,78px);height:clamp(52px,6vw,78px);color:var(--ember)}
+  .loop{width:100%;max-width:400px;margin:0 auto;display:block}
+
+  .brandmark{position:fixed;top:clamp(1rem,2.3vw,1.8rem);left:clamp(1rem,2.3vw,1.8rem);z-index:20;display:flex;align-items:center;gap:.5em;font-family:var(--display);font-weight:600;font-size:.9rem;letter-spacing:-.01em;color:var(--ink);opacity:.82;pointer-events:none}
+  .brandmark .spark{width:1em;height:1em;color:var(--ember)}
+  .brandmark b{color:var(--ember-ink);font-weight:700}
+  .on-dark .brandmark{color:var(--paper)} .on-dark .brandmark b{color:var(--glow)}
+  .chrome{position:fixed;left:0;right:0;bottom:0;z-index:20;pointer-events:none}
+  .bar{height:3px;background:transparent}.bar-fill{height:100%;width:0;background:var(--ember);transition:width .5s cubic-bezier(.22,1,.36,1)}
+  .chrome-row{display:flex;justify-content:space-between;align-items:center;padding:.65rem clamp(1rem,2.3vw,1.8rem);font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint)}
+  .on-dark .chrome-row{color:var(--cream-dim);opacity:.68}
+  .navbtns{display:flex;gap:.4rem;pointer-events:auto}
+  .navbtns button{width:1.9rem;height:1.9rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer;font-size:1rem;line-height:1;display:grid;place-items:center;opacity:.75}
+  .on-dark .navbtns button{border-color:var(--night-line)}
+  .navbtns button:hover{opacity:1;border-color:var(--ember)}
+  .hint{opacity:.7}@media(max-width:640px){.hint{display:none}}
+  @media(prefers-reduced-motion:reduce){.slide{transition:opacity .01s}.slide,.slide.active{transform:none}.bar-fill{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="spark" viewBox="-8 -8 16 16"><path d="M0 -7c.5 3.1 2.4 5 5.5 5.5C2.4 -1 .5 1 0 7c-.5-6-2.4-8-5.5-8.5C-2.4 -2-.5 -3.9 0 -7Z" fill="currentColor"/></symbol>
+</defs></svg>
+
+<div class="brandmark"><svg class="spark"><use href="#spark"/></svg>Oslo <b>Vibe</b>&nbsp;Coding</div>
+
+<main class="deck" id="deck">
+
+  <!-- 1 · cover -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <svg class="hero-spark"><use href="#spark"/></svg>
+      <p class="eyebrow" style="margin-top:1.2rem">Oslo Vibe Coding · a hands-on class</p>
+      <h1>Vibe coding,<br>from scratch.</h1>
+      <p class="lede wide">One hour. You will understand how this works, see where AI is really heading, and set up your own tools and build something. No experience needed.</p>
+    </div>
+  </section>
+
+  <!-- 2 · what you'll leave with -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>What you'll leave with</p>
+      <div class="list">
+        <div class="row"><span class="k">1</span><span class="t"><b>The philosophy.</b><span class="s">What vibe coding is, and the one skill that actually matters.</span></span></div>
+        <div class="row"><span class="k">2</span><span class="t"><b>The map.</b><span class="s">Where AI really is, distilled from 13 talks by the people building it.</span></span></div>
+        <div class="row"><span class="k">3</span><span class="t"><b>Your harness.</b><span class="s">Your own AI coding setup, running, with one real thing built.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · PART 1 divider -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <div class="partnum">01</div>
+      <div class="parttitle">The philosophy</div>
+      <p class="partsub">What are we actually doing when we &ldquo;vibe code&rdquo;, and why does it work now?</p>
+    </div>
+  </section>
+
+  <!-- 4 · what is vibe coding -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>The idea</p>
+      <h2>Building by describing.</h2>
+      <p class="lede wide">You say what you want in plain language. An AI writes the code and runs it. You look at the result and steer. You do not learn to code first. You build first, and pick things up as you go.</p>
+      <p class="attrib">Term coined by Andrej Karpathy, 2025</p>
+    </div>
+  </section>
+
+  <!-- 5 · the loop -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">The loop</p>
+        <h2>Describe. Build.<br>Run. Steer.</h2>
+        <p class="lede">This is the whole job. You go around this loop until it does what you actually meant. Most of the work is the steering, not the first prompt.</p>
+      </div>
+      <svg class="loop" viewBox="0 0 400 340" aria-label="Loop: describe, build, run, steer">
+        <circle cx="200" cy="170" r="112" fill="none" stroke="var(--ember)" stroke-width="3" stroke-dasharray="4 10"/>
+        <use href="#spark" x="184" y="154" width="32" height="32" style="color:var(--glow)"/>
+        <text x="200" y="46" text-anchor="middle" font-family="var(--display)" font-weight="600" font-size="22" fill="var(--paper)">describe</text>
+        <text x="348" y="176" text-anchor="middle" font-family="var(--display)" font-weight="600" font-size="22" fill="var(--paper)">build</text>
+        <text x="200" y="308" text-anchor="middle" font-family="var(--display)" font-weight="600" font-size="22" fill="var(--paper)">run</text>
+        <text x="52" y="176" text-anchor="middle" font-family="var(--display)" font-weight="600" font-size="22" fill="var(--paper)">steer</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 6 · mental model -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>The mental model</p>
+      <h2>You are the director.</h2>
+      <p class="lede wide">The model is a fast, eager junior developer. Brilliant, tireless, and sometimes confidently wrong. Your job is not to type. Your job is to give clear direction, look hard at what came back, and say what to change.</p>
+    </div>
+  </section>
+
+  <!-- 7 · the one skill -->
+  <section class="slide s-mist">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>The one skill that matters</p>
+      <h2>Taste, not syntax.</h2>
+      <p class="lede wide">You do not need to memorize a language. You need judgment: knowing what &ldquo;good&rdquo; looks like, and checking that you got it. That is the skill you will practice for the rest of your life with these tools, and you can start tonight.</p>
+    </div>
+  </section>
+
+  <!-- 8 · where it breaks -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <p class="eyebrow">Be honest about this</p>
+      <h2>Where it breaks.</h2>
+      <p class="lede wide">The model writes code that looks right and can be quietly wrong. It cannot feel that something is off. So work in small steps, run it every time, read the parts that touch data or money, and never ship what you have not checked.</p>
+      <p class="attrib">Vibe coding with the brakes on. This is what separates a demo from a thing that works.</p>
+    </div>
+  </section>
+
+  <!-- 9 · PART 2 divider -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <div class="partnum">02</div>
+      <div class="parttitle">The map</div>
+      <p class="partsub">Where AI actually is, distilled from 13 talks by the people building it.</p>
+    </div>
+  </section>
+
+  <!-- 10 · our data -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Our data</p>
+      <h2>We did the reading.</h2>
+      <p class="lede wide">Stanford&apos;s CS 153 put the people building modern AI in one room: Nadella, Altman, Jensen Huang, Ben Horowitz, and more. We watched all 13 talks and distilled them, so we can hand you the map instead of the hype.</p>
+      <span class="url">oslovibecoding.tech/frontier</span>
+    </div>
+  </section>
+
+  <!-- 11 · the stack -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <p class="eyebrow">The whole stack</p>
+      <h2 style="font-size:clamp(1.6rem,3.6vw,2.6rem)">Modern AI is layers, not magic.</h2>
+      <div class="stack" data-spine="map">
+        <div class="layer"><span class="lb">Trust &amp; safety</span><span class="ln">Whether AI keeps permission to operate. (Sullivan, Nadella, Midha)</span></div>
+        <div class="layer"><span class="lb">Capital &amp; markets</span><span class="ln">Money and relationships organize the work; the context you own is the moat. (Horowitz)</span></div>
+        <div class="layer hot"><span class="lb">Products</span><span class="ln">Tiny teams turn models into apps people use. You live here. (Singhal, Tan &amp; Hu, Luma, ElevenLabs)</span></div>
+        <div class="layer"><span class="lb">Models</span><span class="ln">Compute and data become AI that reads, sees, hears, and acts. (Altman, Nadella, Blattmann)</span></div>
+        <div class="layer"><span class="lb">Compute</span><span class="ln">Chips and datacenters that turn power into thinking. (Huang, Vahdat)</span></div>
+        <div class="layer"><span class="lb">Energy</span><span class="ln">Power plants and grids. The deepest constraint. (Nolan)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · theme 1 -->
+  <section class="slide s-paper" data-spine="theme-0">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Theme 1 of 5</p>
+      <h2>Scale keeps paying off.</h2>
+      <p class="lede wide">More compute and more data keep making the models better, more reliably than almost anyone predicts. The people at the top are betting their companies on that curve continuing.</p>
+      <div class="evidence"><div class="d">&ldquo;Microsoft put $1B into OpenAI in 2019, on the strength of the scaling curve.&rdquo;</div><div class="src">Satya Nadella · Microsoft</div></div>
+      <div class="sowhat"><span class="tag">so what</span><span>The tools in your hands tonight only get better. Learning to steer them compounds.</span></div>
+    </div>
+  </section>
+
+  <!-- 13 · theme 2 -->
+  <section class="slide s-paper" data-spine="theme-1">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Theme 2 of 5</p>
+      <h2>The bottleneck is not code.</h2>
+      <p class="lede wide">Writing software is the cheap part now. The scarce, expensive things are energy, compute, and knowing what to build. The frontier is a fight over power plants and chips.</p>
+      <div class="evidence"><div class="d">One gigawatt of AI costs about $40B and takes 2 to 3 years. Energy is the one thing money cannot rush.</div><div class="src">Amin Vahdat · Google</div></div>
+      <div class="sowhat"><span class="tag">so what</span><span>If code is cheap, your ideas and judgment are the valuable part. That is you.</span></div>
+    </div>
+  </section>
+
+  <!-- 14 · theme 3 -->
+  <section class="slide s-paper" data-spine="theme-2">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Theme 3 of 5</p>
+      <h2>Small teams, huge output.</h2>
+      <p class="lede wide">One person with AI now does what used to need a whole department. The unit of building is shrinking to a few people, or one.</p>
+      <div class="evidence"><div class="d">&ldquo;You can do the work of about 500 to 1,000 people.&rdquo;</div><div class="src">Garry Tan · Y Combinator</div></div>
+      <div class="sowhat"><span class="tag">so what</span><span>You do not need a company or permission. One person and a laptop is a real team.</span></div>
+    </div>
+  </section>
+
+  <!-- 15 · theme 4 -->
+  <section class="slide s-paper" data-spine="theme-3">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Theme 4 of 5</p>
+      <h2>Judgment beats syntax.</h2>
+      <p class="lede wide">The founders winning with AI are not the fastest typists. They have taste, and they test against what actually matters instead of generic benchmarks.</p>
+      <div class="evidence"><div class="d">&ldquo;Shipping code is going to zero. What is not going to zero is the taste to build something good.&rdquo;</div><div class="src">Diana Hu · Y Combinator</div></div>
+      <div class="sowhat"><span class="tag">so what</span><span>The skill that wins is one you can practice tonight: decide what good looks like, then check.</span></div>
+    </div>
+  </section>
+
+  <!-- 16 · theme 5 -->
+  <section class="slide s-paper" data-spine="theme-4">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Theme 5 of 5</p>
+      <h2>Everything goes multimodal.</h2>
+      <p class="lede wide">Not just text. One model learning across images, video, and voice is where things head, because that is how the world actually comes at us.</p>
+      <div class="evidence"><div class="d">Image and video models that are not unified are &ldquo;really, really stupid.&rdquo; They do not understand what they generate.</div><div class="src">Amit Jain · Luma AI</div></div>
+      <div class="sowhat"><span class="tag">so what</span><span>You can build with pictures, voice, and video now, not only text. More things are buildable.</span></div>
+    </div>
+  </section>
+
+  <!-- 17 · facts -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <p class="eyebrow">Six things worth remembering</p>
+      <div class="facts" data-spine="facts">
+        <div class="fact"><div class="f">One person can do the work of 500 to 1,000.</div><div class="src">Garry Tan · Y Combinator</div></div>
+        <div class="fact"><div class="f">~1,000,000&times; more compute in about 10 years.</div><div class="src">Jensen Huang · NVIDIA</div></div>
+        <div class="fact"><div class="f">1 gigawatt of AI &asymp; $40B, and 2&ndash;3 years to build.</div><div class="src">Amin Vahdat · Google</div></div>
+        <div class="fact"><div class="f">$430M revenue in 36 months, about 450 people.</div><div class="src">Mati Staniszewski · ElevenLabs</div></div>
+        <div class="fact"><div class="f">$1B bet on OpenAI in 2019, on scaling.</div><div class="src">Satya Nadella · Microsoft</div></div>
+        <div class="fact"><div class="f">Product-market fit feels like a &ldquo;sucking sound.&rdquo;</div><div class="src">Nikhyl Singhal · Skip</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 · PART 3 divider -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <div class="partnum">03</div>
+      <div class="parttitle">Build your harness</div>
+      <p class="partsub">Now the hands-on part. Laptops out. We set this up together.</p>
+    </div>
+  </section>
+
+  <!-- 19 · what is a harness -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>The one concept to keep</p>
+      <h2 style="font-size:clamp(1.7rem,3.8vw,2.8rem)">A harness has four parts.</h2>
+      <div class="grid2">
+        <div class="cell"><div class="n">The brain</div><h3>Model</h3><p>The AI doing the thinking. You pick one; you can swap it later.</p></div>
+        <div class="cell"><div class="n">The hands</div><h3>Tools</h3><p>It can read and write your files and run commands, not just chat.</p></div>
+        <div class="cell"><div class="n">The memory</div><h3>Context</h3><p>What it knows about your project: the folder, your goal, your rules.</p></div>
+        <div class="cell"><div class="n">The engine</div><h3>The loop</h3><p>Describe, act, verify, steer. You drive it, over and over.</p></div>
+      </div>
+      <p class="attrib">Same four parts whether you use Claude Code, Cursor, or anything else.</p>
+    </div>
+  </section>
+
+  <!-- 20 · step 1 install -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">Step 1 · pick a tool</p>
+        <h2>Install one harness.</h2>
+        <p class="lede">Two friendly options. Pick one now. Do not shop around. We will help you in the room if anything sticks.</p>
+        <div class="chips"><span class="chip hot">Claude Code</span><span class="chip">Cursor</span></div>
+      </div>
+      <div>
+        <div class="code"><span class="c"># Claude Code (in a terminal, needs Node 18+)</span><br><span class="p">$</span> npm install -g <b>@anthropic-ai/claude-code</b><br><span class="p">$</span> <b>claude</b>   <span class="c"># then sign in</span></div>
+        <div class="code"><span class="c"># Cursor (an app)</span><br>download from <b>cursor.com</b><br>open it, then open a folder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21 · step 2 context -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Step 2 · give it context</p>
+      <h2>Point it at a folder.<br>Tell it the goal.</h2>
+      <p class="lede wide">Make an empty folder and open it in your tool. Say what you want in one sentence. For anything bigger, drop a short <b>rules file</b> (a plain text file the tool reads) with the few facts it should always know.</p>
+      <p class="attrib">Context is the difference between a lucky guess and a useful answer.</p>
+    </div>
+  </section>
+
+  <!-- 22 · step 3 loop -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">Step 3 · run the loop</p>
+        <h2>Describe, then steer.</h2>
+        <p class="lede">Ask for the smallest useful version. Look at what it made. Say the next small change. Repeat. Watch the diff and reject anything you did not want.</p>
+      </div>
+      <div>
+        <div class="code"><span class="p">&rsaquo;</span> Make a one-page site with my name,<br>&nbsp;&nbsp;a short bio, and a links section.<br><br><span class="c"># then, after you look:</span><br><span class="p">&rsaquo;</span> Bigger heading. Dark background.<br>&nbsp;&nbsp;Add my GitHub link.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 23 · habits -->
+  <section class="slide s-mist">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Good habits from day one</p>
+      <div class="list" style="max-width:52ch">
+        <div class="row"><span class="k">↺</span><span class="t"><b>Small steps.</b><span class="s">One change at a time. Big asks hide big mistakes.</span></span></div>
+        <div class="row"><span class="k">▷</span><span class="t"><b>Run it every time.</b><span class="s">&ldquo;It looks done&rdquo; is not done. See it work.</span></span></div>
+        <div class="row"><span class="k">✓</span><span class="t"><b>Commit when it works.</b><span class="s">A save point you can go back to. Ask us how.</span></span></div>
+        <div class="row"><span class="k">?</span><span class="t"><b>Read the risky parts.</b><span class="s">Anything touching data, money, or accounts. Or just ask.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24 · exercise -->
+  <section class="slide s-paper">
+    <div class="wrap">
+      <p class="eyebrow"><svg class="spark"><use href="#spark"/></svg>Now you · the rest of tonight</p>
+      <h2>Build one small real thing.</h2>
+      <p class="lede wide">Pick the smallest version of something you would actually use. Get it working. Show it to someone before you leave.</p>
+      <div class="chips">
+        <span class="chip">A personal webpage</span>
+        <span class="chip">A tiny tool or calculator</span>
+        <span class="chip">A script for a boring task</span>
+        <span class="chip">Your own idea</span>
+      </div>
+      <p class="attrib">Stuck for more than a few minutes? That is what we are here for. Wave someone over.</p>
+    </div>
+  </section>
+
+  <!-- 25 · recap -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap">
+      <p class="eyebrow">What you just learned</p>
+      <div class="list">
+        <div class="row"><span class="k">1</span><span class="t"><b>Vibe coding is directing, not typing.</b><span class="s">Describe, build, run, steer. Taste over syntax.</span></span></div>
+        <div class="row"><span class="k">2</span><span class="t"><b>The bottleneck moved to ideas and judgment.</b><span class="s">Which means a beginner with taste can build real things.</span></span></div>
+        <div class="row"><span class="k">3</span><span class="t"><b>Your harness is model + tools + context + loop.</b><span class="s">And it is running on your laptop right now.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 26 · close -->
+  <section class="slide s-night" data-dark>
+    <div class="wrap" style="text-align:center">
+      <svg class="hero-spark" style="width:clamp(66px,8vw,100px);height:clamp(66px,8vw,100px);margin:0 auto"><use href="#spark"/></svg>
+      <h1 style="margin-top:.5em">Now go build.</h1>
+      <p class="lede wide" style="margin:1em auto 0">No one codes alone. <span class="muted">oslovibecoding.tech</span></p>
+    </div>
+  </section>
+
+</main>
+
+<div class="chrome">
+  <div class="chrome-row">
+    <span class="hint">← → or space to move · F for fullscreen</span>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <span class="counter">01 / 26</span>
+      <span class="navbtns"><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></span>
+    </div>
+  </div>
+  <div class="bar"><div class="bar-fill"></div></div>
+</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var counter = document.querySelector('.counter');
+  var barFill = document.querySelector('.bar-fill');
+  var body = document.body;
+  var i = 0;
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function show(n){
+    i = Math.max(0, Math.min(slides.length-1, n));
+    slides.forEach(function(s,idx){ s.classList.toggle('active', idx===i); s.setAttribute('aria-hidden', idx===i?'false':'true'); });
+    body.classList.toggle('on-dark', slides[i].hasAttribute('data-dark'));
+    counter.textContent = pad(i+1) + ' / ' + pad(slides.length);
+    barFill.style.width = ((i+1)/slides.length*100) + '%';
+    var h = '#' + (i+1);
+    if (location.hash !== h) history.replaceState(null, '', h);
+  }
+  function next(){ show(i+1); } function prev(){ show(i-1); }
+  document.getElementById('next').addEventListener('click', function(e){ e.stopPropagation(); next(); });
+  document.getElementById('prev').addEventListener('click', function(e){ e.stopPropagation(); prev(); });
+  addEventListener('keydown', function(e){
+    if (['ArrowRight',' ','PageDown','j'].indexOf(e.key) > -1){ e.preventDefault(); next(); }
+    else if (['ArrowLeft','PageUp','k'].indexOf(e.key) > -1){ e.preventDefault(); prev(); }
+    else if (e.key === 'Home'){ show(0); } else if (e.key === 'End'){ show(slides.length-1); }
+    else if (e.key === 'f' || e.key === 'F'){ if (!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); } else { document.exitFullscreen && document.exitFullscreen(); } }
+  });
+  addEventListener('click', function(e){ if (e.target.closest('a,button')) return; (e.clientX < innerWidth*0.32 ? prev : next)(); });
+  var tx = 0;
+  addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  addEventListener('touchend', function(e){ var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50){ dx < 0 ? next() : prev(); } }, {passive:true});
+  var start = parseInt((location.hash||'').slice(1), 10);
+  show(isFinite(start) && start > 0 ? start-1 : 0);
+  addEventListener('hashchange', function(){ var n = parseInt((location.hash||'').slice(1), 10); if (isFinite(n) && n > 0 && n-1 !== i) show(n-1); });
+})();
+</script>
+</body>
+</html>
