@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Prose from "@/components/Prose";
 import SparkMark from "@/components/SparkMark";
-import { articles, getArticle } from "@/content/articles";
+import { FrontierDiagram } from "@/components/frontier/FrontierDiagrams";
+import { articles, getArticle, articleDiagram } from "@/content/articles";
 import { ArticleJsonLd } from "@/components/JsonLd";
 import { links } from "@/content/links";
 import { SITE_URL } from "@/lib/brand";
@@ -78,6 +79,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {article.takeaway}
           </p>
         </div>
+
+        {articleDiagram[article.slug] && (
+          <div className="relative mt-10 aspect-[16/10] overflow-hidden rounded-card border border-line bg-night">
+            <FrontierDiagram spec={articleDiagram[article.slug]} />
+          </div>
+        )}
 
         <div className="mt-14 space-y-14">
           {article.sections.map((s, i) => (

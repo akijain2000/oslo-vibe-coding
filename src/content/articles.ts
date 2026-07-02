@@ -1,6 +1,8 @@
 // In-depth articles, expanded from the organisers' talks/decks into readable essays.
 // Rendered at /articles and /articles/[slug]. Add a new one by appending to this array.
 
+import type { DiagramSpec } from "@/components/frontier/FrontierDiagrams";
+
 export type ProseBlock = {
   heading: string;
   paragraphs: string[];
@@ -707,3 +709,56 @@ export const articles: Article[] = [
 ];
 
 export const getArticle = (slug: string) => articles.find((a) => a.slug === slug);
+
+// A hero concept diagram per article, drawn with the same engine as the frontier
+// study guides. Keyed by slug; the article page renders it under the takeaway.
+export const articleDiagram: Record<string, DiagramSpec> = {
+  "how-llms-are-trained-pretraining": {
+    archetype: "pipeline",
+    title: "Making a base model",
+    stages: ["Web crawl", "Filter", "Tokenize", "Train", "Base model"],
+  },
+  "inside-an-llm-next-token": {
+    archetype: "loop",
+    title: "One token at a time",
+    steps: ["Read tokens", "Predict next", "Sample one", "Append"],
+  },
+  "base-model-to-assistant": {
+    archetype: "contrast",
+    title: "Base model vs assistant",
+    aTitle: "Base model",
+    a: ["Simulates web text", "Autocompletes", "No persona"],
+    bTitle: "Assistant",
+    b: ["Simulates a labeler", "Answers you", "Has a persona"],
+  },
+  "why-llms-hallucinate": {
+    archetype: "contrast",
+    title: "Weights vs context",
+    aTitle: "In the weights",
+    a: ["Vague recollection", "Baked in at training", "Can be wrong"],
+    bTitle: "In the context",
+    b: ["Precise memory", "In front of it now", "What you paste in"],
+  },
+  "teaching-llms-to-think-rl": {
+    archetype: "loop",
+    title: "Trial and error",
+    steps: ["Try many answers", "Check what works", "Reinforce those", "Repeat"],
+  },
+  "vibe-coding-at-spaces": {
+    archetype: "loop",
+    title: "The vibe coding loop",
+    steps: ["Describe", "Build", "Run", "Steer"],
+  },
+  "cheap-ai-developers-job": {
+    archetype: "stack",
+    title: "The work moves up",
+    layers: ["Typing every line", "Writing code", "Reviewing output", "Deciding what to build"],
+  },
+  "25507-on-ai-coding-agents": {
+    archetype: "curve",
+    title: "Jevons paradox",
+    xLabel: "Cost per unit falls",
+    yLabel: "Usage",
+    caption: "Cheaper means more use",
+  },
+};
