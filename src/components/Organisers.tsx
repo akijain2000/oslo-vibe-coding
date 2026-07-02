@@ -1,15 +1,32 @@
 import { Section, Eyebrow, SectionHeading } from "./Section";
 import { organisers } from "@/content/people";
 
-export default function Organisers() {
+const copy = {
+  en: {
+    eyebrow: "Who runs this",
+    heading: "Two people who think this should exist.",
+    intro:
+      "No company behind it, no sponsor to please. Just two builders in Oslo who got tired of coding alone and started a meetup.",
+    linkedin: "Connect on LinkedIn",
+  },
+  no: {
+    eyebrow: "Hvem står bak",
+    heading: "To personer som synes dette bør finnes.",
+    intro:
+      "Ingen bedrift bak, ingen sponsor å tekkes. Bare to som bygger i Oslo, som ble lei av å kode alene og startet en meetup.",
+    linkedin: "Ta kontakt på LinkedIn",
+  },
+} as const;
+
+export default function Organisers({ locale = "en" }: { locale?: "en" | "no" }) {
+  const t = copy[locale];
   return (
     <Section id="about" tone="mist">
       <div className="max-w-2xl">
-        <Eyebrow>Who runs this</Eyebrow>
-        <SectionHeading className="mt-4">Two people who think this should exist.</SectionHeading>
+        <Eyebrow>{t.eyebrow}</Eyebrow>
+        <SectionHeading className="mt-4">{t.heading}</SectionHeading>
         <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-          No company behind it, no sponsor to please. Just two builders in Oslo who got tired of
-          coding alone and started a meetup.
+          {t.intro}
         </p>
       </div>
 
@@ -32,7 +49,7 @@ export default function Organisers() {
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
             >
-              Connect on LinkedIn
+              {t.linkedin}
               <span aria-hidden>→</span>
             </a>
           </article>

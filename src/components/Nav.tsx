@@ -6,8 +6,6 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { links } from "@/content/links";
 
-// English chrome links to the full site. The Norwegian site is currently the
-// resources library, so /no shows an in-locale nav (no bounce back to English).
 const NAV_EN = [
   { label: "Next session", href: "/#next" },
   { label: "Start here", href: "/start" },
@@ -15,7 +13,24 @@ const NAV_EN = [
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/#about" },
 ];
-const NAV_NO = [{ label: "Ressurser", href: "/no/resources" }];
+const NAV_NO = [
+  { label: "Neste økt", href: "/no#next" },
+  { label: "Ressurser", href: "/no/resources" },
+  { label: "Om oss", href: "/no#about" },
+];
+
+// The counterpart path in the other locale. Norwegian exists for the homepage
+// and the resources library so far; other pages fall back to the /no homepage.
+function switchPath(pathname: string, toNo: boolean): string {
+  if (toNo) {
+    if (pathname.startsWith("/no")) return pathname;
+    if (pathname === "/") return "/no";
+    if (pathname.startsWith("/resources")) return "/no" + pathname;
+    return "/no";
+  }
+  if (!pathname.startsWith("/no")) return pathname;
+  return pathname.slice(3) || "/";
+}
 
 export default function Nav() {
   const pathname = usePathname();
@@ -23,7 +38,7 @@ export default function Nav() {
   const nav = isNo ? NAV_NO : NAV_EN;
   const rsvp = isNo ? "Meld deg på" : "RSVP · it's free";
   const rsvpMobile = isNo ? "Meld deg på neste samling" : "RSVP for Thursday · it's free";
-  const homeHref = isNo ? "/no/resources" : "/";
+  const homeHref = isNo ? "/no" : "/";
 
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -69,6 +84,19 @@ export default function Nav() {
               {item.label}
             </Link>
           ))}
+          <span className="flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wider">
+            {isNo ? (
+              <Link href={switchPath(pathname, false)} className={overDark ? "text-cream-dim hover:text-paper" : "text-ink-soft hover:text-ink"}>EN</Link>
+            ) : (
+              <span className={overDark ? "text-paper" : "text-ink"}>EN</span>
+            )}
+            <span className={overDark ? "text-night-line" : "text-line"}>/</span>
+            {isNo ? (
+              <span className={overDark ? "text-paper" : "text-ink"}>NO</span>
+            ) : (
+              <Link href={switchPath(pathname, true)} className={overDark ? "text-cream-dim hover:text-paper" : "text-ink-soft hover:text-ink"}>NO</Link>
+            )}
+          </span>
           <a
             href={links.luma}
             target="_blank"
@@ -110,6 +138,19 @@ export default function Nav() {
                 {item.label}
               </Link>
             ))}
+            <div className="flex items-center gap-2 border-b border-line/70 py-3 font-mono text-sm uppercase tracking-wider">
+              {isNo ? (
+                <Link href={switchPath(pathname, false)} onClick={() => setOpen(false)} className="text-ember-ink">EN</Link>
+              ) : (
+                <span className="text-ink">EN</span>
+              )}
+              <span className="text-line">/</span>
+              {isNo ? (
+                <span className="text-ink">NO</span>
+              ) : (
+                <Link href={switchPath(pathname, true)} onClick={() => setOpen(false)} className="text-ember-ink">NO</Link>
+              )}
+            </div>
             <a
               href={links.luma}
               target="_blank"

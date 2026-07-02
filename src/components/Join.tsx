@@ -1,21 +1,37 @@
 import { Section, SectionHeading } from "./Section";
 import SparkMark from "./SparkMark";
 import { channels } from "@/content/links";
-import { upcomingEvent } from "@/content/events";
+import { upcomingEvent, type EventItem } from "@/content/events";
 
-export default function Join() {
+const copy = {
+  en: {
+    heading: "Bring a laptop and an idea. Leave with something you started.",
+    nextSession: (e: EventItem) =>
+      `Next session: ${e.dateLabel}, ${e.timeLabel} at ${e.venue}.`,
+    fallback: "We run free drop-in sessions in Oslo.",
+    tagline: "No experience required. No one codes alone.",
+  },
+  no: {
+    heading: "Ta med en laptop og en idé. Gå hjem med noe du har startet på.",
+    nextSession: (e: EventItem) =>
+      `Neste samling: ${e.dateLabel}, ${e.timeLabel} på ${e.venue}.`,
+    fallback: "Vi holder gratis drop-in-samlinger i Oslo.",
+    tagline: "Ingen erfaring nødvendig. Ingen koder alene.",
+  },
+} as const;
+
+export default function Join({ locale = "en" }: { locale?: "en" | "no" }) {
+  const t = copy[locale];
   return (
     <Section id="join" tone="paper">
       <div className="rounded-card bg-ember px-6 py-14 text-center text-white sm:px-12 sm:py-20">
         <SparkMark className="mx-auto h-9 w-9 text-white" />
         <SectionHeading className="mx-auto mt-6 max-w-3xl text-white">
-          Bring a laptop and an idea. Leave with something you started.
+          {t.heading}
         </SectionHeading>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/90">
-          {upcomingEvent
-            ? `Next session: ${upcomingEvent.dateLabel}, ${upcomingEvent.timeLabel} at ${upcomingEvent.venue}.`
-            : "We run free drop-in sessions in Oslo."}{" "}
-          No experience required. No one codes alone.
+          {upcomingEvent ? t.nextSession(upcomingEvent) : t.fallback}{" "}
+          {t.tagline}
         </p>
 
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">

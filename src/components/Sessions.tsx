@@ -2,20 +2,35 @@ import { Section, Eyebrow, SectionHeading } from "./Section";
 import Carousel from "./Carousel";
 import { pastEvents } from "@/content/events";
 
+const copy = {
+  en: {
+    ariaLabel: "Past sessions",
+    eyebrow: "Where we've been",
+    heading: "A few sessions in, and growing.",
+    intro:
+      "It started in a public library with two people comparing tools. We are turning the drop-ins into a weekly thing.",
+  },
+  no: {
+    ariaLabel: "Tidligere samlinger",
+    eyebrow: "Der vi har vært",
+    heading: "Noen samlinger inn, og vi vokser.",
+    intro:
+      "Det startet på et folkebibliotek med to personer som sammenlignet verktøy. Vi gjør de uformelle treffene om til noe ukentlig.",
+  },
+} as const;
+
 // Past sessions as a browsable horizontal gallery rather than a long timeline.
-export default function Sessions() {
+export default function Sessions({ locale = "en" }: { locale?: "en" | "no" }) {
+  const t = copy[locale];
   return (
     <Section id="sessions" tone="mist">
       <Carousel
-        ariaLabel="Past sessions"
+        ariaLabel={t.ariaLabel}
         header={
           <div className="max-w-2xl">
-            <Eyebrow>Where we&apos;ve been</Eyebrow>
-            <SectionHeading className="mt-4">A few sessions in, and growing.</SectionHeading>
-            <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-              It started in a public library with two people comparing tools. We are turning the
-              drop-ins into a weekly thing.
-            </p>
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <SectionHeading className="mt-4">{t.heading}</SectionHeading>
+            <p className="mt-5 text-lg leading-relaxed text-ink-soft">{t.intro}</p>
           </div>
         }
       >
