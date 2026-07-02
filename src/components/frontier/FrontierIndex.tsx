@@ -18,9 +18,10 @@ export default function FrontierIndex() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">
             {course.school}&apos;s {course.code}: {course.name} put the people building modern AI in
-            one room, from Satya Nadella and Sam Altman to Jensen Huang. We watched all{" "}
-            {lectures.length} guest lectures and turned each one into a short study guide: the big
-            idea, the specifics, a few quotes, and a diagram. Free to read, made to teach from.
+            one room, from Satya Nadella and Sam Altman to Jensen Huang. We went through all{" "}
+            {lectures.length} guest lectures and turned each into a short study guide: the big idea,
+            the specifics, a few quotes, and a diagram. Read them here, or watch the talks on your
+            own time.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a

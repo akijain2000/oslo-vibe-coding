@@ -61,9 +61,9 @@ export const articles: Article[] = [
         ],
       },
       {
-        heading: "A map of the frontier, minus the hype",
+        heading: "Extra reading: the frontier, distilled",
         paragraphs: [
-          "Before building, we handed out a map. We had watched all 13 guest lectures from Stanford's CS 153, the people building modern AI, from Satya Nadella and Sam Altman to Jensen Huang, and distilled them into short notes. Two points from that map matter most for a beginner.",
+          "This part is optional and for your own time. We keep a set of notes on the site distilled from all 13 Stanford CS 153 guest lectures, the people building modern AI, from Satya Nadella and Sam Altman to Jensen Huang. Read the notes when you are curious, or watch the talks in full on your own time. If you do, two points matter most for a beginner.",
           "First, the bottleneck is no longer code. Writing software is the cheap part now. Energy, compute, and knowing what to build are the scarce parts. Amin Vahdat from Google put a number on it: one gigawatt of AI costs about forty billion dollars and takes two to three years, and energy is the one thing money cannot rush. If code is cheap, your ideas and judgment are the valuable part.",
           "Second, small teams do enormous things. Garry Tan from Y Combinator said one person at a terminal can now do the work of hundreds. You do not need a company or permission. One person and a laptop is a real team.",
         ],
