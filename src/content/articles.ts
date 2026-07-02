@@ -27,10 +27,10 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    slug: "first-vibe-coding-class",
+    slug: "vibe-coding-at-spaces",
     datePublished: "2026-07-02",
-    title: "Our first vibe coding class, in full",
-    dek: "A free, hands-on night in Oslo: what vibe coding is, where AI is heading, how to set up your own tools, and two small apps we built from open Oslo data. The whole session, for anyone who missed it.",
+    title: "Our first vibe coding class at Spaces",
+    dek: "Our vibe coding drop-in moved to Spaces in central Oslo this week. Here is the whole session for anyone who missed it: what vibe coding is, where AI is heading, how to set up your own tools, and two small apps we built from open Oslo data.",
     author: "Akshat Jain",
     deckPages: 22,
     readingTimeMin: 6,
@@ -42,7 +42,7 @@ export const articles: Article[] = [
       {
         heading: "What the night was",
         paragraphs: [
-          "We ran the first Oslo Vibe Coding class this week. Free, drop-in, laptops out. People who had never written a line of code showed up, set up real tools, and left with something that runs. This is the whole session written down, so anyone who could not make it can catch up and try it at home.",
+          "We ran another Oslo Vibe Coding drop-in this week, our first at Spaces Stortorvet in central Oslo. Free, laptops out. People who had never written a line of code showed up, set up real tools, and left with something that runs. This is the whole session written down, so anyone who could not make it can catch up and try it at home.",
           "The plan was simple. Spend the first stretch on how this works and where AI is heading, then spend the rest building. Most of the hour was building.",
         ],
         pullquote: "People who had never written a line of code left with something that runs.",
@@ -94,6 +94,13 @@ export const articles: Article[] = [
         links: [
           { label: "Live Oslo departures", url: "https://oslovibecoding.tech/oslo-departures.html" },
           { label: "City bikes near you", url: "https://oslovibecoding.tech/oslo-bikes.html" },
+        ],
+      },
+      {
+        heading: "Where this is going",
+        paragraphs: [
+          "This was our first session at Spaces Stortorvet, and we liked it there. We are going to keep the drop-ins at Spaces and settle into a regular time, so you can plan around it instead of watching for the next announcement.",
+          "We are also putting together a curriculum. Instead of starting from zero every week, the sessions will build on each other: set up your tools, ship a first small thing, then work up to a real project you care about. Come to one, then the next, and you will have something real by the end.",
         ],
       },
       {
