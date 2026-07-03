@@ -11,24 +11,40 @@ const NAV_EN = [
   { label: "Start here", href: "/start" },
   { label: "Frontier", href: "/frontier" },
   { label: "Resources", href: "/resources" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
 ];
 const NAV_NO = [
   { label: "Neste økt", href: "/no#next" },
+  { label: "Kom i gang", href: "/no/kom-i-gang" },
   { label: "Ressurser", href: "/no/resources" },
   { label: "Om oss", href: "/no#about" },
 ];
 
-// The counterpart path in the other locale. Norwegian exists for the homepage
-// and the resources library so far; other pages fall back to the /no homepage.
+// Pages that exist in both locales, keyed EN path -> NO path. Used by the
+// language switcher so it lands on the real counterpart, not the /no homepage.
+const EN_TO_NO: Record<string, string> = {
+  "/": "/no",
+  "/start": "/no/kom-i-gang",
+  "/what-is-vibe-coding": "/no/hva-er-vibe-coding",
+  "/faq": "/no/faq",
+  "/resources": "/no/resources",
+};
+const NO_TO_EN: Record<string, string> = Object.fromEntries(
+  Object.entries(EN_TO_NO).map(([en, no]) => [no, en]),
+);
+
+// The counterpart path in the other locale. Falls back to the locale homepage
+// when a page has no translation yet.
 function switchPath(pathname: string, toNo: boolean): string {
   if (toNo) {
     if (pathname.startsWith("/no")) return pathname;
-    if (pathname === "/") return "/no";
-    if (pathname.startsWith("/resources")) return "/no" + pathname;
+    if (EN_TO_NO[pathname]) return EN_TO_NO[pathname];
+    if (pathname.startsWith("/resources/")) return "/no" + pathname; // resource detail
     return "/no";
   }
   if (!pathname.startsWith("/no")) return pathname;
+  if (NO_TO_EN[pathname]) return NO_TO_EN[pathname];
+  if (pathname.startsWith("/no/resources/")) return pathname.slice(3); // resource detail
   return pathname.slice(3) || "/";
 }
 

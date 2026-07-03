@@ -106,3 +106,4 @@ export const upcomingEvent = events.find(
   (e) => e.status === "upcoming" && new Date(e.end).getTime() > Date.now(),
 );
 export const pastEvents = events.filter((e) => e.status === "past");
+export const getEventBySlug = (slug: string) => events.find((e) => e.slug === slug);

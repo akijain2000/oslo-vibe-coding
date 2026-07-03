@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   description: DEFINITION,
   alternates: {
     canonical: "/what-is-vibe-coding",
-    languages: { en: "/what-is-vibe-coding", "x-default": "/what-is-vibe-coding" },
+    languages: {
+      en: "/what-is-vibe-coding",
+      "nb-NO": "/no/hva-er-vibe-coding",
+      "x-default": "/what-is-vibe-coding",
+    },
   },
   openGraph: {
     type: "article",

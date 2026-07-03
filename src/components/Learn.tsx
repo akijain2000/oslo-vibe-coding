@@ -51,6 +51,9 @@ const copy = {
 export default function Learn({ locale = "en" }: { locale?: "en" | "no" }) {
   const t = copy[locale];
   const topics = resourceSections.filter((s) => s.id !== "frontier");
+  // Route to the Norwegian counterparts on /no (the start guide has a different slug).
+  const startHref = locale === "no" ? "/no/kom-i-gang" : "/start";
+  const resourcesHref = locale === "no" ? "/no/resources" : "/resources";
 
   return (
     <Section id="resources" tone="paper">
@@ -63,7 +66,7 @@ export default function Learn({ locale = "en" }: { locale?: "en" | "no" }) {
           </div>
         </div>
         <Link
-          href="/resources"
+          href={resourcesHref}
           className="inline-flex items-center gap-1.5 rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#26242f]"
         >
           {t.openLibrary}
@@ -73,7 +76,7 @@ export default function Learn({ locale = "en" }: { locale?: "en" | "no" }) {
 
       <div className="mt-12 grid gap-4 lg:grid-cols-2">
         <Link
-          href="/start"
+          href={startHref}
           className="group flex flex-col justify-between gap-6 rounded-card bg-night p-7 text-paper transition-colors hover:bg-night-2 sm:p-9"
         >
           <div>
@@ -127,7 +130,7 @@ export default function Learn({ locale = "en" }: { locale?: "en" | "no" }) {
           {topics.map((s) => (
             <Link
               key={s.id}
-              href={`/resources#${s.id}`}
+              href={`${resourcesHref}#${s.id}`}
               className="group flex w-[260px] shrink-0 snap-start flex-col rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20 sm:w-[300px]"
             >
               <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-ember-ink">

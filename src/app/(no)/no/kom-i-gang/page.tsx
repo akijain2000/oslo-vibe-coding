@@ -2,44 +2,45 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/Section";
 import Prose from "@/components/Prose";
-import { guide } from "@/content/guide";
+import { guideNo } from "@/content/guide.no";
 import { links } from "@/content/links";
 import { SITE_URL } from "@/lib/brand";
 
+const LANGS = { en: "/start", "nb-NO": "/no/kom-i-gang", "x-default": "/start" };
+
 export const metadata: Metadata = {
-  title: "Getting started with vibe coding",
-  description: guide.dek,
-  alternates: {
-    canonical: "/start",
-    languages: { en: "/start", "nb-NO": "/no/kom-i-gang", "x-default": "/start" },
-  },
+  title: "Kom i gang med vibe coding",
+  description: guideNo.dek,
+  alternates: { canonical: "/no/kom-i-gang", languages: LANGS },
   openGraph: {
-    title: "Getting started with vibe coding · Oslo Vibe Coding",
-    description: guide.dek,
-    url: `${SITE_URL}/start`,
+    type: "article",
+    title: "Kom i gang med vibe coding · Oslo Vibe Coding",
+    description: guideNo.dek,
+    url: `${SITE_URL}/no/kom-i-gang`,
+    locale: "nb_NO",
+    alternateLocale: ["en_US"],
   },
 };
 
-export default function StartPage() {
+export default function KomIGangPage() {
   return (
-    <>
+    <div lang="nb-NO">
       <header className="bg-night text-paper">
         <div className="mx-auto max-w-5xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40">
-          <Eyebrow dark>Getting started · {guide.readingTimeMin} min read</Eyebrow>
+          <Eyebrow dark>Kom i gang · {guideNo.readingTimeMin} min lesing</Eyebrow>
           <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-            From never having coded to <span className="spark-text">a first build</span>.
+            Fra aldri å ha kodet til <span className="spark-text">din første app</span>.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">{guide.dek}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-dim">{guideNo.dek}</p>
         </div>
       </header>
 
       <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-16">
-          {/* table of contents */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">On this page</p>
-            <nav aria-label="On this page" className="mt-4 flex flex-col gap-2.5">
-              {guide.sections.map((s, i) => (
+            <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">På denne siden</p>
+            <nav aria-label="På denne siden" className="mt-4 flex flex-col gap-2.5">
+              {guideNo.sections.map((s, i) => (
                 <a
                   key={s.id}
                   href={`#${s.id}`}
@@ -52,16 +53,15 @@ export default function StartPage() {
             </nav>
           </aside>
 
-          {/* sections */}
           <div className="min-w-0 space-y-14">
-            {guide.sections.map((s) => (
+            {guideNo.sections.map((s) => (
               <Prose key={s.id} section={s} />
             ))}
 
             <div className="rounded-card bg-night p-8 text-center text-paper sm:p-10">
-              <h2 className="font-display text-2xl font-bold tracking-tight">Now do it with people.</h2>
+              <h2 className="font-display text-2xl font-bold tracking-tight">Nå gjør du det med folk.</h2>
               <p className="mx-auto mt-3 max-w-md text-cream-dim">
-                Once you have tried the loop, the fastest way to get good is a room full of others doing the same.
+                Når du har prøvd loopen, er den raskeste veien videre et rom fullt av andre som gjør det samme.
               </p>
               <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
                 <a
@@ -70,19 +70,19 @@ export default function StartPage() {
                   rel="noopener noreferrer"
                   className="rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#ff6f47]"
                 >
-                  RSVP for the next session
+                  Meld deg på neste samling
                 </a>
                 <Link
-                  href="/resources"
+                  href="/no/resources"
                   className="rounded-pill border border-night-line px-5 py-3 text-sm font-semibold text-paper transition-colors hover:bg-white/5"
                 >
-                  Browse the resource library
+                  Se hele biblioteket
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -27,14 +27,24 @@ const COLS_EN: Col[] = [
       { label: "How LLMs work", href: "/llms", external: false },
       { label: "Articles", href: "/articles", external: false },
       { label: "Resources", href: "/resources", external: false },
+      { label: "Events", href: "/events", external: false },
       { label: "FAQ", href: "/faq", external: false },
+      { label: "About", href: "/about", external: false },
     ],
   },
 ];
 
 const COLS_NO: Col[] = [
   { title: "Fellesskap", items: COMMUNITY(true) },
-  { title: "På denne siden", items: [{ label: "Ressurser", href: "/no/resources", external: false }] },
+  {
+    title: "På denne siden",
+    items: [
+      { label: "Kom i gang", href: "/no/kom-i-gang", external: false },
+      { label: "Hva er vibe coding?", href: "/no/hva-er-vibe-coding", external: false },
+      { label: "Ressurser", href: "/no/resources", external: false },
+      { label: "Vanlige spørsmål", href: "/no/faq", external: false },
+    ],
+  },
 ];
 
 export default function Footer() {

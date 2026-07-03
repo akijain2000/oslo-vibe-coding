@@ -20,7 +20,7 @@ export async function generateMetadata({
   return {
     title: `${l.title} — ${l.speaker} (${l.org})`,
     description: l.lead,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: { en: path, "x-default": path } },
     openGraph: {
       type: "article",
       title: `${l.title} · ${l.speaker}`,

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Frontier Systems, distilled: Stanford CS 153 lecture notes",
   description:
     "Short study guides for all 13 guest lectures from Stanford's CS 153: Frontier Systems, from Nadella and Altman to Jensen Huang. The big idea, the specifics, quotes, and a diagram for each. Free, by Oslo Vibe Coding.",
-  alternates: { canonical: "/frontier" },
+  alternates: { canonical: "/frontier", languages: { en: "/frontier", "x-default": "/frontier" } },
   openGraph: {
     title: "Frontier Systems, distilled · Oslo Vibe Coding",
     description:

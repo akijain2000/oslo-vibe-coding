@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/brand";
 import { articles } from "@/content/articles";
 import { allResources } from "@/content/resources";
 import { lectures } from "@/content/frontier";
+import { events } from "@/content/events";
 
 // lastModified is intentionally omitted: a build-time `new Date()` would claim
 // every page changed on every deploy (fake freshness). Add real per-content
@@ -21,10 +22,58 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { en: SITE_URL, "nb-NO": `${SITE_URL}/no`, "x-default": SITE_URL } },
     },
-    { url: `${SITE_URL}/start`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/what-is-vibe-coding`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/faq`, changeFrequency: "monthly", priority: 0.7 },
+    // Getting-started guide (EN /start <-> NO /no/kom-i-gang)
+    {
+      url: `${SITE_URL}/start`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: { en: `${SITE_URL}/start`, "nb-NO": `${SITE_URL}/no/kom-i-gang`, "x-default": `${SITE_URL}/start` } },
+    },
+    {
+      url: `${SITE_URL}/no/kom-i-gang`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: { en: `${SITE_URL}/start`, "nb-NO": `${SITE_URL}/no/kom-i-gang`, "x-default": `${SITE_URL}/start` } },
+    },
+    // "What is vibe coding" (EN <-> NO /no/hva-er-vibe-coding)
+    {
+      url: `${SITE_URL}/what-is-vibe-coding`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: { languages: { en: `${SITE_URL}/what-is-vibe-coding`, "nb-NO": `${SITE_URL}/no/hva-er-vibe-coding`, "x-default": `${SITE_URL}/what-is-vibe-coding` } },
+    },
+    {
+      url: `${SITE_URL}/no/hva-er-vibe-coding`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: { en: `${SITE_URL}/what-is-vibe-coding`, "nb-NO": `${SITE_URL}/no/hva-er-vibe-coding`, "x-default": `${SITE_URL}/what-is-vibe-coding` } },
+    },
+    // FAQ (EN /faq <-> NO /no/faq)
+    {
+      url: `${SITE_URL}/faq`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: { en: `${SITE_URL}/faq`, "nb-NO": `${SITE_URL}/no/faq`, "x-default": `${SITE_URL}/faq` } },
+    },
+    {
+      url: `${SITE_URL}/no/faq`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: { languages: { en: `${SITE_URL}/faq`, "nb-NO": `${SITE_URL}/no/faq`, "x-default": `${SITE_URL}/faq` } },
+    },
+    // English-only surfaces
     { url: `${SITE_URL}/llms`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/glossary`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE_URL}/events`, changeFrequency: "weekly", priority: 0.7 },
+    ...events.map((e) => ({
+      url: `${SITE_URL}/events/${e.slug}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    })),
+    // Live single-file open-data demo tools (now indexable)
+    { url: `${SITE_URL}/oslo-departures.html`, changeFrequency: "weekly", priority: 0.5 },
+    { url: `${SITE_URL}/oslo-bikes.html`, changeFrequency: "weekly", priority: 0.5 },
     { url: `${SITE_URL}/articles`, changeFrequency: "monthly", priority: 0.8 },
     ...articles.map((a) => ({
       url: `${SITE_URL}/articles/${a.slug}`,

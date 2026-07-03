@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Eyebrow } from "@/components/Section";
 import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { hreflangAlternates } from "@/lib/i18n";
 import { links } from "@/content/links";
 import { SITE_URL } from "@/lib/brand";
 
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
   title: "FAQ: vibe coding meetups in Oslo",
   description:
     "Answers to the common questions about Oslo Vibe Coding: what vibe coding is, whether you need to know how to code, whether it's free, and where and when we meet.",
-  alternates: {
-    canonical: "/faq",
-    languages: { en: "/faq", "x-default": "/faq" },
-  },
+  alternates: { canonical: "/faq", languages: hreflangAlternates("/faq") },
   openGraph: {
     title: "FAQ · Oslo Vibe Coding",
     description: "What vibe coding is, whether you need to code, whether it's free, and where we meet.",

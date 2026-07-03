@@ -24,7 +24,10 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.dek,
-    alternates: { canonical: `/articles/${article.slug}` },
+    alternates: {
+      canonical: `/articles/${article.slug}`,
+      languages: { en: `/articles/${article.slug}`, "x-default": `/articles/${article.slug}` },
+    },
     openGraph: {
       type: "article",
       title: `${article.title} · Oslo Vibe Coding`,
