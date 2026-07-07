@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 // Poster templates. Each renders the same PosterData in a different 1080x1920 layout,
 // all on-brand (ember / cream / ink / Space Grotesk). Pick one in the Poster Maker.
+// EVERY template renders <Footer>, which always carries data.footer — the poster
+// maker defaults that to include the WhatsApp community, so every poster shouts it out.
 
 import type { PosterData } from "./PosterCanvas";
 
@@ -116,6 +118,37 @@ function ScanLabel({ data, color = C.glow }: { data: PosterData; color?: string 
   );
 }
 
+// The one footer, rendered by every template. data.footer defaults (in the poster
+// maker) to include the WhatsApp community, so the shoutout is guaranteed everywhere.
+function Footer({ data, theme = "dark", inset = 88 }: { data: PosterData; theme?: "dark" | "light" | "onColor"; inset?: number }) {
+  const t =
+    theme === "light"
+      ? { text: "#4b4956", sub: "#8a8694", border: C.line }
+      : theme === "onColor"
+      ? { text: "#ffffff", sub: "rgba(255,255,255,0.9)", border: "rgba(255,255,255,0.35)" }
+      : { text: C.cream, sub: C.faint, border: C.nightLine };
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: inset,
+        right: inset,
+        bottom: 40,
+        borderTop: `1px solid ${t.border}`,
+        paddingTop: 22,
+        display: "flex",
+        justifyContent: "space-between",
+        gap: 24,
+        fontSize: 24,
+        color: t.sub,
+      }}
+    >
+      <span style={{ color: t.text }}>{data.footer}</span>
+      <span>oslovibecoding.tech</span>
+    </div>
+  );
+}
+
 const base = (extra: React.CSSProperties): React.CSSProperties => ({
   position: "absolute",
   inset: 0,
@@ -151,7 +184,7 @@ function Night({ data }: { data: PosterData }) {
         <div style={{ marginTop: 36, height: 6, width: 132, borderRadius: 999, background: C.ember }} />
         <p style={{ marginTop: 36, fontSize: 38, lineHeight: 1.35, color: C.cream, maxWidth: 820 }}>{data.tagline}</p>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 60 }}>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 100 }}>
         <Details data={data} />
         <div>
           <Qr data={data.qrDataUrl} />
@@ -186,7 +219,7 @@ function Daylight({ data }: { data: PosterData }) {
         <div style={{ marginTop: 36, height: 6, width: 132, borderRadius: 999, background: C.ember }} />
         <p style={{ marginTop: 36, fontSize: 38, lineHeight: 1.35, color: "#4b4956", maxWidth: 820 }}>{data.tagline}</p>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 60 }}>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 100 }}>
         <Details data={data} labelColor="#8a8694" valueColor={C.ink} subColor="#4b4956" />
         <div>
           <div style={{ background: C.ink, borderRadius: 28, padding: 24, display: "flex" }}>
@@ -198,7 +231,7 @@ function Daylight({ data }: { data: PosterData }) {
           </div>
         </div>
       </div>
-      <Footer data={data} light />
+      <Footer data={data} theme="light" />
     </div>
   );
 }
@@ -236,7 +269,7 @@ function EmberWall({ data }: { data: PosterData }) {
         </h1>
         <p style={{ marginTop: 40, fontSize: 40, lineHeight: 1.3, color: "rgba(255,255,255,0.92)", maxWidth: 820 }}>{data.tagline}</p>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 40 }}>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 130 }}>
         <Details data={data} labelColor="rgba(255,255,255,0.7)" valueColor="#fff" subColor="rgba(255,255,255,0.85)" />
         <div>
           <Qr data={data.qrDataUrl} />
@@ -246,6 +279,7 @@ function EmberWall({ data }: { data: PosterData }) {
           <div style={{ textAlign: "center", marginTop: 4, fontSize: 24, color: "rgba(255,255,255,0.85)" }}>{data.rsvpLabel}</div>
         </div>
       </div>
+      <Footer data={data} theme="onColor" />
     </div>
   );
 }
@@ -274,7 +308,7 @@ function Split({ data }: { data: PosterData }) {
           <p style={{ marginTop: 28, fontSize: 36, lineHeight: 1.3, color: C.cream, maxWidth: 760 }}>{data.tagline}</p>
         </div>
       </div>
-      <div style={{ height: "44%", background: C.paper, padding: 88, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 40 }}>
+      <div style={{ height: "44%", background: C.paper, padding: 88, paddingBottom: 130, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 40 }}>
         <Details data={data} labelColor="#8a8694" valueColor={C.ink} subColor="#4b4956" gap={32} />
         <div>
           <div style={{ background: C.ink, borderRadius: 28, padding: 24, display: "flex" }}>
@@ -285,13 +319,14 @@ function Split({ data }: { data: PosterData }) {
           </div>
         </div>
       </div>
+      <Footer data={data} theme="light" />
     </div>
   );
 }
 
 function Editorial({ data }: { data: PosterData }) {
   return (
-    <div style={base({ flexDirection: "column", justifyContent: "space-between", padding: 80, background: C.paper, color: C.ink })}>
+    <div style={base({ flexDirection: "column", justifyContent: "space-between", padding: 80, paddingBottom: 130, background: C.paper, color: C.ink })}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <Wordmark color={C.ink} accent="#d83c12" size={30} sparkSize={40} />
         <span style={{ fontFamily: MONO, fontSize: 22, letterSpacing: 3, textTransform: "uppercase", color: "#8a8694" }}>
@@ -310,13 +345,13 @@ function Editorial({ data }: { data: PosterData }) {
           <div style={{ marginTop: 6, fontSize: 32, color: "#4b4956" }}>
             {data.venue}, {data.address}
           </div>
-          <div style={{ marginTop: 6, fontSize: 28, color: "#8a8694" }}>{data.footer}</div>
         </div>
         <div style={{ textAlign: "center" }}>
           <Qr data={data.qrDataUrl} size={230} pad={20} />
           <div style={{ marginTop: 10, fontSize: 24, fontWeight: 700, color: "#d83c12", fontFamily: MONO }}>RSVP</div>
         </div>
       </div>
+      <Footer data={data} theme="light" inset={80} />
     </div>
   );
 }
@@ -352,13 +387,14 @@ function Centered({ data }: { data: PosterData }) {
         <Qr data={data.qrDataUrl} size={260} />
       </div>
       <div style={{ marginTop: 16, fontSize: 28, fontWeight: 700, color: C.glow, fontFamily: DISPLAY }}>Scan to RSVP · {data.rsvpLabel}</div>
+      <Footer data={data} />
     </div>
   );
 }
 
 function Ticket({ data }: { data: PosterData }) {
   return (
-    <div style={base({ flexDirection: "column", justifyContent: "center", padding: 70, background: C.mist })}>
+    <div style={base({ flexDirection: "column", justifyContent: "center", padding: 70, paddingBottom: 150, background: C.mist })}>
       <div style={{ borderRadius: 40, overflow: "hidden", background: C.paper, border: `1px solid ${C.line}`, boxShadow: "0 40px 100px -40px rgba(0,0,0,0.35)" }}>
         <div style={{ background: C.night, padding: "56px 64px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Wordmark size={32} sparkSize={42} />
@@ -379,6 +415,7 @@ function Ticket({ data }: { data: PosterData }) {
           </div>
         </div>
       </div>
+      <Footer data={data} theme="light" inset={70} />
     </div>
   );
 }
@@ -419,13 +456,14 @@ function SparkField({ data }: { data: PosterData }) {
         </h1>
         <p style={{ marginTop: 34, fontSize: 38, lineHeight: 1.35, color: C.cream, maxWidth: 800 }}>{data.tagline}</p>
       </div>
-      <div style={{ position: "relative", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 40 }}>
+      <div style={{ position: "relative", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 100 }}>
         <Details data={data} />
         <div>
           <Qr data={data.qrDataUrl} />
           <ScanLabel data={data} />
         </div>
       </div>
+      <Footer data={data} />
     </div>
   );
 }
@@ -474,7 +512,7 @@ function Manifesto({ data }: { data: PosterData }) {
       style={base({
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: 88,
+        padding: "88px 88px 130px",
         background: C.night,
         backgroundImage: "radial-gradient(720px circle at 20% 80%, rgba(255,90,44,0.36), transparent 60%)",
         color: C.paper,
@@ -514,6 +552,7 @@ function Manifesto({ data }: { data: PosterData }) {
           <div style={{ marginTop: 12, fontSize: 26, fontWeight: 700, color: C.glow, fontFamily: DISPLAY }}>Scan to RSVP</div>
         </div>
       </div>
+      <Footer data={data} />
     </div>
   );
 }
@@ -540,7 +579,7 @@ function Gradient({ data }: { data: PosterData }) {
         <h1 style={{ margin: "40px 0 0", fontSize: 138, fontWeight: 800, lineHeight: 0.95, letterSpacing: -3, maxWidth: 900, color: C.ink }}>{data.title}</h1>
         <p style={{ marginTop: 36, fontSize: 40, lineHeight: 1.3, color: "rgba(20,19,26,0.82)", maxWidth: 820 }}>{data.tagline}</p>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 30 }}>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, paddingBottom: 130 }}>
         <Details data={data} labelColor="rgba(20,19,26,0.6)" valueColor={C.ink} subColor="rgba(20,19,26,0.75)" />
         <div>
           <div style={{ background: C.ink, borderRadius: 28, padding: 24, display: "flex" }}>
@@ -549,6 +588,7 @@ function Gradient({ data }: { data: PosterData }) {
           <div style={{ textAlign: "center", marginTop: 16, fontSize: 30, fontWeight: 700, color: C.ink, fontFamily: DISPLAY }}>Scan to RSVP</div>
         </div>
       </div>
+      <Footer data={data} theme="onColor" />
     </div>
   );
 }
@@ -561,7 +601,7 @@ function Terminal({ data }: { data: PosterData }) {
     </div>
   );
   return (
-    <div style={base({ flexDirection: "column", justifyContent: "space-between", padding: 80, background: "#0c0b10", color: C.paper })}>
+    <div style={base({ flexDirection: "column", justifyContent: "space-between", padding: 80, paddingBottom: 130, background: "#0c0b10", color: C.paper })}>
       <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: MONO, fontSize: 24, color: C.faint }}>
         <span style={{ width: 18, height: 18, borderRadius: 999, background: "#ff5f57" }} />
         <span style={{ width: 18, height: 18, borderRadius: 999, background: "#febc2e" }} />
@@ -581,35 +621,13 @@ function Terminal({ data }: { data: PosterData }) {
           {row("cost:", "free")}
         </div>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
-        <div style={{ fontFamily: MONO, fontSize: 28, color: C.faint }}>{data.footer}</div>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
         <div style={{ textAlign: "center" }}>
           <Qr data={data.qrDataUrl} size={230} />
           <div style={{ marginTop: 12, fontFamily: MONO, fontSize: 26, color: C.glow }}>scan to rsvp</div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Footer({ data, light = false }: { data: PosterData; light?: boolean }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: 88,
-        right: 88,
-        bottom: 40,
-        borderTop: `1px solid ${light ? C.line : C.nightLine}`,
-        paddingTop: 24,
-        display: "flex",
-        justifyContent: "space-between",
-        fontSize: 26,
-        color: light ? "#8a8694" : C.faint,
-      }}
-    >
-      <span style={{ color: light ? "#4b4956" : C.cream }}>{data.footer}</span>
-      <span>oslovibecoding.tech</span>
+      <Footer data={data} />
     </div>
   );
 }

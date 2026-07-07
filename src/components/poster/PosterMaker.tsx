@@ -28,7 +28,7 @@ const fromEvent = (slug: string): Fields => {
     venue: e.venue,
     address: e.address,
     rsvpLabel: stripUrl(e.rsvpUrl ?? "oslovibecoding.tech"),
-    footer: "Free · Beginners welcome",
+    footer: "Free · Beginners welcome · Join us on WhatsApp",
   };
 };
 
