@@ -30,7 +30,7 @@ export const events: EventItem[] = [
     venue: "Spaces Stortorvet, first floor",
     address: "Stortorvet 7, 0155 Oslo",
     city: "Oslo",
-    rsvpUrl: "https://lu.ma/ovc-2026-07-09",
+    rsvpUrl: "https://luma.com/7kpupjq1",
     blurb:
       "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, ask the question you've been sitting on. Total beginners genuinely welcome.",
   },
