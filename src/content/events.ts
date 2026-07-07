@@ -20,6 +20,21 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
+    slug: "drop-in-stortorvet-2026-07-09",
+    title: "Vibe Coding Drop-In",
+    status: "upcoming",
+    start: "2026-07-09T13:00:00+02:00",
+    end: "2026-07-09T15:30:00+02:00",
+    dateLabel: "Thursday 9 July 2026",
+    timeLabel: "13:00–15:30",
+    venue: "Spaces Stortorvet",
+    address: "Stortorvet 7, 0155 Oslo",
+    city: "Oslo",
+    rsvpUrl: "https://lu.ma/ovc-2026-07-09",
+    blurb:
+      "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, ask the question you've been sitting on. Total beginners genuinely welcome.",
+  },
+  {
     slug: "drop-in-stortorvet-2026-07-02",
     title: "Vibe Coding Drop-In",
     status: "past",

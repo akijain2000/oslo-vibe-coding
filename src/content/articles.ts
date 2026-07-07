@@ -34,6 +34,8 @@ export type Article = {
   // Optional schema hints: `about` (the subject) and `keywords` (search terms).
   about?: string;
   keywords?: string[];
+  // Real session photos, rendered as a gallery near the top of the article.
+  photos?: { src: string; alt: string }[];
   sections: ProseBlock[];
 };
 
@@ -51,6 +53,16 @@ export const articles: Article[] = [
     sourceUrl: "https://oslovibecoding.tech/lesson.html",
     kicker: "session recap",
     sourceLabel: "Open the full class deck",
+    photos: [
+      {
+        src: "/sessions/spaces-session-1.jpg",
+        alt: "People at an Oslo Vibe Coding drop-in working on laptops around a table at Spaces Stortorvet in central Oslo",
+      },
+      {
+        src: "/sessions/spaces-session-2.jpg",
+        alt: "The Oslo Vibe Coding group smiling during a free drop-in session at Spaces Stortorvet, Oslo",
+      },
+    ],
     sections: [
       {
         heading: "What the night was",

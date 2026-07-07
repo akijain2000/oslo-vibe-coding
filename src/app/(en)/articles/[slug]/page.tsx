@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Prose from "@/components/Prose";
@@ -94,6 +95,30 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {article.takeaway}
           </p>
         </div>
+
+        {article.photos && article.photos.length > 0 && (
+          <figure className="mt-10">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {article.photos.map((p) => (
+                <div
+                  key={p.src}
+                  className="relative aspect-[3/4] overflow-hidden rounded-card border border-line bg-mist"
+                >
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 400px"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-ink-faint">
+              A free drop-in at Spaces Stortorvet, Oslo.
+            </figcaption>
+          </figure>
+        )}
 
         {articleDiagram[article.slug] && (
           <div className="relative mt-10 aspect-[16/10] overflow-hidden rounded-card border border-line bg-night">
