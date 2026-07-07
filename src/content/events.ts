@@ -27,7 +27,7 @@ export const events: EventItem[] = [
     end: "2026-07-09T15:30:00+02:00",
     dateLabel: "Thursday 9 July 2026",
     timeLabel: "13:00–15:30",
-    venue: "Spaces Stortorvet",
+    venue: "Spaces Stortorvet, first floor",
     address: "Stortorvet 7, 0155 Oslo",
     city: "Oslo",
     rsvpUrl: "https://lu.ma/ovc-2026-07-09",
