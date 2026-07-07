@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "luma:create": "node scripts/create-luma-event.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.38.0",
