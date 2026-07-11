@@ -1,55 +1,58 @@
 import { Section, SectionHeading } from "./Section";
+import CTAButton from "./CTAButton";
 import SparkMark from "./SparkMark";
-import { channels } from "@/content/links";
+import { links } from "@/content/links";
 import { upcomingEvent, type EventItem } from "@/content/events";
 
 const copy = {
   en: {
-    heading: "Bring a laptop and an idea. Leave with something you started.",
-    nextSession: (e: EventItem) =>
-      `Next session: ${e.dateLabel}, ${e.timeLabel} at ${e.venue}.`,
-    fallback: "We run free drop-in sessions in Oslo.",
-    tagline: "No experience required. No one codes alone.",
+    headingLead: "Bring a laptop and an idea. ",
+    headingSpark: "No one codes alone.",
+    nextSession: (event: EventItem) =>
+      `Next session: ${event.dateLabel}, ${event.timeLabel} at ${event.venue}.`,
+    fallback: "The next free Oslo drop-in is being scheduled now.",
+    tagline: "No experience required—just curiosity.",
+    primary: "RSVP / get the next date",
+    secondary: "Join the WhatsApp community",
   },
   no: {
-    heading: "Ta med en laptop og en idé. Gå hjem med noe du har startet på.",
-    nextSession: (e: EventItem) =>
-      `Neste samling: ${e.dateLabel}, ${e.timeLabel} på ${e.venue}.`,
-    fallback: "Vi holder gratis drop-in-samlinger i Oslo.",
-    tagline: "Ingen erfaring nødvendig. Ingen koder alene.",
+    headingLead: "Ta med en laptop og en idé. ",
+    headingSpark: "Ingen koder alene.",
+    nextSession: (event: EventItem) =>
+      `Neste samling: ${event.dateLabel}, ${event.timeLabel} på ${event.venue}.`,
+    fallback: "Den neste gratis drop-in-samlingen i Oslo planlegges nå.",
+    tagline: "Ingen erfaring kreves—bare nysgjerrighet.",
+    primary: "Meld deg på / få neste dato",
+    secondary: "Bli med i WhatsApp-fellesskapet",
   },
 } as const;
 
 export default function Join({ locale = "en" }: { locale?: "en" | "no" }) {
   const t = copy[locale];
+
   return (
     <Section id="join" tone="paper">
       <div className="rounded-card bg-ember px-6 py-14 text-center text-white sm:px-12 sm:py-20">
         <SparkMark className="mx-auto h-9 w-9 text-white" />
         <SectionHeading className="mx-auto mt-6 max-w-3xl text-white">
-          {t.heading}
+          {t.headingLead}<span className="text-white">{t.headingSpark}</span>
         </SectionHeading>
         <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/90">
-          {upcomingEvent ? t.nextSession(upcomingEvent) : t.fallback}{" "}
-          {t.tagline}
+          {upcomingEvent ? t.nextSession(upcomingEvent) : t.fallback} {t.tagline}
         </p>
 
-        <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
-          {channels.map((c) => (
-            <a
-              key={c.id}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-card bg-white/10 p-6 text-left ring-1 ring-white/20 backdrop-blur-sm transition-colors hover:bg-white/20"
-            >
-              <h3 className="font-display text-lg font-semibold">{c.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">{c.description}</p>
-              <span className="mt-4 inline-block text-sm font-semibold">
-                {c.cta} <span aria-hidden>→</span>
-              </span>
-            </a>
-          ))}
+        <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+          <CTAButton href={links.luma} external variant="ink">
+            {t.primary}<span aria-hidden>→</span>
+          </CTAButton>
+          <a
+            href={links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-pill border border-white/35 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          >
+            {t.secondary}<span aria-hidden>↗</span>
+          </a>
         </div>
       </div>
     </Section>

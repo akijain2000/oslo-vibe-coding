@@ -186,7 +186,9 @@ const FewShot = () => (
   <Svg>
     {box(40, 50, 150, 100, C.panel, C.line)}
     {label(115, 44, "the prompt", C.faint, 10)}
-    {["2 + 2 → 4", "7 + 1 → 8", "5 + 3 → ?"].map((t, i) => label(56, 78 + i * 26, t, i === 2 ? C.glow : C.dim, 12, "start"))}
+    {["2 + 2 → 4", "7 + 1 → 8", "5 + 3 → ?"].map((t, i) => (
+      <g key={t}>{label(56, 78 + i * 26, t, i === 2 ? C.glow : C.dim, 12, "start")}</g>
+    ))}
     {arrow(195, 100, 232, 100, C.ember, 2)}
     <circle cx="258" cy="100" r="16" fill="#2c2233" stroke={C.ember} />
     {label(258, 105, "8", C.cream, 15)}

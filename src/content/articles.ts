@@ -41,6 +41,89 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "loop-engineering-from-prompts-to-goal",
+    datePublished: "2026-07-09",
+    title: "Loop engineering: from prompts to /goal",
+    dek: "At our July 9 drop-in, we looked at the work hiding behind a good AI answer: the loop that tries, checks, adjusts, and knows when to stop. Then we put it to work on Oslo's live city-bike data.",
+    author: "Harsh Trivedi",
+    deckPages: 21,
+    readingTimeMin: 7,
+    takeaway:
+      "A prompt gets you an answer. A loop with a clear goal, a check, and a guardrail gets you a finished job.",
+    sourceUrl: "/presentations/loop-engineering.html",
+    kicker: "session recap",
+    sourceLabel: "Open the 21-slide session deck",
+    about: "Goal-driven AI loops, agentic coding, and practical guardrails",
+    keywords: ["loop engineering", "AI agents", "goal-driven coding", "Claude Code", "vibe coding"],
+    sections: [
+      {
+        heading: "The loop was already there",
+        paragraphs: [
+          "Prompting is excellent for one-shot work: a draft, an explanation, a translation. You ask, it answers, and you move on. But real work rarely ends there. You inspect the result, find what missed, feed that back, and ask again.",
+          "That is a loop, and it is usually running on the person at the keyboard. The session's central idea was simple: move the mechanical part of that loop onto the machine, while keeping the human judgment in the definition of what good looks like.",
+        ],
+        pullquote: "The loop already exists. Loop engineering moves it off you.",
+      },
+      {
+        heading: "Give it a goal, not a recipe",
+        paragraphs: [
+          "A useful AI loop does not just receive a list of steps. It receives a finish line it can check: act, test whether the goal has been met, adjust if it has not, then stop only when the test passes or a limit is reached.",
+          "The important shift is from 'make a nice report' to something a machine can evaluate, such as 'the report has no missing dates and every total reconciles.' The first is a preference; the second gives the loop a way to know whether its work is done.",
+        ],
+        bullets: [
+          "A goal is verifiable: the check can genuinely pass or fail.",
+          "A goal is bounded: it has a time, cost, or attempt limit.",
+          "A goal is reviewable: each pass leaves a clear trail of what happened.",
+        ],
+      },
+      {
+        heading: "Four layers of working with AI",
+        paragraphs: [
+          "We put loop engineering in context with the other skills that make AI useful. Prompting gives the model a clear ask. Context engineering gives it the right material. Loop engineering gives it a checkable goal and room to iterate. Harness engineering adds the rails: the tools it may use, what it must not touch, how it reports, and when it must stop.",
+          "The model can be the same at every layer. What changes is the quality of the setup around it, which is why two people can get very different results from the same tool.",
+        ],
+      },
+      {
+        heading: "Guardrails are part of the design",
+        paragraphs: [
+          "The useful property of a loop is also its risk: it keeps going. Every pass has a cost, and a loop without a stop condition can spend money, time, and attention long after it has stopped learning anything new.",
+          "So a good loop earns its exit. It has a maximum number of passes, a no-progress condition, and permission to say it could not find an answer. An honest 'not found, here is what I checked' is more useful than a confident invention.",
+        ],
+        pullquote: "Autonomy without a stop condition is just an expensive while-loop.",
+      },
+      {
+        heading: "A live problem from Oslo",
+        paragraphs: [
+          "To keep the idea concrete, we pointed a goal-driven loop at Oslo Bysykkel's live station feed. The problem is familiar in a hilly city: people ride downhill into the centre, leaving some stations full and uphill stations empty. Rebalancing bikes is a real operational task, and the live data changes every few seconds.",
+          "The loop looked for a simple, checkable pattern: an empty station close to another station with at least three free docks. It narrated each pass, stopped after a fixed budget or when the data stopped changing, and reported either the evidence it found or that the network looked balanced at that moment.",
+        ],
+        links: [
+          { label: "Explore Oslo Bysykkel open data", url: "https://oslobysykkel.no/apne-data" },
+          { label: "Open the session deck", url: "/presentations/loop-engineering.html" },
+        ],
+      },
+      {
+        heading: "Why this matters beyond software teams",
+        paragraphs: [
+          "The same pattern applies wherever someone repeatedly checks a list, reconciles a record, or follows up on a routine task. Small non-profits are a strong example: donor spreadsheets, volunteer records, grant reports, and participant confirmations all contain recurring checking work, often without an engineering team to automate it.",
+          "Vibe coding makes that work more reachable. You can describe the finish line in plain language, have AI help create the loop, and still keep an audit trail of what it checked. The goal is not to remove people from mission work; it is to return some of their time to it.",
+        ],
+        pullquote: "The organisations with the least engineering often have the most to gain from a well-designed loop.",
+      },
+      {
+        heading: "Try one this week",
+        paragraphs: [
+          "Start with something you already re-check by hand. Write the definition of done, the maximum effort you will allow, and what the loop should report back. The exercise is less about installing a particular tool and more about learning to turn judgment into a testable finish line.",
+        ],
+        bullets: [
+          "For a code task: make the failing tests pass, run them after each change, and stop after ten attempts or two passes with no progress.",
+          "For operations: confirm a deploy is healthy, stop after fifteen minutes either way, and report what you saw.",
+          "For a spreadsheet: check that every row has a date and owner, flag what is missing, then stop after one full pass.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "vibe-coding-at-spaces",
     datePublished: "2026-07-02",
     title: "Our first vibe coding class at Spaces",

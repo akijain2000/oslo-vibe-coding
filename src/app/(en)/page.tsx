@@ -1,11 +1,7 @@
 import Hero from "@/components/Hero";
 import NextEvent from "@/components/NextEvent";
 import HowItWorks from "@/components/HowItWorks";
-import Sessions from "@/components/Sessions";
-import Learn from "@/components/Learn";
-import Articles from "@/components/Articles";
-import Belief from "@/components/Belief";
-import Organisers from "@/components/Organisers";
+import Highlights from "@/components/Highlights";
 import Join from "@/components/Join";
 import type { Metadata } from "next";
 import { EventJsonLd } from "@/components/JsonLd";
@@ -21,11 +17,7 @@ export default function Home() {
       <Hero />
       <NextEvent />
       <HowItWorks />
-      <Sessions />
-      <Learn />
-      <Articles />
-      <Belief />
-      <Organisers />
+      <Highlights />
       <Join />
       {upcomingEvent && <EventJsonLd event={upcomingEvent} />}
     </>

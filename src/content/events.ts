@@ -16,13 +16,15 @@ export type EventItem = {
   rsvpUrl?: string;
   blurb: string;
   recap?: string; // shown for past events
+  recapHref?: string; // optional longer write-up for a past session
+  recapLabel?: string;
 };
 
 export const events: EventItem[] = [
   {
     slug: "drop-in-stortorvet-2026-07-09",
     title: "Vibe Coding Drop-In",
-    status: "upcoming",
+    status: "past",
     start: "2026-07-09T13:00:00+02:00",
     end: "2026-07-09T15:30:00+02:00",
     dateLabel: "Thursday 9 July 2026",
@@ -33,6 +35,10 @@ export const events: EventItem[] = [
     rsvpUrl: "https://luma.com/7kpupjq1",
     blurb:
       "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, ask the question you've been sitting on. Total beginners genuinely welcome.",
+    recap:
+      "We explored loop engineering: how a clear goal, a check, and a guardrail help AI move from one answer to a finished job.",
+    recapHref: "/articles/loop-engineering-from-prompts-to-goal",
+    recapLabel: "Read what happened at this session",
   },
   {
     slug: "drop-in-stortorvet-2026-07-02",
@@ -49,6 +55,8 @@ export const events: EventItem[] = [
     blurb:
       "Bring your laptop and whatever you're building. Work on your own thing, pair up with someone, ask the question you've been too shy to ask. Beginners genuinely welcome.",
     recap: "Our first drop-in at Spaces Stortorvet. New faces, real projects, laptops open.",
+    recapHref: "/articles/vibe-coding-at-spaces",
+    recapLabel: "Read what happened at this session",
   },
   {
     slug: "drop-in-2026-06-20",
