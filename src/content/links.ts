@@ -1,7 +1,7 @@
 // Single source of truth for every outbound link + community channel.
 
 export const links = {
-  luma: "https://luma.com/7kpupjq1",
+  luma: "https://luma.com/rhr51nw8",
   whatsapp: "https://chat.whatsapp.com/JiCEzUuSJwBCuvYbk8E3IG",
   linkedinCompany: "https://www.linkedin.com/company/vibesoslo/",
   github: "https://github.com/akijain2000",

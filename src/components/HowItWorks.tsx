@@ -9,32 +9,18 @@ const copy = {
       {
         n: "01",
         title: "Show up",
-        body: "Drop in any time during the session. No ticket needed. An RSVP just helps us set out enough chairs.",
+        body: "Bring a laptop, an idea or half-broken project, or simply your curiosity. No experience required.",
       },
       {
         n: "02",
-        title: "Bring what you've got",
-        body: "A laptop and an idea, a half-broken project, or pure curiosity. You do not need to be an expert. You just need to show up.",
+        title: "Build with the room",
+        body: "Work on your own thing, pair up, ask questions, or join someone else's project. People help each other get unstuck.",
       },
       {
         n: "03",
-        title: "Build, break, fix",
-        body: "Work on your own thing, pair up, or join someone else's. We compare tools like Claude Code, Cursor and Lovable and work toward something usable.",
-      },
-      {
-        n: "04",
         title: "Leave with something",
         body: "A clearer next step, a problem fixed, or a first prototype. Often more than one.",
       },
-    ],
-    forYouLabel: "This is for you if you are",
-    forYou: [
-      "Total beginners",
-      "Experienced developers",
-      "Designers",
-      "Product people",
-      "Students",
-      "The AI-curious",
     ],
   },
   no: {
@@ -45,32 +31,18 @@ const copy = {
       {
         n: "01",
         title: "Bare møt opp",
-        body: "Stikk innom når som helst i løpet av kvelden. Ingen billett trengs. En påmelding hjelper oss bare å sette fram nok stoler.",
+        body: "Ta med en laptop, en idé eller et halvferdig prosjekt, eller bare nysgjerrigheten din. Ingen erfaring kreves.",
       },
       {
         n: "02",
-        title: "Ta med det du har",
-        body: "En laptop og en idé, et halvferdig prosjekt, eller bare nysgjerrighet. Du trenger ikke å være ekspert. Du trenger bare å møte opp.",
+        title: "Bygg sammen med rommet",
+        body: "Jobb med ditt eget, sett deg i par, still spørsmål eller bli med på noen andres prosjekt. Folk hjelper hverandre videre.",
       },
       {
         n: "03",
-        title: "Bygg, ødelegg, fiks",
-        body: "Jobb med ditt eget, sett deg i par, eller bli med på noen andres. Vi sammenligner verktøy som Claude Code, Cursor og Lovable og jobber mot noe brukbart.",
-      },
-      {
-        n: "04",
         title: "Gå hjem med noe",
         body: "Et tydeligere neste steg, et løst problem, eller en første prototype. Ofte mer enn én.",
       },
-    ],
-    forYouLabel: "Dette er for deg hvis du er",
-    forYou: [
-      "Helt fersk",
-      "Erfaren utvikler",
-      "Designer",
-      "Produktmenneske",
-      "Student",
-      "AI-nysgjerrig",
     ],
   },
 } as const;
@@ -91,7 +63,7 @@ export default function HowItWorks({ locale = "en" }: { locale?: "en" | "no" }) 
         </div>
       </div>
 
-      <ol className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <ol className="mt-14 grid gap-5 md:grid-cols-3">
         {t.steps.map((s) => (
           <li key={s.n} className="rounded-card border border-line bg-mist p-6">
             <span className="font-mono text-sm font-semibold text-ember-ink">{s.n}</span>
@@ -100,20 +72,6 @@ export default function HowItWorks({ locale = "en" }: { locale?: "en" | "no" }) 
           </li>
         ))}
       </ol>
-
-      <div className="mt-12 rounded-card border border-line bg-mist p-6 sm:p-8">
-        <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.forYouLabel}</p>
-        <ul className="mt-4 flex flex-wrap gap-2.5">
-          {t.forYou.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-pill border border-line bg-paper px-3.5 py-1.5 text-sm font-medium text-ink"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      </div>
     </Section>
   );
 }

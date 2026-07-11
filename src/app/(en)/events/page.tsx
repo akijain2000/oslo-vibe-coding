@@ -76,24 +76,42 @@ export default function EventsPage() {
           )}
         </section>
 
-        <section className="mt-14">
-          <h2 className="font-display text-2xl font-bold tracking-tight">Past sessions</h2>
+        <section id="past" className="mt-14 scroll-mt-28">
+          <h2 className="font-display text-2xl font-bold tracking-tight">Past sessions and recaps</h2>
+          <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">
+            The practical details, what happened in the room, and longer write-ups when a session became an article.
+          </p>
           <div className="mt-5 space-y-4">
-            {pastEvents.map((e) => (
-              <Link
-                key={e.slug}
-                href={`/events/${e.slug}`}
-                className="group block rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20"
-              >
-                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">
-                  {e.dateLabel} · {e.venue}
-                </p>
-                <h3 className="mt-1.5 font-display text-lg font-bold tracking-tight group-hover:text-ember-ink">
-                  {e.title}
-                </h3>
-                {e.recap && <p className="mt-1.5 leading-relaxed text-ink-soft">{e.recap}</p>}
-              </Link>
-            ))}
+            {pastEvents.map((e) => {
+              return (
+                <article
+                  key={e.slug}
+                  className="rounded-card border border-line bg-mist p-6 transition-colors hover:border-ink/20 sm:p-7"
+                >
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">
+                    {e.dateLabel} · {e.venue}
+                  </p>
+                  <h3 className="mt-1.5 font-display text-xl font-bold tracking-tight">{e.title}</h3>
+                  <p className="mt-2 leading-relaxed text-ink-soft">{e.recap ?? e.blurb}</p>
+                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+                    <Link
+                      href={`/events/${e.slug}`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-ember-ink hover:underline"
+                    >
+                      Event information<span aria-hidden>→</span>
+                    </Link>
+                    {e.recapHref && (
+                      <Link
+                        href={e.recapHref}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-ink hover:underline"
+                      >
+                        {e.recapLabel ?? "Read what happened at this session"}<span aria-hidden>→</span>
+                      </Link>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
 

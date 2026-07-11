@@ -21,15 +21,13 @@ const COLS_EN: Col[] = [
   {
     title: "On this site",
     items: [
-      { label: "Next session", href: "/#next", external: false },
-      { label: "Start here", href: "/start", external: false },
-      { label: "What is vibe coding?", href: "/what-is-vibe-coding", external: false },
-      { label: "How LLMs work", href: "/llms", external: false },
-      { label: "Articles", href: "/articles", external: false },
+      { label: "Home", href: "/", external: false },
+      { label: "Attend a session", href: "/events", external: false },
       { label: "Resources", href: "/resources", external: false },
-      { label: "Events", href: "/events", external: false },
+      { label: "Start here", href: "/start", external: false },
+      { label: "Frontier Systems", href: "/frontier", external: false },
+      { label: "Community", href: "/community", external: false },
       { label: "FAQ", href: "/faq", external: false },
-      { label: "About", href: "/about", external: false },
     ],
   },
 ];

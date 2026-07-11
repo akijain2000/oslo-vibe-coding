@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // English-only surfaces
     { url: `${SITE_URL}/llms`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/glossary`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE_URL}/community`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/events`, changeFrequency: "weekly", priority: 0.7 },
     ...events.map((e) => ({
       url: `${SITE_URL}/events/${e.slug}`,
