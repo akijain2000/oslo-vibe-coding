@@ -1,172 +1,118 @@
-import Image from "next/image";
+import Link from "next/link";
 import { Section, Eyebrow } from "./Section";
 import CTAButton from "./CTAButton";
 import { upcomingEvent } from "@/content/events";
-import { brand } from "@/lib/brand";
 import { links } from "@/content/links";
 
 const copy = {
   en: {
     eyebrow: "The next session",
-    dateLabel: "Date",
-    timeLabel: "Time",
-    costLabel: "Cost",
-    costValue: "Free",
-    whoLabel: "Who",
-    whoValue: "Everyone",
-    whereLabel: "Where",
-    openInMaps: "Open in Maps",
-    bringLabel: "Bring",
-    bringBody:
-      "A laptop, an idea if you have one, and a willingness to vibe. That is the whole list.",
-    saveYourSpot: "Save your spot",
-    rsvpHelps: "Free, but an RSVP helps us plan seating.",
-    lumaQrAlt: "QR code to RSVP for the session on Luma",
-    whatsappQrAlt: "QR code to join the WhatsApp community",
-    scanToRsvp: "Scan to RSVP",
-    joinWhatsapp: "Join WhatsApp",
-    rsvpOnLuma: "RSVP on Luma",
-    whatsappCommunity: "WhatsApp community",
-    betweenTitle: "We're between sessions right now",
+    betweenTitle: "The next session is on 23 July.",
     betweenBody:
-      "The next date always lands on Luma first. Join there or on WhatsApp and you'll be the first to know when it's set.",
-    betweenWhen: "Roughly weekly, always free",
+      "We meet roughly weekly in Oslo. Save your spot on Luma, and join WhatsApp to hear what the community is building between sessions.",
+    city: "Oslo",
+    cadence: "Roughly weekly",
+    cost: "Always free",
+    audience: "Everyone welcome",
+    bring: "Bring a laptop, an idea if you have one, and curiosity.",
+    getDate: "RSVP on Luma",
+    rsvp: "RSVP on Luma",
+    past: "Past events and recaps",
+    whatsapp: "Join WhatsApp",
+    date: "Date",
+    time: "Time",
+    where: "Where",
+    openMaps: "Open in Maps",
   },
   no: {
     eyebrow: "Neste samling",
-    dateLabel: "Dato",
-    timeLabel: "Tid",
-    costLabel: "Pris",
-    costValue: "Gratis",
-    whoLabel: "Hvem",
-    whoValue: "Alle",
-    whereLabel: "Hvor",
-    openInMaps: "Åpne i Maps",
-    bringLabel: "Ta med",
-    bringBody:
-      "En laptop, en idé hvis du har en, og lyst til å vibe. Det er hele listen.",
-    saveYourSpot: "Sikre deg en plass",
-    rsvpHelps: "Gratis, men en RSVP hjelper oss å planlegge sitteplasser.",
-    lumaQrAlt: "QR-kode for å melde deg på samlingen på Luma",
-    whatsappQrAlt: "QR-kode for å bli med i WhatsApp-fellesskapet",
-    scanToRsvp: "Skann for å melde deg på",
-    joinWhatsapp: "Bli med på WhatsApp",
-    rsvpOnLuma: "Meld deg på på Luma",
-    whatsappCommunity: "WhatsApp-fellesskap",
-    betweenTitle: "Vi er mellom samlinger akkurat nå",
+    betweenTitle: "Neste samling er 23. juli.",
     betweenBody:
-      "Neste dato dukker alltid opp på Luma først. Bli med der eller på WhatsApp, så er du blant de første som får vite det.",
-    betweenWhen: "Omtrent ukentlig, alltid gratis",
+      "Vi møtes omtrent ukentlig i Oslo. Meld deg på via Luma, og bli med på WhatsApp for å høre hva fellesskapet bygger mellom samlingene.",
+    city: "Oslo",
+    cadence: "Omtrent ukentlig",
+    cost: "Alltid gratis",
+    audience: "Alle er velkomne",
+    bring: "Ta med en laptop, en idé hvis du har en, og nysgjerrighet.",
+    getDate: "Meld deg på på Luma",
+    rsvp: "Meld deg på på Luma",
+    past: "Tidligere samlinger og oppsummeringer",
+    whatsapp: "Bli med på WhatsApp",
+    date: "Dato",
+    time: "Tid",
+    where: "Hvor",
+    openMaps: "Åpne i Maps",
   },
 } as const;
 
-const detail = (label: string, value: string) => (
-  <div>
-    <dt className="font-mono text-xs uppercase tracking-wider text-ink-faint">{label}</dt>
-    <dd className="mt-1 font-display text-lg font-semibold text-ink">{value}</dd>
-  </div>
-);
-
 export default function NextEvent({ locale = "en" }: { locale?: "en" | "no" }) {
-  const e = upcomingEvent;
+  const event = upcomingEvent;
   const t = copy[locale];
-  const mapsUrl = e
-    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${e.venue}, ${e.address}`)}`
+  const mapsUrl = event
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.venue}, ${event.address}`)}`
     : "";
 
   return (
     <Section id="next" tone="mist">
-      <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-14">
-        {/* details */}
-        <div>
-          <Eyebrow>{t.eyebrow}</Eyebrow>
+      <div className="rounded-card border border-line bg-paper p-7 sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+          <div>
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+              {event ? event.title : t.betweenTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              {event ? event.blurb : t.betweenBody}
+            </p>
 
-          {e ? (
-            <>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                {e.title}
-              </h2>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{e.blurb}</p>
-
-              <dl className="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-4">
-                {detail(t.dateLabel, e.dateLabel.replace(" 2026", ""))}
-                {detail(t.timeLabel, e.timeLabel)}
-                {detail(t.costLabel, t.costValue)}
-                {detail(t.whoLabel, t.whoValue)}
-              </dl>
-
-              <div className="mt-8 rounded-card border border-line bg-paper p-5">
-                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.whereLabel}</p>
-                <p className="mt-1 font-display text-lg font-semibold">{e.venue}</p>
-                <p className="text-ink-soft">{e.address}</p>
-                <a
-                  href={mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-ember-ink hover:underline"
-                >
-                  {t.openInMaps}
-                  <span aria-hidden>→</span>
-                </a>
+            {event ? (
+              <div className="mt-8 grid gap-6 border-t border-line pt-7 sm:grid-cols-3">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.date}</p>
+                  <p className="mt-1 font-display text-lg font-semibold">{event.dateLabel}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.time}</p>
+                  <p className="mt-1 font-display text-lg font-semibold">{event.timeLabel}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.where}</p>
+                  <p className="mt-1 font-display text-lg font-semibold">{event.venue}</p>
+                  <a
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-flex text-sm font-semibold text-ember-ink hover:underline"
+                  >
+                    {t.openMaps} →
+                  </a>
+                </div>
               </div>
+            ) : (
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-7 text-sm font-semibold text-ink">
+                {[t.city, t.cadence, t.cost, t.audience].map((item) => (
+                  <li key={item} className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-ember" />{item}
+                  </li>
+                ))}
+              </ul>
+            )}
 
-              <div className="mt-8">
-                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.bringLabel}</p>
-                <p className="mt-2 text-ink-soft">{t.bringBody}</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                {t.betweenTitle}
-              </h2>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">{t.betweenBody}</p>
-
-              <div className="mt-8 rounded-card border border-line bg-paper p-5">
-                <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">{t.whereLabel}</p>
-                <p className="mt-1 font-display text-lg font-semibold">{brand.city}</p>
-                <p className="text-ink-soft">{t.betweenWhen}</p>
-              </div>
-            </>
-          )}
-        </div>
-
-        {/* ticket card */}
-        <div className="rounded-card bg-night p-7 text-paper">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-glow">{t.saveYourSpot}</p>
-          <p className="mt-2 text-cream-dim">
-            {t.rsvpHelps}
-          </p>
-
-          <div className="mt-6 grid grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-white p-3 text-center">
-              <Image
-                src="/assets/qr-luma.png"
-                alt={t.lumaQrAlt}
-                width={120}
-                height={120}
-                className="mx-auto h-auto w-full [image-rendering:pixelated]"
-              />
-              <p className="mt-2 text-xs font-semibold text-ink">{t.scanToRsvp}</p>
-            </div>
-            <div className="rounded-2xl bg-white p-3 text-center">
-              <Image
-                src="/assets/qr-whatsapp.png"
-                alt={t.whatsappQrAlt}
-                width={120}
-                height={120}
-                className="mx-auto h-auto w-full [image-rendering:pixelated]"
-              />
-              <p className="mt-2 text-xs font-semibold text-ink">{t.joinWhatsapp}</p>
-            </div>
+            <p className="mt-7 text-sm leading-relaxed text-ink-soft">{t.bring}</p>
           </div>
 
-          <div className="mt-6 flex flex-col gap-3">
-            <CTAButton href={links.luma} external variant="ember" className="w-full">
-              {t.rsvpOnLuma}
+          <div className="flex flex-col justify-center gap-3 border-t border-line pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+            <CTAButton href={event?.rsvpUrl ?? links.luma} external variant="ember" className="w-full">
+              {event ? t.rsvp : t.getDate}
             </CTAButton>
-            <CTAButton href={links.whatsapp} external variant="ghost-dark" className="w-full">
-              {t.whatsappCommunity}
+            <Link
+              href="/events#past"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-pill border border-ink/20 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink/[0.03]"
+            >
+              {t.past}<span aria-hidden>→</span>
+            </Link>
+            <CTAButton href={links.whatsapp} external variant="outline" className="w-full">
+              {t.whatsapp}<span aria-hidden>↗</span>
             </CTAButton>
           </div>
         </div>

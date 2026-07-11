@@ -103,6 +103,14 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
           <div className="mt-8">
             <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">How it went</p>
             <p className="mt-2 text-lg leading-relaxed text-ink-soft">{e.recap}</p>
+            {e.recapHref && (
+              <Link
+                href={e.recapHref}
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ember-ink hover:underline"
+              >
+                {e.recapLabel ?? "Read what happened at this session"}<span aria-hidden>→</span>
+              </Link>
+            )}
           </div>
         )}
 

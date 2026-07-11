@@ -43,9 +43,9 @@ type Strings = {
 export const ui: Record<Locale, Strings> = {
   en: {
     resourcesEyebrow: "The library",
-    resourcesTitle: "Everything you need to start, free.",
+    resourcesTitle: "Resources for every stage.",
     resourcesIntro:
-      "The resources we point newcomers to, each with a plain-English summary you can read right here before deciding to click through.",
+      "Start here, keep building, or go to the frontier. Every recommendation includes a plain-English summary before you decide to open it.",
     back: "All resources",
     tldrNote: "A plain summary, so you can get the gist here without leaving.",
     keyPoints: "Key points",
@@ -61,9 +61,9 @@ export const ui: Record<Locale, Strings> = {
   },
   no: {
     resourcesEyebrow: "Biblioteket",
-    resourcesTitle: "Alt du trenger for å komme i gang, gratis.",
+    resourcesTitle: "Ressurser for hvert nivå.",
     resourcesIntro:
-      "Ressursene vi anbefaler til nybegynnere, hver med et sammendrag på vanlig norsk som du kan lese her før du bestemmer deg for å klikke deg videre.",
+      "Start her, fortsett å bygge, eller gå til frontier. Hver anbefaling har et enkelt sammendrag før du åpner den.",
     back: "Alle ressurser",
     tldrNote: "Et enkelt sammendrag, så du får med deg poenget her uten å dra videre.",
     keyPoints: "Hovedpunkter",

@@ -7,17 +7,16 @@ import Logo from "./Logo";
 import { links } from "@/content/links";
 
 const NAV_EN = [
-  { label: "Next session", href: "/#next" },
-  { label: "Start here", href: "/start" },
-  { label: "Frontier", href: "/frontier" },
+  { label: "Home", href: "/" },
+  { label: "Attend a session", href: "/events" },
   { label: "Resources", href: "/resources" },
-  { label: "About", href: "/about" },
+  { label: "Community", href: "/community" },
 ];
 const NAV_NO = [
-  { label: "Neste økt", href: "/no#next" },
-  { label: "Kom i gang", href: "/no/kom-i-gang" },
+  { label: "Hjem", href: "/no" },
+  { label: "Bli med på en samling", href: "/no#next" },
   { label: "Ressurser", href: "/no/resources" },
-  { label: "Om oss", href: "/no#about" },
+  { label: "Fellesskap", href: "/no#join" },
 ];
 
 // Pages that exist in both locales, keyed EN path -> NO path. Used by the
@@ -53,7 +52,7 @@ export default function Nav() {
   const isNo = pathname.startsWith("/no");
   const nav = isNo ? NAV_NO : NAV_EN;
   const rsvp = isNo ? "Meld deg på" : "RSVP · it's free";
-  const rsvpMobile = isNo ? "Meld deg på neste samling" : "RSVP for Thursday · it's free";
+  const rsvpMobile = isNo ? "Meld deg på neste samling" : "RSVP for the next session · it's free";
   const homeHref = isNo ? "/no" : "/";
 
   const [scrolled, setScrolled] = useState(false);
@@ -88,7 +87,7 @@ export default function Nav() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Logo tone={overDark ? "dark" : "light"} href={homeHref} />
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -131,7 +130,7 @@ export default function Nav() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center rounded-full md:hidden ${
+          className={`flex h-10 w-10 items-center justify-center rounded-full lg:hidden ${
             overDark ? "text-paper" : "text-ink"
           }`}
         >
@@ -142,7 +141,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-t border-line bg-paper px-5 pb-5 pt-2 md:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-paper px-5 pb-5 pt-2 lg:hidden">
           <div className="flex flex-col">
             {nav.map((item) => (
               <Link

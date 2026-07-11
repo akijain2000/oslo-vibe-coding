@@ -60,6 +60,73 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
   const t = ui[locale];
   const readMore = locale === "no" ? "Les mer" : "Read more";
   const comeToSession = locale === "no" ? "Eller bare kom på en samling" : "Or just come to a session";
+  const journeyCopy = locale === "no"
+    ? {
+        heading: "Finn riktig sted å begynne",
+        intro: "Start med det grunnleggende, bruk hele biblioteket, eller gå rett til frontier-materialet.",
+        groups: [
+          {
+            title: "Start her",
+            body: "For deg som vil forstå konseptet, velge ett verktøy og lage noe for første gang.",
+            links: [
+              { label: "Guide til første bygg", href: "/no/kom-i-gang" },
+              { label: "Hva er vibe coding?", href: "/no/hva-er-vibe-coding" },
+              { label: "Startverktøy", href: "#tools" },
+            ],
+          },
+          {
+            title: "Hele biblioteket",
+            body: "Verktøy, gratis kurs, fordypning, agenter, skills og andre steder å lære i Oslo.",
+            links: [
+              { label: "Gratis kurs", href: "#courses" },
+              { label: "Agenter og skills", href: "#build" },
+              { label: "Artikler + LLM-guide (EN)", href: "/articles" },
+            ],
+          },
+          {
+            title: "Frontier",
+            body: "Notater, forskning og gjesteforelesninger om systemene som former moderne KI.",
+            links: [
+              { label: "Frontier Systems-notater (EN)", href: "/frontier" },
+              { label: "Forskningen bak kurset", href: "#frontier" },
+              { label: "Gjesteforelesninger", href: "#guest-lectures" },
+            ],
+          },
+        ],
+      }
+    : {
+        heading: "Find the right place to begin",
+        intro: "Start with the essentials, browse the complete library, or go straight to the frontier material.",
+        groups: [
+          {
+            title: "Start here",
+            body: "For understanding the idea, choosing one tool, and making something for the first time.",
+            links: [
+              { label: "First-build guide", href: "/start" },
+              { label: "What is vibe coding?", href: "/what-is-vibe-coding" },
+              { label: "Starter tools", href: "#tools" },
+            ],
+          },
+          {
+            title: "The full library",
+            body: "Tools, free courses, deeper learning, agents, skills, articles, and other places to learn in Oslo.",
+            links: [
+              { label: "Free courses", href: "#courses" },
+              { label: "Agents and skills", href: "#build" },
+              { label: "Articles + LLM primer", href: "/articles" },
+            ],
+          },
+          {
+            title: "Frontier",
+            body: "Notes, research, and guest lectures about the people and systems shaping modern AI.",
+            links: [
+              { label: "Frontier Systems notes", href: "/frontier" },
+              { label: "Papers behind the course", href: "#frontier" },
+              { label: "Guest-lecture resources", href: "#guest-lectures" },
+            ],
+          },
+        ],
+      };
 
   const summaryOf = (item: Resource) => getExplainer(locale, resourceSlug(item.title))?.lead ?? item.tldr;
   const hrefOf = (item: Resource) => localePath(locale, `/resources/${resourceSlug(item.title)}`);
@@ -92,6 +159,36 @@ export default function ResourcesIndex({ locale }: { locale: Locale }) {
           </a>
         </div>
       </header>
+
+      <section className="border-b border-line bg-paper">
+        <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">{journeyCopy.heading}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink-soft">{journeyCopy.intro}</p>
+          </div>
+
+          <div className="mt-10 grid gap-10 border-y border-line py-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-line">
+            {journeyCopy.groups.map((group) => (
+              <section key={group.title} className="md:px-7 md:first:pl-0 md:last:pr-0">
+                <h3 className="font-display text-2xl font-bold tracking-tight">{group.title}</h3>
+                <p className="mt-3 min-h-[4.5rem] leading-relaxed text-ink-soft">{group.body}</p>
+                <div className="mt-5 grid">
+                  {group.links.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="group flex items-center justify-between gap-4 border-b border-line py-3 text-sm font-semibold text-ink transition-colors hover:border-ember"
+                    >
+                      {item.label}
+                      <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ResourceSectionNav sections={navSections} label={t.onThisPage} />
 
