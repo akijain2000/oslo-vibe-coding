@@ -5,6 +5,7 @@ import { course } from "@/content/frontier";
 import { absoluteUrl, type Locale } from "@/lib/i18n";
 import type { EventItem } from "@/content/events";
 import type { Article } from "@/content/articles";
+import type { Brief } from "@/content/brief";
 import type { Lecture } from "@/content/frontier";
 import type { FlatResource } from "@/content/resources";
 
@@ -155,6 +156,35 @@ export function ArticleJsonLd({ article }: { article: Article }) {
               position: article.series.part,
             }
           : {}),
+        url,
+      }}
+    />
+  );
+}
+
+// Article — emitted on each /brief/[slug] page. Uses the brief's own hero image
+// for the rich-result thumbnail when present.
+export function BriefJsonLd({ brief }: { brief: Brief }) {
+  const url = `${SITE_URL}/brief/${brief.slug}`;
+  const image = brief.heroImage
+    ? { "@type": "ImageObject", url: `${SITE_URL}${brief.heroImage.src}` }
+    : OG_IMAGE;
+  return (
+    <Ld
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: brief.title,
+        description: brief.dek,
+        author: authorRef(brief.author),
+        datePublished: brief.datePublished,
+        publisher: { "@id": `${SITE_URL}/#org` },
+        mainEntityOfPage: url,
+        image,
+        inLanguage: "en",
+        timeRequired: `PT${brief.readingTimeMin}M`,
+        ...(brief.about ? { about: brief.about } : {}),
+        keywords: brief.keywords ?? brand.keywords.slice(0, 4),
         url,
       }}
     />

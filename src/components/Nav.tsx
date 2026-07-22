@@ -10,6 +10,7 @@ const NAV_EN = [
   { label: "Home", href: "/" },
   { label: "Attend a session", href: "/events" },
   { label: "Resources", href: "/resources" },
+  { label: "AI Brief", href: "/brief" },
   { label: "Community", href: "/community" },
 ];
 const NAV_NO = [

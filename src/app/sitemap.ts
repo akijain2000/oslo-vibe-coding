@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/brand";
 import { articles } from "@/content/articles";
+import { visibleBriefs } from "@/content/brief";
 import { allResources } from "@/content/resources";
 import { lectures } from "@/content/frontier";
 import { events } from "@/content/events";
@@ -77,6 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/articles`, changeFrequency: "monthly", priority: 0.8 },
     ...articles.map((a) => ({
       url: `${SITE_URL}/articles/${a.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    { url: `${SITE_URL}/brief`, changeFrequency: "daily", priority: 0.8 },
+    ...visibleBriefs().map((b) => ({
+      url: `${SITE_URL}/brief/${b.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
