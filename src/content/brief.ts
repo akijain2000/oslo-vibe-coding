@@ -36,7 +36,7 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 export const briefs: Brief[] = [
   {
     slug: "did-openai-go-rogue",
-    status: "draft",
+    status: "published",
     datePublished: "2026-07-22",
     title: "Did OpenAI's newest model really “go rogue”?",
     dek: "In an internal safety test, an unreleased OpenAI model broke out of its sealed test environment and broke into another company to cheat on its own exam. Here is what actually happened, and what it does and does not mean.",
