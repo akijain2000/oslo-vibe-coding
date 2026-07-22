@@ -35,6 +35,68 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
   {
+    slug: "is-your-ai-subscription-a-steal",
+    status: "published",
+    datePublished: "2026-07-22",
+    title: "Is your AI subscription secretly a steal?",
+    dek: "You pay around $200 a month for a top AI plan. Analysts at SemiAnalysis estimate you may be getting thousands of dollars of AI for it. Here is how the economics actually work, and why the AI company is still happy.",
+    author: "Oslo Vibe Coding",
+    readingTimeMin: 4,
+    takeaway:
+      "Most people use far less than they pay for, which quietly funds the few who use a lot. Your subscription is probably better value than you think, and using it more is not costing you extra.",
+    sourceUrl: "https://www.youtube.com/watch?v=uLeUpgllI-4",
+    sourceLabel: "Watch the SemiAnalysis “Tokenomics” breakdown",
+    about: "the economics of AI subscriptions and inference",
+    keywords: ["AI subscription cost", "tokens", "inference margins", "Claude", "ChatGPT", "AI economics"],
+    heroImage: {
+      src: "/brief/is-your-ai-subscription-a-steal.jpg",
+      alt: "SemiAnalysis “Tokenmaxxing” episode thumbnail listing “$200 Plan, $8K of Tokens”.",
+      credit: "SemiAnalysis",
+      creditUrl: "https://www.youtube.com/watch?v=uLeUpgllI-4",
+    },
+    sections: [
+      {
+        heading: "The surprising math",
+        paragraphs: [
+          "Here is a number that stops people. Analysts at SemiAnalysis (a firm that studies the economics of AI and chips) estimate that a $200-a-month AI plan can hand you around $8,000 worth of AI, and in some cases far more.",
+          "The unit they count in is the token: the small chunk of text, roughly a word-piece, that an AI reads and writes. When companies sell AI to other developers, they charge per token through an API (the pay-as-you-go plumbing that apps use to call an AI). Add up the tokens a heavy subscriber actually burns, price them at those pay-as-you-go rates, and the bill dwarfs what they paid.",
+          "By SemiAnalysis's math, a $200 Claude Max plan delivers roughly $8,000 of tokens at API prices, and a $200 ChatGPT Pro plan can reach up to about $14,000. You pay a flat fee for something the meter would price far higher.",
+        ],
+        pullquote: "A $200 plan, by their math, buys around $8,000 of tokens.",
+      },
+      {
+        heading: "So how is the AI company not going broke?",
+        paragraphs: [
+          "If everyone squeezed that much value out, the AI companies would bleed money. They do not, and the reason is an all-you-can-eat buffet.",
+          "At a buffet, most guests eat a normal plate, a few pile it high, and the restaurant still profits because the average guest eats less than they paid. AI subscriptions work the same way. SemiAnalysis estimates only about 10% of users spend more than $30 of usage a day, while the top 1% of power users burn close to $90,000 a year each.",
+          "The quiet majority who open the app now and then are pure profit. SemiAnalysis reckons Anthropic (the company behind the Claude models) breaks even on its Pro and Max plans at roughly 20% utilisation, so most subscribers sit well below that line and quietly fund the heavy few.",
+        ],
+        pullquote: "The quiet majority are pure profit. They fund the heavy few.",
+      },
+      {
+        heading: "Why this is possible now",
+        paragraphs: [
+          "A year ago this business was underwater. What changed is inference: the cost of running a model to answer you, as opposed to training it in the first place. As the serving software got more efficient, the profit on each answer, the inference margin, climbed. SemiAnalysis puts Anthropic's inference margin near 70%, up from about 38% a year earlier.",
+          "The other shift is what people actually use AI for. The single biggest use is writing software. SemiAnalysis estimates over 70% of the big labs' API revenue now comes from coding, and Claude Code alone touches more than 7% of all code changes on GitHub (the main place developers store their code). Coding is where the tokens, and the money, are.",
+        ],
+      },
+      {
+        heading: "What it means for you",
+        paragraphs: [
+          "Two practical takeaways. First, your subscription is very likely a bargain, so there is little reason to ration yourself. Using the tool more does not cost you more on a flat plan, and on heavy days it is often the company, not you, being subsidised.",
+          "Second, this is why a whole industry has sprung up just to sell tokens. “Token-as-a-service” providers that host models for others already add up to more than $4 billion a year. AI is turning into a commodity you buy by the token, the way you buy electricity by the kilowatt-hour.",
+        ],
+      },
+      {
+        heading: "The honest caveat",
+        paragraphs: [
+          "A few things to keep in mind. These are SemiAnalysis's estimates, not audited numbers from the companies. The “$8,000 of tokens” figure is the list-price value of what a heavy user consumes, not what it costs the lab to actually serve it, which is much lower. And subscription pricing is still young, so today's generous plans could tighten as the market matures.",
+          "The headline holds up, though. For almost everyone, a modern AI subscription delivers far more than it charges, and the company is still fine. Both things are true at once.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "did-openai-go-rogue",
     status: "published",
     datePublished: "2026-07-22",
