@@ -37,7 +37,7 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 export const briefs: Brief[] = [
 {
   "slug": "china-just-gave-away-a-top-3-ai-model-for-free",
-  "status": "scheduled",
+  "status": "published",
   "goLiveDate": "2026-07-23",
   "datePublished": "2026-07-23",
   "title": "China just gave away a top-3 AI model, for free",
