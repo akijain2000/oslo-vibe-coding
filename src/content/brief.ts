@@ -36,6 +36,65 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "nvidia-just-became-the-central-bank-of-ai",
+  "status": "published",
+  "datePublished": "2026-07-24",
+  "title": "Nvidia just became the 'central bank' of AI",
+  "dek": "The AI boom is increasingly built on borrowed money, about $7 trillion of it by 2029. Banks were nervous to lend against chips that age fast. Then Nvidia offered a guarantee that changed the math.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 4,
+  "takeaway": "The AI buildout now runs on debt, and Nvidia's promise to buy back unused GPUs is what makes lenders comfortable funding it.",
+  "sourceUrl": "https://www.youtube.com/watch?v=0YOf6QTCNuY",
+  "sourceLabel": "Watch the SemiAnalysis breakdown",
+  "keywords": [
+    "Nvidia",
+    "AI debt",
+    "GPU financing",
+    "SemiAnalysis",
+    "Neoclouds",
+    "AI datacenter capex"
+  ],
+  "heroImage": {
+    "src": "/brief/nvidia-just-became-the-central-bank-of-ai.png",
+    "alt": "The loan pile behind the AI boom — Oslo Vibe Coding diagram",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://www.youtube.com/watch?v=0YOf6QTCNuY"
+  },
+  "sections": [
+    {
+      "heading": "The AI boom is running on borrowed money",
+      "paragraphs": [
+        "Building AI is astonishingly expensive, and most of the bill is not being paid in cash. In a new breakdown (July 23 2026), SemiAnalysis, a semiconductor and AI research firm, estimates roughly $11 trillion of AI and data-center spending from 2024 to 2029. About $7.1 trillion of that has to be funded from outside the companies doing the building, and roughly three-quarters of it as debt (loans), not shares or savings.",
+        "To feel the size: SemiAnalysis projects AI borrowing is on track to become the second-largest asset-backed lending market in the United States, behind only the roughly $13 trillion mortgage market. Asset-backed just means the loan is secured against something real, a house for a mortgage, a car for an auto loan. Here the 'something real' is a warehouse full of AI chips. In plain terms, Wall Street is starting to finance the AI buildout the same way it finances houses."
+      ]
+    },
+    {
+      "heading": "Why banks were scared to lend against a pile of chips",
+      "paragraphs": [
+        "A bank is happy to lend against a house because a house holds its value and is easy to resell. AI chips are the opposite. A cutting-edge GPU (the specialised processor that runs AI) is hugely expensive today, but a newer, faster generation lands every year or two, and the old one loses value fast. If AI demand ever cooled, a building full of last year's chips could be worth a fraction of what was paid.",
+        "That made lenders nervous, especially toward the smaller cloud firms SemiAnalysis calls Neoclouds (companies whose whole business is renting out GPUs by the hour). They needed to borrow billions to buy chips, but the collateral looked shaky. It is like asking a bank for a mortgage-sized loan against a car that might be near-worthless in three years. The bank hesitates, and without the loan, the chips never get bought."
+      ],
+      "pullquote": "The 'something real' behind these loans is a warehouse full of chips that lose value fast."
+    },
+    {
+      "heading": "Nvidia's move: a guarantee that makes the loan safe",
+      "paragraphs": [
+        "This is where Nvidia stepped in with what SemiAnalysis calls a backstop. Nvidia has a top credit rating (investment-grade, meaning lenders trust it to pay its bills), and it is using that trust to make a promise: if a cloud company's GPUs sit idle because customers did not show up, Nvidia will rent those chips back at a guaranteed minimum price. In return, when the chips earn more than that floor, Nvidia takes a share of the upside.",
+        "That one promise changes everything for the lender. Now there is a floor under the collateral, backed by one of the most creditworthy companies on earth, so the loan becomes bankable. It is like a carmaker telling the bank, 'if the buyer ever stops paying, we will buy the car back at a set price.' Suddenly the bank happily writes the loan. SemiAnalysis nicknames Nvidia's role here the 'central bank of AI,' because, like a central bank standing behind the banking system, Nvidia is now the backstop that keeps credit flowing into the buildout."
+      ],
+      "pullquote": "It is like a carmaker promising the bank it will buy the car back, so anyone can get the loan."
+    },
+    {
+      "heading": "Clever engineering, or a warning sign?",
+      "paragraphs": [
+        "Is financing a boom with debt new? Not at all. Railroads, telephone networks, and the 1990s internet-fibre buildout were all funded with borrowed money. Sometimes that debt builds the future; sometimes it inflates a bubble, as the telecom fibre glut of the early 2000s and the 2008 mortgage crisis both showed. The structure here is genuinely clever, but it rests on one assumption: that AI demand stays strong. The backstop protects the lenders by moving the risk onto Nvidia, which means a lot of the danger now concentrates on a single company's balance sheet. If demand stalls, Nvidia is the one left holding a mountain of rented-back chips.",
+        "Why should a non-engineer care? Because the price and availability of the AI tools you use are now quietly tied to this giant, mostly invisible lending market. Every time you read that another $30-billion data centre got announced, this is the machinery that paid for it. None of this is a reason to panic, and the numbers are projections, not certainties. But it is worth knowing that 'the AI boom' increasingly means 'the AI loan,' and that one chipmaker is underwriting a surprising share of it."
+      ],
+      "pullquote": "'The AI boom' increasingly means 'the AI loan.'"
+    }
+  ]
+},
+{
   "slug": "china-just-gave-away-a-top-3-ai-model-for-free",
   "status": "published",
   "goLiveDate": "2026-07-23",
