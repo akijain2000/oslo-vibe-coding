@@ -36,6 +36,67 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-10-billion-middleman-between-your-app-and-every-ai-model",
+  "status": "published",
+  "datePublished": "2026-07-25",
+  "title": "The $10 billion middleman between your app and every AI model",
+  "dek": "Stripe is reportedly in talks to buy OpenRouter, a three-year-old startup that sits between apps and AI models, for around $10 billion. In May it was valued at $1.3 billion. Here is what it does, and why a payments company wants it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 4,
+  "takeaway": "The money in AI is starting to collect not in the models themselves, but in the layer that meters and bills every request that passes through.",
+  "sourceUrl": "https://thenextweb.com/news/stripe-openrouter-10-billion-ai-model-marketplace-acquisition",
+  "sourceLabel": "Read the report",
+  "keywords": [
+    "OpenRouter",
+    "Stripe",
+    "AI infrastructure",
+    "inference",
+    "AI billing",
+    "acquisition"
+  ],
+  "heroImage": {
+    "src": "/brief/the-10-billion-middleman-between-your-app-and-every-ai-model.png",
+    "alt": "OpenRouter's valuation, 15 months apart — Oslo Vibe Coding diagram",
+    "credit": "WSJ, Sacra",
+    "creditUrl": "https://thenextweb.com/news/stripe-openrouter-10-billion-ai-model-marketplace-acquisition"
+  },
+  "sections": [
+    {
+      "heading": "A payments company is reportedly bidding $10 billion for a three-year-old startup",
+      "paragraphs": [
+        "On July 24 2026, the Wall Street Journal reported that Stripe, the payments company that processes card transactions for a large slice of the internet, is in talks to buy OpenRouter for around $10 billion. Two months earlier, in May 2026, OpenRouter raised $113 million at a valuation of $1.3 billion. If the reported number holds, its price has gone up roughly eightfold since spring.",
+        "Worth being careful here, because nothing is signed. The talks are described as preliminary, and reporting suggests a deal could come within a month, or not at all. Databricks and other large tech firms have reportedly looked at OpenRouter too. So treat the $10 billion as a reported figure in a live negotiation, not a completed sale."
+      ]
+    },
+    {
+      "heading": "What OpenRouter actually does",
+      "paragraphs": [
+        "OpenRouter was founded in 2023 in New York, co-founded by Alex Atallah, who previously co-founded the NFT marketplace OpenSea. The product is unglamorous and useful: it gives you access to more than 400 AI models from around 70 different providers through a single connection, and routes each request to whichever option is cheapest or best for that job. Instead of signing separate contracts and writing separate code for OpenAI, Anthropic, Google and a long tail of open models, you connect once.",
+        "The everyday comparison is a card network. When you tap your card in a shop, you do not think about which bank the shop uses, or negotiate with it. Visa sits quietly in the middle, makes the two sides work together, and takes a small cut of everything that passes through. OpenRouter is trying to be that for AI models. It charges roughly 5% on top of what customers spend on inference (inference is an AI answering a request, as opposed to being trained in the first place).",
+        "The volumes are real. By May 2026 the platform was handling about 25 trillion tokens a week (a token is roughly a word-fragment, the unit AI models are billed in) across more than eight million registered developers."
+      ],
+      "pullquote": "Visa sits quietly in the middle and takes a small cut of everything that passes through. OpenRouter is trying to be that for AI models."
+    },
+    {
+      "heading": "Why the price looks absurd, and what Stripe would really be buying",
+      "paragraphs": [
+        "Set the price against the earnings and it looks wild. OpenRouter reached about $50 million in annualised revenue in March 2026, up from roughly $19 million at the end of 2025, according to the research firm Sacra. Ten billion dollars for $50 million of revenue is around 200 times revenue. Software companies are usually bought at something like ten to twenty times.",
+        "So Stripe would not be buying this year's income. It would be buying a position. Stripe's entire business is being the toll booth on money moving between two parties, and its own valuation reached $159 billion earlier this year. OpenRouter is a toll booth on AI usage moving between two parties, and it already runs its payments on Stripe. If AI spending keeps compounding, whoever meters and bills the requests collects a small slice of an enormous and growing flow. That is the bet."
+      ],
+      "pullquote": "Stripe would not be buying this year's income. It would be buying a position."
+    },
+    {
+      "heading": "Is this new, and what could go wrong",
+      "paragraphs": [
+        "Not really new, and Stripe has run this exact play before. In October 2024 it agreed to buy Bridge, a two-year-old stablecoin payments startup, for $1.1 billion, closing in February 2025. That was then its largest acquisition ever, at roughly three times what Bridge had been valued at months earlier. The pattern is the same: pay an uncomfortable multiple to own a new payment rail early, before it is obvious the rail matters. Whether that was smart is still being decided.",
+        "The honest risks are worth naming. The deal may not happen at all. And OpenRouter's position is not guaranteed, because the thing it solves, the annoyance of connecting to many different AI providers, gets easier every year as the industry standardises on common interfaces. A middleman whose value is smoothing over incompatibility has a problem when the incompatibility fades. There is also nothing here about AI getting smarter. This is a story about plumbing and billing.",
+        "Why it matters if you build things: the tools you use are increasingly reached through a metering layer that somebody now wants to own. When one company controls the connection point to every model, it gains real influence over pricing, defaults, and which models people reach for first. Watch what that layer costs, and who it belongs to."
+      ],
+      "pullquote": "A middleman whose value is smoothing over incompatibility has a problem when the incompatibility fades."
+    }
+  ]
+},
+{
   "slug": "nvidia-just-became-the-central-bank-of-ai",
   "status": "published",
   "datePublished": "2026-07-24",
