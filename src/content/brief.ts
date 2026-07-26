@@ -36,6 +36,67 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "anthropic-s-new-model-beats-its-flagship-at-half-the-price",
+  "status": "published",
+  "datePublished": "2026-07-26",
+  "title": "Anthropic's new model beats its own flagship at half the price",
+  "dek": "Anthropic released Claude Opus 5 on July 24, two months after its last model. It scores higher than the company's more expensive flagship on Anthropic's own tests, and costs half as much to feed.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 4,
+  "takeaway": "The interesting number in AI right now is not the benchmark score. It is how fast the price of a given level of capability is falling.",
+  "sourceUrl": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+  "sourceLabel": "Read the TechCrunch report",
+  "keywords": [
+    "Claude Opus 5",
+    "Anthropic",
+    "AI pricing",
+    "frontier models",
+    "benchmarks",
+    "inference cost"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-s-new-model-beats-its-flagship-at-half-the-price.png",
+    "alt": "Two months apart, and the cheaper model won — Oslo Vibe Coding diagram",
+    "credit": "Anthropic",
+    "creditUrl": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/"
+  },
+  "sections": [
+    {
+      "heading": "What was announced",
+      "paragraphs": [
+        "On July 24 2026, Anthropic released Claude Opus 5. It arrived two months after Opus 4.8, which came out on May 28. For a frontier model (the most capable tier any lab ships), that is a short gap. The company has now moved almost its whole lineup to the Series 5 generation, with only its small fast model, Haiku, still on the older one.",
+        "The part worth slowing down on is the price. Opus 5 costs $5 per million input tokens and $25 per million output tokens. A token is roughly a word-fragment, and it is the unit AI models are billed in, so input is what you pay to have the model read, and output is what you pay to have it write. Those numbers are unchanged from Opus 4.8, and they are half the input price of Fable 5, Anthropic's larger and more expensive flagship, which sits at $10 per million input tokens."
+      ]
+    },
+    {
+      "heading": "The numbers, and who produced them",
+      "paragraphs": [
+        "On Frontier-Bench v0.1, a broad capability test, Anthropic reports Opus 5 at 43.3%, against 33.7% for the pricier Fable 5 and 18.7% for Opus 4.8 from May. On ARC-AGI-3, a reasoning test built to resist memorisation, it reports 30.2% against 7.8% for OpenAI's GPT-5.6 Sol. On a Zapier automation benchmark it reports a 26.0% pass rate against 18.1%. On GDPval, which scores realistic knowledge work, it reports 1,861 rating points against Fable 5's 1,747.",
+        "Now the caveat, because it matters more than the scores. These are Anthropic's own runs, not independent evaluations. Every lab publishes its launch numbers this way, and every lab picks the tests where it looks good. Reporting on the launch also noted something specific and awkward: on Frontier-Bench, Anthropic's safety filters sometimes routed requests to the older Opus 4.8 model, and the company did not disclose how often that happened. A benchmark result you cannot fully reconstruct is a marketing figure with a decimal point on it.",
+        "Anthropic is also open that Opus 5 is not ahead everywhere. It trails a competing model, Mythos 5, on cybersecurity exploitation tasks, and it keeps restrictions on things like scanning compiled software for vulnerabilities."
+      ],
+      "pullquote": "A benchmark result you cannot fully reconstruct is a marketing figure with a decimal point on it."
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The launch is new. The pattern is not. For about two years now, the same broad thing has happened every few months: a level of AI capability that was expensive and top-of-the-line becomes the cheap default, and a new expensive tier appears above it. What is unusual here is the compression. Anthropic did not make its flagship cheaper. It shipped a different, cheaper model that scores above the flagship on its own tests, eight weeks later.",
+        "A useful everyday comparison is what happened to flat-screen televisions. The headline for years was picture quality, and each generation was sold on being sharper than the last. The change that actually reached most households was that last year's excellent screen kept getting cheaper until it was simply what a television cost. The frontier moved, but the thing that changed people's living rooms was the price collapsing underneath it.",
+        "AI is running that cycle much faster, and this launch is one turn of it. Anthropic also added an effort setting, so you can tell the model to think harder for a better answer or think less to save money and time, which is the same idea applied inside a single request."
+      ],
+      "pullquote": "The frontier moved, but the thing that changed people's living rooms was the price collapsing underneath it."
+    },
+    {
+      "heading": "What it means if you build things",
+      "paragraphs": [
+        "The practical read is that any cost estimate you made for an AI feature more than a couple of months ago is probably wrong, and wrong in your favour. Work that was too expensive to run on every request in May can be worth rechecking now. That is a genuinely good position to be in, and it is worth acting on rather than admiring.",
+        "The measured version of the stakes: falling prices at the top do not mean AI is solved, and they do not mean the published scores are the truth. They mean the cost of a fixed amount of capability keeps dropping, which is the trend that decides what ordinary products can afford to do. Watch that curve rather than the leaderboard.",
+        "And treat the launch numbers as what they are. Anthropic says Opus 5 beats its own flagship. That claim is testable, independent evaluations will land over the coming weeks, and the sensible thing is to wait for them before repeating the figures as fact."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-10-billion-middleman-between-your-app-and-every-ai-model",
   "status": "published",
   "datePublished": "2026-07-25",
