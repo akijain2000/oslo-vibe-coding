@@ -36,6 +36,96 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-fight-over-whether-ai-should-be-downloadable",
+  "status": "published",
+  "datePublished": "2026-07-27",
+  "title": "The fight over whether AI should be downloadable",
+  "dek": "Nvidia's Jensen Huang published an open letter on July 24 asking Washington not to restrict downloadable AI models. In one day the signatures doubled to 50. Anthropic and Amazon stayed out.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "The real collision is not America versus China. It is that a kill switch needs a switch, and a model anyone can download does not have one.",
+  "sourceUrl": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/",
+  "sourceLabel": "Read the TechCrunch report",
+  "keywords": [
+    "open weights",
+    "Jensen Huang",
+    "Nvidia",
+    "AI regulation",
+    "AI Kill Switch Act",
+    "Kimi K3",
+    "Anthropic"
+  ],
+  "heroImage": {
+    "src": "/brief/the-fight-over-whether-ai-should-be-downloadable.png",
+    "alt": "Should AI models be downloadable? Fifty signed, two did not, an Oslo Vibe Coding diagram",
+    "credit": "Reporting: TechCrunch, Forbes",
+    "creditUrl": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/"
+  },
+  "sections": [
+    {
+      "heading": "Fifty companies, in about a day",
+      "paragraphs": [
+        "On July 24 2026, Jensen Huang, the CEO of Nvidia (the company that makes most of the chips AI runs on), published an open letter called \"Open Weights and American AI Leadership\". He posted it on X, which was reported as his first post there. Twenty-five companies had signed it, among them Microsoft, Meta, IBM, Dell, Palantir, Hugging Face, Mistral, Mozilla, the Linux Foundation and Y Combinator.",
+        "By the next day the list had doubled to 50. OpenAI and Google, both missing from the first version, had joined, along with AMD, Cisco, Cloudflare, GitHub, Block and Ollama. Two large names stayed out of both versions: Anthropic and Amazon.",
+        "The letter asks Washington for three things. Expand access to computing power for startups, fund shared training resources, and avoid what it calls premature restrictions on open models that would push innovation overseas."
+      ]
+    },
+    {
+      "heading": "What \"open weights\" actually means",
+      "paragraphs": [
+        "A model's weights are the billions of numbers it learned during training. They are the model. Publish them and anyone can download the file and run the system on their own machines, with no permission, no account and no way for the original lab to watch or switch it off.",
+        "Here is the part that makes this argument sharp. Publishing weights is closer to printing a book than to lending one out of a library. Once a hundred thousand copies exist on a hundred thousand hard drives, nobody can call them back. Not the lab, not a court, not a government.",
+        "Both sides of this fight agree on that single fact. They just draw opposite conclusions from it. One side says that is precisely why open models are healthy, because no single company ends up holding the only key. The other says that is precisely why you should think very hard before publishing, because the decision is permanent."
+      ],
+      "pullquote": "Publishing a model is closer to printing a book than to lending one out of a library."
+    },
+    {
+      "heading": "Why this is happening this week",
+      "paragraphs": [
+        "The trigger is a model. Moonshot AI, a Chinese lab, released Kimi K3 in mid-July: 2.8 trillion parameters, the largest open-weight model anyone has shipped, ranked near the top of independent leaderboards and first in one blind test of frontend coding. Moonshot promised to publish the full weights under a permissive license, and named July 27 as the date. As of this morning in Oslo the files had not yet appeared on Hugging Face, the main site where models are published.",
+        "That promise landed in the middle of an American policy fight. The administration has been weighing a ban on Chinese open-weight models and possible sanctions against the labs behind them, based on claims of distillation. Distillation means training a new model on the outputs of an existing one, roughly the way a student can learn from a tutor's answers without ever seeing the tutor's brain.",
+        "Reporting suggests a blanket ban is unlikely. Legal experts have raised First Amendment problems with prohibiting the publication of files, and officials seem more inclined to review individual models as national security cases. The most workable option under discussion in Congress is narrower: a federal procurement ban, meaning government agencies could not buy or use these models, even if private citizens still could."
+      ]
+    },
+    {
+      "heading": "The letter's most careful paragraph",
+      "paragraphs": [
+        "The signers spend real effort defending distillation. They call it a widely used technique for model improvement, evaluation and validation, and place it in what they describe as a long tradition of learning from and building on existing technology.",
+        "Their warning is the practical one. A rule written broadly enough to catch Chinese labs would also catch American startups, because training on the outputs of a commercial API is ordinary practice across the industry. That is the signers' argument rather than a settled finding, and it is worth reading as what it is: a group of companies describing a rule that would be expensive for them."
+      ]
+    },
+    {
+      "heading": "Who stayed out, and the awkward part",
+      "paragraphs": [
+        "Anthropic's absence is the one people noticed. Two readings are available and both are fair. Anthropic sells access to closed frontier models, so a world of free downloadable equivalents is bad for its business. Anthropic has also argued in public for years that published weights cannot be recalled and that this makes them a different kind of risk. The commercial reading and the safety reading point the same direction here, which is exactly why neither can be proven from the outside.",
+        "The awkward part sits on the other side of the ledger. OpenAI signed the letter on July 25. OpenAI has also been reported, alongside Anthropic, to be lobbying Washington to curb Chinese open-weight models specifically. Those two positions can be held at once without contradiction, since \"do not restrict open models in general\" and \"restrict these particular foreign ones\" are different claims. It is still worth noticing who is arguing for which restriction, and what each one would cost them."
+      ]
+    },
+    {
+      "heading": "The other bill in the room",
+      "paragraphs": [
+        "One day before the letter, on July 23, Representatives Ted Lieu and Nathaniel Moran introduced the AI Kill Switch Act. It would require developers of the most capable systems to keep the technical ability to throttle, suspend or shut a model down, with the Department of Homeland Security able to compel them to use it. Reported penalties run to $2 million a day for noncompliance and $20 million a day for ignoring an emergency shutdown order.",
+        "Put the two documents side by side and the actual collision appears. A kill switch requires a switch. A model that a hundred thousand people have already downloaded and are running on their own hardware does not have one, and cannot be given one afterwards. These are not two policy preferences that can be split down the middle. They are mutually exclusive descriptions of what an AI model is."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Not really, and the precedent is unusually close. In the 1990s the United States treated strong encryption as a munition and controlled its export. Phil Zimmermann released PGP, an encryption program, in 1991, and spent years under a US Customs investigation that was closed in 1996 without charges. To get around the export rules, MIT Press printed the program's source code as a physical book, on the theory that printed matter has clearer free speech protection than a file. In 1999 a federal appeals court found in the Bernstein case that source code is protected speech. The export rules were substantially relaxed around 2000, and that same encryption now sits in every browser and every banking app.",
+        "The honest lesson from that history is narrow. It suggests publishing is very hard to stop once it has started, and that American courts have treated code as speech. It does not show that open weights are safe. The 1990s fight was about mathematics that protects a message. This one is about systems that plan, use tools and act, which is a genuinely different object, and anyone citing the precedent as proof of safety is stretching it."
+      ]
+    },
+    {
+      "heading": "What this means if you are not a lobbyist",
+      "paragraphs": [
+        "If you build products on AI, the near-term risk is not that downloads get banned. It is procurement and paperwork. If you run a Chinese open model inside something you sell to a public sector customer or a bank, expect that to become a question on a vendor form well before it becomes a law.",
+        "If you mostly just use AI, the relevant effect is on price. A genuinely strong model being free to download is the main thing keeping the paid ones honest, which is why the size of the Kimi K3 file matters more to your monthly bill than any of the politics.",
+        "And the line worth keeping: this argument is not really about China. It is about whether a capability, once published, should ever have been publishable. Fifty companies just said yes, two of the most safety-vocal said nothing, and no one involved has a clean answer."
+      ]
+    }
+  ]
+},
+{
   "slug": "anthropic-s-new-model-beats-its-flagship-at-half-the-price",
   "status": "published",
   "datePublished": "2026-07-26",
