@@ -36,6 +36,95 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-biggest-open-ai-model-ever-is-free-and-weighs-1-5tb",
+  "status": "published",
+  "datePublished": "2026-07-28",
+  "title": "The biggest open AI model ever released is free. It weighs 1.5 terabytes.",
+  "dek": "Moonshot AI published the full weights for Kimi K3 over the weekend: 2.8 trillion parameters, the largest openly downloadable model anyone has shipped. Yesterday's policy fight now has a real object at the centre of it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "The floor of what anyone can download for free just moved up a long way. The ceiling of what you can actually run at home did not move at all.",
+  "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K3",
+  "sourceLabel": "See the model card on Hugging Face",
+  "keywords": [
+    "Kimi K3",
+    "Moonshot AI",
+    "open weights",
+    "open source AI",
+    "Hugging Face",
+    "mixture of experts",
+    "AI benchmarks"
+  ],
+  "heroImage": {
+    "src": "/brief/the-biggest-open-ai-model-ever-is-free-and-weighs-1-5tb.png",
+    "alt": "What you get free versus what it costs to run Kimi K3, an Oslo Vibe Coding diagram",
+    "credit": "Figures: Moonshot AI model card",
+    "creditUrl": "https://huggingface.co/moonshotai/Kimi-K3"
+  },
+  "sections": [
+    {
+      "heading": "The file that was promised, and then arrived",
+      "paragraphs": [
+        "Yesterday's brief covered a fight in Washington about whether AI models should be downloadable at all, and mentioned that a Chinese lab called Moonshot AI had promised to publish the weights of its newest model, Kimi K3, by July 27. At the time of writing that piece the files were not there yet.",
+        "They are there now. The repository on Hugging Face, the main site where AI models are published, carries a last-updated stamp of July 27. Reporting puts the actual upload late on July 26, a day ahead of the promised date. The model is 2.8 trillion parameters, which makes it the largest openly downloadable model anyone has released.",
+        "So the argument from yesterday now has a concrete object sitting in the middle of it. Anyone with an internet connection can fetch the whole thing right now, and no permission, account or approval is involved."
+      ]
+    },
+    {
+      "heading": "What is actually in the box",
+      "paragraphs": [
+        "A parameter is one of the numbers a model learned during training. More of them generally means more capacity to store patterns, in the same loose way that a bigger library can hold more books. Kimi K3 has 2.8 trillion of them.",
+        "It does not use all of them at once. The design is called mixture of experts, which means the model is split into many specialised sections and only a few switch on for any given word. K3 has 896 of these experts and activates 16 of them per token, which works out to about 104 billion parameters doing work at any moment. The practical effect is that it thinks with a large brain but pays the running cost of a much smaller one.",
+        "Two other things are worth knowing. It has a one million token context window, meaning it can hold roughly a very long book's worth of text in mind at once. And it handles images natively rather than through a bolted-on add-on, so it reads a screenshot or a diagram inside the same model that writes the code."
+      ]
+    },
+    {
+      "heading": "The scores, read honestly",
+      "paragraphs": [
+        "Moonshot published a benchmark table comparing K3 to the strongest closed models. These are the vendor's own numbers, run by the vendor, so treat them as a claim rather than an independent finding. With that caveat in place, the picture is genuinely interesting.",
+        "On several agentic tests, which measure whether a model can carry out long multi-step jobs with tools rather than answer a single question, K3 posts the highest score in the table. It leads on BrowseComp, a web research benchmark, at 91.2. It leads on SWE-Marathon, which tests sustained software work, at 42.0 against 39.0 and 35.0 for the two leading closed models. It essentially ties on Terminal-Bench at 88.3 versus 88.8.",
+        "It also clearly loses in places. On Humanity's Last Exam, a hard reasoning test, it scores 43.5 against 53.3 for Claude Fable 5. On CritPt, a physics reasoning benchmark, it scores 23.4 against 32.3 for GPT-5.6 Sol. On a broad measure of general knowledge work it sits below both.",
+        "The most useful sentence about all this comes from Moonshot itself. Its own announcement says performance still trails the most powerful proprietary models, and names a noticeable gap in user experience against them. A lab writing down where its own model loses is worth more than the table above it."
+      ],
+      "pullquote": "A lab writing down where its own model loses is worth more than the benchmark table above it."
+    },
+    {
+      "heading": "Free to download is not free to run",
+      "paragraphs": [
+        "Here is the number that reframes the whole story. The published files come to about 1.56 terabytes, spread across 96 separate chunks. That is already the compressed version, stored in a low-precision four-bit format that Moonshot trained the model to tolerate. Stored the ordinary way it would be several times larger.",
+        "That size has to sit in fast memory attached to the chips, not on a hard drive, before the model answers anything. The largest AI chips on the market today hold roughly 200 gigabytes each. So you need something on the order of eight of them, wired together, just to hold the file still. Then you start paying for electricity and cooling.",
+        "The everyday version: someone has given away a grand piano. The piano genuinely costs nothing. You still need a room that fits it and a floor that will hold it, and most people have neither. This is why the phrase open weights keeps causing confusion. It describes who is allowed to have the file, not who can afford to use it.",
+        "For most people the practical route stays the same as before. Moonshot sells access through its own service, and two hosting companies, Together AI and Modal, had it running on day one. Moonshot's listed price is $3.00 per million tokens of input in the ordinary case and $15.00 per million tokens of output, with a much cheaper rate for repeated input."
+      ]
+    },
+    {
+      "heading": "One word doing a lot of work: open",
+      "paragraphs": [
+        "The weights are published under something Moonshot calls the Kimi K3 License, which is its own document rather than one of the standard open source licences like MIT or Apache. That distinction matters and gets flattened constantly in coverage.",
+        "Open source, in the sense the term has meant for decades, carries specific guarantees about what you may do with the thing, including using it commercially and passing it on. A custom licence written by the company releasing the model may grant most of that, or may attach conditions. Anyone planning to build a business on top of this should read the actual file rather than the headline.",
+        "None of that undoes the release. It is still a real publication of a real frontier-class model. It is just worth being precise, because open is currently doing duty for at least three different meanings: you can see it, you can download it, and you can do what you like with it."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. Open models catching up to closed ones is a pattern that has now repeated several times. DeepSeek's R1 did it in early 2025 and moved markets for a week. Meta's Llama models did it before that. Moonshot's own K2 did it last year. Each time the reaction was that the gap had closed, and each time the closed labs shipped something better a few months later.",
+        "What is new here is the scale and the shape. Nobody had openly published a model in this size class before, and nobody had published one that handles images natively with a context window this long. The gap on agentic work, the kind of task where a model runs for hours without a human watching, is the smallest it has been.",
+        "The honest reading is that the floor moved, not that the race ended. What you can get for free today is roughly what the best paid product offered a fairly short time ago. That has been true for a while and it stayed true this weekend."
+      ]
+    },
+    {
+      "heading": "What this means if you are not running a datacenter",
+      "paragraphs": [
+        "Three things, in descending order of how much they should change your week.",
+        "First, almost nothing changes about how you use AI day to day. You are not going to run this on a laptop, and the hosted versions of it compete on price and quality with what you already use rather than replacing them outright.",
+        "Second, if you build products on top of AI, the pressure on pricing is real and continues. Every time a downloadable model lands near the frontier, the price anyone can charge for the middle of the market gets harder to defend.",
+        "Third, and most concretely, yesterday's policy argument just acquired its test case. The proposals in Washington were written in the abstract about hypothetical Chinese open-weight models near the frontier. One is now on a public server, being downloaded, and it cannot be recalled. Whatever gets decided next has to be decided about a file that is already out."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-fight-over-whether-ai-should-be-downloadable",
   "status": "published",
   "datePublished": "2026-07-27",
