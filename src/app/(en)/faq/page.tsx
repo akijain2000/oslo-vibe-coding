@@ -34,7 +34,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Where and when are the sessions?",
-    a: "We meet in Oslo, roughly weekly, at spots like Spaces Stortorvet and other venues around town. The next date always goes up on Luma first, so join there or on WhatsApp to hear when it is set.",
+    a: "We meet in Oslo every Wednesday, at Spaces Stortorvet and other venues around town. The next date always goes up on Luma first, so join there or on WhatsApp to hear when it is set.",
   },
   {
     q: "What should I bring?",

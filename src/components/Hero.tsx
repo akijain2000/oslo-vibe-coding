@@ -12,7 +12,7 @@ const copy = {
     explore: "See how it works",
     nextUp: "Next up",
     between: "Next date being scheduled",
-    cadence: "Roughly weekly · always free",
+    cadence: "Every Wednesday · always free",
   },
   no: {
     eyebrow: "Der ingen koder alene",
@@ -22,7 +22,7 @@ const copy = {
     explore: "Se hvordan det fungerer",
     nextUp: "Neste gang",
     between: "Neste dato planlegges",
-    cadence: "Omtrent ukentlig · alltid gratis",
+    cadence: "Hver onsdag · alltid gratis",
   },
 } as const;
 

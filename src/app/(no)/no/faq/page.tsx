@@ -35,7 +35,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Hvor og når er samlingene?",
-    a: "Vi møtes i Oslo, omtrent ukentlig, på steder som Spaces Stortorvet og andre lokaler rundt i byen. Neste dato dukker alltid opp på Luma først, så bli med der eller på WhatsApp for å høre når den er satt.",
+    a: "Vi møtes i Oslo hver onsdag, på Spaces Stortorvet og andre lokaler rundt i byen. Neste dato dukker alltid opp på Luma først, så bli med der eller på WhatsApp for å høre når den er satt.",
   },
   {
     q: "Hva bør jeg ta med?",

@@ -8,14 +8,14 @@ const copy = {
     eyebrow: "Where we've been",
     heading: "A few sessions in, and growing.",
     intro:
-      "It started in a public library with two people comparing tools. We are turning the drop-ins into a weekly thing.",
+      "It started in a public library with two people comparing tools. We now meet every Wednesday.",
   },
   no: {
     ariaLabel: "Tidligere samlinger",
     eyebrow: "Der vi har vært",
     heading: "Noen samlinger inn, og vi vokser.",
     intro:
-      "Det startet på et folkebibliotek med to personer som sammenlignet verktøy. Vi gjør de uformelle treffene om til noe ukentlig.",
+      "Det startet på et folkebibliotek med to personer som sammenlignet verktøy. Nå møtes vi hver onsdag.",
   },
 } as const;
 

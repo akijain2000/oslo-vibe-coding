@@ -22,6 +22,21 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
+    slug: "drop-in-stortorvet-2026-08-05",
+    title: "Vibe Coding Drop-In",
+    status: "upcoming",
+    start: "2026-08-05T16:00:00+02:00",
+    end: "2026-08-05T18:00:00+02:00",
+    dateLabel: "Wednesday 5 August 2026",
+    timeLabel: "16:00–18:00",
+    venue: "Spaces Stortorvet",
+    address: "Stortorvet 7, 0155 Oslo",
+    city: "Oslo",
+    rsvpUrl: "https://luma.com/izommzs4",
+    blurb:
+      "Come hang out for a couple of hours of casual, vibe-driven coding at Spaces Stortorvet in central Oslo. Bring your laptop, whatever you're building, or just curiosity.",
+  },
+  {
     slug: "drop-in-stortorvet-2026-07-09",
     title: "Vibe Coding Drop-In",
     status: "past",
@@ -124,7 +139,7 @@ export const events: EventItem[] = [
 // The next genuinely-upcoming event: flagged `upcoming` AND not already over.
 // The build-time date check means a session that has slipped into the past stops
 // advertising itself as scheduled even if the data hasn't been rolled forward yet
-// (the weekly check-in updates this file with the next real date).
+// (the Wednesday check-in updates this file with the next real date).
 export const upcomingEvent = events.find(
   (e) => e.status === "upcoming" && new Date(e.end).getTime() > Date.now(),
 );
