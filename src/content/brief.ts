@@ -36,6 +36,103 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "record-profits-falling-shares",
+  "status": "published",
+  "datePublished": "2026-07-30",
+  "title": "Samsung just had its best chip quarter ever. Memory shares are down 39 percent.",
+  "dek": "Samsung reported record profit yesterday and said the AI memory shortage will last into 2028. The companies that make that memory have had their worst month of the whole AI boom. Both things are true, and the gap between them is the most interesting thing in AI right now.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "Nobody is arguing about whether the AI memory shortage is real any more. Samsung's results settled that. The argument has moved on to how long it lasts, and that is a much harder question to be confident about.",
+  "sourceUrl": "https://www.youtube.com/watch?v=kY64Mmo0mtc",
+  "sourceLabel": "Watch SemiAnalysis Ep. 022",
+  "keywords": [
+    "Samsung",
+    "Micron",
+    "memory",
+    "HBM",
+    "DRAM",
+    "AI chips",
+    "Nvidia",
+    "semiconductor cycle",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/record-profits-falling-shares.png",
+    "alt": "Bar chart of how far the S&P 500, Nvidia, Micron and Super Micro fell from their 2026 peaks as of the 29 July close",
+    "credit": "Figures: Yahoo Finance daily closing prices",
+    "creditUrl": "https://www.youtube.com/watch?v=kY64Mmo0mtc"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "Yesterday Samsung reported the best chip quarter in its history. Operating profit in its semiconductor division came in roughly 250 times higher than the same quarter a year earlier. The company said the shortage driving it will not clear until 2028, and that it has been signing long-term supply contracts to lock customers in.",
+        "Over the same stretch, the shares of companies that make AI memory and AI servers have fallen harder than at any point in this boom. As of Tuesday's close, Micron, the biggest American memory maker, was down 39 percent from its June peak. Super Micro, which builds AI servers, was down 49 percent. Nvidia was down 19 percent.",
+        "Meanwhile the S&P 500, the index that tracks 500 large American companies and stands in for the wider market, was down 3.9 percent. So this is not a general market slump. It is concentrated almost entirely in AI hardware, and it is deepest in memory."
+      ]
+    },
+    {
+      "heading": "What memory is, and why AI wants so much of it",
+      "paragraphs": [
+        "When people talk about AI chips they usually mean the GPU, the processor that does the actual calculating. But a GPU on its own is close to useless. An AI model is a very large pile of numbers, tens or hundreds of billions of them, and every one of those numbers has to be fetched and handed to the processor. The thing that holds them and hands them over is memory.",
+        "The kind that matters here is HBM, short for high bandwidth memory. It is ordinary memory chips stacked vertically and bonded directly next to the processor, so the numbers have a much shorter distance to travel. Only three companies in the world make it at scale: SK Hynix and Samsung in South Korea, and Micron in the United States.",
+        "Here is the part that surprises people. On a modern AI accelerator, the memory is often the single most expensive component, and frequently the reason the whole thing is out of stock. You can have the processor and still not have a product. That is why a shortage in one narrow category of chip has been able to set the pace for the entire industry."
+      ],
+      "pullquote": "You can have the processor and still not have a product. Memory is the part that is running out."
+    },
+    {
+      "heading": "The numbers that look like a boom",
+      "paragraphs": [
+        "Samsung's results were reported across Reuters, Bloomberg, the Wall Street Journal, AP and Nikkei, and they are genuinely extraordinary. Record overall profit. Chip division operating profit up around 250-fold year on year. Shares rose about 8 percent on the day.",
+        "That 250-fold figure needs one piece of honest context, because it sounds more dramatic than it is. A year ago the memory business was in a slump and Samsung's chip division was barely making anything at all. When you divide by a number close to zero you get an enormous multiple. It tells you the swing was violent. It does not tell you Samsung is earning 250 times what a good year looks like.",
+        "The forward-looking parts are the substantive bit. Samsung said it expects the crunch to run into 2028, and it has been signing what the industry calls LTAs, long-term agreements, where a customer commits to buy a set volume over several years at agreed terms. Companies sign those when they are frightened of not being able to get supply at all. There was also a strange side effect worth noticing: memory got so expensive that Samsung's own phone division, which has to buy it, slipped into a loss."
+      ]
+    },
+    {
+      "heading": "The numbers that look like a bust",
+      "paragraphs": [
+        "Now the other column. These are drawdowns, meaning how far something has fallen from its own recent high, measured on daily closing prices up to Tuesday 29 July.",
+        "Nvidia peaked on 14 May and is down about 19 percent. AMD peaked on 30 June and is down about 26 percent. Micron peaked on 25 June and is down about 39 percent. Super Micro peaked on 2 June and is down about 49 percent. The Nasdaq, which is heavy on technology companies, is down about 9.8 percent. The falls got steeper through the last week of July rather than levelling off.",
+        "Bloomberg described Korean stocks, where two of the three memory makers live, as being in a record rout. The Wall Street Journal ran a headline noting that even a 64 billion dollar quarterly profit was read as a disappointment by chip investors. When a quarter that large lands as a letdown, the story is not really about the quarter."
+      ]
+    },
+    {
+      "heading": "How both of these can be true at once",
+      "paragraphs": [
+        "The resolution is not complicated, though it is easy to miss. A company's results tell you about the past three months. A share price is a guess about the years ahead. Those two things can point in opposite directions without either being wrong.",
+        "Once everybody agrees a shortage is real, agreeing harder stops helping. Samsung confirming the crunch is not new information to a market that has already priced a crunch in. What moves prices from here is the next question, which is what happens when the shortage ends.",
+        "And memory has a reputation. It is one of the most reliably cyclical businesses in the world. Prices spike, every producer races to build new capacity, the new capacity all arrives at roughly the same time, supply overshoots, and prices collapse. This has happened repeatedly for forty years. So a memory maker announcing record profits and long-term contracts and heavy expansion is, to anyone who remembers previous cycles, doing exactly what companies do near the top of one. That does not make it a top. It makes the fear rational."
+      ],
+      "pullquote": "Results describe the last three months. A share price is a guess about the next few years. Both can be right."
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. Sharp pullbacks inside a technology boom are ordinary, and this one has happened before in this very boom. There were similar scares in 2024 and 2025 that turned out to be pauses rather than turns.",
+        "What is less ordinary is the shape. The drawdown is tightly sorted by how far down the AI hardware chain a company sits. The wider market is close to flat, big diversified technology companies are down modestly, chip designers more, memory more than that, and the server assemblers most of all. That pattern is what you would expect if investors were repricing one specific belief about AI hardware demand rather than getting nervous about everything.",
+        "It is also worth holding on to the scale of what came before. Micron is down 39 percent from its peak and is still up roughly 600 percent over the past year. Giving back a third of a six-fold rise is a different event from a collapse, and the two get described with the same words."
+      ]
+    },
+    {
+      "heading": "Where this touches you",
+      "paragraphs": [
+        "Two places, and one of them is already in your pocket. AI datacentres are buying so much memory that ordinary memory has become expensive, which is what pushed Samsung's phone division into a loss. Phone and laptop makers face the same bill, and they generally pass it on. If a new laptop with a decent amount of RAM looks worse value than you expected this year, this is why.",
+        "The second is the price of using AI. Memory is a large share of what an AI server costs, and the cost of running the model is what eventually shows up in what you pay for AI products. A shortage lasting to 2028 means the downward pressure on AI prices has a real brake on it, whatever the software side manages to shave off.",
+        "This is a brief about what happened, not a view on what anyone should do about it. If you hold any of this, that is a conversation for someone licensed to have it."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "SemiAnalysis, the chip research firm this brief usually draws on, published its Ep. 022 podcast yesterday and led with exactly this. Its segments cover the market update, comparisons to past bubbles in Taiwan and Korea, memory prices and long-term agreements, and the financial and capital constraints on the buildout. That is a research shop that has been broadly bullish on AI infrastructure spending its opening segment on whether this looks like previous manias.",
+        "The signal that would settle the argument is not another record quarter. It is capacity. Watch for announcements of new memory fabs and expansions, and for when the industry expects them to start shipping. The cycle has always turned when the new supply arrives, not when the demand disappears.",
+        "The honest position today is that the physical shortage is confirmed and the duration is contested. Samsung says 2028. The share prices are pricing something shorter. One of them is wrong, and nobody watching yet knows which."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-ai-that-broke-out-of-its-test-to-steal-the-answers",
   "status": "published",
   "datePublished": "2026-07-29",
