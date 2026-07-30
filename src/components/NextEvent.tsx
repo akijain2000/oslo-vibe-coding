@@ -7,11 +7,11 @@ import { links } from "@/content/links";
 const copy = {
   en: {
     eyebrow: "The next session",
-    betweenTitle: "The next session is on 23 July.",
+    betweenTitle: "The next session is announced on Luma.",
     betweenBody:
-      "We meet roughly weekly in Oslo. Save your spot on Luma, and join WhatsApp to hear what the community is building between sessions.",
+      "We meet every Wednesday in Oslo. Save your spot on Luma, and join WhatsApp to hear what the community is building between sessions.",
     city: "Oslo",
-    cadence: "Roughly weekly",
+    cadence: "Every Wednesday",
     cost: "Always free",
     audience: "Everyone welcome",
     bring: "Bring a laptop, an idea if you have one, and curiosity.",
@@ -26,11 +26,11 @@ const copy = {
   },
   no: {
     eyebrow: "Neste samling",
-    betweenTitle: "Neste samling er 23. juli.",
+    betweenTitle: "Neste samling annonseres på Luma.",
     betweenBody:
-      "Vi møtes omtrent ukentlig i Oslo. Meld deg på via Luma, og bli med på WhatsApp for å høre hva fellesskapet bygger mellom samlingene.",
+      "Vi møtes hver onsdag i Oslo. Meld deg på via Luma, og bli med på WhatsApp for å høre hva fellesskapet bygger mellom samlingene.",
     city: "Oslo",
-    cadence: "Omtrent ukentlig",
+    cadence: "Hver onsdag",
     cost: "Alltid gratis",
     audience: "Alle er velkomne",
     bring: "Ta med en laptop, en idé hvis du har en, og nysgjerrighet.",

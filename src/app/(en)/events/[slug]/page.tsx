@@ -120,7 +120,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
           </h2>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href={e.rsvpUrl ?? links.luma}
+              href={isPast ? links.luma : e.rsvpUrl ?? links.luma}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#ff6f47]"
