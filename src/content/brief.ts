@@ -36,6 +36,200 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "an-ai-solved-ten-maths-problems-nobody-else-could",
+  "status": "published",
+  "datePublished": "2026-08-03",
+  "title": "An unreleased OpenAI model solved ten maths problems that had been stuck for decades",
+  "dek": "On Friday OpenAI published ten new mathematical results it says were produced by Astra, a model it has not released. Each one ships with a proof a computer can check. That last part is what makes this different from the usual round of AI-does-maths headlines, and it is also where the honest caveats live.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "The machine-checkable proofs are real and they are unusual. What is still unproven is whether the formal statements Astra proved are the same problems mathematicians had been trying to solve. That check is being done in public right now, and it is the only thing worth watching.",
+  "sourceUrl": "https://openai.com/index/ten-advances-in-mathematics/",
+  "sourceLabel": "Read OpenAI's announcement",
+  "keywords": [
+    "OpenAI",
+    "Astra",
+    "mathematics",
+    "Lean",
+    "formal proofs",
+    "sphere packing",
+    "Erdos problems",
+    "AI reasoning"
+  ],
+  "heroImage": {
+    "src": "/brief/an-ai-solved-ten-maths-problems-nobody-else-could.png",
+    "alt": "Large figure showing the roughly 2,000 dollar compute cost OpenAI reported for producing all ten proofs",
+    "credit": "Figure: OpenAI",
+    "creditUrl": "https://openai.com/index/ten-advances-in-mathematics/"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "On Saturday 1 August, OpenAI published a post called \"Ten advances in mathematics and theoretical computer science\". It says an internal version of Astra, a model the company has not released to anyone, produced new results on ten problems that had seen no progress on the main question for at least a decade, and in several cases much longer.",
+        "The list includes the first explicit construction of what mathematicians call a non-sofic group, a question that has been open since the idea was introduced in 1999. It includes the first improvement to the general upper bound on how densely you can pack spheres in very high dimensions since 1978. It includes a counterexample to a long-standing conjecture about a class of mathematical objects called von Neumann algebras, and a result that settles one of the numbered problems left behind by Paul Erdos, the Hungarian mathematician whose open questions have been a to-do list for the field for decades.",
+        "OpenAI released a 249-page manuscript with the arguments, and, more unusually, a public code repository where every one of the ten results is written out in Lean, a language a computer can check line by line. That repository is the reason this story is worth your attention rather than your eye-roll."
+      ]
+    },
+    {
+      "heading": "What Lean actually is",
+      "paragraphs": [
+        "A mathematical proof is an argument. Normally it gets checked by other mathematicians reading it carefully, which takes months and occasionally goes wrong. Lean is a different approach. It is a proof assistant: a language where every logical step has to be written in a form the computer can verify against a fixed rulebook of accepted mathematics. If the file compiles, the argument contains no logical gaps. Not fewer gaps. None.",
+        "Think of it like a contract written in a language where a machine can check every clause follows from the last. If it compiles, nobody slipped in a step that does not hold. That is a genuinely strong guarantee, and it is not one you get from a normal paper.",
+        "This matters here because the standard failure mode of AI mathematics claims is a proof that reads convincingly and turns out to have a hole in the middle. Lean closes that specific failure mode. All ten results were built against Lean 4 and mathlib, the community's shared library of formalised mathematics, and OpenAI put the files in the open for anyone to compile themselves."
+      ]
+    },
+    {
+      "heading": "The gap Lean does not close",
+      "paragraphs": [
+        "Here is the part most of the coverage skipped, and it is the whole ballgame.",
+        "A successful Lean build tells you the proof is valid for the theorem exactly as it was written down inside Lean. It does not tell you that the thing written down inside Lean is the problem mathematicians were actually trying to solve. Translating an informal open question into a formal statement is itself a judgement call, and a slightly wrong translation can turn a hard problem into an easy one without anyone lying about anything.",
+        "Going back to the contract: the machine can confirm that every clause follows, and still have no opinion about whether the contract is for the house you meant to buy.",
+        "So the real verification is not the compile step. It is mathematicians reading the ten formal statements and confirming each one says what the original problem says. That work started over the weekend and has not finished."
+      ]
+    },
+    {
+      "heading": "The ten results",
+      "paragraphs": [
+        "From OpenAI's public repository, in its own descriptions:"
+      ],
+      "bullets": [
+        "Improved asymptotic upper bounds for high-dimensional sphere packing",
+        "Exponentially stronger upper bounds for binary and spherical codes",
+        "A construction of a non-sofic group",
+        "A counterexample to Connes's rigidity conjecture",
+        "New lower bounds on the circuit complexity of computing the permanent",
+        "Exponential parallel repetition for two-player quantum games",
+        "Hardness of approximation for the closest vector problem in lattices",
+        "A proof of Ehrhart's volume conjecture",
+        "A superexponential lower bound for multicolour Ramsey numbers, settling Erdos problem 183",
+        "Counterexamples to two conjectures about extremal numbers"
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Worth doing the precedent check, because this is not the first time OpenAI has announced maths results.",
+        "Last October the company promoted a claim that GPT-5 had solved ten Erdos problems. Thomas Bloom, the mathematician at the University of Manchester who maintains the catalogue of those problems, called that framing a dramatic distortion. The model had found existing solutions in the literature that his catalogue had not yet been updated to include. Finding a paper is not the same as proving a theorem, and OpenAI took the criticism.",
+        "That history is exactly why the Lean files matter this time, and it is also why Bloom's reaction to this announcement is worth noting. He called the new results big news on X, and said he considered them more significant than the counterexample to the unit distance conjecture that came out in May.",
+        "One quote that has been travelling with this story needs a correction. The Fields Medal winner Timothy Gowers said he would recommend a proof for publication in the Annals of Mathematics without hesitation. He said that about the May result, not about last week's ten. It is a real and striking endorsement of AI-produced mathematics. It is not an endorsement of this announcement."
+      ]
+    },
+    {
+      "heading": "About that $2,000",
+      "paragraphs": [
+        "OpenAI says the tokens used to generate all ten sets of arguments would have cost about $2,000 at the API prices of its current model. A token is the unit models read and write in, roughly three quarters of a word, and API prices are what an outside developer pays per million of them.",
+        "Two thousand dollars for ten results that professional mathematicians could not produce is the number that made this go around the internet, and it is a fair thing to be struck by. It is also a number with edges.",
+        "It covers the runs that worked. Nobody has said how many problems got the same spend and produced nothing, which the developer and writer Simon Willison flagged within hours of the post going up. OpenAI's Noam Brown separately described the compute as a deliberate ceiling and said it would be possible to push much further, which is a reasonable thing to say and also means the figure is a floor rather than a price list. And humans were in the loop after the fact: OpenAI says its researchers worked with the model to turn its arguments into publishable manuscripts.",
+        "None of that makes $2,000 a fake number. It makes it the cost of the successful attempts, which is a different claim from the cost of the discovery."
+      ]
+    },
+    {
+      "heading": "What the reaction has been",
+      "paragraphs": [
+        "Measured, mostly, which is itself informative. Bloom's big news. Sebastien Bubeck, a researcher at OpenAI, called the results beautiful, which you would expect from the home team. Noam Brown noted, drily, that no Millennium Prize Problems had fallen yet, referring to the seven famous problems carrying a million-dollar reward each, of which six are still open.",
+        "Terence Tao, one of the most respected working mathematicians alive, has been describing a future he calls big mathematics: large collaborations between many humans and many machines, where formal verification is what lets the pieces be trusted enough to be assembled. The ten proofs fit that picture more neatly than they fit the picture of a machine replacing mathematicians.",
+        "The structural complaint is about process rather than substance. These results arrived as a company blog post, not through a journal. Peer review is slow and imperfect, but it is the mechanism the field uses to decide what is true, and announcing around it puts the burden on volunteers to check work on a company's publication schedule."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Astra has not been released. OpenAI describes it as its next major model and has given no date, saying it is still going through pre-release review.",
+        "The thing worth following over the next few weeks is narrow and specific: whether mathematicians working in each of these ten areas confirm that the formal statements in the Lean files match the open problems as the field understood them. If they do, this is the first time a model has produced a batch of genuinely new mathematics with the verification attached, and the interesting question becomes what happens when the cost of an attempt keeps falling.",
+        "If they do not, it will look a lot like last October. Either way, the answer will come from mathematicians reading files, not from anyone's announcement."
+      ]
+    }
+  ]
+},
+{
+  "slug": "uber-burned-a-year-of-ai-budget-in-four-months",
+  "status": "published",
+  "datePublished": "2026-08-03",
+  "title": "Uber burned a whole year of AI budget in four months, then put everyone on a data plan",
+  "dek": "SemiAnalysis spoke to more than 50 companies about what they are actually spending on AI. The picture that comes back is not runaway costs. It is a handful of extremely heavy users, a lot of people spending almost nothing, and finance departments quietly inventing the mobile phone contract all over again.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "The average tells you nothing. AI spending inside companies is wildly lopsided, and the caps appearing everywhere are a response to a few power users rather than a sign that the bills are out of control.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+  "sourceLabel": "Read SemiAnalysis on token budgeting",
+  "keywords": [
+    "AI spending",
+    "tokens",
+    "Uber",
+    "Meta",
+    "coding assistants",
+    "enterprise AI",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/uber-burned-a-year-of-ai-budget-in-four-months.png",
+    "alt": "Bar chart of monthly per-employee AI spending caps at four companies, from 200 dollars at a travel-tech firm to 2,000 dollars at Workday and Stripe",
+    "credit": "Figures: SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "Uber set aside a budget for AI coding assistants for the year. It was gone in four months. The company then put every employee on a limit of $1,500 a month, with anything above that needing to be asked for and approved case by case.",
+        "That detail comes from a SemiAnalysis report based on conversations with more than 50 enterprise customers about what they are really spending. Uber is not an outlier in having done this. It is an early example of what is now happening across large companies: the era of telling employees to use as much AI as they possibly can is being replaced by an allowance.",
+        "The interesting part is why. It is not that AI got expensive. It is that spending inside a company turns out to be shaped very strangely."
+      ]
+    },
+    {
+      "heading": "First, what is being bought",
+      "paragraphs": [
+        "When a company buys AI for its staff, it is usually buying tokens. A token is the unit these models read and write in, roughly three quarters of a word. You are billed per million of them, and the meter runs both ways: what you send the model and what it sends back.",
+        "For a person typing questions into a chat window, that adds up to very little. For a coding assistant, it adds up fast. Tools like Claude Code and Codex do not answer one question. Given a task, they read through a codebase, try something, run it, read the error, try again, and keep going. Every one of those loops is tokens. One instruction from a developer can turn into hours of machine reading and writing.",
+        "So the same subscription that costs nothing when a marketer uses it can cost a serious amount when an engineer points it at a large piece of software and walks away."
+      ]
+    },
+    {
+      "heading": "The numbers are extremely lopsided",
+      "paragraphs": [
+        "SemiAnalysis pulled spending data from Ramp, the corporate card company, and the spread is the whole story.",
+        "The median customer spends about $136 per employee per year on AI. Not per month. Per year. That is roughly a takeaway lunch, once, annually.",
+        "At the 90th percentile it is about $7,300 per employee per year. At the 99th percentile it is about $90,000. The heaviest users are spending something like 660 times the typical company, per person.",
+        "Meta gives you the same shape inside a single organisation. In a 30-day window in February, its employees ran through more than 60 trillion tokens. One individual employee accounted for roughly 280 billion of them on their own."
+      ],
+      "pullquote": "The median company spends $136 per employee per year. The 99th percentile spends $90,000."
+    },
+    {
+      "heading": "Which is why everyone is inventing the mobile phone contract",
+      "paragraphs": [
+        "If you have ever had a mobile plan go from unlimited to capped, you already know this story. Unlimited works fine until a small number of people start streaming video all day, and then everybody gets a data allowance, because it is far easier to give everyone a number than to police the few.",
+        "That is exactly what is happening. The monthly per-employee caps SemiAnalysis found have no industry consensus at all:",
+        "There is no agreed answer here because nobody has had time to work out what a reasonable number is. These are first guesses being made by finance teams, and they will move."
+      ],
+      "bullets": [
+        "A travel-tech company: $200 a month by default",
+        "An aerospace and defence manufacturer: $250",
+        "A pharmaceutical company: $500",
+        "A cybersecurity company: about $800 for juniors, and $1,600 to $4,000 for senior staff",
+        "Workday and Stripe: around $2,000"
+      ]
+    },
+    {
+      "heading": "The part that cuts against the panic",
+      "paragraphs": [
+        "The obvious way to read all this is that AI costs are spiralling and companies are slamming on the brakes. SemiAnalysis, having actually asked the companies, argues the opposite.",
+        "Their conclusion is that the alarming stories are overstated and that there is no material risk to second-half 2026 AI budgets. The caps are not distress. They are ordinary cost management arriving in a category that had been running without any, and a company that discovers a few engineers can burn a year of budget in four months has learned something useful rather than something frightening.",
+        "It helps to know where the money is going. SemiAnalysis estimates that more than 70 percent of the recurring revenue at both OpenAI and Anthropic today comes from coding. Not chatbots, not image generation, not search. Writing software is the thing enterprises are actually paying for, which is also why the caps are landing hardest on the tools engineers use."
+      ]
+    },
+    {
+      "heading": "Why this is worth knowing",
+      "paragraphs": [
+        "Two things follow from the lopsided shape, and both are useful if you are trying to reason about AI adoption rather than read headlines about it.",
+        "The first is that averages are useless here. Any statement of the form \"companies now spend X per employee on AI\" is describing a distribution where the top and the middle differ by three orders of magnitude. The average is a number that describes almost nobody.",
+        "The second is that most organisations have barely started. If the median company is spending $136 per person per year, the story of enterprise AI is not saturation. It is a small number of very heavy users at the front and a very long tail that has not really begun. The caps are a story about the front of that line.",
+        "None of which tells you whether the spending is producing anything worth the money. That is a separate question, and one nobody has answered convincingly yet."
+      ]
+    }
+  ]
+},
+{
   "slug": "record-profits-falling-shares",
   "status": "published",
   "datePublished": "2026-07-30",
