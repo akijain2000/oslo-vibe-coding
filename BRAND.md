@@ -84,4 +84,5 @@ or cream (on dark).
 | Resource library | `src/content/resources.ts` |
 | Organisers | `src/content/people.ts` |
 | LinkedIn updates (add a post here) | `src/content/posts.ts` |
+| Weekly LinkedIn poster (1080×1350 PNGs) | `scripts/make-linkedin-poster.mjs` (`npm run poster:linkedin`) |
 | Community links | `src/content/links.ts` |

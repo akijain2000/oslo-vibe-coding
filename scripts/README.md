@@ -46,3 +46,33 @@ Luma has no sandbox. Before trusting it in the automated flow, create one throwa
 ### Where it fits
 
 The Saturday routine `ovc-weekly-session-plan` (see `~/.claude/scheduled-tasks/`) uses this: once Akshat confirms next week's date/time/venue, it creates the Luma event, then writes the returned RSVP link into `src/content/events.ts`. If `LUMA_API_KEY` is not set or the call fails, the routine falls back to asking Akshat for the Luma link manually.
+
+## `make-linkedin-poster.mjs` — the weekly LinkedIn poster
+
+Generates the Wednesday Drop-In poster as 1080×1350 LinkedIn-portrait PNGs (rendered at 2× = 2160×2700), in the site's Night Spark and Daylight looks. The layouts are the 4:5 adaptation of the poster maker's templates (`src/components/poster/templates.tsx`), with the brand tokens from `BRAND.md`.
+
+No new dependencies: the QR comes from the site's existing `qrcode` package, and rendering uses your installed Chrome/Chromium in headless screenshot mode (auto-detected; override with `--chrome` or `CHROME_BIN`).
+
+### Usage
+
+The weekly run is just:
+
+```bash
+npm run poster:linkedin
+```
+
+Everything defaults to the standing session: next Wednesday's date (computed in Europe/Oslo), 16:00–18:00, Spaces Stortorvet, canonical brand copy, and the standing Luma RSVP link baked into the QR. Output lands in `posters/` (gitignored).
+
+Override any field when something changes:
+
+```bash
+npm run poster:linkedin -- --luma https://luma.com/xxxxxxxx     # new RSVP link
+npm run poster:linkedin -- --time "17:00–19:00"                 # different time
+npm run poster:linkedin -- --template night                     # just one variant
+```
+
+Run `node scripts/make-linkedin-poster.mjs --help` for all flags. The standing defaults (Luma link, time, venue, copy) live in the `DEFAULTS` block at the top of the script — edit there if the routine itself changes.
+
+### Where it fits
+
+The weekly flow is: create the Luma event (`luma:create` or by hand) → if the RSVP link changed, update `DEFAULTS.luma` (and `src/content/events.ts`) → `npm run poster:linkedin` → post the PNG on LinkedIn.

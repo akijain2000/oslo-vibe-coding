@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "luma:create": "node scripts/create-luma-event.mjs"
+    "luma:create": "node scripts/create-luma-event.mjs",
+    "poster:linkedin": "node scripts/make-linkedin-poster.mjs"
   },
   "dependencies": {
     "@upstash/redis": "^1.38.0",
