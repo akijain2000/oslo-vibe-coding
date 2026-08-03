@@ -8,8 +8,9 @@
 //
 //   npm run poster:linkedin
 //
-// which renders next Wednesday, 16:00–18:00, Spaces Stortorvet, with the QR
-// pointing at the standing Luma link. Override any field when it changes:
+// which renders the evergreen poster — "Every Wednesday", 16:00–18:00, Spaces
+// Stortorvet, QR on the standing Luma link — so the same PNG can be posted week
+// after week. Override any field for a special edition:
 //
 //   npm run poster:linkedin -- --luma https://luma.com/xxxxxxxx
 //   npm run poster:linkedin -- --date "Wednesday 12 August" --time "17:00–19:00"
@@ -31,6 +32,7 @@ const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 
 const DEFAULTS = {
   luma: "https://luma.com/izommzs4",
+  date: "Every Wednesday",
   time: "16:00–18:00",
   venue: "Spaces Stortorvet",
   address: "Stortorvet 7, 0155 Oslo",
@@ -63,13 +65,13 @@ const USAGE = `
 Generate the weekly LinkedIn poster (1080x1350) for Oslo Vibe Coding.
 
 Usage:
-  npm run poster:linkedin                        # next Wednesday, all defaults
+  npm run poster:linkedin                        # evergreen weekly poster, all defaults
   npm run poster:linkedin -- --luma <url>        # new RSVP link (changes the QR)
   npm run poster:linkedin -- --date "Wednesday 12 August" --time "17:00–19:00"
 
 Optional flags (all default to the standing weekly session):
   --luma       RSVP URL the QR points at        (default: ${DEFAULTS.luma})
-  --date       Date label                       (default: next Wednesday, e.g. "Wednesday 5 August")
+  --date       Date label                       (default: "${DEFAULTS.date}")
   --time       Time label                       (default: ${DEFAULTS.time})
   --venue      Venue name                       (default: ${DEFAULTS.venue})
   --address    Street address                   (default: ${DEFAULTS.address})
@@ -115,23 +117,9 @@ function fail(msg) {
   process.exit(1);
 }
 
-// Next Wednesday in Oslo (today, if today is a Wednesday) — both as a human
-// label ("Wednesday 5 August") and as YYYY-MM-DD for the output filename.
-function nextWednesday() {
-  const now = new Date();
-  const oslo = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Oslo" }));
-  const daysAhead = (3 - oslo.getDay() + 7) % 7; // 3 = Wednesday
-  const d = new Date(oslo);
-  d.setDate(oslo.getDate() + daysAhead);
-  const label = `Wednesday ${d.getDate()} ${d.toLocaleString("en-GB", { month: "long" })}`;
-  const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-  return { label, iso };
-}
-
-const wed = nextWednesday();
 const data = {
   luma: values.luma ?? DEFAULTS.luma,
-  dateLabel: values.date ?? wed.label,
+  dateLabel: values.date ?? DEFAULTS.date,
   timeLabel: values.time ?? DEFAULTS.time,
   venue: values.venue ?? DEFAULTS.venue,
   address: values.address ?? DEFAULTS.address,
@@ -272,9 +260,7 @@ const outDir = path.resolve(REPO_ROOT, values.out ?? DEFAULTS.out);
 fs.mkdirSync(outDir, { recursive: true });
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "ovc-poster-"));
 
-const dateSlug = values.date
-  ? values.date.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
-  : wed.iso;
+const dateSlug = data.dateLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const written = [];
 for (const variant of templates) {

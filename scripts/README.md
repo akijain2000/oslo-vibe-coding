@@ -61,12 +61,13 @@ The weekly run is just:
 npm run poster:linkedin
 ```
 
-Everything defaults to the standing session: next Wednesday's date (computed in Europe/Oslo), 16:00–18:00, Spaces Stortorvet, canonical brand copy, and the standing Luma RSVP link baked into the QR. Output lands in `posters/` (gitignored).
+Everything defaults to the evergreen standing session — "Every Wednesday", 16:00–18:00, Spaces Stortorvet, canonical brand copy, and the standing Luma RSVP link baked into the QR — so the same PNG can be reposted week after week. Output lands in `posters/` (gitignored).
 
 Override any field when something changes:
 
 ```bash
 npm run poster:linkedin -- --luma https://luma.com/xxxxxxxx     # new RSVP link
+npm run poster:linkedin -- --date "Wednesday 12 August"         # dated special edition
 npm run poster:linkedin -- --time "17:00–19:00"                 # different time
 npm run poster:linkedin -- --template night                     # just one variant
 ```
