@@ -36,6 +36,188 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "google-s-ai-lab-changed-hands-and-jeff-dean-walked-out",
+  "status": "published",
+  "datePublished": "2026-08-08",
+  "title": "Google's AI lab just changed hands, and the man who built its foundations walked out",
+  "dek": "Demis Hassabis is moving upstairs. Koray Kavukcuoglu takes over the day to day. And Jeff Dean, after 27 years building the infrastructure most of the modern internet runs on, is leaving with three colleagues to start something new. All announced in one blog post.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "Reshuffles at the top rarely change what a model can do next month. What this one signals is that Google is treating its AI unit as an operating business rather than a research institute, and that the people who built the foundations are now willing to leave.",
+  "sourceUrl": "https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/",
+  "sourceLabel": "Read Sundar Pichai's announcement",
+  "keywords": [
+    "Google",
+    "Google DeepMind",
+    "Demis Hassabis",
+    "Jeff Dean",
+    "Koray Kavukcuoglu",
+    "Discovery Loop",
+    "Gemini",
+    "AI research"
+  ],
+  "heroImage": {
+    "src": "/brief/google-s-ai-lab-changed-hands-and-jeff-dean-walked-out.png",
+    "alt": "Before and after comparison of who runs Google's AI unit, showing Hassabis moving to Chair, Kavukcuoglu taking operations, and Jeff Dean departing",
+    "credit": "Figures: Google",
+    "creditUrl": "https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "On Wednesday 5 August, Sundar Pichai published a post called \"The next chapter of our AI momentum\". It announced three things at once, and the third is the one that made people sit up.",
+        "Demis Hassabis, who co-founded DeepMind in 2010 and has run Google's AI research ever since, steps out of the day-to-day job. He becomes Chair of Google DeepMind and Chief Scientist of Alphabet, Google's parent company, while continuing to run Isomorphic Labs, the drug discovery company spun out of DeepMind. He said he wanted room to focus on the bigger picture.",
+        "Koray Kavukcuoglu, DeepMind's chief technology officer and a 13-year veteran of the lab, takes over the operational job as senior vice president, reporting directly to Pichai. Gemini model development, frontier research, and the Gemini app and developer teams all now run through him.",
+        "And Jeff Dean is leaving Google after 27 years."
+      ]
+    },
+    {
+      "heading": "Why the third one matters most",
+      "paragraphs": [
+        "If you have not heard of Jeff Dean, here is the short reason to care. Alongside Sanjay Ghemawat, who is leaving with him after his own 27 years, Dean built much of the machinery that made Google possible at scale, and then made it public. MapReduce, a way of splitting an enormous computation across thousands of ordinary machines. Bigtable and Spanner, the databases that hold Google's data across the planet. TensorFlow, the software that a generation of researchers used to train neural networks.",
+        "Those ideas did not stay at Google. They were published, copied, and rebuilt in the open, and they underpin a large share of how the modern internet stores and processes anything. If you have used a service that handles data at scale, you have used a descendant of this work.",
+        "Dean and Ghemawat are leaving to co-found Discovery Loop, structured as a public benefit corporation, aimed at using AI to speed up scientific research. Reporting says two more senior Google researchers, Quoc Le and Oriol Vinyals, are going with them. Vinyals was one of the leads on Gemini.",
+        "He is also not the first out of the door this year. John Jumper, who shared the 2024 Nobel Prize in Chemistry for AlphaFold, DeepMind's protein structure work, left earlier in 2026 for Anthropic."
+      ],
+      "pullquote": "Two people with 27 years each, and two senior researchers, leaving in the same week as the reorganisation."
+    },
+    {
+      "heading": "An analogy for what actually changed",
+      "paragraphs": [
+        "Picture a football club where the long-serving manager moves upstairs to become director of football. He keeps the title, the respect and a say in the long-term direction, and he stops picking the team on a Saturday. His assistant of thirteen years takes the touchline and now reports straight to the owner.",
+        "In the same week, two players who have been at the club since before anyone can remember announce they are leaving to start their own club.",
+        "None of that changes the result of next weekend's match. All of it tells you something about where the club thinks it is."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. Google has restructured its AI operation before, and recently.",
+        "Until 2023 the company ran two separate AI groups: Google Brain, in Mountain View, which Jeff Dean led, and DeepMind, in London, which Hassabis ran. They had different cultures, different priorities and a certain amount of rivalry. That year Google merged them into a single unit called Google DeepMind, and Dean moved into the role of chief scientist.",
+        "What happened last week finishes that job. The centre of gravity moves to Mountain View, the reporting line runs to Pichai, and the communications, legal and marketing teams fold back into Google proper. Lila Ibrahim, the chief AI readiness officer, now reports to James Manyika. This is a research lab being absorbed into an operating company.",
+        "So the structural direction is not a surprise. The departures are."
+      ]
+    },
+    {
+      "heading": "The context nobody at Google will say out loud",
+      "paragraphs": [
+        "Google invented the transformer, the architecture underneath essentially every large language model in use today, in a 2017 paper. It then watched OpenAI turn that idea into the product that defined the category.",
+        "Since then Google has been in a long catch-up, and by most external accounts Gemini has closed a lot of the gap. But the two labs setting the pace commercially are OpenAI and Anthropic, and the reorganisation is widely read as Google deciding that shipping is now the constraint rather than research.",
+        "That reading is reasonable, and it is still a reading. Pichai's post frames it as momentum, not repair, and a company with Google's resources reorganising is not evidence of trouble on its own."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Two things, and neither is the next model release.",
+        "The first is whether more people leave. A reorganisation that costs you four senior researchers in a week is one story. If the number keeps climbing through the autumn, it becomes a different one, and Google's ability to hold onto the people who can build frontier systems becomes the actual news.",
+        "The second is what Discovery Loop turns out to be. A public benefit corporation aimed at scientific discovery, founded by four people of this calibre, will have no trouble raising money. Whether it produces something is a question for 2027, but it is now the third serious attempt in as many years at pointing AI at science rather than at chat.",
+        "For everyone else, the practical effect this month is close to zero. Gemini keeps shipping, the apps keep working, and the people who decide what gets built next have new titles."
+      ]
+    }
+  ]
+},
+{
+  "slug": "the-ai-lab-that-actually-turns-a-profit",
+  "status": "published",
+  "datePublished": "2026-08-08",
+  "title": "One of the big AI labs quietly started making money",
+  "dek": "Everyone assumes every AI company is torching cash. Anthropic posted an operating profit in the second quarter of 2026, and the research firm SemiAnalysis expects more than a billion dollars of it in the third. The number is real. The reasons it might not last are worth understanding too.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "A frontier AI lab turning an operating profit is genuinely new, and it happened because the cost of answering a question fell faster than the price did. It is one quarter, on outside estimates, with a large asterisk about a discounted compute deal. Watch whether it repeats.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+  "sourceLabel": "Read the SemiAnalysis analysis",
+  "keywords": [
+    "Anthropic",
+    "OpenAI",
+    "AI economics",
+    "profitability",
+    "IPO",
+    "inference",
+    "gross margin",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-lab-that-actually-turns-a-profit.jpg",
+    "alt": "SemiAnalysis chart of Anthropic's quarterly revenue against compute and other operating costs, showing an operating loss in the first quarter of 2026 and a small operating profit in the second",
+    "credit": "Chart: SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "The standing assumption about AI companies is that all of them lose enormous amounts of money, and that the only question is who can keep raising enough to stay in the game. For most of the last three years that assumption was correct.",
+        "It has stopped being correct for one of them. According to SemiAnalysis, a research firm that spends its time picking apart the economics of chips and AI, Anthropic turned an operating profit of roughly $559 million in the second quarter of 2026, on revenue of about $10.9 billion. Three months earlier the same company took in $4.8 billion and lost money. SemiAnalysis expects the third quarter to clear a billion dollars of profit, at a margin of around six percent.",
+        "For comparison, OpenAI's own internal forecast, as reported earlier this year, has it losing something like $14 billion in 2026 on roughly $25 billion of run-rate revenue.",
+        "Two companies in the same business, at a similar scale, on opposite sides of the line. That is the thing worth understanding."
+      ]
+    },
+    {
+      "heading": "What \"profit\" means here, exactly",
+      "paragraphs": [
+        "Worth being precise, because this word gets stretched.",
+        "The figure being discussed is operating profit: what is left of revenue after the cost of running the business. For an AI lab that means the computers that answer your questions, the electricity to run them, the salaries, the offices, and the enormous cost of training new models. It does not include interest, tax, or the paper gains and losses that show up further down a company's accounts.",
+        "It is also an estimate. Anthropic is a private company. It does not publish quarterly accounts, and nothing here has been audited. SemiAnalysis is reconstructing the numbers from supplier data, deal terms, and conversations, which is what it is good at, and which is still not the same as a filing."
+      ]
+    },
+    {
+      "heading": "Why the numbers moved",
+      "paragraphs": [
+        "The interesting part is not that revenue grew. Everyone's revenue is growing. The interesting part is that the cost of delivering it fell at the same time.",
+        "When you ask an AI model a question, that is called inference: the model doing work, as opposed to the model being trained. Every answer costs the company real money in electricity and rented computing time. The gross margin on inference is simply what is left of the price after paying that bill.",
+        "SemiAnalysis puts Anthropic's inference gross margin at roughly 38 percent a year ago and above 70 percent now. Across the whole company it lands in the mid-60s, and the business of selling access to the models directly to developers, the API, is above 80 percent.",
+        "Think of a restaurant that has not raised its prices, has not changed the menu, and is suddenly making money on every plate because the kitchen learned to cook the same dish in a third of the time, on a third of the gas. Nothing the customer sees has changed. Everything behind the door has."
+      ]
+    },
+    {
+      "heading": "Where the money comes from",
+      "paragraphs": [
+        "It comes overwhelmingly from software developers. SemiAnalysis has estimated that more than 70 percent of the recurring revenue at both Anthropic and OpenAI is now attributable to coding. Not chatbots, not image generation, not search.",
+        "This is the part most coverage still gets wrong. The public face of AI is a chat box, and the paying customer is an engineering department. Anthropic's coding tool, Claude Code, reportedly passed a billion dollars of annualised revenue within six months of launch.",
+        "That concentration is a strength and a risk in the same sentence. It is a strength because businesses pay real money for work that used to require hiring. It is a risk because it means one product category is carrying the whole thing."
+      ],
+      "pullquote": "Revenue went from about $4.8 billion in the first quarter to about $10.9 billion in the second, and the loss turned into a profit."
+    },
+    {
+      "heading": "The asterisks",
+      "paragraphs": [
+        "Three of them, and they are not small.",
+        "The first is that Anthropic has said itself that it does not expect to stay profitable. Training the next model is a cost that lands in lumps, not in a smooth line, and a quarter without a big training run looks very different from a quarter with one.",
+        "The second is the compute deal. Anthropic reportedly pays on the order of $1.25 billion a month to rent computing power from SpaceX, and critics of the profit figure argue that the early months of a contract like that come at a ramp-up discount. If the effective price rises as the deal matures, some of this margin is borrowed from later quarters.",
+        "The third is that a quarter is a quarter. One profitable three-month stretch tells you the shape of the business is capable of working. It does not tell you the business works. That is a claim two or three more quarters can support and one cannot."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Yes, and it is worth saying why rather than taking it on faith.",
+        "Plenty of profitable companies do AI. Google, Microsoft and Meta all make money, and all of them spend heavily on AI, but their AI divisions sit inside businesses that were already printing cash from search, software licences and advertising. The frontier labs, the companies whose entire existence is building and selling models, have been the opposite: enormous revenue growth funded by enormous fundraising, with the profit question pushed into the future.",
+        "So a lab covering its own costs from its own product, at this scale, has not happened before. That is a real milestone regardless of what happens next.",
+        "The stock market context matters too. Anthropic filed confidentially for an IPO on 1 June, meaning it has started the process of listing publicly without disclosing numbers yet. OpenAI's listing has reportedly slipped to 2027. A company about to ask public investors for money has an obvious interest in the market seeing a profitable quarter, which is not an accusation, just a reason to read the timing with your eyes open."
+      ]
+    },
+    {
+      "heading": "The number to be careful with",
+      "paragraphs": [
+        "SemiAnalysis also floats the possibility of Anthropic becoming a six trillion dollar company as a base case if it keeps executing. That figure travelled widely, and it deserves a label.",
+        "It is an analyst's projection built on a growth rate continuing, which is the single most fragile assumption in finance. Roughly three companies in history have been worth more than four trillion dollars. Treating six trillion as a base case is a statement about a spreadsheet, not about the world.",
+        "The same caution applies to the annual run-rate figures now being quoted, which range from around $44 billion, the simple annualisation of the second quarter, to over $60 billion in more recent estimates. When numbers this large move this fast, the spread between sources is itself information: nobody outside the company knows precisely."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "One thing, really. Whether the third quarter lands where SemiAnalysis says it will, and whether the fourth does too, with a large training run inside it.",
+        "If it does, the argument that frontier AI is structurally unprofitable is finished, and the conversation shifts to why one lab managed it and the other did not. If it does not, this will read as a quarter where the accounting and the compute contract happened to line up nicely.",
+        "The honest position today is that something real changed in the cost of running these models, and that one quarter of profit is early evidence rather than proof."
+      ]
+    }
+  ]
+},
+{
   "slug": "an-ai-solved-ten-maths-problems-nobody-else-could",
   "status": "published",
   "datePublished": "2026-08-03",
