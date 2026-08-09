@@ -31,7 +31,10 @@ const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 // ---- Standing weekly defaults (edit here if the routine itself changes) ------
 
 const DEFAULTS = {
-  luma: "https://luma.com/izommzs4",
+  // Resolved at runtime from src/content/events.ts (next upcoming session), so
+  // the QR always points at the current Luma event without touching this file.
+  luma: null,
+  lumaFallback: "https://luma.com/user/akijain2000",
   date: "Every Wednesday",
   time: "16:00–18:00",
   venue: "Spaces Stortorvet",
@@ -70,7 +73,7 @@ Usage:
   npm run poster:linkedin -- --date "Wednesday 12 August" --time "17:00–19:00"
 
 Optional flags (all default to the standing weekly session):
-  --luma       RSVP URL the QR points at        (default: ${DEFAULTS.luma})
+  --luma       RSVP URL the QR points at        (default: next upcoming session in src/content/events.ts)
   --date       Date label                       (default: "${DEFAULTS.date}")
   --time       Time label                       (default: ${DEFAULTS.time})
   --venue      Venue name                       (default: ${DEFAULTS.venue})
@@ -117,8 +120,26 @@ function fail(msg) {
   process.exit(1);
 }
 
+// The QR tracks the next upcoming session in src/content/events.ts (same
+// source the website's RSVP buttons use), unless --luma overrides it. Node 24
+// imports the .ts file directly via type stripping.
+async function resolveLuma() {
+  if (values.luma) return values.luma;
+  try {
+    const { upcomingEvent } = await import(new URL("../src/content/events.ts", import.meta.url));
+    if (upcomingEvent?.rsvpUrl) return upcomingEvent.rsvpUrl;
+  } catch (err) {
+    console.warn(`Warning: could not read src/content/events.ts (${err.message}).`);
+  }
+  console.warn(
+    `Warning: no upcoming event with an RSVP link found — QR falls back to the Luma profile (${DEFAULTS.lumaFallback}). ` +
+      "Add the next session to src/content/events.ts or pass --luma.",
+  );
+  return DEFAULTS.lumaFallback;
+}
+
 const data = {
-  luma: values.luma ?? DEFAULTS.luma,
+  luma: await resolveLuma(),
   dateLabel: values.date ?? DEFAULTS.date,
   timeLabel: values.time ?? DEFAULTS.time,
   venue: values.venue ?? DEFAULTS.venue,

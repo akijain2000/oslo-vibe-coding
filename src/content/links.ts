@@ -1,7 +1,16 @@
 // Single source of truth for every outbound link + community channel.
 
+import { upcomingEvent } from "./events";
+
+// Every RSVP surface tracks the next upcoming session automatically: add the
+// next event to events.ts and every Luma link on the site follows at the next
+// build (the daily brief publish rebuilds the site, so rollover after a session
+// passes happens within a day). Falls back to the Luma profile — which lists
+// all sessions — when nothing is scheduled.
+const LUMA_PROFILE = "https://luma.com/user/akijain2000";
+
 export const links = {
-  luma: "https://luma.com/izommzs4",
+  luma: upcomingEvent?.rsvpUrl ?? LUMA_PROFILE,
   whatsapp: "https://chat.whatsapp.com/JiCEzUuSJwBCuvYbk8E3IG",
   linkedinCompany: "https://www.linkedin.com/company/vibesoslo/",
   github: "https://github.com/akijain2000",
