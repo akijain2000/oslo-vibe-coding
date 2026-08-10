@@ -9,6 +9,13 @@ export type ProseBlock = {
   pullquote?: string;
   bullets?: string[];
   links?: { label: string; url: string }[];
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    width: number;
+    height: number;
+  };
 };
 
 export type Article = {
@@ -36,10 +43,117 @@ export type Article = {
   keywords?: string[];
   // Real session photos, rendered as a gallery near the top of the article.
   photos?: { src: string; alt: string }[];
+  photoCaption?: string;
   sections: ProseBlock[];
 };
 
 export const articles: Article[] = [
+  {
+    slug: "spec-driven-development-in-the-ai-age",
+    datePublished: "2026-08-05",
+    title: "Spec-driven development: write the plan before the code",
+    dek: "At our 5 August session, we explored a simple shift for building with AI: decide what the software must do, write those decisions down, and only then ask the agent to build it.",
+    author: "Harsh Trivedi",
+    deckPages: 15,
+    readingTimeMin: 6,
+    takeaway:
+      "When AI can write code quickly, the valuable work is deciding what the software should do—and how you will prove that it works.",
+    sourceUrl: "/presentations/spec-driven-development.html",
+    kicker: "session recap",
+    sourceLabel: "Open the 15-slide session deck",
+    about: "Spec-driven development for AI-assisted software projects",
+    keywords: [
+      "spec-driven development",
+      "AI coding",
+      "acceptance criteria",
+      "vibe coding",
+      "GitHub Spec Kit",
+    ],
+    photos: [
+      {
+        src: "/sessions/spec-driven-session-2026-08-05.jpg",
+        alt: "Seven people who attended the Oslo Vibe Coding spec-driven development session standing together outside Spaces Stortorvet",
+      },
+    ],
+    photoCaption: "The group after our 5 August session at Spaces Stortorvet, Oslo.",
+    sections: [
+      {
+        heading: "Why talk about specifications now?",
+        paragraphs: [
+          "AI can turn a short prompt into working code in minutes. That is wonderful for experiments. It can also make it easy to build the wrong thing very quickly.",
+          "The question for the session was: if implementation is becoming abundant, where should our attention go? Our answer was the specification—the small, shared agreement that says who the software is for, what it must do, what it must not do, and how we will know it is finished.",
+        ],
+        pullquote: "Fast code is useful. Clear intent is what keeps fast code moving in the right direction.",
+      },
+      {
+        heading: "A spec is not a giant document",
+        paragraphs: [
+          "For a small project, a useful specification can be five clear answers. It should be understandable by the person with the idea, the AI agent doing the work, and the person checking the result.",
+        ],
+        bullets: [
+          "Who has the problem?",
+          "What outcome do they need?",
+          "What must the system do?",
+          "What must it never do?",
+          "How will we know it works?",
+        ],
+        pullquote: "Clear enough to build. Specific enough to verify.",
+      },
+      {
+        heading: "Vibe coding and spec-driven development can work together",
+        paragraphs: [
+          "Vibe coding often lets decisions emerge while you are building: prompt, inspect, notice a gap, then prompt again. A spec-driven process moves the important decisions earlier, so they can be reviewed before the agent writes the implementation.",
+          "Both approaches still involve iteration. The difference is where the decisions happen. For a tiny, reversible experiment, a prompt may be enough. When other people, important data, or several connected rules are involved, a lightweight spec saves confusion later.",
+        ],
+      },
+      {
+        heading: "The registration-app demo",
+        paragraphs: [
+          "We began with a vague request: “Build an event registration app.” It sounds clear until you try to build it. How many people can attend? What happens when it is full? Can one email address register twice? What should the visitor see after submitting?",
+          "Before touching the code, we turned those unknowns into four rules. The app would confirm the first 100 guests, start a first-in waitlist after that, block duplicate email addresses, and show the result immediately. The code had not changed yet, but the task had become buildable and reviewable.",
+        ],
+        bullets: [
+          "Capacity: stop at 100 confirmed guests.",
+          "Overflow: start a first-in waitlist.",
+          "Identity: block duplicate email addresses.",
+          "Feedback: show the registration status immediately.",
+        ],
+      },
+      {
+        heading: "Then we gave the spec one ridiculous rule",
+        paragraphs: [
+          "For the fun part of the demo, we added a deliberately silly requirement: if somebody entered a Yahoo email address, the form should reply, “You are a boomer.” The AI implemented it exactly, and the room immediately saw the lesson.",
+          "An agent does not know which product decisions are sensible, kind, or useful. It follows the decisions we make explicit. The Yahoo rule was a joke for the workshop—not something we would ship—but it made the responsibility impossible to miss: a precise spec can still describe a bad idea.",
+        ],
+        image: {
+          src: "/sessions/yahoo-spec-demo.png",
+          alt: "Workshop registration form showing a playful warning after a Yahoo email address is entered",
+          caption: "The intentionally silly Yahoo rule from the live demo. Clear specifications make decisions visible—even questionable ones.",
+          width: 1472,
+          height: 1086,
+        },
+      },
+      {
+        heading: "Make ‘done’ observable",
+        paragraphs: [
+          "The last step is to turn each important rule into something the agent can check. For the capacity rule, the acceptance criterion was simple: given that 100 people are confirmed, when one more person registers, then that person joins the waitlist.",
+          "That small given–when–then statement connects the idea to a test. Instead of deciding that the app looks finished, we can show evidence that the promised behaviour actually works.",
+        ],
+        pullquote: "If “done” is observable, the agent can verify it.",
+      },
+      {
+        heading: "Match the spec to the cost of being wrong",
+        paragraphs: [
+          "Not every idea needs a formal process. A tiny experiment with no important data can begin with a prompt. A shared feature deserves a lightweight spec. Payments, privacy, security, and irreversible actions need detailed rules, tests, and explicit human approval.",
+          "The practical habit is to write five lines before your next meaningful AI build: the problem, the user, the outcome, the constraints, and the evidence of done. That is enough to move from a plausible answer toward a shared engineering decision.",
+        ],
+        links: [
+          { label: "Open the session deck", url: "/presentations/spec-driven-development.html" },
+          { label: "Explore GitHub Spec Kit", url: "https://github.com/github/spec-kit" },
+        ],
+      },
+    ],
+  },
   {
     slug: "loop-engineering-from-prompts-to-goal",
     datePublished: "2026-07-09",

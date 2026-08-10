@@ -26,6 +26,7 @@ const COLS_EN: Col[] = [
       { label: "Resources", href: "/resources", external: false },
       { label: "Start here", href: "/start", external: false },
       { label: "Frontier Systems", href: "/frontier", external: false },
+      { label: "Presentations", href: "/presentations", external: false },
       { label: "Community", href: "/community", external: false },
       { label: "FAQ", href: "/faq", external: false },
     ],

@@ -95,6 +95,7 @@ export function SiteJsonLd() {
 // Event — emitted on the home page for the next session. Helps it show up
 // as a rich result and in event listings.
 export function EventJsonLd({ event }: { event: EventItem }) {
+  const eventUrl = `${SITE_URL}/events/${event.slug}`;
   return (
     <Ld
       data={{
@@ -103,25 +104,32 @@ export function EventJsonLd({ event }: { event: EventItem }) {
         name: event.title,
         startDate: event.start,
         endDate: event.end,
-        eventStatus: "https://schema.org/EventScheduled",
+        eventStatus:
+          event.status === "past"
+            ? "https://schema.org/EventCompleted"
+            : "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         isAccessibleForFree: true,
         description: event.blurb,
         image: OG_IMAGE,
-        url: event.rsvpUrl ?? SITE_URL,
+        url: eventUrl,
         location: {
           "@type": "Place",
           name: event.venue,
           address: { "@type": "PostalAddress", streetAddress: event.address, addressLocality: event.city, addressCountry: "NO" },
         },
         organizer: { "@id": `${SITE_URL}/#org` },
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "NOK",
-          availability: "https://schema.org/InStock",
-          url: event.rsvpUrl ?? SITE_URL,
-        },
+        ...(event.status === "upcoming"
+          ? {
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "NOK",
+                availability: "https://schema.org/InStock",
+                url: event.rsvpUrl ?? eventUrl,
+              },
+            }
+          : {}),
       }}
     />
   );
@@ -130,6 +138,9 @@ export function EventJsonLd({ event }: { event: EventItem }) {
 // Article — emitted on each /articles/[slug] page for rich results.
 export function ArticleJsonLd({ article }: { article: Article }) {
   const url = `${SITE_URL}/articles/${article.slug}`;
+  const image = article.photos?.[0]
+    ? { "@type": "ImageObject", url: `${SITE_URL}${article.photos[0].src}` }
+    : OG_IMAGE;
   return (
     <Ld
       data={{
@@ -141,7 +152,7 @@ export function ArticleJsonLd({ article }: { article: Article }) {
         datePublished: article.datePublished,
         publisher: { "@id": `${SITE_URL}/#org` },
         mainEntityOfPage: url,
-        image: OG_IMAGE,
+        image,
         inLanguage: "en",
         timeRequired: `PT${article.readingTimeMin}M`,
         ...(article.about ? { about: article.about } : {}),

@@ -108,6 +108,16 @@ export default function EventsPage() {
                         {e.recapLabel ?? "Read what happened at this session"}<span aria-hidden>→</span>
                       </Link>
                     )}
+                    {e.presentationHref && (
+                      <a
+                        href={e.presentationHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-ink hover:underline"
+                      >
+                        {e.presentationLabel ?? "Open the session presentation"}<span aria-hidden>↗</span>
+                      </a>
+                    )}
                   </div>
                 </article>
               );

@@ -18,13 +18,16 @@ export type EventItem = {
   recap?: string; // shown for past events
   recapHref?: string; // optional longer write-up for a past session
   recapLabel?: string;
+  presentationHref?: string;
+  presentationLabel?: string;
+  presentationTitle?: string;
 };
 
 export const events: EventItem[] = [
   {
     slug: "drop-in-stortorvet-2026-08-05",
     title: "Vibe Coding Drop-In",
-    status: "upcoming",
+    status: "past",
     start: "2026-08-05T16:00:00+02:00",
     end: "2026-08-05T18:00:00+02:00",
     dateLabel: "Wednesday 5 August 2026",
@@ -35,6 +38,13 @@ export const events: EventItem[] = [
     rsvpUrl: "https://luma.com/izommzs4",
     blurb:
       "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, ask the question you've been sitting on. Total beginners genuinely welcome. Same time, same place, every Wednesday.",
+    recap:
+      "We explored spec-driven development: how a clear specification turns intent into a shared contract before implementation begins.",
+    recapHref: "/articles/spec-driven-development-in-the-ai-age",
+    recapLabel: "Read what happened at this session",
+    presentationHref: "/presentations/spec-driven-development.html",
+    presentationLabel: "Open the session presentation",
+    presentationTitle: "Spec-Driven Development in the AI Age",
   },
   {
     slug: "drop-in-stortorvet-2026-08-12",
