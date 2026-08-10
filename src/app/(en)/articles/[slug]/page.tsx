@@ -35,6 +35,9 @@ export async function generateMetadata({
       description: article.dek,
       url: `${SITE_URL}/articles/${article.slug}`,
       authors: [article.author],
+      ...(article.photos?.[0]
+        ? { images: [{ url: `${SITE_URL}${article.photos[0].src}`, alt: article.photos[0].alt }] }
+        : {}),
     },
   };
 }
@@ -98,24 +101,30 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         {article.photos && article.photos.length > 0 && (
           <figure className="mt-10">
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className={`grid gap-3 ${article.photos.length > 1 ? "sm:grid-cols-2" : ""}`}>
               {article.photos.map((p) => (
                 <div
                   key={p.src}
-                  className="relative aspect-[3/4] overflow-hidden rounded-card border border-line bg-mist"
+                  className={`relative overflow-hidden rounded-card border border-line bg-mist ${
+                    article.photos!.length > 1 ? "aspect-[3/4]" : "aspect-[16/9]"
+                  }`}
                 >
                   <Image
                     src={p.src}
                     alt={p.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, 400px"
+                    sizes={
+                      article.photos!.length > 1
+                        ? "(max-width: 640px) 100vw, 400px"
+                        : "(max-width: 768px) 100vw, 768px"
+                    }
                     className="object-cover"
                   />
                 </div>
               ))}
             </div>
             <figcaption className="mt-3 text-center text-sm text-ink-faint">
-              A free drop-in at Spaces Stortorvet, Oslo.
+              {article.photoCaption ?? "A free drop-in at Spaces Stortorvet, Oslo."}
             </figcaption>
           </figure>
         )}

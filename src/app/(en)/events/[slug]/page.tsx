@@ -114,13 +114,33 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
           </div>
         )}
 
+        {e.presentationHref && (
+          <div className="mt-8 rounded-card border border-ember/30 bg-ember/[0.06] p-6 sm:p-7">
+            <p className="font-mono text-xs uppercase tracking-wider text-ember-ink">Session material</p>
+            <h2 className="mt-2 font-display text-xl font-bold tracking-tight">
+              {e.presentationTitle ?? "Session presentation"}
+            </h2>
+            <p className="mt-2 leading-relaxed text-ink-soft">
+              Read the full Session 05 presentation in your browser and use the arrow keys to move through it.
+            </p>
+            <a
+              href={e.presentationHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ember-ink hover:underline"
+            >
+              {e.presentationLabel ?? "Open the session presentation"}<span aria-hidden>↗</span>
+            </a>
+          </div>
+        )}
+
         <div className="mt-12 rounded-card bg-night p-8 text-center text-paper sm:p-10">
           <h2 className="font-display text-2xl font-bold tracking-tight">
             {isPast ? "Catch the next one." : "Save your spot."}
           </h2>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href={e.rsvpUrl ?? links.luma}
+              href={isPast ? links.luma : e.rsvpUrl ?? links.luma}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-pill bg-ember px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#ff6f47]"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SparkMark from "./SparkMark";
 
 type Link = { label: string; url: string };
@@ -9,6 +10,13 @@ export type ProseSectionData = {
   pullquote?: string;
   bullets?: string[];
   links?: Link[];
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    width: number;
+    height: number;
+  };
 };
 
 export default function Prose({ section }: { section: ProseSectionData }) {
@@ -41,6 +49,26 @@ export default function Prose({ section }: { section: ProseSectionData }) {
             </li>
           ))}
         </ul>
+      ) : null}
+
+      {section.image ? (
+        <figure className="mt-8">
+          <div className="overflow-hidden rounded-card border border-line bg-mist">
+            <Image
+              src={section.image.src}
+              alt={section.image.alt}
+              width={section.image.width}
+              height={section.image.height}
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="h-auto w-full"
+            />
+          </div>
+          {section.image.caption ? (
+            <figcaption className="mt-3 text-center text-sm leading-relaxed text-ink-faint">
+              {section.image.caption}
+            </figcaption>
+          ) : null}
+        </figure>
       ) : null}
 
       {section.links && section.links.length > 0 ? (
