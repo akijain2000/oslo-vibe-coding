@@ -36,6 +36,208 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "claude-now-hides-a-signature-in-everything-it-writes",
+  "status": "published",
+  "datePublished": "2026-08-16",
+  "title": "Claude now hides an invisible signature in everything it writes",
+  "dek": "Anthropic is marking Claude's output so it can be identified as AI-generated. On Friday it published the details of how. Some users are cancelling their subscriptions over it. In the same week, Google made its own visible watermark optional.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "A text watermark is not a lie detector. It can show that a passage came out of Claude, and it cannot show that a human did not do the thinking. Most of the anger this week is about the second thing, which the technology does not claim to do.",
+  "sourceUrl": "https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/",
+  "sourceLabel": "Read TechCrunch's report on the FAQ",
+  "keywords": [
+    "Anthropic",
+    "Claude",
+    "watermarking",
+    "SynthID",
+    "C2PA",
+    "EU AI Act",
+    "AI detection"
+  ],
+  "heroImage": {
+    "src": "/brief/claude-now-hides-a-signature-in-everything-it-writes.png",
+    "alt": "A five step diagram showing how a text watermark works, from the model reaching a word, to two synonyms fitting equally well, to a secret rule tipping the choice, to the bias repeating across the text, to a key reading the pattern",
+    "credit": "Figures: Anthropic, Google DeepMind",
+    "creditUrl": "https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "On Tuesday 11 August, Anthropic said it will watermark the text its Claude models produce. Every model released after 2 August carries it automatically, and the company said it plans to extend it to older models too.",
+        "A watermark here is not a logo stamped on the corner of a picture. It is an invisible pattern woven into the words themselves, which anyone holding the right key can test for later. It survives copy and paste. It survives some editing.",
+        "The reaction was not warm. Users objected that their own work would now be flagged as machine-made, and Business Insider reported that dozens of people on X said they were cancelling their subscriptions over it.",
+        "On Friday 14 August, Anthropic published a longer explanation answering the obvious questions. That post is the reason this is worth a brief now rather than last week: until Friday, most of what people were angry about was unspecified."
+      ]
+    },
+    {
+      "heading": "How you hide a signature inside ordinary words",
+      "paragraphs": [
+        "Anthropic is using a method Google DeepMind published, called SynthID-Text. The idea is easier than it sounds.",
+        "A language model does not pick the single correct next word. It picks from a spread of candidates, and very often several of them are equally fine. \"Big\", \"large\" and \"sizeable\" can all finish the same sentence without anyone noticing which one was chosen.",
+        "The watermark lives in exactly those moments. At each low-stakes fork, a secret rule nudges the model toward one branch rather than the other. Any single choice looks like nothing. Across a few hundred words, the accumulated pattern of choices is a fingerprint, and someone with the key can measure it.",
+        "This is why it survives copy and paste. The mark is not attached to the file. It is the words."
+      ],
+      "pullquote": "Any single word choice looks like nothing. Across a few hundred words, the pattern is a fingerprint."
+    },
+    {
+      "heading": "What it covers, and what it does not",
+      "paragraphs": [
+        "Prose gets the full treatment. Code barely gets any: Anthropic says the watermark can only sit in arbitrary choices such as variable names and comments, never in the parts that decide what the program does. That limit is not a policy decision, it is arithmetic. There is no synonym for a semicolon.",
+        "Editing degrades it gradually rather than switching it off. Anthropic's own description is that light editing preserves the mark, and that a complete rewrite in which every word is replaced will remove it. Between those two poles the company has not published a threshold, which is the single biggest open question in the whole story.",
+        "Files are handled separately, using C2PA, an open standard that attaches signed provenance metadata saying where a file came from. That is a different mechanism with a different weakness: metadata can be stripped, whereas the text mark cannot be stripped without rewriting the text.",
+        "One line from Anthropic's FAQ is worth quoting because it addresses the fear most people had: \"To a reader, a watermarked response is indistinguishable from an unwatermarked one.\" The company also states plainly that watermarking does not affect output quality. Both claims are the company's own, and neither has been independently tested yet."
+      ]
+    },
+    {
+      "heading": "Why now",
+      "paragraphs": [
+        "This is not a spontaneous attack of conscience. The EU AI Act's Transparency Code took effect on 2 August, and it requires AI companies to mark generated or edited content in a way other machines can read.",
+        "That timing explains the otherwise odd detail that the rule applies to models released after 2 August. Anthropic is not choosing a launch date, it is complying with one.",
+        "It is worth being precise about the target. The regulation is aimed at a machine-readable provenance signal at internet scale, so platforms and search engines can tell what was generated. It was not written to help a manager work out whether an employee wrote their own memo. That gap between what the rule is for and what people fear it will be used for is where all of this week's argument lives."
+      ]
+    },
+    {
+      "heading": "The complaint, taken seriously",
+      "paragraphs": [
+        "The loudest objection has been that the watermark will expose people using Claude at work or in coursework. It is easy to be smug about that. It is also worth answering properly, because two very different situations are being folded into one.",
+        "In the first, somebody submits work as their own that a machine wrote end to end while they read their phone. A detectable mark is inconvenient to them in the way a receipt is inconvenient to a shoplifter, and that is roughly the intended effect.",
+        "In the second, somebody drafts, argues with the model, rewrites, restructures and ships something that is genuinely theirs, with machine text still in the plumbing. The watermark cannot tell those two cases apart. It reports one fact, which is that these words passed through Claude. It says nothing about who did the thinking.",
+        "That is the real risk, and it is not a technical failure. It is that a signal meaning \"this passed through a model\" will be read by employers, universities and clients as if it meant \"this person did not do the work\". The tooling will be accurate and the conclusion drawn from it will often be wrong."
+      ]
+    },
+    {
+      "heading": "Google spent the same week going the other way",
+      "paragraphs": [
+        "On Friday 14 August, Google announced that Gemini users can now switch off the visible watermark on AI-generated images, video and music. The setting is called Media Watermark, it lives in Gemini's settings, and Josh Woodward, Google's VP for Gemini, said it covers the Nano Banana, Omni and Lyria models, in Gemini and in the video editor Flow, with Search to follow.",
+        "The two announcements look contradictory and are not. Google removed the visible badge and kept the invisible one: SynthID and the C2PA metadata stay in the file either way. What changed is whether a viewer sees a label, not whether the content can be identified.",
+        "Read together, the week points somewhere specific. Visible labelling, the thing an ordinary person can actually see, is becoming optional because it makes content awkward to use professionally. Invisible labelling, which only works if you have the key and the tooling, is becoming mandatory. Provenance is being built for institutions rather than for readers."
+      ],
+      "pullquote": "Visible labels are becoming optional. Invisible ones are becoming mandatory."
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. Google has watermarked AI images with SynthID since 2023, and C2PA provenance has been shipping in cameras and editing software for a few years. Marking machine-made media is established practice.",
+        "Text is the genuinely new part, and it is the hardest case. An image has millions of pixels to hide a signal in and nobody edits them by hand. A paragraph has a few hundred words, a person rewrites half of them, and the signal has to survive that. It is a much thinner channel.",
+        "The other new part is that this is a frontier lab marking its own flagship product by default, without an opt-out, in response to a law. That is a different posture from a research demo."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "The detection API. Anthropic says it plans to release one, with no announced timeline or pricing. Who gets a key is the entire story. If it is broadly available, expect a detection industry and expect false accusations. If it stays narrow, the watermark mostly serves platforms and regulators and barely touches the classroom fear driving this week's anger.",
+        "Published false-positive rates. Every previous generation of AI-text detector was wrong often enough to ruin people, and the ones that got sold anyway did real damage to students. A watermark is a fundamentally better mechanism than a guessing detector, because it looks for a signal it put there itself. That is a reason for cautious optimism, not for taking the accuracy on faith before anyone outside the company has measured it.",
+        "The editing threshold. Anthropic has said light edits keep the mark and total rewrites destroy it. Somewhere in between is a line, and if it turns out that a normal editing pass removes the watermark, the scheme mostly catches people who did not bother.",
+        "Whether OpenAI and Google follow for text. The same EU code applies to them. If they do, machine-marked text becomes the default state of written English rather than one company's policy, and this stops being a story about Claude."
+      ],
+      "links": [
+        { "label": "TechCrunch: Anthropic explains how the watermarks work (15 Aug)", "url": "https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/" },
+        { "label": "TechCrunch: the original announcement (11 Aug)", "url": "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/" },
+        { "label": "TechCrunch: Google makes its visible watermark optional (14 Aug)", "url": "https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/" }
+      ]
+    }
+  ]
+},
+{
+  "slug": "why-ai-companies-want-to-watch-you-use-a-computer",
+  "status": "published",
+  "datePublished": "2026-08-16",
+  "title": "Why AI companies want to watch you use a computer",
+  "dek": "Meta put software on its US employees' work laptops that records keystrokes, mouse movements and screenshots. Fifteen hundred workers signed a petition against it. The reason it happened at all is that the data AI needs next was never written down anywhere.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "The internet taught AI to write. Nothing on the internet teaches it to use a computer the way an office worker does, because nobody ever recorded that. The only places holding a large, legally clean supply of it are employers, watching their own staff.",
+  "sourceUrl": "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/",
+  "sourceLabel": "Read TechCrunch's report",
+  "keywords": [
+    "Meta",
+    "training data",
+    "AI agents",
+    "computer use",
+    "employee monitoring",
+    "Model Capability Initiative",
+    "privacy"
+  ],
+  "heroImage": {
+    "src": "/brief/why-ai-companies-want-to-watch-you-use-a-computer.png",
+    "alt": "A comparison of the training data already scraped from the internet, such as books, websites, public code and video subtitles, against the data still missing, such as where the cursor moves, which menu you open and how you recover from an error",
+    "credit": "Figures: Reuters, CNBC, SemiAnalysis",
+    "creditUrl": "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "In April, Reuters reported that Meta had begun installing software on the work computers of its US employees that records what they do: keystrokes, mouse movements, clicks, and periodic screenshots, across a designated list of work applications and websites. The programme is called the Model Capability Initiative, MCI internally.",
+        "The purpose was stated openly. A Meta spokesperson put it this way: if the company is building agents that help people complete everyday tasks on computers, its models need real examples of how people actually use them, things like mouse movements, clicking buttons and navigating dropdown menus.",
+        "Employees were not enthusiastic. CNBC reported staff describing the project as dystopian in internal messages, with concerns that the capture could sweep up passwords, unreleased product details, and personal information about people's immigration status, health or families. Andrew Bosworth, Meta's chief technology officer, was blunt in the April announcement: there is no option to opt out of this on your work provided laptop.",
+        "By June, more than 1,500 workers had signed a petition, and Meta gave ground. Staff can now pause the capture for up to 30 minutes at a time, after which it resumes on its own, and a limited set of employees can request a full exemption. The programme was not cancelled."
+      ]
+    },
+    {
+      "heading": "The bit that is actually interesting",
+      "paragraphs": [
+        "The surveillance angle writes itself, and it is worth understanding why a company would take that reputational hit on purpose rather than assuming somebody in a windowless room simply enjoys watching people.",
+        "Every large model you have used was trained mostly on text that other people had already published. Books, articles, forums, public code, subtitles. That worked spectacularly, and it is close to spent. Researchers have been forecasting the exhaustion of high-quality public text for years, with estimates for the crossover clustering somewhere between now and the early 2030s, which is why the labs have spent the past two years signing licensing deals for the corners that were never scraped.",
+        "Meanwhile the product everyone is racing toward changed. The goal is no longer a chatbot that answers a question. It is an agent that opens the expense system, finds the right invoice, notices the field is greyed out, backs up, tries the other menu, and finishes the task.",
+        "Nothing in the entire written internet teaches that. Documentation describes what software is supposed to do. It never records what a person actually does at 4pm when the button is missing. That gap is the whole story."
+      ],
+      "pullquote": "Documentation says what software is supposed to do. It never records what a person actually does when the button is missing."
+    },
+    {
+      "heading": "The analogy",
+      "paragraphs": [
+        "Imagine you want to teach someone to cook, and all you have is every cookbook ever written.",
+        "They will get impressively far. They will know ingredients, techniques, temperatures, and the theory of why a sauce splits. Ask them to explain hollandaise and they will do it beautifully.",
+        "Then put them in a kitchen. They do not know how hard to press the knife. They do not know that this particular oven runs hot. They have never seen anyone recover a sauce that has started to break, because no cookbook contains the sentence \"and here is what I did when it went wrong\". Cookbooks record the intended path. The kitchen is full of the other paths.",
+        "Text data is the cookbook. Screen recordings are the kitchen. The mouse drifting to the wrong menu and coming back is not noise in that data, it is the most valuable part, because recovering from a mistake is precisely what current agents are worst at."
+      ]
+    },
+    {
+      "heading": "Why employees, of all people",
+      "paragraphs": [
+        "There are two other ways to get this data, and both are worse.",
+        "Pay strangers to record themselves. This exists, and academic datasets of human computer-use recordings have been assembled that way, running to tens of hours of video and millions of annotations. Compared to the scale on which models are trained, that is a rounding error, and paying for it at internet scale would be enormously expensive.",
+        "Generate it synthetically, by having models drive software and learn from their own attempts. Also real, also being done, and it has a known failure: the model practises against its own idea of how software behaves, which is smooth and consistent in a way that actual enterprise software has never been.",
+        "That leaves the third option, which is that the data walks into your building every morning and is already using the exact applications you care about, on machines you own, under a contract you wrote. It is not the cheapest option because it is technically superior. It is the cheapest option because the consent question has an answer you can put in an employment policy."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The monitoring is not. Call centres have recorded every customer conversation for decades. Delivery fleets track speed, braking and idle time. Warehouse systems time individual picks. Being measured minutely at work is an old and thoroughly normalised thing, and most people who are subject to it are not paid Meta salaries.",
+        "What is new is the purpose. Traditional monitoring is aimed at the worker: are you productive, did you follow the script, why did you stop. The output is a performance review.",
+        "MCI is not aimed at the worker at all. It is aimed at the work, harvested as a training set. The output is a model that can do the task. That is a genuinely different arrangement, and the ordinary vocabulary of workplace privacy does not quite cover it. The objection is not only \"you are watching me\", it is \"you are watching me in order to write down how I do this\".",
+        "Meta's employees noticed. So did the internal critics who reportedly put up flyers calling the programme an employee data extraction factory. Whether that framing is fair depends on assumptions about automation that nobody can currently settle, but it is not an irrational thing to have noticed."
+      ]
+    },
+    {
+      "heading": "What the climbdown actually changed",
+      "paragraphs": [
+        "It is worth being precise, because \"Meta backs down\" was the headline and it overstates things.",
+        "What changed: workers got a pause button, good for 30 minutes, that reverts on its own. A narrow exemption process appeared for people with specific concerns. Stephane Kasriel's June memo said the company remained confident in the privacy protections it launched with, which had gone through several layers of risk review, but had heard concerns about personal data on work devices, battery life, and wanting more control over when capturing happens.",
+        "What did not change: the programme. Capture remains the default state. The pause is a timer, not a setting, and the burden sits with the employee to keep pressing it.",
+        "That is a real concession and a small one. The interesting thing is the shape of it. Meta conceded control over timing, which costs almost nothing in aggregate data, and conceded nothing on whether the collection happens, which is the part that matters to the training set."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Whether anyone else does it publicly. Meta took the entire reputational hit for this in April. If the data turns out to be as valuable as the theory says, the pattern to watch is not more announcements, it is the same practice appearing quietly in updated acceptable-use policies where no reporter is reading.",
+        "Whether it works. This is genuinely unresolved. It is plausible that watching a few tens of thousands of knowledge workers produces exactly the demonstrations agents are missing. It is also plausible that Meta employees using Meta's internal tools generalise poorly to everyone else's software, and that the whole thing is an expensive, unpopular way to learn about Metamate.",
+        "The consent question, which is the one that will outlive this story. If demonstrations of ordinary office work become a genuinely valuable commodity, then the people producing them have made something of value at work, and there is currently no mechanism by which that fact means anything to them. Employment contracts already assign the output of your labour to your employer. Nobody wrote them imagining that the recording of how you work is itself the output.",
+        "For most people reading this, the practical takeaway is smaller and more immediate. Assume that a work laptop is a work laptop, and that the number of companies with a business reason to record what happens on it just went up by one category."
+      ],
+      "links": [
+        { "label": "TechCrunch: Meta will record employees' keystrokes (21 Apr)", "url": "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/" },
+        { "label": "The Next Web: the 30-minute pause and the 1,500-signature petition (4 Jun)", "url": "https://thenextweb.com/news/meta-will-let-employees-stop-being-tracked-for-30-minutes-at-a-time" }
+      ]
+    }
+  ]
+},
+{
   "slug": "openai-just-called-one-of-its-own-models-a-critical-cyber-risk",
   "status": "published",
   "datePublished": "2026-08-09",
