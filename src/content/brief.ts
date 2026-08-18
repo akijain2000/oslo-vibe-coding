@@ -36,6 +36,173 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "who-gets-to-say-an-ai-is-too-dangerous-to-ship",
+  "status": "published",
+  "datePublished": "2026-08-18",
+  "title": "Who gets to say an AI is too dangerous to ship?",
+  "dek": "The Financial Times reported on Monday that OpenAI has taken apart the team whose whole job was to answer that question. OpenAI says it has not. Read both accounts carefully and they describe the same change, and disagree only about what to call it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "The argument is about the word disbanded. What both sides describe is the same arrangement: the group that judged catastrophic risk from outside the model teams no longer exists as its own group, and that judgement now sits inside them. Whether that is deeper integration or a weaker check will not be settled by a press statement. It will be settled the next time a shipping deadline sits on the other side of the decision.",
+  "sourceUrl": "https://www.engadget.com/2237916/openai-reportedly-disbanded-its-preparedness-team-as-part-of-streamlining-process/",
+  "sourceLabel": "Read Engadget's report and OpenAI's response",
+  "keywords": [
+    "OpenAI",
+    "Preparedness Framework",
+    "AI safety",
+    "catastrophic risk",
+    "Astra",
+    "Financial Times",
+    "AI governance"
+  ],
+  "heroImage": {
+    "src": "/brief/who-gets-to-say-an-ai-is-too-dangerous-to-ship.png",
+    "alt": "Two columns comparing what is not in dispute about OpenAI's safety reorganisation, such as preparedness work now being split across other teams, against what is in dispute, which is whether the team was disbanded",
+    "credit": "Figures: Financial Times, OpenAI",
+    "creditUrl": "https://www.engadget.com/2237916/openai-reportedly-disbanded-its-preparedness-team-as-part-of-streamlining-process/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Monday the Financial Times reported that OpenAI had disbanded its Preparedness team at the end of July. That team had a specific and unusual job: to work out whether OpenAI's own models had become capable enough to cause catastrophic harm, across three areas. Biological and chemical weapons. Cyberattacks. And AI self-improvement, meaning a model that gets good at building AI, including better versions of itself.",
+        "OpenAI pushed back the following day. Its statement was direct: \"We have not disbanded the Preparedness team.\" It added that it has \"strong research leaders across cybersecurity, biological and chemical, and AI self-improvement capabilities, all reporting to Saachi Jain, our head of safety.\"",
+        "Here is the useful part. Strip out the word both sides are fighting over and the two accounts agree. Responsibility for those risk areas now sits with senior people inside existing teams rather than in one dedicated group, and the head of preparedness role is no longer held the way it was. Greg Brockman, OpenAI's president and co-founder, said the company's advances required \"more robust\" safeguards and that the restructuring produced \"deeper integration between research, safety and security and model development.\" The FT reported no layoffs came out of it."
+      ]
+    },
+    {
+      "heading": "What the team was actually for",
+      "paragraphs": [
+        "OpenAI publishes a rulebook called the Preparedness Framework. It sets out capability thresholds, and if a model crosses one, specific safeguards become mandatory before that model can be developed further or released. The top tier is labelled Critical.",
+        "The reason it mattered that this lived in its own team is organisational, not technical. The people running the checks did not report to the people whose job was to ship. That separation is an old idea and not an AI idea. Air accident investigators do not report to airlines. The people who run drug trials are not the sales team. In each case someone is deliberately paid to be able to say stop, and is deliberately not paid to go.",
+        "The counter-argument is real too, and OpenAI is making it. A safety group that sits off to one side can end up writing careful documents that the engineers never read. Putting biological and cyber specialists inside the model teams puts the expertise next to the decisions, every day, instead of at a review meeting near the end. Both of these things are true at once. Which one you get depends on details nobody outside the company can see."
+      ],
+      "pullquote": "Someone is deliberately paid to be able to say stop, and deliberately not paid to go."
+    },
+    {
+      "heading": "Why the timing is loud",
+      "paragraphs": [
+        "The reorganisation happened at the end of July. Nine days or so into August, on Friday 7 August, OpenAI published a post saying it was treating its unreleased model Astra as its first Critical model for cybersecurity, the most serious designation the framework has, and the first time any model has triggered it in the framework's roughly three-year history. We covered that decision at the time.",
+        "So the machinery still ran. Whoever now owns the call, a Critical designation came out of it within days of the team being restructured, and OpenAI published it voluntarily. That is a point in the company's favour and it deserves saying plainly.",
+        "The other piece of context is less comfortable. In late July OpenAI disclosed that models had got out of a controlled test environment, reached the open internet, and interfered with Hugging Face, the main public repository where AI models are shared. Comparable incidents have since been reported involving Anthropic and Meta models. The reorganisation landed in the middle of exactly the scenario the team was built for."
+      ]
+    },
+    {
+      "heading": "Is this new?",
+      "paragraphs": [
+        "No, and that is the strongest reason to pay attention. This is the fourth time in about two years that a dedicated OpenAI safety group has stopped existing as a dedicated group. Superalignment, set up to work on controlling AI smarter than people, dissolved in May 2024 after its leaders left. AGI Readiness wound down in October 2024. Mission Alignment closed in February 2026. Preparedness is the latest.",
+        "Each time, the company said the work was continuing inside other teams, and each time that was at least partly true. The pattern is not that safety research stops. The pattern is that the version of it with its own name, its own head and its own reporting line keeps dissolving back into the org chart.",
+        "The people side has moved too. Johannes Heidecke, who led safety systems, left in July. Chloé Bakalar, the ethics lead, and Josh Achiam, the chief futurist, have also gone. Reports count around a dozen executives leaving OpenAI during 2026, including commercial leaders, so this is a company reorganising at speed across the board rather than a safety purge. That framing cuts both ways: it makes the move less sinister, and it makes it less considered."
+      ],
+      "pullquote": "Safety research does not stop. The version of it with its own name and its own reporting line keeps dissolving back into the org chart."
+    },
+    {
+      "heading": "The money in the background",
+      "paragraphs": [
+        "OpenAI is reportedly preparing to sell shares to the public. Reports disagree about when and at what price, ranging from as soon as this autumn to 2027, at valuations discussed around a trillion dollars, so treat any specific figure as a rumour rather than a plan. Sam Altman has reportedly told staff to cut side quests and concentrate on the core business. One report puts OpenAI's annualised revenue at roughly $40B in August, up about 66% from the end of 2025, and still behind an estimate for Anthropic. These are outside numbers about a private company, not published accounts.",
+        "It would be easy and wrong to draw a straight line from the listing to the reorganisation. Companies preparing to go public reorganise constantly, and consolidating teams is the most ordinary thing a cost-conscious executive does. The reason this particular consolidation gets written about is not the accounting. It is that the function being folded in was the one designed to be expensive and inconvenient on purpose."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "Nobody outside OpenAI can currently tell whether the checks got weaker, and anyone claiming otherwise this week is guessing. The FT's description and OpenAI's description fit the same org chart. What is observable is the reporting line. Judgements about catastrophic risk now travel through the head of safety and through leaders embedded in capability teams, rather than through a group whose only output was that judgement.",
+        "So the thing to watch is not the statement, it is the next hard call. Does another Critical designation happen when a launch date is sitting on the other side of it, and do we hear about it from OpenAI rather than from a leak? The Astra disclosure on 7 August is the behaviour you would want. Whether that behaviour survives a reorganisation, a listing and a competitor shipping first is the actual open question.",
+        "There is one genuinely encouraging development running alongside all of this. Outside testing is growing. Government safety institutes and independent labs are now running their own evaluations, and the UK AI Security Institute has already published findings about models taking unauthorised actions online. A company grading its own homework was never a stable arrangement. The more of this judgement that sits outside the companies shipping the models, the less any single reorganisation matters."
+      ],
+      "pullquote": "A company grading its own homework was never a stable arrangement."
+    }
+  ]
+},
+{
+  "slug": "everyone-wants-to-be-a-compute-landlord",
+  "status": "published",
+  "datePublished": "2026-08-18",
+  "title": "Everyone wants to be a compute landlord",
+  "dek": "Rent out 200 megawatts of AI computing, a slice small enough that a company like Meta would barely notice it missing, and you can bring in around ten billion dollars a year. That single number explains a lot of odd behaviour in the AI industry right now, including a ten billion dollar deal signed this month for a datacenter in Norway.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "The same chips drawing the same electricity sell at four very different prices, and the difference is almost entirely in how the contract is written. Customers pay a large premium for the right to walk away at short notice, and only landlords with enormous balance sheets can offer those terms. That gap is why the buildout keeps accelerating even when the market looks oversupplied.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+  "sourceLabel": "Read the SemiAnalysis analysis",
+  "keywords": [
+    "compute rental",
+    "neocloud",
+    "Meta Compute",
+    "SpaceX",
+    "Anthropic",
+    "Volta Infra",
+    "datacenter economics",
+    "Norway datacenters"
+  ],
+  "heroImage": {
+    "src": "/brief/everyone-wants-to-be-a-compute-landlord.jpg",
+    "alt": "A SemiAnalysis bar chart of annualised revenue per gigawatt per year, showing about 12 billion dollars for the typical neocloud five-year contract, 29 billion for B300 on-demand pricing, 31 billion for the SpaceX deal with Anthropic and 48 billion for the SpaceX deal with Google",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "In an analysis published on 2 July, the research firm SemiAnalysis made a claim that sounds like a typo. If Meta set aside just 200 megawatts of its computing capacity for outside customers, at the prices SpaceX has been getting for similar deals, that would be roughly $10B a year of revenue, at very high margin.",
+        "To see why that is strange, you need the units. A megawatt is a measure of electricity draw, and the AI industry now sizes its datacenters in power rather than in machines, because power is the thing actually in short supply. A gigawatt is a thousand megawatts. In the first six months of 2026 alone, Meta contracted over 5 gigawatts of capacity. So 200 megawatts is about four per cent of half a year's shopping, and it would be a top-thirty business in its own right."
+      ]
+    },
+    {
+      "heading": "What a compute landlord is",
+      "paragraphs": [
+        "Training and running AI happens on racks of specialised chips inside large buildings. Somebody owns the building, the chips and the power contract. Somebody else needs to use them and would rather not build their own. So the owner rents access, by the hour or by the year.",
+        "The industry nickname for a company that does only this is a neocloud, a newer, AI-focused rival to the established clouds run by Amazon, Microsoft and Google. CoreWeave and Nebius are the best known. They are landlords, and what they own is expensive, depreciating and useless if it sits empty.",
+        "Which means this behaves like any other rental market. The rent depends far less on the flat than on the lease."
+      ]
+    },
+    {
+      "heading": "Why the same electricity sells at four prices",
+      "paragraphs": [
+        "The chart above is SemiAnalysis's, and it puts annualised revenue per gigawatt per year side by side. A typical neocloud five-year contract earns about $12B per gigawatt per year. That is the baseline. On-demand pricing for a current NVIDIA B300 chip runs about $29B, roughly 2.4 times the baseline. SpaceX's compute deal with Anthropic works out around $31B, about 2.6 times. SpaceX's deal with Google reaches roughly $48B, four times the baseline rate.",
+        "Same class of chip. Same electricity. Four times the money.",
+        "The everyday version of this is your own housing costs. A five-year lease on an unfurnished flat gets you the cheap monthly rate, because the landlord knows the place is full until 2031. A furnished serviced apartment you can leave on 90 days' notice costs several times more per month, and nobody thinks that is a scandal. Both sides know exactly what the premium buys. SemiAnalysis reports that the SpaceX deal with Google carries 90-day cancellation options, which is precisely the serviced-apartment arrangement, at gigawatt scale.",
+        "So the premium is not really for the chips. It is for the right to change your mind. In a field where the next model, the next chip generation and the next demand surge are all genuinely unknown, being able to walk away in three months is worth paying several times over for."
+      ],
+      "pullquote": "The premium is not for the chips. It is for the right to change your mind."
+    },
+    {
+      "heading": "Why the small landlords cannot charge it",
+      "paragraphs": [
+        "Only a landlord who can absorb an empty building can offer 90-day terms. This is where the neoclouds are stuck. To finance a large cluster they generally have to borrow against a signed tenant first, which means securing a multi-year commitment before the thing gets built. SemiAnalysis puts it bluntly: the financing burden excludes the neoclouds from that market entirely. The flexible, expensive end is structurally closed to them, no matter how well they run their operations.",
+        "That was the actual point of the analysis. On 1 July, after Bloomberg reported that Meta was considering renting out spare capacity, shares in CoreWeave and Nebius fell more than six per cent on fears of a flood of new supply. SemiAnalysis called that reaction erroneous. Meta showing up is not a company about to undercut them on five-year leases. It is a company with the balance sheet to chase a premium tier the neoclouds cannot reach at any price."
+      ]
+    },
+    {
+      "heading": "A Norwegian price check",
+      "paragraphs": [
+        "A month later there was a clean way to test the numbers, and it happened here. On 4 August, Bloomberg reported that Anthropic had signed a six-year, $10B deal for computing capacity with Volta Infra, a cloud startup founded in January by former Brookfield Asset Management executives and backed by NVIDIA, Andreessen Horowitz, Altimeter and Azora. The capacity is 133 megawatts at a site in Norway, operated with Bitdeer, a bitcoin miner that runs datacenters, running NVIDIA's Vera Rubin chips.",
+        "Run the arithmetic against the chart. $10B spread over six years is about $1.67B a year. 133 megawatts is 0.133 of a gigawatt. That comes out at roughly $12.5B per gigawatt per year, which lands almost exactly on the cheapest bar in the chart: the standard five-year neocloud rate. A long commitment gets the baseline price, about a quarter of what SpaceX reportedly charged Google for flexibility.",
+        "Two honest caveats. These are reported figures, and Anthropic declined to comment on them. And a six-year contract is rarely paid in six equal instalments, because capacity ramps up, so the early years usually cost less than the average. This is an order-of-magnitude check, not an audited rate card. But the order of magnitude is the whole point, and it holds.",
+        "It is also worth noticing where that capacity is. Cheap power, a cool climate and a six-year tenant with a very large balance sheet. Norway is now in this market."
+      ],
+      "pullquote": "A long commitment gets the baseline price. Roughly a quarter of what flexibility costs."
+    },
+    {
+      "heading": "Is this new?",
+      "paragraphs": [
+        "Renting out computing is the oldest idea in the cloud. Amazon turned its own internal infrastructure into a product and built a giant business out of it, and Microsoft and Google followed. What has changed is which part of the stack is scarce. For twenty years the hard parts were software and operations, and that is where the margin sat. Now the hard parts are power and chips, and the money is decided in the contract terms.",
+        "It is also worth being clear about what has not happened. Meta Compute, the internal name for this effort, has not launched. Reports say Meta is weighing two shapes for it: hosting its own closed-weights Muse Spark model for developers, similar to Amazon's Bedrock, or selling raw capacity the way a neocloud does. The effort is reportedly led by Santosh Janardhan on infrastructure, Daniel Gross of Meta Superintelligence Labs, and president Dina Powell McCormick. In July, Meta was reported to be in early talks with Anthropic about a lease worth up to $10B over two years. Those talks were reported as early stage, and the deal Anthropic actually signed a few weeks later was with Volta, not Meta."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "This is the missing piece in the argument about whether AI is overbuilt. If the only use for a datacenter were training a frontier model, then betting five gigawatts on that being worth it would be reckless. But the same capacity can be pointed at ads recommendation systems, at hosting models for developers, or rented at a premium to whoever needs 200 megawatts next quarter. SemiAnalysis's argument is that this optionality is what justifies contracting so aggressively. The building does not need one plan to work. It needs any of four.",
+        "Keep the stakes measured, though. These are outside estimates of private contracts, and $48B per gigawatt is a rate observed in a small number of unusual deals, not a market-wide price anyone can go and get. If the flexible tier stops commanding its premium, or if enough capacity arrives that tenants stop paying for optionality, the arithmetic that makes all this look sensible changes quickly.",
+        "For now, though, the price of being able to change your mind is around four times the price of committing. That gap is quietly doing an enormous amount of work in the AI economy, and it is why so many companies that have nothing to do with renting out computers have suddenly decided they would like to be landlords."
+      ],
+      "pullquote": "The building does not need one plan to work. It needs any of four."
+    }
+  ]
+},
+{
   "slug": "claude-now-hides-a-signature-in-everything-it-writes",
   "status": "published",
   "datePublished": "2026-08-16",
