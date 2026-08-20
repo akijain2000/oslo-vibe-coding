@@ -36,6 +36,96 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-chip-nvidia-said-you-couldnt-give-away",
+  "status": "published",
+  "datePublished": "2026-08-20",
+  "title": "The chip Nvidia said you couldn't give away",
+  "dek": "In March 2025 Nvidia's chief executive joked on stage that his previous-generation AI chip had become worthless. By this spring the price of renting that chip had climbed 40 per cent off its low, and half the companies renting it out had none left.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "The prediction that old AI chips would become worthless was right about the hardware and wrong about the rental market. As an object you own, an H100 lost most of its value, down about 85 per cent from its 2023 peak on the secondhand market. As capacity you rent, it got more expensive again, because the newer chip that was supposed to replace it is largely spoken for until 2027. When the replacement is unavailable, the old thing stops being obsolete and starts being the only thing you can get.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/the-great-gpu-shortage-rental-capacity",
+  "sourceLabel": "Read the SemiAnalysis rental capacity analysis",
+  "keywords": [
+    "Nvidia",
+    "H100",
+    "Blackwell",
+    "GPU rental prices",
+    "SemiAnalysis",
+    "HBM memory",
+    "AI compute shortage",
+    "Jensen Huang"
+  ],
+  "heroImage": {
+    "src": "/brief/the-chip-nvidia-said-you-couldnt-give-away.png",
+    "alt": "Bar chart of H100 one-year rental contract prices per GPU hour: about $3.40 in 2023 to 2024, falling to a low of $1.70 in October 2025, then rising to $2.35 by March 2026",
+    "credit": "Figures: SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/the-great-gpu-shortage-rental-capacity"
+  },
+  "sections": [
+    {
+      "heading": "The joke that aged badly",
+      "paragraphs": [
+        "At Nvidia's GTC conference in March 2025, Jensen Huang was on stage making the case for Blackwell, the new generation of AI chip his company had just started shipping. To sharpen the point he wrote off the previous generation, called Hopper, whose best known chip is the H100. That is the chip the entire 2023 AI boom was built on, the one companies were reportedly waiting a year to buy.",
+        "His line was: \"When Blackwells started shipping, you couldn't give Hoppers away.\" He then said his sales team hated hearing it, and joked about being Nvidia's chief revenue destroyer.",
+        "It was a sensible prediction. Computing hardware normally does exactly that. A new generation arrives, it does more work per unit of electricity, and the old generation slides toward the bargain bin. Nobody rushes to buy a four-year-old laptop.",
+        "Eighteen months on, the research firm SemiAnalysis published its rental price index for that supposedly worthless chip. The price of renting an H100 on a one-year contract had risen about 40 per cent off its low. Half the rental companies it surveyed were completely sold out."
+      ],
+      "pullquote": "\"When Blackwells started shipping, you couldn't give Hoppers away.\""
+    },
+    {
+      "heading": "The crash was real first",
+      "paragraphs": [
+        "Before the reversal, the prediction looked exactly right, and it is worth being clear that one half of it still is.",
+        "As a physical object you own, the H100 has been brutally devalued. SemiAnalysis puts its blended rental index at $6.62 per chip per hour in the second half of 2023 and $2.82 by April 2026, a fall of around 57 per cent. On the secondhand market the drop is starker: cards that sold for roughly $40,000 in late 2023 have been changing hands for $6,000 to $15,000, an 85 per cent fall from the peak, according to pricing collected by the cost-analysis firm CloudZero in May.",
+        "One piece of vocabulary makes the rest of this readable. There are two ways to pay for these chips. You can rent by the hour, which is called on-demand or spot pricing and moves like an airline seat. Or you can sign a contract for a year or more at a fixed rate, which is what companies running a real product do. The hourly price tells you about today's mood. The contract price tells you what serious buyers think the next few years look like."
+      ]
+    },
+    {
+      "heading": "Then the contract price went back up",
+      "paragraphs": [
+        "SemiAnalysis launched a dedicated index for that one-year H100 contract price and published its findings on 2 April. The index bottomed at $1.70 per chip per hour in October 2025. By March 2026 it was $2.35. Roughly 15 to 20 percentage points of that move happened in late January and February alone.",
+        "The supply picture behind the number is the part that would have sounded absurd a year earlier. Half the providers SemiAnalysis asked were completely sold out. Most reported no H100 capacity coming off contract at all, meaning nothing was being handed back for someone else to rent.",
+        "The single most telling line in the analysis is about renewals. H100 contracts are being renewed at the same rate they were originally signed at two or three years ago, and some are being renewed for four more years, running to 2028. Renewal is normally where a customer squeezes the price down, because by then the hardware is old. Here, customers are re-signing at 2023 prices for hardware that was declared obsolete in 2025."
+      ],
+      "pullquote": "Customers are re-signing at 2023 prices for hardware that was declared obsolete in 2025."
+    },
+    {
+      "heading": "Why an old chip gets expensive again",
+      "paragraphs": [
+        "The clearest way to understand this is the used car market in 2021 and 2022. Nothing improved about a three-year-old Golf that year. It did not get faster or safer. Its price went up anyway, in some cases close to what a new one cost, because new cars had stopped arriving. A parts shortage had throttled the factories, and when the replacement is unavailable, the thing you were about to replace stops being old and starts being the only option.",
+        "AI chips are in the same position. An H100 is not really competing with a Blackwell chip. It is competing with a Blackwell chip you cannot get. As of April, lead times for new Blackwell deployments stretched into June and July, with market capacity booked through August and September. The GPU rental firm Thunder Compute reported in August that most of Nvidia's available allocation is reserved through 2026 and into 2027, with new Blackwell hardware going first to the largest cloud companies.",
+        "The bottleneck is not the chip itself. It is HBM, or high-bandwidth memory, the stacks of fast memory bonded to each AI chip that feed it data. There are only a few companies in the world capable of making it. Industry trackers reported lead times of 36 to 52 weeks for data-centre GPU orders this year, with HBM costs up around 30 per cent in the final quarter of 2025 alone, and an order backlog running into the millions of units. Those are analyst estimates rather than audited figures, and they should be read as directional. The direction they point is consistent: you cannot conjure this memory quickly, whatever the demand does."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Not entirely, and the precedent is worth holding on to before treating this as a permanent state of affairs.",
+        "Cars did it. Cryptocurrency mining did it twice to graphics cards, where a previous-generation card held its value for months purely because the new one was impossible to buy. Every time, the squeeze eventually ended when supply caught up, and the old hardware resumed its slide.",
+        "The difference this time is where the constraint sits. In the car shortage the missing part was cheap and made by many suppliers, so it was fixable in about two years. Here the constrained component is made by a handful of firms, sold into a market where a small number of very large buyers book years of output in advance. That is a slower thing to unwind.",
+        "There is also a fair reading of Huang's original claim that does not make it wrong. He was describing what happens to the value of hardware, and on that he was correct: the resale price fell 85 per cent. What he did not price in was that a chip you cannot buy a replacement for keeps earning rent regardless of how it compares on a spec sheet."
+      ]
+    },
+    {
+      "heading": "It has split into two markets",
+      "paragraphs": [
+        "For anyone actually trying to use this stuff, the practical shape of 2026 is a market that broke in half.",
+        "Renting older hardware is cheap and, at least at the moment, available. Thunder Compute's August survey found H100s at anywhere from $2.19 to $11.06 per chip per hour, with a median of $4.17 among the specialist providers and $7.89 at the big three cloud companies. That is the same physical chip at roughly triple the price depending on who you buy it from, and spot pricing runs at about half the on-demand rate again. Newer Blackwell B200s ranged from $3.50 to $27.04 per hour, with a specialist median of $7.88.",
+        "Buying new hardware, or getting a large block of the newest generation reserved, is the part that is genuinely hard, and it is where the queue lives.",
+        "One honest wrinkle: the two sources disagree slightly on how tight Hopper is right now. SemiAnalysis described it as sold out in April. Thunder Compute described Hopper and Ampere as well supplied and competitively priced in August. Both can be accurate at different points in the same year, and the gap is a useful reminder that this market re-prices in months, not years."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "SemiAnalysis's own conclusion in April was that rental pricing is more likely to keep rising than to fall. That was four months ago, and the August spot figures suggest the pressure has at least eased at the cheaper end.",
+        "Three things will tell you which way it goes next. Whether HBM lead times start shortening. Whether Blackwell and its successor arrive in the volumes promised rather than the volumes announced. And whether H100 contracts keep renewing at their original rates, because the day customers start negotiating those down is the day Huang's prediction finally comes true, roughly two years late."
+      ]
+    }
+  ]
+},
+{
   "slug": "who-is-actually-winning-the-ai-race-in-2026",
   "status": "published",
   "datePublished": "2026-08-19",
