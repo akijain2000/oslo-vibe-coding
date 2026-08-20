@@ -36,6 +36,83 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "openai-just-put-a-date-on-going-public",
+  "status": "published",
+  "datePublished": "2026-08-20",
+  "title": "OpenAI just put a date on going public",
+  "dek": "At an all-hands on Wednesday, OpenAI's finance chief told staff the company will list in 2027. That settles an argument inside the company, and it starts a clock on the first properly audited look at the biggest business in AI.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "The date is the smaller half of this story. The larger half is that a stock market listing forces a company to publish audited accounts, and OpenAI has never done that. Every revenue figure discussed publicly today, including the ones the company itself gives out, is unaudited and comes with no balance sheet attached. The prospectus is the first document that will have to show the spending next to the income, and it is the first one anyone can be held responsible for.",
+  "sourceUrl": "https://www.cnbc.com/2026/08/19/open-ai-ipo-timing-2027-friar.html",
+  "sourceLabel": "Read CNBC's report on the all-hands",
+  "keywords": [
+    "OpenAI",
+    "IPO",
+    "Sarah Friar",
+    "Sam Altman",
+    "Anthropic",
+    "S-1 filing",
+    "AI economics"
+  ],
+  "heroImage": {
+    "src": "/brief/openai-just-put-a-date-on-going-public.png",
+    "alt": "A two-column comparison. On the left, figures OpenAI has given out: revenue run rate up 35 per cent this quarter, enterprise run rate up 50 per cent, 20 million weekly users on its coding product, and a confidential filing lodged on 8 June. On the right, figures nobody outside has seen: audited revenue, profit or loss, cash position and burn rate, and roughly 600 billion dollars of reported infrastructure commitments.",
+    "credit": "Reporting: CNBC",
+    "creditUrl": "https://www.cnbc.com/2026/08/19/open-ai-ipo-timing-2027-friar.html"
+  },
+  "sections": [
+    {
+      "heading": "What was said",
+      "paragraphs": [
+        "OpenAI's chief financial officer, Sarah Friar, addressed an all-hands meeting on Wednesday. According to CNBC, which first reported her remarks, she told employees the company \"will be a public company in 2027\", and could go earlier if \"our business continues to inflect\".",
+        "She also addressed the obvious internal anxiety, which is that Anthropic might get there first. Her answer was that there is no reason to worry about that, and that OpenAI is \"running our own race\". She framed the listing itself as a milestone rather than a finish line, and as one more way to raise money.",
+        "OpenAI did not respond to requests for comment from outlets that followed up, and the company has not made any public announcement of its plans."
+      ]
+    },
+    {
+      "heading": "Why a date is news at all",
+      "paragraphs": [
+        "Going public means selling shares to ordinary investors on a stock exchange. To be allowed to do that, a company has to file a prospectus with the financial regulator, known in the United States as an S-1. That document is not a press release. It contains audited accounts, a description of the risks to the business written by the company's own lawyers, and the numbers the executives can be held legally responsible for.",
+        "OpenAI filed one confidentially on 8 June. Confidential filing is a normal and legal first step: the company starts the regulator's review process privately, without the contents becoming public, and keeps the option of going ahead quickly later. Nothing in it has been published.",
+        "That is what makes the 2027 date meaningful. Everything the public currently knows about the finances of the largest business in AI comes from company statements, leaks and reporting. None of it is audited. A listing replaces all of that with one document."
+      ],
+      "pullquote": "Everything the public currently knows about the finances of the largest business in AI is unaudited."
+    },
+    {
+      "heading": "The argument this settles",
+      "paragraphs": [
+        "There has been a visible disagreement about timing. Earlier this year, reporting described Sam Altman pushing for a listing as soon as the final quarter of 2026, while Friar argued for waiting until 2027 on the grounds that the company was not ready for the reporting standards that public companies have to meet.",
+        "Reading Friar's Wednesday remarks against that background, the finance side of the argument appears to have won, with the door left open. \"2027, or sooner if the business inflects\" is close to the exact compromise you would expect between a chief executive who wants to move and a chief financial officer who wants the books in order first.",
+        "Our own brief on 8 August noted the timeline had reportedly slipped to 2027. Our brief on 18 August noted that reports had begun to conflict again, with some suggesting an autumn 2026 listing at around a trillion dollars, and said we would not assert a date without a primary source. This is as close to a primary source as this story has produced: the company's own CFO, speaking to her own staff."
+      ]
+    },
+    {
+      "heading": "The numbers she did give",
+      "paragraphs": [
+        "Friar offered staff three growth figures. The revenue run rate is up 35 per cent so far this quarter. The enterprise run rate, meaning sales to businesses rather than individuals, is up 50 per cent. And the company's AI coding and work product has reached 20 million weekly active users.",
+        "Two cautions belong next to those. All three are company-stated and unaudited, and the coding figure counts users rather than paying customers. Second, growth rates without a base are the easiest number in business to present flatteringly. Up 35 per cent from what, exactly, is the question the prospectus will answer and a growth rate never does.",
+        "It is also worth noting how much the publicly reported absolute figures vary. Different outlets covering this same week have put OpenAI's annualised revenue anywhere from the mid twenties of billions to $40 billion, depending on which quarter and which reported leak they are working from. That spread is not a rounding error. It is what happens when nobody outside the company can check."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Large private companies going public is one of the oldest stories in business, and the modern pattern of staying private for a long time first is at least fifteen years old. Facebook, Uber and Airbnb all did versions of this.",
+        "The unfamiliar part is the ratio. OpenAI has reportedly committed to something in the region of $600 billion of future infrastructure spending on datacenters and computing capacity. That is a scale of forward commitment that the previous generation of technology listings simply did not carry, and it is the specific reason a chief financial officer might want an extra year before showing anyone the arithmetic.",
+        "The other genuinely new element is the competitive framing. Anthropic is reportedly seeking a valuation above two trillion dollars and could list as soon as this autumn, which would make it the first of the two frontier labs to publish audited accounts. Whichever goes first hands the other a benchmark, and hands everyone else the first honest look at whether these businesses work."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Three things, in order of how much they would tell you. Whether Anthropic files publicly this autumn, because the first prospectus will reset every assumption in the sector. Whether OpenAI moves earlier than 2027, which would signal that the revenue curve is doing what Friar hopes rather than what her caution implies. And when a public S-1 finally appears, the risk-factors section, which is the one part of the document written to protect the company by admitting what could go wrong.",
+        "Until then, a date told to employees is a plan, not a filing. It is a good deal more than we had on Tuesday, and a good deal less than an audited number."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-chip-nvidia-said-you-couldnt-give-away",
   "status": "published",
   "datePublished": "2026-08-20",
