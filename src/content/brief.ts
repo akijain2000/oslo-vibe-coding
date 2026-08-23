@@ -36,6 +36,166 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-ai-wholesalers-nobody-has-heard-of",
+  "status": "published",
+  "datePublished": "2026-08-23",
+  "title": "The AI wholesalers nobody has heard of",
+  "dek": "Stripe has agreed to buy OpenRouter, the switchboard that decides which AI model answers a request. Underneath that switchboard sits a whole industry that runs other people's AI models for a living, and almost none of it is a household name.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "Most AI features you use are served by a company whose name is nowhere on them. That layer is now a multi-billion-dollar business growing several times a year, and it is also the part of AI with the least public information attached. Not one of these companies has published what it actually earns on a token after paying for the chips, and that single missing number decides whether this is a durable industry or a very fast way to resell someone else's costs.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+  "sourceLabel": "Read SemiAnalysis on what companies actually spend on tokens",
+  "keywords": [
+    "Token-as-a-Service",
+    "AI inference",
+    "OpenRouter",
+    "Stripe",
+    "Fireworks AI",
+    "Together AI",
+    "Baseten",
+    "open-weight models",
+    "AI economics"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-wholesalers-nobody-has-heard-of.jpg",
+    "alt": "A line chart titled Total TaaS Market ARR, in millions of dollars, running from the first quarter of 2024 to the fourth quarter of 2026. All four lines sit near zero through 2024 and most of 2025, then turn sharply upward from late 2025. Amazon Bedrock rises highest, to roughly 27 billion dollars, followed by Google's enterprise agent platform at roughly 19 billion, then the combined independents Together, Fireworks, Baseten and OpenRouter at roughly 10 billion, and Microsoft Foundry at roughly 5 billion. The last quarters are a forecast.",
+    "credit": "Chart: SemiAnalysis Tokenomics Model (estimates and forecast)",
+    "creditUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+  },
+  "sections": [
+    {
+      "heading": "What just happened",
+      "paragraphs": [
+        "On 19 August, Stripe said it had agreed to buy a company called OpenRouter. Stripe is the payments company that handles card checkouts for a large share of the internet. OpenRouter is not a name most people outside software development would recognise, and neither company disclosed a price.",
+        "Bloomberg had reported three days earlier that the deal was worth more than seven billion dollars, which would make it the largest purchase Stripe has ever made. For scale, OpenRouter's own funding round earlier this year valued it at about 1.3 billion. Neither company has confirmed a figure, so treat the number as reporting rather than fact.",
+        "What OpenRouter sells is a switchboard. Instead of a company wiring its software separately into each AI provider, it connects once to OpenRouter, which then decides which model should answer each individual request based on price, speed and quality. In its own announcement the company said it now processes \"10+ trillion tokens per day from 400+ AI models for a community of over 10 million developers and companies\", and that its volume has grown at least tenfold every year since it started.",
+        "A token is the unit AI is sold in. It is roughly a fragment of a word, and every model charges per million of them, both for what you send in and what it sends back. Stripe's chief executive Patrick Collison put the strategic logic plainly: \"Tokens are the central currency for companies building with AI.\"",
+        "Here is the part worth stopping on. OpenRouter runs almost none of those ten trillion tokens itself. It owns no data centres and trains no models. It is a switchboard sitting on top of an industry, and that industry is the actual subject of this piece."
+      ],
+      "links": [
+        { "label": "Stripe's announcement", "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter" },
+        { "label": "OpenRouter's announcement", "url": "https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe/" }
+      ]
+    },
+    {
+      "heading": "The layer under the switchboard",
+      "paragraphs": [
+        "Two things happen to an AI model in its life. It gets trained, which is the enormously expensive one-off process of building it. Then it gets used, which the industry calls inference: the model actually answering a question, every time, for everyone, forever. Training is the headline. Inference is the electricity bill, and it never stops.",
+        "Some AI labs publish their finished models openly. Meta, DeepSeek, Alibaba and the Chinese lab Moonshot all release what are called open-weight models, meaning the model file itself is downloadable and anyone is allowed to run it. That sounds like it should make the model free. It does not, because running one properly is a serious industrial problem. You need thousands of graphics chips, you need them busy rather than idle, and you need the answer back in under a second while a thousand other people are also asking.",
+        "So a category of company grew up to do exactly that job and nothing else. They take models they did not build, run them at scale on hardware they rent or own, and charge per million tokens. The industry has a flat, forgettable name for it: Token-as-a-Service.",
+        "The closest everyday parallel is bottling. Coca-Cola does not fill most of its own cans. Independent bottling companies do that, at scale, close to where the cans will be sold. The recipe is famous and the bottler is invisible, and the bottler is nonetheless a real and large business. The analogy breaks in one place worth naming: the big AI labs also serve their own models directly, so they are both the recipe and, some of the time, the bottler."
+      ],
+      "pullquote": "Training is the headline. Inference is the electricity bill, and it never stops."
+    },
+    {
+      "heading": "The numbers, and where they come from",
+      "paragraphs": [
+        "Fireworks AI raised 1.505 billion dollars on 16 July at a valuation of 17.5 billion, led by Atreides Management, Index Ventures and TCV, with Nvidia among the investors. Alongside the round the company said its annualised revenue had passed one billion dollars, about five times where it was a year earlier, and that daily token volume on its platform had climbed above 40 trillion from about 15 trillion over the same stretch. Those are company-stated figures, not audited accounts.",
+        "Together AI closed 800 million dollars on 1 July at a valuation of 8.3 billion, saying annual bookings had crossed roughly 1.15 billion. Bookings are contracts signed, which is not the same as money received, and the gap between the two matters when contracts run for years.",
+        "Baseten was reported in June to be raising about 1.5 billion at somewhere between 11 and 13 billion. Its revenue figures are the softest of the three: the research firm Sacra estimates the company went from about 200 million annualised in December 2025 to about 600 million in March 2026. That is an outside estimate, not a disclosure.",
+        "Put together, SemiAnalysis estimated on 30 June that the independent providers, meaning \"Together, Fireworks, Baseten, and others\", were selling over four billion dollars a year. Given that Fireworks alone said it crossed a billion two weeks after that estimate was published, four billion now looks like a floor rather than a ceiling.",
+        "The chart above is that firm's model of the whole category, and it contains a detail people skim past. The largest sellers of tokens are not the startups at all. They are Amazon's Bedrock, Google's enterprise agent platform and Microsoft's Foundry, which resell other companies' models through the cloud accounts that big firms already have. The independents are the fourth line. Note also that everything to the right of the middle of 2026 has not happened yet: it is a forecast, and forecasts of this shape have a habit of being wrong in both directions."
+      ]
+    },
+    {
+      "heading": "Why anyone buys from a wholesaler",
+      "paragraphs": [
+        "The plain answer is price. Fireworks co-founder Lin Qiao told CNBC that \"our cost compared with the equivalent-quality closed model is five to 10 times cheaper\". That is a vendor's claim about its own product and should be read as one, but the direction is not seriously disputed, and it is why a company with a large, boring, high-volume AI workload goes looking for an alternative to the famous names.",
+        "This only works because open models got good. Two years ago the gap between a downloadable model and the best commercial one was wide enough that price barely entered the conversation. It has narrowed sharply, to the point where Moonshot claimed its Kimi K3 model beat the leading commercial systems on several benchmarks. Once the free-to-download model is close enough for the task in front of you, the question stops being which model is smartest and becomes who can run it most cheaply.",
+        "That is the entire commercial basis of this layer. It is a good basis. It is also, on inspection, a narrow one."
+      ]
+    },
+    {
+      "heading": "Is any of this actually new?",
+      "paragraphs": [
+        "Not really, and that is reassuring rather than dismissive. Contract manufacturers have built other companies' hardware for decades. Web hosting companies ran other people's websites long before anyone said cloud. Content delivery networks quietly carried most of the internet's video while remaining invisible to the people watching it. A layer of unglamorous specialists forming underneath a famous product is one of the most reliable patterns in the history of technology.",
+        "What is genuinely unusual here is the speed, and a squeeze that the older examples did not have. Two prices are moving in opposite directions at once. The price these companies charge per token keeps falling, because competition is fierce and every provider is running much the same downloadable models. Meanwhile the price of their main input has started rising: as we covered on 20 August, the rental price of the previous generation of Nvidia chips bottomed out last October and has climbed back roughly 40 per cent since, because new chips are scarce and old ones are not coming off contract.",
+        "Revenue up, price per unit down, input cost up. The only thing holding that together is volume, and volume is currently exploding. It works beautifully while that lasts."
+      ],
+      "pullquote": "Revenue up, price per unit down, input cost up. Only volume holds that together."
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Watch for a gross margin. Every company in this piece has published a revenue figure and a valuation, and not one has published what it keeps after paying for the chips that served those tokens. For a business whose entire proposition is being cheaper than the alternative, that is the number that decides everything, and its continued absence is the most interesting fact in the category.",
+        "Watch the switchboard too. OpenRouter's value came from being neutral, from having no reason to prefer one model over another. Its announcement is explicit that this will not change: \"Routing decisions will remain driven by one thing: what's best for you, the user.\" That is the right commitment to make and the right one to hold them to, now that the neutral party is owned by a company with its own AI billing products to sell.",
+        "And keep the scale in proportion. Stripe is reported to have paid more for the switchboard than the entire independent wholesale layer underneath it earns in a year. Either the switchboard is worth an extraordinary amount, or the layer beneath it is still early. Both can be true, and the next few quarters of that chart will tell you which."
+      ]
+    }
+  ]
+},
+{
+  "slug": "nvidia-bought-a-company-without-buying-it",
+  "status": "published",
+  "datePublished": "2026-08-23",
+  "title": "Nvidia bought a company without buying it",
+  "dek": "Nvidia is paying six billion dollars to license an AI startup's software and hiring 109 of its people. Everyone involved insists this is not an acquisition. It is the third time in a year, and the structure is the story.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "A licence plus job offers gets a buyer the technology and the team without the deal being a merger, which is what regulators are set up to examine. Nvidia has now done this three times in under a year, for a combined figure in the region of 27 billion dollars, and each target has remained formally independent. Whether that is clever structuring or a way around merger review is exactly the question nobody has yet had to answer in public.",
+  "sourceUrl": "https://thenextweb.com/news/nvidia-poolside-6bn-model-factory-licence",
+  "sourceLabel": "Read the report on the Poolside deal",
+  "keywords": [
+    "Nvidia",
+    "Poolside",
+    "Groq",
+    "acquihire",
+    "merger review",
+    "AI consolidation",
+    "AI coding models"
+  ],
+  "heroImage": {
+    "src": "/brief/nvidia-bought-a-company-without-buying-it.png",
+    "alt": "A bar chart of Nvidia's three licence-and-hire deals: Enfabrica in September 2025 at about 0.9 billion dollars, Groq in December 2025 at about 20 billion, and Poolside in August 2026 at 6 billion. The caption notes that each deal involved a large payment for a non-exclusive licence, job offers to staff, and a company that stayed formally independent.",
+    "credit": "Reporting: CNBC, Bloomberg, Newcomer",
+    "creditUrl": "https://thenextweb.com/news/nvidia-poolside-6bn-model-factory-licence"
+  },
+  "sections": [
+    {
+      "heading": "The deal",
+      "paragraphs": [
+        "On Friday 21 August, Bloomberg reported that Nvidia had agreed to pay six billion dollars to Poolside, a startup that builds AI models for writing computer code, for a non-exclusive licence to its software. Nvidia is separately investing a further billion at a valuation of twelve billion, and has extended job offers to 109 of Poolside's employees.",
+        "The details came from Poolside's own letter to its investors, first reported by the newsletter Newcomer. That letter states the position flatly: this is \"not an acquisition and it is not an acquihire\". The three founders stay. The company continues to operate. Poolside plans to distribute the six billion dollars to its shareholders by the end of next year.",
+        "Nvidia has not publicly explained the deal, and representatives for both companies did not respond to requests for comment when the story broke. So everything below rests on one company's letter to its own investors plus reporting, which is worth keeping in mind."
+      ]
+    },
+    {
+      "heading": "What is actually being sold",
+      "paragraphs": [
+        "The thing Nvidia is licensing is not a product you could buy. Poolside calls it a Model Factory: the internal machinery it built to produce AI models, the pipelines and training systems rather than any single finished model. Nvidia is buying the means of production, not the output.",
+        "Then there is the headcount. Poolside's chief executive Eiso Kant has said publicly that \"fewer than 70 people built this model\", and that fewer than 115 worked across engineering and research combined. Nvidia made offers to 109. Read those two numbers next to each other and the shape of the transaction is clear enough: the licence covers the machinery, and the offers cover very nearly everybody who knows how to operate it.",
+        "Poolside's letter is candid about why it was willing. The company had stepped back from trying to build frontier-scale models after losing a deal for a 40,000-chip cluster, with the capital required to compete at that level climbing out of reach. That is a quietly significant admission, and one that applies well beyond Poolside."
+      ],
+      "pullquote": "The licence covers the machinery. The job offers cover nearly everyone who knows how to operate it."
+    },
+    {
+      "heading": "The third time in a year",
+      "paragraphs": [
+        "This structure is not improvised. In September 2025 Nvidia paid more than 900 million dollars to license technology from the networking startup Enfabrica and hire its chief executive along with other staff. In December 2025 it did the same thing at a scale nobody had seen before, paying about 20 billion dollars to the AI chip company Groq for a non-exclusive licence while its founder and chief executive Jonathan Ross and other senior leaders joined Nvidia.",
+        "Jensen Huang, Nvidia's chief executive, described the Groq arrangement in words that map exactly onto this week's: \"While we are adding talented employees to our ranks and licensing Groq's IP, we are not acquiring Groq as a company.\" Groq stayed independent, run by its finance chief, with its cloud service continuing. So has Enfabrica. So will Poolside.",
+        "Three deals, roughly 27 billion dollars, three companies that on paper still exist as competitors. One analyst told CNBC at the time of the Groq deal that the structure keeps the \"fiction of competition alive\", which is sharper than a neutral observer would strictly put it, but it captures why people are uneasy."
+      ]
+    },
+    {
+      "heading": "Is this new? Sort of",
+      "paragraphs": [
+        "The recognisable ancestor is the acquihire wave of 2024, when Microsoft took most of Inflection's team, Google paid to license Character.AI's technology and hire its founders, and Amazon did much the same with Adept. In each case a struggling startup's people and technology ended up inside a giant while the startup's corporate shell survived, and in each case regulators looked at the arrangement and mostly moved on.",
+        "What has changed since is scale and intent. Those 2024 deals were rescues of companies that had run out of road. Nvidia is doing this from a position of total strength, to companies that are not obviously failing, at prices that dwarf the earlier examples, and it is doing it repeatedly. A merger of that size would normally trigger a formal antitrust review, in which regulators examine whether the combination reduces competition before it is allowed to complete. A licence and a hiring spree generally do not.",
+        "Lawmakers have already criticised licensing structures of this kind as a way around merger review. Nothing has been tested in a courtroom, and it is entirely possible that these deals are exactly what the companies say they are. But the pattern is now established enough that pretending not to notice it would be the odd choice."
+      ]
+    },
+    {
+      "heading": "Why it matters if you do not own Nvidia shares",
+      "paragraphs": [
+        "The straightforward reason is concentration. Nvidia already makes the chips that nearly all of this industry runs on. It has now absorbed the capabilities of a fast inference chip company, a networking company and a model-building company, without any of those absorptions being reviewed as an acquisition.",
+        "The subtler reason is what Poolside's letter admits. A well-funded startup with a real product concluded that competing at the frontier had become too capital-intensive to attempt, and took a licensing deal instead. If that reasoning spreads, the number of independent organisations capable of building frontier AI keeps shrinking, and it shrinks through ordinary commercial decisions rather than anything dramatic.",
+        "The thing to watch is not the next deal. It is whether any competition authority decides that three of these in a year adds up to something a merger review would have caught."
+      ]
+    }
+  ]
+},
+{
   "slug": "openai-just-put-a-date-on-going-public",
   "status": "published",
   "datePublished": "2026-08-20",
