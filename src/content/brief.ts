@@ -36,6 +36,122 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "blaming-ai-for-your-power-bill-is-half-the-story",
+  "status": "published",
+  "datePublished": "2026-08-25",
+  "title": "Blaming AI for your power bill is only half the story",
+  "dek": "Data centres really are pushing American electricity bills up. But a research firm spent six months taking apart the grid operator's own model and found it undercounts the power plants it already owns, which added about twelve billion dollars to the same bills. Both things are true, and the second one is about to happen again.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "The grid operator serving 66 million Americans buys spare generating capacity at auction, and that price has risen more than tenfold in three years. Its own market monitor attributes 38 to 46 per cent of the cost to data centres, so the popular explanation is real. The less comfortable half is that the model deciding how much to buy appears to undercount roughly four gigawatts of existing power plants, and correcting it would have saved 6.7 billion dollars in one auction while buying 14 megawatts less power. In September the same operator runs an emergency auction for 6.8 gigawatts on contracts stretching to 2043, carrying up to 21 billion dollars of liability, and if the data centres it is buying for never sign up, ordinary households hold the bill.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+  "sourceLabel": "Read SemiAnalysis on PJM's modelling mistake",
+  "keywords": [
+    "PJM",
+    "capacity auction",
+    "data centres",
+    "electricity prices",
+    "AI energy use",
+    "grid capacity",
+    "Statnett",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/blaming-ai-for-your-power-bill-is-half-the-story.png",
+    "alt": "A bar chart titled The price of standby power, showing PJM's capacity auction clearing price in dollars per megawatt-day across four delivery years. The 2024/25 bar is tiny at 29 dollars, then 2025/26 jumps to 270, 2026/27 to 329, and 2027/28 to 333. The caption notes the price rose more than tenfold in three years, from 28.92 to 333.44 dollars, and that PJM's market monitor blames data centres for 38 to 46 per cent of the cost.",
+    "credit": "Figures: PJM auction results, Monitoring Analytics",
+    "creditUrl": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted"
+  },
+  "sections": [
+    {
+      "heading": "The bill",
+      "paragraphs": [
+        "Across the eastern United States, electricity bills are going up and data centres are getting the blame. That blame is largely deserved, and this piece is not going to argue otherwise. But there is a second cause sitting underneath it that almost nobody has been looking at, and it is worth about twelve billion dollars.",
+        "First, the machinery. PJM is the organisation that runs the electricity grid across thirteen states and Washington DC, covering roughly 66 million people. It does not own power plants or sell you electricity. It balances the system, and it makes sure enough generating capacity exists to survive the worst day of the year.",
+        "It does that through something called a capacity auction. Years in advance, PJM pays power plants simply to promise they will be available when demand peaks. The plants do not have to generate anything to earn it. They are being paid to stand by, the way you might pay a retainer to a plumber to guarantee they answer on a winter night. That retainer is bought at auction, and its cost is passed through to every household and business in the region.",
+        "The price of that retainer, per megawatt of capacity per day, was 28.92 dollars for the 2024/25 delivery year. For 2025/26 it was 270 dollars. For 2026/27 it was 329. For 2027/28 it came in at 333.44, which is the ceiling the federal regulator allows. The auction after that also cleared at its cap. When a price sits at its legal maximum two years running, that is the market saying it would have gone higher.",
+        "On a household bill, Canary Media reported in December 2025 that some PJM customers face rises of 1.5 to 5 per cent over the twelve months from June 2026, and that an average family could be paying around 70 dollars more per month by 2028. In Washington DC, Pepco customers saw about 21 dollars a month added from June 2025."
+      ],
+      "links": [
+        { "label": "PJM on its capacity auction results", "url": "https://insidelines.pjm.com/pjm-auction-procures-134311-mw-of-generation-resources-supply-responds-to-price-signal/" }
+      ]
+    },
+    {
+      "heading": "The blame is not misplaced",
+      "paragraphs": [
+        "PJM has an independent market monitor, a firm called Monitoring Analytics that is paid to referee PJM's markets and is deliberately not part of PJM. It has been counting.",
+        "In July 2026 it put data centres at 6.3 billion dollars of the latest auction's 16.4 billion dollar total, which is 38 per cent. Looking across the last four auctions together, it attributes 29.4 billion of 63.6 billion to data centres, or 46 per cent. An earlier estimate went further on a narrower question: of the increase in the 2025/26 auction specifically, it put 63 per cent on data centres, worth 9.3 billion dollars that customers will pay through their rates.",
+        "The demand side explains why. PJM's peak demand is projected to grow by 32 gigawatts between 2024 and 2030, and 30 of those 32 gigawatts are data centres. In the twelve months before the July auction, 2.7 gigawatts of new generation was added. Demand of that shape arriving against supply of that shape produces exactly the price you would expect.",
+        "Joe Bowring, who runs Monitoring Analytics, put the criticism directly: \"PJM is continuing to act like it's business as usual. You have to open your eyes and recognize that it is really a paradigm shift, and failing to do that imposes costs on other customers.\"",
+        "So yes. AI is on your electricity bill. Hold that thought, because it is only half of what is happening."
+      ],
+      "links": [
+        { "label": "Utility Dive on the market monitor's numbers", "url": "https://www.utilitydive.com/news/pjm-data-centers-capacity-auction-imm-bowring/825626/" }
+      ]
+    },
+    {
+      "heading": "The other half",
+      "paragraphs": [
+        "On 16 August the research firm SemiAnalysis published the result of six months spent reverse-engineering PJM's Reserve Requirement Study. That study is the model that decides how much spare capacity PJM needs to buy, which in turn sets how much it must purchase at auction. It is not a public-facing document anyone reads for pleasure, and that is rather the point.",
+        "The finding is that PJM undercounts the power plants it already has, by roughly four gigawatts. Two specific things drive it.",
+        "The first is cold air. Gas turbines are more efficient in cold weather, because cold air is denser, so the same machine produces meaningfully more power in January than in July. SemiAnalysis puts the uplift at up to 25 per cent, and notes that PJM's own class table averages an 8.4 per cent uplift. The model gives no credit for it. That alone is worth 1.3 to 2.2 gigawatts of capacity that exists and is not counted.",
+        "The second is winterisation. After the 2022 winter storm Elliott, when a large number of gas plants failed in the cold, federal cold-weather standards were introduced. By January 2024 more than 400 of PJM's roughly 450 gas units had implemented them. PJM's risk model still leans on failure data from the 2013 Polar Vortex and from Elliott itself, without updating for the upgrades that were made in response. Crediting the winterisation is worth up to another 3 gigawatts for the 2026/27 year.",
+        "SemiAnalysis puts the cost of the undercount at 6.7 billion dollars for the 2025/26 auction and 4.9 billion for 2026/27, about 11.6 billion combined, with a stated sensitivity range of 8.0 to 14.5 billion. Add the exposure it identifies for 2027 and you reach the twelve billion figure. That is a modelled counterfactual, not an audited loss, and it should be read as one."
+      ]
+    },
+    {
+      "heading": "Why a small counting error costs billions",
+      "paragraphs": [
+        "Here is the detail that makes the whole thing land. In the 2025/26 auction, correcting the model would have saved 6.7 billion dollars while procuring 14 megawatts less capacity. Not 14 gigawatts. Fourteen megawatts, out of roughly 135,000. Effectively the same amount of power, for 6.7 billion dollars less.",
+        "The everyday version is a shop that miscounts its own stockroom. It looks at the shelf, concludes it is nearly out, and buys from the supplier at whatever price is asked because it cannot afford to run empty. The panic price then goes onto every customer's receipt. The stock was sitting in the back the entire time, and the shortfall was in the counting, not the shelf.",
+        "What makes it so violent in this case is that PJM has almost no slack left. SemiAnalysis's phrasing is that PJM \"has forced itself into operating at the limit, so inaccurately modeling power plants' capacities has a massive impact on auction costs\". When a system has spare room, a counting error is a rounding error. When it is sitting exactly on the line, the last unit of capacity sets the price for every unit, and a small miscount moves the entire bill.",
+        "That is the honest relationship between the two halves of this story. Data centres removed the slack. The modelling error then got multiplied by the absence of slack. Neither explanation cancels the other out."
+      ],
+      "pullquote": "Effectively the same amount of power, for 6.7 billion dollars less. The shortfall was in the counting, not the shelf."
+    },
+    {
+      "heading": "Is any of this new?",
+      "paragraphs": [
+        "The argument itself, no. Grid operators and their market monitors have fought about reserve margins for as long as capacity markets have existed, and this specific fight has a paper trail. In September 2024 the market monitor calculated that the cold air credit alone would have saved between 2.7 and 8.0 billion dollars in the 2025/26 auction.",
+        "PJM rejected that report in October 2024, saying it contained \"contradictory, incomplete, and unsupported or incorrect conclusions\". Its substantive counter on the cold weather point is worth stating fairly: PJM argued the analysis ignores deliverability, meaning that extra output from a plant is only useful if the wires can actually carry it to where the demand is. That is a real physical constraint and not a debating trick. PJM also warned that other proposed changes would damage the price signals that are supposed to attract new generation in the first place.",
+        "I could not find any PJM response addressing the SemiAnalysis analysis specifically, which was published nine days ago. If one appears, it deserves reading next to this.",
+        "What has genuinely changed is the stakes. This used to be a technical disagreement worth a rounding error on a bill. Demand growth turned the same disagreement into billions, without either side having to change its position."
+      ]
+    },
+    {
+      "heading": "The part that has not happened yet",
+      "paragraphs": [
+        "On 31 July 2026, PJM asked FERC, the federal energy regulator, for permission to run an emergency procurement outside the normal auction cycle. Offers open on 30 September and close on 21 October, with results due by 2 December. The comment period at FERC closed on 21 August.",
+        "It is seeking 6.8 gigawatts. SemiAnalysis's corrected model puts the genuine near-term need at roughly 3.0 gigawatts.",
+        "The contracts run eleven to fifteen years, expiring in 2043, at an average price cap of 555 dollars per megawatt-day. That is well above the 333 dollars the last ordinary auction cleared at, and individual contracts within the average can go higher. At the ceiling, the total liability is around 21 billion dollars, committed now and paid for the next seventeen years.",
+        "The question of who pays is the uncomfortable one. States are expected to write their own rules passing these costs to what the filing calls participating new large loads, which in plain terms means the data centres. If a state does not write such a rule, the default applies: the cost spreads across all load-serving entities by share of peak demand, which is to say households. There are no committed counterparties signed up in advance. The whole procurement rests on data centre demand that is forecast rather than contracted.",
+        "There is also a governance detail worth knowing. On 27 July 2026, PJM's board overrode its own members, rejecting an alternative subscription-based approach that had secured more than 66 per cent sector-weighted support. The board's stated reason was that subscriptions would not guarantee covering the identified near-term shortfall. That shortfall is precisely the number in dispute."
+      ],
+      "pullquote": "Eleven to fifteen year contracts, expiring in 2043, for demand that is forecast rather than contracted."
+    },
+    {
+      "heading": "Why this reads differently from Oslo",
+      "paragraphs": [
+        "Norway has no PJM and no capacity auction. Power is bought and sold here on a different structure, so nothing above is a forecast for Norwegian bills. Treat it as a parallel.",
+        "The underlying question is identical though: who pays to build grid capacity for demand that has not arrived and might not. Statnett has around 3.5 gigawatts of grid capacity reserved for data centres, with roughly 5.4 gigawatts more sitting in the connection queue behind it. Forecast data centre consumption is about 7 terawatt-hours a year by 2030. North of Svartisen, new connections above 5 megawatts are postponed indefinitely because the grid is not there.",
+        "The Norwegian government's own position is that there is considerable uncertainty about how many queued projects actually get built and when. That uncertainty is the entire American argument, arriving here in a different legal shape. The reserved gigawatt is the asset that either becomes a customer or becomes a stranded cost, and the fight is always about which."
+      ],
+      "links": [
+        { "label": "Norway's government on the data centre industry", "url": "https://www.regjeringen.no/en/documents/the-data-centre-industry-a-sustainable-industry-of-the-future-for-the-digital-norway/id3112356/" }
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Watch for a numbers-level rebuttal from PJM. The 2024 exchange with the market monitor shows it will answer criticism in detail when it wants to, and the deliverability argument is a serious one. If a six-month reverse-engineering of its core model draws only a general statement, that itself is informative.",
+        "Watch 2 December. That is when the emergency auction results land: how much of the 6.8 gigawatts clears, and at what price relative to the 555 dollar cap.",
+        "Watch whether any state actually writes the rule that puts these costs on large loads rather than households. That is the difference between data centres paying for the capacity built for them and everyone else paying, and it has to be written before the bills arrive, not after.",
+        "And keep the two halves separate. Data centres are genuinely pushing this price up, by everyone's count including PJM's own referee. A model that undercounts existing power plants genuinely multiplies the effect. Fixing the model does not make the demand go away, and blaming the demand does not fix the model."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-ai-wholesalers-nobody-has-heard-of",
   "status": "published",
   "datePublished": "2026-08-23",
