@@ -36,6 +36,245 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "nvidia-is-buying-the-internets-model-library",
+  "status": "published",
+  "datePublished": "2026-08-30",
+  "title": "Nvidia is buying the internet's model library",
+  "dek": "Hugging Face is where the world's open AI models are kept, the shelf almost every developer pulls from. Nvidia has reportedly agreed to pay 12.9 billion dollars for it, roughly 86 times its revenue, after being turned down at half that price last year. Neither company has confirmed anything.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "The Information reported on 26 August that Nvidia has agreed to buy Hugging Face for 12.9 billion dollars. Business Insider, which broke the story of takeover interest days earlier, reported the same night that no agreement had been signed and the talks could still collapse. Neither company has commented, which for Nvidia is unusual. The logic is straightforward: every one of Nvidia's largest customers is now building its own chip, and open models running on Nvidia hardware are the counterweight. What is different from the rest of Nvidia's year is the structure. Its three previous deals were licence-and-hire arrangements that left the target formally independent. This one is a plain purchase of the neutral commons where AMD, Google and Chinese labs also publish.",
+  "sourceUrl": "https://www.reuters.com/technology/nvidia-talks-acquire-hugging-face-13-billion-deal-business-insider-reports-2026-08-27/",
+  "sourceLabel": "Read Reuters on the reported deal",
+  "about": "Nvidia's reported acquisition of Hugging Face",
+  "keywords": [
+    "Nvidia",
+    "Hugging Face",
+    "open source AI",
+    "acquisition",
+    "CUDA",
+    "open weights",
+    "AI chips",
+    "Clement Delangue"
+  ],
+  "heroImage": {
+    "src": "/brief/nvidia-is-buying-the-internets-model-library.png",
+    "alt": "A bar chart titled Three prices for one hub, showing three valuations of Hugging Face. A 2023 funding round valued it at 4.5 billion dollars, a 2025 Nvidia offer that Hugging Face refused valued it at 7 billion, and the 2026 reported deal is 12.9 billion. The caption notes Nvidia was an investor in the 2023 round.",
+    "credit": "Figures: Reuters, Financial Times, The Information",
+    "creditUrl": "https://www.reuters.com/technology/nvidia-talks-acquire-hugging-face-13-billion-deal-business-insider-reports-2026-08-27/"
+  },
+  "sections": [
+    {
+      "heading": "What was reported",
+      "paragraphs": [
+        "On the night of Wednesday 26 August, The Information reported that Nvidia has agreed to buy Hugging Face for 12.9 billion dollars, citing one person with knowledge of the deal. Reuters, CNBC, Fortune, TechCrunch and others picked it up within hours.",
+        "Two caveats belong in the first paragraph rather than the last. Business Insider, which first reported over the previous weekend that Hugging Face was fielding takeover interest, said the same Wednesday night that the talks had not yet produced a signed agreement and could still fall apart. And neither Nvidia nor Hugging Face has said anything at all.",
+        "That silence is the detail worth holding onto. As TechCrunch pointed out, Nvidia has a habit of moving quickly to correct reports it considers wrong. It has not corrected this one.",
+        "So the honest status is: strongly reported by outlets with good records, unconfirmed by either party, not signed as of the last reporting. Everything below assumes the reporting is accurate, and it might not be."
+      ]
+    },
+    {
+      "heading": "What Hugging Face actually is",
+      "paragraphs": [
+        "If you do not work in machine learning, Hugging Face is easy to underrate, because from the outside it looks like a website with a cartoon logo.",
+        "It is the place where open AI models are kept. When a company releases a model with the weights published, meaning the actual trained file that anyone can download and run on their own machines, it almost always publishes it on Hugging Face. Meta's Llama models are there. Mistral's are there. DeepSeek's are there. Alibaba's Qwen is there. Microsoft, Google and Nvidia all publish there too.",
+        "It is closer to a public library than to a shop. Developers browse it, download from it, and upload their own fine-tuned versions back. The tooling built around it, particularly a software library called transformers, has become the default way people load a model into their code at all. Millions of developers touch it without thinking about it, the way you do not think about a road.",
+        "The company was founded in 2016 by three French entrepreneurs, is headquartered in New York, and according to figures reported by The Information runs at about 150 million dollars of annualised revenue."
+      ]
+    },
+    {
+      "heading": "The price",
+      "paragraphs": [
+        "12.9 billion dollars against 150 million dollars of revenue is roughly 86 times revenue. For comparison, fast-growing software companies are typically bought at something like 10 to 20 times revenue, and people already argue those are expensive.",
+        "The escalation is the more revealing number. Nvidia was one of the investors, alongside Salesforce and Google, in the 235 million dollar round in 2023 that valued Hugging Face at 4.5 billion. The Financial Times reported in January that Hugging Face had turned down a 500 million dollar investment from Nvidia that would have valued it at 7 billion.",
+        "So Nvidia offered to buy a slice at 7 billion, was told no, and has come back for the whole thing at nearly double. Companies do not usually do that for the revenue. They do it when they have decided the asset is strategic and that the price of not owning it is higher than the price of owning it."
+      ],
+      "pullquote": "Nvidia offered to buy a slice at 7 billion, was told no, and came back for the whole thing at nearly double."
+    },
+    {
+      "heading": "Why Nvidia wants it",
+      "paragraphs": [
+        "Nvidia's problem is not demand. On the same Wednesday, it forecast a 70 per cent jump in revenue for next fiscal year. Its problem is who its customers are becoming.",
+        "Every one of the largest buyers of Nvidia chips is now building a chip of its own. Google has been designing its TPUs for a decade. Amazon has Trainium. OpenAI unveiled a custom chip designed with Broadcom in June and showed its first benchmark results at a conference last week. Anthropic has been reported to be weighing its own. Each of those projects exists specifically to spend less money with Nvidia.",
+        "Open models are the natural counterweight. Anyone can download them, but they have to run somewhere, and the software ecosystem around them has been built first and best for Nvidia hardware through CUDA, Nvidia's programming layer. If the open half of AI keeps growing, and it keeps running on Nvidia by default, then the closed labs building their own silicon matter less.",
+        "Owning the library does not force anyone to use Nvidia chips. It does put Nvidia at the point where developers first meet a model, which is where defaults get set. Defaults are worth more than they look."
+      ]
+    },
+    {
+      "heading": "Is this new for Nvidia?",
+      "paragraphs": [
+        "Yes, and that is the part most coverage has skipped.",
+        "For the past year Nvidia has been doing something specific and unusual: paying enormous sums for technology and people without buying the company. In September 2025 it paid more than 900 million dollars to licence technology from Enfabrica and hire its chief executive. In December it paid around 20 billion for a licence to Groq's technology and took on its founder and senior leaders. Last week we wrote about the third, a 6 billion dollar licence to Poolside's model-building machinery plus job offers to 109 of its staff, with the investor letter stating plainly that it was not an acquisition.",
+        "In each of those, the target stays formally independent, and the structure has drawn criticism from lawmakers who see it as a route around merger review. Nvidia's public line on Groq was that it was licensing the technology and adding employees, and not acquiring the company.",
+        "Hugging Face would be a straightforward purchase. We do not know why the structure changed and neither company is saying. Two plausible readings: Hugging Face is not a chip competitor, so the antitrust picture is different, and more simply, you cannot licence a community. The value here is the users, the uploads and the trust, and none of that transfers through a technology licence."
+      ]
+    },
+    {
+      "heading": "The thing that could break",
+      "paragraphs": [
+        "The reason people are uneasy is not that Nvidia is a bad owner. It is that neutrality is the product.",
+        "AMD publishes models and tooling on Hugging Face. So does Google. So do Chinese labs whose models compete directly with the American ones. The library works because nobody with a stake in the outcome controls the shelf, and it would take very little to make that feel untrue: benchmark listings that flatter one vendor, integrations that appear for CUDA months before ROCm, hosting terms that quietly favour one kind of hardware.",
+        "None of that has happened and there is no reason to assume it will. But trust in a commons is asymmetric. It takes years to build and one bad decision to lose, and once developers start mirroring model weights elsewhere they do not come back.",
+        "There is also the awkward recent history. A month ago Hugging Face's infrastructure was compromised in an incident that, according to reporting, began with an OpenAI model going rogue. Whoever owns the library owns responsibility for a piece of infrastructure that a very large amount of software now depends on."
+      ],
+      "pullquote": "The library works because nobody with a stake in the outcome controls the shelf."
+    },
+    {
+      "heading": "What it means if you build here",
+      "paragraphs": [
+        "For anyone in Oslo shipping something on top of an open model, the near-term answer is that nothing changes. Deals of this size take months to close and face regulatory review, and Hugging Face has French founders and European operations, which means Brussels will have a view as well as Washington.",
+        "The sensible response is the boring one that was always sensible. If your product depends on a specific model, keep your own copy of the weights rather than pulling them live from someone else's servers at deploy time. Know which licence each model you use is under. Keep the option of running on more than one kind of hardware open, even if you never exercise it.",
+        "That advice was correct before this week. A story like this is just the reminder that a free, neutral, always-there dependency is a business decision somebody else is making on your behalf."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Three things. First, confirmation: an actual statement from either company, or a filing. Until then this is well-sourced reporting about a deal that both parties have declined to acknowledge.",
+        "Second, the commitments. If the deal is announced, look for whether anything about the platform's neutrality is written down and enforceable, or whether it is only a warm sentence in the press release. Those are very different things.",
+        "Third, the regulators. An American chip company buying the main global distribution point for open AI models, at a moment when several governments are actively debating whether open model weights should be restricted at all, is not a transaction that closes quietly."
+      ],
+      "links": [
+        {
+          "label": "TechCrunch on why Nvidia would want the open source hub",
+          "url": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "nvidia-says-a-5m-ai-server-earns-75m",
+  "status": "published",
+  "datePublished": "2026-08-30",
+  "title": "Nvidia says a $5 million server earns $75 million",
+  "dek": "It is the most quoted number in AI infrastructure, and the arithmetic behind it holds up. What it quietly assumes is that a token has one price, that the machine never stops, and that somebody buys every single thing it makes for three years.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "Nvidia's claim is that a 5 million dollar GB200 NVL72 system generates 75 million dollars of token revenue over three years, a 15x return, using results from an independent benchmark run by SemiAnalysis. Reconstruct it and the maths works: it needs roughly 11 trillion output tokens a year, about 362,000 every second without pause, sold at the price DeepSeek listed for R1 in January 2025. The fragile part is not the hardware. It is the price of a token, which on DeepSeek's own current list ranges from 66 cents to 3.96 dollars per million depending on tier and time of day, and which the same benchmark shows can fall 21x from a single software change. The number is a ceiling presented as a forecast.",
+  "sourceUrl": "https://blogs.nvidia.com/blog/blackwell-inferencemax-benchmark-results/",
+  "sourceLabel": "Read Nvidia's write-up of the InferenceMAX results",
+  "about": "The unit economics of AI inference hardware",
+  "keywords": [
+    "GB200 NVL72",
+    "AI inference economics",
+    "InferenceMAX",
+    "InferenceX",
+    "SemiAnalysis",
+    "cost per million tokens",
+    "DeepSeek pricing",
+    "Nvidia ROI"
+  ],
+  "heroImage": {
+    "src": "/brief/nvidia-says-a-5m-ai-server-earns-75m.png",
+    "alt": "A bar chart titled Same rack, three prices. It shows what three years of output tokens from one 5 million dollar Nvidia GB200 NVL72 server are worth at three different token prices: 23 million dollars at DeepSeek's cheapest tier off-peak, 75 million dollars at the price Nvidia assumed, and 135 million dollars at DeepSeek's top tier during peak hours. The caption notes the scaling is our own arithmetic applied to Nvidia's published figure.",
+    "credit": "Figures: NVIDIA InferenceMAX v1, DeepSeek price list",
+    "creditUrl": "https://blogs.nvidia.com/blog/blackwell-inferencemax-benchmark-results/"
+  },
+  "sections": [
+    {
+      "heading": "The number",
+      "paragraphs": [
+        "If you have read anything about the economics of AI hardware in the last year, you have probably met this sentence: a 5 million dollar investment in an Nvidia GB200 NVL72 system can generate 75 million dollars in token revenue. That is a 15x return.",
+        "It comes from Nvidia's own blog, published in October 2025, and Nvidia has repeated it steadily since. The figure caption on the technical version of the post adds the detail that gets dropped in most retellings: the 75 million is over three years, and it is revenue, not profit.",
+        "What makes the claim more interesting than ordinary vendor marketing is where the underlying data came from. Nvidia did not measure this itself. The numbers come from InferenceMAX, an open-source benchmark built by the research firm SemiAnalysis, which runs the same models across hundreds of chips from different manufacturers, publishes the results daily, and lets anyone reproduce them. Nvidia gave SemiAnalysis the hardware and then quoted the score.",
+        "So this is not a made-up number. It is worth taking seriously, and it is worth taking apart, because the thing the arithmetic depends on is not the part anyone talks about."
+      ]
+    },
+    {
+      "heading": "What the machine is",
+      "paragraphs": [
+        "First, the object. A GB200 NVL72 is not a server in the sense of a box on a shelf. It is a full rack, about the size of a large wardrobe, weighing roughly 1.4 tonnes, containing 72 Blackwell chips wired together so tightly that software can treat them as one very large processor rather than 72 small ones.",
+        "That wiring is the whole point. Big modern models do not fit on one chip, so the chips have to pass work between each other constantly. The more of them that can behave as a single unit, the less time is lost in the handoff.",
+        "It draws around 120 to 132 kilowatts, according to Nvidia's own documentation and HPE's product listing. A typical older data centre rack was built for 10 to 30 kilowatts, which is why these things force buildings to be rebuilt around them. Most of that heat is removed with liquid, not air.",
+        "On price: SemiAnalysis wrote in February 2026 that a GB200 NVL72 rack can cost 3.3 million dollars. Nvidia's figure is 5 million, which is consistent if you include the networking, storage and installation that a rack on its own does not include. Nothing suspicious there."
+      ],
+      "links": [
+        {
+          "label": "Nvidia's hardware guide on rack power draw",
+          "url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/hardware.html"
+        }
+      ]
+    },
+    {
+      "heading": "The arithmetic, reconstructed",
+      "paragraphs": [
+        "Nvidia does not show its working, so here is ours.",
+        "The model in the claim is DeepSeek R1, the Chinese reasoning model that caused a global stir in January 2025. When DeepSeek launched it, the company charged 2.19 dollars per million output tokens. A token is roughly three quarters of a word, and output tokens are the ones the model writes, as opposed to the ones you feed it.",
+        "75 million dollars over three years is 25 million dollars a year. At 2.19 dollars per million tokens, that requires 11.4 trillion output tokens a year. Spread across a year of seconds, that is about 362,000 tokens every second, continuously, with no gaps. Divided across the 72 chips, roughly 5,000 tokens per second from each one, forever.",
+        "That is a demanding number, but it is not a fantasy number. It sits inside the range InferenceMAX actually measured for this rack when it is tuned for total throughput rather than for individual speed. The arithmetic is internally consistent, which is the first honest thing to say about it.",
+        "Here is the second. Nvidia's own technical post states the cost side too: on a GB200 NVL72, producing a million tokens costs just over 10 cents, against 1.56 dollars on the previous generation H200. So the picture Nvidia is painting is a machine that makes a million tokens for about 10 cents and sells them for 2.19 dollars. Almost the entire 15x lives in that gap."
+      ],
+      "pullquote": "362,000 tokens every second, continuously, for three years. Roughly 5,000 per second from each of the 72 chips, forever."
+    },
+    {
+      "heading": "The bakery",
+      "paragraphs": [
+        "Think of it as an industrial bakery oven that costs 5 million kroner and can bake a loaf for 10 øre.",
+        "The salesman's slide says: at 2 kroner a loaf, this oven earns 75 million kroner. Every number on that slide is true. What the slide assumes is that the oven runs at full load every hour of every night for three years, that every loaf finds a buyer the moment it comes out, that the price of bread stays at 2 kroner, and that in year three people still want this particular kind of bread.",
+        "None of those are properties of the oven. They are properties of the market the oven sits in. The salesman is quoting an engineering measurement and letting you read it as a business forecast.",
+        "This is the ordinary shape of capital equipment marketing and there is nothing scandalous about it. It only becomes a problem when the number gets repeated by people who have stopped noticing which half is measured and which half is assumed."
+      ]
+    },
+    {
+      "heading": "A token does not have one price",
+      "paragraphs": [
+        "The weakest assumption is the price. Not because prices are falling in a simple way, which is the lazy version of this argument, but because a token has never had one price.",
+        "Look at DeepSeek's current published price list. It no longer sells R1. It sells two models. The cheaper one, V4 Flash, charges 66 cents per million output tokens off-peak and 1.32 dollars at peak. The larger one, V4 Pro, charges 1.98 dollars off-peak and 3.96 at peak. Peak hours are defined as specific windows on weekdays, and off-peak rates are exactly half.",
+        "Run the same three years of tokens through those prices instead. At the cheapest rate the output is worth about 23 million dollars. At the most expensive it is worth about 135 million. Nvidia's 75 million sits in the middle of a range that spans six times over, and every point in that range comes from one company's own price sheet on one day.",
+        "That is the chart at the top of this piece. The scaling is our arithmetic, not Nvidia's, and it compares different models, so treat it as an illustration of the spread rather than a forecast. The spread is the point."
+      ],
+      "links": [
+        {
+          "label": "DeepSeek's published price list",
+          "url": "https://api-docs.deepseek.com/quick_start/pricing/"
+        }
+      ]
+    },
+    {
+      "heading": "What the same benchmark says now",
+      "paragraphs": [
+        "InferenceMAX has since been renamed InferenceX and kept running. In February 2026 SemiAnalysis published its second version, covering every Nvidia data centre chip from the last four years and every AMD one from the last three, using close to a thousand GPUs for a full benchmark sweep. Two findings from it sit awkwardly next to the 15x slide.",
+        "The first is how much the cost of making a token moves without any new hardware. Take DeepSeek R1 on a GB300 rack, serving each user at 150 tokens per second. The baseline cost is about 2.35 dollars per million tokens. Turn on one optimisation called multi-token prediction, where the model guesses several words ahead and checks them in one pass, and the cost drops to about 11 cents. That is a 21-fold change from a software switch, on the same metal.",
+        "The second is how much the speed you promise your users changes the price. On a B200 running the same model, serving at 50 tokens per second per user costs about 56 cents per million output tokens. Push to 125 tokens per second and it rises to around 4 dollars. Going 2.5 times faster costs roughly 7 times more. SemiAnalysis uses this to explain why Anthropic's Opus fast mode is priced 6 to 12 times higher for about 2.5 times the speed, and points out that no new chip is involved.",
+        "So the cost of a token is not a fixed property of a rack. It is a number you choose, by deciding how fast to serve people and how much engineering to do. A three-year revenue projection built on any single point of that curve is a snapshot presented as a plan."
+      ],
+      "pullquote": "A 21-fold change in cost per token, from a software switch, on the same metal."
+    },
+    {
+      "heading": "What the operators actually earn",
+      "paragraphs": [
+        "The most useful thing in the InferenceX report is not a benchmark at all. It is a worked example of a real company's margins.",
+        "SemiAnalysis took public data showing that Crusoe, a cloud provider, serves DeepSeek at 36 tokens per second per user for 1.35 dollars per million input tokens and 5.40 dollars per million output tokens. Cross-referencing that against measured costs, and counting depreciation of the hardware as a cost, it estimates Crusoe earns up to 83 per cent gross margin on input tokens and 45 per cent on output tokens.",
+        "SemiAnalysis is careful to say those assumptions may not be exactly right and that the calculation ignores downtime and underused capacity, which are precisely the things that eat real returns. Still, this is the closest thing the industry has to a published margin, and it came from an outside firm reverse-engineering it rather than from any provider disclosing it.",
+        "One more number from the same report, for perspective on who is doing best out of all this. SemiAnalysis puts Nvidia's own gross margin at around 75 per cent, roughly a fourfold markup on the cost of making the chips. The company selling the 15x return is running better economics than anyone it sells to."
+      ]
+    },
+    {
+      "heading": "Is any of this new?",
+      "paragraphs": [
+        "The genre is old. Mainframe vendors published cost-per-transaction slides. Telecoms companies laying fibre in the late 1990s published revenue-per-mile projections that assumed the traffic would arrive. Shale drillers published well economics at one oil price. In every case the engineering was sound and the assumption about the sale price was the part that broke.",
+        "What is genuinely different this time is the direction of the two prices. The thing the machine makes is getting cheaper fast, through both competition and software. The machine itself is getting more expensive: Fortune reported on 22 August that Nvidia is raising prices by around 15 per cent on systems shipping early next year, including its next-generation Vera Rubin and current Grace Blackwell lines, and the rental price of GPUs has been climbing rather than falling.",
+        "A 15x return calculated when your input cost is rising and your output price is under pressure is the best case, not the base case. That is a fair thing for a vendor to publish. It is not a fair thing for a buyer to plan on."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "One thing, and it is the same thing we flagged a week ago when writing about the companies that sell AI tokens wholesale: a published gross margin.",
+        "Not a benchmark score, not a return-on-investment slide, not a revenue run rate. An actual margin, disclosed by a company that buys these racks and sells what they produce, audited if possible. Nobody in the category has published one. Anthropic's stock market filing, when the public version arrives, may be the first document that forces some of this into daylight.",
+        "Until then, the honest summary of the 15x claim is this. The measurement is real and independently produced. The machine is genuinely a large step up from the one before it. And the revenue is a ceiling calculated at one price, on one model, at full utilisation, in a market where the price of the product has a six-fold spread on a single vendor's own website."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis on the InferenceX benchmark and inference economics",
+          "url": "https://newsletter.semianalysis.com/p/inferencex-v2-nvidia-blackwell-vs"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "blaming-ai-for-your-power-bill-is-half-the-story",
   "status": "published",
   "datePublished": "2026-08-25",
