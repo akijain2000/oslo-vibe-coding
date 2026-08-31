@@ -36,6 +36,127 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "openai-used-its-own-ai-to-design-its-own-chip",
+  "status": "published",
+  "datePublished": "2026-08-31",
+  "title": "OpenAI used its own AI to design its own chip",
+  "dek": "At a chip conference last week, OpenAI showed the first results for Jalapeño, a processor it designed itself. It got more work out of each unit of electricity than Nvidia's shipping systems, and the company's own models helped design and program it. It also barely exists yet, and the analysts who ran the benchmark say the comparison flatters it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "OpenAI presented benchmark results for Jalapeño, its first custom chip, at Hot Chips on 25 August. On the InferenceX benchmark it produced roughly 1.5 to 1.9 times more output per unit of chip power than the Nvidia systems it was tested against, and returned answers 1.7 to 3.6 times faster. SemiAnalysis, who run the benchmark, were invited into OpenAI's lab to watch, which is rare. They also say three things out loud: all the numbers came from OpenAI, the Nvidia chips compared against are the outgoing generation rather than the one now shipping, and the workload tested is the easy one. The genuinely new part is not the chip winning. It is that a company with no chip history got a competitive result on its first attempt, in a fraction of the normal time, with its own models doing part of the design and most of the low-level programming.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+  "sourceLabel": "Read the SemiAnalysis teardown",
+  "about": "OpenAI's Jalapeño custom inference chip and its first benchmark results",
+  "keywords": [
+    "OpenAI",
+    "Jalapeño",
+    "Broadcom",
+    "Nvidia",
+    "AI chips",
+    "inference",
+    "custom silicon",
+    "ASIC",
+    "Hot Chips 2026",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/openai-used-its-own-ai-to-design-its-own-chip.png",
+    "alt": "A comparison of Nvidia's GB300 and OpenAI's Jalapeño on the same DeepSeek R1 benchmark: 1,400 versus 700 watts per chip, 11,781 versus 19,641 tokens per second per kilowatt, 5.99 versus 1.65 seconds to a full answer, and 169 versus 700 tokens per second per user.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia"
+  },
+  "sections": [
+    {
+      "heading": "What OpenAI showed",
+      "paragraphs": [
+        "At the Hot Chips conference on Tuesday 25 August, OpenAI presented the first performance results for a processor it designed itself. The chip is called Jalapeño. It was built together with Broadcom, a company whose business is making custom chips for other people, and it does one job: run AI models that have already been trained.",
+        "That job has a name. Training is the expensive one-off process of creating a model. Inference is what happens every time you type something into a chatbot and it answers. Training built the thing; inference is the thing doing its work, millions of times a day. Jalapeño only does inference.",
+        "Two details made the presentation unusual.",
+        "The first is the result. On InferenceX, a benchmark run by the research firm SemiAnalysis, Jalapeño got more output out of each unit of electricity than the Nvidia systems it was measured against, on all three AI models tested.",
+        "The second is who was allowed to watch. OpenAI invited SemiAnalysis into its lab to see the benchmark runs in person. That is not normal. SemiAnalysis noted, pointedly, that Nvidia has not given them the same access to its newest hardware.",
+        "Neither detail settles anything by itself. Both are worth taking seriously, and so are the caveats, which are substantial and which SemiAnalysis states plainly."
+      ]
+    },
+    {
+      "heading": "What the thing actually is",
+      "paragraphs": [
+        "Jalapeño is a large chip rated at 700 watts, though OpenAI says it measured at or below 550 watts on the workloads tested. For scale, a domestic fan heater is about 2,000 watts. This is one chip, and there are a lot of them.",
+        "It carries 216 gigabytes of HBM4, which is the fast memory stacked directly on top of high-end AI chips, moving data at 15.4 terabytes per second. HBM4 is the newest generation, and Jalapeño is an early adopter of it, ahead of Google's and Amazon's established in-house chip programmes.",
+        "The chips are assembled into racks, and the naming is a running joke that gets progressively spicier. Each compute tray is a \"Vindaloo\" and holds 8 chips; 16 trays make a rack of 128 chips. The switch trays that connect them are \"Chana\". A second rack of conventional AMD server processors, each tray a \"Katsu\", sits alongside to feed them. The pair draws roughly 160 kilowatts, about the same as a very large Nvidia rack. Up to 16 of these racks, 2,048 chips, can be wired together to behave as one machine.",
+        "The system-level design was done with Celestica. None of it is currently for sale. OpenAI is building this for itself."
+      ]
+    },
+    {
+      "heading": "Why electricity became the number everyone quotes",
+      "paragraphs": [
+        "The headline metric here is not speed and not price. It is tokens per watt, where a token is roughly a fragment of a word, the unit AI models produce.",
+        "The reason is a constraint that has nothing to do with chips. Data centre operators cannot easily get more electricity. Adding servers takes weeks. Adding grid capacity takes years, and in many places there is a queue. So the amount of power a company already has connected is, for practical purposes, fixed, and the only way to serve more customers is to get more work out of each watt of it.",
+        "Nvidia's own chief executive put it bluntly at Computex in June: if you have a gigawatt of power, then throughput per watt is revenue. Nvidia engineers repeated the point at Hot Chips. On this, the two companies agree completely. They just disagree about whose chip wins.",
+        "OpenAI says it designed Jalapeño around exactly this constraint, because power, not money and not floor space, is what currently limits it."
+      ]
+    },
+    {
+      "heading": "The numbers",
+      "paragraphs": [
+        "OpenAI tested three models it did not make: GPT-OSS 120B, which it did release openly, DeepSeek R1, and Kimi K2.5, the last two from Chinese labs. Testing on other people's models is a deliberate choice, since the standing accusation against a lab building its own chip is that the chip will only be good at that lab's own models.",
+        "Across the three, OpenAI reports 1.5 to 1.9 times more work per watt at peak throughput, and answers arriving 1.7 to 3.6 times faster end to end, against the Nvidia systems compared. For the most interactive workloads, where a single user wants text appearing as fast as possible, it claims 2.1 to 4.1 times higher performance.",
+        "One concrete pair, on DeepSeek R1: Jalapeño produced 19,641 tokens per second per kilowatt of chip power against 11,781 for an Nvidia GB300, and finished a full answer in 1.65 seconds against 5.99. For a single user with nobody else queueing, it reached about 700 tokens per second, roughly four times the Nvidia figure. On GPT-OSS it reached around 1,400.",
+        "Seven hundred tokens a second is faster than anyone can read. That number matters for AI agents rather than people, because an agent doing a task in twenty steps waits for each step, and the delays add up."
+      ],
+      "pullquote": "Jalapeño beats Blackwell on perf/W across almost all scenarios without being tuned for any specific point in the curve."
+    },
+    {
+      "heading": "Three reasons to hold those numbers loosely",
+      "paragraphs": [
+        "SemiAnalysis publish all three caveats themselves, in an article titled \"Better Than Nvidia Blackwell\", which is a reasonable sign they are not spinning.",
+        "First, the numbers came from OpenAI. SemiAnalysis watched the benchmark runs in the lab and confirmed the models produced correct answers, which rules out the crudest kind of cheating. They did not run the full benchmark suite themselves.",
+        "Second, and most importantly, Jalapeño is being compared against the wrong Nvidia chip. Blackwell is the outgoing generation. Nvidia's Vera Rubin systems, which use the same new HBM4 memory Jalapeño uses, are shipping to customers now. SemiAnalysis call the Blackwell comparison \"somewhat incomplete and unfair\" and say a custom chip of this generation ought to beat Blackwell. Against the published Rubin figures, they put the two roughly level on output per dollar, with Jalapeño ahead on output per watt.",
+        "Third, the test is the easy one. The benchmark used a short prompt and a short answer. It does not cover long, multi-turn agent work, which stresses far more of the system and which SemiAnalysis consider the more honest test. Those results do not exist yet for Jalapeño.",
+        "And there is a fourth, simpler point, from OpenAI's own head of hardware Richard Ho on the press call: Jalapeño will deploy at the end of this year \"in very small volumes\", with real deployment in 2027. Nvidia will have moved by then."
+      ]
+    },
+    {
+      "heading": "The part that is genuinely new",
+      "paragraphs": [
+        "Set the benchmark aside. The striking thing is the calendar.",
+        "Designing a chip is a bit like printing an encyclopedia in the days before digital printing. Everything happens before the press runs: the writing, the layout, the checking, the arguments about what goes where. Then you commit, the press runs, and you find out what you got. If there is a mistake on page 400, you do not fix it, you wait for the next edition. In chips that moment of commitment is called tape-out, and the wait is measured in months.",
+        "First editions are usually bad. First-generation chips from companies that have never made chips are usually much worse than bad, which is why Microsoft's Maia programme slipped and why Meta, after years of work, only moved its own chip into production this September. SemiAnalysis make this comparison directly.",
+        "OpenAI started hiring the team in mid-2024 and taped out in November 2025. Nine months later it had benchmark results, with only three months of testing on real silicon, and a second revision is already in the factory with a further 25 percent efficiency improvement. The first edition was competitive.",
+        "OpenAI's explanation is that AI was in the loop. Its claims about this are refreshingly small and specific. AI-assisted design shaved 8 percent off the area of one part of the chip and 10 percent off another. For selected pieces of one model, AI-written low-level code ran 1.5 to 1.8 times faster than versions written by the company's own human experts. Three models that were never in the original plan were brought up to full performance in two months using Codex, OpenAI's coding tool.",
+        "None of those numbers is spectacular on its own. Eight percent is eight percent. The claim is about how fast the loop turns, not how clever any single output is. As a demonstration, OpenAI's engineers had Codex port the 1993 game Doom to the chip and ran it at 36 frames per second."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Companies designing their own AI chips instead of buying Nvidia's is at least a decade old. Google has been running its own Tensor Processing Units since 2015. Amazon has Trainium. Microsoft has Maia, Meta has MTIA. Anthropic committed more than 100 billion dollars to Amazon's chips. This is the established direction of travel, not a plot twist.",
+        "Using AI to help design chips is not new either. Google published a reinforcement learning method for chip layout in Nature in 2021, later named AlphaChip, and used it on its own TPUs. OpenAI is walking a path Google marked out.",
+        "What is different is the combination and the speed. Google's chip programme is eleven years old. Microsoft's and Meta's are years old and still difficult. OpenAI went from nothing to a benchmark-competitive chip in roughly two years, and it did so while writing its own software stack from scratch, which is normally the part that takes longest.",
+        "That last point is where this gets uncomfortable for Nvidia. Nvidia's deepest advantage has never been the silicon. It is CUDA, the software layer that decades of engineers have learned and that every AI framework assumes. A rival chip is not much use if nobody can program it. SemiAnalysis's conclusion, which is the single sharpest line in their piece, is that this may no longer hold: the CUDA moat is potentially dead, they write, given how fast OpenAI can bring up new models on its own silicon.",
+        "The reason is circular in a way that is hard to miss. Writing that low-level code was the barrier. AI models are now good enough to write a lot of it. SemiAnalysis note that OpenAI's own models, running on Nvidia GPUs, helped design and program the chip meant to replace them."
+      ],
+      "pullquote": "Nvidia's own GPUs are helping usher in their potential successor in real time."
+    },
+    {
+      "heading": "What it would mean for Nvidia",
+      "paragraphs": [
+        "Nvidia holds somewhere around 80 percent of the market for AI accelerators, depending on whose estimate you use. It was approached for comment on Jalapeño and, at the time of the coverage, had not responded.",
+        "The analysts CNBC spoke to were consistent in where they placed the threat, and it is narrower than the headlines suggest. Adrien Sanchez of Yole Group called it a threat to Nvidia's inference margins specifically, which happens to be the fastest-growing part of the business. Alexander Harrowell of Omdia called the efficiency the most impressive part and expects custom chips to outnumber GPUs by 2028, while noting revenue will lag far behind volume because GPUs cost much more. Fion Chiu of TrendForce made the counter-point: for training and frontier work, Nvidia's flexibility and software still win.",
+        "So the reasonable reading is not that Nvidia is in trouble. It is that the most profitable, fastest-growing slice of its business is the slice its largest customers are now best equipped to take in-house, and that OpenAI, one of the biggest buyers of Nvidia hardware in the world, has just shown it can build a credible alternative on the first try.",
+        "OpenAI was careful about this in its own post, and the care is telling. It will continue to deploy Nvidia accelerators widely, for both training and inference. Jalapeño is additional capacity, not a replacement. Given that OpenAI has committed to buying enormous quantities of Nvidia hardware, this is also simply true."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "Volume is the whole question. OpenAI's deal with Broadcom, signed in October 2025, covers 10 gigawatts of custom accelerators to be completed by the end of 2029. The immediate goal is far smaller: 100 megawatts. Chips that exist as engineering samples and chips that exist by the hundred thousand are different products, and the gap between them is where most custom silicon programmes have died.",
+        "Three things would move this from impressive to settled. Results on the harder agent-style benchmark, which SemiAnalysis want and do not yet have. A comparison against Vera Rubin run by someone other than OpenAI. And evidence that the second revision ships in real quantity during 2027 rather than slipping, the way Microsoft's did.",
+        "None of that arrives soon. What arrived last week was a first edition that came off the press readable, which in this business is the surprising part."
+      ]
+    }
+  ]
+},
+{
   "slug": "nvidia-is-buying-the-internets-model-library",
   "status": "published",
   "datePublished": "2026-08-30",
