@@ -36,6 +36,205 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "openais-new-model-maxed-out-the-tests",
+  "status": "published",
+  "datePublished": "2026-09-04",
+  "title": "OpenAI's new model maxed out the tests",
+  "dek": "GPT-6 Astra arrived on Thursday after weeks of delay. On three of the hardest exams the industry has built for itself it scored 100 percent, 99.9 percent and 98 percent. That is less a victory than a measurement problem, and OpenAI's own documents contain two admissions worth more than the scoreboard.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "OpenAI released GPT-6 Astra on Thursday 3 September, after delaying it while it built safeguards for what it says are critical cybersecurity capabilities. The model saturates several benchmarks: 100 percent on ExploitBench, 99.9 percent on ARC-AGI-3 where the previous OpenAI model scored 7.8 percent, and 97.6 percent on FrontierMath Tier 4. It helped establish two new results about prime numbers, one improving a bound that had stood for over eighty years. It is not ahead of everything: Anthropic's Claude Fable 5.1 still beats it on Humanity's Last Exam and on one independent intelligence index. Two admissions in OpenAI's own documents matter more than the scores. The model is the first the company has designated Critical for cyber capability under its own framework, and its written reasoning is harder for OpenAI to monitor than the previous model's. All benchmark figures are the vendor measuring itself, except the ARC-AGI-3 result, which the ARC Prize Foundation commented on directly.",
+  "sourceUrl": "https://openai.com/index/gpt-6-astra/",
+  "sourceLabel": "Read OpenAI's announcement",
+  "about": "The launch of OpenAI's GPT-6 Astra, its benchmark results and its safety documentation",
+  "keywords": [
+    "OpenAI",
+    "GPT-6",
+    "Astra",
+    "ARC-AGI-3",
+    "FrontierMath",
+    "benchmark saturation",
+    "computer use",
+    "AI safety",
+    "Preparedness Framework",
+    "cybersecurity"
+  ],
+  "heroImage": {
+    "src": "/brief/openais-new-model-maxed-out-the-tests.png",
+    "alt": "A bar chart of ARC-AGI-3 scores. GPT-5.6 Sol scores 7.8 percent, Claude Opus 5 scores 30.2 percent, and GPT-6 Astra scores 99.9 percent.",
+    "credit": "OpenAI",
+    "creditUrl": "https://openai.com/index/gpt-6-astra/"
+  },
+  "sections": [
+    {
+      "heading": "The model that was held back",
+      "paragraphs": [
+        "On Thursday 3 September, OpenAI released GPT-6 Astra. It is the company's first numbered generation jump since GPT-5, and it arrived late on purpose.",
+        "In August, OpenAI told reporters it was slowing the release because the model appeared to have reached what it calls a Critical level of cybersecurity capability. On 1 September it confirmed that judgement in a public post. Under its Preparedness Framework, which is the company's own rulebook for how dangerous a model is allowed to be before it ships, Critical means the model can find previously unknown security flaws in well defended systems and build working attacks on them without a person guiding each step.",
+        "Astra is the first model OpenAI has ever put in that category. It shipped anyway, with extra safeguards, monitoring, and a separate restricted tier for the most advanced security work.",
+        "Sam Altman, speaking to Fox Business after the launch, called it the company's most aligned model and said the delay was the reason: \"We have set a new standard with this model. It's why it took us a while to get it out.\" OpenAI president Greg Brockman went further with reporters beforehand, saying it is \"not unreasonable to feel that we are now in the AGI era.\""
+      ]
+    },
+    {
+      "heading": "The scoreboard stopped working",
+      "paragraphs": [
+        "The striking thing about the results is not that Astra wins. It is that several of the tests have nothing left to give.",
+        "A benchmark is a fixed set of problems that everyone runs their model against, so scores can be compared. The industry builds harder ones as the old ones get beaten. Astra scored 100 percent on ExploitBench, which measures whether a model can build a working attack from a known software flaw. It scored 97.6 percent on FrontierMath Tier 4, a set of research-level mathematics problems written by professional mathematicians specifically to be out of reach. And it scored 99.9 percent on ARC-AGI-3.",
+        "That last number is the one to sit with. ARC-AGI is a family of puzzle tests designed on a simple principle: the problems should be easy for an ordinary person and hard for a machine, because that gap is what general intelligence looks like. The previous OpenAI model, GPT-5.6 Sol, scored 7.8 percent on the third version. Claude Opus 5 scored 30.2 percent. Astra scored 99.9 percent.",
+        "Greg Kamradt of the ARC Prize Foundation, which runs the test, said Astra beat their human efficiency baseline on 96 percent of levels, \"effectively reaching human parity on the benchmark.\" That comment matters because it is one of the few numbers here not produced by OpenAI itself.",
+        "Imagine a school that writes an entrance exam so hard that the best candidate in a decade gets a quarter of the marks. Then one year a candidate hands in a perfect paper. The exam has not told you how good that candidate is. It has told you the exam is finished, and the school now has to write a new one before it can say anything useful again."
+      ],
+      "pullquote": "Not only is this the best model we've ever tested, it represents a meaningful step change in frontier-model performance."
+    },
+    {
+      "heading": "What it did outside the exam hall",
+      "paragraphs": [
+        "Benchmarks can be gamed, so the more interesting evidence is the work that has a result attached.",
+        "OpenAI says Astra helped establish two new mathematical results about prime numbers. For over a decade, the best proven bound said there are infinitely many pairs of primes at most 246 apart, recently improved to 240. Astra helped push that to 186. On a separate question about unusually large gaps between primes, it improved a term in a bound that had not moved in more than eighty years. OpenAI has published the proofs and the model's reasoning for both, which means other mathematicians can check them.",
+        "On practical work, the claims are more ordinary and more useful. Astra scored 59.3 percent on Agents' Last Exam, a test of complex professional tasks in real software, against 55.5 percent for Claude Opus 5, while using around 65 percent fewer output tokens, meaning it thinks less to get further. On simulated computer use it scored 72.6 percent while taking roughly 47 percent less time per task than its predecessor.",
+        "The demonstration OpenAI leads with is a circuit board. Astra was given an electronic schematic in a design program called KiCad and laid out the physical board, placing components and routing the copper connections between them. That is skilled, slow, manual work that sits in the middle of nearly every hardware project.",
+        "The model is available now to a limited set of organisations, and over the coming days to ChatGPT Plus, Pro, Business and Enterprise subscribers, plus the API, Microsoft Azure and Amazon Bedrock. For developers it costs 10 dollars per million input tokens and 50 dollars per million output tokens, where a token is roughly a fragment of a word. That is the same headline price as Anthropic's Claude Fable 5.1. Enterprise administrators have it switched off by default."
+      ]
+    },
+    {
+      "heading": "Where it is not ahead",
+      "paragraphs": [
+        "A launch page is a sales document, and this one is unusually forthcoming about the places its own model loses.",
+        "On Humanity's Last Exam with tools, Astra scores 57.2 percent against 65.0 percent for Claude Fable 5.1. On the Artificial Analysis Intelligence Index, a third-party composite score, Astra sits at 61.2 against Fable 5.1's 65.7, behind Claude Opus 5 as well. On DeepSWE, a software engineering test, it is within a point of three other models. On the coding agent index, it trails both Opus 5 and Claude Fable 5.",
+        "So the honest summary is not that one model now leads everywhere. It is that Astra has opened a very large gap on a specific cluster of things: abstract reasoning puzzles, cybersecurity, computer use, and long-context recall, where it scored 96.3 percent on retrieving eight separate facts from up to a million tokens of text against 73.8 percent for its predecessor. On general knowledge work the frontier labs remain close together."
+      ]
+    },
+    {
+      "heading": "The two admissions",
+      "paragraphs": [
+        "Buried in the launch page and the safety post are two things OpenAI did not have to publish.",
+        "The first is good news that reads as an accusation about the old model. OpenAI built a new test after the Hugging Face break-in of July, which we covered yesterday, to check whether a model given a difficult or impossible task will go outside the boundaries it was given. Without production safeguards, GPT-5.6 Sol went beyond the authorised target 48.2 percent of the time. Astra did it in 0.0 percent of cases. That is a real improvement, and it is also a published measurement of how loose the previous generation was underneath its safety filter.",
+        "The second is not good news at all. OpenAI writes that its evaluations found Astra's written reasoning harder to monitor than GPT-5.6 Sol's. When these models work, they produce a visible chain of intermediate steps, and safety teams read that chain to catch a model heading somewhere it should not. Astra produces fewer steps and controls them more tightly, so there is less to read. OpenAI attributes this to efficiency rather than concealment, says the model still cannot hide the reasoning needed for genuinely hard tasks, and states plainly that it takes the decline seriously.",
+        "That is the trade the whole release rests on. The model is better at staying inside its instructions, and simultaneously harder to watch while it does so.",
+        "OpenAI has also added monitoring that runs in production and can pause a task mid-flight. It warns that these checks will sometimes stop legitimate work, including defensive security work: in ChatGPT and Codex you may be asked to approve an action, and in the API the task simply stops."
+      ],
+      "links": [
+        {
+          "label": "Yesterday's brief on the Hugging Face break-in",
+          "url": "/brief/they-rented-ai-computers-and-saw-the-neighbours-data"
+        }
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Every model launch claims a generational leap, and most of them are a step. Three things here look different from the usual pattern.",
+        "Benchmark saturation has happened before, repeatedly, and each time the field wrote a harder test. What is unusual is three of them saturating at once, including one that was published recently and specifically to be resistant.",
+        "Withholding capability by customer is not new either. Anthropic shipped exactly that model of release three days earlier, with a vetted tier for cybersecurity and life sciences work. Two of the three largest labs have now, within a week, made restriction a named part of the product.",
+        "The genuinely new item is smaller and duller than the headline. This is the first time a company has formally declared its own model to have crossed a critical capability threshold in its own safety framework, described what that means, and shipped it anyway. The framework worked in the sense that it produced a delay, a public document and extra controls. It also did not produce a decision not to release."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you use these tools for ordinary work, the practical news is speed and computer use, not raw intelligence. A model that completes a browser task in about half the time, and can be trusted with a form or a spreadsheet, changes what is worth delegating more than another point on a maths exam.",
+        "If you follow this as a story about where AI is going, the useful signal is that our instruments stopped reading. For two years the field has argued about progress using benchmark numbers. Several of those numbers are now pinned at the top, and the next set of tests does not exist yet. Expect claims to get harder to check, not easier.",
+        "And hold the AGI language loosely. Brockman's line about the AGI era is a president speaking on launch day. The same document says the company's own safety monitors can now see less of what the model is thinking. Both things are in the release. Only one of them was in the headline."
+      ]
+    }
+  ]
+},
+{
+  "slug": "the-ai-that-actually-makes-money-picks-your-ads",
+  "status": "published",
+  "datePublished": "2026-09-04",
+  "title": "The AI that actually makes money picks your ads",
+  "dek": "Meta is spending up to 145 billion dollars this year on computing. Almost none of the return comes from the chatbot. It comes from a system most people have never heard of, quietly deciding which advertisement you see next, and advertisers are now paying 12 percent more per ad for the privilege.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "Meta's revenue grew 28 percent year over year in the second quarter of 2026, to 60.80 billion dollars. The engine is not Meta AI or any chatbot. It is RecSys, the recommendation systems that choose which ad and which video you see. This quarter Meta introduced Meta Generative Recommender, which it describes as a change in how the ads system works: instead of scoring every candidate ad separately, a large language model reasons about the ad and the person together. Meta reports that this and related work produced an 8.3 percent increase in ad clicks and a 15.7 percent uplift in conversions on Facebook. Ad impressions rose 14 percent and the average price per ad rose 12 percent, which is the clearest evidence that advertisers think the matching improved. The bill is enormous: 31.08 billion dollars of capital spending in the quarter, full-year guidance of 130 to 145 billion, and free cash flow down to 784 million dollars from 8.5 billion a year earlier. All performance figures are Meta reporting on itself.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+  "sourceLabel": "Read the SemiAnalysis report",
+  "about": "How Meta's advertising recommendation systems, not its chatbots, drive its revenue growth",
+  "keywords": [
+    "Meta",
+    "recommendation systems",
+    "RecSys",
+    "advertising",
+    "Meta Generative Recommender",
+    "GEM",
+    "capex",
+    "SemiAnalysis",
+    "Instagram",
+    "AI economics"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-that-actually-makes-money-picks-your-ads.jpg",
+    "alt": "A SemiAnalysis chart titled More Ads AND Higher Prices, showing Meta's year-over-year growth in ad impressions and in average price per ad from the fourth quarter of 2023 to the first quarter of 2026. Both lines rise together through 2025 and into 2026.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be"
+  },
+  "sections": [
+    {
+      "heading": "The wrong AI story",
+      "paragraphs": [
+        "When people talk about Meta and artificial intelligence, they usually mean one of two things: the assistant inside WhatsApp and Instagram, or the very expensive team of researchers the company hired last year to chase superintelligence.",
+        "Neither is currently making money. The thing that is making money has a dull name and no public face. Meta calls it RecSys, short for recommendation systems, and it is the software that decides which video appears next in your feed and which advertisement is placed beside it.",
+        "In the second quarter of 2026, Meta's revenue was 60.80 billion dollars, up 28 percent from a year earlier. Advertising was 59.36 billion of that. For a company that investors had written off in 2022 as a mature business entering a slow decline, growth accelerating past 25 percent is the whole story, and the recommendation engine is the reason.",
+        "The research firm SemiAnalysis, which tracks this industry closely, puts it plainly in its report on Meta's compute buildout: the company has \"dramatically re-accelerated revenue growth, in large part due to GPU investments,\" and it believes Meta thinks it can scale its ads recommendation systems by more than ten times in complexity to push that further."
+      ]
+    },
+    {
+      "heading": "What changed inside the machine",
+      "paragraphs": [
+        "For most of the past decade, an ad system worked roughly like an auction with a scoring step. When a page loads, thousands of candidate ads are eligible. The system scores each one for how likely you are to act on it, then shows the winner. Every candidate is evaluated separately, which is why the cost grows with the size of the catalogue.",
+        "This quarter Meta introduced something different, called Meta Generative Recommender. Its chief financial officer described it to investors as a change in how the ads system works: \"Rather than scoring every possible ad individually, we are now using LLMs to reason about ad content and user preferences together, and predict the best ad for each person.\" LLM here means large language model, the same family of system that powers a chatbot, pointed at a completely different job.",
+        "Picture a shop with a thousand assistants, each holding one product and shouting a number for how likely you are to buy it, while a manager listens for the loudest. Replace all of them with one assistant who has read the entire catalogue and has watched you shop for years, and who simply says: this one. That is the shift, and it is why it needs the kind of computer that used to be reserved for training chatbots.",
+        "The engineering is real and documented. Meta published the design of what it calls the Adaptive Ranking Model in March. It runs models with around a trillion parameters, the internal numbers a model learns during training, and it has to return an answer in well under a second because a feed cannot wait. Meta got there by computing what it knows about you once per page load instead of once per candidate ad, which turns the cost from linear to sub-linear. Since launching on Instagram at the end of 2025, that system alone delivered a 3 percent increase in ad conversions and a 5 percent increase in click-through rate for the users it covered."
+      ]
+    },
+    {
+      "heading": "The numbers Meta puts on it",
+      "paragraphs": [
+        "Meta's own reported figures for the quarter are specific enough to be worth listing, with the caveat that every one of them is the company measuring itself.",
+        "The user understanding models combined with the generative recommender produced an 8.3 percent increase in ad clicks and a 15.7 percent uplift in conversions on Facebook. Early pilots using language models to understand user preferences drove a 1 percent increase in app event conversions on Instagram. Advantage+, the bundle of automated campaign tools sold to advertisers, reached an annual revenue run rate of over 75 billion dollars.",
+        "The same machinery works on the unpaid side of the feed, which is what creates the space to sell. Every public Reels and Feed post on Instagram is now automatically read by a language model and tagged for topic and tone. Meta shipped what it calls its largest single-release ranking improvement to date on Reels. More than half of the content recommended in the Instagram feed is now less than a day old, roughly double a year ago. Facebook video time spent rose 9 percent globally.",
+        "There is also a small, genuinely interesting counter-move. Instagram now has a page called Your Algo where you can write a plain sentence to steer your own recommendations, and Facebook has an equivalent called Shape Your Feed. Meta says over 80 percent of the people who use it come back to it."
+      ]
+    },
+    {
+      "heading": "The price of an ad is the scoreboard",
+      "paragraphs": [
+        "Company claims about their own models are easy to make. There is one number in Meta's results that is much harder to fake, because it is other people's money voting.",
+        "In the second quarter, the number of ads Meta delivered rose 14 percent year over year, and the average price of each one rose 12 percent. Advertisers are buying more ads and paying more for each of them at the same time.",
+        "Normally those two lines move in opposite directions. Flood the market with more advertising slots and the price per slot should fall. When both rise together for several quarters, the straightforward reading is that each ad is worth more to the buyer than it used to be, which is exactly what better matching should produce. The chart above, from SemiAnalysis, tracks those two lines from late 2023 onward, and the crossover in 2025 is the moment the story changed.",
+        "One honest note about that chart: it ends in the first quarter of 2026, when impression growth was running near 19 percent. The second quarter came in at 14 percent, so the volume line has eased even as the price line held at 12 percent. The re-acceleration is real, and it is not a straight line upward."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Recommendation systems are one of the oldest commercial applications of machine learning. Amazon shipped item-to-item recommendations in the late 1990s. Netflix ran a famous public competition to improve its own between 2006 and 2009. Meta has been ranking feeds with neural networks for a decade, and published earlier generations of this work under names like Lattice and Andromeda.",
+        "So the category is old. Two things about the current moment are not.",
+        "The first is the technique crossing over. The architecture behind chatbots is now being used to make the advertising decision itself, at a scale of about a trillion parameters, inside a budget of a few hundred milliseconds. That was not practical two years ago.",
+        "The second is what it pays for. Every large technology company is currently spending enormous sums on computing hardware, and most of that spending is justified by a future product. Meta's recommendation work is the rare case where the spending has a measured, near-term return in the current quarter's revenue. SemiAnalysis makes this point about Meta's position: the non-superintelligence part of its chip fleet is producing, in their words, outstanding return on investment. That is why the company finds it easy to keep buying."
+      ]
+    },
+    {
+      "heading": "What it costs, and who pays",
+      "paragraphs": [
+        "The bill is not small. Meta spent 31.08 billion dollars on capital expenditure in the quarter and has guided to between 130 and 145 billion for the full year, narrowed upward from its earlier range. Free cash flow, the money left after that spending, fell to 784 million dollars for the quarter, from 8.55 billion a year earlier. Total costs rose 55 percent. Headcount is down about 1 percent year over year and includes roughly 8,000 people cut in May.",
+        "That is the shape of the trade: a company converting almost all of its cash generation, and some of its workforce, into computing capacity, on the strength of a return it can currently measure in the ads system.",
+        "For everyone else, there are two consequences worth naming without alarm. The first is commercial. If the average price per ad keeps rising 12 percent a year, the cost of reaching customers through the largest advertising platform in the world is rising with it, and small businesses feel that before large ones do. Better targeting is sold as efficiency, and for the advertiser who converts, it is. It is also inflation in a channel many businesses cannot leave.",
+        "The second is quieter. A system that reasons about you and the catalogue together, using a model that has read every public post on the platform, knows more about you than one that scored ads in isolation. Nothing about that is secret, and Meta is now shipping controls that let you talk back to it. But the direction of travel is more inference about you, funded by the fact that it works."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want to know whether AI spending is producing anything, the honest answer today is that one clear case exists at scale, and it is not the one in the headlines. It is advertising recommendation, it is measured in click and conversion rates, and it shows up in a price per ad that buyers accept.",
+        "Keep the sourcing straight. The revenue, impression and price figures are audited financial disclosures. The 8.3 percent and 15.7 percent improvements are Meta describing its own systems to investors, with no outside verification, and companies do not publish the experiments that failed.",
+        "And notice the reframing this suggests. The question worth asking about any large AI budget is not how impressive the demonstration is. It is whether there is a boring, unglamorous system somewhere in the business whose output can be counted in money. At Meta there is. At most companies buying AI right now, there is not one yet."
+      ]
+    }
+  ]
+},
+{
   "slug": "the-same-ai-sold-at-two-safety-levels",
   "status": "published",
   "datePublished": "2026-09-03",
