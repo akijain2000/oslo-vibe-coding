@@ -8,13 +8,22 @@ const DESCRIPTION =
 
 const presentations = [
   {
+    title: "Context Engineering: What the Model Sees Next",
+    session: "Session 06",
+    slides: "12 slides",
+    href: "/presentations/context-engineering.html",
+    description:
+      "How to give an AI model the right instructions, evidence, tools, and state for its next decision.",
+    featured: true,
+  },
+  {
     title: "Spec-Driven Development in the AI Age",
     session: "Session 05",
     slides: "15 slides",
     href: "/presentations/spec-driven-development.html",
     description:
       "How a clear specification becomes the shared contract when AI makes implementation abundant.",
-    featured: true,
+    featured: false,
   },
   {
     title: "Loop Engineering: From Prompts to /goal",

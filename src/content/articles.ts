@@ -49,6 +49,144 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "context-engineering-what-the-model-sees-next",
+    datePublished: "2026-09-03",
+    title: "Context engineering: what the model sees next",
+    dek: "At our 3 September session, we explored why the same AI model can give very different results depending on the instructions, files, tools, history, and evidence it can see when it takes its next step.",
+    author: "Harsh Trivedi",
+    deckPages: 12,
+    readingTimeMin: 7,
+    takeaway:
+      "A better result does not always need a better model. Often it needs a smaller, clearer, better-timed package of context for the next decision.",
+    sourceUrl: "/presentations/context-engineering.html",
+    kicker: "session recap",
+    sourceLabel: "Open the 12-slide session deck",
+    about: "Context engineering for AI-assisted software development",
+    keywords: [
+      "context engineering",
+      "AI coding",
+      "AI agents",
+      "LLM memory",
+      "AGENTS.md",
+      "vibe coding",
+    ],
+    sections: [
+      {
+        heading: "The model did not get smarter",
+        paragraphs: [
+          "Imagine giving the same model the same coding task twice. The first time, it receives one vague sentence. The second time, it can also see the relevant files, the project rules, the current git state, and the command that proves the change works. The model has not changed, but the second attempt has a much better chance of succeeding.",
+          "That difference is context. It is the working environment around the request: what the model can see, what it can use, and what it knows about the task at the moment it chooses its next action.",
+        ],
+        pullquote: "Same model. Same task. Different context. Different result.",
+      },
+      {
+        heading: "Prompt engineering is only one part",
+        paragraphs: [
+          "A prompt is the immediate instruction. Context engineering is the wider job of deciding which instructions, evidence, tools, and current state belong beside that prompt—and when each piece should appear.",
+          "One useful analogy is a computer. The model is the processor. The context window is its temporary working memory. Your files and databases are storage, and tools let it act on the outside world. The analogy is not exact, but it reveals the design problem: you would not load an entire hard drive into memory for one small task.",
+        ],
+        bullets: [
+          "Instructions: the goal, boundaries, and definition of done.",
+          "Evidence: the files, decisions, and source material that matter now.",
+          "Tools: the actions the agent is allowed to take.",
+          "State: what has already happened and what remains unresolved.",
+        ],
+        links: [
+          {
+            label: "Read Anthropic's guide to effective context engineering",
+            url: "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          },
+        ],
+      },
+      {
+        heading: "More context is not more intelligence",
+        paragraphs: [
+          "A large context window tells us how much text can fit. It does not guarantee that every detail will be noticed, connected, or used at the right time. Old logs, duplicated instructions, and unrelated documentation can compete with the one fact that actually matters.",
+          "Research on long-context models has found that information can be harder to use when it sits in the middle of a long input. The practical lesson is simple: do not measure context quality by volume. Measure it by whether the model can find and apply the right evidence for the next decision.",
+        ],
+        pullquote: "It fits is not the same as it will be used.",
+        links: [
+          {
+            label: "Read the Lost in the Middle paper",
+            url: "https://aclanthology.org/2024.tacl-1.9/",
+          },
+        ],
+      },
+      {
+        heading: "Four moves for shaping context",
+        paragraphs: [
+          "During the session, we reduced context engineering to four practical moves. They are useful whether you are working with a chat assistant, a coding agent, or a longer automated workflow.",
+        ],
+        bullets: [
+          "Write: make the goal, constraints, and proof of completion explicit.",
+          "Select: retrieve only the sources that are relevant to this step.",
+          "Compress: turn long histories into concise decisions, summaries, and open questions.",
+          "Isolate: keep separate tasks or agents from contaminating one another with unrelated state.",
+        ],
+        pullquote: "Load less. Load better. Load when needed.",
+      },
+      {
+        heading: "Build context that survives the chat",
+        paragraphs: [
+          "Chats are useful working spaces, but they are poor long-term memory. Important decisions become buried in transcripts, and the next session begins without the reasoning that shaped the last one.",
+          "We looked at a practitioner pattern sometimes called an LLM Wiki: keep raw sources unchanged, then maintain a smaller set of linked Markdown pages that capture facts, decisions, contradictions, and provenance. The wiki is not a magical replacement for retrieval. It is a way to turn repeated work into a maintained knowledge structure the next task can navigate.",
+          "A strong memory system keeps concise, validated strategies and useful snippets. It does not preserve every sentence the model ever produced. Repeatedly rewriting noisy summaries can slowly weaken the original meaning, so the raw sources should remain available as the ground truth.",
+        ],
+        pullquote: "RAG retrieves. A maintained wiki compounds.",
+        links: [
+          {
+            label: "Explore Andrej Karpathy's LLM Wiki notes",
+            url: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+          },
+        ],
+      },
+      {
+        heading: "Give the agent a map, not a manual",
+        paragraphs: [
+          "A short AGENTS.md or CLAUDE.md file can act as a routing layer for a codebase. It should tell the agent where the important knowledge lives, which rules are permanent, and how to verify its work. Detailed specifications, architecture notes, and decisions can stay in normal versioned files and be loaded when the task needs them.",
+          "The goal is not to squeeze the whole organisation into one instruction file. It is to give the agent a reliable map that points to the right source of truth.",
+        ],
+        bullets: [
+          "Keep permanent instructions short and unambiguous.",
+          "Point to the relevant specifications instead of copying them everywhere.",
+          "Include the command or check that proves the work is complete.",
+          "Remove stale and repeated rules before they become competing instructions.",
+        ],
+        pullquote: "Give the agent a map, not a 1,000-page manual.",
+        links: [
+          {
+            label: "See Vercel's evaluation of focused AGENTS.md files",
+            url: "https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
+          },
+        ],
+      },
+      {
+        heading: "The LLM Wiki workshop",
+        paragraphs: [
+          "We made the idea concrete with Pulse, a fictional employee check-in product. Its product brief, user research, and security policy did not agree on whether anonymous check-ins should be supported. That contradiction was intentional: real project context is rarely neat.",
+          "The workshop was not about asking the model to guess. It was about building a context system that could expose the disagreement, cite the original sources, and make the unresolved product decision visible to a human.",
+        ],
+        bullets: [
+          "Fork: begin with your own copy of the project.",
+          "Ingest: add the raw documents without changing them.",
+          "Question: ask whether Pulse should support anonymous check-ins, request a recommendation, and require citations and unresolved conflicts.",
+          "Inspect: review the maintained wiki, its index, and the update log—not only the final answer.",
+        ],
+      },
+      {
+        heading: "A small habit for your next build",
+        paragraphs: [
+          "Before your next meaningful AI task, write a tiny context map: the goal, the relevant files, the constraints, the current state, and the command or observation that proves success. Then give the model that map and let it retrieve the details it needs.",
+          "This keeps the prompt focused without pretending the whole product can fit inside it. The prompt asks for the next action; the context system helps that action remain connected to the work around it.",
+        ],
+        pullquote: "A prompt asks for an answer. A maintained context system makes the next answer better.",
+        links: [
+          { label: "Open the session deck", url: "/presentations/context-engineering.html" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "spec-driven-development-in-the-ai-age",
     datePublished: "2026-08-05",
     title: "Spec-driven development: write the plan before the code",
@@ -950,6 +1088,10 @@ export const seriesParts = (name: string) =>
 // A hero concept diagram per article, drawn with the same engine as the frontier
 // study guides. Keyed by slug; the article page renders it under the takeaway.
 export const articleDiagram: Record<string, DiagramSpec> = {
+  "context-engineering-what-the-model-sees-next": {
+    archetype: "context-flow",
+    title: "How context reaches the model",
+  },
   "how-llms-are-trained-pretraining": {
     archetype: "pipeline",
     title: "Making a base model",

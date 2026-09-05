@@ -28,6 +28,7 @@ export type DiagramSpec =
   | { archetype: "network"; title: string; center: string; nodes: string[] }
   | { archetype: "spectrum"; title: string; left: string; right: string; caption: string }
   | { archetype: "pipeline"; title: string; stages: string[] }
+  | { archetype: "context-flow"; title: string }
   | { archetype: "contrast"; title: string; aTitle: string; a: string[]; bTitle: string; b: string[] };
 
 // ---- primitives --------------------------------------------------------------
@@ -281,6 +282,45 @@ function PipelineD({ title, stages }: { title: string; stages: string[] }) {
   );
 }
 
+function ContextFlowD({ title }: { title: string }) {
+  const sources = [
+    { label: "Files", y: 48 },
+    { label: "Rules", y: 87 },
+    { label: "State", y: 126 },
+  ];
+
+  return (
+    <Svg title={title}>
+      {text(45, 37, "Sources", { fill: C.faint, size: 9, max: 12, maxLines: 1 })}
+      {sources.map((source) => (
+        <g key={source.label}>
+          {box(18, source.y, 54, 22)}
+          {text(45, source.y + 12, source.label, { fill: C.dim, size: 9.5, max: 9, maxLines: 1 })}
+          {arrow(74, source.y + 11, 102, 102 + (source.y - 87) * 0.5, C.faint, 1.3)}
+        </g>
+      ))}
+
+      {box(104, 65, 74, 74, C.hot, C.ember)}
+      {text(141, 94, "Working context", { fill: C.cream, size: 10, max: 11, lh: 11 })}
+      {text(141, 122, "selected now", { fill: C.faint, size: 8, max: 14, maxLines: 1 })}
+
+      {arrow(180, 102, 194, 102, C.ember, 1.8)}
+      <circle cx="226" cy="102" r="29" fill={C.panel} stroke={C.glow} strokeWidth="1.8" />
+      {spark(226, 86, 0.65, C.glow)}
+      {text(226, 108, "Same model", { fill: C.cream, size: 9.5, max: 9, lh: 10 })}
+
+      {arrow(257, 102, 272, 102, C.ember, 1.8)}
+      {box(274, 80, 34, 44, C.hot, C.ember)}
+      {text(291, 103, "Next action", { fill: C.cream, size: 8.5, max: 6, lh: 9 })}
+
+      {line(291, 126, 291, 163, C.amber, 1.4)}
+      {line(291, 163, 141, 163, C.amber, 1.4)}
+      {arrow(141, 163, 141, 143, C.amber, 1.6)}
+      {text(220, 180, "Verify + update", { fill: C.amber, size: 8.5, max: 22, maxLines: 1 })}
+    </Svg>
+  );
+}
+
 function ContrastD({ title, aTitle, a, bTitle, b }: { title: string; aTitle: string; a: string[]; bTitle: string; b: string[] }) {
   const col = (cx: number, head: string, items: string[], headFill: string) => {
     const rows = items.slice(0, 5);
@@ -328,6 +368,8 @@ export function FrontierDiagram({ spec }: { spec: DiagramSpec }) {
       return <SpectrumD title={spec.title} left={spec.left} right={spec.right} caption={spec.caption} />;
     case "pipeline":
       return <PipelineD title={spec.title} stages={spec.stages} />;
+    case "context-flow":
+      return <ContextFlowD title={spec.title} />;
     case "contrast":
       return <ContrastD title={spec.title} aTitle={spec.aTitle} a={spec.a} bTitle={spec.bTitle} b={spec.b} />;
     default:

@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/community`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/events`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/presentations`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/presentations/context-engineering.html`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/presentations/spec-driven-development.html`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/presentations/loop-engineering.html`, changeFrequency: "yearly", priority: 0.5 },
     ...events.map((e) => ({
