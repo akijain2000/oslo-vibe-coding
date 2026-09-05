@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Articles on AI coding, agents, and how LLMs work",
   description:
-    "Plain-English essays and session recaps from Oslo Vibe Coding: spec-driven development, AI agents, practical vibe coding, and how LLMs work.",
+    "Plain-English essays and session recaps from Oslo Vibe Coding: context engineering, spec-driven development, AI agents, practical vibe coding, and how LLMs work.",
   alternates: {
     canonical: "/articles",
     languages: { en: "/articles", "x-default": "/articles" },

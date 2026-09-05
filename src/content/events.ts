@@ -25,6 +25,43 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
+    slug: "drop-in-radisson-nydalen-2026-09-10",
+    title: "Vibe Coding Drop-In",
+    status: "upcoming",
+    start: "2026-09-10T17:00:00+02:00",
+    end: "2026-09-10T19:00:00+02:00",
+    dateLabel: "Thursday 10 September 2026",
+    timeLabel: "17:00–19:00",
+    venue: "Radisson Blu Nydalen Hotel",
+    address: "Nydalsveien 33, 0484 Oslo",
+    city: "Oslo",
+    rsvpUrl: "https://luma.com/4g4ag04r",
+    blurb:
+      "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, and get unstuck together. Total beginners genuinely welcome.",
+  },
+  {
+    slug: "drop-in-radisson-nydalen-2026-09-03",
+    title: "Vibe Coding Drop-In",
+    status: "past",
+    start: "2026-09-03T17:00:00+02:00",
+    end: "2026-09-03T19:00:00+02:00",
+    dateLabel: "Thursday 3 September 2026",
+    timeLabel: "17:00–19:00",
+    venue: "Radisson Blu Nydalen Hotel",
+    address: "Nydalsveien 33, 0484 Oslo",
+    city: "Oslo",
+    rsvpUrl: "https://luma.com/gdgeyxdi",
+    blurb:
+      "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, and get unstuck together. Total beginners genuinely welcome.",
+    recap:
+      "We explored context engineering: how the instructions, evidence, tools, memory, and current state around a model shape what it does next.",
+    recapHref: "/articles/context-engineering-what-the-model-sees-next",
+    recapLabel: "Read what happened at this session",
+    presentationHref: "/presentations/context-engineering.html",
+    presentationLabel: "Open the session presentation",
+    presentationTitle: "Context Engineering: What the Model Sees Next",
+  },
+  {
     slug: "drop-in-stortorvet-2026-08-05",
     title: "Vibe Coding Drop-In",
     status: "past",
