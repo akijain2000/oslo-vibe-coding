@@ -34,22 +34,22 @@
     <p class="eyebrow"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding · Session 07</p>
     <h1>Build your first agent, <span>for free.</span></h1>
     <p class="lede">A Telegram assistant for Oslo that answers, checks live departures and weather, remembers you, and messages you first. Runs on Val.town's free plan with its built-in model. No API key, no card.</p>
-    <a class="button" href="README.md">Read the ten setup steps</a>
+    <a class="button" href="/agent/README.md">Read the ten setup steps</a>
 
     <h2>The six files</h2>
     <p>Create a Val.town project called <code>oslo-assistant</code> and paste each of these in as a file with the same name.</p>
     <ul class="files">
-      <li><a href="agent.ts">agent.ts</a><span>The loop. Ask the model, run the tool it asks for, feed the result back, stop when it answers or the budget is spent.</span></li>
-      <li><a href="tools.ts">tools.ts</a><span>Layer 2. Entur departures and Yr weather, keyless Oslo open data.</span></li>
-      <li><a href="memory.ts">memory.ts</a><span>Layer 3. SQLite tables for messages, notes and reminders, plus the remember, recall and set_reminder tools.</span></li>
-      <li><a href="model.ts">model.ts</a><span>Layer 1. Val.town's built-in model by default; set <code>OPENROUTER_API_KEY</code> to switch to OpenRouter's free models.</span></li>
-      <li><a href="telegram.ts">telegram.ts</a><span>HTTP trigger. Telegram posts each message here; one request is one turn of the agent.</span></li>
-      <li><a href="reminders.ts">reminders.ts</a><span>Layer 4. Cron trigger, every 15 minutes. Sends reminders that are due.</span></li>
+      <li><a href="/agent/agent.ts">agent.ts</a><span>The loop. Ask the model, run the tool it asks for, feed the result back, stop when it answers or the budget is spent.</span></li>
+      <li><a href="/agent/tools.ts">tools.ts</a><span>Layer 2. Entur departures and Yr weather, keyless Oslo open data.</span></li>
+      <li><a href="/agent/memory.ts">memory.ts</a><span>Layer 3. SQLite tables for messages, notes and reminders, plus the remember, recall and set_reminder tools.</span></li>
+      <li><a href="/agent/model.ts">model.ts</a><span>Layer 1. Val.town's built-in model by default; set <code>OPENROUTER_API_KEY</code> to switch to OpenRouter's free models.</span></li>
+      <li><a href="/agent/telegram.ts">telegram.ts</a><span>HTTP trigger. Telegram posts each message here; one request is one turn of the agent.</span></li>
+      <li><a href="/agent/reminders.ts">reminders.ts</a><span>Layer 4. Cron trigger, every 15 minutes. Sends reminders that are due.</span></li>
     </ul>
 
     <h2>Also here</h2>
     <ul>
-      <li><a href="agent.test.ts">agent.test.ts</a>, three tests for the loop. Run with <code>node --test agent.test.ts</code>.</li>
+      <li><a href="/agent/agent.test.ts">agent.test.ts</a>, three tests for the loop. Run with <code>node --test agent.test.ts</code>.</li>
       <li><a href="/presentations/build-your-first-agent.html">The session deck</a>, 16 slides.</li>
     </ul>
 
