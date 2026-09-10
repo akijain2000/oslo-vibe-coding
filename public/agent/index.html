@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build your first agent | Oslo Vibe Coding</title>
+  <meta name="description" content="Starter files for the Oslo Vibe Coding session: a free Telegram assistant for Oslo, built in four layers on Val.town.">
+  <style>
+    :root { --night: #110F17; --ink: #16151C; --paper: #FBF7F0; --ember: #FF5A2C; --ember-ink: #B8300C; --line: rgba(22, 21, 28, .16); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Geist, "Space Grotesk", Arial, sans-serif; line-height: 1.5; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+    .mark { display: inline-block; width: 14px; height: 14px; margin-right: 10px; background: var(--ember); transform: rotate(45deg); }
+    .eyebrow { margin: 0 0 18px; color: var(--ember-ink); font-family: "Geist Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spacing: -.01em; }
+    h1 span { color: var(--ember); }
+    p.lede { max-width: 620px; margin: 18px 0 0; font-size: 18px; color: rgba(22, 21, 28, .78); }
+    h2 { margin: 44px 0 8px; font-size: 20px; }
+    ol, ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    .files { list-style: none; padding: 0; margin: 12px 0 0; border-top: 1px solid var(--line); }
+    .files li { display: grid; grid-template-columns: 160px 1fr; gap: 12px; margin: 0; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .files a { font-family: "Geist Mono", monospace; color: var(--ember-ink); text-decoration: none; }
+    .files a:hover { text-decoration: underline; }
+    .files span { color: rgba(22, 21, 28, .72); }
+    code { font-family: "Geist Mono", monospace; font-size: .95em; background: rgba(22, 21, 28, .06); padding: 1px 5px; }
+    a.button { display: inline-block; margin-top: 22px; padding: 12px 18px; background: var(--night); color: var(--paper); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 56px; color: rgba(22, 21, 28, .6); font-size: 14px; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding · Session 07</p>
+    <h1>Build your first agent, <span>for free.</span></h1>
+    <p class="lede">A Telegram assistant for Oslo that answers, checks live departures and weather, remembers you, and messages you first. Runs on Val.town's free plan with its built-in model. No API key, no card.</p>
+    <a class="button" href="README.md">Read the ten setup steps</a>
+
+    <h2>The six files</h2>
+    <p>Create a Val.town project called <code>oslo-assistant</code> and paste each of these in as a file with the same name.</p>
+    <ul class="files">
+      <li><a href="agent.ts">agent.ts</a><span>The loop. Ask the model, run the tool it asks for, feed the result back, stop when it answers or the budget is spent.</span></li>
+      <li><a href="tools.ts">tools.ts</a><span>Layer 2. Entur departures and Yr weather, keyless Oslo open data.</span></li>
+      <li><a href="memory.ts">memory.ts</a><span>Layer 3. SQLite tables for messages, notes and reminders, plus the remember, recall and set_reminder tools.</span></li>
+      <li><a href="model.ts">model.ts</a><span>Layer 1. Val.town's built-in model by default; set <code>OPENROUTER_API_KEY</code> to switch to OpenRouter's free models.</span></li>
+      <li><a href="telegram.ts">telegram.ts</a><span>HTTP trigger. Telegram posts each message here; one request is one turn of the agent.</span></li>
+      <li><a href="reminders.ts">reminders.ts</a><span>Layer 4. Cron trigger, every 15 minutes. Sends reminders that are due.</span></li>
+    </ul>
+
+    <h2>Also here</h2>
+    <ul>
+      <li><a href="agent.test.ts">agent.test.ts</a>, three tests for the loop. Run with <code>node --test agent.test.ts</code>.</li>
+      <li><a href="/presentations/build-your-first-agent.html">The session deck</a>, 16 slides.</li>
+    </ul>
+
+    <footer>No one codes alone. <a href="https://oslovibecoding.tech">oslovibecoding.tech</a></footer>
+  </main>
+</body>
+</html>

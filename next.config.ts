@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
   experimental: {
     globalNotFound: true,
   },
+  // Static starter kit for the "build your first agent" session lives in public/agent.
+  // Next does not serve a folder index from public, so /agent shows its index.html.
+  async rewrites() {
+    return [{ source: "/agent", destination: "/agent/index.html" }];
+  },
 };
 
 export default nextConfig;

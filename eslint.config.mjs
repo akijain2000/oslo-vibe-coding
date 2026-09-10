@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Val.town starter code for the agent session (Deno runtime, not part of the Next app):
+    "public/agent/**",
   ]),
 ]);
 

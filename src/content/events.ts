@@ -37,7 +37,10 @@ export const events: EventItem[] = [
     city: "Oslo",
     rsvpUrl: "https://luma.com/4g4ag04r",
     blurb:
-      "Bring your laptop and whatever you're building, or just bring curiosity. Work on your own thing, pair up with someone, and get unstuck together. Total beginners genuinely welcome.",
+      "Session 07: build your first agent, for free. A Telegram assistant for Oslo that checks live departures and weather, remembers you, and messages you first. No API key, no card. Bring a laptop; total beginners genuinely welcome.",
+    presentationHref: "/presentations/build-your-first-agent.html",
+    presentationLabel: "Open the session presentation",
+    presentationTitle: "Build Your First Agent",
   },
   {
     slug: "drop-in-radisson-nydalen-2026-09-03",

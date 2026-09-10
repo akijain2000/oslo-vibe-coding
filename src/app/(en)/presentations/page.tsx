@@ -8,13 +8,22 @@ const DESCRIPTION =
 
 const presentations = [
   {
+    title: "Build Your First Agent",
+    session: "Session 07",
+    slides: "16 slides",
+    href: "/presentations/build-your-first-agent.html",
+    description:
+      "A free Telegram assistant for Oslo, built in four layers: chat, tools, memory, autonomy. No API key, no card.",
+    featured: true,
+  },
+  {
     title: "Context Engineering: What the Model Sees Next",
     session: "Session 06",
     slides: "12 slides",
     href: "/presentations/context-engineering.html",
     description:
       "How to give an AI model the right instructions, evidence, tools, and state for its next decision.",
-    featured: true,
+    featured: false,
   },
   {
     title: "Spec-Driven Development in the AI Age",
