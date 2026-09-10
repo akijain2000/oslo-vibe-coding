@@ -1,6 +1,7 @@
 # Build your first agent: an Oslo assistant on Telegram
 
 Session 07, Oslo Vibe Coding, 10 September 2026. Everything here is free. No API key, no card.
+The long version of this guide, with what happens at each step and troubleshooting, is at https://oslovibecoding.tech/agent
 
 You will end up with a Telegram bot that answers you, checks live Oslo departures and weather,
 remembers what you tell it, and messages you first when a reminder is due.
@@ -20,9 +21,9 @@ remembers what you tell it, and messages you first when a reminder is due.
    `agent.ts`, `tools.ts`, `memory.ts`, `model.ts`, `telegram.ts`, `reminders.ts`.
 4. **Add the secret.** Project settings, Environment variables, add `TELEGRAM_BOT_TOKEN` with your token.
 5. **Set the trigger on `telegram.ts` to HTTP.** Copy the URL Val.town shows for it.
-6. **Point Telegram at your val.** Open this in a browser, with your own values filled in:
-   `https://api.telegram.org/bot<TOKEN>/setWebhook?url=<YOUR_VAL_URL>`
-   You should see `{"ok":true,"result":true}`.
+6. **Connect Telegram.** Open your val's URL in a browser with `?setup` on the end, e.g.
+   `https://yourname--telegram.web.val.run?setup`. The val registers itself with Telegram.
+   You should see `"ok": true`. Open it with `?status` any time to check the connection.
 7. **Talk to it.** Open your bot in Telegram, press Start, ask: "What is the weather like this afternoon?"
    Then: "When is the next tram from Jernbanetorget?" Watch the logs in Val.town; you will see the tool calls.
 8. **Teach it about you.** "My home stop is Majorstuen." Then ask "Should I leave now?"
