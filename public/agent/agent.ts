@@ -33,6 +33,7 @@ export async function runAgent(opts: {
       try { args = JSON.parse(call.function.arguments || "{}"); } catch { /* keep {} */ }
       const fn = opts.tools[name];
       const result = fn ? await fn(args).catch((e) => `Tool error: ${e.message}`) : `Unknown tool: ${name}`;
+      console.log(`[tool] ${name}(${JSON.stringify(args)}) -> ${result.slice(0, 120).replace(/\n/g, " ")}`); // shows up in the Logs panel
       log.push({ name, args, result });
       messages.push({ role: "tool", tool_call_id: call.id, name, content: result });
     }

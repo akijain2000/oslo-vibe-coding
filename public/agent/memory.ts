@@ -1,6 +1,8 @@
-// Step 3 of 4 — MEMORY. Val.town gives every free account a 10 MB SQLite database.
+// Step 3 of 4 — MEMORY. Val.town gives every val its own SQLite database (10 MB on the free plan).
 // Three tables: what was said, what you asked it to remember, and reminders for the cron.
-import { sqlite } from "https://esm.town/v/std/sqlite";
+// Note the /main.ts on the import: without it you get the legacy account-wide database instead,
+// and the SQLite page of this val will show "No tables yet".
+import { sqlite } from "https://esm.town/v/std/sqlite/main.ts";
 
 await sqlite.batch([
   `CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY, chat_id TEXT, role TEXT, content TEXT, created_at TEXT DEFAULT (datetime('now')))`,
