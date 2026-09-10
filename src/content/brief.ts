@@ -36,6 +36,252 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "an-ai-says-it-solved-a-million-dollar-maths-problem",
+  "status": "published",
+  "datePublished": "2026-09-10",
+  "title": "An AI says it solved a million dollar maths problem",
+  "dek": "On Tuesday OpenAI said 10,000 copies of an unreleased model spent 88 hours proving something mathematicians have chased for a century. The proof is public and machine-checked, which is more than most claims like this come with. Two days later the story is mostly about a fight over who got there first.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 10,
+  "takeaway": "On 8 September OpenAI announced that an internal model, running as roughly 10,000 agents working in parallel for about 88 hours, produced a proof about the Navier-Stokes equations, the equations used to model how fluids move. It is one of the seven Millennium Prize Problems, each carrying a one million dollar award, and none had been solved before. The result is a negative one: OpenAI says it constructed a fluid flow that starts at rest and reaches infinite speed in finite time, which means the equations break down. The proof is public, runs to 166 pages, and comes with a Lean certificate on GitHub, meaning a computer has checked every logical step. What is not settled is larger than what is. The proof uses an external force, which the prize rules permit but many mathematicians regard as the easier version of the question. Clay's rules require publication in a refereed journal and two further years of general acceptance before any prize is considered, and OpenAI says it will not seek the money. Separately, mathematician Tristan Buckmaster has accused OpenAI of pressuring him over authorship on related work, which OpenAI denies.",
+  "sourceUrl": "https://openai.com/index/navier-stokes-solution/",
+  "sourceLabel": "Read OpenAI's announcement",
+  "about": "OpenAI's claimed proof of the Navier-Stokes Millennium Prize Problem, its verification status and the credit dispute around it",
+  "keywords": [
+    "OpenAI",
+    "Navier-Stokes",
+    "Millennium Prize Problems",
+    "Clay Mathematics Institute",
+    "Lean",
+    "formal verification",
+    "Terence Tao",
+    "Tristan Buckmaster",
+    "AI and mathematics",
+    "research ethics"
+  ],
+  "heroImage": {
+    "src": "/brief/an-ai-says-it-solved-a-million-dollar-maths-problem.png",
+    "alt": "A two-column comparison. On the left, what OpenAI published: a 166-page proof, a Lean certificate on GitHub, 10,000 agents running for 88 hours, and compute costs in the millions. On the right, what is not settled: no peer review yet, the proof uses an external force, Clay waits two years after publication, and who got there first is disputed.",
+    "credit": "OpenAI, Clay Mathematics Institute",
+    "creditUrl": "https://openai.com/index/navier-stokes-solution/"
+  },
+  "sections": [
+    {
+      "heading": "What was announced",
+      "paragraphs": [
+        "On Tuesday 8 September, OpenAI said one of its internal models had produced a proof of the Navier-Stokes existence and smoothness problem. The company describes running roughly 10,000 agents, meaning 10,000 copies of the model working on pieces of the problem at the same time, for about 88 hours. The model is not one you can buy. OpenAI says it is more capable than GPT-6 Astra, which it released a week earlier.",
+        "The Navier-Stokes problem is one of seven Millennium Prize Problems set by the Clay Mathematics Institute in 2000. Each carries a one million dollar award. One has been solved in twenty-six years, by Grigori Perelman, who declined the money.",
+        "So the claim is large, and the first instinct with a claim this large is to look for the part that is missing. In this case an unusual amount of it is present. OpenAI published the proof: 166 pages, plus a separate result on the related Euler equations. It also published a Lean certificate on GitHub, under an open licence. We checked the repository directly. It exists, it is written in Lean, and it went up on 8 September.",
+        "OpenAI also says it will not claim the prize money."
+      ]
+    },
+    {
+      "heading": "What the problem actually asks",
+      "paragraphs": [
+        "The Navier-Stokes equations were written in the 19th century and are still what we use to model moving fluids. Weather forecasts use them. So does aircraft design, so does the modelling of blood in arteries, so does the simulation of water in an animated film.",
+        "Here is the awkward part. We use these equations constantly and we have never been able to prove they always work.",
+        "The specific question is whether a fluid that starts off smooth can stay smooth forever. Smooth here has a precise meaning: no point in the fluid ever reaches infinite speed. If a solution to the equations sends some speck of water to infinite velocity in a finite amount of time, mathematicians call that a singularity, or a blow-up. Real water does not do this. If the equations do, then the equations are not a faithful description of the thing they are supposed to describe.",
+        "The prize statement, written by Charles Fefferman, does not only reward proving the equations behave. It offers four routes. Two ask you to prove smoothness always holds. The other two ask you to produce a counterexample, a case where the flow does break down. Either direction resolves the problem.",
+        "OpenAI took the second direction. It says it constructed a three-dimensional flow that begins at rest and reaches unbounded velocity in finite time, while its total energy stays bounded. If that holds up, the equations we have been trusting for two hundred years have a hole in them."
+      ],
+      "pullquote": "We use these equations constantly and we have never been able to prove they always work."
+    },
+    {
+      "heading": "The footnote that matters",
+      "paragraphs": [
+        "The counterexample uses an external force. In the equations, that is a term representing something pushing on the fluid from outside, rather than the fluid simply being left to itself.",
+        "This is allowed. Fefferman's statement explicitly permits a smooth external force in the two breakdown routes, as long as that force obeys strict conditions and does not itself become infinite. Sneaking in an infinite force would be cheating, and nobody is alleging that.",
+        "But permitted and satisfying are different things. Most working mathematicians treat the unforced case, water left alone in a box, as the real question. You can think of the difference between proving a bridge collapses on its own and proving it collapses when you drive an approved but very heavy lorry across it. The second is a legitimate result, and the prize rules count it. It is not the thing most people picture when they hear the bridge fell down.",
+        "Terence Tao, the mathematician who has done more than anyone alive to map this problem, has raised exactly this point about the removal of forcing, and has been publicly uneasy about the whole episode for separate reasons we come back to below."
+      ]
+    },
+    {
+      "heading": "What a machine-checked proof does and does not tell you",
+      "paragraphs": [
+        "The Lean certificate is the strongest thing OpenAI has here and it is worth understanding what it is.",
+        "Lean is a language in which mathematics can be written so precisely that a computer can verify every logical step. If a Lean proof compiles, the argument contains no gaps and no hand-waving. That is a real guarantee and it is not a small one. OpenAI says formalising the proof took a further 17 hours on top of the 88.",
+        "Think of it as a machine checking every line of arithmetic on a tax return. It will tell you, with total confidence, that the sums add up. It will not tell you that you filed the right form, or that the income was yours, or that the whole return answers the question the tax office actually asked. Lean certifies that the proof proves what it says it proves. Whether what it proves is the thing the prize was asking for is a judgement human mathematicians still have to make, and that is precisely where the argument about forcing sits.",
+        "Diego Córdoba, who helped develop the approach the proof uses, told Scientific American: \"We're a little bit in shock. If it's done, that will be a big surprise for us.\" Luis Silvestre of the University of Chicago said simply that everyone is still discussing what it means.",
+        "Nobody in that community is saying it is wrong. They are saying they have not finished reading it. On 8 September the paper was two days old and 166 pages long."
+      ]
+    },
+    {
+      "heading": "Why nobody official will call it solved",
+      "paragraphs": [
+        "The Clay Mathematics Institute has a procedure, and the procedure is deliberately slow. A proposed solution has to be published in a refereed mathematics journal of worldwide repute. Then it has to survive two further years of general acceptance in the mathematics community. Only after that does Clay's scientific advisory board decide whether to look at it properly.",
+        "The two-year wait exists for one reason: to give everyone time to find the mistake. Large claims in mathematics have collapsed on inspection before, sometimes years later.",
+        "Martin Bridson, the institute's president, said this week that the evaluation process \"is deliberately unhurried, and we shall ensure that it is absolutely rigorous.\" That is an institution declining to be rushed by a press release, which is its job.",
+        "So the honest status is this. A proof exists, in public, machine-checked. It has not been peer reviewed. It answers one of the four permitted versions of the question, the version most mathematicians consider the more approachable one. And the earliest date anyone could formally be awarded the prize is somewhere in 2029."
+      ]
+    },
+    {
+      "heading": "The fight over who got there first",
+      "paragraphs": [
+        "Running underneath the mathematics is a dispute about conduct, and it is the reason this story has stayed in the news.",
+        "In August, Tristan Buckmaster, an Australian mathematician at New York University, and Levent Alpöge, a researcher at Anthropic, used AI assistance to make progress on the Euler equations, a closely related problem. They worked through OpenAI's Codex tool. Buckmaster says they verified their result between 15 and 22 August.",
+        "Buckmaster alleges that on 6 September he received calls from Sébastien Bubeck of OpenAI offering him a choice. Either the pair publish their partial result and OpenAI announces its full solution the next day, crediting them as the closest humans to the problem. Or Buckmaster publishes and claims the prize himself, on condition that he state OpenAI's model had also solved it, and on condition that he remove Alpöge's name from the paper because of his Anthropic affiliation.",
+        "Buckmaster has also said he does not know whether his and Alpöge's private work reached OpenAI, adding: \"I do not know what their model did, or how. I do not know whether our data was used.\"",
+        "Bubeck denies it. He says the model \"independently solved the Euler problem by totally different means\" and that \"we did not use their prompts or proofs to prompt our models.\" He has called the allegation of a threat false and inflammatory, and has since said publicly that OpenAI recognises the priority of Alpöge and Buckmaster's work.",
+        "We cannot resolve this from the outside and neither can anyone else at this stage. What is worth noting is the shape of the problem. Two researchers used a company's own product to do private research, and that company then announced a result in the same area within weeks. Whether or not anything improper happened, that arrangement is going to keep producing this argument."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Computers have been part of mathematical proof for fifty years. The four colour theorem was settled in 1976 with a computer checking thousands of cases, and mathematicians argued for years about whether a proof no human could read in full counted as a proof. The Kepler conjecture, about stacking spheres, was proved in 1998 and then fully formalised by machine in 2014 precisely because the referees could not certify it by hand.",
+        "AI systems doing research-level mathematics is also not brand new. Google DeepMind's systems reached medal standard at the International Mathematical Olympiad in 2024. In August we covered a model that produced ten results nobody else had. Last week's GPT-6 Astra release included improvements to bounds on prime numbers.",
+        "Three things do look different. The scale, which is 10,000 agents and a compute bill OpenAI describes as emphatically in the millions of dollars, for one problem. The target, which is not a competition question but a named open problem with a prize on it. And the fact that a machine-checked certificate arrived on the same day as the announcement, which changes what sceptics have to argue about. They can no longer say the steps might not follow. They have to argue about whether it is the right problem.",
+        "Terence Tao's objection is about none of the above. He has said that AI companies are treating long-standing open problems as marketing proof points, and warned that \"the indiscriminate strip-mining of open problems for solutions may destroy the ecosystem\" that produces mathematicians in the first place. Zsuzsanna Dancso of the University of Sydney put the ethics more bluntly: mathematics has two basic principles, acknowledging your sources and acknowledging your collaborators, and in her view OpenAI \"fail on both counts.\""
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: an AI system produced a long, public, machine-verified proof of a real open problem, in a version of that problem the prize rules allow but mathematicians consider the easier one, and it will be years before anyone official says whether it counts.",
+        "That is genuinely remarkable and it is also not the headline you will see. The headline is that AI solved a million dollar problem. The million dollars is not being claimed, and the solving is provisional.",
+        "The part worth watching is not the proof. It is what happens over the next few months as mathematicians read it. If it holds, the interesting question becomes whether the unforced case falls next, and how quickly. If it does not hold, we will have learned something about how far a machine-checked certificate can carry a claim that is still contested at the level of what was being asked.",
+        "And the credit dispute is not a sideshow. Research runs on the assumption that what you type into a tool stays yours. A large number of mathematicians now use these tools daily. This week they all had a reason to think about that."
+      ],
+      "links": [
+        {
+          "label": "OpenAI's Lean certificates on GitHub",
+          "url": "https://github.com/openai/NavierStokesAndEuler"
+        },
+        {
+          "label": "The Clay Institute's rules for the Millennium Prizes",
+          "url": "https://www.claymath.org/millennium-problems/rules/"
+        },
+        {
+          "label": "Our brief on GPT-6 Astra, released a week earlier",
+          "url": "/brief/openais-new-model-maxed-out-the-tests"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "ai-companies-are-building-their-own-power-stations",
+  "status": "published",
+  "datePublished": "2026-09-10",
+  "title": "AI companies are building their own power stations",
+  "dek": "There are now more requests for electricity sitting in American utility queues than the entire United States grid can produce. So the AI industry stopped queuing. It started renting jet engines by the truckload and parking them next to the servers, and a supersonic aeroplane startup is funding itself off the back of it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 10,
+  "takeaway": "SemiAnalysis estimates that around one terawatt of electricity requests have been submitted to US utilities and grid operators, against a grid that peaks at roughly 700 to 800 gigawatts. New capacity is arriving at about 15 gigawatts a year, and the wait from request to power flowing is now around five years. Because an AI data centre earns roughly 10 to 12 million dollars per megawatt per year, that wait is unaffordable, so operators have started generating their own power on site. The industry calls it bring your own generation. xAI proved it worked in 2024 by renting truck-mounted gas turbines rather than buying them, and siting on a state border to get two shots at a permit. Everyone copied it. In October 2025 OpenAI and Oracle ordered a 2.3 gigawatt on-site gas plant in Texas, the largest ever. Twelve different suppliers now each hold more than 400 megawatts of US data centre orders, including a ship engine maker and a supersonic jet startup. On-site power costs more per unit than grid power, and buyers are paying it anyway because the alternative is waiting.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/how-ai-labs-are-solving-the-power",
+  "sourceLabel": "Read the SemiAnalysis report",
+  "about": "Why AI data centres are building their own on-site power generation instead of waiting for grid connections",
+  "keywords": [
+    "AI data centres",
+    "electricity grid",
+    "behind the meter",
+    "bring your own generation",
+    "gas turbines",
+    "xAI Colossus",
+    "interconnection queue",
+    "ERCOT",
+    "SemiAnalysis",
+    "AI infrastructure"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-companies-are-building-their-own-power-stations.png",
+    "alt": "A bar chart comparing three figures. New grid capacity added each year is about 15 gigawatts. The entire US grid at peak demand is about 750 gigawatts. Data centre power requests sitting in the queue total about 1,000 gigawatts.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/how-ai-labs-are-solving-the-power"
+  },
+  "sections": [
+    {
+      "heading": "The bottleneck moved",
+      "paragraphs": [
+        "For three years every conversation about AI limits has been about chips. Can you get GPUs, can you get HBM, which is the fast memory stacked on top of AI chips, has Nvidia allocated you any.",
+        "That is no longer the binding constraint. A GPU cluster is a machine that turns electricity into text, and the thing in short supply is now the electricity.",
+        "The numbers moved fast. In December 2025 SemiAnalysis forecast US AI power demand above 28 gigawatts by 2026, up from around 3 gigawatts in 2023. That forecast looked aggressive at the time and turned out close to right. Their projection for new data centre power demand by 2030 is 84 gigawatts.",
+        "For a sense of scale, Norway's entire electricity consumption runs at an average of roughly 16 gigawatts. The American AI industry is trying to add several Norways to its grid this decade, concentrated into a few dozen sites, on a timetable that the grid was never built for."
+      ]
+    },
+    {
+      "heading": "A queue larger than the country",
+      "paragraphs": [
+        "Look at Texas. Every month, tens of gigawatts of new data centre load requests arrive at ERCOT, the body that runs the Texas grid. In the twelve months to March 2026, around 2 gigawatts of new generation were approved. Demand arrives by the tens of gigawatts and approval arrives by the gigawatt.",
+        "Nationally, SemiAnalysis estimates roughly one terawatt of load requests now sit with US utilities and grid operators. That is 1,000 gigawatts. The entire American grid peaks somewhere between 700 and 800 gigawatts. The requests exceed the system.",
+        "Except a lot of those requests are not real, and that turns out to be the deeper problem. In October 2024, the Ohio utility AEP was holding 35 gigawatts of load requests, and 68 percent of them came from developers who did not control the land. No site, no building, just a claim on power.",
+        "This is a queue behaving like a queue with no rules. If every developer submitted one honest request for one site they actually owned, the line would move quickly and everyone would connect sooner. But nobody can afford to be the only honest one, so developers file speculative requests with several utilities at once and hope one lands. The phantom requests clog the queue, which makes the wait longer, which makes everyone file more speculative requests.",
+        "Meanwhile the grid is slow for good reasons. Electricity supply and demand must match almost exactly, every second, or the lights go out for millions of people, as the Iberian Peninsula discovered in April 2025. Every large new connection triggers engineering studies to check it will not destabilise the network. In some regions the grid now changes faster than the studies can be completed. End to end, the wait from request to power flowing is around five years."
+      ]
+    },
+    {
+      "heading": "What six months is worth",
+      "paragraphs": [
+        "Five years would be survivable if the delay were cheap. It is not.",
+        "SemiAnalysis puts AI cloud revenue at 10 to 12 billion dollars per gigawatt per year, which is 10 to 12 million dollars per megawatt annually. Run that on a mid-sized 200 megawatt cluster and you get around 2 billion dollars a year, so bringing it online six months early is worth roughly a billion dollars.",
+        "A billion dollars, for six months, on one site. Once you have that number in your head, every strange decision in this industry starts to make sense. Why a company would rent a power plant instead of buying one. Why it would build on a state line. Why it would knowingly pay more per kilowatt hour, permanently, in exchange for starting sooner.",
+        "SemiAnalysis puts it starkly: in frontier AI, cheap power in 2030 can be worse than expensive power in 2027.",
+        "There is a phrase for the spare capacity a grid has left after covering its own peak demand and safety margins. Grid headroom. SemiAnalysis's view is that available headroom is already close to zero and goes negative by 2027. That does not mean blackouts. It means that in more and more regions there is no comfortable room left for a large new customer, and every new connection becomes a fight over who gets capacity and who pays for the upgrades."
+      ],
+      "pullquote": "Cheap power in 2030 can be worse than expensive power in 2027."
+    },
+    {
+      "heading": "The trick xAI pulled",
+      "paragraphs": [
+        "In 2024 xAI stood up a 100,000 GPU cluster in Memphis in four months. Construction began in June, training started in September. The data centre industry did not think that was possible, and the clever part was not the computers.",
+        "xAI did not ask the grid. It generated on site, and the specific moves became the template everyone else copied.",
+        "First, small turbines. xAI used 16 megawatt modular units from Solar Turbines, a Caterpillar subsidiary. Sixteen megawatts is tiny by power station standards, and that is the point. It fits on a lorry. You drive it in, set it down, and you are generating within weeks.",
+        "Second, it rented them. The turbines came from Solaris Energy Infrastructure, and xAI leased 34 truck-mounted gas engine systems from VoltaGrid alongside them. Renting a power plant is not cheaper than buying one. It was faster, because buying means joining another queue, this time for equipment.",
+        "Third, when the site needed permits for gigawatt-scale generation, xAI built on the border between Tennessee and Mississippi. Two states, two permitting authorities, two chances at a fast yes. Tennessee could not deliver on the timeline. Mississippi could. Site selection as regulatory arbitrage.",
+        "Picture a bakery that needs more power, is told by the city that the upgrade will take five years, and parks a generator in the car park instead. Then, because the generator itself has a three year waiting list, rents one. Then, on discovering the council is slow with permits, moves the bakery fifty metres to sit in the next borough. That is roughly what happened, at a scale of hundreds of megawatts."
+      ]
+    },
+    {
+      "heading": "A supersonic jet company is now a power company",
+      "paragraphs": [
+        "Everyone followed. In October 2025 OpenAI and Oracle placed the largest order for on-site gas generation ever recorded, a 2.3 gigawatt fleet in Texas, supplied by VoltaGrid. SemiAnalysis, which tracks this building by building, found twelve separate suppliers each holding more than 400 megawatts of US data centre orders, in a market that barely existed in 2023.",
+        "The names are the strange part. Doosan, the Korean industrial group, timed a turbine launch well and booked a 1.9 gigawatt order serving xAI. Wärtsilä, a Finnish company that has spent its life building engines for ships, worked out that the engines pushing cruise liners across the Atlantic will also run an AI cluster, and has signed 800 megawatts of US data centre contracts.",
+        "And then Boom Supersonic. The company building a Mach 2 passenger aeroplane has sold Crusoe 29 turbines of 42 megawatts each, 1.21 gigawatts in total, for around 1.25 billion dollars, with first deliveries in 2027. It raised a further 300 million dollars alongside the order. A supersonic airliner startup is now partly financed by selling power generation to AI data centres.",
+        "This is less bizarre than it sounds. The most sought-after machine in this market is the aeroderivative turbine, which is a jet engine bolted to the ground. GE Vernova's come from GE jet engines, Mitsubishi's from Pratt and Whitney, Siemens Energy's from Rolls-Royce. A jet engine is already designed to make enormous power in a package light enough to fly, so adapting it to sit still is comparatively easy. Boom had the engine core already.",
+        "What the market actually rewards is availability, not engineering elegance. Meta and Williams built a behind-the-meter plant in Ohio whose equipment list runs to four different product lines from three manufacturers. Nobody designs a power plant that way deliberately. That is the signature of buying whatever can be delivered on time."
+      ]
+    },
+    {
+      "heading": "Why it costs more, on purpose",
+      "paragraphs": [
+        "The US grid delivers about 99.93 percent uptime, and it does that by being enormous. Thousands of generators, hundreds of transmission lines, markets rebalancing constantly. If one plant trips, a thousand others cover it.",
+        "Go behind the meter and you have to reproduce that reliability with one power plant serving one customer. The only way is to overbuild. Suppliers insist on at least one spare unit, so a failure does not cut output, and preferably two, so you can also take machines offline for maintenance. It is the difference between carrying a spare tyre and carrying a spare tyre plus a repair kit.",
+        "In practice a 200 megawatt data centre served by 11 megawatt engines means installing 26 of them, 286 megawatts of nameplate capacity, with 23 running at about 80 percent load. Vantage is building a 1.4 gigawatt campus in Shackelford County, Texas and deploying 2.3 gigawatts of generation to serve it, a 64 percent overbuild. In hot climates you need more units still, because turbines produce less power when the air is hot.",
+        "The equipment runs 1,500 to 2,000 dollars per kilowatt for turbines and engines, and 3,000 to 4,000 for fuel cells, which produce power without combustion and are therefore far easier to permit near populated areas. Their catch is that the stacks need replacing every five or six years.",
+        "None of this is cheaper than buying grid electricity. All of it is faster. That is the whole trade."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Not remotely, and Norway is the best illustration of why. The Norwegian aluminium industry exists where it does because smelters were built next to hydropower. Aluminium smelting is an enormous, constant electrical load, and the answer for a century has been to put the factory where the power is rather than move the power to the factory. Company towns were built on the same logic.",
+        "Bitcoin mining ran the modern version of the experiment a decade ago: portable, power-hungry, indifferent to location, and willing to sit next to a stranded gas well.",
+        "What is new is the direction and the money. Aluminium went to where power already was. AI data centres are being built where the fibre, the land and the workforce are, and the power is being manufactured on the spot to meet them. And the numbers are large enough to reshape an industrial supply chain in about two years.",
+        "The other genuinely new thing is that most of this is temporary by design. Many of these plants are a bridge. The site needs power in 2027, the grid connection arrives in 2030, so the developer builds a power station, uses it, and demotes it to backup when the utility finally shows up. Billions of dollars of generation is being installed with a planned second career as a spare."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "The useful reframe is that AI capital expenditure has stopped being a technology story and become an industrial one. The constraint is transformers, turbines, permits and substations, and those are physical objects with factories and lead times behind them. You cannot conjure a high voltage breaker with a funding round.",
+        "For Europe this matters in a specific way. The same physics applies here, with less land, tighter permitting and stronger emissions rules, which is one reason so little frontier training happens on this continent. Norway has an unusual position in that comparison, with abundant firm hydropower and a cold climate, and it is worth watching whether that converts into anything at scale or stays a talking point.",
+        "The environmental question is real but not simple. On-site gas is more carbon-intensive per unit than the average grid mix in many regions, and it is being deployed at speed with limited scrutiny. It is also true that these plants exist because the grid could not move, and a slow grid is a policy choice as much as an engineering one.",
+        "Watch grid headroom. If SemiAnalysis is right that it goes negative in 2027, the fight over who gets electricity stops being an AI story and starts being an everybody story: factories, homes, EV charging, and chip fabs all competing for the same capacity. That is the point at which this arrives on ordinary electricity bills and in ordinary politics."
+      ],
+      "links": [
+        {
+          "label": "Our earlier brief on AI data centre electricity use",
+          "url": "/brief/an-ai-datacenter-now-uses-as-much-electricity-as-a-city"
+        },
+        {
+          "label": "And on what AI is actually doing to your power bill",
+          "url": "/brief/blaming-ai-for-your-power-bill-is-half-the-story"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "openais-new-model-maxed-out-the-tests",
   "status": "published",
   "datePublished": "2026-09-04",
