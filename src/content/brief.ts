@@ -36,6 +36,221 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "top-mathematicians-say-ai-labs-are-harming-maths",
+  "status": "published",
+  "datePublished": "2026-09-12",
+  "title": "Twenty-five of the world's top mathematicians say AI labs are harming maths",
+  "dek": "Three days after we covered OpenAI's claim to have cracked a million-dollar problem, 25 Fields Medal winners, from Pierre Deligne (1978) to Yu Deng (2026), signed a declaration saying the goals of AI companies and the goals of mathematics are severely misaligned. The same week, a second mathematician accused OpenAI of misleading him about his private ChatGPT conversations.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "On Thursday 11 September, Terence Tao published a declaration titled A Severe Misalignment of AI in Mathematics, signed by 25 Fields Medallists (the Fields Medal is the closest thing mathematics has to a Nobel Prize) spanning every generation from 1978 to this year's winners. It says AI companies treating famous unsolved problems as benchmarks is detrimental to mathematics, that rushed announcements leave no time for proper write-ups or for crediting earlier work, and that this raises severe attribution and plagiarism questions. It does not name OpenAI, but it arrives one week after OpenAI's Navier-Stokes announcement and the dispute with two mathematicians who say they got there first. Separately, on 9 September a TU Dresden group theorist, Andreas Thom, published his email exchange with OpenAI researchers and called the company's answer about his private ChatGPT conversations materially misleading. The declaration asks for nothing specific. That is its weakness and its point: it is a statement of values from the people whose approval OpenAI's maths results ultimately need.",
+  "sourceUrl": "https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/",
+  "sourceLabel": "Read the declaration on Terence Tao's blog",
+  "about": "The Fields Medallists' declaration A Severe Misalignment of AI in Mathematics, the attribution disputes around OpenAI's Navier-Stokes and non-sofic group proofs, and what the mathematical community is actually asking for",
+  "keywords": [
+    "Fields Medal",
+    "Terence Tao",
+    "Peter Scholze",
+    "A Severe Misalignment of AI in Mathematics",
+    "OpenAI",
+    "Navier-Stokes",
+    "Andreas Thom",
+    "Tristan Buckmaster",
+    "AI and mathematics",
+    "attribution"
+  ],
+  "heroImage": {
+    "src": "/brief/top-mathematicians-say-ai-labs-are-harming-maths.png",
+    "alt": "A two-column comparison titled Severely misaligned. Left, what AI labs are rewarded for: solving famous problems as a benchmark, announcing fast before a proper write-up, publicity and the race to be first, a true/false answer. Right, what mathematics runs on: conceptual understanding and insight, careful write-up and peer review, citing and crediting earlier work, passing ideas to the next generation. Caption: 25 Fields Medal winners, from 1978 to 2026, signed a declaration on 11 September saying AI labs' goals and mathematics' goals no longer point the same way.",
+    "credit": "Terence Tao's blog",
+    "creditUrl": "https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 11 September, Terence Tao, the UCLA mathematician who is probably the most famous living member of his profession, published a short declaration on his blog. It is titled A Severe Misalignment of AI in Mathematics. Twenty-five people signed it, and every one of them holds a Fields Medal, the prize given every four years to at most four mathematicians under forty and generally treated as the Nobel of the field.",
+        "The list runs across five decades. Pierre Deligne won his medal in 1978. Yu Deng won his in July this year in Philadelphia. In between are Peter Scholze, Maryna Viazovska, Martin Hairer, June Huh, James Maynard, Manjul Bhargava, Cédric Villani, Maxim Kontsevich, Shigefumi Mori and fourteen others. There are roughly sixty living Fields Medallists. A quarter of them signed on day one, and the declaration invites further signatures through a companion website, mathandai.org.",
+        "The core sentence is this: \"the push by AI companies to solve mathematical problems as a benchmark is detrimental to the science of mathematics, and to the mathematical community. The goals of the AI companies and the goals of the mathematical community are severely misaligned.\"",
+        "It does not name any company. It does not need to. It arrives eight days after OpenAI announced that its internal model had produced a proof bearing on the Navier-Stokes problem, one of the seven Millennium Prize problems, and in the middle of a public fight with two mathematicians who say their own version of the result came first. We covered that story on Wednesday."
+      ],
+      "pullquote": "The goals of the AI companies and the goals of the mathematical community are severely misaligned."
+    },
+    {
+      "heading": "What they are actually objecting to",
+      "paragraphs": [
+        "It would be easy to read this as mathematicians resenting a machine that beat them. The text says something more specific, and it is worth taking it at its word.",
+        "The first objection is about what a solution is for. The declaration says that \"solving problems is only a tool and proxy for achieving the primary goal of conceptual understanding and insight.\" In plain terms: mathematicians do not care that the Navier-Stokes question has an answer. They care why. A proof that arrives as 166 pages plus a machine-checked certificate, produced by ten thousand AI agents in four days, tells you the answer is yes without telling anybody what was learned. That is a real thing to lose, and it is the thing the field runs on.",
+        "The second objection is about speed and credit. \"Often these solutions are announced in a rush, leaving no time for a proper writeup, the isolation of new methods and ideas, and citing relevant previous work of others.\" The declaration says this \"raises severe attribution and plagiarism questions.\" This is the polite version of what Tristan Buckmaster, Levent Alpöge and Diego Córdoba have been saying about the Navier-Stokes announcement for a week: that the approach OpenAI's model took is one they developed, and that the announcement did not say so.",
+        "The third objection is the one that matters most and gets quoted least. The declaration says that \"without the willing mathematicians who must take care of their development and integration into the mathematical canon, AI-conceived ideas would never become fully alive and the crucial human transmission chain between mathematicians would be lost.\" Mathematics is not a pile of true statements. It is a community of people who teach each other, and a result nobody understands well enough to teach is, for the purposes of that community, not yet a result."
+      ]
+    },
+    {
+      "heading": "The second accusation this week",
+      "paragraphs": [
+        "The declaration landed in a week that already had an attribution problem, and it is a different one from Navier-Stokes.",
+        "Andreas Thom is a group theorist at TU Dresden. In August, OpenAI's then-unreleased Astra model was credited with solving ten open problems, one of which was the construction of the first non-sofic group, a question the Russian-French mathematician Mikhail Gromov posed in 1999. The central technical step in OpenAI's proof rested on a 2019 paper by Thom and Gábor Kun of the Rényi Institute in Budapest.",
+        "Thom had spent months discussing this exact line of research with a colleague inside ChatGPT. After the August announcement he wrote to two OpenAI researchers, Mark Sellke and Sébastien Bubeck, with two questions: had the content of those conversations gone into training data, and had the model been able to see them while it searched for its proof. According to the emails he published on 9 September, the reply was one line: \"Regarding your conversations with ChatGPT: that did not happen.\"",
+        "Thom calls that answer \"unjustifiably broad and materially misleading.\" His reasoning is that in the Navier-Stokes dispute a week later, OpenAI drew a careful distinction: its researchers had not accessed Buckmaster's and Alpöge's specific data, but the company could not rule out that \"de-identified data from their previous use of ChatGPT may have contributed to improving the models.\" The same distinction, Thom says, was available in his case and was not offered. His summary: \"If nonpublic research supplied by users improved a model and the provider then used that model to race those users to publication, without informed consent, disclosure, or credit, that would be ethically indefensible.\" OpenAI has not published a response to Thom. It has denied using Buckmaster's and Alpöge's work to prompt its models.",
+        "Whether or not either mathematician's suspicion is right, the pattern is the problem. Researchers use ChatGPT to think. ChatGPT's maker then announces results in the same area. Nobody outside the company can check what fed what. That is not a mathematics question. It is a trust question, and it is the one the declaration is really about."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Scientists signing open letters about AI is not new. What is new is who is signing, and what they are not asking for.",
+        "The precedent people reach for is the Asilomar conference of 1975, when the leading genetic engineers met and agreed to hold off on certain experiments until safety rules existed. That comparison flatters this declaration. Asilomar produced rules. This document produces none. It contains no demand, no proposed protocol, no request for a moratorium. It is a statement of values, signed by people whose main power is that the field listens to them.",
+        "A better comparison is the four colour theorem of 1976, the first major result proved with a computer doing work no human could check by hand. Many mathematicians refused to accept it for years, not because they thought it was wrong but because a proof nobody could read felt like a different kind of object. They lost that argument, slowly, and computer-assisted proof is now ordinary. The signatories know this history. Tao in particular has spent years arguing that AI will be useful to mathematics. The declaration is careful to say the ideas are welcome and the process is the problem.",
+        "The clearest sign that this is a values fight rather than a technology fight is the dissent. Jacob Tsimerman, one of the four mathematicians who won the Fields Medal in July alongside Yu Deng, did not sign. His argument, reported this week, is that mathematicians should \"get inside the labs\" and shape how the work is done, rather than criticise from outside. That is a disagreement about tactics between people who agree on the facts."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a town with one bakery that has trained every baker in the region for a century. Apprentices learn by watching, asking, and getting things wrong. One day a company arrives with a machine that produces a perfect loaf, faster and cheaper, and announces it in the newspaper. The bread is real. The company even lets anyone inspect the recipe.",
+        "The bakers' complaint is not that the bread is bad. It is that the machine learned the craft partly by watching them, that the newspaper did not mention this, and that if the town decides bread now comes from the machine, there will be no apprentices next year, and in twenty years nobody who could improve the recipe. The declaration is the bakers writing to the newspaper. It changes nothing on its own. It does put on record what the town stands to lose."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: the people whose acceptance OpenAI's maths results ultimately depend on have said, collectively and on the record, that the way those results are being produced and announced is harming their field.",
+        "That matters because of who decides. The Clay Mathematics Institute will not consider a Millennium Prize claim until it has been published in a refereed journal and survived two years of general acceptance. General acceptance is granted by exactly the community that has just signed this. A proof can be machine-checked to the last line and still sit outside the canon if the people who make up the canon decline to carry it in. OpenAI has said it will not seek the prize money. The declaration suggests that the recognition may be harder to get than the money.",
+        "It also matters because the underlying question, what happens to your private conversations with an AI, does not belong to mathematicians. Thom asked a clear question and got a one-line answer that he believes hid a distinction. Anyone who uses these tools to think about unpublished work, in any field, has the same question and is in the same position.",
+        "The thing to watch is the signature count at mathandai.org, and whether OpenAI answers Thom in the same terms it eventually used with Buckmaster. The first tells you whether this is a quarter of the field or the whole of it. The second tells you whether the company has understood that in mathematics, the reply is the reputation."
+      ],
+      "links": [
+        {
+          "label": "The declaration and full list of signatories",
+          "url": "https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/"
+        },
+        {
+          "label": "heise online on Andreas Thom's published exchange with OpenAI",
+          "url": "https://www.heise.de/en/news/Dispute-over-AI-evidence-Another-mathematician-accuses-OpenAI-11449463.html"
+        },
+        {
+          "label": "Our brief on OpenAI's Navier-Stokes claim",
+          "url": "/brief/an-ai-says-it-solved-a-million-dollar-maths-problem"
+        },
+        {
+          "label": "Our brief on the ten problems solved in August, including the non-sofic group",
+          "url": "/brief/an-ai-solved-ten-maths-problems-nobody-else-could"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "ai-datacentres-are-now-built-like-lego-sets",
+  "status": "published",
+  "datePublished": "2026-09-12",
+  "title": "The biggest AI datacentres are now built like Lego sets",
+  "dek": "The bottleneck in building AI computing has quietly moved from chips and power to electricians. The industry's answer is to stop building datacentres on site and start assembling them from factory-made blocks. It is only about 8% cheaper. That is not the point.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "SemiAnalysis, the research firm that tracks AI infrastructure most closely, says the largest datacentres in the world are now being built modularly: the electrical and cooling equipment is assembled and tested in a factory, shipped as sealed units, and plugged together on site. Their tracker counts over 61 gigawatts of capacity and more than 1,000 sites using some form of this, with Amazon, Meta and the Stargate builders leading. Their figures: a traditional build takes 18 to 24 months, a fully modular one 12 to 18, about 36% faster, while on-site labour falls from around 12,000 hours per megawatt to around 4,500 and licensed electrician hours drop by about 85%. The cost saving is small, roughly 8% per megawatt. What the operators are buying is time, because a megawatt of AI computing earns roughly $12 to 15 million a year, and certainty, because you cannot manufacture electricians. The catches are real: modules that do not work when plugged in, trucks tipping over with expensive kit aboard, twelve-month-plus lead times, and a new shortage of factory workers replacing the old shortage of site workers.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+  "sourceLabel": "Read the SemiAnalysis report",
+  "about": "Modular and prefabricated AI datacentre construction, the electrician shortage driving it, SemiAnalysis's figures on time and labour savings, and the risks in the new supply chain",
+  "keywords": [
+    "modular datacenters",
+    "prefabricated datacenters",
+    "SemiAnalysis",
+    "electrician shortage",
+    "AWS Project Houdini",
+    "Meta Prometheus",
+    "Stargate Abilene",
+    "Vertiv",
+    "Comfort Systems",
+    "AI infrastructure"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-datacentres-are-now-built-like-lego-sets.png",
+    "alt": "A bar chart titled Built like Lego. On-site hours per megawatt for a traditional build: 12,000. For a modular build: 4,500. Caption: prefabricating the electrical and cooling kit in a factory cuts on-site labour by about two thirds. The cost saving is only about 8%. Time and electricians are the prize. Figures: SemiAnalysis, July 2026.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters"
+  },
+  "sections": [
+    {
+      "heading": "The bottleneck moved",
+      "paragraphs": [
+        "For two years, the story of AI infrastructure has been about things you could not get: first the chips, then the memory, then the electricity. We wrote on Wednesday about companies building their own power stations because the grid could not connect them in time. This week's SemiAnalysis podcast is about the constraint that comes after power, and it is people.",
+        "Specifically, it is electricians. In a datacentre project, SemiAnalysis estimates electricians alone account for 30 to 40% of all construction hours. The mechanical and electrical fit-out of a single 50 megawatt hall takes around 600,000 hours of field labour and about 300 tradespeople on site at peak. A campus the size of Stargate in Abilene, Texas, needed somewhere between 7,000 and 9,000 workers at its busiest, in a town of 130,000.",
+        "The evidence that this is a real shortage rather than a talking point is in the wages. SemiAnalysis tracked the pay of newly hired electricians in the counties around the biggest campuses, including Abilene and Microsoft's Fairwater site in Wisconsin, and found rates doubling and in some places tripling. The Texas Tribune reported in April that the Abilene project was offering electricians double what local subcontractors could pay, and that Crusoe, the developer, had earlier raised wages 30% to fill the site. Home builders in Texas are now competing with datacentres for the same people.",
+        "You can, with enough money, make more turbines and more chips. You cannot make an experienced high-voltage electrician in under four years. So the industry has started to ask a different question: how do you build a datacentre with fewer of them?"
+      ]
+    },
+    {
+      "heading": "What Lego means here",
+      "paragraphs": [
+        "The traditional way to build a datacentre is called stick build. You grade the land, pour the foundations, put up the shell, then bring every transformer, switchboard, battery unit and cooling pipe to the site and have crews install and wire them in place, one after another. Then you test the whole thing, a process called commissioning. Everything happens in sequence, on site, in the weather.",
+        "The modular way splits the job in two. The site work still happens on site, because you cannot prefabricate a foundation. But the expensive, fiddly part, the power and cooling equipment, is built into steel enclosures in a factory hundreds of miles away, wired and tested there, and then trucked in and set down like Lego bricks. The factory work and the site work happen at the same time instead of one after the other.",
+        "SemiAnalysis's own taxonomy runs from small skids (a single steel frame with a few pieces of equipment on it) through prefab power blocks up to full containerised datacentres, and it warns that the word modular is now applied to all of them, which is why they titled the report the Wild Wild West.",
+        "The numbers, from their July report and repeated on the podcast: a stick-built datacentre takes 18 to 24 months from breaking ground to switching on, a fully modular one 12 to 18, which they call a 36% shorter build. The site preparation barely changes. What collapses is the mechanical and electrical fit-out, from up to nine months down to about three. On-site labour falls from around 12,000 hours per megawatt to around 4,500, and hours of licensed electricians fall by about 85%, because the wiring was done by factory workers earning roughly the same hourly rate but without the overtime, travel and premiums that push a field electrician's effective cost to around $63 an hour."
+      ]
+    },
+    {
+      "heading": "Why 8% is enough",
+      "paragraphs": [
+        "Here is the part that surprises people. Modular is not much cheaper. SemiAnalysis puts the saving at about 8% per megawatt of capital cost, roughly $1.1 million on a build that costs around $14.6 million per megawatt the traditional way. On the podcast, their consulting analyst said clients keep asking whether modular is about cost, and the answer is no.",
+        "The reason is what a megawatt earns. A megawatt of AI computing, once full of chips and rented out, brings in on the order of $12 to 15 million a year by SemiAnalysis's estimate. Finish a 50 megawatt hall eight months early and you have earned something like $200 million you would otherwise not have. Against that, an 8% saving on the building is a rounding error and a delay is a catastrophe. Every operator on the podcast's list is optimising for the same thing: the day the first chip switches on.",
+        "The everyday version is a restaurant. Two owners open on the same street. One builds a kitchen from scratch: plumbers, then electricians, then the gas fitter, then the inspector, each waiting for the last. The other buys a kitchen already assembled and tested in a factory, drops it into the building and connects four pipes. The second kitchen cost about the same. It also opens seven months earlier, and the restaurant next door has already had seven months of full tables."
+      ]
+    },
+    {
+      "heading": "Who is doing it",
+      "paragraphs": [
+        "This is not a fringe practice. SemiAnalysis's tracker counts over 61 gigawatts of capacity and more than 1,000 sites using some form of prefabrication, and it estimates modular methods will account for 30% or more of live capacity by the end of 2028.",
+        "Amazon Web Services runs an internal programme called SAMDC with a project named Houdini, which turns the fit-out of a server room into factory-built units about 45 feet long. AWS's target is to cut the time from construction start to first live server room to around 25 weeks, and SemiAnalysis says each unit removes more than 50,000 hours of on-site electrical work.",
+        "Meta went furthest. At its Prometheus campus in New Albany, Ohio, it put its computers under aluminium-framed fabric structures, essentially very large tents, of roughly 125,000 square feet each. The buildout was announced in July 2025 and satellite images showed eight of them standing by April 2026. The five permanent buildings on the same campus took two to three years each. Meta calls them rapid deployment structures. Everyone else calls them tents.",
+        "At Stargate in Abilene, the developer Crusoe had the walls of each building made as 672 factory panels, fabricated in under 40 days and installed at 15 to 20 a day, so that a building was weathertight in under eight weeks. Behind the operators sits a supply chain that is changing shape: equipment makers like Vertiv, Schneider Electric and Eaton, which used to sell individual transformers and battery units and now sell them pre-assembled in a box, which roughly doubles what they can charge per megawatt, and construction contractors like Comfort Systems USA and Sterling that have spent heavily on factory space to assemble modules for the biggest customers."
+      ]
+    },
+    {
+      "heading": "The catches",
+      "paragraphs": [
+        "The podcast is candid about what goes wrong, and it is a useful list because the marketing does not mention any of it.",
+        "Plug and play sometimes does not play. Contractors described being called in the middle of the night to sites where an off-the-shelf module simply did not work when connected, and nobody on site could say why. A module that passed every test in a factory can still fail when the whole system has to behave together, for instance when the utility power drops and every backup has to kick in, in the right order, at once. That final system-level test, which the industry calls level 5 commissioning, cannot be done in a factory and still takes three to eight months. Some operators, under pressure to switch on, are skipping parts of it.",
+        "Logistics is a bigger problem than anyone planned for. These are heavy, valuable objects. SemiAnalysis's analysts told of a truck in Northern Virginia that tipped onto its side on a bumpy highway with a module aboard, and of insurers becoming reluctant to cover the transport at all. The response has been to build the factories closer to the sites.",
+        "And the bottleneck has not gone away, it has moved again. Lead times for a standard module from the leading suppliers are now over twelve months, and eighteen if you want anything changed. The suppliers who took the electrical work into their factories are now short of factory space and factory workers instead of site electricians. Because a module ships as one unit, a single missing component now holds up a whole box rather than one part. The industry has industrialised the building of datacentres, and inherited the problems of industry."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and the precedent is instructive. Ships have been built from prefabricated blocks since the Second World War, when American yards assembled Liberty ships from factory-made sections in weeks rather than months, precisely because there were not enough skilled shipwrights. Norway's own offshore industry has spent decades building oil platform modules in yards at Stord and Verdal and floating them out to be lifted into place, for the same reason: it is cheaper and safer to do the work in a hall on land than on a platform in the North Sea. Datacentres are simply the latest heavy industry to discover that the site is the worst place to do skilled work.",
+        "What is new is the scale and the hurry. Modular datacentres have existed as a niche product for fifteen years, mostly for the military and for cryptocurrency miners. What changed in 2025 and 2026 is that the largest companies in the world adopted it for their flagship sites, and that the reason is not cost but the price of a month."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: the AI build-out has run into the limit of how many skilled people exist, and the answer is to move the skilled work into factories, which buys months rather than money.",
+        "It is worth being sober about what that does and does not solve. It does not create more electricians. It uses the ones there are more efficiently and moves the demand to a different set of workers, in a different place, with their own shortages. It makes a datacentre faster to build, not faster to power or fill with chips. And it pushes risk down the chain to equipment makers who are now selling systems rather than parts, and who have not all learned yet what it means when a system fails at three in the morning.",
+        "The thing to watch is lead times. If the module suppliers' twelve-month queues stretch to eighteen or twenty-four, the industry will have swapped a labour bottleneck for a manufacturing one, and the next SemiAnalysis podcast will be about factories rather than electricians. If the queues shorten, because the sixty-odd new entrants on their vendor map find their feet, then a datacentre in 2028 really will take a year to build, and the argument about where the electricity comes from becomes the only argument left."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, The Wild Wild West of LEGO Datacenters",
+          "url": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters"
+        },
+        {
+          "label": "The SemiAnalysis Weekly podcast episode on modular datacentres",
+          "url": "https://www.youtube.com/watch?v=3AaA0rzZggY"
+        },
+        {
+          "label": "Texas Tribune on datacentres and home builders competing for electricians",
+          "url": "https://www.texastribune.org/2026/04/28/data-centers-texas-electricians-builders/"
+        },
+        {
+          "label": "Our brief on AI companies building their own power stations",
+          "url": "/brief/ai-companies-are-building-their-own-power-stations"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "openai-told-its-staff-it-might-slow-down",
   "status": "published",
   "datePublished": "2026-09-11",
