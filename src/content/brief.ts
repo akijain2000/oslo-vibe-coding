@@ -36,6 +36,123 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "amazon-gets-its-suppliers-to-pay-it-to-buy-their-chips",
+  "status": "published",
+  "datePublished": "2026-09-14",
+  "title": "Amazon's suppliers pay it to buy their chips. Qualcomm just signed up.",
+  "dek": "Last Monday Qualcomm announced a multi-generation deal to build custom AI chips for Amazon's cloud, and in the same filing handed Amazon the right to buy 25 million Qualcomm shares. Amazon has been doing this to its suppliers for a decade. In at least one case, a cable maker called Credo, the shares Amazon received ended up worth three times what Amazon spent on the cables.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "On Monday 8 September Qualcomm (the company whose chips power most Android phones) announced it will design custom AI inference chips (chips that run AI models for users, as opposed to training them) for Amazon Web Services, Amazon's cloud business. Alongside the deal, Qualcomm issued Amazon a warrant: the right to buy 25 million Qualcomm shares at $161.26 each, any time until 2036. 3.75 million of those rights were granted immediately; the rest unlock in steps as Amazon's purchases climb towards a ceiling of $60 billion. Qualcomm's shares jumped as much as 9.5% on the day, which made the rights Amazon already holds worth money before a single chip has shipped. This is Amazon's standard playbook, used since 2016 on cargo airlines, a fuel-cell maker, a grocery wholesaler and now a string of AI chip suppliers. The clearest case is Credo, which makes the copper cables inside Amazon's AI racks. In 2021 Credo gave Amazon rights to 4.08 million shares at $10.74, unlocking against $201 million of purchases. Amazon exercised them all by January 2026. At Friday's close of $162.95 those shares are worth about $620 million, three times the purchases that earned them. The analysts at SemiAnalysis put it bluntly: Credo effectively paid Amazon to take its cables. The $60 billion in the Qualcomm headlines is a ceiling, not a contract.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential",
+  "sourceLabel": "Read the SemiAnalysis Trainium3 deep dive, which first spelled out the supplier-warrant maths",
+  "about": "Amazon's commercial warrants with suppliers, the Qualcomm custom AI chip deal of 8 September 2026, the Credo and Astera Labs warrants, and why a supplier can end up paying its biggest customer",
+  "keywords": [
+    "Amazon",
+    "AWS",
+    "Qualcomm",
+    "Credo",
+    "Astera Labs",
+    "warrants",
+    "Trainium",
+    "AI chips",
+    "SemiAnalysis",
+    "Plug Power",
+    "AI inference"
+  ],
+  "heroImage": {
+    "src": "/brief/amazon-gets-its-suppliers-to-pay-it-to-buy-their-chips.png",
+    "alt": "A bar chart titled Credo paid Amazon to take its cables. Two bars: Amazon's purchases needed to unlock every share, $201 million, and what those shares were worth at Friday's close, about $620 million. Caption: 4.08 million share rights at $10.74 each, Credo closed at $162.95 on 11 September.",
+    "credit": "Figures: Credo SEC filings, SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Monday 8 September, Qualcomm (the San Diego company whose chips sit inside most Android phones) announced what it called a multi-generation collaboration with Amazon Web Services (AWS, Amazon's cloud business and the largest in the world). Qualcomm will design custom silicon for AI inference (the work of running an AI model to answer users, as opposed to training it in the first place) for Amazon's datacentres, plus the optical connections that link chips together. Qualcomm's chief executive Cristiano Amon said the company was \"pleased to work with AWS on customized silicon and connectivity solutions.\" No prices, volumes or dates were announced.",
+        "The interesting part was in the filing Qualcomm made to the US securities regulator the same day. Qualcomm issued Amazon a warrant, which is a right to buy shares at a fixed price. Amazon may buy up to 25 million Qualcomm shares at $161.26 each, any time until 3 September 2036. Of those, 3.75 million rights were granted on the spot. The remaining 21.25 million unlock in stages as Amazon signs contracts, places binding orders and actually pays for Qualcomm's server chips, up to a ceiling of $60 billion.",
+        "Qualcomm's shares rose as much as 9.5% during the day and closed about 3% higher, at just over $174. By Friday they were at $181.97. That matters for a simple reason: the rights Amazon already holds are struck at $161.26, so every dollar above that is money in Amazon's pocket. On the 3.75 million rights that vested immediately, Friday's price implies a paper gain of roughly $78 million, before Amazon has bought a single chip. Qualcomm's chief financial officer Akash Palkhiwala said the custom chips are already in production and revenue will start in the December quarter."
+      ],
+      "pullquote": "The $60 billion is a ceiling, not a contract. If Amazon spends less, fewer shares unlock."
+    },
+    {
+      "heading": "How the trick works",
+      "paragraphs": [
+        "A warrant is a coupon. It says: the holder may buy one share of this company at this price, until this date. If the share price is below the coupon price, the coupon is worthless and you throw it away. If the share price is above it, you use the coupon, buy the share cheaply, and pocket the difference. Most warrants can be exercised cashlessly, meaning the company simply hands over the net gain in shares and no money changes hands.",
+        "Amazon's version adds one twist. The coupons only become usable as Amazon spends money with the supplier. Spend the first slice, a tranche of rights unlocks. Spend the next slice, another tranche unlocks. So from the supplier's side it looks like a volume discount, paid not in cash but in pieces of the company. From Amazon's side it is a rebate whose size depends on the supplier's share price. If the share price stays flat, Amazon gets nothing extra and has simply bought chips at the agreed price. If the share price rises, the rebate grows with it, without limit.",
+        "And here is the part that makes it self-fulfilling. What tends to push a supplier's share price up? Winning Amazon as a customer. Qualcomm's stock jumped the day the deal was announced. So the act of buying makes the coupons more valuable, and the coupons are the reward for buying. Amazon's purchasing department does not just negotiate a discount; it negotiates a share of the upside it creates by showing up."
+      ]
+    },
+    {
+      "heading": "The case where the supplier paid Amazon",
+      "paragraphs": [
+        "The clearest example is Credo, a company most people have never heard of. It makes active electrical cables (copper cables with a small chip in each end that cleans up the signal), which connect the AI chips inside a datacentre rack. Amazon is a very large customer. In December 2021 Credo issued Amazon rights to buy 4,080,000 Credo shares at $10.74 each. 40,000 rights vested immediately; the rest unlocked in tranches as Amazon's payments climbed, up to $201 million in total.",
+        "Then the AI boom happened and Credo's cables were in every rack. By August 2025 all 4.1 million rights had vested, meaning Amazon had by then paid Credo the full $201 million. Credo's latest quarterly filing says that as of 31 January 2026 Amazon had exercised all of them, receiving a net 3.8 million shares. Credo closed on Friday at $162.95. That makes Amazon's stake worth about $620 million, if it still holds the shares, or roughly three times the $201 million of purchases that earned it.",
+        "SemiAnalysis, the chip-industry research firm, worked through this in its December 2025 report on Amazon's own AI chip, Trainium3. Its verdict: \"The value of the Credo warrants that Amazon received was more than the spend needed to vest those warrants.\" Or in the version that stuck: \"Credo effectively paid Amazon to take AECs!\" A supplier sold $201 million of product and, in exchange, handed over something now worth $620 million. On a net basis, the customer was paid to buy.",
+        "Astera Labs, which makes the retimer and switch chips that shuffle data between AI chips, is a milder version of the same story. In October 2022, before it was a public company, Astera gave Amazon rights to buy 4.6 million shares at about $10.17 each, vesting as Amazon bought its Aries, Taurus, Leo and Scorpio product lines. Astera listed in March 2024 at $36 and closed on Friday at $291. SemiAnalysis estimated that the rights vested by September 2025 amounted to an effective discount of roughly 23% on everything Amazon had bought. This February, with much of the first warrant already vested, Astera issued a new one: up to 3.26 million shares at $142.82, unlocking against up to $6.5 billion of purchases through 2033, tied to the switch chips inside Amazon's Trainium3 racks."
+      ]
+    },
+    {
+      "heading": "Why a supplier says yes",
+      "paragraphs": [
+        "Because the alternative is worse. For a company like Credo or Astera, Amazon is not one customer among many; it is the order that turns a start-up into a public company. Saying no to the warrant risks Amazon taking the volume to a competitor, and Amazon has competitors lined up, including its own chip designs. The coupon costs the supplier nothing today. It only costs something if the share price rises, and a rising share price is the outcome everyone at the supplier wants anyway.",
+        "The cost is also invisible to most people. It does not appear as a discount on the invoice. It appears as dilution: when Amazon exercises, the company issues new shares, and every existing shareholder's slice gets a little smaller. Credo's other shareholders, not Credo's cash, paid for Amazon's $620 million. That is why the accountants treat these warrants as a reduction of revenue rather than a cost of doing business, which produces the strange results we come to next.",
+        "This is not a chip-industry invention. Amazon started doing it in 2016 with the cargo airlines Air Transport Services Group and Atlas Air, when it built its own delivery network. In 2017 it took rights to 55 million shares of Plug Power, the fuel-cell maker, at $1.19 each, in exchange for buying $600 million of forklift power. In 2019 it took a stake in the Canadian air-freight firm Cargojet, in 2020 in the grocery wholesaler SpartanNash. Since the AI build-out began the list has grown: Flex, which makes racks and power gear, in August 2025; the IT distributor TD Synnex in May this year; Astera again in February; Qualcomm last week."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and the best precedent is a warning. Plug Power's shares went from about $1 when Amazon received its coupons to more than $60 at the start of 2021. Amazon's rights became so valuable that, under the accounting rules, the discount they represented exceeded everything Plug had ever billed Amazon. Plug Power reported negative revenue for the fourth quarter of 2020: minus $316 million, and minus $100 million for the whole year, on $337 million of actual billings, after $456 million of charges mostly tied to accelerating Amazon's remaining warrants. A company that sold $337 million of product recorded that it had, in effect, paid its customers. Shareholders sued. Plug Power later signed a second, larger deal with Amazon and issued new warrants.",
+        "What is new is the scale and the direction of the money. Plug's warrant covered $600 million of purchases. Qualcomm's covers $60 billion, a hundred times more, and the deal is for the chips at the heart of the AI boom rather than forklifts. The AI industry has also started copying the structure among themselves: in October 2025 AMD gave OpenAI rights to buy 160 million AMD shares at one cent each, tied to OpenAI buying up to six gigawatts of AMD chips. Buyers of AI hardware now routinely expect a piece of the seller. That is a sign of who has the power in the supply chain: the handful of companies with the datacentre budgets.",
+        "Two things to keep straight when you read the headlines. First, $60 billion is a maximum, not a commitment. Qualcomm gets the revenue only if Amazon actually buys, and Amazon gets the shares only in proportion. Second, the coupons only pay if Qualcomm's share price stays above $161.26. Qualcomm is a much larger and steadier company than Credo was in 2021, so a fifteen-fold rise is unlikely. The Credo outcome is the extreme case, not the expected one. The expected case is still a discount that grows exactly when Qualcomm does well."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a small bakery and the biggest hotel in town. The hotel says: we will buy ten thousand loaves a year from you, but for every thousand loaves we pay for, you give us a coupon to buy one per cent of the bakery at today's price. The baker agrees, because the hotel's order is the biggest thing that has ever happened to the bakery, and a coupon costs nothing to print.",
+        "Then the town notices that the grand hotel serves this bakery's bread. Other hotels place orders. The bakery expands, and the value of the business triples. The hotel now cashes in its coupons, buying ten per cent of a bakery worth three times what it was, at the old price. When you add it up, the hotel's slice of the bakery is worth more than all the bread it ever bought. The baker sold ten thousand loaves and, on net, paid the hotel to eat them. The baker's original partners, who now own a smaller share of a bigger bakery, are the ones who actually footed the bill."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: when Amazon buys AI hardware, it asks to be paid in shares for buying, and in at least one case that payment ended up larger than the purchase.",
+        "For anyone following the AI build-out, the practical lesson is to read the filing, not the press release. A $60 billion deal that arrives with a warrant attached is a deal in which the customer has already been paid part of the price back, in a currency that rises when the deal goes well. The suppliers agree because Amazon's order is the thing that makes them valuable, and the cost lands on the other shareholders rather than on the income statement, until it lands there all at once, as it did at Plug Power.",
+        "Three things to watch. Qualcomm's December-quarter results, the first with datacentre revenue in them, and how much of it is Amazon. Astera's filings for how fast the $6.5 billion tranches unlock, which is a live gauge of how quickly Trainium3 racks are being built. And whether the next big Amazon chip deal, with anyone, arrives without a warrant. If it does, that will tell you the balance of power has shifted."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: AWS Trainium3 deep dive, with the Credo and Astera warrant maths",
+          "url": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+        },
+        {
+          "label": "Yahoo Finance on the Qualcomm-Amazon deal and warrant",
+          "url": "https://finance.yahoo.com/markets/stocks/article/qualcomm-and-amazon-ink-deal-for-custom-data-center-chips-170048117.html"
+        },
+        {
+          "label": "Credo's quarterly filing: Amazon exercised all warrant shares",
+          "url": "https://www.sec.gov/Archives/edgar/data/1807794/000162828026014017/crdo-20260131.htm"
+        },
+        {
+          "label": "Astera Labs press release on the February 2026 warrant",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/ALAB/pressreleases/167545/astera-labs-grants-amazon-strategic-performance-based-warrant-investment/"
+        },
+        {
+          "label": "Plug Power's 2020 results: negative revenue after the warrant charge",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465921027740/tm217342d3_ex99-1.htm"
+        },
+        {
+          "label": "Our brief on why Amazon, Google and Meta build their own AI chips",
+          "url": "https://oslovibecoding.tech/brief/why-amazon-google-and-meta-are-all-building-their-own-ai-chi"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "the-ai-labs-were-asked-to-slow-down-and-said-yes",
   "status": "published",
   "datePublished": "2026-09-13",
