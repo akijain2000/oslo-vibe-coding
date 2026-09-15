@@ -7,7 +7,7 @@ import { links } from "@/content/links";
 const copy = {
   en: {
     eyebrow: "The next session",
-    betweenTitle: "The next session is on 23 July.",
+    betweenTitle: "The next session is being scheduled.",
     betweenBody:
       "We meet roughly weekly in Oslo. Save your spot on Luma, and join WhatsApp to hear what the community is building between sessions.",
     city: "Oslo",
@@ -26,7 +26,7 @@ const copy = {
   },
   no: {
     eyebrow: "Neste samling",
-    betweenTitle: "Neste samling er 23. juli.",
+    betweenTitle: "Neste samling planlegges nå.",
     betweenBody:
       "Vi møtes omtrent ukentlig i Oslo. Meld deg på via Luma, og bli med på WhatsApp for å høre hva fellesskapet bygger mellom samlingene.",
     city: "Oslo",
