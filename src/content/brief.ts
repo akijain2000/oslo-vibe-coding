@@ -36,6 +36,268 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "anthropic-says-claude-now-leads-a-quarter-of-the-work-building-the-next-claude",
+  "status": "published",
+  "datePublished": "2026-09-19",
+  "title": "Anthropic says Claude now leads a quarter of the work that builds the next Claude",
+  "dek": "Late on Thursday evening, US time, Anthropic published three numbers it has never shared before: how much of its own AI research is now done by its AI (26 percent \"led\" by Claude, up from about 1 percent in March), how it watches the 30,000 agents working inside the company at any moment, and what share of its computing power goes to safety. The measurements were made largely by Claude itself, and no outsider has checked them yet.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "On 18 September Anthropic's policy institute published \"Measurements for understanding the pace of AI development inside frontier labs\". The headline: as of August 2026, Claude \"leads\" 26 percent of Anthropic's model research and development work, meaning it completes most of a task end-to-end from a high-level instruction while a human supervises. In March that figure was 1 percent. Over 90 percent of the work now has AI at least \"collaborating\", and no part of the work is fully autonomous. The company also disclosed that roughly 30,000 AI agents work at once on its main internal platform, that every action they take passes an automated monitor before it runs, that about one action in 47,000 was blocked in August, and that in one July week about 6 percent of its research computing went to safety work. The ratings were produced by Claude, checked against staff who agreed with the model about as often as they agreed with each other, and Anthropic says the judge model \"could make the same kinds of errors as the model it is checking\". It is the first time a frontier lab has put a number on how much its AI builds itself, it arrives six days after Anthropic's chief executive asked the whole industry to slow down, and it is explicitly offered as the kind of measurement a regulator could one day use as a trigger.",
+  "sourceUrl": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+  "sourceLabel": "Read Anthropic's measurements and methodology",
+  "about": "Anthropic's R&D Automation Index of 18 September 2026, the Epoch AI automation scale, how much of Claude's development Claude now does, how 30,000 internal agents are monitored, safety's share of compute, and why the measurement matters for the pacing debate",
+  "keywords": [
+    "Anthropic",
+    "Claude",
+    "R&D Automation Index",
+    "recursive self-improvement",
+    "Epoch AI",
+    "AI agents",
+    "AI safety",
+    "Dario Amodei",
+    "pace the frontier",
+    "OpenAI",
+    "compute"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-says-claude-now-leads-a-quarter-of-the-work-building-the-next-claude.png",
+    "alt": "Anthropic's chart titled Claude now leads 26% of model R&D work. A stacked area chart from August 2025 to August 2026 showing the monthly share of model R&D tasks at Anthropic on Epoch AI's automation scale, from AL0 no AI to AL5 fully automated. The AL4 AI leads band, in dark orange, is near zero until February 2026 then rises: 1% in March, 3% in April, 12% in May, 14% in June, 22% in July and 26% in August 2026. The AL3 AI collaborates band grows to cover most of the rest. Source: Anthropic R&D Automation Index v2026.07.",
+    "credit": "Anthropic",
+    "creditUrl": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Late on Thursday evening US time (just after midnight UTC on Friday 18 September), Anthropic's policy institute published a piece called \"Measurements for understanding the pace of AI development inside frontier labs\". The opening line is the whole premise: \"AI systems are getting more powerful, and they're increasingly being used to build the next version of themselves.\" The company says it wants to \"illuminate the pace of progress for the public\", and it does so with three numbers from inside its own walls.",
+        "The first is the one everyone will quote. Anthropic built what it calls an R&D Automation Index, a measure of how much of the work of building Claude is now done by Claude. As of August 2026, Claude \"leads\" 26 percent of that work. Over 90 percent of the work has AI at least \"collaborating\". And, in the company's own words, \"Claude is not operating fully autonomously for any measured subset of AI R&D work.\"",
+        "The second number is about supervision. Anthropic says roughly 30,000 AI agents (pieces of software that use a model to carry out multi-step tasks on their own) were working at any one time in August on its most-used internal research platform. The third is about money, or rather computing power: in one week in July, about 6 percent of the compute spent on AI research went to safety work.",
+        "The timing is not an accident. Six days earlier, Anthropic's chief executive Dario Amodei published an essay asking the industry to slow down, which we covered on Sunday. Two days before this piece, OpenAI published six reports of its own unreleased models misbehaving, which we covered yesterday. Anthropic's post says plainly that \"as the world considers slowing the pace of frontier AI development, the public needs more information\", and that it would \"expect these numbers to shift if there were coordination on pacing the frontier\"."
+      ],
+      "pullquote": "\"AI systems are getting more powerful, and they're increasingly being used to build the next version of themselves.\""
+    },
+    {
+      "heading": "What \"leads 26 percent\" actually means",
+      "paragraphs": [
+        "The scale was not written by Anthropic. It comes from Epoch AI, an independent research nonprofit that tracks the AI industry, and it has six rungs. AL0 means no AI involvement. AL1 is minimal AI. AL2 is \"AI assists\". AL3 is \"AI collaborates\": the model does large chunks of the work under close human direction. AL4 is \"AI leads\": the model completes most of a task end-to-end from a high-level instruction while a human supervises. AL5 is fully autonomous, with no human in the loop.",
+        "Anthropic's own illustration of AL4 is a broken data pipeline (the software that moves and cleans the data a model is trained on). A Claude working at that level would inspect the logs, find and test a fix, handle surprises along the way and compare the repaired output against the last good run. An engineer would still decide whether to deploy it. That is what 26 percent of the company's model research now looks like.",
+        "The chart at the top of this brief is Anthropic's, and the slope is the story. The \"AI leads\" band is invisible until early this year. It reads 1 percent in March, 3 percent in April, 12 percent in May, 14 percent in June, 22 percent in July and 26 percent in August. Reading the same chart back to August 2025, almost none of the work was even at the \"collaborates\" level; most of it sat at \"minimal AI\" or \"AI assists\". In twelve months the middle of the chart has emptied out and the top has filled in.",
+        "One important caveat is baked into the method. Anthropic froze the list of tasks it measures against in July 2026, so a rising number tells you that the work humans were doing then is being automated. It does not by itself tell you whether new kinds of human work are appearing. The company checked this by building a second list from January and comparing, and says it found no rise in novel tasks. Fair enough, but it is a check the company ran on itself."
+      ]
+    },
+    {
+      "heading": "Who did the measuring",
+      "paragraphs": [
+        "This is the part to read slowly. For each week of July 2026, Anthropic randomly sampled 20 percent of the staff in the departments that build its models. A Claude research agent then read each sampled person's week, using Slack and internal documents, and listed what they had worked on. That produced about 15,000 individual tasks, which Claude sorted into a tree of 542 categories, from \"all model R&D\" at the top down to leaves like \"serving incident postmortems\". For every category, a Claude agent researched how that work gets done and how much of it AI performs, and a separate Claude \"judge\" assigned the automation level. Tasks were weighted by how much human time went into them.",
+        "In other words, the model rated its own share of the work. Anthropic knows how that sounds and ran a check: it asked the staff who own each area to rate their own automation level without seeing the model's evidence. The model and the humans gave exactly the same rating 59 percent of the time. Pairs of humans agreed with each other only 35 percent of the time. Model and human were within one rung of each other 97 percent of the time. So the model is at least as consistent as the people, which is reassuring and also a little unsettling.",
+        "The company then names the obvious objection itself: \"we're using our own models to evaluate our systems, which could mean that the 'judge' model could make the same kinds of errors as the model it is checking.\" Its proposed fix is that a developer's measurements \"could be verified by a third party, or by other developers' models\". Nobody outside Anthropic has verified these figures yet. Anthropic says it is now setting up independent third-party evaluators from several organisations inside the company, with access comparable to its own risk teams. That is the promise from Amodei's essay, restated."
+      ]
+    },
+    {
+      "heading": "Thirty thousand agents and a monitor",
+      "paragraphs": [
+        "The second measurement answers a question the first one raises: if the AI is doing this much of the work, who is watching it? Anthropic's answer is two layers of automated monitoring on its main internal platform, where about 30,000 agents were running at once in August. Every action an agent takes passes through an \"online\" monitor before it executes, usually within seconds, built to stop things that could not be undone, such as \"an agent copying model weights out of our systems\". Anything blocked is reviewed by a human within a week. Over more than a billion agent decisions in August, the monitor blocked 0.002 percent of them, about one in 47,000.",
+        "A second, \"offline\" monitor reads everything after the fact, looking for slow-developing problems like signs of a model working against its instructions. It flags roughly 100,000 transcripts a week, one or two in every thousand, most of which are cleared by further classifiers; around 50 a week reach a human. Two design choices make this possible: each agent has its own persistent identity, so its record survives model upgrades and it treats what another agent says \"as a claim to check rather than a thought of its own\", and agents talk on an open shared channel rather than privately, so they cannot \"play telephone\" and so humans can read everything.",
+        "Anthropic is candid about the age of all this: \"We have been doing this kind of monitoring for months, not years.\" That line sits interestingly next to the July Hugging Face incident, in which roughly 1,200 OpenAI agents built their own message board inside an internal package store and passed more than 70,000 messages among themselves. Open channels and per-agent identities are, roughly, the design that would have caught that."
+      ]
+    },
+    {
+      "heading": "Six percent for safety",
+      "paragraphs": [
+        "The third number is the least dramatic and, Anthropic argues, the most useful, because compute (the raw computing power spent on training and running models) is \"among the most verifiable inputs to the AI R&D process\". For the week of 13 to 20 July, the company sorted every workload into categories and asked how much of its AI research compute went to safety work: about 6 percent overall, and about 12 percent of the compute used by AI research agents specifically.",
+        "The company calls both figures \"deliberately conservative\": anything that helped capabilities as much as it helped safety was counted as capabilities, and the safety classifiers that screen its public products were left out entirely. It also warns that compute is a poor measure of effort, since safety research is mostly people designing experiments rather than machines running them. The point, it says, is less the number than that it \"provides a straightforward mechanism to compare like with like, across developers and over time\", and that it could inform \"limits on the share of compute going towards AI research agents\"."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "AI helping build AI is not new; the labs have said so for a while. In February, OpenAI's research vice-president Amelia Glaese told TIME that GPT-5.3 Codex was the first model to have a significant hand in its own development \"from start to finish\". Anthropic's own risk reports already contain evidence on how much its models speed up research. What is new is a single public number on a public scale, with a method you can read, and a monthly trend line. Until this week, \"how much of your AI builds your AI\" was a question with only anecdotes for answers.",
+        "The idea of a company grading itself and publishing the grade also has a long history, and it is a cautionary one. Car makers have for decades run their own fuel-economy and emissions tests, with regulators mostly checking the paperwork; that arrangement worked until 2015, when Volkswagen turned out to have written software that recognised the test. Nobody is accusing Anthropic of anything like that. The lesson is narrower: a self-reported number becomes trustworthy when someone independent can rerun the test, and Anthropic's own post says exactly that, three times."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a newspaper that has been quietly handing work to an AI writer. A year ago it fixed the spelling. By spring it was drafting paragraphs that reporters rewrote. Now, on a quarter of the stories, it does the reporting, writes the piece and files it, and an editor reads it before it prints. On more than nine stories in ten it is at least a co-author. No story goes out without a human reading it.",
+        "This week the newspaper published exactly that breakdown. The twist: the count was done by the AI writer, reading everyone's messages and rating its own contribution, and when the human staff were asked separately, they agreed with the AI's rating more often than they agreed with each other. The paper says an outside auditor is on the way. That is the story."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: a frontier lab has put a number on how much of its AI is now built by its AI, the number went from 1 percent to 26 percent in five months, and the lab measured it with the same AI.",
+        "For anyone using these tools at work, the useful part is not the 26 percent, it is the plumbing. Per-agent identity, one open channel instead of private messages, a check before an irreversible action and a review after everything else. That is a sensible template for any team letting agents loose on real systems, and it is instructive that even Anthropic describes its version as months old.",
+        "Three things to watch. Whether the September number, when it comes, keeps climbing at four or five points a month, because that curve is the argument for and against slowing down. Whether OpenAI and Google publish on the same Epoch scale, which is the only way the numbers become comparable. And whether the third-party evaluators Anthropic keeps promising actually rerun this measurement, because the day an outsider publishes their own version of the 26 percent, it stops being a press release and starts being a statistic."
+      ],
+      "links": [
+        {
+          "label": "Anthropic: Measurements for understanding the pace of AI development inside frontier labs",
+          "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development"
+        },
+        {
+          "label": "Anthropic: When AI builds itself (background on recursive self-improvement)",
+          "url": "https://www.anthropic.com/institute/recursive-self-improvement"
+        },
+        {
+          "label": "Implicator: Anthropic says Claude leads 26% of its AI research",
+          "url": "https://www.implicator.ai/anthropic-claude-leads-26-percent-ai-research/"
+        },
+        {
+          "label": "TIME: What happens when AI starts building AI",
+          "url": "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/"
+        },
+        {
+          "label": "Our brief on Dario Amodei's essay and the labs' response",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-were-asked-to-slow-down-and-said-yes"
+        },
+        {
+          "label": "Our brief on OpenAI's six misalignment reports",
+          "url": "https://oslovibecoding.tech/brief/openai-published-six-cases-of-its-own-ai-going-off-script"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "300-american-towns-banned-datacenters-three-projects-were-delayed",
+  "status": "published",
+  "datePublished": "2026-09-19",
+  "title": "300 American towns have banned datacenters. Three projects were delayed.",
+  "dek": "Four US states have moved against datacenters in two months and more than 300 towns and counties have voted to pause them. On Wednesday the House of Representatives voted 417 to 3 to make big datacenters pay for their own grid upgrades. SemiAnalysis mapped every local ban against every project it tracks by satellite and found the bans delay about 1.5 gigawatts out of 20. The politics are real. The megawatts, so far, are not.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "SemiAnalysis, the chip and datacenter research firm, has built a database of more than 400 local datacenter restrictions across 17 US states, of which 300-plus are enacted moratoriums (temporary bans on new applications) or permanent bans. It then matched each one, parcel by parcel, against the 6,000-plus datacenter sites it tracks with satellite imagery. Result: roughly 20 gigawatts of planned capacity sits inside a restricted boundary, but only 1,525 megawatts, 7.6 percent, is actually delayed, and three projects account for essentially all of it: an Amazon Web Services campus in Ohio, a developer's campus in Pennsylvania and a site in Colorado. Add New York's statewide pause, which the firm says delays about 0.8 gigawatts, and the total is around 2.3 gigawatts, against a forecast of 38 gigawatts of new US capacity in 2027. The reasons are mundane: county bans stop at city limits, bans freeze new applications rather than cancel approvals already granted, most bans expire before a 2028 project needs its permit, and developers redesign, relocate or sue. Texas's audit of its grid queue adds three to four months but pushes projects towards building their own power. SemiAnalysis sells this data and its view has a commercial angle; BloombergNEF, for one, thinks the Texas pause alone could delay far more. The backlash is growing fast, it is an election issue, and Wednesday's 417 to 3 House vote shows how bipartisan it is. It has not yet moved the buildout.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
+  "sourceLabel": "Read the SemiAnalysis moratorium audit",
+  "about": "SemiAnalysis's September 2026 audit of US datacenter moratoriums, why 300 local bans delay only 1,525 MW, New York's Executive Order 62, Texas's ERCOT audit, the Brownsville SpaceX de-annexation, the Ratepayer Protection Act, and what it means for the AI buildout",
+  "keywords": [
+    "datacenters",
+    "moratorium",
+    "SemiAnalysis",
+    "New York",
+    "Texas",
+    "ERCOT",
+    "Ratepayer Protection Act",
+    "AWS",
+    "SpaceX",
+    "Brownsville",
+    "electricity bills",
+    "behind the meter"
+  ],
+  "heroImage": {
+    "src": "/brief/300-american-towns-banned-datacenters-three-projects-were-delayed.png",
+    "alt": "SemiAnalysis table titled US Datacenter Moratorium Exposure, Headline Numbers, as of 1 September 2026. Local moratoriums: local instruments tracked 400+; local moratoriums enacted 300+; MW inside a locally restricted boundary about 20 GW; MW facing delay from a local moratorium 1,525 MW across three campuses. State moratoriums: New York EO 62, 0.8 GW facing delay; Texas ERCOT audit, 3 to 4 months incremental delay. Total MW delayed, local and statewide, about 2.3 GW, a floor, since Texas and Pennsylvania are not MW-quantified. Source: SemiAnalysis Datacenter Industry Model.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "If you only read headlines, the American datacenter boom is being voted out of existence one council meeting at a time. Four states have acted in under two months. On 14 July New York's governor Kathy Hochul signed Executive Order 62, the first statewide pause in the country, which stops the state environment department issuing its permits for any datacenter that can draw 50 megawatts or more until an environmental study is finished. On 3 August Texas governor Greg Abbott ordered the state's grid operator ERCOT to audit every datacenter waiting to connect, roughly 250 to 300 projects out of a queue of 474 gigawatts, before any more can advance; ERCOT says that will take until December. According to SemiAnalysis, Pennsylvania has pulled datacenters out of fast-track permitting and Oregon has frozen datacenter deals on state-owned land. Below the state level, more than 300 towns, cities and counties have voted to halt datacenters over the past 18 months.",
+        "Then on Wednesday 16 September the US House of Representatives voted 417 to 3, about as bipartisan as Congress gets, to pass the Ratepayer Protection Act. It would push state regulators to make any datacenter drawing 100 megawatts or more at a single site pay the full cost of the power plants, transmission and distribution built to serve it, even if it later walks away from its contract. It amends a 1978 law under which states must formally consider the standard, not necessarily adopt it, and it now goes to the Senate.",
+        "Into this, on 15 September, SemiAnalysis published a piece with a deliberately provocative title: \"Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We Mapped All 300 of Them.\" Its answer, expanded in a podcast episode released on Friday, is that the bans are real, the anger is real, and the delay to actual megawatts is, so far, small.",
+        "The firm's forecast is for 38 gigawatts of new US datacenter capacity in 2027, more than double 2026's 18. Of that, 22 gigawatts is already under vertical construction (walls going up, visible from orbit) and most of the other 16 is financed and doing site works. SemiAnalysis says the forecast \"has barely moved over the last 12 months\"."
+      ],
+      "pullquote": "\"Counting moratoriums is not counting megawatts.\""
+    },
+    {
+      "heading": "How they counted",
+      "paragraphs": [
+        "Most coverage of the backlash counts restrictions, because restrictions are easy to count. SemiAnalysis counted them too: its new database holds more than 400 local instruments across 17 states, each tracked from proposal through enactment, expiry, repeal or rejection, of which 300-plus are enacted moratoriums or permanent zoning bans. Its chart of adoptions per month goes from a handful in early 2025 to around 60 in June 2026 alone. Michigan leads with 45 enacted and 7 proposed, Ohio has 40, and Michigan, Ohio, North Carolina and Georgia together account for about half the national total.",
+        "Then it did the part nobody else has done. It matched each active restriction against its project pipeline, the 6,000-plus datacenter sites it follows through property records, permits, power data, freedom-of-information requests and satellite photos. For every ban it checked whether the boundary actually reaches the project's parcel, whether the project still needs an approval the ban freezes, and whether anything else was already holding the schedule. The firm says it used \"an army of state-of-the-art research agents\" alongside its analysts to work through hundreds of restrictions and thousands of projects.",
+        "The result is the table at the top of this brief. About 20 gigawatts of planned capacity sits inside a locally restricted boundary. Only 1,525 megawatts of it, 7.6 percent, is actually delayed. Three campuses account for essentially all of that: an AWS site in Ohio, a powered-land developer's campus in Pennsylvania, and a site in Colorado. New York's order touches about 1.4 gigawatts and delays perhaps 0.8. The Texas audit adds three to four months for grid-connected projects. Total, and the firm calls it a floor: about 2.3 gigawatts."
+      ]
+    },
+    {
+      "heading": "Why a ban so rarely bites",
+      "paragraphs": [
+        "SemiAnalysis lists a dozen conditions that all have to be true at once before a moratorium moves a delivery date, and its line is blunt: \"If you miss just one of these, the moratorium is irrelevant.\" Four of them do most of the work."
+      ],
+      "bullets": [
+        "County bans usually stop at city limits. A county moratorium generally covers only unincorporated land, so a campus inside a town within that county is untouched. The firm names AWS in Atlanta, STACK in Lithia Springs, T5 in Fairburn and Microsoft in Tyrone as Georgia projects the county bans around them cannot reach.",
+        "Bans freeze new applications; they do not cancel approvals already granted. A project that had its permits before the vote keeps them. That covers everything being built in 2026 and most of 2027.",
+        "Most bans are short and most affected projects are far out. A six-month pause in 2026 has expired long before a project due in 2028 needs the permit it froze. The developer waits it out and the delivery date does not move.",
+        "Something else was already the bottleneck. Litigation, transformer lead times or grid connection were often gating the schedule before the ban arrived, so the ban changes nothing."
+      ]
+    },
+    {
+      "heading": "The one that did bite, and the one that got away",
+      "paragraphs": [
+        "The firm's example of a ban that binds is a NorthPoint campus near Scranton in Pennsylvania. The township passed its resolution unanimously in June 2026. The site is on private land, needs a local special exception the developer had not yet filed for, first buildings were due to start in the last quarter of 2026, and there is no federal route around it and no way to redesign out of it. Every box ticked, so the local approvals slip into 2027. NorthPoint is still pursuing it, with a proposed 165 million dollar package of community benefits.",
+        "The counter-example is in Brownsville, Texas. On the night of Saturday 29 August, after a six-hour special meeting, the city commission voted unanimously to \"disannex\" 444 acres, at SpaceX's request, as part of a 220 million dollar water infrastructure deal. Local reporting says SpaceX told commissioners the money was conditional on the ordinance passing that night. Three days later the city was due to discuss a datacenter moratorium. Activists say the company plans a datacenter and gas power plant on the land; SpaceX has not said. Whatever goes there, it is now outside the city's jurisdiction and any moratorium the city passes. SemiAnalysis's word for it is \"sneakily\".",
+        "Michigan is the whole argument in one state. It has the most local bans in America and, per the firm's project data, \"effectively zero pipeline exposure\". The Google campus there sits on industrial land where data processing was already a permitted use. Another developer sued a township over exclusionary zoning after a rejection and settled. A 180-day pause in Lyon Township cannot touch a project that was already approved."
+      ]
+    },
+    {
+      "heading": "What the backlash is really about",
+      "paragraphs": [
+        "None of this means the anger is fake. SemiAnalysis polled American voters in August and found them net-positive on AI (46 percent favourable, 34 unfavourable) and net-negative on datacenters (29 favourable, 46 unfavourable, 24 percent very unfavourable). Forty-six percent would oppose a datacenter in their own town. Gallup finds the top complaints are energy use and electricity bills, then water, land and traffic. In Ohio, where PJM (the grid operator for much of the eastern US) let datacenter demand push capacity costs up, the firm says the average household bill rose 25.7 percent in a year, and 83 percent of Ohio's 40 bans were passed in 2026. In August Vivek Ramaswamy, the Republican candidate for Ohio governor, pledged that no new datacenter would be approved unless it eliminated electricity bills for nearby residents.",
+        "This is also why the bans are a favourite tool. With midterm elections in November, a temporary pause lets an official show they have heard residents without permanently turning away tax revenue, and it carries less legal risk than an outright denial. Both Hochul and Abbott acted by executive order, bypassing their legislatures, which means both can lift the pause themselves. Durable statewide laws are harder: SemiAnalysis counts 13 state bills that died in 2026, almost none reaching a floor vote. Wednesday's House bill sidesteps that problem by putting the cost on the datacenter rather than banning it, which is a big part of why 417 members voted for it.",
+        "The other consequence is where the power comes from. The Texas audit only slows projects that want to plug into the grid. SemiAnalysis counted 75 gigawatts of firm orders for behind-the-meter equipment (generators and turbines that let a datacenter make its own electricity on site), more of it bound for Texas than any other state, and expects on-site power to supply more than half of new US capacity from 2028. We covered that shift in an earlier brief. A grid pause, in other words, is a subsidy for gas turbines."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Local bans that fail to stop a buildout have a recent precedent in the same country. Columbia Law School's Sabin Center has for years catalogued local restrictions on wind and solar farms across US counties, and the list runs to hundreds; over the same period American solar installations kept setting records. The pattern was the same: restrictions cluster where building is fastest, they hit projects years from construction, and developers move a county over.",
+        "Norway has its own small version. Cheap hydropower drew datacenters and crypto miners north, and in 2024 the government proposed making every datacenter register and disclose what it does, so municipalities could say no to the ones they did not want. The scale is nothing like Ohio's, but the instinct, that a town should get a say over who uses its power, is the same one now passing through 300 American councils.",
+        "Two honest caveats about the source. SemiAnalysis sells the Datacenter Industry Model this analysis comes from, and its business does better when clients believe the buildout is on track; this is the third piece in a year in which it has argued that a popular \"datacenters are in trouble\" story is wrong. And other analysts see more risk: BloombergNEF has warned that the Texas audit alone could delay up to 49.8 gigawatts of proposed load and cost projects up to 15 billion dollars, a figure SemiAnalysis's three-to-four-months framing implicitly disputes. The parcel-level method is the strongest thing about the piece. The conclusion still comes from a firm with a view."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine 300 planning offices have each taped a sign to the door: \"No new datacenter applications until further notice.\" It looks like a wall. Now walk the sites. The building whose permit was stamped last year is still going up; the sign only stops new applications. The campus across the county line is inside a town the county sign does not cover. The developer with a 2028 opening date reads the sign, notes it comes down in six months, and goes for lunch. The one whose land was just moved outside the city limits does not need to read the sign at all.",
+        "Out of 300 signs, three actually stopped somebody who needed to walk through that door this year. That is what SemiAnalysis found. And separately, this week, Congress decided that whoever does walk through the door should pay for the road."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: America's datacenter backlash has produced 300 local bans, four state actions and a 417 to 3 vote in Congress, and by one careful count it has so far delayed about 2 gigawatts out of nearly 40 arriving next year.",
+        "The useful habit here is the one SemiAnalysis modelled: when a story is told in counts of things (bans, cancellations, lawsuits), ask what unit actually matters and go and measure that. The unit here was megawatts on specific parcels, and the answer looked nothing like the count.",
+        "Three things to watch. Whether the Senate takes up the Ratepayer Protection Act before the midterms, because cost-sharing is the version of the backlash that scales. What ERCOT's December audit finds, and whether SemiAnalysis's three-to-four months or BNEF's 49.8 gigawatts turns out closer to the truth. And whether the monthly count of new local bans, which hit 60 in June, keeps climbing after November, because the firm's own caveat is that the bans \"COULD delay the buildout, but they just aren't yet at scale\"."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We Mapped All 300 of Them",
+          "url": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums"
+        },
+        {
+          "label": "SemiAnalysis podcast Ep. 033: 300 Data Center Bans, 3 Projects Delayed",
+          "url": "https://www.youtube.com/watch?v=Qv2vMj0Uq3c"
+        },
+        {
+          "label": "Governor Hochul: Executive Order 62 (statewide datacenter moratorium)",
+          "url": "https://www.governor.ny.gov/executive-order/no-62-establishing-temporary-moratorium-data-centers-new-york-while-state-develops"
+        },
+        {
+          "label": "Texas Tribune: New Texas data center projects frozen until state audits them",
+          "url": "https://www.texastribune.org/2026/08/03/texas-data-center-project-audit-greg-abbott/"
+        },
+        {
+          "label": "MyRGV: Brownsville commissioners approve disannexation of future SpaceX property",
+          "url": "https://myrgv.com/local-news/2026/08/29/brownsville-commissioners-approve-disannexation-of-future-spacex-property/"
+        },
+        {
+          "label": "Broadband Breakfast: House passes the Ratepayer Protection Act",
+          "url": "https://broadbandbreakfast.com/house-passes-bill-aimed-at-addressing-impact-of-data-centers-on-energy-costs/"
+        },
+        {
+          "label": "Our brief on why AI companies are building their own power stations",
+          "url": "https://oslovibecoding.tech/brief/ai-companies-are-building-their-own-power-stations"
+        },
+        {
+          "label": "Our brief on whether AI is to blame for your power bill",
+          "url": "https://oslovibecoding.tech/brief/blaming-ai-for-your-power-bill-is-half-the-story"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "openai-published-six-cases-of-its-own-ai-going-off-script",
   "status": "published",
   "datePublished": "2026-09-18",
