@@ -36,6 +36,234 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "four-ai-subscribers-sued-the-labs-for-agreeing-to-slow-down",
+  "status": "published",
+  "datePublished": "2026-09-20",
+  "title": "Four AI subscribers just sued the labs for agreeing to slow down",
+  "dek": "On Friday, four paying users of ChatGPT, Claude, Grok and Gemini filed a class action in California accusing Anthropic, OpenAI, SpaceXAI and Google of price fixing by another name: agreeing among themselves to develop AI more slowly. A day later Donald Trump announced an \"AI Force\" and an AI czar and promised not to \"hinder or stifle\" the industry. The week-old safety pact now has to survive a courtroom and a White House.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "A lawsuit filed on Friday 18 September in the US District Court for the Northern District of California accuses Anthropic, OpenAI, SpaceXAI and Google of violating US antitrust law by agreeing to slow the pace of AI development. The four named plaintiffs each pay for ChatGPT, Claude, Grok or Gemini, and they want to represent every paying US subscriber to those services. Their theory, as reported by the Associated Press: on 12 September Anthropic's Dario Amodei published an essay asking the industry to slow down, Sam Altman, Elon Musk and Demis Hassabis publicly agreed the same day, and an agreement among the chief rivals that progress \"should be slower than competition would otherwise produce has an anticompetitive effect on consumers\". The plaintiffs say each company is free to slow down alone; what the law forbids is the \"shortcut\" of agreeing to \"substitute collective restraint for individual accountability\". None of the four companies had responded by Saturday. Amodei's essay had itself asked Washington for \"a narrow waiver for certain kinds of safety conversations\", which Senate Republicans Josh Hawley and Ted Cruz have since ruled out. On Saturday President Trump, who has called the slowdown a \"conspiracy\", said he is forming an \"AI Force\" and will name an AI czar, adding: \"We will not in any way hinder or stifle the Growth of this incredible Industry.\" Nothing has been proven; the first test is whether the case survives a motion to dismiss.",
+  "sourceUrl": "https://abcnews.com/Technology/wireStory/lawsuit-anthropic-openai-spacexai-google-made-illegal-agreement-136588615",
+  "sourceLabel": "Read the AP report on the lawsuit",
+  "about": "The 18 September 2026 antitrust class action against Anthropic, OpenAI, SpaceXAI and Google over the AI pacing agreement, what the Sherman Act says about competitors agreeing to restrain themselves, the antitrust waiver Amodei asked for, Hawley and Cruz's refusal, Trump's AI Force and AI czar announcement, and what happens next",
+  "keywords": [
+    "antitrust",
+    "class action",
+    "Anthropic",
+    "OpenAI",
+    "SpaceXAI",
+    "Google DeepMind",
+    "Dario Amodei",
+    "pace the frontier",
+    "Sherman Act",
+    "AI regulation",
+    "Donald Trump",
+    "AI czar",
+    "Josh Hawley"
+  ],
+  "heroImage": {
+    "src": "/brief/four-ai-subscribers-sued-the-labs-for-agreeing-to-slow-down.png",
+    "alt": "Diagram titled Safety pact or price fixing? Two columns. What the labs say: a slower frontier is a safer one; they asked Washington for a narrow waiver; each lab still sets its own pace; public statements, not a contract. What the lawsuit says: rivals agreed on 12 September; paid users get less for their money; a class of every US subscriber; restraint alone is fine, together is not. Caption: four paying ChatGPT, Claude, Grok and Gemini users sued all four labs on Friday.",
+    "credit": "Oslo Vibe Coding, from AP reporting",
+    "creditUrl": "https://abcnews.com/Technology/wireStory/lawsuit-anthropic-openai-spacexai-google-made-illegal-agreement-136588615"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Friday 18 September, four people who pay for AI chatbots filed a lawsuit in the US District Court for the Northern District of California, the federal court in San Francisco. The defendants are Anthropic (maker of Claude), OpenAI (ChatGPT), SpaceXAI (Elon Musk's AI company, maker of Grok) and Google (Gemini). The Associated Press, which reported the filing on Saturday, says the four plaintiffs want to represent a proposed nationwide class of everyone in the United States who pays for those four services.",
+        "The claim is that the companies broke antitrust law (the rules that stop competitors from cooperating instead of competing) by agreeing to slow their AI development. The lawsuit dates the agreement to 12 September, the day Anthropic's chief executive Dario Amodei published an essay asking the industry to pace itself, and OpenAI's Sam Altman, SpaceXAI's Elon Musk and Google DeepMind's Demis Hassabis each publicly agreed within hours. We covered that day in an earlier brief. The complaint also points further back, to a statement in July signed by senior staff at several labs that acknowledged the \"intense competitive pressure not to unilaterally slow\" development and asked governments to support a global slowdown.",
+        "The core sentence, as quoted by AP: an agreement among the chief rivals in AI that their progress \"should be slower than competition would otherwise produce has an anticompetitive effect on consumers\". The harm the plaintiffs describe is to their own wallets. They pay a monthly fee for a product whose main selling point is that it keeps getting better; if the companies have jointly decided to make it better more slowly, the subscription is worth less.",
+        "The lead lawyer, Nick Rowley, put it more dramatically: \"AI will quickly spin out of human control and could kill us all if we allow AI safety and protocol ... to be controlled by private self-serving agreements between the world's most powerful 'for profit' technology companies.\" Representatives of all four companies did not respond to AP's request for comment on Saturday, and we could not find a public reply from any of them by Sunday morning Oslo time."
+      ],
+      "pullquote": "\"should be slower than competition would otherwise produce has an anticompetitive effect on consumers\""
+    },
+    {
+      "heading": "The legal idea, in plain English",
+      "paragraphs": [
+        "The law in question is Section 1 of the Sherman Act, the 1890 statute that bans \"every contract, combination ... or conspiracy, in restraint of trade\". In practice it means rivals may not agree with each other about how they will compete: not on price, not on output, and, the plaintiffs argue, not on how fast they improve the product. It does not matter whether the agreement is written down or whether the motive is good. A private lawsuit under this law can ask for three times the damages actually suffered, which is why plaintiffs' lawyers like it.",
+        "The plaintiffs are careful about what they are not saying. They do not object to any one company slowing down on its own, and they say they are fine with the companies asking Congress or the White House for regulation, or even for an antitrust exemption. Their argument is that the companies took a \"shortcut\" by agreeing to \"substitute collective restraint for individual accountability\", when a competitive market would have let each of them be judged on its own choices.",
+        "The hard part for the plaintiffs is proving an agreement exists. Antitrust law draws a line between competitors who coordinate and competitors who merely watch each other and behave the same way, which is legal. Everything AP describes in the complaint is public: an essay, three social-media replies, a signed open letter. As far as the coverage shows, no private message, meeting or delayed product is cited. The defendants' obvious first move is a motion to dismiss arguing that four executives agreeing with a blog post is not a contract. If the case survives that motion, it enters discovery, the phase where the labs would have to hand over internal communications about pacing, which is the outcome their lawyers will least want."
+      ]
+    },
+    {
+      "heading": "The labs saw this coming",
+      "paragraphs": [
+        "Amodei's essay anticipated exactly this. He wrote that it would help for the US government to mediate \"or at least enable\" cross-lab discussions, and that the government would need to \"issue a narrow waiver for certain kinds of safety conversations\". Altman answered on social media that OpenAI welcomes a \"federal framework that sets consistent safety requirements\", but added: \"we do not believe we need to wait for an antitrust exemption or legislation to begin the work of providing this confidence.\" That second sentence is now Exhibit A for the plaintiffs, because it says the companies intended to coordinate before any waiver existed.",
+        "No waiver is coming soon. At a Senate Judiciary Committee hearing last week, Senator Josh Hawley, a Republican from Missouri, said \"there is no world\" in which he would give \"the most powerful companies in the history of the world\" an antitrust exemption to collaborate, because they could collude and stifle competition. Senator Ted Cruz was reported as calling the request \"lunacy\". The plaintiffs are, in effect, making the same argument as Hawley from the other side of the aisle: if you want restraint, get it from a regulator, not from a handshake.",
+        "That leaves the companies in a squeeze of their own making. They have said publicly that they consider the current pace unsafe. They have also said they will coordinate to change it without waiting for permission. Antitrust law does not have a public-interest defence for cartels, however sincere."
+      ]
+    },
+    {
+      "heading": "Then, on Saturday, the White House",
+      "paragraphs": [
+        "President Trump has spent the week calling the slowdown a \"conspiracy\" and asking why industry leaders would want regulation that, in his words, \"if strongly implemented, will drive them into oblivion and bankruptcy\". On Saturday he posted on Truth Social that he is forming an \"AI Force\", \"much like I did Space Force\", and will name an AI czar: \"Only High I.Q. individuals need apply!\" He wrote that AI could become \"as much as 25% of our Country's GDP\", that bad uses can be handled \"with our already existing Criminal and Civil Justice System\", and: \"We will not in any way hinder or stifle the Growth of this incredible Industry. We are leading China, and the rest of the World, and I intend to keep it that way!\"",
+        "CNN asked the White House what the czar would do, whether the AI Force is a military branch, and who is in mind; it had no answer by publication. The previous AI and crypto czar, the venture capitalist David Sacks, left in March when his term as a special government employee ran out. On the other side, Barack Obama said on Friday at Colgate University that it is \"good that some of the leading companies have said we need to slow this down\", but that private companies deciding this \"can't be a long-term solution. Government has to be regulating this.\"",
+        "The calendar matters. The administration is hosting a high-level AI event on the sidelines of the UN General Assembly on Wednesday. On Thursday, Altman, Nvidia's Jensen Huang and Google's Sundar Pichai are due at a White House state dinner for Chinese leader Xi Jinping. The companies now being sued for agreeing to slow down will spend the week at events whose theme is staying ahead of China."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Tech giants agreeing among themselves, and getting sued for it, has a recent precedent. Between 2005 and 2009, Apple, Google, Intel, Adobe and others made informal agreements not to recruit each other's engineers. The US Justice Department treated those handshakes between chief executives as antitrust violations and settled with the companies in 2010; a class action by about 64,000 employees followed and was settled for $415 million in 2015. The evidence was ordinary emails between executives. Nobody in that case argued the agreement was good for the world, but the legal lesson carries over: an agreement between rivals does not need a contract, and it does not become legal because it was convenient or well-meant.",
+        "The closer precedent is the argument that rivals should be allowed to restrain themselves together for a public good. Europe has been arguing about that for a decade. In 2015 Dutch supermarkets and producers agreed to sell only chicken raised to a higher welfare standard, and the Dutch competition authority blocked the \"Chicken of Tomorrow\" deal on the grounds that consumers were being made to pay for a benefit they had not chosen. The European Commission later wrote guidelines, in 2023, spelling out the narrow conditions under which such \"sustainability agreements\" are allowed. The AI labs are asking for the same kind of carve-out, at far higher stakes, in a country whose competition law has no such carve-out and whose legislators have just said no.",
+        "What is genuinely new is the speed. The pacing proposal was published on 12 September. Six days later it was in federal court. Whatever one thinks of the merits, an industry that wanted to test whether it could coordinate on safety has now found out in under a week that it cannot do so quietly."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture two taxi firms in a city that both advertise the fastest rides in town. One owner writes an open letter saying the streets have become dangerous and both firms should cap their speed. The other owner replies the same afternoon: agreed. A week later, four regular passengers sue both firms. They are not against slower driving. They say each firm is free to slow down on its own and take the consequences, and the city council is free to set a limit. What the two firms may not do is agree between themselves, because then the passenger who pays for speed has nowhere else to go.",
+        "The court will ask two questions. Did the firms actually agree, or did each just decide the same thing on the same day? And did the passengers lose anything they paid for? Meanwhile the mayor announces a Traffic Force and promises the taxis will not be slowed down at all. That is where the AI industry is this weekend."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: the AI labs' safety pact is now a legal question, the plaintiffs are their own paying customers, and the government they asked for cover has instead promised not to hold them back.",
+        "For anyone using these tools, nothing changes this week. Your subscription is not the subject of a court order, and the companies have not said they will change course because of the filing. The practical effect, if any, is on how the labs talk to each other: every future statement about coordinating on pacing will now be drafted with this complaint in mind.",
+        "Three things to watch. Whether the defendants argue there was never an agreement, which would be an awkward thing to say a week after announcing one. Whether the judge lets the case reach discovery, which would put the labs' internal pacing discussions in front of a court. And what the AI czar and the AI Force turn out to be, because a government that wants faster AI and a set of companies that say they want slower AI cannot both get their way."
+      ],
+      "links": [
+        {
+          "label": "AP via ABC News: Lawsuit says Anthropic, OpenAI, SpaceXAI and Google made illegal agreement on AI slowdown",
+          "url": "https://abcnews.com/Technology/wireStory/lawsuit-anthropic-openai-spacexai-google-made-illegal-agreement-136588615"
+        },
+        {
+          "label": "CNN: Trump vows to create 'AI Force' and appoint czar",
+          "url": "https://www.cnn.com/2026/09/19/politics/trump-ai-task-force-czar"
+        },
+        {
+          "label": "Fortune: Lawsuit claims the labs violated antitrust laws when they coordinated an AI slowdown",
+          "url": "https://fortune.com/2026/09/19/lawsuit-anthropic-openai-spacexai-google-antitrust-laws-ai-slowdown-subscription-value/"
+        },
+        {
+          "label": "Dario Amodei: We Must Pace the Frontier",
+          "url": "https://www.darioamodei.com/post/we-must-pace-the-frontier"
+        },
+        {
+          "label": "Our brief on the day the labs agreed to slow down",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-were-asked-to-slow-down-and-said-yes"
+        },
+        {
+          "label": "Our brief on Anthropic's pace measurements",
+          "url": "https://oslovibecoding.tech/brief/anthropic-says-claude-now-leads-a-quarter-of-the-work-building-the-next-claude"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "amazon-is-not-building-the-fastest-ai-chip-it-is-building-the-cheapest-useful-one",
+  "status": "published",
+  "datePublished": "2026-09-20",
+  "title": "Amazon isn't building the fastest AI chip. It's building the cheapest useful one.",
+  "dek": "Amazon's Trainium3 loses to Nvidia's best on raw speed, and Amazon does not seem to mind. SemiAnalysis's teardown of the chip reads like a manual for a different game: ship an air-cooled rack that fits into today's buildings, accept a slower network now and swap in better switches later, design in spare wires so a fault does not stop the rack, and get paid in supplier shares for the parts. Anthropic has signed up for ten years of it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "Trainium3 is Amazon's third home-made AI chip, built by its Annapurna Labs unit on TSMC's 3-nanometre process, with 144 GB of high-bandwidth memory and roughly double the low-precision maths of its predecessor. SemiAnalysis's deep dive, the most detailed public account of the chip, says Amazon's guiding rule is \"deliver the fastest time to market at the lowest TCO\", total cost of ownership, rather than the highest performance. The evidence is in the compromises: most 2026 racks are air-cooled with 64 chips, because liquid-cooled buildings are the bottleneck; the first network switches force data to take up to three hops between chips in the same rack, with faster one-hop switches to be swapped in later; every chip carries 16 spare wires so a switch tray can be replaced without stopping the rack, something Nvidia's GB200 cannot do; and Amazon earns share warrants in its switch supplier Astera Labs worth an effective discount of roughly 23 percent. On 20 April Anthropic committed more than $100 billion over ten years to AWS, for up to 5 gigawatts of capacity across Trainium2, 3 and 4, with nearly 1 GW due online by the end of 2026. Amazon's Andy Jassy calls the silicon \"high performance at significantly lower cost\". SemiAnalysis still expects Nvidia to stay \"King of the Jungle\" as long as it keeps accelerating, and notes Trainium3's next generation may use Nvidia's own NVLink connector.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential",
+  "sourceLabel": "Read the SemiAnalysis Trainium3 deep dive",
+  "about": "Amazon's Trainium3 AI chip, the perf-per-TCO strategy behind it, air-cooled versus liquid-cooled racks, multi-hop scale-up networks and switch generations, redundant lanes and hot-swapping, the Astera Labs warrant rebate, Anthropic's $100 billion ten-year AWS commitment, and why cheapest useful work can beat fastest chip",
+  "keywords": [
+    "Amazon",
+    "AWS",
+    "Trainium3",
+    "Annapurna Labs",
+    "Nvidia",
+    "total cost of ownership",
+    "Anthropic",
+    "AI chips",
+    "SemiAnalysis",
+    "Astera Labs",
+    "data centres",
+    "NVLink"
+  ],
+  "heroImage": {
+    "src": "/brief/amazon-is-not-building-the-fastest-ai-chip-it-is-building-the-cheapest-useful-one.png",
+    "alt": "Diagram titled Two ways to win a chip race. Left column, Fastest chip (Nvidia's game): peak speed per chip; liquid-cooled 72-chip rack; every chip one hop from every other; drain the rack to swap a switch; roughly 75 percent gross margin. Right column, Cheapest work (Amazon's game): speed per dollar over the rack's life; air-cooled rack fits today's buildings; up to 3 hops now, better switches later; spare wires, hot-swap without stopping; paid in supplier shares for the parts. Caption: Trainium3 is built to be cheap and early, not fastest. Figures: SemiAnalysis.",
+    "credit": "Oslo Vibe Coding, figures from SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+  },
+  "sections": [
+    {
+      "heading": "The claim",
+      "paragraphs": [
+        "Every article about an Amazon AI chip asks the same question: is it an Nvidia killer? SemiAnalysis, the research firm whose reports we lean on for the hardware side of this brief, answered it in an unusual way in its Trainium3 teardown. It did not lead with speed. It led with a sentence about accounting: \"With Trainium3, AWS remains laser-focused on optimizing performance per total cost of ownership (perf per TCO). Their hardware North Star is simple: deliver the fastest time to market at the lowest TCO.\"",
+        "Some translation. AWS is Amazon Web Services, the cloud business that rents computing by the hour and is Amazon's main profit engine. Trainium is its own line of AI chips, designed by Annapurna Labs, an Israeli chip start-up Amazon bought in 2015, and made by TSMC in Taiwan. TCO, total cost of ownership, is what a rack of chips costs over its whole life: the chips, the network, the cooling, the building, the electricity and the people who keep it running. Performance per TCO is how much useful work you get for all of that money. It is a different scoreboard from the one Nvidia tops, which is how much work one chip can do in one second.",
+        "On that second scoreboard Trainium3 does not win, and SemiAnalysis does not pretend it does. The chip doubles its predecessor's low-precision maths (the rough-and-fast arithmetic that modern AI mostly runs on), moves to TSMC's 3-nanometre process and carries 144 GB of high-bandwidth memory with 70 percent more bandwidth than before, partly because Amazon switched memory suppliers from Samsung to SK Hynix and Micron. Higher-precision maths is unchanged, and the newest four-bit number format runs no faster than eight-bit, where Nvidia's chips double up. SemiAnalysis's estimate, in the paid part of the report, is that Trainium3 is about 30 percent better than Nvidia's GB300 rack on cost per unit of eight-bit performance and much worse on four-bit. That is a chip built to be cheap on the work its customers actually run, not to top a benchmark."
+      ],
+      "pullquote": "\"Their hardware North Star is simple: deliver the fastest time to market at the lowest TCO.\""
+    },
+    {
+      "heading": "Four choices that give the game away",
+      "paragraphs": [
+        "First, air over water. Nvidia's flagship rack, the GB200 NVL72, packs 72 chips into a liquid-cooled cabinet, and most of the world's data centres cannot cool one. Amazon's main 2026 product is a two-rack, 64-chip, air-cooled system. SemiAnalysis calls it \"the time to market SKU\" and says it is \"the only SKU with a switched scale-up architecture that can be deployed in datacenters that are not liquid cooled ready\", which is why \"the majority of the Trainium3 chips deployed in 2026\" will be that version. A slightly slower rack you can install this year beats a faster one waiting for a building.",
+        "Second, a worse network now, a better one later. Inside an AI rack the chips must talk to each other constantly, and the ideal is a network where every chip is one hop from every other. Amazon's first version is not that. Because the big PCIe switches it wanted were not yet available in volume, it launched with 160-lane switches that force some traffic to take \"up to three hops\" between two chips in the same rack, and four hops across the two-rack version. The plan is three switch generations over the chip's life: 320-lane switches that bring every chip to one hop, then a new industry standard called UALink. SemiAnalysis's phrase is that the first generation \"will be rather quickly replaced\". Amazon shipped a rack it already intends to upgrade, because shipping mattered more than perfection.",
+        "Third, spare wires. Each Trainium3 has 80 wiring lanes to the rack's backplane, of which 16 are deliberately unused spares. They exist so that a switch tray can be swapped while the rack keeps working, and so a rack with a few dead lanes does not stall the thousands of others in a training run. SemiAnalysis contrasts this with Nvidia's GB200, where \"operators must first drain all the workloads from the rack before swapping switch trays\", and notes Nvidia's backplane \"has had poor reliability\". Amazon's servers are also \"cableless\": every signal runs through the circuit board rather than through hand-plugged cables, which costs some signal quality and needs extra signal-boosting chips, but makes the racks faster to build and less likely to be assembled wrong. Nvidia is now copying the idea for its next generation.",
+        "Fourth, the parts pay for themselves. Those signal boosters and switches come from Astera Labs, and Amazon's purchase agreement gives it warrants on Astera stock that vest as it hits volume targets, at a strike price of $20.34. SemiAnalysis worked out that the warrants vested by late September 2025 amounted to \"an effective discount of roughly 23 percent\" on the parts. We wrote last week about Amazon making Qualcomm pay it in shares to become a customer; here it is the same trick pointed at a supplier. The more Amazon buys, the more it is paid."
+      ]
+    },
+    {
+      "heading": "Who is buying",
+      "paragraphs": [
+        "The customer that makes this strategy work is Anthropic. On 20 April it announced a new agreement with Amazon: \"We are committing more than $100 billion over the next ten years to AWS technologies, securing up to 5GW of new capacity to train and run Claude.\" The deal spans Trainium2 through Trainium4, with the option to buy future generations. Anthropic said it already runs \"over one million Trainium2 chips\" and expects \"nearly 1GW total of Trainium2 and Trainium3 capacity coming online by the end of 2026\", with scaled Trainium3 \"later this year\". For scale, one gigawatt is roughly the electricity draw of a city of several hundred thousand homes.",
+        "Andy Jassy, Amazon's chief executive, gave the sales pitch in the same announcement: \"Our custom AI silicon offers high performance at significantly lower cost for customers, which is why it's in such hot demand.\" Note the word order. Not the fastest; lower cost. Anthropic, which said in the same post that its revenue run-rate had passed $30 billion and that its own growth was straining its infrastructure, is the kind of buyer that cares about cost per unit of work far more than about a chip's peak speed.",
+        "The relationship is also circular, which readers of our Oracle and Qualcomm briefs will recognise. Amazon said it was investing a further $5 billion in Anthropic, with up to $20 billion more to come, on top of the $8 billion already invested. So the chip's biggest customer is partly owned by the chip's maker, and a good share of the money Anthropic raises flows back to AWS as compute bills. SemiAnalysis also reports that the next chip, Trainium4, will come in a version that connects using Nvidia's own NVLink technology, and it believes Amazon \"is unlikely to be paying Nvidia's typical ~75% gross margins\" for the privilege. The supposed Nvidia killer may end up carrying an Nvidia part."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Amazon has run this play before. Its Graviton processors, launched in 2018, were slower than Intel's best on many single tasks and were sold on a simple promise: the same job for less money. Graviton now runs a large share of AWS. Before that, Google built its early search infrastructure out of cheap commodity computers that failed often, and wrote software to route around the failures rather than buy the expensive, reliable machines the industry sold. Amazon's spare lanes and hot-swappable switch trays are that philosophy in hardware.",
+        "SemiAnalysis itself reaches for an older precedent, and it is a warning to Nvidia rather than praise for Amazon: \"In the same way that Intel stayed complacent in the CPU while others like AMD and ARM raced ahead, if Nvidia stays complacent they will lose their pole position even more rapidly.\" The report's conclusion is that Nvidia stays \"King of the Jungle\" only \"as long as they continue to keep accelerating their pace of development\". What is new is not the strategy but the company running it. Amazon is the largest cloud in the world, its chip now has a ten-year anchor customer, and it is the first company outside Nvidia to ship a full switched rack, ahead of AMD by about a year."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a budget airline. It does not fly faster than the flag carrier. It flies one type of aircraft so any crew can fly any plane, it turns them around in 25 minutes, it uses the secondary airport that has a free gate today rather than waiting for a slot at the main one, and it negotiates so hard that some airports pay it to land there. The seat is a little less comfortable and the network has a few more connections. If you only care about the cost of getting from A to B, you book it anyway.",
+        "Trainium3 is that airline. The chip is not the fastest. The rack is air-cooled because that building exists now. The network takes an extra hop until better switches arrive. The parts come with a rebate paid in shares. And its biggest customer has just booked ten years of seats, because it is buying tokens per dollar, not speed."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: Amazon has stopped trying to beat Nvidia's chip and started trying to beat Nvidia's bill, and its biggest customer just signed a $100 billion vote that the bill is what matters.",
+        "For anyone buying AI rather than building chips, this is the number that decides your costs. The price of a million tokens (the units of text a model reads and writes) is set less by whose chip is fastest than by whose rack does the most work per dollar over five years. Every cheaper useful chip that reaches volume pushes that price down.",
+        "Three things to watch. Whether Anthropic's nearly 1 GW of Trainium capacity actually lands by December, because the whole case rests on time to market. Whether the software catches up: SemiAnalysis said in December that the chip mode most outside researchers want was not due until mid-2026, and Amazon's open-sourcing of its compiler is its attempt to dig the kind of developer moat Nvidia has. And whether Trainium4 really ships with Nvidia's connector inside, which would tell you that the two companies have decided to share the market rather than fight over it."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: AWS Trainium3 Deep Dive, A Potential Challenger Approaching",
+          "url": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+        },
+        {
+          "label": "Anthropic: Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute",
+          "url": "https://www.anthropic.com/news/anthropic-amazon-compute"
+        },
+        {
+          "label": "SemiAnalysis: Amazon's AI Resurgence, AWS and Anthropic's multi-gigawatt Trainium expansion",
+          "url": "https://newsletter.semianalysis.com/p/amazons-ai-resurgence-aws-anthropics-multi-gigawatt-trainium-expansion"
+        },
+        {
+          "label": "Our brief on Amazon getting its suppliers to pay it in shares",
+          "url": "https://oslovibecoding.tech/brief/amazon-gets-its-suppliers-to-pay-it-to-buy-their-chips"
+        },
+        {
+          "label": "Our brief on why Nvidia's next chip has less memory",
+          "url": "https://oslovibecoding.tech/brief/nvidia-s-next-flagship-chip-will-have-less-memory-than-the-one-before-it"
+        },
+        {
+          "label": "Our brief on why Amazon, Google and Meta build their own chips",
+          "url": "https://oslovibecoding.tech/brief/why-amazon-google-and-meta-are-all-building-their-own-ai-chi"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "anthropic-says-claude-now-leads-a-quarter-of-the-work-building-the-next-claude",
   "status": "published",
   "datePublished": "2026-09-19",
