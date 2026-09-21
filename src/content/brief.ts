@@ -36,6 +36,209 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "your-coding-agent-can-be-hijacked-by-a-plugin-update-you-never-clicked",
+  "status": "published",
+  "datePublished": "2026-09-21",
+  "title": "Your coding agent can be hijacked by a plugin update you never clicked",
+  "dek": "Security researchers at a startup called Air say the same design mistake sits in Claude Code, Codex, GitHub Copilot and Gemini CLI: each one installs a plugin at a \"pinned\" version but never checks that the code it downloaded is actually that version. Combined with background auto-updates, that turns a hijacked plugin into a zero-click takeover of your machine. Anthropic and OpenAI patched it months ago. Microsoft and Google have not.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 9,
+  "takeaway": "On 17 September the security startup Air published \"Plugin4Shell\", a vulnerability it found in May and reported to Anthropic, OpenAI, Microsoft and Google in June. The four big AI coding agents let you install plugins and skills from a marketplace, and the marketplace \"pins\" each plugin to one reviewed commit (a 40-character fingerprint of the exact code). Air found that every agent runs the git command to fetch that commit but never verifies the result. Because git prefers a branch name over a commit with the same name, an attacker who controls a plugin's repository can create a branch named after the pinned fingerprint, point it at malicious code, and the agent installs it while reporting success. Claude Code and Codex update plugins in the background by default, so no click is needed: a plugin you already trust is swapped out under you. Anthropic fixed it in Claude Code 2.1.179 (June) and OpenAI in Codex 0.146.0 (July); if your agent has updated itself since, you are patched. Air says Microsoft has shipped no fix for GitHub Copilot and Google will not fix the retired Gemini CLI. GitHub says the trick cannot work on repositories it hosts, because it rejects branch names that look like commit hashes; Air replies that marketplaces on Bitbucket or self-hosted git remain exposed. Air sells a product that addresses this, so its framing is a vendor's; the mechanism is documented in its write-up and was confirmed by the two vendors who patched.",
+  "sourceUrl": "https://www.air.security/blog-posts/plugin4shell",
+  "sourceLabel": "Read Air's Plugin4Shell disclosure",
+  "about": "The Plugin4Shell vulnerability in AI coding agents disclosed on 17 September 2026: how SHA pinning is bypassed with a branch named after a commit hash, why plugin auto-update makes it zero-click, which agents are patched (Claude Code 2.1.179, Codex 0.146.0) and which are not (GitHub Copilot, Gemini CLI), GitHub's rebuttal, precedents in software supply-chain attacks, and what users should do",
+  "keywords": [
+    "Plugin4Shell",
+    "Claude Code",
+    "Codex",
+    "GitHub Copilot",
+    "Gemini CLI",
+    "supply chain attack",
+    "SHA pinning",
+    "zero-click",
+    "remote code execution",
+    "AI agent security",
+    "plugins",
+    "skills",
+    "Air Security"
+  ],
+  "heroImage": {
+    "src": "/brief/your-coding-agent-can-be-hijacked-by-a-plugin-update-you-never-clicked.png",
+    "alt": "Diagram titled Plugin4Shell: is your coding agent patched? Two columns. Patched: Claude Code 2.1.179 or newer (June), Codex 0.146.0 or newer (July), auto-update got most users, GitHub blocks the branch trick. Still exposed: GitHub Copilot with no fix shipped, Gemini CLI retired with no fix, plugins hosted on Bitbucket or your own git server, and even reviewed, pinned plugins. Caption: a hijacked plugin can auto-update into your agent, no click needed.",
+    "credit": "Oslo Vibe Coding, from Air Security's disclosure",
+    "creditUrl": "https://www.air.security/blog-posts/plugin4shell"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 17 September, three researchers at Air, a security startup that came out of stealth this month and sells protection for AI agents, published a vulnerability they call Plugin4Shell. The name is a nod to Log4Shell, the 2021 bug in a common logging library that let attackers run code on millions of servers. Air's claim is that the four most-used AI coding agents (Anthropic's Claude Code, OpenAI's Codex, Microsoft's GitHub Copilot and Google's Gemini CLI) all share one design flaw in how they install plugins, and that the flaw allows \"zero-click remote code execution\": an attacker can run their own code on your computer without you clicking, approving or installing anything.",
+        "Coding agents are the tools this community uses every day. You type what you want, the agent writes and runs code on your machine. To extend what they can do, each agent has a marketplace of plugins and skills (small packages of instructions and scripts) that anyone can publish and anyone can install. Because a plugin runs with the same access as the agent, and the agent typically has access to your files, your terminal and your login tokens, a malicious plugin is as bad as a malicious program.",
+        "The industry's defence against a plugin turning bad after you install it is called SHA pinning. When a marketplace approves a plugin, it records the exact version as a 40-character fingerprint (a commit hash, in git's terms). Your agent is supposed to install precisely that version, forever, no matter what the author does to the repository afterwards. Air's finding is that the agents ask for the pinned version but never check what they actually received. In the researchers' words: \"the agent checks out the exact commit the marketplace pinned but never verifies it landed there\".",
+        "Air says it found the bug in May, reported it to all four companies in June, and confirmed fixes from Anthropic on 17 June (Claude Code 2.1.179) and from OpenAI on 12 August (Codex 0.146.0). It says Google told it on 4 August that no fix would ship because the Gemini CLI is deprecated, and that Microsoft never responded. The Register, which reported the story on Thursday night, said Microsoft did not immediately answer its questions either."
+      ],
+      "pullquote": "\"the agent checks out the exact commit the marketplace pinned but never verifies it landed there\""
+    },
+    {
+      "heading": "How the trick works, in plain English",
+      "paragraphs": [
+        "Git, the system nearly all code is stored in, identifies every saved version by a fingerprint like aaaa...aaaa. It also lets you give human names to branches, such as main or fix-login. Here is the flaw: git allows a branch to be named with 40 hexadecimal characters, exactly the shape of a fingerprint. When you ask git to check out something that is both a valid branch name and a valid fingerprint, it picks the branch and prints only a small warning that the name is ambiguous.",
+        "So the attack goes like this, per Air's write-up. An attacker controls a plugin repository, either because they published a harmless plugin themselves or because they took over someone else's. The marketplace has pinned the plugin at fingerprint bbbb...bbbb. The attacker creates a branch literally named bbbb...bbbb, fills it with malicious code, and makes it the repository's default branch. The next time an agent installs or updates the plugin, it runs git checkout bbbb...bbbb, git hands it the branch instead of the commit, the malicious code lands on disk, and the agent reports that it installed the pinned version. The original, honest commit can still exist untouched. Gemini CLI uses a slightly different install sequence and falls to a variant of the same idea, a default branch named FETCH_HEAD.",
+        "The fix is one line. After the checkout, ask git what version is actually in the working directory and refuse to continue unless it matches the pin. Air points out this check has to run inside the agent on your computer, because that is where the pin is resolved. No marketplace can enforce a guarantee the agent itself does not check.",
+        "What makes it zero-click is auto-update. Claude Code and Codex refresh installed plugins in the background by default. If a marketplace bumps a plugin's pin to a new version (say the attacker ships a genuine improvement first, then rug-pulls the new pin), every agent that already has the plugin installed fetches the poisoned branch without any prompt. The victim did everything right: installed a reviewed plugin from a marketplace they trust, and never touched it again."
+      ]
+    },
+    {
+      "heading": "Who is patched and who is not",
+      "paragraphs": [
+        "If you use Claude Code and your version is 2.1.179 or later, you are protected. That release went to npm on 16 June; the current version, as of this morning, is 2.1.278. Claude Code updates itself, so almost everyone is on a safe version already. The same self-updating behaviour that makes the bug zero-click is what patched most users three months before the bug was public. Codex users need 0.146.0 or later, published 29 July; the current release is 0.155.1. Run claude --version or codex --version if you want to be sure.",
+        "GitHub Copilot users have no patch to install. Air says it reported the same flaw to Microsoft in June and got no answer, and it attributes the silence to \"the amount of disclosure volume they're currently getting\". Gemini CLI users are in a worse spot: Google has retired the tool and told Air it will not fix it, so every install stays vulnerable. Google's advice, relayed by Air, is to move to Antigravity, its newer development environment, which does not have a marketplace pin to bypass.",
+        "GitHub pushed back on Thursday. A spokesperson told The Register that \"GitHub does not allow users to create branch or tag names that resemble commit SHAs\", so the attack cannot be carried out on repositories GitHub hosts, which covers the large majority of plugin marketplaces. Air accepts that point and makes two replies: the agents officially support marketplaces hosted elsewhere, including Bitbucket and self-hosted git servers, which do allow such branch names, and Anthropic's own documentation lists those as valid backends. In other words, GitHub's rule is a real mitigation, and it is not the same as a fix in the agent.",
+        "One thing to keep in mind while reading all this: Air is a vendor. Its post ends with a demo booking button and notes twice that its own marketplace product was not affected. That does not make the finding wrong. Two of the four companies confirmed and patched it, and the git behaviour it relies on is documented. It does mean that phrases like \"millions of agents affected\" describe who could be reached, not anyone who was. Air has not reported this being exploited in the wild."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Supply-chain attacks on developer tools are not new. In 2018 the maintainer of a popular JavaScript package called event-stream handed it to a stranger who quietly added code to steal cryptocurrency wallets; it was downloaded millions of times before anyone noticed. In 2020 attackers planted a back door in a software update from SolarWinds that reached about 18,000 organisations. In 2024 a years-long effort to insert a back door into xz, a compression tool inside most Linux systems, was caught by one engineer who noticed a half-second slowdown. The lesson each time was the same: you are only as safe as the least careful link in the chain of code you download.",
+        "Pinning was the industry's answer to exactly those stories. Review a version, record its fingerprint, and never accept anything else. What is new about Plugin4Shell is that it is a failure of that safeguard itself, not of a marketplace or a maintainer. The reviewed pin was honoured on paper and bypassed in practice. That is why Air argues no marketplace policy can fully close it.",
+        "The second new element is the target. A compromised JavaScript library runs inside one application. A compromised plugin runs inside an agent that has been granted your terminal, your files and often your cloud credentials, and that many people run with permissions relaxed so it does not keep asking. Air's earlier research, which we have not verified independently, claims it got a malicious skill installed on 26,000 agents and hijacked the repositories behind 925 existing skills reaching 134,000 agents. Whatever the exact numbers, the shape is clear: the agent is now the most privileged program on a developer's laptop, and its plugin system is the newest way in."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a pharmacy that fills repeat prescriptions by delivery. Each medicine has a product number, and the pharmacist's rule is to dispense only the exact product number on the prescription. But the assistant who fetches the box goes to the shelf, picks up whatever is in the slot with that number on its label, and never reads the number printed on the box itself. Someone who can reach the shelf only has to relabel a slot. The prescription is correct, the paperwork says the right product was dispensed, and a different box goes out the door. Because it is a repeat prescription, it goes out every month without anyone at home ordering it again.",
+        "The fix is not a better shelf or a stricter label rule. It is the assistant reading the number on the box before it leaves. That is what Anthropic and OpenAI added."
+      ]
+    },
+    {
+      "heading": "What to do",
+      "paragraphs": [
+        "If you use Claude Code or Codex, check your version once (claude --version, codex --version) and make sure auto-update is on. Both current releases are well past the patched versions. If you use GitHub Copilot with plugins from a marketplace that is not on GitHub, treat those plugins as unverified until Microsoft ships a fix. If you still use Gemini CLI with marketplace plugins, stop, and move to whatever Google recommends.",
+        "For everyone: look at what plugins and skills you have installed and remove the ones you do not use. Each one is code that runs with your agent's permissions, updated by someone you have probably never met. The convenience of a marketplace is real, and so is the cost, and this week the cost got a name.",
+        "Three things to watch. Whether Microsoft ships a Copilot fix now that the flaw is public. Whether any marketplace reports an actual rug-pull using this technique, which would move it from a proof of concept to an incident. And whether the agents start treating plugin auto-update the way phones treat app updates, with a visible log of what changed and when."
+      ],
+      "links": [
+        {
+          "label": "Air Security: Plugin4Shell, zero-click RCE in the top four coding agents",
+          "url": "https://www.air.security/blog-posts/plugin4shell"
+        },
+        {
+          "label": "The Register: AI coding agents' 0-click RCE flaw could hand attackers keys to the kingdom",
+          "url": "https://www.theregister.com/security/2026/09/17/ai-coding-agents-0-click-rce-flaw-could-hand-attackers-keys-to-the-kingdom/5297335"
+        },
+        {
+          "label": "Claude Code on npm (check the version history)",
+          "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+        },
+        {
+          "label": "Codex on npm (check the version history)",
+          "url": "https://www.npmjs.com/package/@openai/codex"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "ai-chips-are-not-short-of-math-they-are-short-of-memory-bandwidth",
+  "status": "published",
+  "datePublished": "2026-09-21",
+  "title": "AI chips are not short of math. They are short of memory bandwidth",
+  "dek": "Every headline about a new AI chip leads with how many calculations it can do per second. The number that actually decides how fast your chatbot answers is a quieter one: how quickly the chip can read its own memory. Nvidia's next chip nearly triples it. Amazon's grew it by 70%. Here is why that is the spec everyone is really racing on.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "When an AI model answers you, the chip has to read the entire model, hundreds of gigabytes of numbers, out of memory once for every word it produces. The arithmetic itself is comparatively cheap. That makes memory bandwidth, the rate at which a chip can pull data from the HBM (high-bandwidth memory) stacked beside it, the ceiling on how many words per second it can generate. You can see the industry responding in the specs. Nvidia's Rubin, due late this year, carries the same 288 GB of memory as its predecessor but reads it at up to 22 terabytes per second, against 8 TB/s on Blackwell, a bigger jump than its gain in raw compute. Amazon's Trainium3 raised capacity from 96 to 144 GB and bandwidth by about 70%, per SemiAnalysis. And in our brief last week, Nvidia's Rubin Ultra was reported to cut memory capacity by two thirds while keeping bandwidth flat, because bandwidth is what the buyers are paying for. The constraint is physical: the memory makers (SK Hynix, Samsung, Micron) cannot make enough HBM4, and SemiAnalysis expects the first Rubin shipments closer to 20 TB/s for that reason. None of this is new in principle. Computer scientists have called it the memory wall since the 1990s. What is new is that the most valuable workload in the world now spends most of its time waiting for memory.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential",
+  "sourceLabel": "Read the SemiAnalysis Trainium3 deep dive",
+  "about": "Why memory bandwidth, not compute, is the binding constraint on AI inference: how a model is read from HBM for every generated token, the Rubin (22 TB/s) versus Blackwell (8 TB/s) jump, Trainium3's 144 GB and 70% bandwidth gain, the Rubin Ultra capacity cut, HBM4 supply limits, the memory wall precedent, and a kitchen analogy",
+  "keywords": [
+    "memory bandwidth",
+    "HBM",
+    "HBM4",
+    "Nvidia Rubin",
+    "Blackwell",
+    "AWS Trainium3",
+    "inference",
+    "memory wall",
+    "AI chips",
+    "SK Hynix",
+    "SemiAnalysis",
+    "tokens per second"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-chips-are-not-short-of-math-they-are-short-of-memory-bandwidth.png",
+    "alt": "Bar chart titled The spec chipmakers are racing to grow: memory bandwidth. Four bars showing how fast each chip can read its own memory in terabytes per second: AWS Trainium2 (2024) 2.9 TB/s, AWS Trainium3 (2026) 4.9 TB/s, Nvidia Blackwell B200 (2025) 8 TB/s, Nvidia Rubin (late 2026) 22 TB/s. Figures from Nvidia's GTC 2026 keynote, AWS and SemiAnalysis.",
+    "credit": "Oslo Vibe Coding, figures from Nvidia, AWS and SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+  },
+  "sections": [
+    {
+      "heading": "The claim",
+      "paragraphs": [
+        "Ask most people what makes an AI chip fast and they will say something about calculations per second. The chipmakers encourage this: Nvidia's headline number for its Rubin chip, announced at its GTC conference in March, is 50 petaflops (50 million billion arithmetic operations per second) in the compact FP4 number format used for running models. That is real, and it matters for training. But for the thing most of us actually use, an AI model answering a question, the chip spends most of its time not calculating. It is waiting for data to arrive from memory.",
+        "The reason is how a model produces text. A language model is a very large table of numbers, called weights. A big frontier model today has on the order of a trillion of them, which at four bits each is about 500 gigabytes. To produce one word (strictly, one token, a word fragment), the chip has to run the input through the whole table: read every weight, multiply, add. Then it does it again for the next token. Every single token requires reading the entire model out of memory.",
+        "The arithmetic per weight is tiny, a multiply and an add. The reading is the hard part. So the question \"how many tokens per second can this chip generate for one user\" is, to a first approximation, \"how many times per second can it read 500 GB\". That is memory bandwidth, measured in terabytes per second. A chip with 8 TB/s can read a 500 GB model about 16 times a second; at 22 TB/s, about 44 times. Real systems complicate this (they serve many users at once so each read is shared, and they use tricks so not every weight is touched), but the ceiling is set by bandwidth, not by math. The engineers' term for this is being memory-bound."
+      ]
+    },
+    {
+      "heading": "You can see it in the specs",
+      "paragraphs": [
+        "Once you know to look for it, the last year of chip announcements reads differently. Nvidia's Rubin keeps the same 288 GB of memory as the Blackwell Ultra chip it replaces, but reads it at up to 22 TB/s, using a new generation of stacked memory called HBM4. Blackwell reads its memory at 8 TB/s. That is a 2.75x jump in bandwidth, slightly more than the roughly 2.5x jump in FP4 compute on Nvidia's own figures. For the first time in several generations, the memory pipe grew faster than the calculator.",
+        "Amazon's Trainium3, which SemiAnalysis dissected in a report we covered yesterday, tells the same story from the budget end of the market. Capacity went from 96 GB to 144 GB per chip. Bandwidth went up about 70%, from 2.9 to roughly 4.9 TB/s, by running the memory's pins at 9.6 gigabits per second instead of 5.7 and switching suppliers to get there. Amazon doubled the chip's arithmetic in the same generation, but the memory gain is the one SemiAnalysis flagged as the meaningful change for the inference jobs Anthropic will run on it.",
+        "The clearest evidence came in our brief last Thursday. SemiAnalysis reported that Nvidia's Rubin Ultra, the chip after Rubin, will ship with 192 GB of memory rather than the 1,024 GB originally planned, but with the same bandwidth, by using shorter memory stacks that keep every data wire while dropping the extra layers. Nvidia has not confirmed the change. If it is right, Nvidia is choosing to cut capacity by four fifths to protect bandwidth, because the memory makers cannot produce enough HBM4 wafers and bandwidth is what the customer is paying for. SemiAnalysis's phrase for the trade was \"almost a free lunch\". The same supply squeeze is why it expects the first Rubin shipments to land closer to 20 TB/s than the advertised 22.",
+        "It also explains a company that is otherwise hard to explain: SK Hynix, a South Korean memory maker that most people had never heard of, became one of the most profitable chip companies in the world by making most of the HBM stacked next to Nvidia's chips. When the scarce resource is bandwidth, the company that makes bandwidth wins."
+      ],
+      "pullquote": "Every single token requires reading the entire model out of memory."
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and the age of the idea is the point. In 1995 two computer scientists, William Wulf and Sally McKee, published a short paper titled \"Hitting the Memory Wall\", observing that processor speed was improving around 50% a year while memory speed improved around 7%, so eventually a processor would spend all its time waiting. A line usually attributed to the supercomputer designer Seymour Cray makes the same point more bluntly: anyone can build a fast CPU; the trick is to build a fast system. The whole history of chip design since then is a series of workarounds for the wall: caches, prefetching, and finally HBM, which stacks memory chips vertically right next to the processor to shorten the wires. HBM was introduced by SK Hynix and AMD in 2013 and first shipped in a graphics card in 2015.",
+        "What is new is the workload. Video games and scientific simulations were often compute-bound; the calculator was the bottleneck and the memory kept up. Generating text from a trillion-parameter model is the most memory-hungry mainstream workload ever built, and it is now the most valuable one. The wall did not move. The world's most expensive software walked straight into it.",
+        "Two caveats. Training a model, as opposed to running it, is still heavily compute-bound, which is why the petaflop numbers are not a con. And bandwidth is not the only limit on serving: the wires between chips (NVLink and its rivals) and the memory used to hold each conversation's context both matter, and were the subject of earlier briefs. But if you want one number to judge an inference chip by, it is the TB/s figure, and it is usually in the second paragraph of the press release, not the first."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture a restaurant kitchen with one star chef who can plate a dish in ten seconds. On paper the kitchen can serve 360 dishes an hour. In practice the ingredients live in a cold room down the corridor, and one runner can carry enough for about 100 dishes an hour. The chef spends most of the shift standing at an empty counter. Hiring a chef who plates in five seconds does nothing; the kitchen still serves 100 an hour. Doubling the runners, or moving the cold room next to the stove, doubles the output.",
+        "HBM is the cold room moved next to the stove. Bandwidth is the number of runners. The petaflop number is how fast the chef's hands are, and for this particular restaurant the chef has been waiting on the runners for years. Rubin, in this picture, roughly triples the runners while making the chef only somewhat faster. Rubin Ultra, if the report is right, makes the cold room smaller so it can afford the same number of runners."
+      ]
+    },
+    {
+      "heading": "What to take from it",
+      "paragraphs": [
+        "If you want one sentence: an AI chip answering you is limited by how fast it can read its own memory, not by how fast it can do arithmetic, and the chipmakers' spec sheets show them quietly racing on that number.",
+        "For anyone using these tools, the practical consequence is where the speed-ups come from. When your chatbot gets noticeably faster next year, it will mostly be because of new memory, not new math. And when someone tells you a chip is a certain number of times faster, ask which number they mean.",
+        "Three things to watch. Whether Nvidia confirms the Rubin Ultra memory cut, which would be the plainest statement yet that bandwidth beats capacity. Whether SK Hynix, Samsung and Micron can ramp HBM4 fast enough to hit the advertised 22 TB/s in volume. And the results of Anthropic's bet on Trainium, since Amazon's whole pitch is that a chip with less math and adequate bandwidth is the cheap way to serve tokens."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: AWS Trainium3 Deep Dive",
+          "url": "https://newsletter.semianalysis.com/p/aws-trainium3-deep-dive-a-potential"
+        },
+        {
+          "label": "SemiAnalysis: Long Live the Short King, why 4-hi HBM wins",
+          "url": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi"
+        },
+        {
+          "label": "Wccftech: Nvidia Vera Rubin specs from the GTC 2026 keynote (288 GB HBM4, 22 TB/s, 50 PFLOPS)",
+          "url": "https://wccftech.com/nvidia-vera-rubin-achieves-40-million-times-more-compute-in-10-years/"
+        },
+        {
+          "label": "Our brief on Nvidia's next chip having less memory than the one before it",
+          "url": "https://oslovibecoding.tech/brief/nvidia-s-next-flagship-chip-will-have-less-memory-than-the-one-before-it"
+        },
+        {
+          "label": "Our brief on Amazon building the cheapest useful chip",
+          "url": "https://oslovibecoding.tech/brief/amazon-is-not-building-the-fastest-ai-chip-it-is-building-the-cheapest-useful-one"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "four-ai-subscribers-sued-the-labs-for-agreeing-to-slow-down",
   "status": "published",
   "datePublished": "2026-09-20",
