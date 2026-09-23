@@ -36,6 +36,193 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-ai-labs-promised-to-slow-down-then-cut-their-prices",
+  "status": "published",
+  "datePublished": "2026-09-23",
+  "title": "The AI labs promised to slow down. Then they cut their prices",
+  "dek": "On Tuesday Anthropic released Claude Opus 5.5 and OpenAI released GPT-6 Sol and GPT-6 Luna, within hours of each other. Both are cheaper than the models they replace, by 20% to 50% per token. They are the first launches since both labs backed a call to \"pace the frontier\" eleven days ago. The two things do not contradict each other, and the reason why is the most useful thing to understand about where AI is heading.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "On Tuesday 22 September Anthropic launched Claude Opus 5.5, which it says performs at the level of its top model Fable 5.1 on most work while costing about 40% less to run than Opus 5 (July). Its list price fell 20%, to $4 per million input tokens and $20 per million output tokens (a token is roughly three quarters of a word), and cache reads, which dominate the cost of coding agents, fell 60% to $0.20. Minutes later OpenAI launched GPT-6 Sol and GPT-6 Luna, cheaper everyday versions of its flagship GPT-6 Astra, at half the price of the GPT-5.6 models they replace: Sol at $2 in and $10 out, Luna at $0.10 and $0.50. These are the first releases since both companies publicly backed Dario Amodei's 12 September call to slow the pace of AI progress. Neither launch is a step up at the very top: both labs present them as matching or trailing their best existing model, not beating it. That is exactly what pacing allows. The pledge limits how fast the ceiling rises; it says nothing about how fast yesterday's ceiling gets cheaper. Ramp's lead economist told Fortune the labs are now in a price war. The benchmark numbers in both announcements are the vendors' own and have not been checked independently.",
+  "sourceUrl": "https://www.anthropic.com/news/claude-opus-5-5",
+  "sourceLabel": "Read Anthropic's Opus 5.5 announcement",
+  "about": "The 22 September 2026 launches of Claude Opus 5.5 (Anthropic) and GPT-6 Sol and GPT-6 Luna (OpenAI): prices, what changed, how the launches relate to the labs' 12 September pledge to pace the frontier, the AI price war, historical precedent for falling AI prices, and what it means for people who use AI tools",
+  "keywords": [
+    "Claude Opus 5.5",
+    "GPT-6 Sol",
+    "GPT-6 Luna",
+    "Anthropic",
+    "OpenAI",
+    "AI pricing",
+    "price war",
+    "pace the frontier",
+    "tokens",
+    "AI safety"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-labs-promised-to-slow-down-then-cut-their-prices.png",
+    "alt": "Bar chart titled Slow down? Prices went down. Output price per million tokens: Claude Opus 5 (July) $25, Claude Opus 5.5 (new) $20, GPT-5.6 Sol (old) $20, GPT-6 Sol (new) $10. Caption: the new GPT-6 Luna costs $0.50.",
+    "credit": "Oslo Vibe Coding, from Anthropic and OpenAI pricing via SiliconANGLE",
+    "creditUrl": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Tuesday 22 September Anthropic released Claude Opus 5.5, the first of a new \"5.5\" family, with Sonnet 5.5 and Haiku 5.5 promised \"in the coming weeks\". Anthropic's headline claim is that Opus 5.5 does most work as well as Claude Fable 5.1, its most capable model, while costing about 40% less to run than Opus 5, which came out in July. Minutes later, according to SiliconANGLE, OpenAI released two models of its own: GPT-6 Sol and GPT-6 Luna, which it describes as everyday versions of GPT-6 Astra, the flagship it shipped at the start of September.",
+        "The prices are the story. AI companies charge developers per token (a chunk of text, roughly three quarters of a word), usually quoted per million tokens, with a lower price for text you send in and a higher one for text the model writes back. Opus 5.5 costs $4 in and $20 out, 20% less than Opus 5. Cache reads (text the model has already seen, re-read cheaply on later turns, which is most of what a coding agent pays for) fell 60%, to 20 cents. Anthropic says the model also uses fewer tokens per task, which is how a 20% price cut becomes a 40% saving on a typical job. OpenAI cut harder: GPT-6 Sol costs $2 in and $10 out, half what GPT-5.6 Sol cost, and Luna, aimed at routine bulk work like summarising and extracting, costs 10 cents in and 50 cents out.",
+        "Anthropic also raised usage limits on its paid Claude plans and gave subscribers a rate-limit reset they can save and use when they choose. OpenAI's models are live for developers and rolling out in ChatGPT Work and Codex for paid plans. Both companies credited better efficiency, and both used the same phrase in spirit: the savings are being passed on to customers."
+      ]
+    },
+    {
+      "heading": "Wait, weren't they slowing down?",
+      "paragraphs": [
+        "Eleven days earlier, on 12 September, Anthropic's chief executive Dario Amodei published an essay calling on frontier labs to slow the rate at which AI capabilities improve. Sam Altman, Elon Musk and Demis Hassabis said the same day that they agreed. (We covered it in \"The AI labs were asked to slow down and said yes\", and on Sunday in the antitrust lawsuit four subscribers filed over that agreement.) Fortune's headline on Tuesday's launches was simply \"What slowdown?\"",
+        "Read the announcements closely and there is less contradiction than the headline suggests. Neither company claims a new top model. Anthropic positions Opus 5.5 as reaching Fable 5.1's level on most work, not passing it, and notes that at this level of capability benchmark margins are \"a less reliable guide\" to real differences. OpenAI benchmarks Sol against models that already exist, and describes it as built with Astra's training methods and then tuned for cost. Fortune's own reading is that neither release is a frontier model in the sense of a major step up in capability; both push existing capability out to more people at a lower price.",
+        "That is the key idea. The pacing pledge is about the ceiling: how quickly the most capable model in the world gets more capable. It is silent about the floor: how quickly the capability that already exists becomes cheap enough for everyone to use. Tuesday was a floor day. And a fast-falling floor spreads a lot of capability very quickly, which is its own kind of acceleration, just not the kind the pledge was written to limit."
+      ]
+    },
+    {
+      "heading": "A price war, in the economist's words",
+      "paragraphs": [
+        "Ara Kharazian, lead economist at Ramp (a corporate card company whose spending data we have cited before), told Fortune the two labs are in a price war that squeezes their own ability to profit. He described two fronts: cheaper models that businesses migrate to, and outright price cuts on the expensive ones. His point about bullish investors is worth repeating: they tend to assume ever-better models will command ever-higher prices, and, in his words, \"that is not how normal technology makes it to market\".",
+        "The buyers are pushing too. Randall Hunt, chief technology officer at the consultancy Caylent, told Fortune that finance chiefs have seen the sticker shock without all of the promised gains, and are planning 2027 budgets around cost per task. That fits what we saw in August, when Uber burned through a year's AI coding budget in four months and capped spending per employee. A lab that wants to keep those customers has to cut the price of the work, not only improve it."
+      ],
+      "pullquote": "\"that is not how normal technology makes it to market\" (Ara Kharazian, Ramp, to Fortune)"
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and that is the reassuring part. The price of a given level of AI has been falling fast for three years. When GPT-4 launched in March 2023 it cost $30 per million input tokens and $60 per million output tokens. In July 2024 OpenAI's GPT-4o mini, a small model that matched the original GPT-4 on many tests, cost 15 cents and 60 cents, a drop of between 100 and 200 times in sixteen months. We wrote in July that Claude Opus 5 beat Anthropic's previous flagship at half the price. Tuesday is the same curve, one step further along.",
+        "What is new is the context. For the first time, the labs cutting prices have also said out loud that they want the top of the curve to rise more slowly. If they hold to that while the floor keeps dropping, the gap between the best model and the cheap everyday one shrinks, and the practical question for most people stops being \"which model is smartest?\" and becomes \"which one is good enough, for the least money?\""
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine the big car makers agree, publicly, to stop racing to build faster cars: no new top-speed records for a while. A week later two of them launch family cars that match last year's sports car on the motorway and cost a fifth less. Nobody broke the agreement. The fastest car in the world is just as fast as it was. But far more people are now driving something quick, and that changes the roads more than one record-breaking car ever would.",
+        "That is Tuesday. The ceiling stayed put. The price of reaching it fell."
+      ]
+    },
+    {
+      "heading": "The fine print worth reading",
+      "paragraphs": [
+        "Every benchmark number in both announcements is the company's own or a partner's, run before release, and the two companies compared themselves against different rivals, so there is no clean head-to-head. Treat the scores as claims until independent tests arrive.",
+        "Anthropic's safety notes contain one line worth sitting with. It says Opus 5.5 scored best of any model on its automated alignment audit, and that outside testers including METR evaluated it before release. It also says the model \"often suspects it is being evaluated\", which makes it harder to know how it will behave outside the test. Opus 5.5 ships with the same restrictions on cybersecurity and high-risk biology work as Fable 5.1, handing those requests to older models. A cheaper model with top-tier safeguards is a reasonable answer to the pacing question; a model that can tell when it is being watched is an open one.",
+        "Three things to watch. Whether Sonnet 5.5 and Haiku 5.5 push the floor lower still in the coming weeks. Whether Google and xAI answer on price. And whether the antitrust plaintiffs, who argue the slowdown pact harms paying customers, have a harder case now that the price paying customers see has just fallen."
+      ],
+      "links": [
+        {
+          "label": "Anthropic: Introducing Claude Opus 5.5",
+          "url": "https://www.anthropic.com/news/claude-opus-5-5"
+        },
+        {
+          "label": "SiliconANGLE: Anthropic releases Claude Opus 5.5 and OpenAI counters with two cheaper GPT-6 models",
+          "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/"
+        },
+        {
+          "label": "Fortune: What AI slowdown? OpenAI, Anthropic release dueling models as price wars heat up",
+          "url": "https://fortune.com/2026/09/22/what-ai-slowdown-openai-anthropic-release-dueling-moreaffordable-models-as-ai-price-wars-heat-up/"
+        },
+        {
+          "label": "Our brief: The AI labs were asked to slow down and said yes",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-were-asked-to-slow-down-and-said-yes"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "ai-s-hidden-workforce-experts-paid-100-an-hour-to-set-its-homework",
+  "status": "published",
+  "datePublished": "2026-09-23",
+  "title": "AI's hidden workforce: experts paid $100 an hour to set its homework",
+  "dek": "The newest AI models learn less from scraping the internet and more from practice tasks written by paid professionals. That work has quietly become an industry: one platform logged 2.5 million expert hours in a single quarter, the average rate passed $100 an hour, and labs pay $5,000 or more for one good coding task.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "AI labs now improve their models mainly by reinforcement learning (RL): giving the model a realistic task, letting it try, and rewarding it when a checker says the answer is right. Somebody has to write those tasks and checkers, and for frontier models that somebody has to be an expert, because the task must be hard enough to challenge the model. According to SemiAnalysis (a respected chip and AI research firm), this has created a new supply chain. Mercor, Surge and Handshake, the three incumbents, are each past $1 billion in annual revenue; newcomers barely a year old are approaching $100 million. Mercor logged 2,517,000 expert hours in the second quarter of 2026, the equivalent of about 4,800 people working full time, and its average pay rate passed $100 an hour. Frontier labs pay $5,000 or more for a single good coding task, and the best contractors earn over a million dollars a year. Meta has moved about 3,000 of its own engineers into writing these tasks full time. The old picture of AI training data, low-paid workers labelling images, is out of date for the frontier. The new picture is closer to hiring the best teachers to write the hardest exams.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+  "sourceLabel": "Read SemiAnalysis on the new human data industry",
+  "about": "The human data and RL environment industry that trains frontier AI models in 2026: what reinforcement learning tasks and verifiers are, why experts are needed, Mercor's 2.5 million expert hours and $100+ hourly rate, $5,000 coding tasks, the revenue of Surge, Mercor, Handshake, Fleet, Mechanize and Afterquery, Meta's 3,000 engineers, and how this differs from the older low-paid data labelling industry",
+  "keywords": [
+    "RL environments",
+    "human data",
+    "reinforcement learning",
+    "Mercor",
+    "Surge AI",
+    "Handshake",
+    "Fleet",
+    "Mechanize",
+    "Afterquery",
+    "Meta",
+    "AI training data",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-s-hidden-workforce-experts-paid-100-an-hour-to-set-its-homework.jpg",
+    "alt": "SemiAnalysis table titled RL data companies, ARR and valuation. Surge AI about $3B annual revenue (rumoured, July 2026), about $30B valuation, bootstrapped with under 110 employees. Mercor $2B+ (June 2026), $10B valuation, expert hours grew from 2 thousand to 2.5 million per quarter in two years. Handshake AI about $1B. Micro1 $250M+. Fleet $63M. Mechanize undisclosed, $500M valuation. Afterquery $100M+. Deeptune undisclosed.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence"
+  },
+  "sections": [
+    {
+      "heading": "The short version",
+      "paragraphs": [
+        "In 2024 Ilya Sutskever, OpenAI's co-founder, famously called data \"the fossil fuel of AI\": a finite resource the industry would soon use up. SemiAnalysis, the research firm whose work we draw on for most of these briefs, argued in July that he was half right. The internet's supply of text is finite. But if demand is strong enough, people can be paid to make more of the specific data AI needs, and that is exactly what has happened.",
+        "The numbers in their piece describe an industry most people have never heard of. Three established companies, Mercor, Surge AI and Handshake, are each above $1 billion in annual revenue. Surge is estimated at around $3 billion with fewer than 110 employees and no outside investors. Companies that did not exist two years ago, such as Fleet, Mechanize and Afterquery, are approaching $100 million. What they sell is carefully designed homework for AI."
+      ]
+    },
+    {
+      "heading": "Why AI needs homework now",
+      "paragraphs": [
+        "The first big AI models learned by reading: predict the next word across a large slice of the internet, billions of times. The current generation improves mostly through reinforcement learning, RL for short. Instead of reading, the model practises. It gets a task (fix this bug, build this spreadsheet model, draft this contract clause), a working environment to do it in, tools it can use, and a verifier: an automatic checker, or a detailed marking guide called a rubric, that decides whether the result is good. Good attempts are rewarded, and the model gradually gets better at that kind of work.",
+        "The hard part is the task. SemiAnalysis makes the point that a task is only useful if it sits at the right difficulty: too easy and the model learns nothing, too hard and it never earns a reward. For today's frontier models, \"too easy\" covers most of what an average professional would think to ask. So the people writing tasks spend much of their time making them harder, which means they need to be genuinely expert in the field. You cannot write an exam that stretches a top student unless you understand the subject better than they do.",
+        "This is why some AI insiders think more and better tasks are the main thing standing between today's AI and automating much of office work. SemiAnalysis quotes the Anthropic researcher Sholto Douglas saying, on the Dwarkesh podcast last year, that current methods would be enough to automate white-collar work given enough of the right data. That is a prediction, and a contested one, but it explains the spending."
+      ]
+    },
+    {
+      "heading": "What the work pays",
+      "paragraphs": [
+        "Here is what SemiAnalysis reports. Mercor disclosed 2,517,000 expert hours on its platform in the second quarter of 2026, about 4,800 people working 40-hour weeks. Two years earlier it was around 2,000 hours a quarter, and the most recent quarter alone grew 69%. Mercor's average pay rate recently passed $100 an hour, with software engineers well above that average. The top contractors across these companies earn over seven figures a year. Frontier labs will pay $5,000 or more for a single decent coding task.",
+        "A bit of arithmetic, ours rather than theirs, makes that last number feel less strange. Mechanize, one of the new companies, expects the software engineers it pays over $400,000 a year to produce about one good task per week. $400,000 spread over 52 weeks is roughly $7,700 of salary per task before any overheads. Seen that way, $5,000 for a good task is close to what it costs to make one.",
+        "The same logic runs through the whole industry: 2.5 million hours at over $100 an hour is more than $250 million paid to experts in one quarter on one platform. That money buys expert judgement."
+      ],
+      "pullquote": "Labs will pay $5,000 or more for one good coding task, and the best contractors earn over $1 million a year (SemiAnalysis)"
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Paying humans to make AI training data is old. For most of the last decade it meant large teams, often in lower-income countries, drawing boxes around objects in photos or tagging text as harmful. In 2023 TIME reported that Kenyan workers labelling toxic content for OpenAI through an outsourcing firm earned less than $2 an hour. Scale AI built a multi-billion-dollar business on that model, and Meta paid $14.3 billion last year for a stake in it, largely to hire its founder Alexandr Wang.",
+        "What is new is who does the work and what it pays. SemiAnalysis is blunt that the era of undereducated contractors drawing bounding boxes is over for frontier AI: the models are now good enough that creating a useful training example is a real intellectual problem. Designing a task that cannot be gamed (AI models are good at finding shortcuts to a reward, known as reward hacking), calibrating its difficulty, and doing this at scale without the quality slipping are engineering jobs. The pay has moved from a couple of dollars an hour to a hundred. The cheaper, older kind of labelling still exists, and the people doing it have not vanished. They are simply not where the frontier's money goes any more."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a very gifted student preparing for the hardest exam in their field. Textbooks got them a long way, but they have read all of them. What helps now is practice papers, and not any practice papers: questions hard enough to stretch them, written by examiners who know the subject better than they do, with a marking scheme precise enough to say exactly what a good answer looks like. There are not many people who can write those papers, so they get paid very well, and a single excellent question is worth a surprising amount of money.",
+        "The AI labs are that student. The expert contractors are the examiners. And because the student learns fast and needs a fresh stack of harder papers every few months, the examiners' order book never closes."
+      ]
+    },
+    {
+      "heading": "Why Meta turned its own staff into examiners",
+      "paragraphs": [
+        "The most striking example in the SemiAnalysis piece is Meta. In late May, as part of a restructuring, Meta created an \"applied AI engineering\" organisation and moved about 3,000 engineers, including 70% of its new graduates, into making RL tasks and environments full time. SemiAnalysis estimates that puts Meta in the same ballpark as Mercor's whole platform, with a larger pool of staff behind it if the experiment works. It connects to a story we covered earlier, that Meta also began recording employees' screens and keystrokes, because real recordings of office work make the most realistic tasks.",
+        "Two caveats. The revenue figures in the chart come from public disclosures and, for Surge, a rumour; they are \"gross\" revenue, which includes the money passed on to contractors. And the belief that more tasks will be enough to automate office work is a bet, not a result. But whichever way that bet goes, a new kind of job now exists: being paid, handsomely, to be harder to fool than a machine."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: The Future of Meta Superintelligence, a 1 year progress update",
+          "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence"
+        },
+        {
+          "label": "Our brief: Why AI companies want to watch you use a computer",
+          "url": "https://oslovibecoding.tech/brief/why-ai-companies-want-to-watch-you-use-a-computer"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "your-coding-agent-can-be-hijacked-by-a-plugin-update-you-never-clicked",
   "status": "published",
   "datePublished": "2026-09-21",
