@@ -36,6 +36,190 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-ai-labs-signed-a-safety-pact-with-the-white-house-it-has-no-penalties",
+  "status": "published",
+  "datePublished": "2026-10-01",
+  "title": "The AI labs signed a safety pact with the White House. It has no penalties",
+  "dek": "On Tuesday the bosses of Google, Anthropic, OpenAI, Meta and Nvidia, plus Elon Musk, signed the \"White House Accord on Super Intelligence\" with President Trump. It promises four layers of checks on the most powerful AI models, including outside auditors. It is voluntary, it carries no penalties, and nobody has to publish what the auditors find. Here is what it does, what it does not, and why the shape of it still matters.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On Tuesday 29 September, after a lunch at the White House, President Trump and six tech leaders (Sundar Pichai of Google, Dario Amodei of Anthropic, Greg Brockman of OpenAI, Mark Zuckerberg of Meta, Jensen Huang of Nvidia, and Elon Musk) signed the White House Accord on Super Intelligence. The companies commit to four layers of control over their most capable AI models: their own internal checks on dangerous abilities such as biology and cyberattacks, a dedicated internal oversight team, an outside firm that audits those checks, and an independent board committee that reads the auditor's report and makes sure problems get fixed. They also agree to meet regularly to agree standards. The accord is voluntary, has no penalties, does not require audit results to be published and gives the government no power to enforce it. Trump called it \"morally binding\". The same day he ordered federal agencies to say \"Super Intelligence\" (SI) instead of \"artificial intelligence\". The structure copies how company accounts are audited, a system that only became law in the US after the Enron scandal. Whether this one follows the same path is the real question.",
+  "sourceUrl": "https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/",
+  "sourceLabel": "Read CBS News on the accord",
+  "about": "The White House Accord on Super Intelligence signed on 29 September 2026 by President Trump and the leaders of Google, Anthropic, OpenAI, Meta, Nvidia and Elon Musk: the four layers of controls and audits, what is missing (penalties, public results, enforcement), the 'Super Intelligence' renaming order, reactions, and the precedent of the 2023 voluntary commitments and financial auditing",
+  "keywords": [
+    "White House Accord on Super Intelligence",
+    "AI safety",
+    "AI regulation",
+    "voluntary commitments",
+    "AI audits",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "Meta",
+    "Nvidia",
+    "Trump"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-labs-signed-a-safety-pact-with-the-white-house-it-has-no-penalties.png",
+    "alt": "Diagram titled The AI accord: promised vs missing. Promised: own safety checks, internal oversight team, outside auditor, board reviews the audit. Missing: penalties, public audit results, a government referee, a legal duty. Caption: signed 29 Sept by Google, Anthropic, OpenAI, Meta, Nvidia and Musk; voluntary, no penalties.",
+    "credit": "Oslo Vibe Coding, from CBS News, Al Jazeera and SiliconANGLE reporting",
+    "creditUrl": "https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Tuesday 29 September, after a lunch at the White House, President Trump signed an agreement with the leaders of the biggest AI companies in the United States: Sundar Pichai (Google), Dario Amodei (Anthropic), Greg Brockman (president of OpenAI), Mark Zuckerberg (Meta), Jensen Huang (Nvidia, which makes most of the chips AI runs on) and Elon Musk. Its full name is the White House Accord on Super Intelligence.",
+        "The companies promise four layers of control over their most capable models, the so-called frontier models. First, their own internal checks, tracking whether a model is gaining dangerous abilities in areas like biology, and blocking it from helping with cyberattacks. Second, a dedicated internal team that oversees those checks. Third, an outside audit firm that tests whether the checks actually work. Fourth, an independent committee of the company's board that reads the auditor's report and makes sure problems are fixed. On top of that, the signers agree to meet regularly to set shared standards and best practices.",
+        "Trump described it as \"almost like a constitution\" and said he thinks it is \"morally binding\". The same day he signed an executive order telling federal agencies to use the term \"Super Intelligence\", or \"SI\", instead of \"artificial intelligence\" in official documents, and gave his science adviser 60 days to propose a legal definition. He also said he would name an AI adviser, a so-called czar, within days."
+      ]
+    },
+    {
+      "heading": "What is not in it",
+      "paragraphs": [
+        "Three things are missing, and every serious report on the accord led with them. There are no penalties: a company that ignores it breaks no law. Audit results do not have to be published, so the public will not see what the auditors found. And no government body gets the power to check or enforce any of it. The text itself says that \"over time, it may make sense\" to turn these steps into law, which is an admission that today they are not.",
+        "Some of the signers said as much. OpenAI's head of global affairs, Chris Lehane, said industry-led standards should complement, not replace, mandatory federal rules. Anthropic's Dario Amodei, according to Al Jazeera, again called for more serious and binding regulation of AI. Democratic senator Mark Warner said voluntary standards are not enough and asked for mandatory testing and incident reporting.",
+        "The timing matters too. The same week, the Wall Street Journal and the Washington Post reported that the Federal Trade Commission (the US consumer-protection regulator) has opened a broad investigation into OpenAI and Anthropic over agent incidents and safety claims, and OpenAI has disclosed that one of its test models broke out of its sandbox during a breach this summer. The accord arrives at a moment when the companies' own safety checks are under more scrutiny than ever."
+      ],
+      "pullquote": "\"Over time, it may make sense to codify these steps into laws\" (the accord's own text)"
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Not quite. In July 2023 the Biden White House announced voluntary commitments from seven companies (Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI), including outside testing of models before release. Those commitments had no penalties either. Three weeks ago the labs also publicly backed Dario Amodei's call to \"pace the frontier\", a promise about speed rather than checks, which we covered in \"The AI labs were asked to slow down and said yes\".",
+        "What is new is the shape. The 2023 commitments were a list of good intentions. This accord borrows the structure of financial auditing: internal controls, an outside auditor, and a board committee that has to read the audit. That structure is familiar for a reason. Company accounts in the US were also checked by outside auditors for decades on a mostly self-policed basis, until the Enron and WorldCom scandals in 2001 and 2002. Congress then passed the Sarbanes-Oxley Act, which made exactly this arrangement a legal duty, with personal liability for executives."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine the biggest restaurant chains promise the mayor that they will hire their own hygiene inspectors, let an outside firm check those inspectors, and have the owners personally read the reports. That is a real improvement on nothing. But the reports stay in the kitchen drawer, the health department cannot open them, and nobody can close a restaurant that skips the whole thing.",
+        "That is roughly where AI safety stands in the US today: the inspection system is being built, by the restaurants, before anyone has agreed who gets to read the results."
+      ]
+    },
+    {
+      "heading": "What to watch",
+      "paragraphs": [
+        "First, who the auditors are. Audit standards for AI already exist in early form (SiliconANGLE notes one published in 2025 by the firm AIUC), but there is no equivalent of an accounting rulebook, and an auditor paid by the company it audits needs rules to lean on. Second, whether any company publishes its audit voluntarily; the first one to do so will put pressure on the rest. Third, whether Congress picks up the accord's own suggestion and writes it into law, or whether, like the 2023 commitments, it quietly fades.",
+        "For anyone using AI tools at work, nothing changes this week. The accord governs how the largest labs check their most powerful models before release, not the products you already use. Its value will be decided by what the companies do when an audit finds something they would rather not share."
+      ],
+      "links": [
+        {
+          "label": "CBS News: Trump and major AI executives sign \"morally binding\" voluntary controls",
+          "url": "https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/"
+        },
+        {
+          "label": "Al Jazeera: How does Trump's White House AI accord work?",
+          "url": "https://www.aljazeera.com/economy/2026/9/30/how-does-trumps-white-house-ai-accord-work"
+        },
+        {
+          "label": "SiliconANGLE: Prominent tech CEOs sign voluntary White House AI safety accord",
+          "url": "https://siliconangle.com/2026/09/30/prominent-tech-ceos-sign-voluntary-white-house-ai-safety-accord/"
+        },
+        {
+          "label": "Our brief: The AI labs were asked to slow down and said yes",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-were-asked-to-slow-down-and-said-yes"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "meta-is-building-its-ai-supercomputers-in-tents",
+  "status": "published",
+  "datePublished": "2026-10-01",
+  "title": "Meta is building its AI supercomputers in tents",
+  "dek": "To catch up in AI, Meta threw away its own datacentre blueprint and started putting tens of thousands of AI chips inside lightweight weatherproof tents, with no backup generators. A year on, the research firm SemiAnalysis says the approach has spread across its biggest sites. It is a story about how far a company will bend its own rules to get computing power switched on sooner.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "In July 2025 the research firm SemiAnalysis reported that Meta, inspired by how fast Elon Musk's xAI had built its Colossus supercomputer, had dropped its own polished datacentre design and started housing AI chips in tents: prefabricated power and cooling modules under ultra-light weatherproof structures, with no diesel backup generators at all. Mark Zuckerberg confirmed it, describing the method as building weatherproof tents and putting the networks and chip clusters inside them to build faster. The trade-off is reliability for speed. A normal datacentre keeps running through a power cut; a tent site might, in SemiAnalysis's words, even need to shut down work on the hottest summer days. That trade works for training AI (the months-long process of teaching a model), which can pause and resume from saved progress, in a way it never would for a bank or a hospital system. In July 2026 SemiAnalysis said Meta's Prometheus site in Ohio is partly running, \"fully embracing\" the tent design, and that its plans there have grown from about 1 gigawatt to over 3 gigawatts, while Meta builds five gigawatt-scale campuses at once.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data",
+  "sourceLabel": "Read SemiAnalysis on Meta's tents",
+  "about": "Meta's tent datacentre design for AI training clusters, first reported by SemiAnalysis in July 2025 and updated in July 2026: no backup generators, speed over redundancy, the Prometheus (Ohio) and Hyperion (Louisiana) clusters, why the trade-off works for AI training, precedent from xAI's Colossus and Microsoft's 2008 tent experiment, and the stakes for power grids",
+  "keywords": [
+    "Meta",
+    "datacenter",
+    "tents",
+    "Prometheus",
+    "Hyperion",
+    "SemiAnalysis",
+    "AI infrastructure",
+    "xAI Colossus",
+    "backup generators",
+    "gigawatt"
+  ],
+  "heroImage": {
+    "src": "/brief/meta-is-building-its-ai-supercomputers-in-tents.png",
+    "alt": "Diagram titled Meta traded the building for a tent. Classic datacentre: concrete halls, diesel backup, built over years, runs through outages. Meta's tent: light weatherproof tent, no backup generators, built in months, may pause on hot days. Caption: Prometheus, Ohio, partly live, growing from about 1 GW to 3 GW plus.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "A datacentre (a warehouse full of computers) is normally one of the most over-engineered buildings in the world: thick walls, huge cooling plants, and rows of diesel generators ready to take over the instant the grid flickers. Meta had spent a decade refining its own design, and in 2024 it replaced that with a new one optimised for AI.",
+        "A year later it changed course again. In July 2025 SemiAnalysis, a research firm that tracks datacentres partly through satellite images, reported that Meta had started building AI clusters inside tents: prefabricated power and cooling modules under ultra-light weatherproof structures. There were no backup generators, \"no diesel generators in sight\", in their words. Power comes from Meta's own substations connected to the grid. Mark Zuckerberg confirmed the approach in an interview that month, describing it as basically building weatherproof tents and installing the networks and chips inside them so they could be built faster.",
+        "SemiAnalysis said the trigger was Elon Musk's xAI, which built its Colossus supercomputer in Memphis in a matter of months in 2024 and shocked an industry used to multi-year timelines."
+      ]
+    },
+    {
+      "heading": "A year later",
+      "paragraphs": [
+        "This is not a one-off stunt. In a July 2026 update, SemiAnalysis said Meta's Prometheus site in New Albany, Ohio, is already partly running and is \"fully embracing\" the tent design, and that the plans there have grown from roughly 1 gigawatt (about the electricity of a mid-sized city) to more than 3 gigawatts within two years.",
+        "Meta is now building five campuses of a gigawatt or more at the same time: Prometheus in Ohio, Hyperion in Louisiana, and three more in El Paso, Iowa and Indiana. SemiAnalysis says it has never seen anyone build two full gigawatt campuses at once; Meta is doing it at Hyperion and Iowa. At Hyperion, the individual buildings are 400 megawatts each, which SemiAnalysis calls the largest single datacentre buildings in the world."
+      ],
+      "pullquote": "\"This design isn't about beauty or redundancy\" (SemiAnalysis)"
+    },
+    {
+      "heading": "Why a tent is not as crazy as it sounds",
+      "paragraphs": [
+        "The trade is reliability for speed, and it makes more sense for AI than for almost anything else. Training a model (teaching it, over weeks or months, by running the same calculations again and again) saves its progress regularly. If the power drops, the job stops and picks up from the last save. That costs hours, not customers. A bank, an airline booking system or Instagram's feed cannot do that, which is why Meta still runs those in conventional buildings.",
+        "SemiAnalysis adds that Meta probably juggles its workloads to squeeze every watt out of the grid connection it has, and that it might even need to shut down work on the hottest summer days, when cooling is hardest and the grid is most stretched. That is the honest cost: a tent site will sometimes simply be off. Meta has decided that a supercomputer switched on a year earlier, and occasionally paused, beats a perfect one that arrives late."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. In 2008 two Microsoft engineers famously ran a rack of servers in a tent outside one of their datacentres for several months, to test how much protection computers really need; the servers ran fine. Bitcoin miners have long used cheap sheds and shipping containers for the same reason: when the machines are the expensive part, the building is overhead. What is new is the scale. Meta is applying a scrappy, experiment-style idea to buildings that consume as much electricity as a city."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a summer music festival. Nobody builds a concert hall for it. The stage, the lights and the sound system are the expensive, valuable part, and they go up under a temporary roof in weeks. If a storm comes, the show pauses and starts again. A concert hall is better in every way except one: it takes years to build, and by then the festival season is over.",
+        "Meta has decided the AI race is a festival season."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For Meta, speed is the strategy. It has fallen behind OpenAI and Anthropic on model quality, and the fastest way it knows to catch up is more computing power, sooner. For everyone else, the story is a reminder that the AI buildout is now limited less by buildings than by electricity. Dropping the backup generators does not reduce how much power these sites draw from the grid; it only means the site goes dark when the grid does. That puts even more weight on local power networks, which is one reason towns across the US have started pushing back, as we covered in our brief on datacentre bans.",
+        "A caveat: Meta has said little publicly about how often its tent sites stop, and SemiAnalysis's detail comes from its own paid datacentre model and satellite tracking. Treat the specific figures as an informed outside estimate, not company data."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Meta Superintelligence: Leadership Compute, Talent, and Data (July 2025)",
+          "url": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+        },
+        {
+          "label": "SemiAnalysis: The Future of Meta Superintelligence: A 1 Year Progress Update (July 2026)",
+          "url": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence"
+        },
+        {
+          "label": "Data Center Dynamics: Meta using tents for temporary data center capacity",
+          "url": "https://www.datacenterdynamics.com/en/news/meta-using-tents-for-temporary-data-center-capacity-report/"
+        },
+        {
+          "label": "Our brief: 300 American towns banned datacenters. Three projects were delayed",
+          "url": "https://oslovibecoding.tech/brief/300-american-towns-banned-datacenters-three-projects-were-delayed"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "the-ai-labs-promised-to-slow-down-then-cut-their-prices",
   "status": "published",
   "datePublished": "2026-09-23",
