@@ -36,6 +36,197 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "google-s-new-top-ai-is-out-almost-nobody-can-use-it-yet",
+  "status": "published",
+  "datePublished": "2026-10-02",
+  "title": "Google's new top AI is out. Almost nobody can use it yet",
+  "dek": "On 30 September Google announced Gemini 4 Argon, its most capable AI model, and by its own tests the best coder on the market. Then it handed it only to a small group of cybersecurity defenders. That rollout order is now the normal way the biggest models come out, and it says a lot about where the AI race is in late 2026.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "Google's Gemini 4 Argon, announced on 30 September, is Google's bid to rejoin OpenAI and Anthropic at the front of the AI race. Google's own figures put it first on DeepSWE v1.1, a test of long, real-world programming jobs, at 77.9% against 74.2% for Claude Opus 5.5 and 74.1% for OpenAI's GPT-6 Astra. Those are vendor numbers, not independent results. The bigger story is who gets it. For now only trusted cyber defenders in Google's Fairwind Program can use Argon, some of them with the cyber safety limits switched off, while the US government tests it under its voluntary pre-release scheme. Paying developers and Google AI Ultra subscribers come next, with no date given, and everyone else after that. When it does open, the introductory price of $2 per million input tokens and $10 per million output tokens matches OpenAI's, and the later price of $4 and $20 matches Anthropic's Opus 5.5. Anthropic launched its Mythos model the same staged way a month ago. Defenders first, everyone else later, is now the normal launch pattern for the most powerful models.",
+  "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+  "sourceLabel": "Read Google's Gemini 4 Argon announcement",
+  "about": "Google's Gemini 4 Argon frontier model (30 September 2026): Google-reported benchmarks against Claude Opus 5.5 and GPT-6 Astra, the staged rollout through the Fairwind Program and US government pre-release testing, introductory and later pricing, Google's internal use cases, safety measures including chain-of-thought monitoring, and the precedent of Anthropic's Mythos 5.1 two-tier release",
+  "keywords": [
+    "Google",
+    "Gemini 4 Argon",
+    "Gemini",
+    "DeepMind",
+    "Fairwind",
+    "cybersecurity",
+    "frontier model",
+    "staged release",
+    "AI pricing",
+    "Claude Opus 5.5",
+    "GPT-6"
+  ],
+  "heroImage": {
+    "src": "/brief/google-s-new-top-ai-is-out-almost-nobody-can-use-it-yet.png",
+    "alt": "Diagram titled Google's best AI, released in stages. Three steps: cyber defenders, now; paid API and Ultra subscribers, soon; everyone, no date. Caption: Gemini 4 Argon. US government tests it first. Intro price $2 and $10 per million tokens, later $4 and $20.",
+    "credit": "Oslo Vibe Coding, from Google",
+    "creditUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Wednesday 30 September Google announced Gemini 4 Argon, which it calls its \"next era of frontier intelligence\". Frontier model means a lab's biggest and most capable AI, the kind that sets the pace for everyone else. Argon is aimed at long, multi-step professional work: writing and fixing software, financial and legal research, and finding security holes in code.",
+        "It is also a comeback attempt. Google's Gemini 3 put it near the top of the field at the end of 2025, but for most of 2026 the headlines belonged to Anthropic and OpenAI. Google cancelled a planned Gemini 3.5 Pro, and in August Demis Hassabis stepped down as head of DeepMind, Google's AI lab. Argon is the first flagship model since his successor, Koray Kavukcuoglu, took over."
+      ]
+    },
+    {
+      "heading": "What Google says it can do",
+      "paragraphs": [
+        "Facts first, and these are Google's own facts. On DeepSWE v1.1, a test of long, realistic programming jobs, Google reports 77.9% for Argon, against 74.2% for Anthropic's Claude Opus 5.5 and 74.1% for OpenAI's GPT-6 Astra. Google also puts Argon first on Zapier's AutomationBench (51.3%), which checks whether an AI can carry out ordinary business tasks from start to finish, and on several finance and legal tests. Treat all of these as the seller's numbers until independent testers have had a go, which mostly they cannot yet.",
+        "One technical change matters more than it sounds. Argon can now write up to 1 million tokens in a single answer, up from 64,000. A token is a chunk of text, roughly three quarters of a word. That limit is what lets the model think for a very long time and produce something huge in one go, like rewriting a whole program.",
+        "Google gave examples from inside the company. Teams of Argon agents (copies of the model working through a task on their own) scanned how Google's servers use memory and freed up more than 300 terabytes without buying new hardware. Others are translating large codebases from C and C++ into Rust, a safer programming language, including an 800,000-line part of Google's Fuchsia operating system. Google says that work is still being checked by people before it ships."
+      ],
+      "pullquote": "\"Safely releasing frontier capabilities at this level requires a phased approach\" (Google)"
+    },
+    {
+      "heading": "Who actually gets it",
+      "paragraphs": [
+        "Here is the part that makes this launch unusual. Today, Argon is open only to a set of trusted cyber defenders, the people who protect companies and public services from hackers, through Google's Fairwind Program. Some of them get a version with the cyber safety limits removed, so it can find and patch security flaws at full strength. Google says that in early use Argon found a serious flaw in healthcare software used by hospitals worldwide, one that earlier models had missed.",
+        "At the same time Google is letting the US government test the model through its voluntary pre-release programme. Next come paying developers and subscribers to Google AI Ultra, its top consumer plan. Google has given no date for that, or for anyone else. The model you can use in the Gemini app today is not Argon.",
+        "When it does open, the price is pointed. The introductory rate of $2 per million tokens in and $10 per million out is the same as OpenAI's GPT-6 Sol. The later rate of $4 and $20 is the same as Anthropic's Opus 5.5. Google is matching its rivals' prices rather than undercutting them, a signal that it sees Argon in the same tier."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No. In 2019 OpenAI held back the full version of GPT-2 for months, worried it would be used for fake news, and was widely mocked for being dramatic. Seven years later, staged release is standard. A month ago Anthropic shipped one model under two names: Fable 5.1 for everyone, with safeguards, and Mythos 5.1 only for vetted security teams. Google has now done much the same. The reason is the same in both cases. A model that is good at finding security holes so they can be fixed is, by definition, good at finding them so they can be exploited."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a locksmith who invents a tool that opens almost any lock in seconds. The responsible move is to hand it first to the people who fit and repair locks, so they can find the weak doors and replace them, then sell it more widely once the worst doors are fixed. Google is doing that with software, and the locks are the code that runs hospitals, banks and power grids."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI race, Google is credible at the front again, at least on paper. Analysts quoted by CNBC were positive but careful: one said Argon makes Google competitive, not the leader, and another said the real proof will be how it performs once businesses can use it in production.",
+        "For everyone else, the pattern is the story. The most capable models now arrive in a queue: security defenders and governments first, paying customers second, the public last. That is a sensible answer to a real risk, and it also means the gap between what the best AI can do and what ordinary users can touch is growing. Expect benchmark claims like these to stay unchecked for weeks at a time, because outsiders cannot test what they cannot get."
+      ],
+      "links": [
+        {
+          "label": "Google: Gemini 4 Argon, our next era of frontier intelligence (30 Sept 2026)",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+        },
+        {
+          "label": "9to5Google: Google announces Gemini 4 Argon as its new frontier model",
+          "url": "https://9to5google.com/2026/09/30/gemini-4-argon-announcement/"
+        },
+        {
+          "label": "CNBC: Can Google's new model really catch up to OpenAI and Anthropic at the frontier?",
+          "url": "https://www.cnbc.com/amp/2026/10/02/tech-download-google-argon-frontier-openai-anthropic.html"
+        },
+        {
+          "label": "Our brief: The AI labs promised to slow down. Then they cut their prices",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-promised-to-slow-down-then-cut-their-prices"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "meta-ranked-its-staff-by-how-much-ai-they-burned",
+  "status": "published",
+  "datePublished": "2026-10-02",
+  "title": "Meta ranked its staff by how much AI they burned. It lasted two days",
+  "dek": "Earlier this year a Meta employee built a leaderboard of the company's heaviest AI users, complete with titles like \"Token Legend\". People started running AI for hours just to climb it. It was switched off two days after the press found it, and it has become the textbook example of what happens when you measure the wrong thing.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "In April 2026 The Information reported on \"Claudeonomics\", an internal Meta dashboard built by one employee that ranked the top 250 users of AI at the company and handed out titles such as \"Token Legend\" and \"Cache Wizard\". Over 30 days Meta staff on the board used more than 60 trillion tokens (chunks of text an AI reads or writes). The top person alone used about 281 billion, which Fortune estimated could cost over $1.4 million at the cheapest top-tier Claude price of the time. According to the research firm SemiAnalysis, some employees set AI agents to research things for hours simply to burn tokens and climb the rankings. The dashboard was shut down two days after the story broke; Meta said the employee took it down and the company did not ask them to. The episode marks the peak of \"tokenmaxxing\", the early-2026 fashion for treating AI use itself as proof of productivity. By mid-year, SemiAnalysis found, most large companies had swung the other way, to monthly AI budgets per employee.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+  "sourceLabel": "Read SemiAnalysis on tokenmaxxing and token budgets",
+  "about": "Meta's internal Claudeonomics AI token leaderboard (April 2026): the top-250 ranking, gamified titles, 60 trillion tokens in 30 days, the 281-billion-token top user, its shutdown two days after The Information's report, the wider tokenmaxxing trend including Jensen Huang's half-of-salary token target, Goodhart's law and the lines-of-code precedent, and the shift to per-employee AI budgets",
+  "keywords": [
+    "Meta",
+    "Claudeonomics",
+    "tokenmaxxing",
+    "AI tokens",
+    "leaderboard",
+    "Goodhart's law",
+    "AI budgets",
+    "SemiAnalysis",
+    "Jensen Huang",
+    "workplace AI"
+  ],
+  "heroImage": {
+    "src": "/brief/meta-ranked-its-staff-by-how-much-ai-they-burned.png",
+    "alt": "Diagram titled One Meta employee, one month of AI. Big number: 281 billion tokens used in 30 days by the top name on Meta's internal leaderboard. Caption: Fortune's estimate, over $1.4 million at Claude's cheapest top-tier price. The board was shut two days after the press found it.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis and Fortune",
+    "creditUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "In early April 2026 a Meta employee built a dashboard on the company's internal tools and called it \"Claudeonomics\", after Anthropic's AI model Claude. It tracked how many tokens Meta's more than 85,000 employees were using. A token is the unit AI is billed in, a chunk of text roughly three quarters of a word long. The more you ask an AI to read, write and think, the more tokens you burn.",
+        "The dashboard showed the top 250 users and gave them titles that could have come from a video game: \"Token Legend\", \"Cache Wizard\" and others. Over one 30-day period, total usage on the board passed 60 trillion tokens. The single heaviest user averaged about 281 billion. Neither Mark Zuckerberg nor Meta's chief technology officer made the top 250.",
+        "The tech outlet The Information reported on the leaderboard. Two days later it was gone, replaced by a note saying it had been meant as a fun way to look at tokens but was being shut because its data had been shared outside the company. Meta told Fortune that the employee took it down themselves and that Meta did not ask them to."
+      ]
+    },
+    {
+      "heading": "What went wrong",
+      "paragraphs": [
+        "The research firm SemiAnalysis, which later interviewed more than 50 companies about their AI spending, described what the rankings did to behaviour. Employees started competing for the titles by having AI agents (programs that keep working through a task on their own) \"do research for hours simply to burn tokens\". The rank had become the goal.",
+        "That is expensive. Fortune worked out that at $5 per million tokens, the cheapest public price for Anthropic's top model at the time, the leading user alone could have cost Meta more than $1.4 million in a month. That is an outside estimate: big companies negotiate their own prices, and Meta did not say what it actually paid."
+      ],
+      "pullquote": "\"The dashboard was shut down 2 days later after The Information reported the spend\" (SemiAnalysis)"
+    },
+    {
+      "heading": "Why anyone thought this was a good idea",
+      "paragraphs": [
+        "It made more sense in the mood of early 2026. SemiAnalysis says companies including Meta and Salesforce were openly encouraging staff to use as much AI as possible, on the theory that more AI meant more output. The trend got a name, \"tokenmaxxing\". In March Nvidia's CEO Jensen Huang said on the All-In podcast that he would be \"deeply alarmed\" if an engineer he paid $500,000 a year did not use at least $250,000 worth of tokens. If the boss of the world's most valuable chip company treats AI spend as a sign of effort, an employee building a scoreboard for it is not so strange."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Not at all. Economists call it Goodhart's law, after the British economist Charles Goodhart: when a measure becomes a target, it stops being a good measure. Software has been here before. In the 1980s some companies judged programmers by how many lines of code they wrote, which rewarded long, bloated programs. A famous story from Apple has one of its best engineers, Bill Atkinson, filling in \"-2000\" on his weekly lines-of-code form after a week spent making a program smaller and faster. Counting tokens is the AI-era version of counting lines."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a delivery company that wants its drivers to work hard, so it puts up a leaderboard of who used the most fuel this month. Within a week, some drivers are taking the long way round and leaving the engine running at lunch. Fuel use did rise with real work, until the moment people were rewarded for it. After that it measured only how good they were at burning fuel."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The swing back was quick. By mid-2026 SemiAnalysis found that most companies it spoke to had put hard monthly caps on AI use, anywhere from $250 to around $2,000 per employee, and some had switched off their most expensive models. Uber, as we covered in August, burned through its whole annual AI coding budget in four months and moved everyone to a $1,500-a-month limit.",
+        "SemiAnalysis's verdict is that the wild spending stories were overstated and came from poor incentives at a few companies rather than runaway costs everywhere. That is the useful lesson for any workplace adopting AI: measure what the AI helped people get done, not how much of it they used. A leaderboard for consumption will always find the people best at consuming."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: TokenBudgeting, our conversations with 50+ enterprises",
+          "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+        },
+        {
+          "label": "Fortune: A Meta employee created a dashboard so coworkers can compete to be the company's No. 1 AI token user (9 Apr 2026)",
+          "url": "https://fortune.com/2026/04/09/meta-killed-employee-ai-token-dashboard/"
+        },
+        {
+          "label": "Tom's Hardware: Jensen Huang says Nvidia engineers should use AI tokens worth half their salary",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/jensen-huang-says-nvidia-engineers-should-use-ai-tokens-worth-half-their-annual-salary-every-year-to-be-fully-productive-compares-not-using-ai-to-using-paper-and-pencil-for-designing-chips"
+        },
+        {
+          "label": "Folklore.org: -2000 Lines Of Code (Apple, 1982)",
+          "url": "https://www.folklore.org/Negative_2000_Lines_Of_Code.html"
+        },
+        {
+          "label": "Our brief: Uber burned a whole year of AI budget in four months, then put everyone on a data plan",
+          "url": "https://oslovibecoding.tech/brief/uber-burned-a-year-of-ai-budget-in-four-months"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "the-ai-labs-signed-a-safety-pact-with-the-white-house-it-has-no-penalties",
   "status": "published",
   "datePublished": "2026-10-01",
