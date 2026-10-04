@@ -102,7 +102,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         {article.photos && article.photos.length > 0 && (
           <figure className="mt-10">
             <div className={`grid gap-3 ${article.photos.length > 1 ? "sm:grid-cols-2" : ""}`}>
-              {article.photos.map((p) => (
+              {article.photos.map((p, i) => (
                 <div
                   key={p.src}
                   className={`relative overflow-hidden rounded-card border border-line bg-mist ${
@@ -113,6 +113,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     src={p.src}
                     alt={p.alt}
                     fill
+                    loading={i === 0 ? "eager" : "lazy"}
                     sizes={
                       article.photos!.length > 1
                         ? "(max-width: 640px) 100vw, 400px"
