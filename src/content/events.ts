@@ -18,6 +18,7 @@ export type EventItem = {
   recap?: string; // shown for past events
   recapHref?: string; // optional longer write-up for a past session
   recapLabel?: string;
+  highlights?: string[];
   presentationHref?: string;
   presentationLabel?: string;
   presentationTitle?: string;
@@ -41,6 +42,30 @@ export const events: EventItem[] = [
     presentationHref: "/presentations/build-your-first-agent.html",
     presentationLabel: "Open the session presentation",
     presentationTitle: "Build Your First Agent",
+  },
+  {
+    slug: "build-your-first-website-with-ai-welcome-week-2026-09-24",
+    title: "Build Your First Website with AI",
+    status: "past",
+    start: "2026-09-24T16:00:00+02:00",
+    end: "2026-09-24T18:00:00+02:00",
+    dateLabel: "Thursday 24 September 2026",
+    timeLabel: "16:00–18:00",
+    venue: "Indian Club House",
+    address: "Oslo",
+    city: "Oslo",
+    rsvpUrl: "https://luma.com/jbhvxtbe",
+    blurb:
+      "A beginner-friendly Norway Welcome Week workshop where participants learned how websites work, built with AI, and published their first projects online.",
+    recap:
+      "Around 35 people went from the foundations of HTML, CSS, and JavaScript to building websites and playable games with AI—then sharing them through live links before the evening ended.",
+    recapHref: "/articles/build-your-first-website-with-ai-welcome-week",
+    recapLabel: "Read the full event story",
+    highlights: [
+      "Around 35 participants",
+      "Beginner-friendly building",
+      "Websites published live",
+    ],
   },
   {
     slug: "drop-in-radisson-nydalen-2026-09-03",
