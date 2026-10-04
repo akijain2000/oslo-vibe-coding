@@ -49,6 +49,172 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "build-your-first-website-with-ai-welcome-week",
+    datePublished: "2026-09-24",
+    title: "Build Your First Website with AI: first-time coders published in two hours",
+    dek: "At our Norway Welcome Week event, around 35 participants learned how websites work, used AI coding tools to make their own, and put the results online.",
+    author: "Harsh Trivedi",
+    readingTimeMin: 7,
+    takeaway:
+      "The event put our mission into practice: AI for good, AI for humans, and AI for all—making useful tools accessible while keeping people in control of what they create.",
+    sourceUrl: "https://luma.com/jbhvxtbe",
+    kicker: "session recap",
+    sourceLabel: "View the original event",
+    about: "A beginner-friendly AI website-building workshop during Norway Welcome Week",
+    keywords: [
+      "AI coding",
+      "vibe coding",
+      "beginner web development",
+      "Norway Welcome Week",
+      "Oslo workshops",
+    ],
+    photos: [
+      {
+        src: "/sessions/welcome-week-2026/full-room-introduction.jpg",
+        alt: "A presenter introducing vibe coding to a full room of workshop participants",
+      },
+    ],
+    photoCaption:
+      "The Build Your First Website with AI workshop brought beginners and experienced builders together for a practical evening of making and learning.",
+    sections: [
+      {
+        heading: "Build Your First Website with AI",
+        paragraphs: [
+          "By the end of the workshop, participants were turning their laptops toward neighboring chairs so someone else could try what they had made. Two hours earlier, many of them had never built a website.",
+          "Build Your First Website with AI took place on 24 September as part of Norway Welcome Week. Around 35 people attended. Some had used AI before but had never asked it to write software. Others had no coding experience at all.",
+          "The event was built around Oslo Vibe Coding’s mission: AI for good, AI for humans, and AI for all. In practice, that means making useful tools accessible to people who do not already work in technology, while keeping human judgment at the center of what gets made.",
+          "We planned to end with a simple webpage. Several participants built games instead.",
+        ],
+        links: [
+          { label: "Visit Norway Welcome Week", url: "https://welcomeweek.no/" },
+        ],
+      },
+      {
+        heading: "More interest than seats",
+        paragraphs: [
+          "Registration quickly exceeded the capacity of the original room. We formed a waiting list, asked confirmed guests to tell us if they could still attend, and moved the workshop to Indian Club House.",
+          "The extra coordination was worth it. The room included designers, entrepreneurs, professionals from nontechnical fields, and complete beginners. Harsh Trivedi and Akshat Jain led the session. Volunteers circulated among the tables, helping with setup, finding misplaced files, and working through error messages.",
+          "The workshop made no assumption that participants knew the vocabulary. If a term was unfamiliar, we explained it before moving on.",
+        ],
+      },
+      {
+        heading: "A short map of the web",
+        paragraphs: [
+          "We began with the basic system behind a website. The frontend is what a visitor sees. The backend handles work away from the browser. A database stores information that needs to persist or be shared. The first project needed only a frontend, so we kept the scope there.",
+          "Next came the anatomy of a page: navigation, headline, image, button, content, footer. We then introduced the three parts of the small project everyone would build.",
+          "The aim was not to compress a web-development course into one evening. Participants needed enough of a map to understand what an AI tool had changed and to explain what they wanted it to do next.",
+        ],
+        bullets: [
+          "HTML provides the content and structure.",
+          "CSS controls appearance and layout.",
+          "JavaScript adds behavior, such as opening a plan when someone clicks a button.",
+        ],
+      },
+      {
+        heading: "Clear requests, checkable results",
+        paragraphs: [
+          "We compared two instructions. The first was vague: “Make my website better.” The second named the change, the constraint, and the expected result: “Make the event details fit on a phone. Keep the headline and photo, then stack the details vertically.”",
+          "The distinction became a rule for the rest of the workshop. Before asking an AI tool to make a change, participants considered what should change, what should remain untouched, and how they would know the change had worked.",
+          "We also asked the tools to propose a plan before editing files. When something broke, participants supplied a screenshot, an error message, or an exact example. The point was to replace guesswork with evidence.",
+          "The AI wrote much of the code. The person at the laptop still defined the purpose, reviewed the result, and decided what was ready to share.",
+        ],
+        pullquote: "The AI wrote much of the code. The person at the laptop still decided what was worth building.",
+      },
+      {
+        heading: "One project, deliberately small",
+        paragraphs: [
+          "The shared exercise was Oslo Hack, a one-page site for people in Oslo who want to find others to build small projects with. Its first version needed a headline, a photo, a short introduction, and a button that opened a session plan.",
+          "We excluded accounts, payments, registration forms, backends, and databases. Any one of those could have consumed the entire session. The narrow brief gave participants a realistic chance to finish.",
+          "Each person chose an AI coding tool, created a project folder, and started from the same small set of files. The first prompt described the audience, content, colors, interaction, and boundaries. It also instructed the agent to explain its plan and ask about missing information before building.",
+          "Then the room grew quiet. Prompts were revised. Pages refreshed. Buttons were clicked until they behaved as their labels promised.",
+        ],
+        image: {
+          src: "/sessions/welcome-week-2026/shared-example.jpg",
+          alt: "Participants gathered around laptops during the workshop",
+          caption: "Participants worked from a shared example, then began taking their projects in different directions.",
+          width: 2586,
+          height: 1724,
+        },
+      },
+      {
+        heading: "Talking to the model",
+        paragraphs: [
+          "Some participants typed detailed prompts. Others used voice, describing a change aloud and responding to the result as if they were speaking with a collaborator.",
+          "There was a good deal of talking to computers. For once, the computers were being reasonably helpful.",
+          "Once the shared example worked, participants changed layouts, replaced content, and added new interactions. Several projects became games. People who had introduced themselves as nontechnical were soon asking someone at the next table to play what they had built.",
+          "The tools did not eliminate difficulty. Files went missing. Error messages appeared. Some requests produced results nobody expected. But these moments no longer ended the project. A participant could try a more precise instruction, ask a volunteer, or compare notes with someone who had encountered the same problem.",
+        ],
+      },
+      {
+        heading: "From a folder to a public link",
+        paragraphs: [
+          "The next task was publishing. Participants saved their projects in GitHub, connected them to Vercel, and opened the resulting public addresses. We described a repository as a project folder with a history, a commit as a checkpoint, and deployment as publishing a version of the site.",
+          "Then we tested the live pages. Did the image load? Did the button work? Did the layout fit on a phone? Could someone reach important links with a keyboard? Did the address open on another device?",
+          "Participants received a short review checklist to use after the workshop. AI can produce a page that appears finished while leaving a broken link or a mobile layout that does not fit. Publishing creates the link. Testing makes it worth sharing.",
+        ],
+      },
+      {
+        heading: "The final showcase",
+        paragraphs: [
+          "We ended by asking participants to open their websites and let other people try them. Presenters explained the project, demonstrated one interaction, and described something they had learned while making it.",
+          "Two participants won ODEON movie-ticket vouchers in a small competition at the end of the session. The awards provided a cheerful finish, but the more consequential act was showing unfinished work to a room of other people. The audience responded with questions, suggestions, and applause.",
+        ],
+        image: {
+          src: "/sessions/welcome-week-2026/winners.jpg",
+          alt: "The two competition winners celebrating in front of the winners screen",
+          caption: "The two competition winners at the end of the session.",
+          width: 2586,
+          height: 1724,
+        },
+      },
+      {
+        heading: "What the evening showed",
+        paragraphs: [
+          "A full registration list showed that people were interested. The more useful evidence came from inside the room: beginners explaining HTML, CSS, and JavaScript to one another; volunteers sitting beside participants who were stuck; and people with no technical background publishing playable websites before they went home.",
+          "Some arrived skeptical of AI and left with another project they wanted to try. The change did not come from a promise about what the technology might do. It came from using the tools, seeing their limits, and finishing something concrete.",
+          "We do not want the useful parts of AI to belong only to people who already understand software. More people should have the chance to see what the tools can do, question their output, use them carefully, and make something that matters to them.",
+          "Sometimes that starts with a serious idea. Sometimes it starts with a small game. Both count.",
+        ],
+        pullquote: "AI for good. AI for humans. AI for all.",
+        image: {
+          src: "/sessions/welcome-week-2026/building-together.jpg",
+          alt: "Participants building websites together while the shared project is displayed at the front of the room",
+          caption: "Around 35 participants built, tested, and helped one another during the event.",
+          width: 2298,
+          height: 1724,
+        },
+      },
+      {
+        heading: "Acknowledgments",
+        paragraphs: [
+          "Norway Welcome Week collaborated with us on the event and helped bring newcomers and curious builders into the room. Volunteers handled setup problems, answered questions, and stayed beside participants when a project stopped cooperating.",
+          "The workshop ultimately belonged to the people who attended. They were willing to ask basic questions, show work that was still rough, and help the person sitting nearby. That made the room work.",
+          "We are planning more workshops on context and specifications, feedback loops, AI agents, safe tool use, and the systems required when a small website grows into a larger product.",
+        ],
+        image: {
+          src: "/sessions/welcome-week-2026/organizers.png",
+          alt: "The four people who organized the Build Your First Website with AI workshop",
+          caption: "The team behind the workshop, bringing Oslo Vibe Coding and Norway Welcome Week together.",
+          width: 2058,
+          height: 1544,
+        },
+        pullquote: "No one codes alone.",
+      },
+      {
+        heading: "Continue building",
+        paragraphs: [
+          "The workshop is over, but the community and the next project are still open.",
+        ],
+        links: [
+          { label: "Visit Oslo Vibe Coding", url: "https://oslovibecoding.tech/" },
+          { label: "See the original event", url: "https://luma.com/jbhvxtbe" },
+          { label: "Follow us on LinkedIn", url: "https://www.linkedin.com/company/vibesoslo/" },
+          { label: "Join the WhatsApp community", url: "https://chat.whatsapp.com/JiCEzUuSJwBCuvYbk8E3IG" },
+        ],
+      },
+    ],
+  },
+  {
     slug: "context-engineering-what-the-model-sees-next",
     datePublished: "2026-09-03",
     title: "Context engineering: what the model sees next",
