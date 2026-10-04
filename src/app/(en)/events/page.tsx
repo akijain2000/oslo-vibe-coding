@@ -93,6 +93,18 @@ export default function EventsPage() {
                   </p>
                   <h3 className="mt-1.5 font-display text-xl font-bold tracking-tight">{e.title}</h3>
                   <p className="mt-2 leading-relaxed text-ink-soft">{e.recap ?? e.blurb}</p>
+                  {e.highlights && e.highlights.length > 0 && (
+                    <ul className="mt-4 flex flex-wrap gap-2" aria-label="Session highlights">
+                      {e.highlights.map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="rounded-pill border border-line bg-paper px-3 py-1.5 text-xs font-semibold text-ink-soft"
+                        >
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
                     <Link
                       href={`/events/${e.slug}`}

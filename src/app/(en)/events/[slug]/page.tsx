@@ -103,6 +103,18 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
           <div className="mt-8">
             <p className="font-mono text-xs uppercase tracking-wider text-ink-faint">How it went</p>
             <p className="mt-2 text-lg leading-relaxed text-ink-soft">{e.recap}</p>
+            {e.highlights && e.highlights.length > 0 && (
+              <ul className="mt-5 grid gap-3 sm:grid-cols-3" aria-label="Session highlights">
+                {e.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="rounded-card border border-line bg-mist px-4 py-3 text-sm font-semibold text-ink"
+                  >
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            )}
             {e.recapHref && (
               <Link
                 href={e.recapHref}
