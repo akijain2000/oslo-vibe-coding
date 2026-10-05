@@ -36,6 +36,110 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "how-much-water-does-ai-really-drink",
+  "status": "published",
+  "datePublished": "2026-10-05",
+  "title": "How much water does AI really drink? It depends on the weather",
+  "dek": "AI datacentres use water to keep their chips cool, and the scary headlines have made it sound like every chatbot answer drains a reservoir. The real numbers are smaller per question and bigger in total than most people think, and one figure from Microsoft's Arizona desert campus shows what actually decides the bill: where you build, and how you cool.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "Datacentres measure their thirst with WUE (Water Usage Effectiveness): litres of water used for cooling per kilowatt-hour of computing. According to the research firm SemiAnalysis, Microsoft's AI campus in the Arizona desert ran at 2.24 litres per kWh, more than four times Microsoft's own 2021 company-wide average of 0.49. The reason is evaporative cooling, which works like sweating: it saves electricity by evaporating water, and in hot, dry places it needs a lot more of it. Microsoft has since cut its average to 0.30 litres per kWh (its fiscal 2024 figure), and since August 2024 every new Microsoft datacentre design uses a closed water loop that evaporates nothing for cooling, saving more than 125 million litres a year per site. The catch, in Microsoft's own words, is that this raises electricity use. Per question, the numbers are small: Google estimates a typical Gemini text prompt uses 0.26 millilitres, about five drops. In total they are not: Google says it replenished 7.7 billion gallons of water in 2025, roughly 78% of what it consumed. Water is a real local issue, not a global one, and it is a trade-off against electricity.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/multi-datacenter-training-openais",
+  "sourceLabel": "Read SemiAnalysis on Microsoft's and Google's datacentre designs",
+  "about": "How much water AI datacentres consume: the Water Usage Effectiveness (WUE) metric, Microsoft's Arizona campus at 2.24 L/kWh versus its 0.49 (2021) and 0.30 (FY2024) fleet averages as reported by SemiAnalysis and Microsoft, evaporative cooling versus closed-loop chip-level cooling and the electricity trade-off, Microsoft's zero-water-evaporation design piloting in Phoenix and Mt. Pleasant, Google's 0.26 ml per median Gemini prompt estimate, Google's 2025 water replenishment figures, and the precedent of Google's water use in The Dalles, Oregon",
+  "keywords": [
+    "AI water use",
+    "datacentre water",
+    "Water Usage Effectiveness",
+    "WUE",
+    "Microsoft",
+    "Arizona",
+    "Google",
+    "Gemini",
+    "evaporative cooling",
+    "liquid cooling",
+    "SemiAnalysis",
+    "sustainability"
+  ],
+  "heroImage": {
+    "src": "/brief/how-much-water-does-ai-really-drink.png",
+    "alt": "Bar chart titled Same company, very different thirst. Litres of water per kWh of computing: Microsoft Arizona campus 2.24, Microsoft average 2021 0.49, Microsoft average 2024 0.30, new zero-water design near 0. Caption: desert sites drink most; the newest design almost none.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis and Microsoft",
+    "creditUrl": "https://newsletter.semianalysis.com/p/multi-datacenter-training-openais"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Every AI answer runs on chips in a datacentre (a warehouse full of computers), and those chips turn almost all the electricity they use into heat. That heat has to go somewhere. One of the cheapest ways to get rid of it is water, and that has made water one of the loudest arguments against the AI boom.",
+        "The research firm SemiAnalysis, which tracks AI infrastructure, put a sharp number on it in a report comparing how Microsoft and Google build their AI datacentres. Microsoft's big AI training campus in the Arizona desert ran at a Water Usage Effectiveness, or WUE, of 2.24. WUE is simple: litres of water used for cooling for every kilowatt-hour (kWh) of electricity the computers use. A kWh is roughly what a kettle uses to boil water four or five times.",
+        "For comparison, Microsoft's own average across all its datacentres in 2021 was 0.49 litres per kWh. The Arizona site used more than four times as much water for the same amount of computing. SemiAnalysis notes that the water use drew negative press and that Microsoft switched to air-cooled chillers (machines that cool without evaporating water) for the next buildings on that campus."
+      ]
+    },
+    {
+      "heading": "Why the desert drinks more",
+      "paragraphs": [
+        "Most large datacentres cool with evaporation: warm water from the building runs over cooling towers, some of it evaporates, and the evaporation carries the heat away. It is very energy efficient, which is why datacentres like it. But the evaporated water is gone, and on a hot, dry day in Arizona the towers have to evaporate far more of it to do the same job.",
+        "Microsoft's answer is to stop evaporating. Since August 2024 every new Microsoft datacentre design cools the chips directly with liquid in a closed loop: the system is filled once during construction and then circulates the same water, like the coolant in a car. Microsoft says this avoids more than 125 million litres of water a year per datacentre, about 50 Olympic swimming pools by our arithmetic. The first sites, in Phoenix, Arizona and Mount Pleasant, Wisconsin, are piloting it in 2026.",
+        "There is no free lunch. Microsoft says plainly that replacing evaporation with mechanical cooling increases its power use. Less water means more electricity, and more electricity can mean more emissions, depending on the local grid. Water and power are two ends of the same seesaw."
+      ],
+      "pullquote": "\"To achieve decent energy efficiency in the desert (Arizona), Microsoft requires a lot of water\" (SemiAnalysis)"
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of how your body keeps cool. Sweating is cheap and effective, but it costs water, and on a hot desert hike you sweat far more and have to drink more. The alternative is to sit in an air-conditioned room: you barely sweat, but someone pays the electricity bill. Datacentres face exactly that choice. Evaporative cooling is sweating. Closed-loop cooling is the air conditioning."
+      ]
+    },
+    {
+      "heading": "So how much does one question use?",
+      "paragraphs": [
+        "Less than the headlines suggest. In August 2025 Google published its own estimate: a median text prompt to its Gemini app (the one in the middle of the range) uses 0.26 millilitres of water, about five drops, and about as much electricity as watching TV for less than nine seconds. That is Google's own figure, calculated from its average WUE, and it covers a typical text question, not long reasoning tasks, images or video, which use more.",
+        "Five drops per question still adds up when billions of questions are asked. Google's 2026 environmental report says it replenished about 7.7 billion gallons of water in 2025, roughly 78% of its total freshwater use. That puts Google's consumption at around 10 billion gallons, close to 37 billion litres, by our arithmetic from its figures. \"Replenish\" means funding projects that restore water elsewhere in the same regions, such as wetlands and leak repairs. It does not put the water back into the same tap."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No. Datacentre water was a local fight long before ChatGPT. In The Dalles, a small city in Oregon, Google's datacentres used about 355 million gallons in 2021, around 29% of the whole city's water. The city spent 13 months in court, with Google covering the legal costs, trying to keep that number secret from the local newspaper before giving up in late 2022. What AI has changed is the scale: far more datacentres, built far faster, often in sunny, cheap-land places like Arizona and Texas where water is already scarce."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The honest picture sits between the two camps. Your chatbot habit is not draining the planet: per question the water is tiny. But datacentres are concentrated, and the water comes out of one town's supply, not the world's. That makes it a local planning question: which site, which cooling design, which water source, and who gets told.",
+        "It also explains why the industry is moving to liquid cooling and closed loops, and why cold places keep pitching themselves to datacentre builders. In a cool climate, outside air does much of the cooling for free, so there is less need to choose between water and power. Watch the WUE figures in company reports: the companies that publish them per site, not just as a flattering average, are the ones taking the question seriously."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Multi-Datacenter Training, OpenAI's ambitious plan to beat Google's infrastructure (Sept 2024)",
+          "url": "https://newsletter.semianalysis.com/p/multi-datacenter-training-openais"
+        },
+        {
+          "label": "Microsoft: Sustainable by design, next-generation datacenters consume zero water for cooling (Dec 2024)",
+          "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2024/12/09/sustainable-by-design-next-generation-datacenters-consume-zero-water-for-cooling/"
+        },
+        {
+          "label": "Google Cloud: Measuring the environmental impact of AI inference (Aug 2025)",
+          "url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference"
+        },
+        {
+          "label": "Google 2026 Environmental Report",
+          "url": "https://sustainability.google/google-2026-environmental-report/"
+        },
+        {
+          "label": "AP via KSAT: Oregon city drops fight to keep Google water use private (Dec 2022)",
+          "url": "https://www.ksat.com/news/politics/2022/12/15/oregon-city-drops-fight-to-keep-google-water-use-private/"
+        },
+        {
+          "label": "Our brief: Meta is building its AI supercomputers in tents",
+          "url": "https://oslovibecoding.tech/brief/meta-is-building-its-ai-supercomputers-in-tents"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "google-s-new-top-ai-is-out-almost-nobody-can-use-it-yet",
   "status": "published",
   "datePublished": "2026-10-02",
