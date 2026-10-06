@@ -36,6 +36,104 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "ai-halved-a-recruiter-s-hiring-time-here-is-the-catch",
+  "status": "published",
+  "datePublished": "2026-10-06",
+  "title": "AI halved a recruiter's hiring time. Here is the catch",
+  "dek": "Companies are now putting monthly limits on how much AI their staff can use, so the obvious question is what they get for the money. The research firm SemiAnalysis asked more than 50 of them. The best answers are striking, and they come from a very particular kind of work.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "In June 2026 the research firm SemiAnalysis published what it heard from more than 50 large companies about their AI spending. Two examples of the payoff stand out. A recruiter at Amazon who finds and places senior engineers inside the company said the time from first screening call to joining a team used to be 6 to 9 months, and that AI tools which take interview notes and write up reports have cut it in half, to roughly 3 to 4.5 months by our arithmetic. An employee at a data and analytics firm that serves 85% of the Fortune 500 (America's 500 largest companies) said work that used to take a week now takes a few hours. These are things people told researchers, not measurements, and SemiAnalysis also notes a cost: when companies hand out big AI budgets, they expect more output, and many workers now put in longer hours. Proper studies give a mixed picture. A 2023 study of 5,179 call-centre agents found AI raised output by 14% on average and 34% for new staff, while a 2025 METR experiment found experienced programmers were 19% slower with AI on their own projects, even though they felt faster. AI pays off most on slow, paperwork-heavy work and for people still learning the job.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+  "sourceLabel": "Read SemiAnalysis on how 50+ companies budget for AI",
+  "about": "Concrete AI productivity gains reported to SemiAnalysis in its TokenBudgeting enterprise survey (June 2026): an Amazon recruiter halving a 6 to 9 month screening-to-placement process, an analytics employee turning week-long tasks into hours, per-employee AI budgets from $250 to $2,000+ a month, rising output expectations and longer hours, Anthropic's $150 to $250 average monthly Claude Code cost per developer, and the research precedent of the 2023 NBER call-centre study (14% average, 34% for novices) and METR's 2025 study finding experienced developers 19% slower with AI",
+  "keywords": [
+    "AI productivity",
+    "workplace AI",
+    "Amazon",
+    "recruiting",
+    "AI budgets",
+    "token budgeting",
+    "METR",
+    "Erik Brynjolfsson",
+    "SemiAnalysis",
+    "return on investment"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-halved-a-recruiter-s-hiring-time-here-is-the-catch.png",
+    "alt": "Diagram titled Where AI really saves time. Reported wins: Amazon recruiter, 6-9 months cut in half; analyst, a week of work in a few hours; new call-centre staff, 34% more output in a study. The catches: stories are self-reported, not measured; expert coders 19% slower in a METR study; bigger AI budgets bring bigger expectations. Caption: big wins on slow, paperwork-heavy jobs; experts on familiar work gain least.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis, NBER and METR",
+    "creditUrl": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Earlier this year some companies treated AI use itself as a sign of hard work. Meta staff competed on a leaderboard of who used the most, and Uber burned through its yearly AI coding budget in four months. By the middle of 2026 the mood had flipped: most big companies now give each employee a monthly AI allowance. That raises the question every finance department is asking. What are we actually getting for this?",
+        "SemiAnalysis, a research firm best known for tracking AI chips and datacentres, spoke to more than 50 companies over Slack, by phone and at the Databricks AI Summit, a big industry conference, and published what it found at the end of June. Most of the report is about budgets. Tucked in the middle are two of the clearest before-and-after stories we have seen."
+      ]
+    },
+    {
+      "heading": "The two wins",
+      "paragraphs": [
+        "The first is a recruiter at Amazon whose job is finding senior engineers and placing them on teams inside the company. They told SemiAnalysis that going from the first screening call to placing someone used to take 6 to 9 months. With AI tools that take notes during interviews and write up the reports afterwards, that time has been cut in half. By our arithmetic that is roughly 3 to 4.5 months. The AI did not do the judging. It took over the typing, summarising and chasing that sat between each step.",
+        "The second is an employee at a data and analytics company whose customers include 85% of the Fortune 500, America's 500 largest companies. Work that used to take them a week, they said, now takes a few hours.",
+        "For scale, the tools are not expensive by company standards. Budgets SemiAnalysis heard about ranged from $250 a month per employee at an aerospace and defence firm to around $2,000 at Workday and Stripe. Anthropic's own documentation puts the average cost of its Claude Code tool at $150 to $250 per developer per month. If AI saves even a few days of a well-paid person's time each month, the maths is easy."
+      ],
+      "pullquote": "\"The ROI, where it exists, can be dramatic\" (SemiAnalysis)"
+    },
+    {
+      "heading": "The fine print",
+      "paragraphs": [
+        "Notice the words \"where it exists\". These are stories that people told researchers, not measured results, and nobody outside checked them. Some companies in the same report had seen little gain: SemiAnalysis found much of the finance industry boxed into basic tools and barely using AI at all.",
+        "There is also a sting in the tail. SemiAnalysis reports that companies giving out generous AI budgets now expect output to rise to match, and that many workers have ended up putting in even longer hours than before. Saving time and getting time back are not the same thing. The time saved often goes straight into more work."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a sat-nav (GPS). In a city you have never visited it is transformative: it saves you wrong turns, arguments and an hour of driving. On your daily commute it does almost nothing, and if you follow it blindly it can even send you the long way round. AI at work behaves the same way. It shines on slow, unfamiliar or paperwork-heavy tasks, and adds much less where you already know every shortcut."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and the careful studies back up the sat-nav picture. In 2023 economists including Erik Brynjolfsson studied 5,179 customer-support agents as an AI assistant was rolled out. Issues resolved per hour rose 14% on average, and 34% for new and less-skilled agents, with little change for the most experienced. The AI was passing the best workers' know-how to the newest ones.",
+        "Then in July 2025 METR, a nonprofit that tests AI systems, ran a randomised experiment with 16 experienced open-source programmers working on 246 real tasks in projects they knew well. With AI tools they were 19% slower. The striking part: afterwards they believed AI had made them about 20% faster. Experts on familiar ground gained least, and felt the gain most. Tools have improved a lot since then, but the lesson about feelings versus stopwatches still holds."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The honest summary is that AI's payoff is real but lumpy. The biggest wins show up in the gaps between the real work: notes, write-ups, summaries, first drafts and the back-and-forth that makes a hiring process drag for months. They show up least where a skilled person is already fast.",
+        "For anyone deciding whether AI is worth it at their own job, the useful question is not \"is AI good?\" but \"where do my weeks actually go?\" If the answer is meetings, notes and reports, the Amazon recruiter's story is a realistic target. If it is deep expert work you already do well, measure before you believe the feeling. And if your company hands you a bigger AI budget, expect a bigger workload to come with it."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: TokenBudgeting, our conversations with 50+ enterprises (June 2026)",
+          "url": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations"
+        },
+        {
+          "label": "NBER: Generative AI at Work, Brynjolfsson, Li and Raymond (2023)",
+          "url": "https://www.nber.org/papers/w31161"
+        },
+        {
+          "label": "METR: Measuring the impact of early-2025 AI on experienced open-source developer productivity (July 2025)",
+          "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+        },
+        {
+          "label": "Our brief: Meta ranked its staff by how much AI they burned. It lasted two days",
+          "url": "https://oslovibecoding.tech/brief/meta-ranked-its-staff-by-how-much-ai-they-burned"
+        },
+        {
+          "label": "Our brief: Uber burned a year of AI budget in four months",
+          "url": "https://oslovibecoding.tech/brief/uber-burned-a-year-of-ai-budget-in-four-months"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "how-much-water-does-ai-really-drink",
   "status": "published",
   "datePublished": "2026-10-05",
