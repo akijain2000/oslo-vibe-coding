@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build Your First Website with AI | Participant Resources</title>
+  <style>
+    @font-face { font-family: "Space Grotesk"; src: url("assets/SpaceGrotesk700.woff2") format("woff2"); font-weight: 700; }
+    @font-face { font-family: "Geist"; src: url("assets/Geist400.woff2") format("woff2"); font-weight: 400; }
+    @font-face { font-family: "Geist Mono"; src: url("assets/GeistMono400.woff2") format("woff2"); font-weight: 400; }
+    :root { --night:#110f17; --ink:#16151c; --paper:#fbf7f0; --mist:#f3ede1; --ember:#ff5a2c; --ember-ink:#b8300c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Geist", Arial, sans-serif; line-height: 1.55; }
+    header { padding: 58px max(24px, calc((100vw - 980px) / 2)); background: var(--night); color: var(--paper); }
+    header p { margin: 0 0 14px; color: #ff7a4d; font-family: "Geist Mono", monospace; text-transform: uppercase; }
+    h1, h2 { font-family: "Space Grotesk", Arial, sans-serif; line-height: 1.04; }
+    h1 { max-width: 800px; margin: 0; font-size: 72px; }
+    main { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 58px 0 80px; }
+    section { padding: 32px 0; border-bottom: 1px solid rgba(22,21,28,.17); }
+    h2 { margin: 0 0 20px; font-size: 34px; }
+    ol, ul { padding-left: 24px; }
+    li { margin: 9px 0; }
+    pre { overflow-x: auto; padding: 22px; background: var(--mist); white-space: pre-wrap; font-family: "Geist Mono", monospace; line-height: 1.55; }
+    code { font-family: "Geist Mono", monospace; }
+    a { color: var(--ember-ink); text-underline-offset: 4px; }
+    .files { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .files a { display: block; padding: 18px; border: 1px solid rgba(22,21,28,.2); background: white; font-weight: 700; text-decoration: none; }
+    @media (max-width: 720px) { .files { grid-template-columns: 1fr; } h1 { font-size: 44px; } }
+  </style>
+</head>
+<body>
+  <header><p>Oslo Vibe Coding</p><h1>Build Your First Website with AI</h1></header>
+  <main>
+    <section>
+      <h2>Workshop files</h2>
+      <div class="files">
+        <a href="examples/oslo-hack-v1/index.html">Open Oslo Hack</a>
+        <a href="examples/oslo-hack-v2/index.html">Open Oslo Hack + FAQ</a>
+        <a href="assets/sample-project.jpg" download="photo.jpg">Download the workshop photo</a>
+      </div>
+      <p>Project files: <a href="oslo-hack-v1.zip" download>first version</a> / <a href="oslo-hack-v2.zip" download>version with FAQ</a>. Each ZIP contains the HTML, CSS, JavaScript, and photo.</p>
+      <p>Oslo Hack is a teaching example, not an announced event. Adapt the content and use photos you have permission to publish.</p>
+    </section>
+    <section>
+      <h2>Build prompt</h2>
+      <pre>Build a one-page website called Oslo Hack.
+It helps people in Oslo find others to build small projects with.
+Use photo.jpg. Colors: #110F17, #FBF7F0, #FF5A2C.
+Include navigation, a headline, an intro, Meet / Build / Share, and a footer.
+Add a button that shows and hides a short session plan.
+Use index.html, style.css, script.js, and photo.jpg. No libraries.
+Make it work on a phone. Do not add login, payments, or a database.
+First explain your plan and ask about missing information.</pre>
+      <p>After reviewing the plan: <strong>Go ahead. Build it and tell me how to preview it.</strong></p>
+    </section>
+    <section>
+      <h2>Check before publishing</h2>
+      <ul><li>The purpose is clear from the headline.</li><li>The photo and styles load.</li><li>The plan opens and closes.</li><li>The page fits a phone without sideways scrolling.</li><li>Links and keyboard navigation work.</li><li>No passwords, secret keys, or private information are included.</li></ul>
+      <p><a href="website-review-checklist.md" download>Download the reusable review checklist</a>. This is a plain instruction, not an installed skill. For packaged skills, review the source and use your tool's supported installation process. <a href="https://vercel.com/docs/agent-resources/skills">Vercel's agent skills directory</a>.</p>
+    </section>
+    <section>
+      <h2>Publish on Vercel through GitHub</h2>
+      <ol><li>Create a GitHub repository named <code>oslo-hack</code>.</li><li>Unzip the project. Add <code>index.html</code>, <code>style.css</code>, <code>script.js</code>, and <code>photo.jpg</code> at the repository root, not the ZIP itself. Commit the files.</li><li>In Vercel, choose New Project, connect GitHub, and import the repository.</li><li>For this plain-file example: use Framework Preset <strong>Other</strong>, override Build Command with an empty value, and set Output Directory to <code>.</code> (project root). A generated framework app needs its own detected framework settings instead.</li><li>Choose Deploy and open the deployment URL.</li><li>Test it in a private window and on a phone. If access is restricted, review deployment protection before sharing it publicly.</li></ol>
+      <p><a href="https://vercel.com/docs/getting-started-with-vercel">Vercel getting started</a> / <a href="https://vercel.com/docs/builds/configure-a-build#skip-build-step">Plain-file build settings</a> / <a href="https://vercel.com/docs/deployment-protection">Deployment protection</a>.</p>
+      <p>Alternative: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub Pages</a> can also host a static website.</p>
+    </section>
+    <section>
+      <h2>Make a focused change</h2>
+      <pre>Add a three-question FAQ below the content.
+Each answer opens when clicked.
+Keep the headline, photo, colors, and plan button unchanged.
+Check phone layout and keyboard access.
+Show me which files changed.</pre>
+      <p>Review locally, then commit the changed files to the connected GitHub repository. Vercel creates a new deployment. Open the live URL again and verify the update.</p>
+    </section>
+    <section>
+      <h2>Keep learning</h2>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">MDN Learn Web Development</a> explains the same HTML, CSS, JavaScript, testing, and publishing ideas in more depth.</p>
+      <p><a href="https://oslovibecoding.tech/">oslovibecoding.tech</a></p>
+    </section>
+  </main>
+</body>
+</html>

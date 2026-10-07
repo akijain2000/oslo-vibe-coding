@@ -212,6 +212,17 @@ export const articles: Article[] = [
           { label: "Join the WhatsApp community", url: "https://chat.whatsapp.com/JiCEzUuSJwBCuvYbk8E3IG" },
         ],
       },
+      {
+        heading: "Workshop presentation",
+        paragraphs: [
+          "Revisit the full 26-slide Build Your First Website with AI workshop, from website basics to building and publishing your own project. Open the interactive slides, read the PDF, or try the examples and prompts.",
+        ],
+        links: [
+          { label: "Open the 26-slide presentation", url: "/presentations/build-your-first-website-with-ai/index.html#/title" },
+          { label: "Read the slides as a PDF", url: "/presentations/build-your-first-website-with-ai/Build%20Your%20First%20Website.pdf" },
+          { label: "Workshop resources and examples", url: "/presentations/build-your-first-website-with-ai/resources.html" },
+        ],
+      },
     ],
   },
   {
