@@ -36,6 +36,195 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "europe-s-top-ai-lab-built-a-trillion-parameter-model",
+  "status": "published",
+  "datePublished": "2026-10-07",
+  "title": "Europe's top AI lab built a trillion-parameter model",
+  "dek": "Mistral, the French company that is Europe's best-known AI lab, has unveiled Mistral Large 4: its biggest model ever, trained entirely in its own European datacentres, with the full model promised as a free download by the end of October. Here is what is real, what is still a claim, and why Europe cares.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "On 6 October 2026 Mistral, the Paris-based AI company, released a public preview of Mistral Large 4, nicknamed \"le Chonk\". It has 1 trillion parameters (the adjustable numbers a model learns during training), of which 49 billion are used for any single word, a design called mixture-of-experts. Mistral says it trained the model from scratch on 3,800 Nvidia Grace Blackwell chips in its own datacentres in Europe, and that it will publish the weights (the full trained model, free to download and run yourself) by the end of October. For now only a paid preview API is open, at $1.36 per million input tokens and $4.18 per million output tokens. Mistral claims the model beats every open-weight model made in the US or Europe and ranks in the global top five on an independent cybersecurity index, but most benchmark numbers are Mistral's own and not yet checked by outsiders. Mistral itself names Chinese open models such as DeepSeek and Kimi as the competition, and its own human test still ranked Anthropic's Claude Opus 5 clearly ahead. The real story is sovereignty: a top-tier model that European companies and governments can run on their own machines under European law.",
+  "sourceUrl": "https://mistral.ai/news/mistral-large-4",
+  "sourceLabel": "Read Mistral's announcement of Mistral Large 4",
+  "about": "Mistral Large 4 public preview (6 Oct 2026): 1T total / 49B active parameter mixture-of-experts, natively multimodal, trained on 3,800 Nvidia Grace Blackwell GPUs in Mistral's European datacentres, weights promised by end of October 2026, preview API pricing, vendor-reported benchmarks in coding, agents, cybersecurity and visual grounding, European sovereignty pitch, and the precedent of Mistral Large 3 (675B, Apache 2.0, Dec 2025)",
+  "keywords": [
+    "Mistral",
+    "Mistral Large 4",
+    "open-weight AI",
+    "Europe",
+    "AI sovereignty",
+    "mixture of experts",
+    "cybersecurity",
+    "DeepSeek",
+    "Kimi",
+    "France"
+  ],
+  "heroImage": {
+    "src": "/brief/europe-s-top-ai-lab-built-a-trillion-parameter-model.png",
+    "alt": "Bar chart titled Europe's AI lab keeps building bigger. Total parameters: Mistral Large 2 (July 2024) 123 billion, Mistral Large 3 (December 2025) 675 billion, Mistral Large 4 (October 2026) 1,000 billion. Caption: Mistral Large 4 was trained in Mistral's own European datacentres; downloadable weights are promised by the end of October.",
+    "credit": "Oslo Vibe Coding, from Mistral's announcements",
+    "creditUrl": "https://mistral.ai/news/mistral-large-4"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Yesterday Mistral, the Paris company that has become Europe's flagship AI lab, opened a public preview of Mistral Large 4. Officially it is ML4. Unofficially, in Mistral's own words, it is \"le Chonk\". Anyone with a developer account can try it through Mistral's paid API today, and the company says it will release the full model for anyone to download by the end of this month.",
+        "The headline number is size. Large 4 has 1 trillion parameters, the adjustable numbers inside a model that get tuned during training, and roughly what people mean when they call one model \"bigger\" than another. It is Mistral's largest model by a wide margin, and it understands images as well as text from the ground up (\"natively multimodal\")."
+      ]
+    },
+    {
+      "heading": "The facts so far",
+      "paragraphs": [
+        "Large 4 is a mixture-of-experts model. Instead of one giant brain that wakes up fully for every word, it is a team of specialists, and only the relevant ones are called in each time. So although it holds 1 trillion parameters, only 49 billion do work on any given word. That keeps it far cheaper to run than its size suggests: the preview costs $1.36 per million tokens (chunks of text, roughly three quarters of a word each) going in and $4.18 per million coming out.",
+        "Mistral says it trained the model from scratch on 3,800 Nvidia Grace Blackwell chips in its own datacentres in Europe, and serves the preview from the same machines. More than 160 languages went into the training data, including every official language of the European Union.",
+        "Now the claims, which come from Mistral and have not yet been checked by outsiders. Mistral says Large 4 beats every open-weight model built in the US or Europe, scores 61.7% on a hard coding test called DeepSWE, and edges out OpenAI's GPT-6 Astra on one test of pointing to objects in busy images (42% against 41%). It names Chinese open models such as DeepSeek V4 Pro and Moonshot's Kimi K3 as the ones to beat, which tells you where the open-model race really is. And it is honest about the top: in its own blind human test of coding quality, Large 4 came second, clearly behind Anthropic's Claude Opus 5 (3.74 against 4.22 on a five-point scale)."
+      ],
+      "pullquote": "\"Forged in Europe. Built for AI sovereignty.\" (Mistral)"
+    },
+    {
+      "heading": "The cybersecurity twist",
+      "paragraphs": [
+        "The most striking claim is in cybersecurity. On the Artificial Analysis Cyber Index, an independent ranking of how well AI finds and fixes security flaws, Mistral says Large 4 sits in the global top five. On one test, reproducing a real software flaw and then patching it, Mistral reports 82%, the best of any model, while leading closed models such as Claude Opus 5.5 and GPT-6 Astra score near zero because they refuse to do it.",
+        "That cuts both ways, and it is worth saying plainly. Defenders often have to prove a flaw is real before they can fix it, and a model that refuses gets in their way. But a model that will do this work, and whose weights anyone can download, will also do it for attackers. Mistral says it is testing the model with security firms and state authorities before the weights go out. Watch what safeguards, if any, ship with the download."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of the difference between renting a car and owning one. Using ChatGPT or Claude is renting: it is excellent, but the company sets the rules, can change the price, and can take the keys back. An open-weight model is a car in your own garage. It may be a little slower than the best rental on the market, but nobody can switch it off, read your logbook or tell you where you may drive. For a hospital, a bank or a government, that difference can matter more than the last few points on a benchmark."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The direction is not new. In December 2025 Mistral released Large 3 with 675 billion parameters (41 billion active) under the Apache 2.0 licence, which lets anyone use it, even commercially. In September we covered Mistral raising around €3 billion and repositioning itself as Europe's AI infrastructure company. Large 4 is that plan arriving: bigger model, own datacentres, European law.",
+        "What is new is the scale and the honesty about the gap. A year ago the open-model frontier belonged almost entirely to Chinese labs. Large 4 is the first sign of a European model competing at their level, though by Mistral's own figures it is still behind the best closed American models. Two things are not yet known: the exact licence, and whether independent testers confirm the numbers once the weights are out."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For European organisations, and for Norway, which follows EU digital rules through the EEA, the practical question has been: if we want top-tier AI without sending our data to American or Chinese companies, what can we use? Until now the honest answer was \"something noticeably weaker\". If Large 4 holds up, the answer becomes \"something close to the best, that you can run yourself\".",
+        "The sober version: this is a preview, the benchmarks are the maker's own, and the weights are a promise for the end of the month. Check back in November. If the download arrives on time and outside testers agree with Mistral, this will be remembered as the moment Europe got a seat at the top table of AI."
+      ],
+      "links": [
+        {
+          "label": "Mistral: Introducing Mistral Large 4 (6 October 2026)",
+          "url": "https://mistral.ai/news/mistral-large-4"
+        },
+        {
+          "label": "Mistral: Introducing Mistral 3 (December 2025)",
+          "url": "https://mistral.ai/news/mistral-3"
+        },
+        {
+          "label": "Our brief: Europe's AI champion raised €3 billion and changed its job",
+          "url": "https://oslovibecoding.tech/brief/europe-s-ai-champion-raised-3-billion-and-changed-its-job"
+        },
+        {
+          "label": "Our brief: China just gave away a top-3 AI model for free",
+          "url": "https://oslovibecoding.tech/brief/china-just-gave-away-a-top-3-ai-model-for-free"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "how-a-big-ai-teaches-a-small-one",
+  "status": "published",
+  "datePublished": "2026-10-07",
+  "title": "How a big AI teaches a small one",
+  "dek": "Many of the AI models on your phone or laptop were taught by a much bigger model they will never meet. The trick is called distillation. It rescued Meta's most troubled AI, it powered DeepSeek's breakout, and it is now at the centre of a fight between American and Chinese labs.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "Distillation means training a small AI model on the answers of a big one. The idea was published in 2015 by Geoffrey Hinton, Oriol Vinyals and Jeff Dean at Google. The small \"student\" learns from the big \"teacher's\" answers and from how confident it was about each, which teaches far more per example than a plain right-or-wrong label. Meta used it in 2025 to rescue value from Llama 4 Behemoth, a nearly 2-trillion-parameter model that the research firm SemiAnalysis says suffered from flawed design choices and messy data: Meta says it distilled its Maverick model from Behemoth, and SemiAnalysis reports Scout was distilled too, adding that distillation is far more efficient than reinforcement learning (trial-and-error training) for small models. In January 2025 DeepSeek released six small models distilled from its R1 reasoning model, and found that distilling beat training small models with reinforcement learning directly. Distillation is legitimate and everywhere, but it has a dark side: in February 2026 Anthropic accused DeepSeek, Moonshot and MiniMax of using about 24,000 fake accounts and over 16 million conversations to distil its Claude models without permission. The catch: a student is rarely better than its teacher.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data",
+  "sourceLabel": "Read SemiAnalysis on Meta's Llama 4 Behemoth",
+  "about": "Knowledge distillation explained for a general audience: Hinton, Vinyals and Dean's 2015 paper, soft targets, Meta distilling Llama 4 Maverick (and per SemiAnalysis, Scout) from the flawed Llama 4 Behemoth, SemiAnalysis's view that distillation beats reinforcement learning for small models, DeepSeek's six R1-distilled Qwen and Llama models (January 2025), and Anthropic's February 2026 allegation of 'distillation attacks' by DeepSeek, Moonshot and MiniMax (24,000 fraudulent accounts, 16 million exchanges)",
+  "keywords": [
+    "distillation",
+    "knowledge distillation",
+    "small AI models",
+    "Meta",
+    "Llama 4 Behemoth",
+    "DeepSeek",
+    "Anthropic",
+    "Geoffrey Hinton",
+    "SemiAnalysis",
+    "teacher-student"
+  ],
+  "heroImage": {
+    "src": "/brief/how-a-big-ai-teaches-a-small-one.png",
+    "alt": "Diagram titled How a big AI teaches a small one. Three steps: a huge teacher answers and says how sure it is; a small student trains on those answers; the result is a fast, cheap model for your phone. Caption: the student copies the teacher's answers and how sure it was, so it learns far faster than starting from scratch.",
+    "credit": "Oslo Vibe Coding, from Hinton et al., Meta, DeepSeek and SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "In April 2025 Meta announced Llama 4 Behemoth, its biggest AI model ever: nearly 2 trillion parameters (the adjustable numbers a model learns during training). It never shipped to the public. According to SemiAnalysis, a research firm that tracks the AI industry, the training run went wrong in several ways: Meta switched how the model routes work between its internal specialists halfway through, which left it meaningfully worse, and it switched to a new, poorly cleaned source of web data mid-run.",
+        "Yet Meta did not throw it away. It used Behemoth as a teacher. Meta says it \"codistilled\" its smaller Llama 4 Maverick model from Behemoth, and SemiAnalysis reports that Scout, the smallest, was distilled from it too. In SemiAnalysis's words, \"distillation is far more efficient than reinforcement learning for smaller models\"."
+      ]
+    },
+    {
+      "heading": "How distillation works",
+      "paragraphs": [
+        "Normally an AI learns from examples with a single right answer: this photo is a cat, the next word is \"Paris\". Distillation adds a teacher. You ask a big, expensive model a huge number of questions, record its answers, and train a small model to copy them.",
+        "The clever part, described by Geoffrey Hinton, Oriol Vinyals and Jeff Dean at Google in a 2015 paper, is to copy more than the final answer. A big model does not just say \"cat\". It says something like 90% cat, 9% fox, 1% car. That spread is information. It tells the student that cats and foxes look alike and that cars do not, something a plain \"correct answer: cat\" never teaches. So the student learns far more from each example and needs much less training to get good.",
+        "The reward is speed and cost. A small model can run on a laptop or phone, answer in a fraction of a second, and cost a sliver of what the teacher costs to run. Many of the cheap \"mini\" and \"flash\" models you use every day are built this way."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture learning to cook. You could spend years experimenting alone, burning dishes until you work out what goes wrong. That is roughly reinforcement learning, trial and error with a score at the end. Or you could stand beside a master chef for a month, watching what they do and hearing them mutter \"nearly there, a touch more salt, definitely not yet\". You will not become as good as the chef, but you will get surprisingly close, surprisingly fast. The muttering, the teacher's confidence, is what makes distillation work."
+      ],
+      "pullquote": "A student rarely beats its teacher. But a cheap student that is nearly as good is often all you need."
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No. The core idea is more than ten years old, and it went mainstream in January 2025 when the Chinese lab DeepSeek released its R1 reasoning model along with six small versions, from 1.5 to 70 billion parameters, built on Alibaba's Qwen and Meta's Llama models and trained on R1's answers. DeepSeek reported that distilling worked better than training those small models with reinforcement learning directly, and that its 32-billion-parameter student beat OpenAI's o1-mini on several benchmarks, by DeepSeek's own measurements.",
+        "What is newer is the fight. Labs happily distil their own models, but a teacher's answers can also be harvested by someone else. In February 2026 Anthropic said three Chinese labs, DeepSeek, Moonshot and MiniMax, had used about 24,000 fake accounts to hold more than 16 million conversations with Claude, in breach of its terms, to train their own models. MiniMax alone accounted for over 13 million, according to Anthropic. These are Anthropic's allegations, and the labs involved did not confirm them. Anthropic itself calls distillation \"a widely used and legitimate training method\"; the dispute is about whose teacher you are allowed to learn from."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "Distillation explains two things that look puzzling from the outside. First, why companies spend fortunes on giant models they barely release: the giant is often the teacher, and the money is made on its smaller, cheaper students. Second, why a lab that falls behind can catch up so fast: if you can learn from a leader's answers, you skip much of the expensive trial and error.",
+        "There is a limit, and SemiAnalysis names it. Meta's students were \"still bound by the limitations of their source\" and were not best in class for their size. A copy inherits its teacher's blind spots. That is why the race at the very top is still about building better teachers, and why the companies that own the best ones are now guarding them so carefully."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Meta Superintelligence, leadership, compute, talent and data (July 2025)",
+          "url": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+        },
+        {
+          "label": "Hinton, Vinyals and Dean: Distilling the Knowledge in a Neural Network (2015)",
+          "url": "https://arxiv.org/abs/1503.02531"
+        },
+        {
+          "label": "Meta: The Llama 4 herd (April 2025)",
+          "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+        },
+        {
+          "label": "DeepSeek-R1 on GitHub, including the distilled models (January 2025)",
+          "url": "https://github.com/deepseek-ai/DeepSeek-R1"
+        },
+        {
+          "label": "Anthropic: Detecting and preventing distillation attacks (February 2026)",
+          "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+        },
+        {
+          "label": "Our brief: Meta is building its AI supercomputers in tents",
+          "url": "https://oslovibecoding.tech/brief/meta-is-building-its-ai-supercomputers-in-tents"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "ai-halved-a-recruiter-s-hiring-time-here-is-the-catch",
   "status": "published",
   "datePublished": "2026-10-06",
