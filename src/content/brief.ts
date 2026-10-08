@@ -36,6 +36,193 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "finland-just-paused-google-s-biggest-european-ai-build",
+  "status": "published",
+  "datePublished": "2026-10-08",
+  "title": "Finland just paused Google's biggest European AI build",
+  "dek": "A month after Google announced a €13 billion AI infrastructure plan in Finland, a Finnish regulator has ordered work at two sites to stop until the legally required environmental reviews are done. It is a small order with a big signal for the Nordics, Norway included.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 4,
+  "takeaway": "On 7 October 2026 Finland's Licensing and Supervision Authority (LVV), the agency responsible for environmental oversight, ordered Tuike Finland, the company representing Google, to suspend immediately, and no later than 23 October, all preparatory work that would significantly alter the environment at two planned data centre sites in Muhos and Kajaani in northern Finland, until mandatory environmental impact assessments are completed. LVV says trees were removed, topsoil stripped, roads and storage areas built and ditches altered. The chair of the Finnish Association for Nature Conservation told AFP that more than 300 hectares had been logged, including nature sites that should have been preserved. Google acknowledged shortcomings and said it will follow the regulator's guidance. The sites are part of a €13 billion plan announced in September that Google calls its single biggest investment in Europe, backed by a 22-year deal for up to half the output of Finland's Loviisa nuclear plant. The pause is procedural, not a cancellation, but it shows the Nordic welcome mat for AI data centres now comes with conditions.",
+  "sourceUrl": "https://www.aljazeera.com/news/2026/10/7/finland-orders-halt-to-work-on-google-data-sites-over-environment-concerns",
+  "sourceLabel": "Read the AFP/Reuters report via Al Jazeera",
+  "about": "Finland's LVV ordering a halt (7 Oct 2026) to environmentally significant preparatory work at Google's planned data centre sites in Muhos and Kajaani pending environmental impact assessments; Google's €13 billion Finland plan (Sept 2026), the Loviisa nuclear power deal, Nordic data centre politics and power demand, and the 2024 Chile precedent",
+  "keywords": [
+    "Google",
+    "Finland",
+    "data centres",
+    "environmental impact assessment",
+    "Nordics",
+    "Norway",
+    "AI infrastructure",
+    "energy",
+    "Loviisa",
+    "Muhos",
+    "Kajaani"
+  ],
+  "heroImage": {
+    "src": "/brief/finland-just-paused-google-s-biggest-european-ai-build.png",
+    "alt": "Flow diagram titled Finland hits pause on Google. Three steps: September, €13 billion Finland plan; more than 300 hectares of forest cleared; 7 October, work ordered to stop. Caption: A regulator says the environmental review comes before the bulldozers, not after.",
+    "credit": "Oslo Vibe Coding, from AFP and Reuters reporting",
+    "creditUrl": "https://www.aljazeera.com/news/2026/10/7/finland-orders-halt-to-work-on-google-data-sites-over-environment-concerns"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Yesterday a Finnish government agency told Google to put down the chainsaws. The Licensing and Supervision Authority, known as LVV, ordered the company building two of Google's planned data centres in northern Finland to stop all work that significantly changes the landscape until the compulsory environmental impact assessments are finished. A data centre is the giant warehouse of computers where AI models are trained and run.",
+        "The order covers sites in Muhos and in the city of Kajaani. The company named is Tuike Finland, which represents Google on the projects. It must stop immediately, and no later than 23 October, explain itself by 14 October, and could face enforcement proceedings if it does not comply."
+      ]
+    },
+    {
+      "heading": "The facts so far",
+      "paragraphs": [
+        "In September Google announced a €13 billion (about $14.6 billion) investment in digital infrastructure in Finland over two years to power its AI ambitions, with data centre projects in Muhos, Vaala, Kajaani and Hamina. Google calls it its single biggest investment in Europe. Part of the deal is a 22-year agreement to buy up to half the electricity from Finland's Loviisa nuclear plant, which extends the plant's expected life from 2030 to 2050.",
+        "LVV has been investigating whether hundreds of hectares of forest were cleared without the required assessment. Its environment chief, Tommi Muilu, listed what happened on site: trees removed, topsoil stripped, roads and storage areas built, ditches altered. Hanna Halmeenpaa, who chairs the Finnish Association for Nature Conservation, told AFP that more than 300 hectares had been logged, including \"nature sites which should be preserved\". That figure is hers, not the regulator's.",
+        "Google's response was unusually contrite. A spokesperson acknowledged the shortcomings, said Google would \"study the LVV's findings and follow their guidance\", and pointed to plans to plant trees across 130 hectares at Muhos."
+      ],
+      "pullquote": "Google says it will \"study the LVV's findings and follow their guidance\"."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of building an extension on your house. You need planning permission first. If you dig the foundations and pour concrete before the paperwork is approved, the council can make you stop, even if they would probably have said yes. That is what happened here. Finland has not said no to Google. It has said: do it in the right order."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Google in Finland is not new at all. Its Hamina data centre, built in a converted paper mill on the coast, has run for more than a decade, and the Nordics have long been a magnet for data centres thanks to the cold climate, cheap low-carbon power and reliable grids. Nor is a paused Google build: in September 2024 Google halted plans for a $200 million data centre in Chile after a local fight over its environmental impact.",
+        "What is new is the mood. AI data centres are far bigger and hungrier than the ones that came before, and Nordic politicians are now asking harder questions. Just last month Finnish opposition parties called for a national permit system to protect against power shortages and soaring electricity prices. Both the Centre Party and the Social Democrats said they welcome the investment but worry about what it does to power demand."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "Keep it in proportion. This is a pause on site preparation at two locations while paperwork is completed, not a cancelled project, and Google says it will comply. The money, the nuclear deal and the plan are all still standing.",
+        "But the signal matters, especially for us in Norway, which is courting the same AI builders with the same pitch of cool air and clean power. The Nordic offer to Big Tech used to be close to unconditional. Now regulators are showing they will enforce the rules, and voters are asking who pays when data centres push up power prices. For the AI industry, that means building in the Nordics will be slower and more careful. For the rest of us, it is a reminder that the AI boom is not just in the cloud. It is in forests, grids and town planning offices."
+      ],
+      "links": [
+        {
+          "label": "Al Jazeera (AFP/Reuters): Finland orders halt to work on Google data centre sites (7 October 2026)",
+          "url": "https://www.aljazeera.com/news/2026/10/7/finland-orders-halt-to-work-on-google-data-sites-over-environment-concerns"
+        },
+        {
+          "label": "Euronews: Finland orders pause on Google AI data centres (7 October 2026)",
+          "url": "https://www.euronews.com/2026/10/07/finland-orders-pause-on-google-ai-data-centre-over-environmental-concerns"
+        },
+        {
+          "label": "CBS News: Google halts plan for $200 million data center in Chile (September 2024)",
+          "url": "https://www.cbsnews.com/sanfrancisco/news/google-ai-artificial-intelligence-data-center-chile/"
+        },
+        {
+          "label": "Our brief: Blaming AI for your power bill is half the story",
+          "url": "https://oslovibecoding.tech/brief/blaming-ai-for-your-power-bill-is-half-the-story"
+        },
+        {
+          "label": "Our brief: 300 American towns banned datacenters. Three projects were delayed",
+          "url": "https://oslovibecoding.tech/brief/300-american-towns-banned-datacenters-three-projects-were-delayed"
+        }
+      ]
+    }
+  ]
+},
+{
+  "slug": "the-youtube-data-problem-nobody-talks-about",
+  "status": "published",
+  "datePublished": "2026-10-08",
+  "title": "The YouTube data problem nobody talks about",
+  "dek": "Chips and talent get the headlines, but one of the quietest advantages in AI is simply owning the right pile of data. Video is the prize, and SemiAnalysis says Meta, one of the richest companies on earth, went without it.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "In its July 2025 deep dive on Meta's AI troubles, the research firm SemiAnalysis reported that unlike all other leading AI labs, including OpenAI and DeepSeek, Meta does not use YouTube data, and suggested this may be why Meta struggled to build a strong multimodal model (one that understands images, video and sound, not just text). Google, which owns YouTube, confirmed to CNBC in June 2025 that it trains its Gemini models and its Veo 3 video generator on a subset of YouTube's roughly 20 billion videos. The New York Times reported in 2024 that OpenAI transcribed more than a million hours of YouTube video to help train GPT-4, and a 2024 Proof News investigation found subtitles from 173,536 YouTube videos inside a dataset used by Apple, Nvidia, Anthropic and others. YouTube says scraping its videos breaks its rules, so this is legally and ethically contested ground. The lesson for everyone else: in AI, data you own outright is a moat that money cannot instantly buy, which is partly why Meta paid around $14 billion for 49% of the data company Scale AI.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data",
+  "sourceLabel": "Read SemiAnalysis: Meta Superintelligence: leadership, compute, talent and data",
+  "about": "Why owning video data, especially YouTube, is a hidden advantage in AI: SemiAnalysis's report that Meta does not use YouTube data and struggled with multimodal models; Google training Gemini and Veo 3 on YouTube (CNBC, June 2025); OpenAI transcribing 1M+ hours of YouTube for GPT-4 (NYT, April 2024); the YouTube Subtitles dataset (Proof News/Wired, July 2024); YouTube's terms of service; Meta's Scale AI deal",
+  "keywords": [
+    "YouTube",
+    "training data",
+    "multimodal AI",
+    "Meta",
+    "Google",
+    "Gemini",
+    "Veo 3",
+    "OpenAI",
+    "Whisper",
+    "Scale AI",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/the-youtube-data-problem-nobody-talks-about.png",
+    "alt": "Comparison diagram titled Who trains on YouTube? Left, uses YouTube data: Google (owns it, about 20 billion videos), OpenAI (more than a million hours transcribed), DeepSeek. Right, does not: Meta, weaker at images and video, bought data help from Scale AI. Caption: Video teaches AI how the world looks, moves and sounds. Meta sat that lesson out.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis, CNBC and The New York Times",
+    "creditUrl": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "When people explain who is winning in AI, they usually talk about chips and talent. Who has the most Nvidia GPUs (the graphics chips AI runs on)? Who poached the best researchers? Those matter. But buried in a long SemiAnalysis report on Meta's AI struggles is a quieter reason one of the richest companies in the world fell behind: it did not have the right homework to learn from.",
+        "SemiAnalysis, an independent research firm that tracks the AI industry closely, wrote that \"unlike all other leading AI labs including OpenAI and Deepseek, Meta does not utilize YouTube data\". It added that YouTube lecture transcripts and other videos are an incredible source of data, and that Meta \"may have struggled to produce a multimodal model without the data\". Multimodal means a model that understands more than text: pictures, video and sound too."
+      ]
+    },
+    {
+      "heading": "The facts so far",
+      "paragraphs": [
+        "Start with who has the video. Google owns YouTube, and in June 2025 it confirmed to CNBC that it trains its Gemini models and its Veo 3 video generator on YouTube content. Google said it uses only a subset of the roughly 20 billion videos on the platform and honours its agreements with creators and media companies. Creators CNBC spoke to said they had not known, and there is no way for them to opt out of Google's own training.",
+        "Others got at it from outside. In April 2024 The New York Times reported that OpenAI built its speech-to-text tool Whisper partly to transcribe more than a million hours of YouTube video into text for training GPT-4. In July 2024 a Proof News investigation, co-published with Wired, found a dataset called YouTube Subtitles, holding transcripts from 173,536 videos across more than 48,000 channels, used by companies including Apple, Nvidia and Anthropic. YouTube's chief executive Neal Mohan has said that using its videos to train AI without permission would be a \"clear violation\" of its rules.",
+        "Meta, by SemiAnalysis's account, stayed out. It relied on public web text, then switched partway through training its giant Llama 4 Behemoth model to a web crawler it had built itself, and struggled to clean the new data. Behemoth was never released."
+      ],
+      "pullquote": "\"YouTube lecture transcripts and other videos are an incredible source for data.\" (SemiAnalysis)"
+    },
+    {
+      "heading": "Why video is so valuable",
+      "paragraphs": [
+        "Text tells a model what people say about the world. Video shows it what the world actually does: how a glass tips over, how a hand ties a knot, how a voice rises when someone is surprised, how a lecturer walks through a proof on a whiteboard. If you want an AI that can watch, listen and generate realistic footage, you need an enormous amount of real footage to learn from.",
+        "And YouTube is unusually good footage. Much of it is people explaining things on purpose, with speech that lines up with what is on screen, plus titles, chapters and captions that act as free labels. That combination of picture, sound and description is exactly what multimodal models are hungry for."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine two cooking students with the same talent and the same expensive kitchen. One has spent years watching thousands of chefs on video, seeing every chop and every pan flip. The other has only read cookbooks. Give them both a new dish and the first one will move like a cook; the second will know the words but fumble the knife. Meta built a world-class kitchen. SemiAnalysis's point is that it was learning mostly from the cookbooks."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Data moats are an old idea. Google search got better because it saw more searches than anyone else, and that loop was hard to copy. What has changed is that the most valuable data is no longer only clicks and text but video, and video is far harder to collect at scale without owning a platform.",
+        "It also explains a few moves that looked odd at the time. In June 2025 Meta paid around $14 billion for 49% of Scale AI, a company that organises and labels training data, and hired its chief executive, Alexandr Wang. SemiAnalysis read that as a direct attempt to fix Meta's data problems, rather than a consolation prize."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "Two honest caveats. First, this is one well-sourced analyst report, not something Meta has confirmed, and it describes Meta in mid-2025; Meta may have changed course since. Second, scraping YouTube is contested ground. Some of what gave rivals an edge may have broken YouTube's rules, and lawsuits over training data are still working their way through courts.",
+        "The bigger lesson holds either way. In AI, money can buy chips within months and buy researchers within weeks, but a decade of the world filming itself is not for sale. The companies that own that kind of data, Google above all, have an advantage that rarely makes the headlines. Next time someone ranks the AI race only by chips and salaries, ask who owns the video."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Meta Superintelligence: leadership, compute, talent and data (July 2025)",
+          "url": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+        },
+        {
+          "label": "CNBC: Google is using YouTube videos to train its Gemini, Veo 3 AI models (June 2025)",
+          "url": "https://www.cnbc.com/2025/06/19/google-youtube-ai-training-veo-3.html"
+        },
+        {
+          "label": "Proof News coverage via Quartz: Apple, Nvidia, Anthropic trained on YouTube subtitles (July 2024)",
+          "url": "https://qz.com/apple-nvidia-anthropic-salesforce-tech-train-ai-youtube-1851595164"
+        },
+        {
+          "label": "Our brief: How a big AI teaches a small one",
+          "url": "https://oslovibecoding.tech/brief/how-a-big-ai-teaches-a-small-one"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "europe-s-top-ai-lab-built-a-trillion-parameter-model",
   "status": "published",
   "datePublished": "2026-10-07",
