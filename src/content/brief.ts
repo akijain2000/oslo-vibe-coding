@@ -36,6 +36,91 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "same-200-five-times-the-ai",
+  "status": "published",
+  "datePublished": "2026-10-09",
+  "title": "Same $200, five times the AI",
+  "dek": "SemiAnalysis bought the top AI subscriptions and measured how far each one really stretches. On the models most people use every day, a $200 Claude plan went about five times further than a $200 ChatGPT plan. The bigger lesson is that nobody tells you the real size of what you are buying.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "SemiAnalysis, a firm that studies the economics of AI and chips, published a study on 5 October 2026 measuring the hidden usage limits of AI subscriptions by running controlled experiments and watching each plan's usage meter. On a $200-a-month plan running coding-agent style work, Claude Opus 5.5 delivered about $11,726 of usage at pay-as-you-go prices, against about $2,084 for OpenAI's GPT-6.1 Sol: roughly 5.6 times more. On the top flagship models the two companies are close (about $2,897 for GPT-6 Astra vs $2,485 for Claude Fable 5.1, which can only use half the plan). OpenAI halved the value of its $200 plan last week and added a $500 tier. SemiAnalysis estimates subscriptions bring Anthropic about 10% of revenue but use about 42% of its computing power, and it caught one lab quietly testing lower limits on a small group of accounts. All figures are SemiAnalysis estimates.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
+  "sourceLabel": "Read the SemiAnalysis subscription study",
+  "about": "SemiAnalysis's October 2026 measurement of AI subscription usage limits across Anthropic, OpenAI and other labs; API-equivalent value of $20, $100 and $200 plans; OpenAI's $200 plan cut and new $500 tier; the subsidy economics of AI subscriptions",
+  "keywords": [
+    "AI subscription",
+    "Claude Max",
+    "ChatGPT Pro",
+    "Anthropic",
+    "OpenAI",
+    "SemiAnalysis",
+    "tokens",
+    "usage limits",
+    "AI pricing",
+    "Opus 5.5",
+    "GPT-6.1 Sol"
+  ],
+  "heroImage": {
+    "src": "/brief/same-200-five-times-the-ai.png",
+    "alt": "SemiAnalysis bar chart titled GPT-6.1 Sol and Claude Opus 5.5: API value by plan. At $200 a month, ChatGPT Pro 200 is worth $2,084 and Claude Max 20x $11,726. At $100, $1,055 vs $5,725. At $20, ChatGPT Plus $211 vs Claude Pro $1,178. Agentic workload.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "When you buy an AI subscription you get a usage meter that goes from 0 to 100%, and that is about it. You are never told how much AI is actually behind that bar. This week SemiAnalysis (a research firm that studies the economics of AI and chips) published the most careful attempt yet to find out.",
+        "They bought the plans from Anthropic (maker of Claude), OpenAI (maker of ChatGPT) and several others, then fed each one carefully designed requests and watched how far the meter moved. From that they worked out the full monthly allowance of every plan, and priced it at the API rate, the pay-as-you-go price developers pay per token (a token is a small chunk of text, roughly a word-piece). That gives one comparable number per plan: how much AI you could get for the flat fee."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "On the mid-tier models that both companies sell as the everyday workhorse, the gap is big. Running the kind of long coding-agent sessions SemiAnalysis itself uses, a $200 Claude Max plan with Opus 5.5 came out at about $11,726 of usage a month. A $200 ChatGPT Pro plan with GPT-6.1 Sol came out at about $2,084. The pattern holds at every price: $5,725 vs $1,055 at $100, and $1,178 vs $211 at $20. That is roughly five times more.",
+        "On the top flagship models the picture is close. GPT-6 Astra on the $200 ChatGPT plan reached about $2,897; Claude Fable 5.1 on the $200 Claude plan about $2,485. The catch SemiAnalysis points out: Fable may only use half of a Claude plan, so the other half is still there for Opus.",
+        "The timing matters. Last week OpenAI cut the value of its $200 plan in half and launched a new $500 tier, which by SemiAnalysis's numbers gives only about 21% more Astra than the old $200 plan did. People who bought the $200 plan before the cut keep the old limits until 29 October.",
+        "Two fair caveats from the study itself. OpenAI's Pro plans have no five-hour cap, which makes it easier to actually use your whole monthly allowance. And nobody has good data yet on token efficiency, meaning how many tokens each model needs to finish the same job. A model that solves a task in fewer words is worth more per token. All of the numbers are SemiAnalysis estimates, not company figures."
+      ],
+      "pullquote": "Same $200 plan: about $11,700 of Opus 5.5, about $2,100 of GPT-6.1 Sol."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of two mobile phone plans, both sold as \"unlimited\" for the same price. One quietly slows you down after 10 GB, the other after 50 GB. Neither puts that number on the box. The only way to find out is to use them side by side and watch where the brakes come on. That is what SemiAnalysis did, and it is why the headline price of an AI plan tells you so little."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The idea that subscriptions are a bargain is not new. We covered it in July, when SemiAnalysis estimated a $200 Claude plan was worth around $8,000 of tokens and a $200 ChatGPT plan up to about $14,000. Back then OpenAI was the generous one, and developers loved it for that. In three months the ranking has flipped.",
+        "What is new is the evidence that the size of your plan can change under you. During testing, one of three identical accounts had about 20% lower limits than the others. The provider told SemiAnalysis it was an \"extremely tiny\" A/B test (a trial where some customers get a different version) of how to balance limits. Harmless or not, it shows companies can resize what you pay for without saying a word."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "Why do the labs give so much away? Because subscriptions are a marketing engine, and an expensive one. SemiAnalysis estimates subscriptions bring Anthropic only about 10% of its revenue while eating about 42% of its computing power. If someone maxed out Opus 5.5 every month, Anthropic would lose money on them many times over; the plans work because the average subscriber uses far less. Both companies are now steering toward better margins in different ways: Anthropic gives smaller allowances on its newest, most expensive models, while OpenAI simply cut limits across the board.",
+        "For you, three practical points. If you code with AI every day, the plan and the model you pick matter more than the price tag, so compare what you actually use. Treat today's generous limits as a promotion, not a promise; they move. And keep an eye on independent measurements like this one, because the companies do not publish the real numbers. A fair disclosure: we use AI tools from several labs, Claude included, to help produce these briefs. The figures here are SemiAnalysis's, not ours or Anthropic's."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis: Anthropic Subscriptions Offer 5x+ More Value Than OpenAI (5 October 2026)",
+          "url": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x"
+        },
+        {
+          "label": "SemiAnalysis podcast Ep. 036: Anthropic Subscriptions Beat OpenAI 5x (YouTube)",
+          "url": "https://www.youtube.com/watch?v=2NviLP2SwZI"
+        },
+        {
+          "label": "Our brief: Is your AI subscription secretly a steal? (July 2026)",
+          "url": "https://oslovibecoding.tech/brief/is-your-ai-subscription-a-steal"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "finland-just-paused-google-s-biggest-european-ai-build",
   "status": "published",
   "datePublished": "2026-10-08",
