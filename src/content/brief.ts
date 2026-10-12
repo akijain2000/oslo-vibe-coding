@@ -36,6 +36,94 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "ai-borrowing-is-about-to-pass-america-s-car-loans",
+  "status": "published",
+  "datePublished": "2026-10-12",
+  "title": "AI borrowing is about to pass America's car loans",
+  "dek": "SemiAnalysis has set up a team to follow the loans behind the AI buildout rather than the chips. Its numbers: about $11 trillion of spending by 2029, roughly $7 trillion of it borrowed, and new AI debt this year on track to overtake new car loans. The strange part is that the collateral, a three-year-old chip, has been getting dearer to rent, not cheaper.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 9 October 2026 SemiAnalysis published an 83-minute podcast episode, \"Who's Funding the $11 Trillion AI Buildout?\", launching its Compute Capital Markets group under analyst Daniel Nishball. The firm's model puts cumulative AI spending at about $11.3 trillion from 2024 to 2029 and AI-related debt outstanding at roughly $7 trillion by 2029, which would make it the second-largest asset-backed debt market after US mortgages. On its chart, the amount of new AI debt raised per year crosses new US car loans and student loans in 2026, and Nishball says 2026 is the last year AI debt stays under 10% of all US debt issuance. Nvidia's guarantees to GPU-rental companies now total about $497 billion across seven kinds of commitment, enough, SemiAnalysis estimates, to stand behind 46 gigawatts of the roughly 240 gigawatts it expects to come online. Meanwhile the H100, Nvidia's 2023 workhorse chip, is renting for more than it did a year ago: one-year rates bottomed below $1.40 an hour in autumn 2025 and are now near $2.50 to $3, above the depreciation curve lenders underwrite against. All figures are SemiAnalysis estimates and projections except the household-debt numbers, which are the New York Fed's for Q2 2026.",
+  "sourceUrl": "https://www.youtube.com/watch?v=XlnyFCviN4o",
+  "sourceLabel": "Watch the SemiAnalysis episode",
+  "about": "SemiAnalysis Ep. 037 (9 October 2026) on who funds the AI buildout: the $11.3 trillion capex model, $7 trillion of AI debt by 2029, AI debt issuance passing US auto loans and student loans, 10% of US issuance, Nvidia's $497 billion of backstops, H100 rental prices rising above the depreciation curve, and what it means for lenders",
+  "keywords": [
+    "AI debt",
+    "SemiAnalysis",
+    "Nvidia backstop",
+    "H100 rental prices",
+    "Neoclouds",
+    "AI capex",
+    "auto loans",
+    "GPU financing",
+    "Compute Capital Markets",
+    "bond market"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-borrowing-is-about-to-pass-america-s-car-loans.png",
+    "alt": "Bar chart titled AI borrowing is about to pass America's car loans: US credit card debt $1.26T, student loans $1.65T and auto loans $1.71T today, next to SemiAnalysis's projection of $7T of AI debt outstanding by 2029. Caption: new AI debt per year crosses new car loans in 2026; only mortgages at $13T stay bigger.",
+    "credit": "Oslo Vibe Coding, from SemiAnalysis and the New York Fed",
+    "creditUrl": "https://www.youtube.com/watch?v=XlnyFCviN4o"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 9 October SemiAnalysis, the semiconductor and AI research firm whose work we draw on most weeks, released an 83-minute episode of its weekly podcast titled \"Who's Funding the $11 Trillion AI Buildout?\". It marks the launch of a new team inside the firm, the Compute Capital Markets group, led by analyst Daniel Nishball, whose job is to follow the loans rather than the chips. Jordan Nanos, who runs the firm's tracking of GPU rental prices, joins him with the rental data.",
+        "The one-line pitch, from the episode's own description: \"AI debt is about to pass auto loans.\" The argument underneath it is that the thing holding the AI buildout back has changed. In 2024 it was chips, and especially memory. In 2025 it was data-centre space and electricity. By 2027 or 2028, the two argue, those are largely solved, and what limits the buildout is financing: who will lend the next trillion dollars, at what interest rate, against what collateral."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The scale, per SemiAnalysis's model: about $11.3 trillion of cumulative AI spending from 2024 to 2029 (chips, servers, networking and the buildings that hold them, across the big cloud companies, independent data-centre operators and the GPU-rental firms it calls neoclouds), and roughly $7 trillion of AI-related debt outstanding by 2029. For comparison, the Federal Reserve Bank of New York's latest Household Debt and Credit report (Q2 2026, published 11 August) puts US auto loans at $1.71 trillion, student loans at $1.65 trillion and credit card balances at $1.26 trillion. Mortgages are about $13 trillion. In the July report that started this work, SemiAnalysis said AI debt would become the second-largest asset-backed debt market in the United States, behind only mortgages.",
+        "The car-loan line is about the flow, not the pile. The episode's chart tracks how much new AI debt gets raised each year against how much new lending goes into cars, student loans, credit cards and commercial property, all of which are roughly flat lines. SemiAnalysis has the AI line crossing auto loans and student loans this year. Nishball goes further. Against total US debt issuance of about $12.7 trillion a year (government bonds, mortgage bonds and corporate bonds together), he says: \"2026 is the last year that AI debt is going to be less than 10% of all issuance in the US.\" That is a projection from a model we have not seen, so treat it as the firm's view, not a measurement.",
+        "The rental-price twist. Nvidia's H100, the workhorse AI chip of 2023 and 2024 and now two generations old, should be getting cheaper to rent every quarter as newer chips arrive. For about 18 months from 2024, SemiAnalysis says, its theoretical depreciation curve matched actual rental prices to within 2%. In September and October 2025 the two split and never rejoined. One-year H100 rentals bottomed below $1.40 an hour; the firm's own one-year index then climbed from $1.70 in October 2025 to $2.35 by March 2026, and the episode has renewals landing at $2.50 and new one-year deals approaching $3. Nanos: \"Four-year-old H100s going into next year are going to be selling for likely higher prices.\" The reasons given: the newest chips are sold out, so demand falls through to older ones; research teams prefer the older chip's number format for stable training; data-centre delays are constraining supply; and demand on the big labs' APIs keeps rising.",
+        "Why lenders care. A loan against GPUs is underwritten against a depreciation curve (the lender's table of what the chips will be worth each year). If rents sit above the curve, the collateral is worth more than the bank assumed and the loan looks safe. If demand turned and rents fell below it, the opposite. The episode's claim is that most lenders cannot assess the chips themselves, so they lend against the credit rating of whoever promised to rent the capacity, a Microsoft, a Meta, an Oracle, or Nvidia's own guarantee, plus a premium for the risk that the project is never finished. Nanos on why the guarantor matters: a guarantee \"is not good if it comes from OpenAI because they don't have an IG rating\" (investment grade, the rating that lets pension funds and insurers buy a bond).",
+        "Nvidia's guarantees are now counted at about $497 billion across seven kinds of commitment, per the episode, and SemiAnalysis estimates Nvidia's balance sheet can stand behind roughly 46 gigawatts of capacity, against about 240 gigawatts it expects to come online. Beyond that, lenders will have to take the rental companies' own risk. The market is already pricing who can pay: the episode puts the extra yield investors demand over government bonds at roughly one percentage point for Amazon and Meta, about two and a half for Oracle, and about four for CoreWeave, the largest independent GPU-rental company."
+      ],
+      "pullquote": "\"2026 is the last year that AI debt is going to be less than 10% of all issuance in the US.\" Daniel Nishball, SemiAnalysis"
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture a bank that writes car loans using a table that says a car loses a fixed share of its value every year. For eighteen months the table is right to within 2%. Then one autumn, four-year-old cars start selling for more than they did the year before, because the new models are sold out, the factories are behind, and everyone needs a car now. The table says the collateral is worth $1.40; the used-car lot is paying $2.50. Suddenly every car loan on the books looks safer than the bank thought, the bank lends more, and new lenders pile in.",
+        "That is the H100 story. The catch is the same as in the car market: the table was wrong in the lucky direction once, and nobody knows which direction it will be wrong next time. And unlike cars, these loans are big enough that, by SemiAnalysis's maths, the pile overtakes the whole US car-loan market within a few years."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The size is new; the pattern is not. Railways in the 1840s, telephone networks, the 1990s fibre-optic buildout: each was financed with borrowed money against assets whose value depended on demand arriving on time, and each produced a bust when demand arrived late. Lending against a physical asset at the scale of car loans is not new either; that is why there is a car-loan market to compare with. What is new is a market this young being this large, and a single chipmaker standing behind half a trillion dollars of it.",
+        "We covered that chipmaker's role in July, in \"Nvidia just became the 'central bank' of AI\". This episode is the sequel: the guarantees have grown, the firm now sells loan-by-loan tracking as a product, and the rental data has flipped from a worry (chips losing value too fast for the loans) into its opposite (chips not losing value when the models said they would). Nishball on the pace of new AI bond deals: \"It's like a zombie apocalypse but you don't know how many waves of zombies are coming.\""
+      ],
+      "links": [
+        {
+          "label": "Our July brief: Nvidia just became the 'central bank' of AI",
+          "url": "https://oslovibecoding.tech/brief/nvidia-just-became-the-central-bank-of-ai"
+        },
+        {
+          "label": "SemiAnalysis, 6 July 2026: Nvidia GPU Debt Backstop Unleashes the AI Project Trinity",
+          "url": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes"
+        },
+        {
+          "label": "New York Fed: Household Debt and Credit Report, Q2 2026",
+          "url": "https://www.newyorkfed.org/newsevents/news/research/2026/20260811"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The measured take. None of this is a crash call, and SemiAnalysis does not make one. The episode's own unit economics say the business works: it models a top-end AI server at up to $100 million of revenue per megawatt a year against roughly $40 million per megawatt to build, and typical projects aiming for 20 to 30% annual returns over five to six years without counting on resale value at all. Those are the firm's estimates. If they hold, the debt gets paid.",
+        "The concerns are narrower, and real. First, the rental rebound is why lenders feel safer right now, and it rests on supply being tight; the moment the newest chips stop being sold out, the old ones fall back toward the curve. Second, risk is concentrating: on Nvidia's balance sheet, on a handful of cloud giants whose promises make everything else bankable, and on the assumption that demand for AI tokens keeps growing. Third, at 10% of all US debt issuance, AI stops being a technology story and becomes a bond-market story, which means anyone with a broad bond fund will end up owning a slice of it whether they chose to or not.",
+        "Why this matters for a non-engineer: every time a lab offers a cheaper model or a bigger free tier, somewhere a lender has agreed that chips bought on credit will earn enough to cover the interest. Cheap AI is downstream of cheap AI debt, and this episode is the clearest map yet of where that debt comes from. Two things to watch: the H100 rental price, because it is the collateral, and Nvidia's quarterly filings, because that is where the guarantees are counted. The figures here are SemiAnalysis's unless marked as the New York Fed's; the projections are projections."
+      ],
+      "pullquote": "Cheap AI is downstream of cheap AI debt."
+    }
+  ]
+},
+{
   "slug": "anthropic-has-cut-its-own-ai-tests-off-from-the-live-internet",
   "status": "published",
   "datePublished": "2026-10-10",
