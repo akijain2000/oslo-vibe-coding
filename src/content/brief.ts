@@ -36,6 +36,206 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "meta-s-first-frontier-ai-model-is-here-and-it-is-behind-a-paywall",
+  "status": "published",
+  "datePublished": "2026-10-13",
+  "title": "Meta's first frontier AI model is here, and it is behind a paywall",
+  "dek": "Fourteen months after Mark Zuckerberg rebuilt Meta's AI division around Alexandr Wang, it has shipped Muse Wonder, a model Meta says matches or beats the best from OpenAI and Anthropic at remembering you and finishing long tasks. The catch is new for Meta: you pay for it. An independent scoreboard puts it close to the leaders, but not on top.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On Monday 12 October 2026 Meta released Muse Wonder and a larger Muse Wonder Full, which it calls its most capable models and the first frontier-level release from the AI unit Alexandr Wang has run since August 2025. Meta's own chart claims leads over Claude Opus 5.5, Fable 5.1 and GPT-6 Astra on memory, legal and long software tasks; its model card admits competitor runs were 'best-effort'. Access is paid: $20 or $100 a month in the Muse app, $50 or $200 a month in Muse Code for the Full version, and $4 per million input tokens and $20 per million output tokens on Meta's API, which TechCrunch notes is roughly what OpenAI and Anthropic charge for their top models. Artificial Analysis, an independent tester, scores Muse Wonder Full at 56 on its Intelligence Index, fourth overall behind Claude Opus 5.5 at 58, and the standard Muse Wonder at 52. The models were trained at Meta's gigawatt-scale Prometheus data centre in Ohio.",
+  "sourceUrl": "https://research.meta.ai/blog/muse-wonder",
+  "sourceLabel": "Read Meta's announcement",
+  "about": "Meta's Muse Wonder and Muse Wonder Full launch on 12 October 2026: what Meta claims (Active Memory, Active Focus, frontier coding), what it costs ($20/$100 Muse plans, $50/$200 Muse Code, $4/$20 per million API tokens), what the independent Artificial Analysis index shows (56 vs Opus 5.5 at 58), and why Meta moved from free open models to a paid frontier model",
+  "keywords": [
+    "Meta",
+    "Muse Wonder",
+    "Alexandr Wang",
+    "Meta Superintelligence Labs",
+    "frontier model",
+    "AI subscription",
+    "Prometheus data center",
+    "Artificial Analysis",
+    "Claude Opus 5.5",
+    "GPT-6 Astra"
+  ],
+  "heroImage": {
+    "src": "/brief/meta-s-first-frontier-ai-model-is-here-and-it-is-behind-a-paywall.png",
+    "alt": "Bar chart titled Meta's new model on an independent scoreboard: Artificial Analysis Intelligence Index, Claude Opus 5.5 58, Muse Wonder Full 56, Claude Sonnet 5.5 56, Muse Wonder 52. Caption: Meta's own chart says it leads; the independent one puts it just behind Anthropic.",
+    "credit": "Oslo Vibe Coding, figures from Artificial Analysis",
+    "creditUrl": "https://artificialanalysis.ai/models"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Monday 12 October Meta released two new AI models, Muse Wonder and Muse Wonder Full. Its announcement calls them \"our most capable models\" and \"a major leap toward personal superintelligence\", the phrase Mark Zuckerberg has used since last year for an AI assistant that knows you and acts for you. Developed under the codename Watermelon, they are the first models from Meta's rebuilt AI unit that the company itself pitches as frontier-level, meaning in the same class as the best from OpenAI, Anthropic and Google.",
+        "That matters because of what came before. Through 2023 and 2024 Meta gave its Llama models away for free, with the weights (the model's learned numbers) downloadable by anyone. In mid-2025, after Llama 4 landed badly, Zuckerberg spent $14.3 billion on a stake in Scale AI, hired its founder Alexandr Wang to run a new Meta Superintelligence Labs, and paid a handful of researchers packages worth tens or hundreds of millions of dollars. The first product of that reset was Muse Spark in April 2026, a smaller, fast model built for Meta's own apps. Muse Wonder is the big one, and it is not free and not downloadable.",
+        "Alexandr Wang, in an interview with CNBC, described the design goal in plain terms: \"When you do real-world tasks, you're going to get roadblocks and you're going to get things that come up or various setbacks. We specifically tried to train the model to be able to try other approaches instead of stalling and then checking back in with the user at any time.\" Meta calls that Active Focus. Its other headline feature, Active Memory, is the model carrying what it knows about you across conversations and pulling the right details up when they matter."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What it costs. In the Muse app, Meta's personal-agent app that topped Apple's App Store after launching last month, Muse Wonder comes with a $20 or $100 monthly plan. The larger Muse Wonder Full is only in Muse Code, Meta's coding agent, on $50 or $200 a month. For developers, Meta's published API price is $4 per million input tokens (roughly 750,000 words sent in), $0.20 for cached input, and $20 per million output tokens; Meta's cheaper 'contributor' pricing, where you pay less in exchange for letting Meta train on your data, is not offered for Wonder. Wang told CNBC the API would be priced \"meaningfully below\" the leading OpenAI and Anthropic models; TechCrunch's read of the list price is that it is roughly equivalent to GPT-6 Sol or Claude Opus 5.5. Both can be true if Meta's model uses fewer tokens per job, which brings us to the testing.",
+        "What Meta claims. Its chart compares Muse Wonder and Wonder Full with Claude Opus 5.5, Claude Fable 5.1 and GPT-6 Astra, all at maximum reasoning effort, across legal, finance and health tasks, memory, focus and coding. Meta says the series achieves \"state-of-the-art results across key benchmarks for personal and professional agents, memory, and coding.\" Two of the headline tests, MemoryBench and FocusBench, are Meta's own internal benchmarks. The model card is unusually candid about the comparison: \"Internally generated competitor runs use common settings where practical but remain best-effort: prompts, tools, and runtime may not be optimally tuned for proprietary models.\" In other words, Meta ran its rivals' models itself and may not have got the best out of them.",
+        "What independent testing shows. Artificial Analysis, a firm that runs the same battery of tests on every major model, had results up within a day. On its Intelligence Index (version 4.3.2, a composite of ten public benchmarks), Claude Opus 5.5 at maximum effort scores 58, Claude Sonnet 5.5 and Muse Wonder Full score 56, and the standard Muse Wonder scores 52, ninth of the 216 models in its class. Muse Wonder Full ranks fourth overall. The standard model produced about 130 million output tokens to complete the index, which the tester ranks as relatively verbose, and it works out at about $4.52 per index task at Meta's prices. Those are Artificial Analysis's numbers; Meta's are Meta's.",
+        "The technical basics, from Meta's model card: a 1 million token context window (how much it can hold in view at once), input as text, images, video, audio and PDFs, output as text, and reasoning effort settings from 'minimal' to 'max'. The models were trained at Prometheus, the gigawatt-scale data centre in Ohio that came online this year and that we wrote about when Meta was building it under tents. Meta says Muse Wonder has its \"strongest safeguards to date\" against chemical, biological and cyber misuse and is its \"most aligned model to date\"; the fuller safety report is promised \"soon\" rather than published."
+      ],
+      "pullquote": "\"Internally generated competitor runs ... remain best-effort: prompts, tools, and runtime may not be optimally tuned for proprietary models.\" Meta's Muse Wonder model card"
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a car maker publishing fuel-economy figures from its own test track, and then an independent lab running the same cars on the same road. The maker's numbers are not lies; they are the best the car did under conditions the maker chose. The lab's numbers are what you would get. Monday gave us both for Meta's new model, a day apart. Meta's track says it leads on remembering you and sticking with long jobs. The lab says it is a close fourth, two points behind the leader, with the bigger version clearly ahead of the one most people will get.",
+        "The price tag is the other everyday fact. For most of its AI history Meta's pitch was 'ours is free'. The new pitch is 'ours is as good as theirs, and costs about the same'. That is a different company."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "A big lab claiming benchmark leadership on launch day, with the independent scoreboard telling a quieter story, is the normal rhythm of a model release; OpenAI, Google and Anthropic have all had the same Tuesday. What is new is who is doing it. Meta is the company that made open models mainstream, and this is the clearest sign yet that the era of a free Llama at the frontier is over: Muse Wonder is closed, hosted only by Meta, and sold by subscription and by the token like everyone else's.",
+        "It is also the first real answer to a question we asked in September: what did Meta's superstar hiring actually buy? Fourteen months and one gigawatt data centre later, the answer is a model that independent testing puts in the top group, behind Anthropic's best. Whether that is a triumph or a disappointment depends on what the billions were meant to purchase. A year ago Meta's models were not in the conversation at all."
+      ],
+      "links": [
+        {
+          "label": "Meta, 12 October 2026: Muse Wonder announcement",
+          "url": "https://research.meta.ai/blog/muse-wonder"
+        },
+        {
+          "label": "Meta: Muse Wonder model card (PDF)",
+          "url": "https://research.meta.ai/static/muse-wonder-model-card"
+        },
+        {
+          "label": "Meta Model API: pricing and rate limits",
+          "url": "https://ai.developer.meta.com/docs/pricing-rate-limits"
+        },
+        {
+          "label": "Artificial Analysis: Muse Wonder Full on the Intelligence Index",
+          "url": "https://artificialanalysis.ai/models/muse-wonder-full"
+        },
+        {
+          "label": "CNBC, 12 October 2026: Meta debuts Muse Wonder in latest test of users' willingness to pay",
+          "url": "https://www.cnbc.com/2026/10/12/meta-muse-wonder-ai-model-agent.html"
+        },
+        {
+          "label": "TechCrunch, 12 October 2026: Meta releases its first frontier model, Muse Wonder",
+          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
+        },
+        {
+          "label": "Our earlier briefs: Meta is building its AI supercomputers in tents, and Meta paid sports-superstar money for AI researchers",
+          "url": "https://oslovibecoding.tech/brief/meta-is-building-its-ai-supercomputers-in-tents"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The measured take. Meta now has a model in the top tier, which is a real change, and its emphasis on memory and on finishing multi-step tasks is where the useful part of AI is heading for ordinary people: an assistant that remembers your constraints and does not give up at the first error. The claims should be read as a vendor's claims. Two of the headline tests are Meta's own, the rival models were run by Meta, and the safety report is not yet out. The independent score is good, not best.",
+        "The concerns are about the shape of the product rather than the model. A personal agent that reads your messages and acts for you is exactly the kind of software where trust decides adoption, and CNBC reports that some Muse app users have already complained of the agent accessing personal messages without authorisation, which Meta disputes and attributes partly to permissions people granted earlier and forgot. Meta says it is monitoring for such incidents and educating users. That is the right thing to say; the question is how it behaves at the scale of Meta's billions of accounts. Availability also varies by country under Meta's geographic policy, so check before you subscribe from Norway.",
+        "Why this matters for a non-engineer: there are now four companies, not three, selling a frontier-class assistant at roughly the same price, and the newest one owns the apps most people already use every day. That pushes prices and features in the buyer's direction. Two things to watch: whether the independent scores move once Artificial Analysis and others finish testing Wonder Full, and whether Meta ships the safety report it promised. Disclosure: we use AI tools from several of the companies compared here, including Anthropic's, to help produce this brief. The benchmark claims are Meta's unless labelled as Artificial Analysis's."
+      ],
+      "pullquote": "The new pitch is 'ours is as good as theirs, and costs about the same'. That is a different company."
+    }
+  ]
+},
+{
+  "slug": "the-ai-talent-war-showed-up-inside-amd-s-own-payroll",
+  "status": "published",
+  "datePublished": "2026-10-13",
+  "title": "The AI talent war showed up inside AMD's own payroll",
+  "dek": "When AMD bought a small AI software startup, the engineers it acquired ended up earning significantly more than the AMD engineers sitting next to them, for the same work. HR flagged it. Management parked it. Then a research firm wrote it up in public, and pay became a top priority overnight. A small story that explains why the AI chip race is really a race for people.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "SemiAnalysis, the semiconductor research firm, reported in June 2025 that most AI engineers AMD acquired with the startup Nod.ai in 2023 were being paid significantly more than AMD's existing AI engineers, even after adjusting for experience and skill. AMD's HR department had raised the gap internally several quarters earlier; management left it as a low priority until SemiAnalysis published an April 2025 report calling AMD's engineer pay its management's 'blind spot', after which the head of HR made it a top priority. Self-reported pay data on Levels.fyi (13 October 2026) puts the median software engineer at $215,000 a year at AMD, $310,000 at Nvidia, and about $880,000 at OpenAI and Anthropic. Nvidia's latest annual report gives its staff turnover as 3.7%. AMD has made no public statement on the pay review that we could find; the account is SemiAnalysis's, and the pay figures are self-reported.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/amd-advancing-ai-mi350x-and-mi400-ualoe72-mi500-ual256",
+  "sourceLabel": "Read the SemiAnalysis report",
+  "about": "How the AI talent war reshaped pay inside AMD: SemiAnalysis's reporting that engineers acquired with Nod.ai out-earned long-time AMD staff, the HR review it triggered, Nvidia's stock-driven pay and 3.7% turnover, and Levels.fyi medians for AMD, Nvidia, OpenAI and Anthropic",
+  "keywords": [
+    "AMD",
+    "Nvidia",
+    "AI talent war",
+    "engineer pay",
+    "Nod.ai",
+    "SemiAnalysis",
+    "RSUs",
+    "Levels.fyi",
+    "ROCm",
+    "CUDA"
+  ],
+  "heroImage": {
+    "src": "/brief/the-ai-talent-war-showed-up-inside-amd-s-own-payroll.png",
+    "alt": "Bar chart titled What a software engineer makes: median total pay. AMD $215K, Nvidia $310K, OpenAI $880K, Anthropic $883K. Caption: self-reported totals on Levels.fyi, 13 October 2026; AMD's long-time AI engineers earned less than the ones it bought in.",
+    "credit": "Oslo Vibe Coding, figures from Levels.fyi (self-reported); story from SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/amd-advancing-ai-mi350x-and-mi400-ualoe72-mi500-ual256"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "In October 2023 AMD, the chipmaker that is Nvidia's main rival in AI processors, bought a small startup called Nod.ai. The press release talked about open-source software and faster deployment on AMD chips. What it did not say was what the deal would do to AMD's own pay scales.",
+        "Twenty months later, in June 2025, SemiAnalysis (the semiconductor research firm whose work we draw on most weeks) reported the result in a long piece on AMD's annual product event. Its words: \"most of the AI engineers that were bought in from NodAI, an acquisition from two years ago, are receiving significantly higher compensation than existing AMD engineers, even when equalizing for experience and skillset.\" The acquired engineers were paid at startup-era AI rates; the people who had been at AMD for years, doing comparable work, were not.",
+        "The firm added two details that make this a management story rather than a payroll quirk. First, AMD's own HR department \"already raised this issue a few quarters ago and recognized this pay disparity\", but management \"has yet to elevate this beyond a low priority issue.\" Second, the thing that changed that was publicity. After SemiAnalysis published an earlier report saying AMD paid its AI engineers well below market, \"AMD's Head of HR immediately elevated this matter to be a top priority\", with a process under way to address what the firm called \"massive pay discrepancies\". Implementation, it said, remained work in progress."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The pay gap AMD was being told about is not small, if self-reported data is any guide. Levels.fyi, a site where tech workers submit their offer letters and pay slips, gives these US medians for total yearly pay (salary plus stock plus bonus) for software engineers, as of 13 October 2026: AMD $215,000; Nvidia $310,000; OpenAI about $880,000; Anthropic about $883,000. At the top of the ladder the gap widens: Levels.fyi's highest listed AMD level tops out around $495,000, while Nvidia's goes to about $1.08 million. These are self-reported figures with uneven sample sizes, not company disclosures, so treat them as a rough map rather than a survey.",
+        "The reason the top end matters is stock. SemiAnalysis's December 2024 report, the one that started the argument, said AMD \"has largely failed to attract collective library talent due to less attractive compensation\", while at Nvidia \"it is not uncommon to see engineers make greater than a million dollars per year thanks to appreciation in the value of RSUs.\" RSUs are restricted stock units: shares an employer promises you, which turn into real shares over several years if you stay. When the share price goes up fivefold, so does the value of the promise. Nvidia's latest annual report says its staff turnover in the year to January 2026 was 3.7%, and that over 40% of its new hires came through employee referrals. It employs about 42,000 people, 31,000 of them in research and development. AMD, for comparison, had about 31,000 employees in total at the end of 2025.",
+        "SemiAnalysis's diagnosis, in its April 2025 report titled \"AMD 2.0: New Sense of Urgency\", was that AMD was measuring itself against the wrong companies. It wrote that AMD's internal pay benchmarking \"appears to cherry pick comparable companies\": networking and chip firms like Juniper, Cisco and Arm, \"that aren't known for great software\". Measured against them, AMD looked fine. Measured against Nvidia, Google's TPU team, OpenAI's chip team or the AI labs, the people AMD actually competes with for a PyTorch or networking-library engineer, \"the gap in pay becomes glaringly apparent.\" The firm's recommendation was specific: keep base salaries stable, raise stock grants substantially, and tie engineers' pay to AMD's own success. It noted AMD had over $5 billion in cash to do it with.",
+        "The June 2025 piece reported that AMD had started \"a new work in progress initiative to raise AMD engineering pay to be more competitive with market rate and to more closely align compensation with the success of AMD\", with the timing of any announcement to engineers unknown. We looked for a public AMD statement on this and found none; AMD does not discuss individual pay programmes in its filings. SemiAnalysis's most recent long report on AMD, in July 2026, does not mention pay at all. It says the chief complaint from AMD engineers is now a \"persistent lack of stable GPU clusters\" to develop on, and that \"most of AMD's best 10x engineers are in Shanghai.\" Whether that silence means the pay gap was closed, or that the firm stopped pushing, we cannot tell."
+      ],
+      "pullquote": "\"Most of the AI engineers that were bought in from NodAI ... are receiving significantly higher compensation than existing AMD engineers, even when equalizing for experience and skillset.\" SemiAnalysis, June 2025"
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a football club that has spent years developing its own academy players. One summer it buys a striker from a rival league, and because that is what strikers cost on the open market now, the newcomer is paid three times what the academy graduates earn. Nothing about the academy players changed. The market changed, and the transfer made the change visible inside one dressing room.",
+        "That is what an acquisition does to a pay scale. AMD did not decide to underpay its own engineers; it decided, years ago, which companies it would compare itself to, and that decision quietly set every salary. Buying Nod.ai imported the AI market's prices into the building, and the people already there could suddenly see the difference. The HR department saw it first. Management acted when it became public."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The mechanism is old. HR people call it pay inversion: new hires or acquired staff earning more than longer-serving colleagues in the same job, because the market moved and internal scales did not. It happens in every boom. What is new is the size of the AI premium and how fast it arrived. In 2025 Meta offered individual researchers packages worth tens or hundreds of millions of dollars; we wrote about what that bought in \"Meta paid sports-superstar money for single AI researchers.\" The AMD story is the same pressure one rung down: not the star researchers, but the engineers who write the software that makes a chip usable.",
+        "The other thing that is not new is why it matters for AMD specifically. Nvidia's lead in AI is often described as a software moat called CUDA, the layer that lets code run fast on its chips. A moat like that is built and maintained by people. SemiAnalysis's April report put it bluntly: \"if AMD does not significantly increase their AI Software Engineer pay, AMD will continue losing to Nvidia.\" It also quoted engineers who turned AMD down because the work \"feels like working on porting features that NVIDIA engineers developed two years earlier.\" Pay and purpose, in other words, pull in the same direction."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, 13 June 2025: AMD Advancing AI (the Nod.ai pay passage)",
+          "url": "https://newsletter.semianalysis.com/p/amd-advancing-ai-mi350x-and-mi400-ualoe72-mi500-ual256"
+        },
+        {
+          "label": "SemiAnalysis, 23 April 2025: AMD 2.0, New Sense of Urgency (the 'blind spot' section)",
+          "url": "https://newsletter.semianalysis.com/p/amd-2-0-new-sense-of-urgency-mi450x-chance-to-beat-nvidia-nvidias-new-moat"
+        },
+        {
+          "label": "AMD press release, 10 October 2023: AMD to acquire Nod.ai",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1159/amd-to-acquire-nod-ai-to-expand-open-ai-software-capabilities"
+        },
+        {
+          "label": "Nvidia Form 10-K for fiscal 2026 (turnover 3.7%, 42,000 staff)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        },
+        {
+          "label": "Our earlier brief: Meta paid sports-superstar money for single AI researchers",
+          "url": "https://oslovibecoding.tech/brief/meta-paid-sports-superstar-money-for-ai-researchers"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The measured take. One acquisition exposing a pay gap is not a scandal, and SemiAnalysis did not frame it as one; the firm has been a consistent, sometimes harsh, outside voice urging AMD to compete harder, and AMD's chief executive Lisa Su publicly thanked it for the feedback after the first report. The story matters because it shows where the AI race is actually fought. Chips get the headlines, but the scarce input is a few thousand people who can write the software underneath, and those people now have a market price that a traditional chip company's pay scales were never built for.",
+        "For anyone outside the industry, two lessons travel well. First, when an employer benchmarks pay, the choice of comparison companies is the whole decision; ask which list you are on. Second, pay gaps inside a company rarely get fixed because HR notices them. They get fixed when they become visible, to the people affected or to the public. The engineers from Nod.ai did not make AMD's long-time staff underpaid. They made it impossible not to see.",
+        "What to watch: Levels.fyi's AMD numbers over the next year, and the stock-based compensation line in AMD's quarterly filings, which is where a real change in RSU grants would show up. One disclosure: we use AI tools from several of the companies named here, including Anthropic's, to help produce this brief. The pay figures are self-reported; the account of what happened inside AMD is SemiAnalysis's, and AMD has not commented on it publicly."
+      ],
+      "pullquote": "Chips get the headlines. The scarce input is a few thousand people who write the software underneath."
+    }
+  ]
+},
+{
   "slug": "ai-borrowing-is-about-to-pass-america-s-car-loans",
   "status": "published",
   "datePublished": "2026-10-12",
