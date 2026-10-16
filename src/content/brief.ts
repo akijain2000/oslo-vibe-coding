@@ -36,6 +36,218 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "anthropic-now-earns-more-in-a-quarter-than-in-all-of-last-year",
+  "status": "published",
+  "datePublished": "2026-10-16",
+  "title": "Anthropic now earns more in a quarter than it did in all of last year",
+  "dek": "On Wednesday Anthropic showed its numbers to prospective IPO investors for the first time: $16.8 billion of revenue in the third quarter, against $4.6 billion for the whole of 2025, and a profit, on an adjusted basis. The figures are unaudited and the company will not comment. Here is what they mean, and what the word 'adjusted' is doing in that sentence.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On Wednesday 14 October 2026 Anthropic, the maker of the Claude models, held an investor day at its San Francisco headquarters ahead of a stock market listing. According to the Financial Times, Reuters and Bloomberg, citing attendees, it reported third-quarter revenue of $16.8 billion, up 45% from $11.6 billion in the second quarter and $4.7 billion in the first; revenue for all of 2025 was nearly $4.6 billion. It said it was profitable on an adjusted basis and cash-flow positive, taking in $1.70 for every dollar spent on computing. It also carries at least $518 billion of computing commitments over a decade and is reportedly targeting a valuation above $2 trillion, with the listing now expected after the US midterm elections in November. Anthropic has not published or confirmed any of it, and nothing is audited until the public prospectus appears.",
+  "sourceUrl": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html",
+  "sourceLabel": "Read CNBC's report",
+  "about": "Anthropic's 14 October 2026 pre-IPO investor day: $16.8 billion third-quarter revenue (Q1 $4.7bn, Q2 $11.6bn, all of 2025 $4.6bn), adjusted profitability, $1.70 of revenue per dollar of compute, $518 billion of compute commitments, a $2 trillion valuation target, the post-midterm IPO timeline, what 'adjusted' means, and how it compares with OpenAI's run rate",
+  "keywords": [
+    "Anthropic",
+    "Anthropic IPO",
+    "Anthropic revenue",
+    "Claude",
+    "Dario Amodei",
+    "Krishna Rao",
+    "S-1",
+    "adjusted profit",
+    "AI revenue",
+    "OpenAI run rate"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-now-earns-more-in-a-quarter-than-in-all-of-last-year.png",
+    "alt": "Bar chart titled Anthropic's revenue, quarter by quarter: all of 2025 $4.6B, Q1 2026 $4.7B, Q2 2026 $11.6B, Q3 2026 $16.8B. Caption: one quarter now brings in more than all of last year; figures told to investors on 14 October, unaudited.",
+    "credit": "Oslo Vibe Coding, figures from Reuters, the Financial Times and Bloomberg",
+    "creditUrl": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Wednesday 14 October 2026 Anthropic, the company behind the Claude AI models, invited a selected group of institutional investors (pension funds, asset managers and the like) to its San Francisco headquarters. Chief executive Dario Amodei and chief financial officer Krishna Rao presented. Guests got caps, some printed with the word \"thinking\". The purpose, Reuters reported, was to familiarise prospective investors with the company before its initial public offering (IPO, the first sale of a company's shares to the public on a stock exchange).",
+        "The number everyone left with: revenue of $16.8 billion in the third quarter, July to September. The Financial Times reported it first; Reuters, citing two attendees, and Bloomberg, citing people familiar with the matter, matched it. For scale, Reuters saw the company's confidential prospectus last month, and it put revenue for the whole of 2025 at nearly $4.6 billion. One quarter now brings in more than the entire previous year.",
+        "Anthropic has not published the figures. It declined to comment to Bloomberg and did not respond to Reuters. Everything below comes from people who were in the room. It is unaudited, and it stays unaudited until the public prospectus (the S-1 form, the document a company files with the US securities regulator before listing) is published. We checked the regulator's filing database on Friday morning; Anthropic's is not there yet."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The quarterly sequence, per Reuters: $4.7 billion in the first quarter of 2026, $11.6 billion in the second, $16.8 billion in the third, a rise of 45% in three months. Annualise the latest quarter (multiply by four) and you get roughly $67 billion a year. CNBC, citing the Wall Street Journal, says investors expect the annualised rate to reach $110 billion by year end. That is an investor expectation, not a company forecast.",
+        "The profit claim: Anthropic told the room it was profitable in the third quarter \"on an adjusted basis\" and, according to the Financial Times, cash-flow positive, taking in $1.70 of revenue for every dollar spent on computing power. None of the reports says what was adjusted out. The 2025 accounts Reuters saw showed an operating loss of more than $8 billion before writedowns linked to earlier fundraising, which Reuters put at roughly $34 billion of a $42 billion net loss. Those writedowns are accounting charges, not cash, which is the kind of item an 'adjusted' figure usually removes.",
+        "The bills ahead: at least $518 billion of commitments over a decade for cloud services, computing and infrastructure, per Reuters. That is more than thirty quarters like this one. It is the bet that the queue keeps growing.",
+        "The listing: Anthropic confirmed on 1 June that it had confidentially submitted a draft S-1. Its last private round, in May, raised $65 billion at a $965 billion valuation. Reuters reports the company is targeting more than $2 trillion at the IPO and that the debut is likely to slip until after the US midterm elections on 3 November; Bloomberg reports formal marketing could start the week of 9 November with trading before Thanksgiving on 26 November, and adds that the plans are fluid. Reuters also reports the listing is expected to come before OpenAI's. One attendee told Reuters that Amodei reiterated the company's focus on AI safety but avoided the extinction language that its own prospectus uses, where advanced AI is said to pose possible \"catastrophic or existential risks to humanity\"."
+      ],
+      "pullquote": "$16.8 billion in three months is about $180 million a day, every day, including Sundays."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a bakery. Last year it sold $4.6 of bread and lost more than $8 doing it, because it was building ovens faster than it could sell loaves. This quarter it sells $16.8 of bread, and the owner tells you that for every $1 of flour and oven time it brings in $1.70. \"Profitable on an adjusted basis\" means: after flour, ovens and staff, the bakery is in the black, but before certain large bills the accountants insist on counting. Typically those are paper charges rather than cash, such as the value of shares handed to staff, or write-downs from earlier fundraising. They are real costs in the long run; they are not cash leaving the till this quarter.",
+        "And the bakery has signed leases on $518 of future ovens. Whether that is reckless or clever depends entirely on one thing: does the queue keep growing at this pace? Everything in the valuation argument comes back to that question, and it is the one number nobody in the room could actually know."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Partly. In August we covered an estimate from the research firm SemiAnalysis that Anthropic had turned an operating profit in the second quarter. This is the first time the company itself has said so to investors, and the first time it has put a quarterly revenue figure in front of outsiders. The growth rate is the unusual part. OpenAI, by Bloomberg's account, was at an annualised run rate of roughly $50 billion at the end of September with a target of $70 billion by year end; on these numbers Anthropic's $67 billion run rate has passed it. Treat that comparison loosely: the two companies count revenue sold through cloud partners differently, and both sets of numbers are unaudited.",
+        "The nearest precedent for revenue this size growing this fast is Nvidia's data-centre business, which roughly tripled in a year in 2024 and sells the chips Anthropic rents. The profit claim has a precedent of a different kind: every 'adjusted' profit announced before an IPO deserves the question 'adjusted for what?', and the public S-1 is the document that has to answer it, with audited figures and a balance sheet. We said the same about OpenAI in August, and it applies here just as much."
+      ],
+      "links": [
+        {
+          "label": "CNBC, 15 October 2026: Anthropic's third-quarter revenue is said to hit $16.8 billion ahead of IPO",
+          "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html"
+        },
+        {
+          "label": "Reuters via Investing.com, 14 October 2026: At Anthropic pre-IPO meet: 'thinking' caps, surging revenue, no human extinction",
+          "url": "https://www.investing.com/news/stock-market-news/anthropics-q3-revenue-surges-45-to-nearly-17-billion-4950208"
+        },
+        {
+          "label": "The Next Web, 15 October 2026: Anthropic tells investors Q3 revenue reached $16.8bn, FT reports",
+          "url": "https://thenextweb.com/news/anthropic-q3-revenue-16-8bn-ipo"
+        },
+        {
+          "label": "Calcalist, 15 October 2026: Anthropic tells investors it is profitable as quarterly revenue hits $16.8 billion",
+          "url": "https://www.calcalistech.com/ctechnews/article/tgb6eqw4z"
+        },
+        {
+          "label": "FinanceFeeds, October 2026: the IPO timeline and what is confirmed versus reported",
+          "url": "https://financefeeds.com/anthropics-14-october-investor-day-nears-but-its-s-1-still-isnt-public-the-ipo-timeline-explained/"
+        },
+        {
+          "label": "Our earlier brief, 8 August: One of the big AI labs quietly started making money",
+          "url": "https://oslovibecoding.tech/brief/the-ai-lab-that-actually-turns-a-profit"
+        },
+        {
+          "label": "Our earlier brief, 20 August: OpenAI just put a date on going public",
+          "url": "https://oslovibecoding.tech/brief/openai-just-put-a-date-on-going-public"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For investors the question is price. A company taking in $67 billion a year, growing 45% a quarter, with an adjusted profit, is what a $2 trillion valuation is being hung on. If the growth holds, that price is ordinary by software standards. If it halves, the $518 billion of computing commitments becomes the main story. Half a trillion in promised spending against $17 billion a quarter is the pair of numbers to keep side by side.",
+        "For everyone else, two things. First, this is where the whole AI buildout we keep writing about gets paid for: the data centres, the chips, the gas turbines and the loans only make sense if a few companies can show bills like this one, and now one of them has. Second, the regulatory bill is growing in the same week: Axios reported on Wednesday that the US Federal Trade Commission sent both Anthropic and OpenAI formal investigative demands about safety, privacy and marketing practices. That is fact-finding, not a finding of wrongdoing, but it will sit in the risk section of the S-1.",
+        "Two things to watch: the public S-1, which the November timeline would put in late October, and whether the fourth quarter shows the same slope. Disclosure: we use AI tools from several companies, including Anthropic's, to help produce this brief. Every figure here is what attendees told reporters, not an audited account."
+      ],
+      "pullquote": "Half a trillion in promised spending against $17 billion a quarter is the pair of numbers to keep side by side."
+    }
+  ]
+},
+{
+  "slug": "meta-s-free-ai-runs-on-two-macs-and-trails-china-s-on-its-own-chart",
+  "status": "published",
+  "datePublished": "2026-10-16",
+  "title": "Meta's free AI runs on two Macs, and trails China's on Meta's own chart",
+  "dek": "Three days after putting its first frontier model behind a paywall, Meta released Muse Spark Open: 816 billion parameters, free to download, built to run on a pair of top-end Mac Studios on your desk. Meta calls it the most capable US open-weight model to date. Its own benchmark table shows three Chinese models scoring higher.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On Thursday 15 October 2026 Meta released Muse Spark Open, an open-weight model (its trained numbers are published, so anyone can download, run and modify it) with 816 billion parameters, 42 billion active per token, a one-million-token context and text, image, audio and video input. Meta says it is the first model in its class to run on a desktop, on two Apple M5 Ultra Mac Studios with 512 GB of memory each, a setup likely to cost more than $20,000. The licence allows commercial use with two conditions: show 'Built with Muse Spark Open', and sign an agreement with Meta if you sell access to the model and pass $20 million in revenue in a year. Meta calls it 'the most capable US open-weight model to date'; on Meta's own benchmark table, GLM 5.3 (45), Kimi K3 (44) and Qwen3.8 (40) from China outscore it (39) on the independent Artificial Analysis Intelligence Index, and it trails them on the Terminal-Bench coding test, while leading on tool use and some reasoning rows.",
+  "sourceUrl": "https://research.meta.ai/blog/muse-spark-open",
+  "sourceLabel": "Read Meta's announcement",
+  "about": "Meta's Muse Spark Open release on 15 October 2026: 816B parameters and 42B active, 1M context, multimodal input, running on two M5 Ultra Mac Studios, the Muse Model License ($20 million model-as-a-service clause, 'Built with' attribution, no user cap), Meta's own benchmark table versus GLM 5.3, Kimi K3 and Qwen3.8, Artificial Analysis scores and prices, and why 'US' is the important word in Meta's claim",
+  "keywords": [
+    "Meta",
+    "Muse Spark Open",
+    "open-weight model",
+    "Mac Studio M5 Ultra",
+    "Muse Model License",
+    "GLM 5.3",
+    "Kimi K3",
+    "Qwen3.8",
+    "Artificial Analysis",
+    "local AI"
+  ],
+  "heroImage": {
+    "src": "/brief/meta-s-free-ai-runs-on-two-macs-and-trails-china-s-on-its-own-chart.png",
+    "alt": "Bar chart titled Meta's own chart: the free Chinese models score higher. Artificial Analysis Intelligence Index as printed in Meta's Muse Spark Open model card: GLM 5.3 (Z.ai, China) 45, Kimi K3 (Moonshot, China) 44, Qwen3.8 (Alibaba, China) 40, Muse Spark Open (Meta, US) 39. Higher is better.",
+    "credit": "Oslo Vibe Coding, figures from Meta's model card and Artificial Analysis",
+    "creditUrl": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 15 October 2026 Meta released Muse Spark Open, an open-weight AI model (one whose trained numbers, the weights, are published so anyone can download, run and modify it). It is a big one: 816 billion parameters in total, of which 42 billion are used for any given word. That design is called a mixture of experts: the model is split into 256 specialist sub-networks and only eight are consulted per token, which keeps it fast despite its size. It takes text, images, audio and video as input, writes text, and can hold a million tokens (roughly 750,000 words) in its working memory at once.",
+        "The timing is the interesting part. On Monday Meta launched Muse Wonder, its first frontier-class model, as a paid product only; we covered it that day. Thursday's release is the open sibling, pitched at coding and 'agentic' work, where the model carries out multi-step tasks on its own. Meta's announcement calls it \"the most capable US open-weight model to date\" and says \"We're sharing this work because we want everyone to have access to the best models.\" It topped Hacker News, the developer news site, with nearly 800 points.",
+        "The party trick: Meta says it is \"the first model in its class to run on your desktop using two Apple M5 Ultra Mac Studios\", linked by a Thunderbolt 5 cable and using Apple's MLX software. Each machine carries 512 GB of unified memory (memory shared between the main processor and the graphics processor), so the pair holds a compressed version of the model, about a terabyte, entirely in memory. Meta demonstrated it fixing bugs in an open-source iPhone app and editing video in DaVinci Resolve, driven from its Muse Code terminal tool."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The scoreboard, from Meta's own model card. It compares Muse Spark Open with seven other open-weight models, four of them Chinese. On the Artificial Analysis Intelligence Index (a composite score run by an independent testing firm) Muse Spark Open gets 39; Z.ai's GLM 5.3 scores 45, Moonshot's Kimi K3 44 and Alibaba's Qwen3.8 40. On Terminal-Bench 2.1, a test of command-line software tasks, it scores 76.4 against 85.0 for Kimi K3, 83.9 for GLM 5.3 and 82.0 for Qwen3.8. Meta's model leads on other rows: MCP-Atlas, a tool-use test, at 89.2; Humanity's Last Exam without tools at 26.1; and JobBench at 61.8, a hair ahead of GLM 5.3. The 'US' in Meta's claim is doing real work: the American open models on the same table, Nvidia's Nemotron 3 Ultra (23) and Inkling (26), are far behind.",
+        "Artificial Analysis itself lists Muse Spark Open at 39 on index version 4.3.2, tenth of 119 models tested, priced at $1.25 per million input tokens and $4.25 per million output tokens on hosted services, running at about 102 tokens per second. Its top three open-weights models are MiMo-V2.6-Pro (46), GLM-5.3 (45) and Step 5 Preview (44), all Chinese. For price contrast, DeepSeek V4.1 Flash, the Chinese model that topped Hacker News last week, is listed on the OpenRouter marketplace at about 4 cents in and 68 cents out per million tokens.",
+        "The licence. The weights come under the 'Muse Model License', which is not an open-source licence in the formal sense. Anyone can use, fine-tune and ship the model commercially, with two conditions: products must display 'Built with Muse Spark Open', and anyone selling access to the model as a service whose gross revenue passes $20 million in a 12-month period must notify Meta and sign a separate agreement. The old Llama licence's cap of 700 million monthly users is gone. Using the model inside your own product, or for research, is unrestricted. One Hacker News commenter's verdict: \"Not exactly fully open, but not that harsh.\" Meta also says the model had extra safety training because it is open, and that a full evaluation report is coming.",
+        "The hardware bill. Apple's M5 Ultra Mac Studio starts at $5,499 with 96 GB of memory; the 256 GB configuration is $9,499 to $10,799; the 512 GB option Meta's demo uses is due later this month and Apple has not published a price, which MacRumors expects to start well above $10,000. Two of them is comfortably a $20,000-plus desktop. Meta lists alternatives: four Nvidia Blackwell Ultra GPUs, eight H200s, or a heavily compressed 2-bit version that needs about 300 GB of memory. Or skip the hardware: the model is hosted on Baseten, Fireworks, Groq, Together, Nebius, Modal and OpenRouter, and in the Amazon, Google and Microsoft clouds."
+      ],
+      "pullquote": "\"There's a reason they put the 'US' in 'the most capable US open weight model'.\" A Hacker News commenter, on Thursday"
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of Meta as a car maker with two launches this week. Monday's car is the flagship, sold only through dealers, on a subscription. Thursday's is the mid-range model, and Meta has published its full blueprints: anyone with a big enough garage can build it, tune it, and even sell cars based on it, as long as the badge says 'Built with Muse' and they call Meta before the business gets large.",
+        "The garage is the catch: the one that fits this car costs more than $20,000. And a few rival makers in China have published blueprints for slightly faster cars that fit in the same garage. What Meta is betting on is that mechanics prefer an American blueprint with a familiar toolchain, and that enough of them tinker with the mid-range model to keep the flagship's dealers busy."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "For Meta, it is a return. From 2023 to April 2025 Meta's Llama models were the default free download in the West. Llama 4 landed badly, the team was rebuilt around Alexandr Wang, and for 18 months the company shipped nothing big and free. In that gap Chinese labs took over the open-weight world: by March 2026 their models had been downloaded 1.15 billion times on Hugging Face against 723 million for American ones, as we covered last week. Hugging Face's own summer review noted that in five of seven months this year no US lab released an open model above 130 billion parameters. An 816-billion-parameter American model changes that count overnight.",
+        "For the industry, the pattern is familiar: give away the second tier, sell the top. OpenAI did it in August 2025 with gpt-oss while keeping GPT-5 closed; Google does it with Gemma next to Gemini. Meta used to be the exception that gave away its best. Now it does what everyone else does. The 'runs on a desktop' claim is also less new than it sounds: enthusiasts have been running large Chinese models on multi-Mac setups for a year. What is new is a Western lab designing and testing for that configuration and saying so in the launch post."
+      ],
+      "links": [
+        {
+          "label": "Meta, 15 October 2026: Muse Spark Open announcement",
+          "url": "https://research.meta.ai/blog/muse-spark-open"
+        },
+        {
+          "label": "Hugging Face: Muse Spark Open model card, benchmark table and licence",
+          "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+        },
+        {
+          "label": "Meta developers: Build with Muse Spark Open (hardware guidance, hosting partners)",
+          "url": "https://dev.meta.ai/resources/blog/build-with-muse-spark-open"
+        },
+        {
+          "label": "Artificial Analysis: Muse Spark Open on the Intelligence Index",
+          "url": "https://artificialanalysis.ai/models/muse-spark-open"
+        },
+        {
+          "label": "TechCrunch, 15 October 2026: Meta launches an open-weight AI model that runs on Macs",
+          "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/"
+        },
+        {
+          "label": "Hacker News: the Muse Spark Open discussion",
+          "url": "https://news.ycombinator.com/item?id=50107379"
+        },
+        {
+          "label": "MacRumors, 25 August 2026: Mac Studio with M5 Ultra and 512GB of RAM launching in October",
+          "url": "https://www.macrumors.com/2026/08/25/mac-studio-m5-ultra-512gb-ram-october/"
+        },
+        {
+          "label": "Our earlier briefs: Meta's first frontier AI model is here, and it is behind a paywall; and The free AI models you can download, and why most now come from China",
+          "url": "https://oslovibecoding.tech/brief/meta-s-first-frontier-ai-model-is-here-and-it-is-behind-a-paywall"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For a developer or a small company, this is the first large American open model you can run on hardware you own, with a licence that does not care how many users you have. That matters for data that cannot leave the building: a law firm, a clinic or a bank can run a strong assistant on a desk-sized machine with no cloud account and no per-token bill, for the price of a used car. The Chinese models could already do that; some buyers will pay for the American badge.",
+        "For the race, Meta's own table is the honest headline: on the index the industry quotes most, three Chinese open models are ahead and a fourth is level. 'Best US open model' is true, and it is a smaller claim than 'best open model'. The number to watch is whether Artificial Analysis and others move the score once they test Meta's top effort setting against GLM 5.3 and Kimi K3 at theirs, and whether the promised evaluation report arrives.",
+        "The larger point is strategic. Meta now has a paid flagship and a free runner-up, like OpenAI and Google. The free one exists to make the paid one's ecosystem bigger, not out of generosity, and Meta's own announcement is candid that the point is to bring people onto its 'personal superintelligence' platform. Disclosure: we use AI tools from several companies mentioned or compared here, including Meta's rivals, to help produce this brief. The benchmark figures are Meta's unless attributed to Artificial Analysis."
+      ],
+      "pullquote": "'Best US open model' is true, and it is a smaller claim than 'best open model'."
+    }
+  ]
+},
+{
   "slug": "meta-s-first-frontier-ai-model-is-here-and-it-is-behind-a-paywall",
   "status": "published",
   "datePublished": "2026-10-13",
