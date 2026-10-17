@@ -36,6 +36,192 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "claude-solved-the-1997-nsa-curve-seed-mystery-in-half-an-hour",
+  "status": "published",
+  "datePublished": "2026-10-17",
+  "title": "An AI solved a 1997 NSA cryptography mystery in under half an hour",
+  "dek": "For almost thirty years nobody could say where the random-looking numbers behind the internet's most used encryption curves came from, and some feared an NSA backdoor. On Friday Anthropic said one of its models had found the answer: a 1990s random-number function and a clock reading from August 1997. The bounty's organiser checked the work independently. Here is what was found, and what it does and does not prove.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 16 October 2026 Anthropic's Frontier Red Team (its in-house security research group) published how an internal research model worked out where the 'seeds' of the NIST elliptic curves came from. These are the starting numbers, supplied by the US National Security Agency (NSA) in 1997, behind P-256 and its siblings, the curves that protect most HTTPS connections, payment cards and passkeys. The seeds were never explained, which fed suspicion of a hidden backdoor. The model found, in under half an hour, that they were not the output of a hashed passphrase as one of their creators had remembered, but of lrand48, an ordinary C library random-number function, started from Unix clock times; P-256's seed is the 1,842nd output after a clock reading of 16 August 1997, 01:52:34. Cryptographer Filippo Valsorda, who organised a public bounty for the answer, reimplemented the method himself and confirmed it. Anthropic stresses this is not an attack and nothing needs to change. Some questions remain open.",
+  "sourceUrl": "https://www.anthropic.com/research/ecdsa-curve-origins",
+  "sourceLabel": "Read Anthropic's write-up",
+  "about": "Anthropic's 16 October 2026 report that an internal Claude research model traced the NIST P-192/P-224/P-256/P-384/P-521 curve seeds to lrand48 seeded with 1997 Unix timestamps, Filippo Valsorda's independent verification and the $36,864 bounty donated to ISRG, the 'Give Bob and Jerry a raise' passphrase story, Dual_EC_DRBG as precedent, and the open questions that remain",
+  "keywords": [
+    "Claude",
+    "Anthropic",
+    "NIST P-256",
+    "elliptic curve",
+    "ECDSA",
+    "NSA",
+    "curve seeds",
+    "lrand48",
+    "Filippo Valsorda",
+    "cryptography backdoor",
+    "Dual_EC_DRBG",
+    "AI research"
+  ],
+  "heroImage": {
+    "src": "/brief/claude-solved-the-1997-nsa-curve-seed-mystery-in-half-an-hour.png",
+    "alt": "Diagram titled The NSA curve seeds, solved. Left, what people guessed: a hashed joke passphrase, 'Give Bob and Jerry a raise', or a hidden NSA backdoor, unsolved since 1997. Right, what Claude found: a standard C random function, seeded with the clock time, 16 Aug 1997 01:52:34, P-256 is attempt number 1,842. Caption: Claude traced them to a 1997 clock reading in under half an hour.",
+    "credit": "Oslo Vibe Coding, figures from Anthropic, verified by Filippo Valsorda",
+    "creditUrl": "https://www.anthropic.com/research/ecdsa-curve-origins"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Every time your browser shows a padlock, there is a good chance a piece of mathematics called P-256 is doing the work. It is one of a family of elliptic curves (a kind of equation whose properties make it easy to lock data and practically impossible to pick the lock) that the US standards body NIST published around the year 2000. Bank cards, passkeys, phone secure chips and most HTTPS connections lean on them.",
+        "Each curve was built from a 'seed': a 160-bit number, fed into a hash function to produce the curve, so that anyone could check the curve really came from the seed. The catch: nobody ever explained where the seeds themselves came from. They were supplied in 1997 by the NSA (the US signals intelligence agency), and the official answer amounted to 'they are random'. That gap is exactly where suspicion grows. If you can choose the seed, the worry goes, you can try millions of them until you find a curve with a weakness only you know about.",
+        "On Friday 16 October 2026 Anthropic, the company behind the Claude AI models, published the answer. One of its staff asked an internal research model to work out how the seeds were generated. According to Anthropic, it cracked it in under half an hour."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "There had been one human clue. In 2015 Jerry Solinas, the NSA mathematician linked to the seeds, recalled that they might have come from hashing a joke phrase, something like 'Give Bob and Jerry a raise' (Bob being the colleague who wrote the code). Neither could remember the details. Solinas died in 2023. Several Anthropic employees had tried hunting for the passphrase and failed, because, it turns out, the memory was wrong.",
+        "The model was not given that hint. It guessed that 1990s software would have used a weak, standard random-number generator, wrote a scanner to test for one, and spotted that the top bits of some seeds were all zero. That pattern matched lrand48, a function in the standard C library that keeps 48 bits of internal state but hands out only 31 of them. From there it recovered the hidden state, by brute force for some curves and with a classic lattice-reduction technique (LLL) for the others, and found that each generator had been started from a Unix timestamp (the computer clock counted in seconds).",
+        "The result, per Anthropic: the seeds for P-192, P-224, P-256, P-384 and P-521 all come out of lrand48. P-256's seed is the 1,842nd 20-byte output after the clock read 16 August 1997, 01:52:34. Four of the binary-field curves point to April 1998, apparently from a program that halved the clock value. The starting points of six curves trace back to the random-number generator of FreeLIP, a free maths library of the era.",
+        "The check: each recovered state regenerates all 160 bits of its seed exactly, and Anthropic published code that reproduces them. Filippo Valsorda, the cryptographer who in 2023 put up a public bounty for the seeds, wrote on 16 October that he reimplemented the method himself in Go and confirmed it. The bounty, tripled to $36,864 for going to charity, goes to the Internet Security Research Group, the non-profit behind Let's Encrypt."
+      ],
+      "pullquote": "A secret that worried cryptographers for decades turned out to be a clock reading and a library function from 1997."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture a lottery that has run for 25 years on numbers drawn by a government official, who swore the draw was fair but threw away the machine. Every so often someone asks: what if the draw was rigged? Then a detective notices the winning numbers have a faint fingerprint, works out which make of 1990s ball machine leaves that fingerprint, and rebuilds the machine. Switch it on at the right minute in August 1997, pull 1,842 balls, and out come the winning numbers, exactly.",
+        "That does not prove the official was a saint. It proves the numbers came from an ordinary machine, switched on at an ordinary time, rather than being hand-picked one at a time. It also leaves one awkward detail: the machine produced at least one other valid ticket earlier in the run, and nobody knows why that one was passed over."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The suspicion is not paranoia. In 2013 documents leaked by Edward Snowden indicated that the NSA had planted a backdoor in Dual_EC_DRBG, a NIST-standard random-number generator, and NIST withdrew it. Since then the unexplained curve seeds have been a standing reason some engineers preferred alternatives such as Curve25519, whose numbers were chosen in the open. The seed question was a famous, well-defined, decades-old open problem, which is why a bounty existed at all.",
+        "What is new is who solved it and how fast. This is the latest in a run of AI-assisted results on problems humans had stalled on, from maths conjectures to security flaws, which we have covered before. The usual caveats apply: the write-up comes from Anthropic itself, the model is an unnamed internal one, and the team of ten researchers credited on the post did the checking and framing. The difference here is that the answer is mechanically checkable: run the code, and the 160 bits either match or they do not. They match, and an outside expert has checked."
+      ],
+      "links": [
+        {
+          "label": "Anthropic, 16 October 2026: Claude reveals ECDSA curve origins",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins"
+        },
+        {
+          "label": "Filippo Valsorda, 16 October 2026: The NIST Elliptic Curves Seeds Bounty has been claimed",
+          "url": "https://words.filippo.io/seeds-solved/"
+        },
+        {
+          "label": "Hacker News discussion (800+ points), including sceptical replies from cryptographers",
+          "url": "https://news.ycombinator.com/item?id=50122800"
+        },
+        {
+          "label": "Our earlier brief: An AI solved ten maths problems nobody else could",
+          "url": "https://oslovibecoding.tech/brief/an-ai-solved-ten-maths-problems-nobody-else-could"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For your padlock: nothing changes. Anthropic says plainly that this is not a cryptographic break, a new attack or a weakness, and that there is nothing to do differently. Valsorda wrote that the findings reinforce confidence in the curves. If anything, a long-running doubt about the most used curves just got smaller.",
+        "Smaller, not zero, and the sceptics have a point. Some commenters argued that 'much less plausible' oversells it: what has been ruled out is a seed hand-crafted for a weakness, not every conceivable trick. And there are loose ends. The starting points of P-224, P-256, P-384 and P-521 are still unexplained, as is one binary curve's seed. The P-256 run produced another valid curve at attempt 876 that was skipped in favour of 1,842, and other runs skipped a handful more, for reasons nobody knows. Anthropic's view is that skipping so few candidates makes deliberate weakness-shopping implausible. That is reasonable, but it is an argument, not a proof.",
+        "For the rest of us the bigger signal is the method. A model looked at a cold case, formed a hypothesis about 1990s software habits, wrote the tools to test it, and handed back something anyone can verify. Point the same patience at other old, unexplained constants in software, or at fresh code, and you have a powerful auditor, for defenders and attackers alike. Disclosure: we use AI tools from several companies, including Anthropic's, to help produce this brief."
+      ],
+      "pullquote": "The answer is mechanically checkable: run the code and the 160 bits either match or they do not. They match."
+    }
+  ]
+},
+{
+  "slug": "the-same-ai-chip-is-not-the-same-cloud",
+  "status": "published",
+  "datePublished": "2026-10-17",
+  "title": "Renting the same AI chip from two clouds is not the same thing",
+  "dek": "SemiAnalysis has ranked 77 companies that rent out AI computers, and only 19 earned a medal. The big names did not all win, two European budget favourites were marked down, and the reasons are mostly boring: health checks, storage that slows down, failures nobody notices. That is exactly why it matters to anyone renting compute.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 23 September 2026 the research firm SemiAnalysis published ClusterMAX 3.0, its third ranking of 'neoclouds' (companies that rent out clusters of AI chips) and the big clouds' AI offerings. It rated 77 providers out of 323 it tracks, after hands-on tests and more than 200 customer interviews. Only 19 earned a medal: CoreWeave and Nebius at Platinum, Oracle and Google Cloud at Gold, Azure, Firmus, Lambda, GMI and TensorWave at Silver, and ten at Bronze, including AWS and Crusoe. A new 'participation ribbon' tier holds 15 providers doing 'the bare minimum', and Hetzner and OVHcloud sit in 'underperforming'. The differences came from reliability and housekeeping, not the chips: storage that slowed by almost 40% under load, model loading taking over two minutes on some clouds versus 10 to 40 seconds on others, a failed network link that kept reporting itself as healthy. The ranking is one firm's method, and it covers managed clusters, not bare servers or AI answer APIs.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+  "sourceLabel": "Read the SemiAnalysis report",
+  "about": "SemiAnalysis ClusterMAX 3.0 (23 September 2026): 77 GPU clouds rated, 19 medal holders (CoreWeave and Nebius Platinum; Oracle and Google Cloud Gold; Azure, Firmus, Lambda, GMI, TensorWave Silver; ten Bronze including AWS and Crusoe), the new participation-ribbon tier, Hetzner and OVHcloud underperforming, the reliability findings behind the ranking, coding agents on GPU clusters, and how to read the ranking",
+  "keywords": [
+    "ClusterMAX",
+    "SemiAnalysis",
+    "neocloud",
+    "GPU cloud",
+    "CoreWeave",
+    "Nebius",
+    "Google Cloud",
+    "AWS",
+    "Crusoe",
+    "GPU rental",
+    "AI compute",
+    "Hetzner",
+    "OVHcloud"
+  ],
+  "heroImage": {
+    "src": "/brief/the-same-ai-chip-is-not-the-same-cloud.png",
+    "alt": "SemiAnalysis ClusterMAX 3.0 ranking chart, September 2026. Platinum: CoreWeave, Nebius. Gold: Oracle, Google Cloud. Silver: Azure, Firmus, Lambda, GMI, TensorWave. Bronze: AWS, Gcore, Verda, Moonlite, Prime Intellect, Together AI, Crusoe, DigitalOcean, GMO GPU Cloud, Hyperstack. Participation: Vultr, Neysa, Vessl AI, Shadeform, Runpod, Radiant, FPT AI Factory, Core42, Latitude.sh, IBM Cloud, Buzz HPC, Vast.ai, Bitdeer, Hyperbolic, STN. Not recommended, underperforming: Sharon AI, IREN, Hydra, FarmGPU, WhiteFiber, PaleBlueDot AI, Akamai, Hetzner, Mithril, OVHcloud, Massed Compute. A further group, including FluidStack, SpaceX, Mistral AI, Nscale, Groq and Scaleway, is listed as unavailable. Notes on the chart: this is a ranking of managed clusters, not bare metal or inference endpoints; many providers with bad rankings are strong bare-metal providers.",
+    "credit": "SemiAnalysis ClusterMAX 3.0",
+    "creditUrl": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Most companies building with AI never touch a chip. They rent: an hour, a month or three years of time on someone else's GPUs (graphics processors, the chips AI runs on), usually from a cloud. Besides Amazon, Microsoft and Google, there are now hundreds of 'neoclouds', specialist firms whose whole business is renting out AI chips. On paper many sell the identical Nvidia hardware. So does it matter whom you rent from?",
+        "SemiAnalysis, a US chip and AI research firm, says yes, loudly. On 23 September 2026 it published ClusterMAX 3.0, the third edition of its ranking of AI clouds. It tracked 323 providers (up from 209 in the previous edition), rated 77 of them after asking each for 32 GPUs, ten terabytes of storage and five days of testing per setup, and interviewed more than 200 customers."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "Only 19 providers earned a medal. Platinum: CoreWeave and Nebius, the latter up from Gold (Nebius is headquartered in Amsterdam). Gold: Oracle, and Google Cloud, new to the tier. Silver: Azure, which slipped, plus Firmus, Lambda, TensorWave and GMI, which climbed from Bronze. Bronze, ten names: AWS, Gcore, Verda, Moonlite, Prime Intellect, Together AI, Crusoe, DigitalOcean, GMO GPU Cloud and Hyperstack. Crusoe dropped, and the report puts it 'towards the bottom' of Bronze for frequent hardware failures, outdated software and slow fixes. Reviewers called AWS 'a headache', citing network delays, storage that failed to provision and buggy health checks.",
+        "Below the medals, a new 'participation ribbon' tier holds 15 providers that, in the report's words, do the bare minimum to get by, among them Runpod, Vast.ai, Vultr and IBM Cloud. Then 'not recommended'. Eleven providers are rated 'underperforming', including the European budget favourites Hetzner and OVHcloud and the network giant Akamai. Another long list, from FluidStack to SpaceX, Mistral AI, Nscale, Groq and Scaleway, is marked 'unavailable', which in SemiAnalysis's usage means it could not evaluate them, not that they failed.",
+        "What separated the tiers was rarely raw speed. It was what happens when things go wrong. Some clouds' storage slowed by almost 40% under sustained load compared with its first benchmark. Loading a model took over two minutes on some providers and 10 to 40 seconds on others. In one test a network link died while still reporting itself as active, and no alert fired. SemiAnalysis wants failures caught within about two minutes and a broken machine swapped within an hour, and says reliability is the single criterion many large customers care about most."
+      ],
+      "pullquote": "Two clouds can sell you the identical Nvidia chip. One notices when it breaks. The other keeps billing you."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of renting the same model of car from two firms. Both quote the same daily price. One checks the brakes between every hire, has a replacement at your door within the hour if the engine light comes on, and its fuel gauge tells the truth. The other hands you the keys, and when the car dies on the motorway the dashboard still says everything is fine. You pay the same either way, but with the second firm you are paying for a car you are not driving.",
+        "AI training runs make that worse, because thousands of chips work in lockstep. One sick machine that nobody notices can stall the whole job, and the meter keeps running on every chip."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The idea is not. We have written before about the hidden cost of renting GPUs, where an identical hourly price can hide a much bigger bill once downtime is counted, and about a security test in which renters could see their neighbours' data. What ClusterMAX adds is a public scoreboard, now in its third edition, and providers publicise their medals, so the rankings carry commercial weight.",
+        "Two notes for reading it fairly. First, the chart itself warns that it ranks managed clusters, not bare servers or AI answer services, and that many providers with poor rankings are strong if you just want raw machines. Second, SemiAnalysis sells research and consulting to many of the companies it rates. Its methods are published, but it is one firm's judgement, not an industry standard body's. A newer wrinkle for our own community: the report found AI coding agents helpful on well-documented clusters but prone to naive choices on GPU systems, and it calls a fully 'vibecoded' approach to running infrastructure risky."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, 23 September 2026: ClusterMAX 3.0",
+          "url": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard"
+        },
+        {
+          "label": "ClusterMAX criteria, published by SemiAnalysis",
+          "url": "https://clustermax.ai/criteria"
+        },
+        {
+          "label": "Our earlier brief: Same price, 50% more expensive: the hidden cost of renting GPUs",
+          "url": "https://oslovibecoding.tech/brief/same-price-50-more-expensive-the-hidden-cost-of-renting-gpus"
+        },
+        {
+          "label": "Our earlier brief: They rented AI computers and saw the neighbours' data",
+          "url": "https://oslovibecoding.tech/brief/they-rented-ai-computers-and-saw-the-neighbours-data"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "If you are a founder or developer renting GPUs, the headline price is the start of the question, not the end. Ask a provider how fast it detects a failed machine, how quickly it replaces one, whether storage holds its speed under load, and what credits you get when it does not. A cheaper hour on a cluster that silently stalls can cost far more than a pricier one that heals itself.",
+        "For Europe the picture is mixed. A company headquartered in Amsterdam, Nebius, is at the very top. Two of the continent's best known budget hosts, Hetzner and OVHcloud, are marked down for managed AI clusters, and several European names, including Mistral AI's compute arm and Nscale, which is building AI capacity in northern Norway, were not evaluated at all. As more AI work moves onto rented chips, which cloud you pick is becoming as much a product decision as which model you call."
+      ],
+      "pullquote": "A cheaper hour on a cluster that silently stalls can cost far more than a pricier one that heals itself."
+    }
+  ]
+},
+{
   "slug": "anthropic-now-earns-more-in-a-quarter-than-in-all-of-last-year",
   "status": "published",
   "datePublished": "2026-10-16",
