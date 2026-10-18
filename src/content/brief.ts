@@ -36,6 +36,216 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "hackers-broke-into-opencode-and-ran-up-users-ai-bills",
+  "status": "published",
+  "datePublished": "2026-10-18",
+  "title": "Hackers broke into OpenCode and ran up its users' AI bills",
+  "dek": "OpenCode is one of the most popular free AI coding agents, with more than 200,000 GitHub stars. On Friday it told some users that attackers had reached an old server and may have copied the keys that unlock their OpenAI, Anthropic and Google accounts. By morning people were reporting drained credits and bills in the hundreds of dollars. The company calls it a 'distillation attack'. Here is what that means, what is known so far, and what to do if you keep AI keys in any hosted tool.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 17 October 2026 OpenCode, an open-source AI coding agent made by Anomaly Innovations, emailed users of its hosted Console service under the subject 'Action Required: Potential provider key breach'. It said it had found 'unauthorized access to a legacy system that we were in the process of decommissioning' and that 'third party provider keys (eg OpenAI, Anthropic) saved in your workspace may have been exposed'. On X it added that 1.4% of Console users were affected, that the breach was 'related to a large scale distillation attack', and that it is working with Anthropic, OpenAI and Google. Co-founder Dax Raad said his own accounts were being attacked too. Users reported their provider credits being used up overnight. OpenCode has not yet said how the attackers got in, how long they were inside, or how many keys were taken. The OpenCode program itself, run on your own computer, is not reported to be affected. If you store AI keys in any hosted service, rotate them and set spending limits.",
+  "sourceUrl": "https://news.ycombinator.com/item?id=50133401",
+  "sourceLabel": "Read the Hacker News thread, with OpenCode's statement",
+  "about": "The 17 October 2026 OpenCode Console breach: the customer email, the X statement (1.4% of Console users, 'large scale distillation attack'), Dax Raad's reaction, user reports of drained OpenAI and Anthropic credits, what bring-your-own-key means, Anthropic's February 2026 distillation report as context, OpenCode's earlier security flaws, the open questions, and what developers should do now",
+  "keywords": [
+    "OpenCode",
+    "security breach",
+    "API keys",
+    "Anthropic",
+    "OpenAI",
+    "Google",
+    "distillation attack",
+    "AI coding agent",
+    "bring your own key",
+    "Dax Raad",
+    "Anomaly Innovations",
+    "vibe coding security"
+  ],
+  "heroImage": {
+    "src": "/brief/hackers-broke-into-opencode-and-ran-up-users-ai-bills.png",
+    "alt": "Flow diagram titled How a breach became someone else's AI bill. Five steps: you save your OpenAI or Anthropic key in OpenCode Console; Console keeps it on a server so your team can use the model; attackers get into an old server that was being shut down; they copy keys and run large volumes of model queries; your credits vanish and you get the bill. Caption: OpenCode says 1.4% of its Console users were hit. The target was AI access, not code.",
+    "credit": "Oslo Vibe Coding, from OpenCode's 17 October 2026 statement",
+    "creditUrl": "https://news.ycombinator.com/item?id=50133401"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "OpenCode is a free, open-source coding agent: a program that runs in your terminal or code editor and writes, edits and runs code for you, using whichever AI model you point it at. Its GitHub repository passed 215,000 stars (the site's bookmark count, a rough measure of popularity) this week, and the company says more than 16 million developers use it monthly, a vendor figure we cannot check. It is made by Anomaly Innovations, the team behind the SST web framework, and it is a favourite in vibe-coding circles because it works with more than 75 model providers, including the Chinese open models that cost little or nothing.",
+        "Besides the free program there is OpenCode Console, a hosted service for teams. One of its features is 'bring your own key': you paste in the key for an AI account you already pay for, say Anthropic or OpenAI, and Console stores it so your whole team can use the model, in the docs' words, 'without ever seeing the provider key'. That convenience is exactly where the trouble was.",
+        "On Friday 17 October 2026 the security researcher Matt Johansen posted a screenshot of an OpenCode email at around 15:30 UTC with the words 'Confirmed. OpenCode hacked. Keys stolen.' At 18:08 UTC the company's X account confirmed it: 'We had a security breach last night related to a large scale distillation attack.' By evening the story was number one on Hacker News, the developers' news site, with more than 800 upvotes."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The email, titled 'Action Required: Potential provider key breach', said: 'We identified unauthorized access to a legacy system that we were in the process of decommissioning. Third party provider keys (eg OpenAI, Anthropic) saved in your workspace may have been exposed. Please revoke and replace those keys through the relevant provider's dashboard, update any applications using them, and review recent usage for unexpected activity. We're sorry this happened and will follow up with any updates.'",
+        "On X, OpenCode put the impact at 1.4% of Console users, specifically those who had linked an external provider. It said it had emailed everyone affected, that anyone who did not get an email was not impacted, and that it is working with Anthropic, OpenAI and Google on remediation. Then: 'The incident is ongoing so we cannot share more details at this point.' At 18:41 UTC co-founder Dax Raad posted that his 'personal accounts are being attacked now too', adding: 'whole new world with AI-powered hacking.'",
+        "The damage showed up as bills. One Hacker News user wrote that the OpenCode email arrived alongside an email from Anthropic saying their $20 of API credit for the month had been used up. Crypto Briefing reported affected users seeing balances drain quickly, some into the hundreds of dollars. Nobody has said who covers those charges.",
+        "What OpenCode has not said: how the attackers got into the old system, how long they were inside, how many keys 1.4% represents, or whether every exposed key was actually used. It has also not published evidence for the 'distillation' label. The company's own X post and email are, so far, the only first-hand sources."
+      ],
+      "pullquote": "The loot was not source code or passwords. It was the right to ask a frontier AI model questions on someone else's bill."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a hotel that offers to hold guests' payment cards at reception, so anyone in the party can charge drinks to the room. Convenient. Then a burglar gets into an old back office the hotel had stopped using but had not yet emptied, photographs the cards, and spends the night buying things in bulk. The guests wake up to the bills, the hotel says 'cancel your cards', and nobody yet knows how the back-office door was opened.",
+        "Your own wallet, the key on your own laptop, was never in that office. But if you handed a card to reception, you need a new one today, and you want to know why the old office still had the cards in it."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Stolen API keys are an old problem. Developers have leaked them in public code for years, and the big providers run scanners that revoke keys the moment they appear on GitHub. What is newer is the market for them. 'Distillation' means training a weaker AI model on the answers of a stronger one. It is a normal technique when you own both models, and theft when you do it against a rival's terms of service. In February 2026 Anthropic said it had found more than 16 million such exchanges with Claude, routed through about 24,000 fraudulent accounts, which it attributed to the Chinese labs DeepSeek, Moonshot AI and MiniMax, with one proxy network running more than 20,000 accounts at once. Since then, access to frontier models has itself become loot. A hosted store of real customers' keys is a shortcut past all that account-farming, if that is indeed what happened here.",
+        "OpenCode has also had a rough year on security. A remote-code-execution flaw (CVE-2026-22812) in versions before 1.0.216 was disclosed in January 2026, and Datadog's researchers reported another in the program's 'serve' mode in September, fixed in version 1.18.22. Neither is known to be linked to this breach, which hit a company server, not the program on your machine. Commenters on Hacker News did note that the project had been warned about how it handled data months earlier, and that Raad's 'AI-powered hacking' line hints at attackers now pointing coding agents at targets and letting them grind for days. That is speculation, not a finding."
+      ],
+      "links": [
+        {
+          "label": "Hacker News thread (800+ points) with OpenCode's statement and user reports",
+          "url": "https://news.ycombinator.com/item?id=50133401"
+        },
+        {
+          "label": "Gabriel Anhaia, 17 October 2026: timeline of the email, the X post and Raad's reply",
+          "url": "https://dev.to/gabrielanhaia/opencode-told-14-of-console-users-to-revoke-their-openai-and-anthropic-keys-561"
+        },
+        {
+          "label": "OfficeChai, 18 October 2026: OpenCode discloses security breach",
+          "url": "https://officechai.com/ai/opencode-discloses-security-breach-says-attackers-may-have-accessed-users-openai-anthropic-and-google-api-keys/"
+        },
+        {
+          "label": "Crypto Briefing, 17 October 2026: 1.4% of Console users, reports of drained balances",
+          "url": "https://cryptobriefing.com/opencode-distillation-attack-api-key-breach/"
+        },
+        {
+          "label": "Anthropic, 23 February 2026: Detecting and preventing distillation attacks",
+          "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+        },
+        {
+          "label": "OpenCode Console docs: bring your own key",
+          "url": "https://opencode.ai/v2/docs/console/byok/"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "If you got the email: revoke the keys in each provider's dashboard and issue new ones, update every app, script and CI secret that used the old ones, and read your usage logs back to 16 October. If you did not get the email, do the cheap things anyway. Use one key per tool, never one key everywhere. Put a monthly spending cap on each key; Anthropic, OpenAI and Google all offer them, and a cap would have turned a drained account into a blocked one. Prefer the narrowest permissions a provider allows. Keys you added to the OpenCode program on your own computer with the /connect command live in a local file, and OpenCode has said nothing about those being affected.",
+        "For the industry, the lesson is about where keys live. 'Bring your own key' has spread to gateways, editors, agents and dashboards everywhere, and each one is a pile of other people's credit cards. Several of the services we cover, including the token resellers, hold keys like this. The providers, for their part, now have to treat stolen keys as a distillation channel, not just a fraud cost. The honest measure of OpenCode will be the root-cause report it owes its users: how the old system was reached, why it still held live keys, and who pays the bills. Until then the only safe assumption is that any key you handed to a hosted service might be in someone else's hands. Disclosure: we use AI tools from several companies, including Anthropic's and OpenAI's, to help produce this brief."
+      ],
+      "pullquote": "A spending cap would have turned a drained account into a blocked one."
+    }
+  ]
+},
+{
+  "slug": "meta-is-building-its-own-gas-plants-to-feed-ai",
+  "status": "published",
+  "datePublished": "2026-10-18",
+  "title": "AI needs so much power that Meta is building its own gas plants",
+  "dek": "Meta's two flagship AI campuses cannot wait for the grid. In Ohio it has bolted gas power plants onto the site, with no connection to the public network at all. In Louisiana it is paying a utility to build ten gas plants, roughly half of what all of Norway draws on an average day. Here is what is approved, what is still being fought over, and why the AI race has turned into a race for electricity.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "Meta's 1-gigawatt Prometheus AI cluster in New Albany, Ohio, is being fed by gas power plants built inside the campus fence: two 200-megawatt plants under construction by the pipeline company Williams, approved in June 2025 and due in service late this year, plus a third 250-megawatt plant with batteries approved in June 2026. None of them connect to the public grid. In Richland Parish, Louisiana, Meta's much larger Hyperion campus has led the utility Entergy to plan ten gas plants totalling about 7.5 gigawatts at a cost of nearly $11 billion, which Meta says it will cover; three are approved and seven are in hearings, with a regulator's vote expected in December. The reason is time: a large new grid connection in the United States can take around five years, and Meta wants the compute now. Critics say Louisiana households could be left paying for the plants if Meta leaves when its contract ends.",
+  "sourceUrl": "https://fortune.com/2026/03/27/meta-hyperion-10-gas-power-plants-louisiana-entergy/",
+  "sourceLabel": "Read the Fortune report on the ten Louisiana plants",
+  "about": "Meta's on-site gas power for the Prometheus cluster in New Albany, Ohio (Williams' Socrates North and South, 200 MW each, off-grid, approved June 2025; Socrates the Younger, 250 MW plus 116 MW of batteries, approved June 2026), Epoch AI's count of 12 buildings and 562 MW operating by August 2026, Entergy's ten gas plants (7.5 GW, nearly $11 billion) for the Hyperion campus in Richland Parish, Louisiana, the Public Service Commission fast-track and December vote, who pays after the contract ends, and why speed to power now decides the AI race",
+  "keywords": [
+    "Meta",
+    "Prometheus",
+    "Hyperion",
+    "gas power plants",
+    "data center power",
+    "Entergy",
+    "Williams",
+    "Socrates",
+    "behind the meter",
+    "AI electricity",
+    "Louisiana Public Service Commission",
+    "New Albany Ohio"
+  ],
+  "heroImage": {
+    "src": "/brief/meta-is-building-its-own-gas-plants-to-feed-ai.png",
+    "alt": "Bar chart titled Meta is building its own power plants. Prometheus, Ohio, on-site gas plants approved: 650 MW. Hyperion, Louisiana, gas plants planned for Meta: 7,500 MW. Norway, average draw from the grid: about 15,800 MW. Caption: gas capacity Meta is paying for at two AI campuses, next to what all of Norway draws from its grid on an average day.",
+    "credit": "Oslo Vibe Coding, figures from the Ohio Power Siting Board, Entergy via Fortune, and Electricity Maps",
+    "creditUrl": "https://fortune.com/2026/03/27/meta-hyperion-10-gas-power-plants-louisiana-entergy/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "In July 2025 Mark Zuckerberg announced that Meta (the owner of Facebook, Instagram and WhatsApp) would build what he called titan clusters for training AI: Prometheus, a 1-gigawatt cluster in New Albany, Ohio, due online in 2026, and Hyperion in Louisiana, which he said could grow to 5 gigawatts over several years. A gigawatt is a thousand megawatts, about the output of a large nuclear reactor, or by the usual rule of thumb enough for around 700,000 American homes.",
+        "The catch is that you cannot plug a gigawatt into the wall. In much of the United States a big new customer waits years for a grid connection, and the transformers needed are on back-order measured in years too. So Meta is doing what the chip research firm SemiAnalysis flagged in July 2025 when it first described Prometheus: it is getting power plants built next to the computers, fuelled by natural gas, and in Ohio not connected to the public grid at all."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "In Ohio the plants are not Meta's on paper. They belong to Will-Power, a subsidiary of Williams, one of America's largest gas pipeline companies, and sell their output to Sidecat LLC, a Meta affiliate. The Ohio Power Siting Board approved the first, Socrates South, on 9 June 2025: 200 megawatts, with a twin, Socrates North, of the same size. Williams puts the investment at more than $2 billion, and its target is for both to be in service in the third and fourth quarters of 2026. Gas arrives through two dedicated 24-inch pipelines, and the electricity never leaves the campus fence. On 26 June 2026 the board approved a third plant, Socrates the Younger: 250 megawatts of gas generation plus 116 megawatts of batteries, to serve an adjacent Meta data centre.",
+        "The computers arrived faster than the power plants. Epoch AI, a research group that tracks large data centres from satellite images and filings, counted 12 Prometheus buildings operating by August 2026, with about 562 megawatts of IT load, five of them tent-style structures Meta put up to save time, and projects about 854 megawatts by early 2027. Until the on-site plants switch on, that power has to come from the existing grid and local supply; Meta also points to about 440 megawatts of Ohio solar it has contracted.",
+        "Louisiana is the bigger story. Hyperion, in Richland Parish in the north-east of the state, is financed through a joint venture with Blue Owl Capital with up to $27 billion in development costs, and Entergy's chief executive Phillip May has said the full campus will use 4,500 megawatts, about four times the city of New Orleans. Rather than build its own plants, Meta is paying the utility Entergy Louisiana to build them. Three gas plants were approved in August 2025. On 27 March 2026 Entergy announced seven more, taking the total to ten plants and about 7.5 gigawatts, at an estimated cost of nearly $11 billion. Meta has also agreed to help fund up to 2.5 gigawatts of renewables and batteries and 240 miles of transmission lines.",
+        "The seven new plants are not yet approved. On 15 April 2026 the Louisiana Public Service Commission voted 4 to 1 to fast-track the review, skipping the competitive bidding normally used to find the cheapest option. Hearings opened on 7 October under a settlement between Entergy and the commission's staff, and the five elected commissioners are expected to vote in December. Entergy says Meta pays its full cost of service and that other customers will come out about $2 billion ahead over 20 years. In August the commission also voted 3 to 1 to let Meta keep details of the data centre confidential, overruling a judge."
+      ],
+      "pullquote": "Ten gas plants for one customer. That is roughly half of what the whole of Norway draws from its grid on an average day."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a bakery that wants to open the biggest oven line in the country, and the power company says the connection will take five years. The bakery does not wait. It buys its own generators, runs a gas pipe to the back door, and bakes from day one with the generators humming behind the shop. That is Ohio.",
+        "In Louisiana the bakery is so large that it asks the power company to build ten new power stations just for it, promises to pay the bills for the length of its contract, and the neighbours start asking who pays for the stations after that. The ovens, in this case, are halls of Nvidia chips, and the bread is AI models."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Big factories have generated their own power for a century; aluminium smelters, including Norway's, were built next to hydro dams for exactly this reason. What is new is the speed and the fuel. Williams says the US interconnection queue for large loads now averages about five years and a large substation transformer can take over two years to deliver, so 'behind-the-meter' gas (power generated on the customer's own side of the utility meter) has become the fast lane. Williams has told investors it intends to repeat the Socrates model for other hyperscale customers, and xAI, Elon Musk's AI company, was widely reported in 2025 to have run dozens of gas turbines at its Memphis site to get going. We covered how much electricity a single AI campus now draws in an earlier brief.",
+        "It is also new that one private customer can reshape a state's electricity system. The Union of Concerned Scientists estimates data centre growth could add $26 billion to Louisiana's electricity system costs over 15 years, and consumer and environmental groups including the Alliance for Affordable Energy and the Sierra Club are fighting the fast-track. Their argument is not that Meta will not pay while it is there. It is that three of the plants would be written off over 32 years while Meta's contract is reported at 15 to 20 years, so if demand for AI compute falls, or Meta moves on, households could be left with several billion dollars of power plant."
+      ],
+      "links": [
+        {
+          "label": "Fortune, 27 March 2026: Meta orders 10 gas-fired power plants for its Hyperion campus",
+          "url": "https://fortune.com/2026/03/27/meta-hyperion-10-gas-power-plants-louisiana-entergy/"
+        },
+        {
+          "label": "Union of Concerned Scientists, April 2026: Louisiana regulators fast-track the 7-plant proposal",
+          "url": "https://www.ucs.org/about/news/louisiana-regulators-fast-track-7-gas-plant-proposal-meta-data-center"
+        },
+        {
+          "label": "Louisiana AI, 11 October 2026: who pays for Louisiana's data centre power",
+          "url": "https://louisianai.com/briefs/2026-10-11-louisiana-ai-feature-article"
+        },
+        {
+          "label": "Williams: Socrates power solution facilities, New Albany",
+          "url": "https://www.williams.com/expansion-project/socrates-power-solution-facilities/"
+        },
+        {
+          "label": "Farm and Dairy, June 2026: Ohio approves the 250 MW Socrates the Younger plant",
+          "url": "https://www.farmanddairy.com/news/ohio-power-siting-board-approves-sixth-natural-gas-power-plant-in-new-albany/919826.html"
+        },
+        {
+          "label": "Data Center Census: Prometheus status, with Epoch AI's building counts",
+          "url": "https://datacentercensus.com/dc/meta-prometheus-new-albany-oh"
+        },
+        {
+          "label": "SemiAnalysis, 11 July 2025: Meta Superintelligence, leadership, compute, talent and data (paid)",
+          "url": "https://newsletter.semianalysis.com/p/meta-superintelligence-leadership-compute-talent-and-data"
+        },
+        {
+          "label": "Our earlier brief: An AI datacenter now uses as much electricity as a city",
+          "url": "https://oslovibecoding.tech/brief/an-ai-datacenter-now-uses-as-much-electricity-as-a-city"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI race: electricity, not chips, is now the pacing item, and the company with the fastest route to power buys itself time. Meta's answer is gas because turbines and engines can be bought and installed in months, while nuclear and large-scale renewables take years. The price is carbon and local air pollution, and Meta's climate pledges now sit next to three gas plants in Ohio and ten in Louisiana. Meta says it is also funding solar, batteries and, as reported in January 2026, nuclear deals, but those arrive later.",
+        "For people who pay power bills: the fight in Louisiana is about the years after the contract. Asked whether Entergy had examined the argument that data centres are being overbuilt, its chief executive told The Advocate: 'I don't know that we have exactly looked into that.' The commission's vote in December will show which way Louisiana leans, and other states with data-centre ambitions are watching.",
+        "For Norway, which courts data centres with cheap hydro, the lesson cuts both ways. Firm, clean power is exactly what these campuses want and most US sites cannot get. The question Louisiana is asking, who pays if the tenant leaves, applies as much to a fjord as to a bayou."
+      ],
+      "pullquote": "Electricity, not chips, is now the pacing item in the AI race."
+    }
+  ]
+},
+{
   "slug": "claude-solved-the-1997-nsa-curve-seed-mystery-in-half-an-hour",
   "status": "published",
   "datePublished": "2026-10-17",
