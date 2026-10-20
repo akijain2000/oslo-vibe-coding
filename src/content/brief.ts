@@ -36,6 +36,220 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "character-ai-went-bankrupt-disney-bought-the-people-not-the-app",
+  "status": "published",
+  "datePublished": "2026-10-20",
+  "title": "Character.AI went bankrupt. Disney bought the people, not the app.",
+  "dek": "Character.AI was the chatbot app teenagers could not put down: 163 million sign-ups, a $1 billion valuation, and a reported $2.7 billion from Google to get its founders back. On 12 October it filed for bankruptcy in Delaware. Disney, which sent it a cease-and-desist letter a year ago, has now offered $20 million for a licence to its technology and about $60 million a year in salaries to hire two-thirds of its staff. Here is how a product with millions of devoted users lost $8 million a month, and why the engineers turned out to be worth more than the company.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "Character Technologies Inc., the company behind Character.AI, filed for Chapter 11 in the US Bankruptcy Court in Wilmington, Delaware, on 12 October 2026, citing 'declining liquidity' and 'high costs of operating and defending lawsuits and regulatory investigations related to safety concerns'. Its filing shows monthly revenue rising from $2.8 million in December 2025 to a peak of $5.3 million in August 2026, operating losses of $8 to $9 million a month, $56.1 million spent on computing in the first eight months of 2026 (about 45% of spending), assets and liabilities of $50 to $100 million each, no bank debt and $57 million in cash. Disney Worldwide Services is the stalking-horse bidder at $20 million for a non-exclusive, perpetual licence to some of its technology and intellectual property, not the app. A filing reported by TechCrunch on 18 October says Disney has agreed to offer jobs to at least 60 employees, the majority, and that the 'vast majority' accepted; Business Insider puts it at 66 people, about $60 million a year, plus a $30 million retention pool. Former CEO Karandeep Anand became Disney's first chief technology officer on 2 October. Google paid about $2.7 billion in August 2024, per the Wall Street Journal, for a licence and the founders' return, and is now the largest unsecured creditor at over $4.1 million. The sale is expected to close in late November or early December; without a buyer for the app, it will be wound down.",
+  "sourceUrl": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+  "sourceLabel": "Read the TechCrunch report on the Disney hiring filing",
+  "about": "The 12 October 2026 Chapter 11 filing of Character Technologies Inc. (Character.AI) in Delaware, the financial figures from CEO Colin Adams's declaration (revenue, losses, compute and personnel costs, cash, creditors), the legal history (Setzer and Texas lawsuits, the January 2026 settlement, Kentucky and Pennsylvania actions, the under-18 ban, 40 attorneys general on user data), Disney's $20 million stalking-horse bid for an IP licence, Disney's job offers to 60 to 66 employees at about $60 million a year, Karandeep Anand as Disney's first CTO, Disney's September 2025 cease-and-desist, Google's $2.7 billion 2024 deal, the sale timeline, and what it means for consumer AI products.",
+  "keywords": [
+    "Character.AI",
+    "Chapter 11",
+    "bankruptcy",
+    "Disney",
+    "acqui-hire",
+    "Karandeep Anand",
+    "Noam Shazeer",
+    "Google",
+    "AI chatbots",
+    "compute costs",
+    "teen safety",
+    "consumer AI"
+  ],
+  "heroImage": {
+    "src": "/brief/character-ai-went-bankrupt-disney-bought-the-people-not-the-app.png",
+    "alt": "Bar chart titled The people were worth more than the product. Four bars: Character.AI valuation in its 2023 funding round, about $1 billion; what Google paid for a licence and the founders in 2024, about $2.7 billion; Disney's bid for a licence to the technology in 2026, $20 million; Disney's yearly pay for the 66 staff it is hiring, about $60 million. Caption: Disney's offer for the technology is a third of one year's pay for the people who built it.",
+    "credit": "Oslo Vibe Coding, figures from the bankruptcy filing, the Wall Street Journal and Business Insider",
+    "creditUrl": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Sunday 12 October 2026 Character Technologies Inc., the Redwood City company behind Character.AI, filed for Chapter 11 (the US process in which a company keeps operating under a judge's supervision while it sells itself or restructures its debts) in the bankruptcy court in Wilmington, Delaware. The petition cited 'declining liquidity' and 'high costs of operating and defending lawsuits and regulatory investigations related to safety concerns'. The app stays online while the court runs a sale.",
+        "Character.AI lets anyone create a chatbot with a personality, a maths tutor, a fictional boyfriend, an anime hero, a dead philosopher, and talk to it for hours. It was founded in November 2021 by two former Google researchers, Noam Shazeer and Daniel de Freitas, raised $150 million at a valuation of about $1 billion in March 2023, and says 163 million people have signed up since launch. In August 2024 Google paid about $2.7 billion, according to the Wall Street Journal, for a non-exclusive licence to its technology and to bring Shazeer, de Freitas and a group of staff back to Google, where Shazeer now co-leads the Gemini models. The company that was left behind kept the app, the users and, as it turned out, the bills.",
+        "On Saturday 18 October a court filing, reported by TechCrunch, revealed the next twist. Disney has agreed to offer jobs to at least 60 Character.AI employees, the majority of the staff, and the filing says the 'vast majority' accepted. Business Insider puts the number at 66 people and the pay at about $60 million a year, plus a $30 million retention pool. Disney Worldwide Services is also the 'stalking-horse' bidder (the opening offer that sets the floor for an auction) at $20 million, for a non-exclusive, perpetual licence to some of Character.AI's technology and intellectual property, along with some of its legal claims. The $20 million does not buy the app. Rival bids are being taken through November; if nobody offers to run the service, the filing says it will be wound down."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The numbers in the filing, from the sworn declaration of chief executive Colin Adams, tell the story in four lines. Monthly revenue rose from $2.8 million in December 2025 to $5.3 million in August 2026, its best month ever, from the $9.99 c.ai+ subscription and from ads. Operating losses ran at $8 million to $9 million a month. Computing cost $56.1 million in the first eight months of 2026, about 45% of everything the company spent; salaries and benefits were $19.7 million, about 16%. In other words, the servers cost nearly three times the staff, and both together cost more than twice what customers paid.",
+        "The company listed assets and liabilities of $50 million to $100 million each, had no bank debt, and held $57 million in cash on the day it filed. The largest unsecured creditor is Google, owed more than $4.1 million, followed by the law firm Hogan Lovells at $2.1 million, the cloud host DigitalOcean at $1.9 million and the AI hosting firm Fireworks at $813,000. A law firm in the top three creditors is the legal bill made visible.",
+        "That bill has a history. In February 2024 Sewell Setzer III, a 14-year-old in Florida, died by suicide after months of conversations with a bot modelled on a Game of Thrones character; his mother sued in October 2024, and two Texas families followed in December. Character.AI and Google settled those cases in January 2026 on undisclosed terms. Kentucky's attorney general sued the same month, and Pennsylvania's medical board sued in May over bots presenting themselves as licensed doctors; the filing says the company is now working with 46 states and territories. From 25 November 2025 it barred under-18s from open-ended chats, which removed a large slice of its most devoted audience. Forty attorneys general have already filed in the bankruptcy asking the court to protect user data if it is sold.",
+        "Then there is Disney. On 30 September 2025 Axios reported that Disney had sent Character.AI a cease-and-desist letter demanding it stop using Disney, Pixar, Marvel and Star Wars characters without permission, citing both copyright and a report on children's conversations with the bots; Character.AI removed them and said it wanted to work with rights holders. In December 2025 Disney instead signed a three-year deal with OpenAI's Sora for fan-made videos of its characters. On 18 September 2026 Disney announced that Character.AI's chief executive, Karandeep Anand, would become its first company-wide chief technology officer, starting 2 October, and reports at the time said some of his technical staff were expected to follow. Ten days after he started, his old company filed. A week after that, his new employer hired his old team."
+      ],
+      "pullquote": "$20 million for the technology. $60 million a year for the people who built it."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture a restaurant with a queue round the block every night, where every plate costs more to cook than it sells for. The kitchen is the problem: each conversation runs on rented AI chips, and a chat that lasts three hours costs the house three hours of computing whether the customer pays $9.99 a month or nothing at all. The most loyal regulars, the ones who never leave, are the most expensive to serve. And some of them turned out to be children, which brought the inspectors.",
+        "When the restaurant goes under, the big chain across the road does not buy the restaurant. It hires the chefs, pays a small fee for the recipe book, and lets the lease lapse."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Paying for people rather than companies is not new; Character.AI has now been on the receiving end twice. Google's 2024 deal was a $2.7 billion 'licence' that the US Justice Department later examined as a possible acquisition in disguise, and Microsoft, Amazon and Meta have each done versions of the same move with Inflection, Adept and Scale AI. Disney's version is the bankruptcy-court edition: the court process means the licence, the hires and the leftover claims are sorted out under a judge rather than by a regulator asking whether a licence was really a merger.",
+        "What is new is the size of the consumer AI company failing in public, and the reason. Character.AI was not short of users. It had 163 million sign-ups, a filing that still boasts of a 'large and engaged user base', and growing revenue right up to the month it filed. It was short of a price. Consumer chat at $9.99 a month, or free with ads, does not cover the computing cost of someone who talks to a bot for hours a day, and the people who do that most were the people it then had to ban. The lesson rhymes with a story we covered in August about Uber putting data-plan-style caps on their employees' AI use: the cost of AI is driven by a small group of heavy users, and a flat price cannot absorb them. A pivot to AI-animated 'microdramas' in July 2026 did not change the arithmetic."
+      ],
+      "links": [
+        {
+          "label": "TechCrunch, 18 October 2026: Disney agrees to hire the majority of Character.AI's workforce",
+          "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"
+        },
+        {
+          "label": "Bloomberg Law via Yahoo Finance: the Chapter 11 petition, the CEO's declaration and the financial figures",
+          "url": "https://finance.yahoo.com/technology/ai/articles/disney-seeks-buy-character-ai-041300121.html"
+        },
+        {
+          "label": "Business Today, 19 October 2026: why Disney will pay $60 million a year to hire 66 employees",
+          "url": "https://www.businesstoday.in/technology/news/story/characterai-bankruptcy-explained-why-disney-will-pay-60-million-a-year-to-hire-66-employees-562386-2026-10-19"
+        },
+        {
+          "label": "Forbes, 19 October 2026: Disney hired bankrupt Character.ai's engineers, not its characters",
+          "url": "https://www.forbes.com/sites/maureenkerr/2026/10/19/disney-hired-bankrupt-characterai-engineers-not-its-characters/"
+        },
+        {
+          "label": "Axios, 30 September 2025: Disney sends cease and desist letter to Character.AI",
+          "url": "https://www.axios.com/2025/09/30/disney-characterai-cease-desist"
+        },
+        {
+          "label": "Disney press release, 18 September 2026: Karandeep Anand named first chief technology officer",
+          "url": "https://thewaltdisneycompany.com/news/karandeep-anand-chief-technology-officer/"
+        },
+        {
+          "label": "Wikipedia: Character.ai, with the timeline of funding, lawsuits and the under-18 ban",
+          "url": "https://en.wikipedia.org/wiki/Character.ai"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For anyone building a consumer AI product, Character.AI is the clearest case study yet. It had the thing every startup wants, millions of users who would not log off, and that was the cost. The price per user has to cover the computing per user, the free tier is where the heaviest users live, and if the product can be used by children, legal and regulatory costs become a line item measured in millions a month. Growing revenue did not save it because costs grew with every conversation.",
+        "For Disney, the arithmetic looks cheerful. It gets a team that knows how to make characters talk, for roughly the budget of one mid-sized film over three years, with that team's former boss already in the executive suite, and without inheriting the app, its lawsuits or its user data. Rival bidders can still top the $20 million, and the judge has the final word. But if Disney wins, the Elsa and Darth Vader bots it ordered deleted a year ago may well come back, this time with Disney's name on the door."
+      ],
+      "pullquote": "The app had users. What it never had was a price that covered a three-hour chat."
+    }
+  ]
+},
+{
+  "slug": "deepseek-s-minor-update-beats-a-20-dollar-gpt-at-1-dollar-20",
+  "status": "published",
+  "datePublished": "2026-10-20",
+  "title": "DeepSeek's 'minor update' beats a $20 GPT on nine tests out of eleven, at $1.20",
+  "dek": "DeepSeek, the Chinese lab whose cheap model shook markets in January 2025, released a new version of its budget V4.1 Flash model on Friday and called it a minor update. Its own scorecard shows it passing OpenAI's GPT-5.6 Sol on nine of eleven tests and Anthropic's Claude Opus 5 on four, at roughly one-seventeenth of their price, with the model file free to download. Independent testers put it at the top of the Chinese open-weight pack and 13 points behind the best closed model. Here is what is real, what is vendor marketing, and why developers are cheering anyway.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 17 October 2026 DeepSeek released DeepSeek-V4.1-Flash-1017, an updated version of its cheap Flash model, with weights downloadable under the MIT licence and the price unchanged at $0.30 per million input tokens and $1.20 per million output tokens at peak hours (half that off-peak). Its model card calls it 'a minor update' with 'substantial improvements' and reports Terminal-Bench 4.0 rising from 31.2 to 42.3, above GPT-5.6 Sol at 39.9 and below Claude Opus 5 at 51.8; across the card's eleven rows it beats GPT-5.6 Sol on nine and Opus 5 on four. Those are vendor numbers against summer-vintage closed models; Google's Gemini 4 Argon card puts Opus 5.5 at 66.4 on the same test. Artificial Analysis independently scored the model 45 on its Intelligence Index, tied with GLM-5.3 and one point behind MiMo V2.6 Pro among open models, 13 points behind Claude Opus 5.5 at 58, at 216 tokens per second. GPT-5.6 Sol and Claude Opus 5 cost $20 and $25 per million output tokens on OpenRouter. Per task at maximum effort the cost advantage narrows because the model thinks at length. MiniMax launched M3.1 Flash at the same $0.15 and $0.60 prices two days later.",
+  "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "sourceLabel": "Read DeepSeek's model card, with the full benchmark table",
+  "about": "DeepSeek-V4.1-Flash-1017, released 17 October 2026: the 'minor update' with 'substantial improvements', the MIT-licensed open weights, the unchanged $0.30/$1.20 pricing, the vendor benchmark table against GPT-5.6 Sol, Claude Opus 5, Kimi K3 and GLM-5.3, the Claude Code harness caveat, Google's Argon card numbers for newer closed models, Artificial Analysis's independent score of 45 and 216 tokens per second, the per-task cost catch, Hacker News reactions, MiniMax M3.1 Flash as the same-week echo, and what it means for people building with AI.",
+  "keywords": [
+    "DeepSeek",
+    "DeepSeek V4.1 Flash 1017",
+    "open weights",
+    "MIT license",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "Terminal-Bench",
+    "Artificial Analysis",
+    "MiniMax M3.1 Flash",
+    "Chinese AI",
+    "token pricing",
+    "AI coding agents"
+  ],
+  "heroImage": {
+    "src": "/brief/deepseek-s-minor-update-beats-a-20-dollar-gpt-at-1-dollar-20.png",
+    "alt": "Bar chart titled DeepSeek's minor update passes a $20 GPT. Terminal-Bench 4.0 scores with each model's price per million output tokens: DeepSeek V4.1 Flash from September, 31.2 at $1.20; DeepSeek V4.1 Flash 1017 from October, 42.3 at $1.20; GPT-5.6 Sol, 39.9 at $20; Claude Opus 5, 51.8 at $25. Caption: scores from DeepSeek's own model card, vendor-reported; newer closed models such as Claude Opus 5.5 score higher.",
+    "credit": "Oslo Vibe Coding, figures from DeepSeek's model card and OpenRouter list prices",
+    "creditUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Friday 17 October 2026 DeepSeek (the Hangzhou AI lab whose cheap R1 model knocked about a trillion dollars off tech stocks in January 2025) published DeepSeek-V4.1-Flash-1017. The number is the date. The model card on Hugging Face (the site where open AI models are shared) describes it as 'a minor update to DeepSeek-V4.1-Flash, delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks'. Hacker News, the developers' news board, put the release at number one with more than 950 points and 700 comments, and a good share of those comments were about that sentence. One: ''a minor update' they say before showing off benchmarks that display a substantial improvement.'",
+        "Flash is DeepSeek's cheap, fast tier; Pro is the big one. The 1017 version is already live on DeepSeek's website, app and API (the paid connection developers use), and the weights (the model file itself) can be downloaded under the MIT licence, which means anyone can run it, modify it and sell services on it with no fee and no permission. DeepSeek's announcement promises 'stronger benchmark performance, faster task completion, and shorter outputs than the previous version' and calls the result 'a Pareto improvement in performance and cost', economist-speak for better on one axis without getting worse on the other.",
+        "The price did not move. DeepSeek charges $0.30 per million input tokens and $1.20 per million output tokens at peak hours, and half that off-peak (a token is roughly three-quarters of a word; output is what the model writes, and it is the expensive part when an AI agent writes code for hours). For comparison, on OpenRouter (a marketplace that resells access to most models at list price) OpenAI's GPT-5.6 Sol costs $4 and $20, and Anthropic's Claude Opus 5 costs $5 and $25. On output, DeepSeek is about seventeen times cheaper than the GPT it claims to beat."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The claims come from DeepSeek's own table, so treat them as vendor figures until someone else repeats them. On Terminal-Bench 4.0 (a test where the AI must finish real tasks in a computer terminal with no human help) the new model scores 42.3, up from 31.2 for the September version, against 39.9 for GPT-5.6 Sol and 51.8 for Claude Opus 5. On DeepSWE v1.1 (fixing real bugs in real code repositories) it reports 77.0, ahead of both Opus 5 at 74.0 and Sol at 73.0. Counting across the card's eleven rows, 1017 beats GPT-5.6 Sol on nine and Claude Opus 5 on four. It also beats the two other big Chinese open models, Kimi K3 and GLM-5.3, on every row where all three are scored.",
+        "Two caveats are printed in the card's own footnotes. DeepSeek ran Terminal-Bench 4.0 inside Anthropic's Claude Code harness (the software wrapper that lets a model use a terminal), and harnesses move scores a lot. And the rivals in the table are not the newest ones: OpenAI has since shipped GPT-6 Astra and GPT-6.1 Sol, and Anthropic has shipped Claude Opus 5.5. Google's model card for Gemini 4 Argon, published last week, lists Terminal-Bench 4.0 at 57.4 for Argon, 58.2 for GPT-6 Astra and 66.4 for Opus 5.5, all well above DeepSeek's 42.3, though those runs used different settings and are not directly comparable either.",
+        "The independent check arrived on Monday. Artificial Analysis, a firm that re-runs its own battery of tests on every major model, scored the 1017 model at its maximum reasoning setting 45 on its Intelligence Index. That ties it with GLM-5.3 and Qwen3.8 Max near the top of the Chinese open-weight group, one point behind MiMo V2.6 Pro at 46, and 13 points behind Claude Opus 5.5 at 58, the current number one; it sits around 30th on the full table once every variant of the closed models is counted. The same page measured 216 output tokens per second, roughly twice the speed of most frontier models. Meta's Muse Spark Open, the 'most capable US open-weight model' we covered last week, scores 39 on the same index.",
+        "One more number from that page matters to anyone paying by the task rather than by the token. A Hacker News commenter noticed that GPT-6.1 Sol at medium effort worked out cheaper per task than DeepSeek 1017 at maximum effort, $0.21 against $0.26, and finished in 2.9 minutes against 4.9, because the DeepSeek model thinks at length before it answers. Per token it is the cheapest frontier-class model there is. Per task, at full effort, the gap narrows a lot."
+      ],
+      "pullquote": "Per token it is seventeen times cheaper than the GPT it beats. Per task, at full effort, the gap with OpenAI's newer GPT-6.1 Sol nearly closes."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a supermarket own-brand that keeps its price and quietly changes the recipe. Last autumn's version was fine for everyday use. This month's beats the big-name brand's product from the summer in a blind tasting, at a seventeenth of the price. The big-name brand has a newer recipe on the shelf that still wins the tasting, but it costs seventeen times as much, and the gap in quality is now smaller than the gap in price.",
+        "That is the trade developers are making this week. The question is no longer 'which model is best' but 'which one is good enough for this job, and what am I paying for the difference'."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The pattern is not new; the pace is. DeepSeek's V3 in December 2024 and R1 in January 2025 set the playbook: match last season's closed models, release the weights, charge a tenth of the price. What has changed in 2026 is that the catch-up interval has shrunk to months and the Chinese labs now race each other as hard as they race the Americans. Two days after this release, on Monday 19 October, MiniMax (a Shanghai lab) launched M3.1 Flash at $0.15 and $0.60 per million tokens, the same as DeepSeek's off-peak price, claiming nearly three times faster inference, though its weights are 'to be released later' and its blog names no rival for comparison. DeepSeek's V4.1 Flash also arrived in September with a research paper on compressing the model's working memory, which is part of why it is fast.",
+        "The Hacker News mood was mostly delight with a few sharp edges. One user reported 'around 3 hours' of heavy development on the model for about $0.40. Another said that this month they had 'more tokens and more capabilities on OpenCode at $8/month via DS 4.1 flash, than I had on a $200 account in June with the American providers'. A more measured voice: 'DS isn't better than Sol and Gemini in the benchmarks, but after working with them all for a while now I'm beginning to understand why people find DS feels so much better', citing speed and being able to see the model's reasoning. The complaints were about the name ('Why didn't they name it 4.2 Flash?'), about censorship of Chinese political topics, and about size: a model this large cannot run on a home PC, so in practice you rent it from a cloud."
+      ],
+      "links": [
+        {
+          "label": "DeepSeek model card on Hugging Face, 17 October 2026, with the benchmark table and footnotes",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+        },
+        {
+          "label": "DeepSeek announcement: 'Wish-Driven Programming Made Real', 17 October 2026",
+          "url": "https://api-docs.deepseek.com/news/news261017/"
+        },
+        {
+          "label": "Hacker News thread (950+ points, 700+ comments)",
+          "url": "https://news.ycombinator.com/item?id=50129045"
+        },
+        {
+          "label": "Artificial Analysis: DeepSeek V4.1 Flash 1017 (Max), Intelligence Index 45, 216 tokens per second",
+          "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017"
+        },
+        {
+          "label": "Artificial Analysis leaderboard: Claude Opus 5.5 at 58, the current top score",
+          "url": "https://artificialanalysis.ai/leaderboards/models"
+        },
+        {
+          "label": "Kingy, 17 October 2026: pricing, and Google's Argon card figures for the newer closed models",
+          "url": "https://kingy.ai/blog/deepseek-v4-1-flash-1017-specs-benchmarks-pricing/"
+        },
+        {
+          "label": "OpenRouter listing with live prices",
+          "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017"
+        },
+        {
+          "label": "MiniMax M3.1 Flash announcement, 19 October 2026",
+          "url": "https://www.minimax.io/blog/minimax-m31f"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For a community building apps with AI, the practical rule this week is the split several Hacker News users described: a cheap open model for the bulk of the agent's typing, and a top closed model for planning and review. At a seventeenth of the price, a wrong answer from DeepSeek costs less than a right one from Opus, provided something checks the work. Watch effort settings, because at maximum effort the cheap model can take twice as long and lose its per-task edge. And, as Saturday's OpenCode breach showed, whichever model you pick, put a spending cap on the key.",
+        "For the industry, two things to watch. Whether independent scores keep tracking DeepSeek's own table (so far roughly yes, with the usual vendor shine on top). And whether the price gap holds: OpenAI and Anthropic charge $20 to $25 per million output tokens for their flagships because enough customers pay it. Every 'minor update' from Hangzhou that lands within reach of those flagships makes the premium harder to defend. The frontier is still American, by 13 points on the independent index. The frontier of what most people can afford is increasingly Chinese."
+      ],
+      "pullquote": "The best model is still American. The best model most people can afford is increasingly Chinese."
+    }
+  ]
+},
+{
   "slug": "hackers-broke-into-opencode-and-ran-up-users-ai-bills",
   "status": "published",
   "datePublished": "2026-10-18",
