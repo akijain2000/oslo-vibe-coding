@@ -10,10 +10,10 @@ const presentations = [
   {
     title: "Tokenomics: What Your AI Actually Costs",
     session: "Session 08",
-    slides: "17 slides",
+    slides: "21 slides",
     href: "/presentations/tokenomics.html",
     description:
-      "What a token is, why agents re-read everything, how caching and model choice cut the bill, and a token budget for the Session 07 agent.",
+      "What a token is, why output costs more, why agents re-read everything, and the economics behind every token, with SemiAnalysis's numbers. Ends with a token budget for the Session 07 agent.",
     featured: true,
   },
   {
