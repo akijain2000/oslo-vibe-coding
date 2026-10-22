@@ -453,6 +453,96 @@
       .share-bar span { color: transparent; }
       .share-row > b small { display: inline; }
     }
+    /* Charts, following the dataviz method with the brand palette: one ember accent for the series
+       the story is about, a grey for context. Validated on both surfaces with the dataviz validator:
+       #FF5A2C + #8A8594 (+ #57525F) on night, #D83C12 + #8C867D on paper. CVD and normal-vision
+       separation pass; the darkest grey sits under 3:1, so every chart carries labels, a legend and a
+       table twin. Bars are at most 24px thick with a 4px rounded data end; touching segments get a 2px gap. */
+    .slide { --viz-accent: #FF5A2C; --viz-muted: #8A8594; --viz-muted-2: #57525F; --viz-axis: rgba(251, 247, 240, .3); --viz-text: var(--paper); --viz-text-2: rgba(251, 247, 240, .66); }
+    .slide.light { --viz-accent: #D83C12; --viz-muted: #8C867D; --viz-muted-2: #C9C2B6; --viz-axis: rgba(22, 21, 28, .25); --viz-text: var(--ink); --viz-text-2: rgba(22, 21, 28, .62); }
+    .viz { width: min(1080px, 100%); margin: clamp(14px, 3vh, 40px) 0 0; }
+    .viz-cap { margin: 0 0 clamp(10px, 1.8vh, 18px); color: var(--viz-text-2); font-family: "Geist Mono", monospace; font-size: clamp(12px, min(.95vw, 1.7vh), 14px); line-height: 1.3; text-transform: uppercase; }
+    .viz-note { max-width: 900px; margin: clamp(12px, 2.2vh, 22px) 0 0; color: var(--viz-text-2); font-size: clamp(14px, min(1.25vw, 2.2vh), 20px); line-height: 1.4; }
+    .hbar, .dbar { display: grid; gap: clamp(7px, 1.5vh, 15px); }
+    .dbar { gap: clamp(4px, 1.1vh, 12px); }
+    .hbar-row, .dbar-row, .share-row { display: grid; grid-template-columns: minmax(170px, .32fr) 1fr; align-items: center; gap: clamp(12px, 1.6vw, 24px); }
+    .hbar-label { color: var(--viz-text); font-size: clamp(14px, min(1.2vw, 2.1vh), 19px); font-weight: 600; line-height: 1.2; }
+    .hbar-label small { display: block; margin-top: 2px; color: var(--viz-text-2); font-size: clamp(12px, min(.9vw, 1.6vh), 14px); font-weight: 400; }
+    .hbar-track { display: flex; align-items: center; min-height: 24px; }
+    .hbar-bar, .stack { flex: none; width: calc(var(--w, 1) * (100% - 110px)); min-width: 3px; height: 20px; }
+    .hbar-bar { display: block; border-radius: 0 4px 4px 0; background: var(--viz-accent); }
+    .hbar-bar.muted { background: var(--viz-muted); }
+    .stack { display: flex; gap: 2px; }
+    .seg { display: block; min-width: 2px; height: 100%; }
+    .stack .seg:last-child, .share-bar .seg:last-child { border-radius: 0 4px 4px 0; }
+    .k-accent { background: var(--viz-accent); }
+    .k-muted { background: var(--viz-muted); }
+    .k-muted-2 { background: var(--viz-muted-2); }
+    .hbar-value { flex: none; margin-left: 10px; color: var(--viz-text); font-family: "Space Grotesk", Arial, sans-serif; font-size: clamp(15px, min(1.5vw, 2.6vh), 24px); font-weight: 700; white-space: nowrap; }
+    .viz-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: clamp(12px, 2vh, 20px); color: var(--viz-text-2); font-size: clamp(12px, min(1vw, 1.8vh), 15px); }
+    .viz-key { display: inline-flex; align-items: center; gap: 8px; }
+    .viz-key i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; }
+    .dbar-track { position: relative; height: 24px; margin: 0 64px; }
+    .dbar-track::before { content: ""; position: absolute; left: calc(var(--zero) * 100%); top: -7px; bottom: -7px; width: 1px; background: var(--viz-axis); }
+    .dbar-bar { position: absolute; top: 3px; width: calc(var(--d) * 100%); min-width: 3px; height: 18px; background: var(--viz-accent); }
+    .dbar-bar.muted { background: var(--viz-muted); }
+    .dbar-bar.pos { left: calc(var(--zero) * 100%); border-radius: 0 4px 4px 0; }
+    .dbar-bar.neg { right: calc((1 - var(--zero)) * 100%); border-radius: 4px 0 0 4px; }
+    .dbar-value { position: absolute; top: 50%; color: var(--viz-text); font-family: "Space Grotesk", Arial, sans-serif; font-size: clamp(14px, min(1.3vw, 2.3vh), 21px); font-weight: 700; white-space: nowrap; transform: translateY(-50%); }
+    .dbar-value.pos { left: calc((var(--zero) + var(--d)) * 100% + 8px); }
+    .dbar-value.neg { right: calc((1 - var(--zero) + var(--d)) * 100% + 8px); }
+    .dbar-axis .dbar-track { height: 18px; }
+    .dbar-axis .dbar-track::before { display: none; }
+    .dbar-end, .dbar-zero-label { position: absolute; top: 0; color: var(--viz-text-2); font-family: "Geist Mono", monospace; font-size: clamp(12px, min(.85vw, 1.5vh), 13px); text-transform: uppercase; white-space: nowrap; }
+    .dbar-end.lo { left: 0; }
+    .dbar-end.hi { right: 0; }
+    .dbar-zero-label { left: calc(var(--zero) * 100%); transform: translateX(-50%); }
+    .vbar { display: flex; align-items: flex-end; justify-content: space-around; height: clamp(140px, 31vh, 330px); border-bottom: 1px solid var(--viz-axis); }
+    .vbar-col { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+    .vbar-value { margin-bottom: 8px; color: var(--viz-text); font-family: "Space Grotesk", Arial, sans-serif; font-size: clamp(16px, min(1.6vw, 2.8vh), 28px); font-weight: 700; white-space: nowrap; }
+    .vbar-bar { display: block; width: 24px; height: calc(var(--h) * (100% - 46px)); min-height: 3px; border-radius: 4px 4px 0 0; background: var(--viz-accent); }
+    .vbar-bar.muted { background: var(--viz-muted); }
+    .vbar-x { display: flex; justify-content: space-around; margin-top: 10px; color: var(--viz-text-2); font-size: clamp(12px, min(1.05vw, 1.9vh), 16px); }
+    .vbar-x span { flex: 1; text-align: center; }
+    .shares { display: grid; gap: clamp(12px, 2.4vh, 24px); }
+    .share-bar { display: flex; gap: 2px; height: 24px; }
+    .share-bar .seg { display: flex; align-items: center; padding: 0 8px; overflow: visible; }
+    .share-bar .seg b { color: var(--ink); font-family: "Geist Mono", monospace; font-size: clamp(12px, min(.95vw, 1.7vh), 14px); font-weight: 400; }
+    .slide:not(.light) .share-bar .k-muted-2 b { color: var(--paper); }
+    .hbar-label .share-sum { display: none; }
+    @media (max-height: 460px) {
+      h2 { font-size: clamp(24px, 8vh, 40px); }
+      .slide-footer { font-size: 11px; }
+      .viz-cap, .viz-note { display: none; }
+      .tool-table th { font-size: 12px; }
+      .hbar, .dbar, .shares { gap: 4px; }
+      .hbar-track, .dbar-track { min-height: 18px; height: 18px; }
+      .hbar-bar, .stack, .share-bar { height: 14px; }
+      .dbar-bar { top: 2px; height: 14px; }
+      .tool-table th, .tool-table td { padding: 4px 5px; }
+      .tool-table th:nth-child(3), .tool-table td:nth-child(3) { display: none; }
+      .vbar { height: 120px; }
+    }
+    [data-tip-value] { position: relative; cursor: default; transition: filter .15s ease; }
+    [data-tip-value]::after { content: ""; position: absolute; inset: -6px -3px; }
+    [data-tip-value]:hover, [data-tip-value]:focus-visible { filter: brightness(1.15); outline: none; }
+    [data-tip-value]:focus-visible { box-shadow: 0 0 0 2px var(--viz-text); }
+    .dbar-bar[data-tip-value] { position: absolute; }
+    .viz-tip { position: fixed; z-index: 50; display: none; max-width: 280px; padding: 8px 12px; border: 1px solid rgba(251, 247, 240, .22); border-radius: 8px; background: rgba(17, 15, 23, .95); color: var(--paper); font-size: 13px; line-height: 1.3; pointer-events: none; box-shadow: 0 6px 24px rgba(0, 0, 0, .25); }
+    .viz-tip strong { display: block; font-family: "Space Grotesk", Arial, sans-serif; font-size: 18px; }
+    .viz-tip span { color: rgba(251, 247, 240, .72); }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    @media (max-width: 760px) {
+      .hbar-row, .dbar-row, .share-row { grid-template-columns: 1fr; gap: 4px; }
+      .hbar-bar, .stack { width: calc(var(--w, 1) * (100% - 80px)); }
+      .dbar-row { grid-template-columns: 92px 1fr; gap: 8px; }
+      .dbar .hbar-label { font-size: 13px; }
+      .dbar-track { margin: 0 40px; }
+      .dbar-zero-label { display: none; }
+      .vbar { height: 160px; }
+      .share-bar .seg b { display: none; }
+      .hbar-label .share-sum { display: block; margin-top: 2px; color: var(--viz-text-2); font-size: 12px; font-weight: 400; }
+    }
   </style>
 </head>
 <body>
@@ -460,7 +550,7 @@
 
     <!--
     [Speaker notes]
-    Tonight is about the unit everything in AI is priced in. No maths beyond multiplication. Everyone leaves knowing how to read the meter on the tools they already use, why the same token can cost wildly different amounts, who makes money on it, and how to choose. Then we put a token budget on their own agent.
+    Ask the room: what did your last AI question cost? Nobody knows, and that is normal: a chat window hides the meter. Tonight is about the unit everything in AI is priced in. No maths beyond multiplication. Four parts: what a token is, why tokens are not equal, who gets paid, and how to choose. Then a token budget on their own agent.
 
     [Sources]
     - None.
@@ -471,50 +561,9 @@
         <div class="content">
           <p class="eyebrow reveal">Session 08 / Tokenomics</p>
           <h1 class="reveal delay-1">What your AI<br><span class="accent">actually costs.</span></h1>
-          <p class="subtitle reveal delay-2">What a token is, why the same token can cost twelve times more, who gets paid, and how to choose. Then we put a meter on the agent from Session 07.</p>
+          <p class="subtitle reveal delay-2">You don't pay per question. You pay per token. Tonight: why tokens are not equal, who gets paid, and how to choose. Then a meter on the agent from Session 07.</p>
         </div>
         <div class="slide-footer"><p>No one codes alone.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Ask the room: what did your last AI question cost? Nobody knows, and that is normal. A chat window hides the meter. The moment you build something, the meter is the first thing you meet.
-
-    [Sources]
-    - None.
-    -->
-    <section class="slide statement-slide" aria-roledescription="slide" aria-label="You pay per token">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">The unit</p></div>
-        <div class="content">
-          <h2 class="reveal">You don't pay per question. <span class="accent">You pay per token.</span></h2>
-          <div class="tradeoff reveal delay-1" aria-label="What you see versus what is billed"><span>What you typed</span><span class="line" aria-hidden="true"></span><strong>Everything it reads, thinks and writes</strong></div>
-        </div>
-        <div class="slide-footer"><p>Every model and every agent is metered in tokens, even when a subscription hides the meter.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    The map for the evening. Four questions, then laptops out. If time runs short, part two and part four matter most for anyone building.
-
-    [Sources]
-    - None.
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Four questions for tonight">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">Tonight</p></div>
-        <div class="content">
-          <h2 class="reveal">Four questions <span class="accent">for tonight.</span></h2>
-          <div class="layers reveal delay-1">
-            <div class="layer"><span>01 · The unit</span><h3>What is a token?</h3><p>Words in pieces, priced going in and coming out.</p></div>
-            <div class="layer"><span>02 · Not equal</span><h3>Why twelve prices?</h3><p>Cache, batch, speed, thinking and tokenizers.</p></div>
-            <div class="layer"><span>03 · The business</span><h3>Who gets paid?</h3><p>Volumes, falling prices, margins and chips.</p></div>
-            <div class="layer"><span>04 · Choosing</span><h3>What should I pick?</h3><p>Cost per task, effort, cascades, and a table for when.</p></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Then laptops out: a meter and a budget on your own agent.</p><p class="counter"></p></div>
       </div>
     </section>
 
@@ -543,7 +592,7 @@
 
     <!--
     [Speaker notes]
-    The labs have converged on a handful of price points. Anthropic's Haiku 5.5 and OpenAI's GPT-6 Luna both sit at 10 cents in and 50 cents out. Sonnet 5.5 and GPT-6 Sol sit at $2 and $10, where Google launched Gemini 4 Argon too. Opus 5.5 and Meta's Muse Wonder API sit at $4 and $20, which is also Argon's later price. Fable 5.1 and GPT-6 Astra sit at $10 and $50. Bottom to top is a hundred times. Output costs four to five times input on every rung. Note that the top rung is not automatically the smartest: on Artificial Analysis's index, Opus 5.5 at maximum effort outscores both Fable 5.1 and Astra. We come back to that in part four.
+    The labs have converged on a handful of price points. Haiku 5.5 and GPT-6 Luna both sit at 10 cents in and 50 cents out. Sonnet 5.5 and GPT-6 Sol sit at $2 and $10, where Google launched Gemini 4 Argon too. Opus 5.5 and Meta's Muse Wonder API sit at $4 and $20, which is also Argon's later price. Fable 5.1 and GPT-6 Astra sit at $10 and $50. Bottom to top is a hundred times. Why is output four to five times input? Reading your prompt, prefill, happens in one parallel pass and is mostly maths. Writing, decode, happens one token at a time, and every token reads the whole model out of memory; Jensen Huang made the point in his Stanford lecture, and our brief on memory bandwidth shows chipmakers racing on exactly that. Note the top rung is not automatically the smartest: on Artificial Analysis's index, Opus 5.5 at maximum effort outscores both Fable 5.1 and Astra.
 
     [Sources]
     - https://platform.claude.com/docs/en/about-claude/pricing
@@ -551,130 +600,49 @@
     - https://oslovibecoding.tech/brief/deepseek-s-minor-update-beats-a-20-dollar-gpt-at-1-dollar-20
     - https://oslovibecoding.tech/brief/google-s-new-top-ai-is-out-almost-nobody-can-use-it-yet
     - https://oslovibecoding.tech/brief/meta-s-first-frontier-ai-model-is-here-and-it-is-behind-a-paywall
+    - https://oslovibecoding.tech/frontier/jensen-huang-nvidia
+    - https://oslovibecoding.tech/brief/ai-chips-are-not-short-of-math-they-are-short-of-memory-bandwidth
     -->
-    <section class="slide light" aria-roledescription="slide" aria-label="The price ladder">
+    <section class="slide" aria-roledescription="slide" aria-label="The price ladder">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">01 · The price ladder</p></div>
         <div class="content">
           <h2 class="reveal">Five price rungs, <span class="accent">a hundred times apart.</span></h2>
-          <table class="tool-table ladder reveal delay-1" aria-label="List prices per million tokens, in and out">
-            <thead><tr><th>In / out, per million</th><th>Who sits there</th><th>Good for</th></tr></thead>
-            <tbody>
-              <tr><td>$0.10 / $0.50</td><td>Claude Haiku 5.5, GPT-6 Luna</td><td class="best-for">Sorting, tagging, routing</td></tr>
-              <tr><td>$0.30 / $1.20</td><td>DeepSeek V4.1 Flash<small>Open weights, half price off-peak</small></td><td class="best-for">Cheap bulk work you can check</td></tr>
-              <tr><td>$2 / $10</td><td>Claude Sonnet 5.5, GPT-6 Sol<small>Gemini 4 Argon at launch</small></td><td class="best-for">Everyday coding and writing</td></tr>
-              <tr><td>$4 / $20</td><td>Claude Opus 5.5, Meta Muse Wonder<small>Argon's later price</small></td><td class="best-for">Agents that must get it right</td></tr>
-              <tr><td>$10 / $50</td><td>Claude Fable 5.1, GPT-6 Astra</td><td class="best-for">The longest, hardest jobs</td></tr>
-            </tbody>
-          </table>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Output price per million tokens, list prices October 2026</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Claude Haiku 5.5, GPT-6 Luna<small>$0.10 in</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0100" tabindex="0" role="img" aria-label="Claude Haiku 5.5, GPT-6 Luna: $0.50" data-tip-value="$0.50" data-tip-label="Claude Haiku 5.5, GPT-6 Luna"></span><span class="hbar-value">$0.50</span></div></div><div class="hbar-row"><div class="hbar-label">DeepSeek V4.1 Flash<small>$0.30 in, open weights</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0240" tabindex="0" role="img" aria-label="DeepSeek V4.1 Flash: $1.20" data-tip-value="$1.20" data-tip-label="DeepSeek V4.1 Flash"></span><span class="hbar-value">$1.20</span></div></div><div class="hbar-row"><div class="hbar-label">Claude Sonnet 5.5, GPT-6 Sol<small>$2 in</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.2000" tabindex="0" role="img" aria-label="Claude Sonnet 5.5, GPT-6 Sol: $10" data-tip-value="$10" data-tip-label="Claude Sonnet 5.5, GPT-6 Sol"></span><span class="hbar-value">$10</span></div></div><div class="hbar-row"><div class="hbar-label">Claude Opus 5.5, Meta Muse Wonder<small>$4 in</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.4000" tabindex="0" role="img" aria-label="Claude Opus 5.5, Meta Muse Wonder: $20" data-tip-value="$20" data-tip-label="Claude Opus 5.5, Meta Muse Wonder"></span><span class="hbar-value">$20</span></div></div><div class="hbar-row"><div class="hbar-label">Claude Fable 5.1, GPT-6 Astra<small>$10 in</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 1.0000" tabindex="0" role="img" aria-label="Claude Fable 5.1, GPT-6 Astra: $50" data-tip-value="$50" data-tip-label="Claude Fable 5.1, GPT-6 Astra"></span><span class="hbar-value">$50</span></div></div></div><div class="sr-only"><table><caption>Output price per million tokens, list prices October 2026</caption><tr><th>Models</th><th>Output price per million</th></tr><tr><td>Claude Haiku 5.5, GPT-6 Luna ($0.10 in)</td><td>$0.50</td></tr><tr><td>DeepSeek V4.1 Flash ($0.30 in, open weights)</td><td>$1.20</td></tr><tr><td>Claude Sonnet 5.5, GPT-6 Sol ($2 in)</td><td>$10</td></tr><tr><td>Claude Opus 5.5, Meta Muse Wonder ($4 in)</td><td>$20</td></tr><tr><td>Claude Fable 5.1, GPT-6 Astra ($10 in)</td><td>$50</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>List prices, October 2026. Rival labs land on the same rungs, and output always costs four to five times input.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Output costs four to five times input: every token written reads the whole model out of memory.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    Why is output priced higher than input? Running a model has two phases. Reading your prompt, prefill, happens in one parallel pass and is mostly maths. Writing the answer, decode, happens one token at a time, and for every token the chip reads the whole model out of memory. Jensen Huang made this point in his Stanford lecture, and our September brief on memory bandwidth shows the industry racing on it: Nvidia's Rubin reads at up to 22 TB/s against 8 on Blackwell (SemiAnalysis expects first shipments closer to 20), and Amazon raised Trainium3's bandwidth by about 70%, per SemiAnalysis. Thinking models write thousands of hidden tokens, so they pay this cost many times over.
-
-    [Sources]
-    - https://oslovibecoding.tech/frontier/jensen-huang-nvidia
-    - https://oslovibecoding.tech/brief/ai-chips-are-not-short-of-math-they-are-short-of-memory-bandwidth
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Why output costs more">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">01 · In and out</p></div>
-        <div class="content">
-          <h2 class="reveal">Every token it writes <span class="accent">reads the whole model.</span></h2>
-          <div class="passes reveal delay-1" aria-label="Input is read in one pass; output needs one pass per token">
-            <div class="pass-lane"><b>Input</b><div class="pass-track"><span class="pass wide">1,600 tokens, one pass</span></div><p>Prefill: read all at once, in parallel. Mostly maths.</p></div>
-            <div class="pass-lane"><b>Output</b><div class="pass-track" aria-hidden="true"><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span><span class="pass"></span></div><p>Decode: one token per pass. Every pass reads hundreds of gigabytes of model out of memory.</p></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Writing is the slow, memory-hungry part. That is a big reason output is priced higher.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Part two. SemiAnalysis's line is the right frame: tokens are not equal in what they are worth. Their example: when literature reviews fall from $2,000 to $2, we do not do the same number and pocket the savings, we do far more of them. Tonight we will see tokens are not equal in price either.
-
-    [Sources]
-    - https://newsletter.semianalysis.com/p/ai-dark-output-the-visible-cost-of
-    -->
-    <section class="slide statement-slide" aria-roledescription="slide" aria-label="Not all tokens are equal">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Not equal</p></div>
-        <div class="content">
-          <p class="eyebrow reveal">Not all tokens are equal</p>
-          <blockquote class="pull reveal delay-1">“A million tokens can produce junk, a useful email summary, a legal document, or a decision that changes a company's strategy.”</blockquote>
-          <p class="pull-source reveal delay-2">SemiAnalysis, AI Dark Output, 29 May 2026</p>
-        </div>
-        <div class="slide-footer"><p>Not equal in value. And, it turns out, not equal in price.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    One model, one kind of token, five prices. This is GPT-6.1 Sol output on OpenAI's own price list. Batch means you accept an answer within 24 hours and pay half. Above 272,000 input tokens the whole request is billed at long-context rates. Fast, which OpenAI used to call priority, doubles the price for user-facing speed. Ultrafast is six times standard. Nothing about the model changes, only how and when it serves you.
-
-    [Sources]
-    - https://developers.openai.com/api/docs/pricing
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="The same token, twelve times the price">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Same token</p></div>
-        <div class="content">
-          <h2 class="reveal">The same token, <span class="accent">twelve times the price.</span></h2>
-          <div class="bars reveal delay-1" aria-label="GPT-6.1 Sol output price per million tokens by tier">
-            <div class="bar-row"><b>Batch<small>Answer within 24 hours</small></b><div class="track"><span class="fill soft" style="width: 8.3%"></span></div><strong>$5</strong></div>
-            <div class="bar-row"><b>Standard<small>The default</small></b><div class="track"><span class="fill soft" style="width: 16.7%"></span></div><strong>$10</strong></div>
-            <div class="bar-row"><b>Long prompt<small>Over 272K tokens in</small></b><div class="track"><span class="fill" style="width: 25%"></span></div><strong>$15</strong></div>
-            <div class="bar-row"><b>Fast<small>For users who wait</small></b><div class="track"><span class="fill" style="width: 33.3%"></span></div><strong>$20</strong></div>
-            <div class="bar-row"><b>Ultrafast<small>Six times standard</small></b><div class="track"><span class="fill" style="width: 100%"></span></div><strong>$60</strong></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>GPT-6.1 Sol output, per million tokens, OpenAI's price list, October 2026. Same model, same word.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    These are the dials you can actually turn. Caching is the big one for agents: Anthropic bills a cache hit at 5% of input on Opus 5.5 and Sonnet 5.5, OpenAI at 5% to 10%. Batch halves the price at both Anthropic and OpenAI if you can wait up to 24 hours. DeepSeek halves its prices outside its peak hours. Fast mode doubles the price for up to 2.5 times the output speed on Opus 5.5, with no change in intelligence. OpenAI's Ultrafast is six times. OpenAI charges double for input above 272,000 tokens; Anthropic's current models have no long-context surcharge, except Haiku 5.5 above 100,000 tokens. Keeping inference in one region costs 10% more at both. The dials stack: cache multipliers apply on top of batch and fast mode.
+    Same model, same word, very different prices, depending on how and when you buy it. Caching is the big one for agents: Anthropic bills a cache hit at 5% of input on Opus 5.5 and Sonnet 5.5, OpenAI at 5% to 10%. Batch halves the price if you can wait up to 24 hours. DeepSeek halves its prices off-peak. Fast mode doubles the price for up to 2.5 times the output speed on Opus 5.5, with no change in intelligence; OpenAI's Ultrafast is six times. GPT-6.1 Sol output alone runs from $5 per million in Batch to $60 in Ultrafast. Why does speed cost more? SemiAnalysis's InferenceMAX benchmark: a metro bus and a Ferrari cost about the same to own, but the bus spreads that over dozens of riders and the Ferrari over one or two; "higher interactivity means higher costs". People still pay it: in April, 80% of SemiAnalysis's own AI spend went on Opus 4.6 in fast mode. The dials stack: cache multipliers apply on top of batch and fast mode. Not all tokens are equal in value either; as SemiAnalysis puts it, a million tokens can produce junk or a decision that changes a company's strategy.
 
     [Sources]
     - https://platform.claude.com/docs/en/about-claude/pricing
     - https://platform.claude.com/docs/en/build-with-claude/fast-mode
     - https://developers.openai.com/api/docs/pricing
-    - https://oslovibecoding.tech/brief/deepseek-s-minor-update-beats-a-20-dollar-gpt-at-1-dollar-20
+    - https://inferencex.semianalysis.com/blog/inferencemax-open-source-inference-benchmarking
+    - https://newsletter.semianalysis.com/p/cerebras-faster-tokens-please
     -->
     <section class="slide light" aria-roledescription="slide" aria-label="Seven dials on the price of a token">
       <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · The dials</p></div>
+        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Not equal</p></div>
         <div class="content">
-          <h2 class="reveal">Seven dials on <span class="accent">the price of a token.</span></h2>
-          <table class="tool-table dials reveal delay-1" aria-label="Pricing multipliers">
-            <thead><tr><th>Dial</th><th>Price</th><th>Example</th></tr></thead>
-            <tbody>
-              <tr><td>Cache re-read</td><td>0.05x to 0.1x input</td><td class="best-for">Opus 5.5: $0.20 instead of $4</td></tr>
-              <tr><td>Batch<small>Answer within 24 hours</small></td><td>0.5x</td><td class="best-for">Opus 5.5: $2 in, $10 out</td></tr>
-              <tr><td>Off-peak</td><td>0.5x</td><td class="best-for">DeepSeek's own API</td></tr>
-              <tr><td>Fast mode</td><td>2x</td><td class="best-for">Opus 5.5: $8 in, $40 out</td></tr>
-              <tr><td>Ultrafast</td><td>6x</td><td class="best-for">GPT-6.1 Sol: $12 in, $60 out</td></tr>
-              <tr><td>Long prompt</td><td>2x input</td><td class="best-for">OpenAI, above 272K tokens in</td></tr>
-              <tr><td>One region only</td><td>1.1x</td><td class="best-for">Claude US-only, OpenAI regional</td></tr>
-            </tbody>
-          </table>
+          <h2 class="reveal">One token, <span class="accent">seven price dials.</span></h2>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Price against the list price (the line at 1x), log scale</figcaption><div class="dbar" style="--zero: 0.6257"><div class="dbar-row"><div class="hbar-label">Cache re-read</div><div class="dbar-track"><span class="dbar-bar neg" style="--d: 0.6257" tabindex="0" role="img" aria-label="Cache re-read: Opus 5.5: $0.20 instead of $4: 0.05x" data-tip-value="0.05x" data-tip-label="Cache re-read: Opus 5.5: $0.20 instead of $4"></span><span class="dbar-value neg" style="--d: 0.6257">0.05x</span></div></div><div class="dbar-row"><div class="hbar-label">Batch</div><div class="dbar-track"><span class="dbar-bar neg" style="--d: 0.1448" tabindex="0" role="img" aria-label="Batch: Answer within 24 hours: 0.5x" data-tip-value="0.5x" data-tip-label="Batch: Answer within 24 hours"></span><span class="dbar-value neg" style="--d: 0.1448">0.5x</span></div></div><div class="dbar-row"><div class="hbar-label">Off-peak</div><div class="dbar-track"><span class="dbar-bar neg" style="--d: 0.1448" tabindex="0" role="img" aria-label="Off-peak: DeepSeek&#x27;s own API: 0.5x" data-tip-value="0.5x" data-tip-label="Off-peak: DeepSeek&#x27;s own API"></span><span class="dbar-value neg" style="--d: 0.1448">0.5x</span></div></div><div class="dbar-row"><div class="hbar-label">One region only</div><div class="dbar-track"><span class="dbar-bar pos muted" style="--d: 0.0199" tabindex="0" role="img" aria-label="One region only: Claude US-only, OpenAI regional: 1.1x" data-tip-value="1.1x" data-tip-label="One region only: Claude US-only, OpenAI regional"></span><span class="dbar-value pos" style="--d: 0.0199">1.1x</span></div></div><div class="dbar-row"><div class="hbar-label">Long prompt</div><div class="dbar-track"><span class="dbar-bar pos muted" style="--d: 0.1448" tabindex="0" role="img" aria-label="Long prompt: OpenAI input over 272K tokens: 2x" data-tip-value="2x" data-tip-label="Long prompt: OpenAI input over 272K tokens"></span><span class="dbar-value pos" style="--d: 0.1448">2x</span></div></div><div class="dbar-row"><div class="hbar-label">Fast mode</div><div class="dbar-track"><span class="dbar-bar pos muted" style="--d: 0.1448" tabindex="0" role="img" aria-label="Fast mode: Opus 5.5 at up to 2.5x speed: 2x" data-tip-value="2x" data-tip-label="Fast mode: Opus 5.5 at up to 2.5x speed"></span><span class="dbar-value pos" style="--d: 0.1448">2x</span></div></div><div class="dbar-row"><div class="hbar-label">Ultrafast</div><div class="dbar-track"><span class="dbar-bar pos muted" style="--d: 0.3743" tabindex="0" role="img" aria-label="Ultrafast: GPT-6.1 Sol: $60 out, not $10: 6x" data-tip-value="6x" data-tip-label="Ultrafast: GPT-6.1 Sol: $60 out, not $10"></span><span class="dbar-value pos" style="--d: 0.3743">6x</span></div></div></div><div class="viz-legend"><span class="viz-key"><i class="k-accent"></i>Cheaper than list</span><span class="viz-key"><i class="k-muted"></i>Pricier than list</span></div><div class="sr-only"><table><caption>Price against the list price (the line at 1x), log scale</caption><tr><th>Dial</th><th>Multiplier</th></tr><tr><td>Cache re-read (Opus 5.5: $0.20 instead of $4)</td><td>0.05x</td></tr><tr><td>Batch (Answer within 24 hours)</td><td>0.5x</td></tr><tr><td>Off-peak (DeepSeek&#x27;s own API)</td><td>0.5x</td></tr><tr><td>One region only (Claude US-only, OpenAI regional)</td><td>1.1x</td></tr><tr><td>Long prompt (OpenAI input over 272K tokens)</td><td>2x</td></tr><tr><td>Fast mode (Opus 5.5 at up to 2.5x speed)</td><td>2x</td></tr><tr><td>Ultrafast (GPT-6.1 Sol: $60 out, not $10)</td><td>6x</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>From Anthropic's and OpenAI's price lists, October 2026. The dials stack.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Speed costs more because a GPU serving one user fast is a Ferrari, not a bus.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    This is the slide that explains every surprising AI bill. The model remembers nothing between calls, so the Session 07 loop sends everything again each round: system prompt, tool descriptions, the question, every tool result so far. A chatbot does one round. A coding agent can do hundreds over a big codebase, and the numbers get large fast: one Meta employee used about 281 billion tokens in a single month. The numbers on this slide are illustrative; tonight you read your own.
+    This is the slide that explains every surprising AI bill. The model remembers nothing between calls, so the Session 07 loop sends everything again each round: system prompt, tool descriptions, the question, every tool result so far. Most of every call is text the model has already seen. A coding agent does hundreds of rounds; one Meta employee used about 281 billion tokens in a single month. SemiAnalysis measured its own Claude Code use at about 300 input tokens for every output token, with cache hit rates above 90%; on that mix Opus 4.7, listed at $5 in and $25 out, worked out at about $0.99 per million blended. So for agents, the cache price matters more than the output price.
 
     [Sources]
     - https://oslovibecoding.tech/agent/agent.ts
+    - https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model
     - https://oslovibecoding.tech/brief/meta-ranked-its-staff-by-how-much-ai-they-burned
     -->
     <section class="slide" aria-roledescription="slide" aria-label="An agent re-reads everything">
@@ -682,42 +650,15 @@
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · The loop</p></div>
         <div class="content">
           <h2 class="reveal">An agent re-reads <span class="accent">the whole conversation</span> every round.</h2>
-          <div class="rounds reveal delay-1" aria-label="Input tokens sent per round">
-            <div class="round"><b>Round 1</b><div class="bar"><span class="new" style="width: 57%"></span></div><strong>1,600</strong></div>
-            <div class="round"><b>Round 2</b><div class="bar"><span class="old" style="width: 57%"></span><span class="new" style="width: 21%"></span></div><strong>2,200</strong></div>
-            <div class="round"><b>Round 3</b><div class="bar"><span class="old" style="width: 79%"></span><span class="new" style="width: 21%"></span></div><strong>2,800</strong></div>
-            <div class="round total"><b>One question</b><div class="bar" aria-hidden="true"></div><strong>6,600</strong></div>
-          </div>
-          <div class="bar-key reveal delay-2"><span class="old-key">Sent again</span><span>New this round</span></div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Input tokens sent per model call, one question to the Session 07 agent (illustrative)</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Round 1</div><div class="hbar-track"><span class="stack" style="--w: 0.5714"><span class="seg k-muted" style="flex: 1600 1 0" tabindex="0" role="img" aria-label="Round 1, new this round: 1,600" data-tip-value="1,600" data-tip-label="Round 1, new this round"></span></span><span class="hbar-value">1,600</span></div></div><div class="hbar-row"><div class="hbar-label">Round 2</div><div class="hbar-track"><span class="stack" style="--w: 0.7857"><span class="seg k-accent" style="flex: 1600 1 0" tabindex="0" role="img" aria-label="Round 2, sent again: 1,600" data-tip-value="1,600" data-tip-label="Round 2, sent again"></span><span class="seg k-muted" style="flex: 600 1 0" tabindex="0" role="img" aria-label="Round 2, new this round: 600" data-tip-value="600" data-tip-label="Round 2, new this round"></span></span><span class="hbar-value">2,200</span></div></div><div class="hbar-row"><div class="hbar-label">Round 3</div><div class="hbar-track"><span class="stack" style="--w: 1.0000"><span class="seg k-accent" style="flex: 2200 1 0" tabindex="0" role="img" aria-label="Round 3, sent again: 2,200" data-tip-value="2,200" data-tip-label="Round 3, sent again"></span><span class="seg k-muted" style="flex: 600 1 0" tabindex="0" role="img" aria-label="Round 3, new this round: 600" data-tip-value="600" data-tip-label="Round 3, new this round"></span></span><span class="hbar-value">2,800</span></div></div></div><div class="viz-legend"><span class="viz-key"><i class="k-accent"></i>Sent again</span><span class="viz-key"><i class="k-muted"></i>New this round</span></div><div class="sr-only"><table><caption>Input tokens sent per model call, one question to the Session 07 agent (illustrative)</caption><tr><th>Round</th><th>Sent again</th><th>New this round</th><th>Total</th></tr><tr><td>Round 1</td><td>0</td><td>1,600</td><td>1,600</td></tr><tr><td>Round 2</td><td>1,600</td><td>600</td><td>2,200</td></tr><tr><td>Round 3</td><td>2,200</td><td>600</td><td>2,800</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>One question to the Session 07 agent, three model calls. Illustrative numbers.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>SemiAnalysis's own Claude Code use: 300 tokens in per token out, so a $5 / $25 model cost $0.99 per million blended.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    What real agent traffic looks like. SemiAnalysis measured its own Claude Code use at about 300 input tokens for every output token, with cache hit rates above 90%. On that mix, Opus 4.7, listed at $5 in and $25 out, works out at about $0.99 per million tokens blended. So for agents, the list price that matters most is the cache price, not the output price.
-
-    [Sources]
-    - https://newsletter.semianalysis.com/p/ai-value-capture-the-shift-to-model
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Agents mostly read">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Real traffic</p></div>
-        <div class="content">
-          <h2 class="reveal">Agents mostly read, <span class="accent">and mostly re-read.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">300:1</span><h3>Input to output</h3><p>SemiAnalysis's own Claude Code usage, with cache hits above 90%.</p><span class="caveat">SemiAnalysis, May 2026</span></div>
-            <div class="study"><span class="number">$0.99</span><h3>The real price per million</h3><p>Blended, for Opus 4.7 on agent work, against a list price of $5 in and $25 out.</p><span class="caveat">SemiAnalysis estimate</span></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>For agents, the cache price matters more than the output price.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Caching works on the start of your prompt: the provider stores everything up to a marked point, and a later request that begins exactly the same way reads it back cheaply. So order matters: anything that changes, put it last. Anthropic's numbers: writing to the five-minute cache costs 1.25 times input, reading it back costs 5% on Opus 5.5, so it pays for itself after one re-read. The one-hour cache costs 2 times to write and pays off after two reads. Confession: our Session 07 agent puts "Today is" plus the time to the minute in the first line of its system prompt, so on a paid model everything after that point would miss the cache every minute.
+    Caching works on the start of your prompt: the provider stores everything up to a marked point, and a later request that begins exactly the same way reads it back cheaply. So order matters: the system prompt, rules, tool descriptions and docs first; the conversation, today's date, live data and the new question last. Anthropic's numbers for Opus 5.5: writing to the five-minute cache costs 1.25 times input, reading it back costs 5%, so it pays for itself after one re-read. The one-hour cache costs 2 times to write and pays off after two reads. Confession: our Session 07 agent puts "Today is" plus the time to the minute in the first line of its system prompt, so on a paid model everything after that point would miss the cache every minute.
 
     [Sources]
     - https://platform.claude.com/docs/en/about-claude/pricing
@@ -728,24 +669,22 @@
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Cache</p></div>
         <div class="content">
           <h2 class="reveal">Put what never changes <span class="accent">at the top.</span></h2>
-          <div class="two-col reveal delay-1">
-            <div><h3>Stable first, changing last</h3><ul><li>First: the system prompt, the rules, the tool descriptions, the docs it always needs.</li><li>Last: the conversation, today's date, live data, the new question.</li><li>Change one word near the top and everything after it is written to the cache again.</li></ul></div>
-            <div><h3>How it bills, on Claude</h3><ul><li>Writing to the cache: 1.25x input.</li><li>Reading it back: 0.05x on Opus 5.5, so $0.20 instead of $4.</li><li>It pays for itself after one re-read.</li></ul></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Claude Opus 5.5, per million input tokens</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Fresh input<small>Read for the first time</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.8000" tabindex="0" role="img" aria-label="Fresh input: $4.00" data-tip-value="$4.00" data-tip-label="Fresh input"></span><span class="hbar-value">$4.00</span></div></div><div class="hbar-row"><div class="hbar-label">Writing to the cache<small>1.25x, paid once</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 1.0000" tabindex="0" role="img" aria-label="Writing to the cache: $5.00" data-tip-value="$5.00" data-tip-label="Writing to the cache"></span><span class="hbar-value">$5.00</span></div></div><div class="hbar-row"><div class="hbar-label">Reading from the cache<small>Every later re-read</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0400" tabindex="0" role="img" aria-label="Reading from the cache: $0.20" data-tip-value="$0.20" data-tip-label="Reading from the cache"></span><span class="hbar-value">$0.20</span></div></div></div><div class="sr-only"><table><caption>Claude Opus 5.5, per million input tokens</caption><tr><th>Kind of input token</th><th>Price per million</th></tr><tr><td>Fresh input (Read for the first time)</td><td>$4.00</td></tr><tr><td>Writing to the cache (1.25x, paid once)</td><td>$5.00</td></tr><tr><td>Reading from the cache (Every later re-read)</td><td>$0.20</td></tr></table></div></figure>
+          <p class="viz-note reveal delay-2">Stable first: system prompt, rules, tools, docs. Changing last: the conversation, today's date, the new question.</p>
         </div>
-        <div class="slide-footer"><p>Our Session 07 agent puts the time, to the minute, in its first line. One of tonight's exercises moves it.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>It pays for itself after one re-read. Our Session 07 agent puts the time in its first line; one exercise moves it.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    Tokens you never read still land on the bill. Thinking: Claude reports how many of the billed output tokens were internal reasoning, and on recent models earlier turns' thinking stays in context and is billed again as input. Tools: turning on tool use adds a 286-token system prompt on Opus 5.5 before your own tool descriptions. Web search: $10 per 1,000 searches on both Claude and OpenAI, plus the pages it reads, which count as input on later turns too. Images: Claude cuts a picture into 28-pixel squares, so a 1000 by 1000 image is 1,296 tokens, about $5.18 per thousand images on Opus 5.5.
+    Tokens you never read still land on the bill. Thinking: Claude reports how many of the billed output tokens were internal reasoning, and on recent models earlier turns' thinking stays in context and is billed again as input. Tools: turning on tool use adds a 286-token system prompt on Opus 5.5 before your own tool descriptions. Tokenizers: Anthropic's pricing page says Claude 4.7 and later produce approximately 30% more tokens for the same text; same price per token, more tokens per page. Language: researchers found the same text can need up to 15 times more tokens in one language than another; our Norwegian sentence took 21 tokens to English's 18. Also: web search is $10 per 1,000 searches on Claude and OpenAI plus the pages it reads, and a 1000 by 1000 image is 1,296 tokens on Claude, about $5.18 per thousand images on Opus 5.5.
 
     [Sources]
     - https://platform.claude.com/docs/en/build-with-claude/extended-thinking
     - https://platform.claude.com/docs/en/about-claude/pricing
     - https://platform.claude.com/docs/en/build-with-claude/vision
-    - https://developers.openai.com/api/docs/pricing
+    - https://arxiv.org/abs/2305.15425
     -->
     <section class="slide light" aria-roledescription="slide" aria-label="Hidden tokens">
       <div class="frame">
@@ -754,100 +693,33 @@
           <h2 class="reveal">Tokens you never see <span class="accent">still cost money.</span></h2>
           <div class="layers quad reveal delay-1">
             <div class="layer"><span>01 · Thinking</span><h3>Billed as output</h3><p>Reasoning you never read is counted, and earlier thinking is billed again as input.</p></div>
-            <div class="layer"><span>02 · Tools</span><h3>286 tokens</h3><p>A hidden system prompt on every Claude call that uses tools, before your own descriptions.</p></div>
-            <div class="layer"><span>03 · Web</span><h3>$10 per 1,000</h3><p>Searches, on Claude and OpenAI. Plus every page it reads, as input.</p></div>
-            <div class="layer"><span>04 · Images</span><h3>1,296 tokens</h3><p>One 1000×1000 picture on Claude. About $5 per thousand images on Opus 5.5.</p></div>
+            <div class="layer"><span>02 · Tools</span><h3>286 tokens</h3><p>A hidden system prompt on every Claude call that uses tools.</p></div>
+            <div class="layer"><span>03 · Tokenizer</span><h3>30% more</h3><p>Tokens for the same text on Claude's newer models. Same price per token.</p></div>
+            <div class="layer"><span>04 · Language</span><h3>21 vs 18</h3><p>Our Norwegian sentence against the English one. It can be up to 15x.</p></div>
           </div>
         </div>
-        <div class="slide-footer"><p>From Anthropic's and OpenAI's docs. Read the usage object, not just your prompt.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Also hidden: $10 per 1,000 web searches, and 1,296 tokens for one 1000×1000 image on Claude.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    The same text is not the same number of tokens everywhere. Anthropic's own pricing page says Claude 4.7 and later use a newer tokenizer that produces approximately 30% more tokens for the same text; the price per token stayed the same, so the price per page went up. Languages differ even more: Petrov and colleagues found the same text can need up to 15 times more tokens in one language than another. Our Norwegian sentence took 21 tokens to English's 18. So compare models on your own text before you compare prices.
-
-    [Sources]
-    - https://platform.claude.com/docs/en/about-claude/pricing
-    - https://arxiv.org/abs/2305.15425
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Tokenizers differ">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Tokenizers</p></div>
-        <div class="content">
-          <h2 class="reveal">Same text, <span class="accent">a different number of tokens.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">30%</span><h3>More tokens, same text</h3><p>Claude's newer tokenizer, by Anthropic's own pricing page. Same price per token, more tokens per page.</p><span class="caveat">Varies by content</span></div>
-            <div class="study"><span class="number">15x</span><h3>Between languages</h3><p>The same text can need up to 15 times more tokens in one language than another. Our Norwegian sentence: 21 tokens to English's 18.</p><span class="caveat">Petrov et al., NeurIPS 2023</span></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Compare models on your own text, in your own language, before you compare prices.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Why does speed cost more? SemiAnalysis's InferenceMAX benchmark explains it with transport: a metro bus and a Ferrari cost about the same to own, but the bus spreads that cost over dozens of passengers and the Ferrari over one or two. A GPU costs roughly the same per hour either way; serve each user faster and fewer tokens come out per hour. Their line: "Higher interactivity means higher costs." People still pay it. In April, 80% of SemiAnalysis's own AI spend, which peaked at $10 million a year, went on Opus 4.6 in fast mode.
-
-    [Sources]
-    - https://inferencex.semianalysis.com/blog/inferencemax-open-source-inference-benchmarking
-    - https://newsletter.semianalysis.com/p/cerebras-faster-tokens-please
-    - https://platform.claude.com/docs/en/build-with-claude/fast-mode
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Speed is a price">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">02 · Speed</p></div>
-        <div class="content">
-          <h2 class="reveal">Speed is a price: <span class="accent">bus or Ferrari.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">2x</span><h3>The price of fast mode</h3><p>Claude Opus 5.5 at up to 2.5 times the output speed: $8 in, $40 out. Same model, same answers.</p><span class="caveat">Anthropic's price list</span></div>
-            <div class="study"><span class="number">80%</span><h3>Of SemiAnalysis's April AI bill</h3><p>Went on fast mode. "Past a certain threshold of intelligence, developers prefer faster tokens to smarter tokens."</p><span class="caveat">SemiAnalysis, May 2026</span></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>A GPU costs the same per hour either way. The bus splits it over many riders, the Ferrari over one.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Part three: the business. Stripe's chief executive said this when Stripe agreed to buy OpenRouter, the switchboard that routes requests between hundreds of models. If tokens are the currency, the interesting questions are how much of it is printed, how fast it loses value, and who keeps the margin.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/the-ai-wholesalers-nobody-has-heard-of
-    - https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter
-    -->
-    <section class="slide statement-slide" aria-roledescription="slide" aria-label="Tokens are the currency">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · The business</p></div>
-        <div class="content">
-          <p class="eyebrow reveal">The business of tokens</p>
-          <blockquote class="pull reveal delay-1">“Tokens are the central currency for companies building with AI.”</blockquote>
-          <p class="pull-source reveal delay-2">Patrick Collison, Stripe, August 2026</p>
-        </div>
-        <div class="slide-footer"><p>How many are made, how fast they get cheaper, and who keeps the money.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Volume: Sundar Pichai said at I/O in May that Google processed 9.7 trillion tokens a month two years ago, roughly 480 trillion a year ago, and over 3.2 quadrillion now, and that its model APIs handle roughly 19 billion tokens a minute. Price: Epoch AI tracks the cheapest way to reach a given score and finds it falls about 47% a quarter, 13 times a year, fastest right after a score is first reached (about 75 times a year) and about 4.7 times a year two years on. Their example: a GPQA score that cost OpenAI's o3 about 30 cents a question in January 2025 cost GPT-5.6 Luna $0.0004 less than 18 months later, over 700 times cheaper. Our own briefs saw the same this year: Opus 5 matched Anthropic's flagship at half the price in July, Opus 5.5 cut list prices 20% in September, and a $1.20 DeepSeek model beat a $20 GPT on nine of eleven vendor tests in October.
+    Part three, the business. Patrick Collison of Stripe, buying OpenRouter in August: "Tokens are the central currency for companies building with AI." Volume: Sundar Pichai said at I/O in May that Google processed 9.7 trillion tokens a month two years ago, roughly 480 trillion a year ago, and over 3.2 quadrillion now, roughly 330 times more in two years, with its model APIs at about 19 billion tokens a minute. Price: Epoch AI tracks the cheapest way to reach a given score and finds it falls about 47% a quarter, 13 times a year, fastest right after a score is first reached. Their example: a GPQA score that cost OpenAI's o3 about 30 cents a question in January 2025 cost GPT-5.6 Luna $0.0004 less than 18 months later, over 700 times cheaper. Our briefs saw it this year too: Opus 5 matched Anthropic's flagship at half the price in July, Opus 5.5 cut list prices 20% in September, and a $1.20 DeepSeek model beat a $20 GPT on nine of eleven vendor tests in October.
 
     [Sources]
     - https://blog.google/innovation-and-ai/sundar-pichai-io-2026/
     - https://epoch.ai/publications/the-plunging-price-of-thought
+    - https://oslovibecoding.tech/brief/the-ai-wholesalers-nobody-has-heard-of
     - https://oslovibecoding.tech/brief/the-ai-labs-promised-to-slow-down-then-cut-their-prices
     -->
     <section class="slide" aria-roledescription="slide" aria-label="Volume up, price down">
       <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Volume</p></div>
+        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · The business</p></div>
         <div class="content">
           <h2 class="reveal">Tokens got cheaper. <span class="accent">We bought far more.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">330x</span><h3>More tokens a month at Google</h3><p>9.7 trillion in May 2024. Over 3.2 quadrillion in May 2026, by Sundar Pichai's count.</p><span class="caveat">Company figures</span></div>
-            <div class="study"><span class="number">13x</span><h3>Cheaper every year</h3><p>The price of a fixed level of AI performance has fallen about 47% a quarter since 2023.</p><span class="caveat">Epoch AI, September 2026</span></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Tokens Google processes per month, by Sundar Pichai&#x27;s count</figcaption><div class="vbar"><div class="vbar-col"><span class="vbar-value">9.7 trillion</span><span class="vbar-bar muted" style="--h: 0.0030" tabindex="0" role="img" aria-label="May 2024: 9.7 trillion" data-tip-value="9.7 trillion" data-tip-label="May 2024"></span></div><div class="vbar-col"><span class="vbar-value">480 trillion</span><span class="vbar-bar muted" style="--h: 0.1500" tabindex="0" role="img" aria-label="May 2025: 480 trillion" data-tip-value="480 trillion" data-tip-label="May 2025"></span></div><div class="vbar-col"><span class="vbar-value">3.2 quadrillion</span><span class="vbar-bar" style="--h: 1.0000" tabindex="0" role="img" aria-label="May 2026: 3.2 quadrillion" data-tip-value="3.2 quadrillion" data-tip-label="May 2026"></span></div></div><div class="vbar-x"><span>May 2024</span><span>May 2025</span><span>May 2026</span></div><div class="sr-only"><table><caption>Tokens Google processes per month, by Sundar Pichai&#x27;s count</caption><tr><th>Month</th><th>Tokens per month</th></tr><tr><td>May 2024</td><td>9.7 trillion</td></tr><tr><td>May 2025</td><td>480 trillion</td></tr><tr><td>May 2026</td><td>3.2 quadrillion</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Epoch's example: a score that cost 30 cents a question in January 2025 cost $0.0004 eighteen months later.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Meanwhile the price of a fixed level of AI performance falls about 13 times a year (Epoch AI).</p><p class="counter"></p></div>
       </div>
     </section>
 
@@ -863,181 +735,100 @@
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Jevons</p></div>
         <div class="content">
           <h2 class="reveal">Cheaper tokens, <span class="accent">bigger bills.</span></h2>
-          <div class="scenario reveal delay-1" aria-label="One month of US business AI spend">
-            <div class="scenario-step"><b>Tokens used</b><p>Up 52% in one month.</p></div>
-            <div class="scenario-step"><b>Price per token</b><p>Down 25%, to $0.64 per million.</p></div>
-            <div class="scenario-step"><b>Total spend</b><p>Up 23%.</p></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Change in one month, US businesses on Ramp, to 11 October 2026</figcaption><div class="dbar" style="--zero: 0.3333"><div class="dbar-row"><div class="hbar-label">Tokens used</div><div class="dbar-track"><span class="dbar-bar pos muted" style="--d: 0.5822" tabindex="0" role="img" aria-label="Tokens used: +52%" data-tip-value="+52%" data-tip-label="Tokens used"></span><span class="dbar-value pos" style="--d: 0.5822">+52%</span></div></div><div class="dbar-row"><div class="hbar-label">Price per token</div><div class="dbar-track"><span class="dbar-bar neg muted" style="--d: 0.2822" tabindex="0" role="img" aria-label="Price per token: To $0.64 per million: −25%" data-tip-value="−25%" data-tip-label="Price per token: To $0.64 per million"></span><span class="dbar-value neg" style="--d: 0.2822">−25%</span></div></div><div class="dbar-row"><div class="hbar-label">Total spend</div><div class="dbar-track"><span class="dbar-bar pos" style="--d: 0.2556" tabindex="0" role="img" aria-label="Total spend: +23%" data-tip-value="+23%" data-tip-label="Total spend"></span><span class="dbar-value pos" style="--d: 0.2556">+23%</span></div></div></div><div class="viz-legend"><span class="viz-key"><i class="k-accent"></i>The bill</span><span class="viz-key"><i class="k-muted"></i>What drives it</span></div><div class="sr-only"><table><caption>Change in one month, US businesses on Ramp, to 11 October 2026</caption><tr><th>Measure</th><th>Change in one month</th></tr><tr><td>Tokens used</td><td>+52%</td></tr><tr><td>Price per token (To $0.64 per million)</td><td>−25%</td></tr><tr><td>Total spend</td><td>+23%</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Ramp AI Index, US businesses, the month to 11 October 2026. Economists call it the Jevons paradox.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Economists call it the Jevons paradox: make something cheaper and we use so much more that we spend more.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    OpenRouter, which routes traffic across hundreds of models, sees the split clearly. In its September newsletter, about 72% of tokens in the latest week went to open-weight models, and the open share had held above 62% since a July peak. Yet closed models took 73% of the spend in the second week of September, down from 89% in the first week of January. Same pattern between the labs: OpenAI models took 78% of combined OpenAI and Anthropic tokens but only just over half the spend. Volume goes to cheap tokens; money goes to the tokens people trust for work that matters.
+    OpenRouter, which routes traffic across hundreds of models, sees the split clearly. In its September newsletter, about 72% of tokens in the latest week went to open-weight models, and the open share had held above 62% since a July peak. Yet closed models took 73% of the spend in the second week of September, down from 89% in the first week of January. Same pattern between the labs: OpenAI models took 78% of combined OpenAI and Anthropic tokens but only just over half the spend. Volume goes to cheap tokens; money goes to the tokens people trust for work that matters. SemiAnalysis's line fits: "A million tokens can produce junk, a useful email summary, a legal document, or a decision that changes a company's strategy."
 
     [Sources]
     - https://openrouter.ai/data/newsletter/the-token-state-of-play
+    - https://newsletter.semianalysis.com/p/ai-dark-output-the-visible-cost-of
     -->
     <section class="slide" aria-roledescription="slide" aria-label="Tokens versus money">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Tokens vs money</p></div>
         <div class="content">
           <h2 class="reveal">Most tokens are cheap. <span class="accent">Most money is not.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">72%</span><h3>Of tokens go to open models</h3><p>On OpenRouter, where developers route traffic across hundreds of models.</p><span class="caveat">OpenRouter, September 2026</span></div>
-            <div class="study"><span class="number">73%</span><h3>Of spend goes to closed models</h3><p>Down from 89% in January. Buyers pay up for the tokens they trust most.</p><span class="caveat">OpenRouter, September 2026</span></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">OpenRouter, September 2026</figcaption><div class="shares"><div class="share-row"><div class="hbar-label">Tokens<small class="share-sum">72% open, 28% closed</small></div><div class="share-bar"><span class="seg k-muted" style="flex: 72 1 0" tabindex="0" role="img" aria-label="Tokens, open-weight models: 72%" data-tip-value="72%" data-tip-label="Tokens, open-weight models"><b>72%</b></span><span class="seg k-accent" style="flex: 28 1 0" tabindex="0" role="img" aria-label="Tokens, closed models: 28%" data-tip-value="28%" data-tip-label="Tokens, closed models"><b>28%</b></span></div></div><div class="share-row"><div class="hbar-label">Spend<small class="share-sum">27% open, 73% closed</small></div><div class="share-bar"><span class="seg k-muted" style="flex: 27 1 0" tabindex="0" role="img" aria-label="Spend, open-weight models: 27%" data-tip-value="27%" data-tip-label="Spend, open-weight models"><b>27%</b></span><span class="seg k-accent" style="flex: 73 1 0" tabindex="0" role="img" aria-label="Spend, closed models: 73%" data-tip-value="73%" data-tip-label="Spend, closed models"><b>73%</b></span></div></div></div><div class="viz-legend"><span class="viz-key"><i class="k-accent"></i>Closed models</span><span class="viz-key"><i class="k-muted"></i>Open-weight models</span></div><div class="sr-only"><table><caption>OpenRouter, September 2026</caption><tr><th>Share of</th><th>Closed models</th><th>Open-weight models</th></tr><tr><td>Tokens</td><td>28%</td><td>72%</td></tr><tr><td>Spend</td><td>73%</td><td>27%</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Not all tokens are equal: volume goes to cheap models, money to the best ones.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>“A million tokens can produce junk, a useful email summary, a legal document, or a decision that changes a company's strategy.” SemiAnalysis</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    SemiAnalysis pulled Ramp corporate card data and spoke to more than 50 companies. Median company: about $136 per employee per year. 90th percentile: about $7,300. 99th: about $90,000. Monthly caps now range from $200 to about $2,000 per employee, and up to $4,000 for senior staff at one cybersecurity firm; SemiAnalysis puts a typical corporate AI budget at $250 to $500 per person per month. Caps land hardest on the coding tools engineers use, and more than 70 percent of OpenAI's and Anthropic's recurring revenue is estimated to come from coding.
+    SemiAnalysis pulled Ramp corporate card data and spoke to more than 50 companies. Median company: about $136 per employee per year. 90th percentile: about $7,300. 99th: about $90,000, roughly 660 times the median. Monthly caps now range from $200 to about $2,000 per employee, and up to $4,000 for senior staff at one cybersecurity firm; Uber spent a year of AI budget in four months, then capped everyone at $1,500 a month. Tokenmaxxing: in April The Information reported on "Claudeonomics", an internal Meta leaderboard of the company's top 250 AI users; Meta staff used more than 60 trillion tokens in 30 days, the top person about 281 billion, and it was shut down two days after the story broke. The contrast is SemiAnalysis itself: about 20 people, just under 5 billion tokens per person a month, with a human verify step at the end. As our brief puts it, high token use is an input, not a result. Where do tokens pay off? SemiAnalysis heard of an Amazon recruiter halving hiring time with AI write-ups, while METR's 2025 experiment found experienced programmers 19% slower on their own code.
 
     [Sources]
     - https://oslovibecoding.tech/brief/uber-burned-a-year-of-ai-budget-in-four-months
+    - https://oslovibecoding.tech/brief/meta-ranked-its-staff-by-how-much-ai-they-burned
     - https://oslovibecoding.tech/brief/token-mogging-how-a-20-person-firm-out-uses-meta-per-employe
+    - https://oslovibecoding.tech/brief/ai-halved-a-recruiter-s-hiring-time-here-is-the-catch
     - https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations
     -->
-    <section class="slide" aria-roledescription="slide" aria-label="The spread of AI spending">
+    <section class="slide light" aria-roledescription="slide" aria-label="The spread of AI spending">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · The spread</p></div>
         <div class="content">
           <h2 class="reveal">The average AI bill <span class="accent">tells you nothing.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">$136</span><h3>The median company</h3><p>Spent on AI per employee, per year. Roughly one takeaway lunch.</p><span class="caveat">Ramp card data, via SemiAnalysis</span></div>
-            <div class="study"><span class="number">$90,000</span><h3>The 99th percentile</h3><p>Per employee, per year, about 660 times the median. Uber spent a year of AI budget in four months, then capped everyone at $1,500 a month.</p><span class="caveat">Caps land hardest on coding tools</span></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">AI spend per employee per year, Ramp card data via SemiAnalysis</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Median company</div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0015" tabindex="0" role="img" aria-label="Median company: $136" data-tip-value="$136" data-tip-label="Median company"></span><span class="hbar-value">$136</span></div></div><div class="hbar-row"><div class="hbar-label">90th percentile</div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0811" tabindex="0" role="img" aria-label="90th percentile: $7,300" data-tip-value="$7,300" data-tip-label="90th percentile"></span><span class="hbar-value">$7,300</span></div></div><div class="hbar-row"><div class="hbar-label">99th percentile</div><div class="hbar-track"><span class="hbar-bar" style="--w: 1.0000" tabindex="0" role="img" aria-label="99th percentile: $90,000" data-tip-value="$90,000" data-tip-label="99th percentile"></span><span class="hbar-value">$90,000</span></div></div></div><div class="sr-only"><table><caption>AI spend per employee per year, Ramp card data via SemiAnalysis</caption><tr><th>Company</th><th>AI spend per employee per year</th></tr><tr><td>Median company</td><td>$136</td></tr><tr><td>90th percentile</td><td>$7,300</td></tr><tr><td>99th percentile</td><td>$90,000</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Caps are not panic. They are the mobile data plan, reinvented for AI.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Uber spent a year of AI budget in four months. Meta's token leaderboard lasted two days: burning tokens is not working.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    In April The Information reported on "Claudeonomics", an internal Meta dashboard ranking the company's top 250 AI users with titles like "Token Legend". Meta staff used more than 60 trillion tokens in 30 days; the top person about 281 billion, which Fortune estimated could cost over $1.4 million. SemiAnalysis found some employees set agents researching for hours just to climb the board. It was shut down two days after the story broke. The contrast is SemiAnalysis itself: about 20 people, just under 5 billion tokens per person a month, more than five times Meta per head, with token spend at about 30% of its salary bill. Each analyst directs agents through four steps, read, think, write, verify, and the human keeps the last one. As our brief puts it: high token use is an input, not a result.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/meta-ranked-its-staff-by-how-much-ai-they-burned
-    - https://oslovibecoding.tech/brief/token-mogging-how-a-20-person-firm-out-uses-meta-per-employe
-    - https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations
-    -->
-    <section class="slide statement-slide" aria-roledescription="slide" aria-label="Tokenmaxxing">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Tokenmaxxing</p></div>
-        <div class="content">
-          <h2 class="reveal">Burning tokens is <span class="accent">not the same as working.</span></h2>
-          <div class="tradeoff reveal delay-1" aria-label="Tokens used versus work checked"><span>Tokens used</span><span class="line" aria-hidden="true"></span><strong>Work someone checked</strong></div>
-        </div>
-        <div class="slide-footer"><p>Meta's internal token leaderboard lasted two days after the press found it.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    So where do tokens pay off? SemiAnalysis asked more than 50 large companies. The striking answers came from slow, paperwork-heavy work: an Amazon recruiter said AI note-taking and write-ups halved the 6 to 9 months from first screening call to joining a team, and a data firm said a week of work now takes a few hours. Those are things people said, not measurements. The controlled studies are mixed: a 2023 study of 5,179 call-centre agents found 14% more output on average and 34% for new staff, while METR's 2025 experiment found experienced programmers 19% slower on their own projects, though they felt faster. SemiAnalysis also names the catch: bigger budgets came with expectations of more output, and many people now work longer hours.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/ai-halved-a-recruiter-s-hiring-time-here-is-the-catch
-    - https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations
-    -->
-    <section class="slide light" aria-roledescription="slide" aria-label="What the tokens buy">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · The payoff</p></div>
-        <div class="content">
-          <h2 class="reveal">Tokens pay off on <span class="accent">slow, paperwork-heavy work.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">50%</span><h3>Less time to place an engineer</h3><p>An Amazon recruiter told SemiAnalysis that AI notes and write-ups halved the 6 to 9 months from first call to new team.</p><span class="caveat">Reported, not measured</span></div>
-            <div class="study"><span class="number">19%</span><h3>Slower on their own code</h3><p>Experienced programmers in a 2025 METR experiment, even though they felt faster.</p><span class="caveat">A controlled study</span></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>SemiAnalysis's catch: bigger AI budgets came with bigger expectations, and longer hours.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Who keeps the money? One analyst, Apoorv Agrawal, estimated the AI stack this spring: chips about $300 billion of revenue at about 73% gross margin, cloud about $75 billion at about 55%, applications about $60 billion at about 33%. That puts 79% of the stack's gross profit with the chip makers. In the old cloud software world it was the reverse: apps took 70% and chips 6%. Nvidia's latest quarter shows why: $96.2 billion of revenue, $89.0 billion of it from data centres, at a 75.0% gross margin. These are one analyst's estimates, not audited figures, but the direction is not in dispute.
+    Who keeps the money? One analyst, Apoorv Agrawal, estimated the AI stack this spring: chips about $300 billion of revenue at about 73% gross margin, cloud about $75 billion at about 55%, applications about $60 billion at about 33%. That puts 79% of the stack's gross profit with the chip makers; in the old cloud software world apps took 70% and chips 6%. Nvidia's latest quarter: $96.2 billion of revenue, $89.0 billion from data centres, a 75.0% gross margin. Underneath sits a physical supply chain SemiAnalysis tracks closely: around five years for a big US grid connection, so labs build their own gas plants; roughly $10 to 15 million a year of revenue per megawatt of AI computing across two of its estimates; one-year contracts for a 2023 H100 at about $2.50 to $3 an hour, more than a year ago; and Token-as-a-Service wholesalers selling over $4 billion a year without publishing their margin per token. Jensen Huang's measure for all of it: tokens per watt.
 
     [Sources]
     - https://tailwinds.substack.com/p/the-economics-of-generative-ai-two
     - https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027
+    - https://oslovibecoding.tech/brief/ai-companies-are-building-their-own-power-stations
+    - https://oslovibecoding.tech/brief/ai-datacentres-are-now-built-like-lego-sets
+    - https://oslovibecoding.tech/brief/ai-borrowing-is-about-to-pass-america-s-car-loans
+    - https://oslovibecoding.tech/brief/the-ai-wholesalers-nobody-has-heard-of
+    - https://oslovibecoding.tech/frontier/jensen-huang-nvidia
     -->
     <section class="slide" aria-roledescription="slide" aria-label="Who keeps the profit">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Who gets paid</p></div>
         <div class="content">
           <h2 class="reveal">Most of the profit <span class="accent">sits under the token.</span></h2>
-          <div class="shares reveal delay-1" aria-label="Share of gross profit by layer">
-            <div class="share-row"><b>The AI stack, 2026<small> · chips 79%, cloud 14%, apps 7%</small></b><div class="share-bar"><span class="chips-layer" style="width: 79%">Chips 79%</span><span class="cloud-layer" style="width: 14%">14%</span><span class="apps-layer" style="width: 7%">7%</span></div></div>
-            <div class="share-row"><b>Cloud software, before AI<small> · chips 6%, rest 24%, apps 70%</small></b><div class="share-bar"><span class="chips-layer" style="width: 6%">6%</span><span class="cloud-layer" style="width: 24%">24%</span><span class="apps-layer" style="width: 70%">Apps 70%</span></div></div>
-          </div>
-          <div class="bar-key reveal delay-2"><span>Chips</span><span class="old-key">Cloud and the rest</span><span class="dim-key">Apps</span></div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Share of gross profit by layer, one analyst&#x27;s estimate (Apoorv Agrawal, April 2026)</figcaption><div class="shares"><div class="share-row"><div class="hbar-label">The AI stack, 2026<small class="share-sum">Chips 79%, cloud 14%, apps 7%</small></div><div class="share-bar"><span class="seg k-accent" style="flex: 79 1 0" tabindex="0" role="img" aria-label="The AI stack, 2026, chips: 79%" data-tip-value="79%" data-tip-label="The AI stack, 2026, chips"><b>79%</b></span><span class="seg k-muted" style="flex: 14 1 0" tabindex="0" role="img" aria-label="The AI stack, 2026, cloud and the rest: 14%" data-tip-value="14%" data-tip-label="The AI stack, 2026, cloud and the rest"><b>14%</b></span><span class="seg k-muted-2" style="flex: 7 1 0" tabindex="0" role="img" aria-label="The AI stack, 2026, apps: 7%" data-tip-value="7%" data-tip-label="The AI stack, 2026, apps"></span></div></div><div class="share-row"><div class="hbar-label">Cloud software, before AI<small class="share-sum">Chips 6%, cloud and the rest 24%, apps 70%</small></div><div class="share-bar"><span class="seg k-accent" style="flex: 6 1 0" tabindex="0" role="img" aria-label="Cloud software, before AI, chips: 6%" data-tip-value="6%" data-tip-label="Cloud software, before AI, chips"></span><span class="seg k-muted" style="flex: 24 1 0" tabindex="0" role="img" aria-label="Cloud software, before AI, cloud and the rest: 24%" data-tip-value="24%" data-tip-label="Cloud software, before AI, cloud and the rest"><b>24%</b></span><span class="seg k-muted-2" style="flex: 70 1 0" tabindex="0" role="img" aria-label="Cloud software, before AI, apps: 70%" data-tip-value="70%" data-tip-label="Cloud software, before AI, apps"><b>70%</b></span></div></div></div><div class="viz-legend"><span class="viz-key"><i class="k-accent"></i>Chips</span><span class="viz-key"><i class="k-muted"></i>Cloud and the rest</span><span class="viz-key"><i class="k-muted-2"></i>Apps</span></div><div class="sr-only"><table><caption>Share of gross profit by layer, one analyst&#x27;s estimate (Apoorv Agrawal, April 2026)</caption><tr><th>Stack</th><th>Chips</th><th>Cloud and the rest</th><th>Apps</th></tr><tr><td>The AI stack, 2026</td><td>79%</td><td>14%</td><td>7%</td></tr><tr><td>Cloud software, before AI</td><td>6%</td><td>24%</td><td>70%</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Share of gross profit by layer, one analyst's estimate (Apoorv Agrawal, April 2026). Nvidia's gross margin last quarter: 75%.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Nvidia's gross margin last quarter: 75%. Underneath: power queues, rent per megawatt, chips that are booked up.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    Every token sits on a physical supply chain, and SemiAnalysis covers all of it. Power: about a terawatt of requests sits in US utility queues and a big grid connection takes around five years, so Meta, OpenAI and Oracle are building their own gas plants. Buildings: SemiAnalysis estimates a megawatt of AI computing earns roughly $10 to 12 million a year in one report and $12 to 15 million in another; operators choose factory-built modules that are only about 8% cheaper because they go up about a third faster. Chips: one-year contracts for the 2023 H100 that Nvidia said you could not give away now run about $2.50 to $3 an hour, more than a year ago, because new chips are booked into 2027. Resellers: Token-as-a-Service firms like Together, Fireworks and Baseten run open models for others, over $4 billion a year by SemiAnalysis's June estimate, and not one publishes what it keeps per token. OpenRouter, the switchboard on top, says it handles over 10 trillion tokens a day. Jensen Huang's metric for all of it: tokens per watt.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/ai-companies-are-building-their-own-power-stations
-    - https://oslovibecoding.tech/brief/ai-datacentres-are-now-built-like-lego-sets
-    - https://oslovibecoding.tech/brief/ai-borrowing-is-about-to-pass-america-s-car-loans
-    - https://oslovibecoding.tech/brief/the-chip-nvidia-said-you-couldnt-give-away
-    - https://oslovibecoding.tech/brief/the-ai-wholesalers-nobody-has-heard-of
-    - https://oslovibecoding.tech/frontier/jensen-huang-nvidia
-    -->
-    <section class="slide light" aria-roledescription="slide" aria-label="Behind every token">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Supply chain</p></div>
-        <div class="content">
-          <h2 class="reveal">Behind every token: <span class="accent">power, buildings, chips.</span></h2>
-          <div class="layers quad reveal delay-1">
-            <div class="layer"><span>01 · Power</span><h3>Five-year queues</h3><p>For a big US grid connection. So labs build their own gas plants.</p></div>
-            <div class="layer"><span>02 · Buildings</span><h3>Rent per megawatt</h3><p>Roughly $10 to 15 million a year, across two SemiAnalysis estimates.</p></div>
-            <div class="layer"><span>03 · Chips</span><h3>Old chips, higher rent</h3><p>One-year contracts for a 2023 H100 run $2.50 to $3 an hour, more than a year ago.</p></div>
-            <div class="layer"><span>04 · Resellers</span><h3>Token wholesalers</h3><p>Firms that run other labs' models. Over $4 billion a year, and none publish their margin.</p></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Figures: SemiAnalysis, via our AI Brief. Jensen Huang's measure for the whole chain: tokens per watt.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    How can prices fall this fast without the sellers going broke? Because the cost of serving a token fell faster. SemiAnalysis's numbers for Anthropic: the gross margin on inference, what is left of each dollar of answers after paying for chips and power, went from about 38% a year before its summer reports to above 70%, and above 80% on the API that developers pay per token. SemiAnalysis estimated an operating profit of about $559 million in Q2 on about $10.9 billion of revenue; at its October investor day Anthropic reportedly put Q2 revenue at $11.6 billion and said it takes in $1.70 for every dollar spent on computing, according to the FT citing attendees. Anthropic has not confirmed those figures, and has said it does not expect to stay profitable.
+    How can prices fall this fast without the sellers going broke? Because the cost of serving a token fell faster. SemiAnalysis's numbers for Anthropic: the gross margin on inference, what is left of each dollar of answers after paying for chips and power, went from about 38% a year before its summer reports to above 70%, and above 80% on the pay-per-token API. SemiAnalysis estimated an operating profit of about $559 million in Q2 on about $10.9 billion of revenue; at its October investor day Anthropic reportedly put Q2 revenue at $11.6 billion and said it takes in $1.70 for every dollar spent on computing, according to the FT citing attendees. Anthropic has not confirmed those figures, and has said it does not expect to stay profitable.
 
     [Sources]
     - https://oslovibecoding.tech/brief/the-ai-lab-that-actually-turns-a-profit
     - https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the
-    - https://oslovibecoding.tech/brief/is-your-ai-subscription-a-steal
     - https://oslovibecoding.tech/brief/anthropic-now-earns-more-in-a-quarter-than-in-all-of-last-year
     -->
-    <section class="slide" aria-roledescription="slide" aria-label="Margins rose as prices fell">
+    <section class="slide light" aria-roledescription="slide" aria-label="Margins rose as prices fell">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · The seller's side</p></div>
         <div class="content">
           <h2 class="reveal">Prices fell. <span class="accent">Margins rose anyway.</span></h2>
-          <div class="maturity reveal delay-1" aria-label="Anthropic's gross margin on inference, by SemiAnalysis's estimate">
-            <div class="maturity-step"><small>A year earlier</small><h3>38%</h3><p>Of each dollar of answers left after paying for chips and power.</p></div>
-            <div class="maturity-step"><small>Summer 2026</small><h3>Over 70%</h3><p>Serving got far more efficient.</p></div>
-            <div class="maturity-step"><small>Pay-per-token API</small><h3>Over 80%</h3><p>Selling tokens to developers is the most profitable part.</p></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Anthropic&#x27;s gross margin on inference, SemiAnalysis estimates</figcaption><div class="vbar"><div class="vbar-col"><span class="vbar-value">38%</span><span class="vbar-bar muted" style="--h: 0.4750" tabindex="0" role="img" aria-label="A year earlier: 38%" data-tip-value="38%" data-tip-label="A year earlier"></span></div><div class="vbar-col"><span class="vbar-value">Over 70%</span><span class="vbar-bar" style="--h: 0.8750" tabindex="0" role="img" aria-label="Summer 2026: Over 70%" data-tip-value="Over 70%" data-tip-label="Summer 2026"></span></div><div class="vbar-col"><span class="vbar-value">Over 80%</span><span class="vbar-bar muted" style="--h: 1.0000" tabindex="0" role="img" aria-label="Pay-per-token API: Over 80%" data-tip-value="Over 80%" data-tip-label="Pay-per-token API"></span></div></div><div class="vbar-x"><span>A year earlier</span><span>Summer 2026</span><span>Pay-per-token API</span></div><div class="sr-only"><table><caption>Anthropic&#x27;s gross margin on inference, SemiAnalysis estimates</caption><tr><th>Period</th><th>Gross margin on inference</th></tr><tr><td>A year earlier</td><td>38%</td></tr><tr><td>Summer 2026</td><td>Over 70%</td></tr><tr><td>Pay-per-token API</td><td>Over 80%</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Anthropic's inference margin, SemiAnalysis estimates. The cost of an answer fell faster than its price.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>The cost of an answer fell faster than its price. Estimates, unaudited.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    The subscription side. SemiAnalysis measured hidden plan limits with controlled coding-agent runs: a $200 Claude plan on Opus 5.5 delivered about $11,726 of usage at pay-as-you-go prices; Fable 5.1 on the same plan about $2,485; OpenAI's plan about $2,084. In July the same firm reckoned Anthropic breaks even on Pro and Max at about 20% use, and that only about 10% of users spend more than $30 of usage a day. Subscriptions are about 10% of Anthropic's revenue and 42% of its compute. Agents broke the buffet: GitHub moved every Copilot plan to token-based credits on 1 June 2026, with Pro at $10 including $10 of credits, because, in its words, a quick chat question and a multi-hour autonomous coding session can cost the user the same amount. Cursor made a similar move in 2025 and had to apologise for how it handled it.
+    The subscription side. SemiAnalysis measured hidden plan limits with controlled coding-agent runs: a $200 Claude plan on Opus 5.5 delivered about $11,726 of usage at pay-as-you-go prices; on Fable 5.1 about $2,485; OpenAI's plan about $2,084. In July it reckoned Anthropic breaks even on Pro and Max at about 20% use, with only about 10% of users spending more than $30 of usage a day, so most people fund the heavy few. Subscriptions are about 10% of Anthropic's revenue and 42% of its compute. Agents broke the buffet: GitHub moved every Copilot plan to token-based credits on 1 June 2026, Pro at $10 including $10 of credits. Cursor made a similar move in 2025 and had to apologise for how it handled it. And if you build a free app yourself, every user arrives with a token bill: Character.AI spent $56.1 million on computing in eight months, about 45% of its spending, lost $8 to $9 million a month, and filed for bankruptcy on 12 October.
 
     [Sources]
     - https://oslovibecoding.tech/brief/same-200-five-times-the-ai
@@ -1045,46 +836,22 @@
     - https://oslovibecoding.tech/brief/is-your-ai-subscription-a-steal
     - https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/
     - https://techcrunch.com/2025/07/07/cursor-apologizes-for-unclear-pricing-changes-that-upset-users/
+    - https://oslovibecoding.tech/brief/character-ai-went-bankrupt-disney-bought-the-people-not-the-app
     -->
     <section class="slide" aria-roledescription="slide" aria-label="Flat prices and agents">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Plans</p></div>
         <div class="content">
           <h2 class="reveal">Flat prices are a buffet. <span class="accent">Agents eat too much.</span></h2>
-          <div class="two-col reveal delay-1">
-            <div><h3>The buffet</h3><ul><li>A $200 Claude plan delivered about $11,700 of usage at pay-per-token prices, on SemiAnalysis's coding test.</li><li>SemiAnalysis reckons Anthropic breaks even at about 20% use. Most people sit below that and fund the heavy few.</li></ul></div>
-            <div><h3>The bill arrives</h3><ul><li>GitHub Copilot moved every plan to token-based credits on 1 June 2026.</li><li>Its reason: "a quick chat question and a multi-hour autonomous coding session can cost the user the same amount."</li></ul></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">A $200-a-month plan, its usage valued at pay-per-token prices (SemiAnalysis coding test)</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">What you pay<small>One month</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.0171" tabindex="0" role="img" aria-label="What you pay: $200" data-tip-value="$200" data-tip-label="What you pay"></span><span class="hbar-value">$200</span></div></div><div class="hbar-row"><div class="hbar-label">Claude plan on Opus 5.5<small>Usage you get</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 1.0000" tabindex="0" role="img" aria-label="Claude plan on Opus 5.5: $11,726" data-tip-value="$11,726" data-tip-label="Claude plan on Opus 5.5"></span><span class="hbar-value">$11,726</span></div></div><div class="hbar-row"><div class="hbar-label">Claude plan on Fable 5.1<small>Usage you get</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.2119" tabindex="0" role="img" aria-label="Claude plan on Fable 5.1: $2,485" data-tip-value="$2,485" data-tip-label="Claude plan on Fable 5.1"></span><span class="hbar-value">$2,485</span></div></div><div class="hbar-row"><div class="hbar-label">OpenAI plan on GPT-6.1 Sol<small>Usage you get</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.1777" tabindex="0" role="img" aria-label="OpenAI plan on GPT-6.1 Sol: $2,084" data-tip-value="$2,084" data-tip-label="OpenAI plan on GPT-6.1 Sol"></span><span class="hbar-value">$2,084</span></div></div></div><div class="sr-only"><table><caption>A $200-a-month plan, its usage valued at pay-per-token prices (SemiAnalysis coding test)</caption><tr><th>Plan</th><th>Value per month</th></tr><tr><td>What you pay (One month)</td><td>$200</td></tr><tr><td>Claude plan on Opus 5.5 (Usage you get)</td><td>$11,726</td></tr><tr><td>Claude plan on Fable 5.1 (Usage you get)</td><td>$2,485</td></tr><tr><td>OpenAI plan on GPT-6.1 Sol (Usage you get)</td><td>$2,084</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Build for other people and you are on the API: pay per token, no ceiling unless you set one.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>GitHub moved Copilot to token billing on 1 June: “a quick chat question and a multi-hour autonomous coding session can cost the user the same amount.”</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    The other side of the meter. Character.AI had 163 million sign-ups and millions of devoted users. Its filing shows revenue peaking at $5.3 million a month while operating losses ran $8 to $9 million a month, with $56.1 million on computing in the first eight months of 2026, about 45% of spending. It filed for Chapter 11 on 12 October. If you launch a free AI app, every new user arrives with a token bill attached.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/character-ai-went-bankrupt-disney-bought-the-people-not-the-app
-    - https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Tokens are your rent">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">03 · Building on AI</p></div>
-        <div class="content">
-          <h2 class="reveal">If you build on AI, <span class="accent">tokens are your rent.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">45%</span><h3>Character.AI's spending on compute</h3><p>$56.1 million in the first eight months of 2026, for an app with millions of devoted users.</p><span class="caveat">From its bankruptcy filing</span></div>
-            <div class="study"><span class="number">$8M</span><h3>Lost every month</h3><p>Revenue peaked at $5.3 million a month. Operating losses ran $8 to $9 million. It filed for bankruptcy on 12 October.</p><span class="caveat">Popular is not the same as paid for</span></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>A free AI app is never free to run.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Part four: choosing. Start with the most important idea of the evening. Price per token times tokens per task is cost per task, and the second number varies far more than the first. On Artificial Analysis's Intelligence Index, Fable 5.1 and GPT-6 Astra have the same list price and the same score, yet Fable used 190 million output tokens to run the test against Astra's 60 million, so it costs 2.3 times as much per task. Same story at the cheaper rung: GPT-6.1 Sol and Gemini 4 Argon both list at $2 and $10; Sol scores 52 at $0.72 a task, Argon 53 at $1.99. And price is not intelligence: Opus 5.5 at maximum effort scores 58, the top of the index, at $4 and $20.
+    Part four: choosing. The most important idea of the evening: price per token times tokens per task is cost per task, and the second number varies far more than the first. On Artificial Analysis's Intelligence Index, Fable 5.1 and GPT-6 Astra have the same list price and the same score, yet Fable used 190 million output tokens to run the test against Astra's 60 million, so it costs 2.3 times as much per task. GPT-6.1 Sol and Gemini 4 Argon both list at $2 and $10; Sol scores 52 at $0.72 a task, Argon 53 at $1.99. From Fable to Sol, near-identical scores, ten times the cost. And price is not intelligence: Opus 5.5 at maximum effort scores 58, the top of the index, at $4 and $20.
 
     [Sources]
     - https://artificialanalysis.ai/models/claude-fable-5-1
@@ -1097,42 +864,16 @@
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">04 · Cost per task</p></div>
         <div class="content">
-          <h2 class="reveal">Same price, same score, <span class="accent">2.3 times the bill.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">$7.63</span><h3>Claude Fable 5.1, per task</h3><p>$10 in, $50 out. Scores 53. Used 190 million tokens to run the test.</p><span class="caveat">Artificial Analysis, October 2026</span></div>
-            <div class="study"><span class="number">$3.26</span><h3>GPT-6 Astra, per task</h3><p>$10 in, $50 out. Scores 53. Used 60 million tokens.</p><span class="caveat">Artificial Analysis, October 2026</span></div>
-          </div>
+          <h2 class="reveal">Nearly the same score, <span class="accent">ten times the cost.</span></h2>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Cost per task on the Artificial Analysis Intelligence Index, October 2026</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Claude Fable 5.1<small>Score 53, $10 in / $50 out</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 1.0000" tabindex="0" role="img" aria-label="Claude Fable 5.1: $7.63" data-tip-value="$7.63" data-tip-label="Claude Fable 5.1"></span><span class="hbar-value">$7.63</span></div></div><div class="hbar-row"><div class="hbar-label">GPT-6 Astra<small>Score 53, $10 in / $50 out</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.4273" tabindex="0" role="img" aria-label="GPT-6 Astra: $3.26" data-tip-value="$3.26" data-tip-label="GPT-6 Astra"></span><span class="hbar-value">$3.26</span></div></div><div class="hbar-row"><div class="hbar-label">Gemini 4 Argon<small>Score 53, $2 in / $10 out</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.2608" tabindex="0" role="img" aria-label="Gemini 4 Argon: $1.99" data-tip-value="$1.99" data-tip-label="Gemini 4 Argon"></span><span class="hbar-value">$1.99</span></div></div><div class="hbar-row"><div class="hbar-label">GPT-6.1 Sol<small>Score 52, $2 in / $10 out</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.0944" tabindex="0" role="img" aria-label="GPT-6.1 Sol: $0.72" data-tip-value="$0.72" data-tip-label="GPT-6.1 Sol"></span><span class="hbar-value">$0.72</span></div></div></div><div class="sr-only"><table><caption>Cost per task on the Artificial Analysis Intelligence Index, October 2026</caption><tr><th>Model</th><th>Cost per task</th></tr><tr><td>Claude Fable 5.1 (Score 53, $10 in / $50 out)</td><td>$7.63</td></tr><tr><td>GPT-6 Astra (Score 53, $10 in / $50 out)</td><td>$3.26</td></tr><tr><td>Gemini 4 Argon (Score 53, $2 in / $10 out)</td><td>$1.99</td></tr><tr><td>GPT-6.1 Sol (Score 52, $2 in / $10 out)</td><td>$0.72</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Price per token times tokens per task. The second number moves far more than the first.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Price per token times tokens per task. Fable used 190 million tokens on the test, Astra 60 million.</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    One model, one price list, four effort settings. These are Anthropic's own numbers for Opus 5.5 on a subset of SWE-bench Pro. Going from low to medium costs 10 cents a task and buys 5 points. Going from high to extra high costs 45 cents and buys 1.4 points. Anthropic's advice: for most agent work start at the default, sweep two or three levels on a sample of your own traffic, and on research tasks measure carefully, because lower effort can cost accuracy there.
-
-    [Sources]
-    - https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
-    -->
-    <section class="slide light" aria-roledescription="slide" aria-label="Effort and cost">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">04 · Effort</p></div>
-        <div class="content">
-          <h2 class="reveal">The last few percent <span class="accent">cost the most.</span></h2>
-          <div class="bars reveal delay-1" aria-label="Claude Opus 5.5 cost per task by effort level">
-            <div class="bar-row"><b>Low<small>87.4% solved</small></b><div class="track"><span class="fill soft" style="width: 14.9%"></span></div><strong>$0.11</strong></div>
-            <div class="bar-row"><b>Medium<small>92.8% solved, the default</small></b><div class="track"><span class="fill soft" style="width: 28.4%"></span></div><strong>$0.21</strong></div>
-            <div class="bar-row"><b>High<small>95.3% solved</small></b><div class="track"><span class="fill" style="width: 39.2%"></span></div><strong>$0.29</strong></div>
-            <div class="bar-row"><b>Extra high<small>96.7% solved</small></b><div class="track"><span class="fill" style="width: 100%"></span></div><strong>$0.74</strong></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Claude Opus 5.5, cost per task on a SWE-bench Pro subset. Anthropic's own numbers.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    The best trick on the page: run everything at low effort, check the result, and re-run only the failures at high. Anthropic measured about 97% of tasks solved for about 17 cents each, against 95.3% for 29 cents running everything at high. Cheaper and better. It only works when you can check the output, which is why the check from the loop-engineering session matters so much. Research agrees: FrugalGPT matched GPT-4 with up to 98% lower cost by cascading models, and RouteLLM cut costs by over 85% on one benchmark while keeping 95% of GPT-4's quality.
+    One model, one price list, different settings. Anthropic's own numbers for Opus 5.5 on a subset of SWE-bench Pro: going from low to medium costs 10 cents a task and buys 5 points; from high to extra high costs 45 cents and buys 1.4 points. The best line is the last: run everything at low effort, check the result, and re-run only the failures at high. About 97% solved for about 17 cents, against 95.3% for 29 cents running everything at high. Cheaper and better, but only when you can check the output, which is why the check from the loop-engineering session matters. Research agrees: FrugalGPT matched GPT-4 with up to 98% lower cost by cascading models, and RouteLLM cut costs by over 85% on one benchmark while keeping 95% of GPT-4's quality.
 
     [Sources]
     - https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
@@ -1140,23 +881,20 @@
     - https://lmsys.org/blog/2024-07-01-routellm/
     - https://oslovibecoding.tech/articles/loop-engineering-from-prompts-to-goal
     -->
-    <section class="slide" aria-roledescription="slide" aria-label="Cascade">
+    <section class="slide" aria-roledescription="slide" aria-label="Effort and cascades">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">04 · Cascade</p></div>
         <div class="content">
           <h2 class="reveal">Try cheap first. <span class="accent">Escalate on failure.</span></h2>
-          <div class="evidence reveal delay-1">
-            <div class="study"><span class="number">$0.17</span><h3>Low, then high on failures</h3><p>About 97% of tasks solved. Only what fails your check runs again.</p><span class="caveat">Anthropic's numbers, Opus 5.5</span></div>
-            <div class="study"><span class="number">$0.29</span><h3>Everything at high</h3><p>95.3% solved. More money, fewer tasks done.</p><span class="caveat">Same model, same tasks</span></div>
-          </div>
+          <figure class="viz reveal delay-1"><figcaption class="viz-cap">Claude Opus 5.5, cost per task on a SWE-bench Pro subset (Anthropic)</figcaption><div class="hbar"><div class="hbar-row"><div class="hbar-label">Low effort<small>87.4% solved</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.1486" tabindex="0" role="img" aria-label="Low effort: $0.11" data-tip-value="$0.11" data-tip-label="Low effort"></span><span class="hbar-value">$0.11</span></div></div><div class="hbar-row"><div class="hbar-label">Medium, the default<small>92.8% solved</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.2838" tabindex="0" role="img" aria-label="Medium, the default: $0.21" data-tip-value="$0.21" data-tip-label="Medium, the default"></span><span class="hbar-value">$0.21</span></div></div><div class="hbar-row"><div class="hbar-label">High effort<small>95.3% solved</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 0.3919" tabindex="0" role="img" aria-label="High effort: $0.29" data-tip-value="$0.29" data-tip-label="High effort"></span><span class="hbar-value">$0.29</span></div></div><div class="hbar-row"><div class="hbar-label">Extra high effort<small>96.7% solved</small></div><div class="hbar-track"><span class="hbar-bar muted" style="--w: 1.0000" tabindex="0" role="img" aria-label="Extra high effort: $0.74" data-tip-value="$0.74" data-tip-label="Extra high effort"></span><span class="hbar-value">$0.74</span></div></div><div class="hbar-row"><div class="hbar-label">Low, then high on failures<small>About 97% solved</small></div><div class="hbar-track"><span class="hbar-bar" style="--w: 0.2297" tabindex="0" role="img" aria-label="Low, then high on failures: $0.17" data-tip-value="$0.17" data-tip-label="Low, then high on failures"></span><span class="hbar-value">$0.17</span></div></div></div><div class="sr-only"><table><caption>Claude Opus 5.5, cost per task on a SWE-bench Pro subset (Anthropic)</caption><tr><th>Setting</th><th>Cost per task</th></tr><tr><td>Low effort (87.4% solved)</td><td>$0.11</td></tr><tr><td>Medium, the default (92.8% solved)</td><td>$0.21</td></tr><tr><td>High effort (95.3% solved)</td><td>$0.29</td></tr><tr><td>Extra high effort (96.7% solved)</td><td>$0.74</td></tr><tr><td>Low, then high on failures (About 97% solved)</td><td>$0.17</td></tr></table></div></figure>
         </div>
-        <div class="slide-footer"><p>Anthropic's advice for checkable work: "Run at low effort and re-run failures at high."</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>Anthropic's advice for checkable work: “Run at low effort and re-run failures at high.”</p><p class="counter"></p></div>
       </div>
     </section>
 
     <!--
     [Speaker notes]
-    A starting table, built from tonight's evidence. Anthropic's own guidance: start agent work on Opus 5.5 at default effort, try Haiku 5.5 for high-volume work with checkable outputs, and reach for Fable 5.1 for demanding long-horizon work when your evals on Opus 5.5 fall short. OpenAI's own guide says to use fast mode "for user-facing applications with regular traffic where latency matters" and to avoid it for large batch jobs. For open weights, check the provider: Artificial Analysis found that "providers trade off accuracy to optimize for speed and cost", with some endpoints for the same open model scoring 22% on a tool-calling test against 37% for the reference. Small models are often good because big ones taught them through distillation, though a student is rarely better than its teacher.
+    A starting table, built from tonight's evidence. Anthropic's guidance: start agent work on Opus 5.5 at default effort, try Haiku 5.5 for high-volume work with checkable outputs, and reach for Fable 5.1 for demanding long-horizon work when your evals on Opus 5.5 fall short. OpenAI's guide says to use fast mode "for user-facing applications with regular traffic where latency matters" and to avoid it for large batch jobs. For open weights, check the provider: Artificial Analysis found that "providers trade off accuracy to optimize for speed and cost", with some endpoints for the same open model scoring 22% on a tool-calling test against 37% for the reference. Small models are often good because big ones taught them through distillation, though a student is rarely better than its teacher.
 
     [Sources]
     - https://platform.claude.com/docs/en/about-claude/models/optimizing-for-cost-and-intelligence
@@ -1188,39 +926,18 @@
 
     <!--
     [Speaker notes]
-    The sober minute. On 17 October OpenCode emailed users of its hosted Console that third-party provider keys saved there may have been exposed; it said 1.4% of Console users were affected. Users reported credits drained overnight. The OpenCode program on your own computer was not reported affected. A spending limit set in advance is what turns that kind of breach from a disaster into an annoyance.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/hackers-broke-into-opencode-and-ran-up-users-ai-bills
-    - https://news.ycombinator.com/item?id=50133401
-    -->
-    <section class="slide light" aria-roledescription="slide" aria-label="Keys and limits">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">Rails</p></div>
-        <div class="content">
-          <h2 class="reveal">An API key is <span class="accent">a blank cheque.</span></h2>
-          <div class="two-col reveal delay-1">
-            <div><h3>Habits from tonight</h3><ul><li>Set a monthly spending limit on every key, before you use it.</li><li>Keys live in environment variables, never in code or a chat.</li><li>One key per project, so you can kill one without breaking the rest.</li></ul></div>
-            <div><h3>Why it matters this week</h3><ul><li>On 17 October OpenCode said provider keys saved in its hosted Console may have been exposed.</li><li>Users reported their AI credits drained overnight.</li><li>A limit you set in advance caps the damage.</li></ul></div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>Saved a key in a hosted tool? Rotate it.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    OpenAI-style APIs return a usage object with the token counts; the line below reads it if it is there and falls back to zero if not. maxToolCalls from Session 07 capped the number of steps. This caps the spend. Pick your own budget; 200,000 tokens a day is a sensible start for a personal bot. If your provider returns no usage at all, estimate with characters divided by four.
+    Laptops out. OpenAI-style APIs return a usage object with the token counts; the line below reads it if it is there and falls back to zero if not. maxToolCalls from Session 07 capped the number of steps; this caps the spend. 200,000 tokens a day is a sensible start for a personal bot. If your provider returns no usage at all, estimate with characters divided by four. Run it live with the Val.town logs on screen: one question shows something like in 1600, out 40, then 2200, then 2800, about 6,600 in and 150 out, roughly 3 cents on Opus 5.5 and under a tenth of a cent on Luna. And the habit for every key you own: a monthly spending limit set before you use it. On 17 October OpenCode said provider keys saved in its hosted Console may have been exposed; 1.4% of Console users were affected and some saw credits drained overnight.
 
     [Sources]
     - https://oslovibecoding.tech/agent/model.ts
     - https://oslovibecoding.tech/agent/telegram.ts
+    - https://oslovibecoding.tech/brief/hackers-broke-into-opencode-and-ran-up-users-ai-bills
     -->
     <section class="slide" aria-roledescription="slide" aria-label="Put a meter on your agent">
       <div class="frame">
         <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">Laptops out</p></div>
         <div class="content">
-          <h2 class="reveal">Put a meter <span class="accent">on your agent.</span></h2>
+          <h2 class="reveal">Put a meter <span class="accent">and a limit</span> on it.</h2>
           <div class="code reveal delay-1"><i>// model.ts: the API already counts, we just read it</i>
 <b>const</b> { prompt_tokens = 0, completion_tokens = 0 } = completion.usage ?? {};
 console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
@@ -1233,31 +950,7 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
   <b>return new</b> Response("ok");
 }</div>
         </div>
-        <div class="slide-footer"><p>Ask an AI to write recordUsage and tokensToday. Read what it writes. Then paste it.</p><p class="counter"></p></div>
-      </div>
-    </section>
-
-    <!--
-    [Speaker notes]
-    Run it live and keep the Val.town logs on screen. Point at the input number growing each round: that is the re-reading slide, happening for real. Then do the multiplication out loud. About 3 cents a question on Opus 5.5 sounds like nothing; a thousand questions a day is about $29 a day on Opus 5.5 and under $1 on Luna. Our numbers here are illustrative; yours will differ.
-
-    [Sources]
-    - https://oslovibecoding.tech/brief/the-ai-labs-promised-to-slow-down-then-cut-their-prices
-    -->
-    <section class="slide" aria-roledescription="slide" aria-label="Live: read the meter">
-      <div class="frame">
-        <div class="topline"><div class="wordmark"><span class="mark" aria-hidden="true"></span>Oslo Vibe Coding</div><p class="section-label">Live demo</p></div>
-        <div class="content">
-          <h2 class="reveal">Watch the meter <span class="accent">run.</span></h2>
-          <div class="chat reveal delay-1" aria-label="Example conversation with token logs">
-            <div class="bubble you">Should I leave now? I'm at Majorstuen.</div>
-            <div class="bubble tool">[tokens] in 1600, out 40   → oslo_departures("Majorstuen")</div>
-            <div class="bubble tool">[tokens] in 2200, out 40   → oslo_weather(2)</div>
-            <div class="bubble tool">[tokens] in 2800, out 70   → answer</div>
-            <div class="bubble bot">Metro 2 at 17:56. Light rain until 19:00, so skip the bike. Leave in 4 minutes.</div>
-          </div>
-        </div>
-        <div class="slide-footer"><p>6,600 in, 150 out: about 3 cents on Opus 5.5, under a tenth of a cent on Luna. Illustrative.</p><p class="counter"></p></div>
+        <div class="slide-footer"><p>And set a monthly spending limit on every API key. On 17 October, keys saved in OpenCode's hosted Console may have leaked.</p><p class="counter"></p></div>
       </div>
     </section>
 
@@ -1327,6 +1020,34 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
       });
       progress.setAttribute('aria-valuemax', String(slides.length));
 
+      const tip = document.createElement('div');
+      tip.className = 'viz-tip';
+      tip.setAttribute('role', 'tooltip');
+      document.body.append(tip);
+      const hideTip = () => { tip.style.display = 'none'; };
+      const showTip = (mark, x, y) => {
+        const value = document.createElement('strong');
+        value.textContent = mark.dataset.tipValue;
+        const label = document.createElement('span');
+        label.textContent = mark.dataset.tipLabel;
+        tip.replaceChildren(value, label);
+        tip.style.display = 'block';
+        tip.style.left = `${Math.min(innerWidth - tip.offsetWidth - 8, Math.max(8, x + 14))}px`;
+        tip.style.top = `${Math.max(8, y - tip.offsetHeight - 12)}px`;
+      };
+      const markFor = (target) => (target instanceof Element ? target.closest('[data-tip-value]') : null);
+      document.addEventListener('pointermove', (event) => {
+        const mark = markFor(event.target);
+        if (mark) showTip(mark, event.clientX, event.clientY); else hideTip();
+      });
+      document.addEventListener('focusin', (event) => {
+        const mark = markFor(event.target);
+        if (!mark) return hideTip();
+        const box = mark.getBoundingClientRect();
+        showTip(mark, box.left + box.width / 2, box.top);
+      });
+      document.addEventListener('focusout', hideTip);
+
       const fit = (slide) => {
         const content = slide.querySelector('.content');
         if (!content) return;
@@ -1350,6 +1071,7 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
         });
         previousButton.disabled = current === 0;
         nextButton.disabled = current === slides.length - 1;
+        hideTip();
         fit(slides[current]);
         progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
         progress.setAttribute('aria-valuenow', String(current + 1));
