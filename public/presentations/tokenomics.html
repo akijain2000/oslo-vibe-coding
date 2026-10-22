@@ -425,7 +425,7 @@
       .bar-row strong { font-size: 15px; }
       .bar-row b small { font-size: 10px; }
       .share-bar { height: 40px; }
-      .share-bar span { justify-content: center; padding: 0 2px; font-size: 9px; }
+      .share-bar span { padding: 0 2px; }
       .pull { font-size: clamp(24px, 7vw, 32px); }
       .tool-table.dials td:first-child, .tool-table.ladder td:first-child { font-size: 15px; }
       .tool-table.dials td:nth-child(2), .tool-table.ladder td:nth-child(2) { width: auto; font-size: 12px; }
@@ -435,6 +435,23 @@
       .tool-table.dials th, .tool-table.dials td, .tool-table.ladder th, .tool-table.ladder td { padding-top: 5px; padding-bottom: 5px; }
       .bars { gap: 8px; margin-top: 18px; }
       .pass-lane { padding-top: 8px; }
+    }
+    /* Height-aware sizing: wide, short windows get type sized by height as well as width */
+    @media (min-width: 761px) {
+      :root { --pad: clamp(24px, min(5vw, 7vh), 84px); }
+      .deck-nav { top: calc(var(--pad) - 5px); right: var(--pad); }
+      .content { padding: clamp(12px, 2.6vh, 42px) 0; }
+      h1 { font-size: clamp(44px, min(7.7vw, 12.5vh), 140px); }
+      h2 { font-size: clamp(30px, min(5.65vw, 8.4vh), 102px); }
+      .statement-slide h2 { font-size: clamp(38px, min(7vw, 11vh), 128px); }
+      .closing-slide h2 { font-size: clamp(38px, min(6.7vw, 11vh), 122px); }
+      .study .number { font-size: clamp(40px, min(7vw, 10vh), 126px); }
+      .pull { font-size: clamp(26px, min(3.9vw, 6.2vh), 66px); }
+    }
+    .share-row > b small { display: none; color: inherit; font-size: inherit; }
+    @media (max-width: 760px) {
+      .share-bar span { color: transparent; }
+      .share-row > b small { display: inline; }
     }
   </style>
 </head>
@@ -956,8 +973,8 @@
         <div class="content">
           <h2 class="reveal">Most of the profit <span class="accent">sits under the token.</span></h2>
           <div class="shares reveal delay-1" aria-label="Share of gross profit by layer">
-            <div class="share-row"><b>The AI stack, 2026</b><div class="share-bar"><span class="chips-layer" style="width: 79%">Chips 79%</span><span class="cloud-layer" style="width: 14%">14%</span><span class="apps-layer" style="width: 7%">7%</span></div></div>
-            <div class="share-row"><b>Cloud software, before AI</b><div class="share-bar"><span class="chips-layer" style="width: 6%">6%</span><span class="cloud-layer" style="width: 24%">24%</span><span class="apps-layer" style="width: 70%">Apps 70%</span></div></div>
+            <div class="share-row"><b>The AI stack, 2026<small> · chips 79%, cloud 14%, apps 7%</small></b><div class="share-bar"><span class="chips-layer" style="width: 79%">Chips 79%</span><span class="cloud-layer" style="width: 14%">14%</span><span class="apps-layer" style="width: 7%">7%</span></div></div>
+            <div class="share-row"><b>Cloud software, before AI<small> · chips 6%, rest 24%, apps 70%</small></b><div class="share-bar"><span class="chips-layer" style="width: 6%">6%</span><span class="cloud-layer" style="width: 24%">24%</span><span class="apps-layer" style="width: 70%">Apps 70%</span></div></div>
           </div>
           <div class="bar-key reveal delay-2"><span>Chips</span><span class="old-key">Cloud and the rest</span><span class="dim-key">Apps</span></div>
         </div>
@@ -1310,6 +1327,20 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
       });
       progress.setAttribute('aria-valuemax', String(slides.length));
 
+      const fit = (slide) => {
+        const content = slide.querySelector('.content');
+        if (!content) return;
+        const kids = [...content.children];
+        kids.forEach((kid) => { kid.style.zoom = ''; });
+        content.style.justifyContent = 'flex-start';
+        let scale = 1;
+        for (let pass = 0; pass < 6 && content.scrollHeight > content.clientHeight + 1 && scale > 0.6; pass++) {
+          scale = Math.max(0.6, scale * (content.clientHeight / content.scrollHeight) * 0.98);
+          kids.forEach((kid) => { kid.style.zoom = String(scale); });
+        }
+        content.style.justifyContent = '';
+      };
+
       const show = (requestedIndex, updateAddress = true) => {
         current = Math.max(0, Math.min(requestedIndex, slides.length - 1));
         slides.forEach((slide, index) => {
@@ -1319,6 +1350,7 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
         });
         previousButton.disabled = current === 0;
         nextButton.disabled = current === slides.length - 1;
+        fit(slides[current]);
         progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
         progress.setAttribute('aria-valuenow', String(current + 1));
         if (updateAddress) history.replaceState(null, '', `#${current + 1}`);
@@ -1356,6 +1388,13 @@ console.log(`[tokens] in ${prompt_tokens}, out ${completion_tokens}`);
         const requested = Number(location.hash.slice(1)) - 1;
         if (Number.isInteger(requested)) show(requested, false);
       });
+
+      let resizeFrame = 0;
+      window.addEventListener('resize', () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => fit(slides[current]));
+      });
+      document.fonts?.ready.then(() => fit(slides[current]));
 
       const initial = Number(location.hash.slice(1)) - 1;
       show(Number.isInteger(initial) ? initial : 0, false);
