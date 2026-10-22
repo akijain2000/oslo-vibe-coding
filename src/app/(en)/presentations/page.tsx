@@ -8,13 +8,22 @@ const DESCRIPTION =
 
 const presentations = [
   {
+    title: "Tokenomics: What Your AI Actually Costs",
+    session: "Session 08",
+    slides: "17 slides",
+    href: "/presentations/tokenomics.html",
+    description:
+      "What a token is, why agents re-read everything, how caching and model choice cut the bill, and a token budget for the Session 07 agent.",
+    featured: true,
+  },
+  {
     title: "Build Your First Agent",
     session: "Session 07",
     slides: "16 slides",
     href: "/presentations/build-your-first-agent.html",
     description:
       "A free Telegram assistant for Oslo, built in four layers: chat, tools, memory, autonomy. No API key, no card.",
-    featured: true,
+    featured: false,
   },
   {
     title: "Context Engineering: What the Model Sees Next",
