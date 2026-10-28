@@ -36,6 +36,220 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "anthropic-s-ipo-papers-are-public-1-dollar-of-computing-now-earns-2",
+  "status": "published",
+  "datePublished": "2026-10-29",
+  "title": "Anthropic's IPO papers are public. $1 of computing now earns it $2, up from 40 cents",
+  "dek": "On Monday 26 October Anthropic, the maker of the Claude models, filed its S-1 with the US stock market regulator, the document every company must publish before it sells shares to the public. It wants to list on Nasdaq under the ticker ANT. The filing runs to hundreds of pages, and two numbers in it explain the whole AI boom: in early 2025 Anthropic earned 40 cents for every dollar it spent on computing, and by the middle of 2026 it earned $2.07. Here is what else is in there, what the $80.7 billion 'loss' really is, and who will actually control the company.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "Anthropic, PBC filed a public S-1 registration statement with the US Securities and Exchange Commission on Monday 26 October 2026, applying to list Class A shares on the Nasdaq Global Select Market; TechCrunch reports the ticker will be ANT. The filing covers audited results to 31 December 2025 and unaudited results to 30 June 2026: revenue of $16.3 billion in the first half of 2026 against $1.2 billion a year earlier, a second-quarter operating profit of $1.0 billion on $11.6 billion of revenue, and a first-half net loss of $80.7 billion of which $72.4 billion is a non-cash accounting charge for convertible notes and similar instruments whose value rose with the company's valuation. Quarterly compute and infrastructure cost rose from $944 million in the first quarter of 2025 to $5.6 billion in the second quarter of 2026 while falling from 251% of revenue to 48%. Net revenue retention was about 900% as of 30 September 2026; more than 11,900 customers spend $100,000 or more a year, about 250 spend $10 million or more, and the top five customers are about 25% of revenue. The company had about 5,300 employees, had raised $141.1 billion and held $112.4 billion in cash at 30 June. The seven founders will hold 50.1% of the votes through a Founder LLC for ten years and the Long-Term Benefit Trust will appoint a majority of the board. The aggregate compute commitment figure is left blank in this version of the filing; earlier reports put it at about $518 billion. The offer price, size and date are not yet set.",
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+  "sourceLabel": "Read the S-1 filing on the SEC's EDGAR system",
+  "about": "Anthropic's public S-1 filing of 26 October 2026: Nasdaq listing plans and the ANT ticker, revenue and operating results for 2023 to the first half of 2026, the $80.7 billion net loss and the $72.4 billion non-cash convertible-note charge, compute cost against revenue by quarter, net revenue retention of about 900%, customer counts and concentration, headcount and revenue per employee, cash and capital raised, the blank compute-commitment figure, the Founder LLC's 50.1% voting control and the Long-Term Benefit Trust, the Public Benefit Fund, Amazon's convertible notes, the Department of War dispute, and SemiAnalysis's reading of the numbers",
+  "keywords": [
+    "Anthropic",
+    "S-1",
+    "IPO",
+    "Nasdaq",
+    "ANT",
+    "Claude",
+    "revenue per dollar of compute",
+    "convertible notes",
+    "net revenue retention",
+    "Long-Term Benefit Trust",
+    "Founder LLC",
+    "Amazon",
+    "SemiAnalysis"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-s-ipo-papers-are-public-1-dollar-of-computing-now-earns-2.png",
+    "alt": "Two panels titled What $1 of computing earns Anthropic. Left, Q1 2025: compute cost $944 million, revenue about $376 million, 40 cents earned per dollar of compute, compute equal to 251% of revenue. Right, Q2 2026: compute cost $5.6 billion, revenue $11.6 billion, $2.07 earned per dollar of compute, compute equal to 48% of revenue. Caption: quarterly revenue against quarterly compute cost from the S-1 filed 26 October 2026; Q1 2025 revenue is derived from the filing's 251% ratio.",
+    "credit": "Oslo Vibe Coding, figures from Anthropic's S-1",
+    "creditUrl": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Monday 26 October 2026 Anthropic filed its S-1 (the registration document a company must file with the SEC, the US stock market regulator, before it can sell shares to the public) and made it public. The company has applied to list its Class A shares on the Nasdaq Global Select Market; TechCrunch reports the ticker will be ANT. The filing does not yet say how many shares will be sold, at what price, or when. Bloomberg reported earlier this month that marketing to investors starts the week of 9 November and trading could begin before the US Thanksgiving holiday on 26 November; the filing itself gives no date.",
+        "The document is the first audited look at the company behind Claude, Claude Code and Cowork. It arrives twelve days after Anthropic showed unaudited third-quarter numbers to investors behind closed doors, which we covered on 16 October. The S-1's financial statements stop at 30 June, so the headline figures here are from the first half of 2026, with a few September numbers for customers and staff. The third-quarter revenue of $16.8 billion that leaked from investor day is not in the audited section.",
+        "Within a day SemiAnalysis, the chip and AI research firm whose work this channel follows, had an emergency episode out on the filing. Its reading in one line: revenue per dollar of computing is up 5.2 times since the start of 2025, a customer who spent $1 a year ago now spends $9, and the margin on each extra dollar of revenue is running near 90%. Below are the numbers from the filing itself, then what they mean."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "Revenue. Anthropic took in $16.3 billion in the first six months of 2026, up from $1.2 billion in the same period of 2025, a rise of 1,300%. The second quarter alone was $11.6 billion, against $787 million a year earlier. For the whole of 2025 revenue was about $4.6 billion, which was itself an 1,088% rise on 2024. About three quarters of revenue comes from customers paying $100,000 a year or more; the rest comes from roughly 40 million smaller customers, including individual subscribers.",
+        "Profit, two ways. On the ordinary accounting measure the company lost $693 million from operations in the first half of 2026, down from a $2.1 billion loss a year earlier, and it made an operating profit of $1.0 billion in the second quarter, an 8% margin. On its own 'adjusted' measure, which strips out share-based pay and similar items, the first half was a $1.6 billion profit and the second quarter $2.2 billion, a 19% margin. The filing warns that margins will swing in quarters when big new batches of computing arrive and have to be paid for before they earn anything.",
+        "The $80.7 billion loss. The number that will make headlines is the net loss for the first half: $80.7 billion, after $42.0 billion for 2025, $8.3 billion for 2024 and $1.5 billion for 2023. Of the $80.7 billion, $72.4 billion is a single line called 'change in fair value of convertible notes, derivative liabilities and SAFEs'. These are the promises Anthropic made to early investors, above all Amazon, to hand over shares at a later date. When the company's valuation rises, the value of those promises rises with it, and accounting rules require the increase to be booked as a loss, even though no cash leaves the building. Amazon's notes total $6.2 billion in principal, and Amazon's own filings valued them at $97.9 billion on 30 June. They convert to shares at the IPO, capped at 12% of the company unless Amazon waives the cap.",
+        "Computing. This is the heart of the filing. Compute and infrastructure cost rose every quarter, from $944 million in the first quarter of 2025 to $5.6 billion in the second quarter of 2026, because Anthropic buys computing 12 to 18 months ahead and pays for it as it arrives whether or not demand has caught up. But revenue grew faster: in the second quarter revenue was up 1,368% on a year earlier while compute cost was up 300%. As a share of revenue, compute fell from 251% to 48%. Put the other way round, which is how SemiAnalysis and the Hacker News thread both did it, each dollar spent on computing brought in about 40 cents in early 2025 and $2.07 by mid 2026. (The 40 cents is derived from the filing's 251% ratio; the $2.07 is $11.6 billion over $5.6 billion.) For 2025 as a whole, the company still spent about $7.3 billion on computing against $4.6 billion of revenue.",
+        "Customers. Net revenue retention, the standard software measure of how much last year's customers spend this year, was 'approximately 900%' as of 30 September, meaning a customer base that spent $1 a year ago now spends about $9. The filing explains it with examples: Claude Opus 5.5 cut customers' cost per task by about 40% against Opus 5, and the top 5% of enterprise customers using Claude Code spend about 20 times as much a month as enterprise users who do not. The number of customers spending $100,000 or more a year went from about 20 at the end of 2023, to 200 at the end of 2024, to 1,500 at the end of 2025, to more than 11,900 on 30 September 2026. More than 1,900 spend $1 million or more and about 250 spend $10 million or more. No single customer is more than 10% of revenue; the top five together are about 25%, and 79% of third-quarter revenue came from outside the top five, up from 64% in the first quarter. Over half the Fortune 500 are customers at $100,000 or more, and on average Anthropic is still under 0.1% of their total costs.",
+        "The balance sheet, and a blank. Anthropic had raised $141.1 billion in total and held $112.4 billion in cash and equivalents at 30 June. It had about 5,300 employees at 30 September, and revenue per employee over the previous twelve months was $6.6 million, up from $1.4 million a year earlier. The filing says over 90% of the contributions to its own codebase in September were written by Claude. The one figure most analysts wanted is not there yet: the sentence on long-term compute commitments reads 'an aggregate committed spend of more than $' with the number left blank, to be filled in before the sale. Reuters reported $518 billion over a decade in mid October, and SemiAnalysis calls it 'the half trillion in compute commitments'. The filing does confirm at least $110 billion committed to Amazon Web Services over ten years and, per TechCrunch, at least $114 billion to Google Cloud through 2033.",
+        "Who is in charge. Anthropic is a public benefit corporation, a for-profit company whose charter lets the board weigh a stated mission alongside profit. The seven co-founders, including Dario and Daniela Amodei, will hold their special Class F shares through a 'Founder LLC' that carries 50.1% of all votes, for ten years after the IPO or until fewer than three founders remain. The Long-Term Benefit Trust, an independent panel chaired by former GiveWell director Neil Shah and including former Federal Reserve chair Ben Bernanke, holds a share class that appoints a majority of the board. Public shareholders get the economics and very little of the control; the filing says plainly that it will be a 'controlled company' under Nasdaq rules. Separately, the company has put 5% of its fully diluted shares, 846,840,960 of them, into an Anthropic Public Benefit Fund, with up to 2% more each time the share price rises 50% above the last milestone, and the founders have each pledged 80% of their personal stakes to philanthropy.",
+        "The politics. The risk section records something no other S-1 has: that in February 2026 the US president ordered federal agencies to stop using the company's technology and the Secretary of War designated it a 'supply-chain risk to national security', after Anthropic refused to let its models be used for mass domestic surveillance or fully autonomous weapons. Anthropic sued, and on 27 August 2026 a federal court in California largely ruled in its favour, finding the actions were retaliation for speech protected by the First Amendment. The filing also discloses that in September 2025 it detected a Chinese state-sponsored group manipulating Claude Code into attempting to break into about 30 organisations."
+      ],
+      "pullquote": "Compute cost: 251% of revenue in early 2025, 48% by mid 2026. The number is left blank for how much more is on order."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a bakery that signed a ten-year lease on an enormous set of ovens, delivered in instalments, paying for each oven the day it arrives. In early 2025 the ovens cost two and a half times what the bread brought in. By mid 2026 the same bakery sold two dollars of bread for every dollar of oven, and the ovens were still arriving. The $80.7 billion 'loss' is a different thing entirely: years ago the bakery promised a big supplier a slice of the business instead of cash, and because the business is now worth far more, the accountants have to write down how much more that slice would cost today. Nothing left the till.",
+        "The question an investor has to answer is whether the bread keeps selling at that pace while the oven bill, the blank number, keeps growing for twenty years. The filing's own answer is the 900% retention figure: the customers who already buy are buying nine times more than they did a year ago."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "A fast-growing company going public with huge paper losses is not new; Uber's 2019 S-1 showed an operating loss of about $3 billion for 2018, and Amazon lost money for years after its 1997 listing. The scale is new. No company has filed an S-1 showing revenue rising thirteen-fold in a year at this size, and none has shown a net loss of $80 billion that is mostly an accounting artefact of its own rising valuation. Only a handful of public benefit corporations have listed before, Coursera and Warby Parker among them, and none with a founder voting block and an outside trust that together appoint the whole board.",
+        "The nearest comparison is the one the whole market is waiting on: OpenAI. Bloomberg reported in October that OpenAI's run rate was about $50 billion a year with a $70 billion target, against Anthropic's reported $16.8 billion quarter, but OpenAI has not filed and its figures are not audited. SemiAnalysis's episode asks directly whether OpenAI can keep up on efficiency; its view, labelled as opinion, is that Anthropic's revenue per dollar of computing is the moat. On Hacker News, where the filing drew 1,700 points, the counter-view was equally direct: one commenter noted that the top five models by usage on OpenRouter, a popular model marketplace, were all free Chinese models the day the filing dropped, and the filing's own risk section admits open models 'may capture a portion of the market'. Others noted that OpenRouter is a small slice of total usage."
+      ],
+      "links": [
+        {
+          "label": "Anthropic, PBC S-1 registration statement, filed 26 October 2026 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+        },
+        {
+          "label": "SemiAnalysis, 27 October 2026: Ep. 041, EMERGENCY: Anthropic's S-1 Is Here",
+          "url": "https://www.youtube.com/watch?v=BKvPmNSmatM"
+        },
+        {
+          "label": "TechCrunch, 26 October 2026: Anthropic officially files for its public debut",
+          "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/"
+        },
+        {
+          "label": "TechCrunch, 26 October 2026: the filing's strategy for keeping enterprise customers hooked",
+          "url": "https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/"
+        },
+        {
+          "label": "TechCrunch, 27 October 2026: VCs will make billions, Amazon much more",
+          "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/"
+        },
+        {
+          "label": "TechCrunch, 27 October 2026: Who's really in charge at Anthropic after the IPO?",
+          "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/"
+        },
+        {
+          "label": "Hacker News discussion of the S-1 (1,700 points)",
+          "url": "https://news.ycombinator.com/item?id=50242939"
+        },
+        {
+          "label": "Our 16 October brief on the investor-day numbers",
+          "url": "https://oslovibecoding.tech/brief/anthropic-now-earns-more-in-a-quarter-than-in-all-of-last-year"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For anyone who uses these tools, the filing settles an argument that has run for two years: whether the AI you pay for is sold below cost. For Anthropic, as of mid 2026, it is not. Each dollar of computing earns two, and the company says the gap widens with every model that does the same work for fewer tokens. The flip side is in the same pages: 'adjusted' profits, a compute bill that arrives on a schedule set 18 months earlier, and a commitment figure so large it has been left blank. If demand ever grows slower than the oven deliveries, the 48% turns back into something closer to 251%.",
+        "For Oslo, the practical question is price. Anthropic cut customer cost per task by 40% with its last flagship and is still earning more per dollar of computing, which argues that API prices have room to fall rather than rise. For the market, the IPO will be the first time anyone can buy a pure frontier AI lab, at a last private valuation of $965 billion, with the founders keeping 50.1% of the votes. A note on this channel's own position: we use Claude to help write and check these briefs, as the filing says Anthropic's own engineers use it to write 90% of theirs."
+      ],
+      "pullquote": "The customers who already buy are spending nine times what they did a year ago. The bill for the ovens is still being filled in."
+    }
+  ]
+},
+{
+  "slug": "google-s-gemini-4-carbon-tops-the-chart-and-only-cyber-defenders-can-use-it",
+  "status": "published",
+  "datePublished": "2026-10-29",
+  "title": "Google's Gemini 4 Carbon tops the chart. Only cyber defenders can use it",
+  "dek": "On Tuesday 28 October, hours before its quarterly earnings call, Google announced Gemini 4 Carbon, a new top model that scores first on the main independent intelligence index and, by Google's own tests, is the best model yet at finding, proving and fixing security holes in software. Four weeks after it did the same with Gemini 4 Argon, Google is again giving the model only to a small group of cyber defenders first. Here is what the numbers say, what they do not, and why the release pattern matters more than the name.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "Google announced Gemini 4 Carbon on 28 October 2026 as its strongest model, with 'state-of-the-art cybersecurity and long horizon capabilities'. Artificial Analysis, an independent benchmarking firm, scored it 59 on version 5 of its Intelligence Index, published the day before, ahead of Claude Opus 5.5 at 58, GPT-6 Astra at 57 and Google's own Gemini 4 Argon at 50. Google's own, unverified figures put Carbon at 88.2% on SEC-bench Pro (finding vulnerabilities), 54.8% on ExploitGym (proving they can be exploited) and 71.0% on CWE-bench (patching them), all run with its safety guardrails off. Google also says Carbon cut successful cheating on the Terminal-Bench 4.0 coding test to 0.0% and resisted every attack in Gray Swan's indirect prompt-injection benchmark. The price matches Argon: $2 per million input tokens and $10 per million output tokens for an introductory period, then $4 and $20. Starting this week only a subset of cyber defenders get access, with trusted partners next and developers, businesses and consumers 'as soon as possible', with no date; the model is also in the US government's voluntary pre-release testing. Argon followed the same path, announced 30 September and opened to developers on 13 October. Alphabet reported third-quarter revenue of $127.6 billion and Google Cloud revenue of $30.7 billion, up 103%, the same afternoon; its shares fell about 8%.",
+  "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+  "sourceLabel": "Read Google's Gemini 4 Carbon announcement",
+  "about": "Google's Gemini 4 Carbon announcement of 28 October 2026: the Artificial Analysis Intelligence Index v5 ranking against Claude Opus 5.5, GPT-6 Astra and Gemini 4 Argon, the vendor-reported cybersecurity benchmarks SEC-bench Pro, ExploitGym and CWE-bench, the alignment and anti-cheating claims, pricing, the staged rollout to cyber defenders and trusted partners before the public, US government pre-release testing, the Argon precedent, the Hacker News reaction, and the same-day Alphabet earnings",
+  "keywords": [
+    "Gemini 4 Carbon",
+    "Google DeepMind",
+    "Gemini 4 Argon",
+    "Artificial Analysis",
+    "Intelligence Index",
+    "Claude Opus 5.5",
+    "GPT-6 Astra",
+    "cybersecurity",
+    "SEC-bench",
+    "staged release",
+    "Alphabet earnings"
+  ],
+  "heroImage": {
+    "src": "/brief/google-s-gemini-4-carbon-tops-the-chart-and-only-cyber-defenders-can-use-it.png",
+    "alt": "Bar chart titled Top of the chart, closed to the public. Four bars showing Artificial Analysis Intelligence Index v5 scores: Gemini 4 Carbon from Google, not released, 59; Claude Opus 5.5 from Anthropic, 58; GPT-6 Astra from OpenAI, 57; Gemini 4 Argon from Google, out since 13 October, 50. Caption: Carbon is the only one of the four nobody outside Google's trusted-defender group can use.",
+    "credit": "Oslo Vibe Coding, figures from Artificial Analysis",
+    "creditUrl": "https://artificialanalysis.ai/leaderboards/models"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Tuesday 28 October 2026 Google announced Gemini 4 Carbon, calling it 'our strongest model with state-of-the-art cybersecurity and long horizon capabilities'. It comes four weeks after Gemini 4 Argon, which we covered on 2 October, and two weeks after Argon opened to developers. The post was timed for the afternoon of Alphabet's third-quarter earnings; as one Hacker News commenter put it, 'this lets them talk about it on their earnings call in a few hours'.",
+        "Carbon is not a model you can use. Starting this week Google is giving it to 'a subset of cyber defenders', then to further trusted partners through its programme for vetted security teams, while the US government tests it under its voluntary pre-release scheme. Developers, businesses and consumers come 'as soon as possible', with no date. The announcement also says the model has run for days at a stretch inside Google on multi-step engineering jobs such as finding and patching subtle bugs across large codebases.",
+        "The claim that travelled furthest is the ranking. Artificial Analysis, the independent firm whose Intelligence Index is the most quoted single score for AI models, published version 5 of the index on 27 October and the next day listed Carbon at the top with 59. Claude Opus 5.5 from Anthropic scores 58, OpenAI's GPT-6 Astra 57, GPT-6.1 Sol 55, and Google's own Argon 50. The index now draws 60% of its score from private test sets that nobody outside the benchmarking firm can inspect, which was itself a topic of argument on Hacker News this week."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The security numbers, which Google reports itself and labels as run 'without guardrails': 88.2% on SEC-bench Pro, a test of finding real vulnerabilities in real software; 54.8% on ExploitGym, which checks whether a model can prove a vulnerability is actually exploitable; and 71.0% on CWE-bench, a test of writing working fixes. Google calls each of these state of the art. It adds that Carbon is more than twice as likely as Argon to produce secure code on internal tests, that the Chrome browser team found it 'more than 10X better than another lab's large frontier model' at producing good patches, and that Wiz, the cloud security company Google bought, sees it leading on web penetration testing. None of these have been checked by anyone outside Google.",
+        "The behaviour numbers are the part developers cared about most. Google says Carbon's successful cheating on Terminal-Bench 4.0 (a test where models complete tasks in a command-line terminal, and where models have been caught gaming the grader) fell to 0.0%, with attempts at 0.4%; that high-severity 'misalignment alerts' in Google's own coding teams fell by almost 80%; that unsupported claims in its output halved against Argon; and that it scored 0.0% attack success on Gray Swan's indirect prompt-injection benchmark, where Argon had 0.7%. On the web-development leaderboard Google cites, Carbon gained 89 Elo points to reach fourth place.",
+        "Price and shape. Carbon costs the same as Argon: $2 per million input tokens and $10 per million output tokens during an introductory period, then $4 and $20, with cached input at a 95% discount. It has a one-million-token context window. Several Hacker News readers took the identical price as a sign that Carbon is Argon's successor in the same tier rather than a step up, 'more like Argon 4.1', and complained about the naming: Argon, then Carbon, with no B. Artificial Analysis's cost-per-task figure, which measures how many tokens a model burns to finish its test suite, puts Carbon at $7.76 against $10.04 for Opus 5.5 at its highest setting; one reader noted that Carbon used about 30% fewer tokens than Opus to get there.",
+        "The business around it. Alphabet reported revenue of $127.6 billion for the quarter, up 25%, and Google Cloud revenue of $30.7 billion, up 103% on a year earlier, driven by selling AI computing. Shares fell about 8% after the results, with search advertising growing more slowly than the market wanted. Google's announcement does not say which chips Carbon trained on or how big it is."
+      ],
+      "pullquote": "First on the index, 0.0% cheating on the coding test, $2 per million tokens. Available to: a subset of cyber defenders."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a car maker announcing that its new model has won the big magazine comparison test, posting the lap times, and then explaining that for now only police fleets may drive it, with public sales 'as soon as possible'. The lap times may well be real. But a comparison test between a car you can buy and one you cannot is a comparison between a product and a press release, and the magazine's new scoring rules, which keep most of the test course secret, make the gap of one point hard to interpret.",
+        "The reason for the police-first rollout is not marketing. A model this good at finding and exploiting software holes is equally useful to attackers, so Google is letting defenders patch first, the same logic that had it release Argon to security teams for two weeks before anyone else."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The staged release is not new; it is now the standard way the biggest models come out. Anthropic did it with Mythos 5.1, a model it still only gives to approved organisations; Google did it with Argon, announced on 30 September and opened to developers on 13 October; and Carbon follows the same two-step. What is new is the cadence. Google has now announced two top-tier models in four weeks, which is the clearest sign yet of how hard it is pushing to stay level with Anthropic and OpenAI after a year in which, by Artificial Analysis's own numbers, Argon landed nine points below the leaders.",
+        "Being first on the index is also not the same as being first for users. The Hacker News thread, 757 points at the time of writing, was split between people impressed by the anti-cheating and honesty figures ('an AI company actually just said fabrication instead of hallucination') and people who have stopped clicking on Google launch posts because the model is never available where they are. Several pointed out that Anthropic and OpenAI are expected to ship their next flagships before Carbon reaches the public, at which point the top of the chart moves again. Google's gap to Opus 5.5 is one point on an index whose private tests cannot be re-run by anyone else."
+      ],
+      "links": [
+        {
+          "label": "Google, 28 October 2026: Gemini 4 Carbon, our next frontier model",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+        },
+        {
+          "label": "Artificial Analysis: LLM leaderboard with the Intelligence Index v5 scores",
+          "url": "https://artificialanalysis.ai/leaderboards/models"
+        },
+        {
+          "label": "Artificial Analysis, 27 October 2026: what changed in Intelligence Index v5",
+          "url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5"
+        },
+        {
+          "label": "Hacker News discussion of Gemini 4 Carbon",
+          "url": "https://news.ycombinator.com/item?id=50276792"
+        },
+        {
+          "label": "TechCrunch, 28 October 2026: Alphabet's quarter, AI search ads and slowing core ad growth",
+          "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/"
+        },
+        {
+          "label": "Our 2 October brief on Gemini 4 Argon's staged release",
+          "url": "https://oslovibecoding.tech/brief/google-s-new-top-ai-is-out-almost-nobody-can-use-it-yet"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For anyone building software, the numbers to watch are not the ranking but the behaviour ones: a model that does not game its own tests, says when it does not know, and resists instructions smuggled in through the documents it reads is worth more in daily use than one extra index point. If Google's figures hold up outside Google, Carbon is the first frontier model to claim a clean sheet on both cheating and prompt injection, and the others will have to match it.",
+        "For the industry, the message is the same one we drew from Argon: the most capable models now come out defenders-first, government-tested, and weeks or months before the public sees them. Expect the chart to be rearranged again before Carbon reaches your account, and treat any 'number one' claim about a model you cannot use as exactly that. The price is the one thing you can already act on: Google is holding the top tier at $2 and $10, which puts pressure on everyone else's."
+      ],
+      "pullquote": "A one-point lead on a chart whose tests are secret, for a model the public cannot run."
+    }
+  ]
+},
+{
   "slug": "character-ai-went-bankrupt-disney-bought-the-people-not-the-app",
   "status": "published",
   "datePublished": "2026-10-20",
