@@ -36,6 +36,202 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "mistral-kept-its-promise-europe-s-trillion-parameter-ai-is-now-a-free-download",
+  "status": "published",
+  "datePublished": "2026-10-30",
+  "title": "Mistral kept its promise: Europe's trillion-parameter AI is now a free download, with one catch",
+  "dek": "Three weeks ago Mistral, the Paris company that is Europe's leading AI lab, showed its biggest model ever and promised the full thing as a free download by the end of October. On 29 October it delivered, with a better model and half the price. Here is what you actually get, the licence catch, which claims are still Mistral's own, and why Europe cares.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 29 October 2026 Mistral AI released the weights of Mistral Large 4 ('Le Chonk') on Hugging Face, meeting the end-of-October promise it made with the 6 October public preview. The model has about 1 trillion parameters, 49 billion of them active per token (52 billion including embedding and output layers), a 1 million token context window and support for more than 160 languages, and was trained from scratch on 3,800 Nvidia Grace Blackwell chips in Mistral's own European datacentres. After three more weeks of reinforcement learning, Mistral reports a 48% score on the Artificial Analysis Coding Agent Index (level with China's GLM-5.3 while using 47% fewer tokens), 41% on Terminal-Bench 4.0, 19.7% on Cognition's private FrontierCode 2.0, and 51% on the Artificial Analysis Cyber Index, with Anthropic's Claude Opus 5.5 the only model preferred over it in Surge's blind coding comparison. API prices fell to $0.70 per million input tokens and $2.10 per million output tokens, about half the preview price. The licence is a modified MIT licence: free to use, modify, fine-tune and commercialise, except that companies running a model-as-a-service business need a separate commercial licence. Mistral's earlier Large 3 was Apache 2.0. The benchmark figures are from Mistral's announcement; a technical report is promised.",
+  "sourceUrl": "https://mistral.ai/news/mistral-large-4-oss/",
+  "sourceLabel": "Read Mistral's announcement of the open weights",
+  "about": "Mistral Large 4 open-weight release of 29 October 2026: the weights on Hugging Face, model size and active parameters, training on European infrastructure, vendor-reported coding, cybersecurity and browsing benchmarks, the price cut from the preview, the Mistral Ecosystem Open-Weight licence and its model-as-a-service clause, the hardware needed to run it, cybersecurity guardrails and the restricted pen-testing variant, Hacker News reaction, and what it means for European AI sovereignty",
+  "keywords": [
+    "Mistral",
+    "Mistral Large 4",
+    "Le Chonk",
+    "open weights",
+    "open-weight model",
+    "Hugging Face",
+    "sovereign AI",
+    "Europe",
+    "cybersecurity",
+    "GLM-5.3",
+    "licence",
+    "France"
+  ],
+  "heroImage": {
+    "src": "/brief/mistral-kept-its-promise-europe-s-trillion-parameter-ai-is-now-a-free-download.png",
+    "alt": "Two panels titled Mistral Large 4 is a free download, with one catch. You can: download all 1 trillion parameters, run it on your own servers, fine-tune it on your own data, build and sell products on it. The catch: AI-hosting firms need a paid licence, roughly a terabyte of weights, benchmarks are Mistral's own charts, not Apache 2.0 like Large 3. Caption: Europe's trillion-parameter model, weights released 29 October 2026.",
+    "credit": "Oslo Vibe Coding, from Mistral's announcement and model card",
+    "creditUrl": "https://mistral.ai/news/mistral-large-4-oss/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On 6 October Mistral released a paid preview of Mistral Large 4, nicknamed 'Le Chonk', and promised the weights (the full trained model, which anyone can download and run on their own machines) by the end of the month. We covered the preview the next day and said the download was the thing to watch. On Thursday 29 October the weights went up on Hugging Face, the main public library for AI models. The announcement reached the top of Hacker News, the tech community's news board, with more than 1,400 points.",
+        "It is not quite the model from three weeks ago. Mistral says it spent those weeks on more reinforcement learning (training where the model tries tasks and is rewarded for good results), mainly on coding and defensive cybersecurity, and that 'gains continue to accelerate, with no signs of saturation'. It also cut the price of using it through its own service roughly in half."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The model. About 1 trillion parameters (the adjustable numbers a model learns in training), built as a mixture-of-experts: only 49 billion of them work on any single word, which makes it far cheaper to run than its size suggests. The model card adds that the figure is 52 billion if you count the input and output layers, which is where the 'A52B' in its file name comes from. It reads text and images, holds up to 1 million tokens (roughly 750,000 words) in view at once, and is fluent in more than 160 languages, including every official EU language. Mistral says it trained it from scratch on 3,800 Nvidia Grace Blackwell chips in its own European datacentres.",
+        "Coding, by Mistral's numbers. On the Artificial Analysis Coding Agent Index (an independent test suite) it scores 48%, level with GLM-5.3 from China's Z.ai, the leading open model, while using 47% fewer tokens per task. On Terminal-Bench 4.0, which tests agents working in a command line, it rose 13 points to 41% since the preview, the best among open models. On Cognition's private FrontierCode 2.0, which asks whether a project maintainer would actually merge the change, it leads with 19.7%. In Surge's blind side-by-side test of code answers, graders preferred it over GLM-5.3, Kimi K3 and DeepSeek V4.1 Flash; only Anthropic's Claude Opus 5.5 beat it. These are all charts in Mistral's own announcement; the full technical report is 'coming soon'.",
+        "Cybersecurity. Mistral pitches it hard at defenders: 51% on the Artificial Analysis Cyber Index (find a vulnerability, reproduce it, patch it without breaking anything), quotes from Booz Allen, Cisco, Cloudflare, CrowdStrike and ENISA (the EU's cybersecurity agency), and a 96.6% refusal rate on malicious hacking requests. Mistral is also unusually candid: after watching live traffic since the preview, it writes that it sees 'a potential for uplift to conduct real attacks' and is tightening its guardrails. A specialised variant for penetration testing goes only to vetted partners such as Orange Cyberdefense, under contract.",
+        "Price. Through Mistral's API it now costs $0.70 per million input tokens and $2.10 per million output tokens, against $1.36 and $4.18 for the preview. It is also on OpenRouter, Microsoft's Foundry and Nvidia's hosted endpoints.",
+        "The catch. The licence is called the Mistral Ecosystem Open-Weight License, a modified MIT licence. You may use, modify, fine-tune and sell products built on the model for free, with one condition: a company that runs a model-as-a-service business, selling access to AI models the way OpenRouter or a cloud provider does, needs a separate commercial licence from Mistral. That is a step back from Mistral Large 3 last December, which used Apache 2.0 (one of the most permissive software licences, with no such condition). On Hacker News the top comments made exactly this point: by the strict definition used by the Open Source Initiative, this is 'weights available', not open source.",
+        "The hardware. A trillion parameters is roughly a terabyte of data at standard precision. Mistral also publishes a compressed NVFP4 version that roughly halves that. One Hacker News commenter with four of Nvidia's H200 chips, about 560 GB of memory, said they would still need to squeeze the model further to run it. This is a model for companies and governments with serious servers, not for a laptop."
+      ],
+      "pullquote": "Free to download, use, fine-tune and sell products on. Not free to resell as a hosted AI service."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a famous restaurant. Until now, most of the best AI has worked like eating there: you get the dish, you pay per plate, and the recipe stays in the kitchen. An open-weight release is the chef handing you the full recipe and letting you cook it at home, change it, and serve it in your own canteen. Mistral's catch is that you may not open a rival restaurant whose business is serving that exact dish to the public without paying the chef.",
+        "For most companies that is no catch at all. For the cloud and hosting businesses that made money serving earlier open models, it is the whole point."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Releasing very large open models is no longer new; Chinese labs have done most of it. DeepSeek, Moonshot's Kimi K3 (2.8 trillion parameters) and Z.ai's GLM-5.3 are all free downloads, and in our brief on who makes the world's open models we noted that Europe's share of downloads is only about 8%. Licences with a 'big commercial users must ask' clause are not new either: Meta's Llama licences required a separate deal for services with more than 700 million monthly users.",
+        "What is new is the combination. This is the first open-weight model of this size trained in Europe on European infrastructure, by Mistral's own account the best open model for coding, and released by a company that can be held to European law. For banks, hospitals and governments that are told not to use Chinese models and do not want to send data to American clouds, it is the first top-tier option that ticks every box. Quotes in the announcement from La Banque Postale, Crédit Agricole, ABN AMRO, Belfius and ESA say as much.",
+        "The measured caution: open weights cannot be recalled. Once a trillion-parameter model with strong hacking skills is downloadable, its guardrails can be trained away by anyone with enough hardware, which is presumably why the specialised pen-testing version stays behind a contract. Mistral's own sentence about 'potential for uplift' is the most honest line in the release."
+      ],
+      "links": [
+        {
+          "label": "Mistral, 29 October 2026: We release the weights of Le Chonk",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/"
+        },
+        {
+          "label": "Mistral Large 4 on Hugging Face, with the model card and licence",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
+        },
+        {
+          "label": "Hacker News discussion (1,400+ points)",
+          "url": "https://news.ycombinator.com/item?id=50289418"
+        },
+        {
+          "label": "Our 7 October brief on the preview: Europe's top AI lab built a trillion-parameter model",
+          "url": "https://oslovibecoding.tech/brief/europe-s-top-ai-lab-built-a-trillion-parameter-model"
+        },
+        {
+          "label": "Our brief: the free AI models you can download, and why most now come from China",
+          "url": "https://oslovibecoding.tech/brief/the-free-ai-models-you-can-download-and-why-most-now-come-from-china"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For builders in Oslo, the immediate change is price and choice. A European model that Mistral says is close to the best closed models on coding now costs $2.10 per million output tokens through its API, and can be run entirely in-house if your data must never leave your servers. Norway is not in the EU, but the same arguments about data and control apply to Norwegian public bodies and regulated companies, and Mistral's charts put it ahead of every other open model a cautious procurement team is likely to approve.",
+        "The honest caveats are the usual ones for launch day. The benchmark numbers come from Mistral's own announcement, the technical report is not out, and on Hacker News the praise was loud enough that one sceptic called it 'a huge tell' and said the model is still not competitive with the best closed coding tools. Independent tests over the next weeks will settle that. What is already settled is that Mistral did what it said it would, on time."
+      ],
+      "pullquote": "Europe now has a top-tier model it can run on its own machines. Whether it is as good as Mistral's charts say is the next question."
+    }
+  ]
+},
+{
+  "slug": "an-investor-says-25-gigawatts-semianalysis-says-43-and-raised-it",
+  "status": "published",
+  "datePublished": "2026-10-30",
+  "title": "An investor says 25 gigawatts of AI datacentres in 2027. SemiAnalysis says 43, and raised it",
+  "dek": "Brad Gerstner, one of the best-known investors in AI, went on the All-In podcast and called SemiAnalysis's forecast for next year's AI datacentre build 'too aggressive'. His own number, by his own description a hunch, was about 25 gigawatts. SemiAnalysis answered with photos of 40 construction sites and a trillion dollars of signed leases, and pushed its forecast up. Here is who is right, how you would even know, and what it means if the bigger number is true.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "In October 2026 Brad Gerstner of Altimeter Capital showed SemiAnalysis's forecast of about 43 gigawatts of new AI datacentre capacity in 2027 on the All-In podcast and again in a BG2 interview with Nvidia's Jensen Huang, called it too aggressive, and said he expected about 25 gigawatts, based on what he called a hunch. SemiAnalysis replied on 19 October with the report 'Datacenters 2027: the year of acceleration' and on 20 October with a podcast episode titled 'Brad Gerstner Cut Our 2027 Forecast in Half. We Raised It.' Its evidence: more than 24 gigawatts already in an advanced stage of construction at just its top 40 campuses, most of it due in 2027; record quarterly construction starts by US hyperscalers; and roughly a trillion dollars of binding, non-cancellable datacentre leases signed in 2026 so far, which developers use to raise the debt that pays for the buildings. SemiAnalysis says power is 'broadly solved' through on-site generation and that modular, prefabricated designs have cut build times to under 10 months at some sites. Both numbers are forecasts; SemiAnalysis sells the datacentre model it is quoting, and its full oversupply analysis is behind a paywall. For scale, Norway uses about 16 gigawatts on average.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+  "sourceLabel": "Read SemiAnalysis's report, Datacenters 2027: the year of acceleration",
+  "about": "The October 2026 argument over how much AI datacentre capacity will be built in 2027: Brad Gerstner's 25 GW estimate on All-In and BG2, SemiAnalysis's 43 GW forecast and its 19 October report and 20 October podcast in reply, the top 40 campuses under construction, hyperscaler construction starts, about a trillion dollars of datacentre leases signed in 2026, modular and prefabricated builds, on-site power, the shift outside the US, and what more computing would mean for AI prices",
+  "keywords": [
+    "datacentres",
+    "gigawatts",
+    "SemiAnalysis",
+    "Brad Gerstner",
+    "Altimeter",
+    "All-In podcast",
+    "AI buildout",
+    "2027 forecast",
+    "datacenter leases",
+    "modular datacenters",
+    "behind-the-meter power",
+    "Norway"
+  ],
+  "heroImage": {
+    "src": "/brief/an-investor-says-25-gigawatts-semianalysis-says-43-and-raised-it.png",
+    "alt": "Bar chart titled How much AI datacentre gets built in 2027? Norway's average power use 16 gigawatts; top 40 sites already under construction 24 gigawatts; Brad Gerstner's hunch 25 gigawatts; SemiAnalysis forecast 43 gigawatts. Caption: an investor's hunch versus SemiAnalysis's forecast; 24 gigawatts is already rising at just 40 sites.",
+    "credit": "Oslo Vibe Coding, figures from SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Brad Gerstner runs Altimeter Capital, an investment firm with large bets on AI companies, and is a regular on the All-In podcast, one of the most listened-to shows in Silicon Valley. Earlier this month he put a chart from SemiAnalysis (the chip and datacentre research firm this channel follows) on screen. It showed SemiAnalysis's forecast that about 43 gigawatts of new AI datacentre capacity will be switched on worldwide in 2027. Gerstner called it 'too aggressive' and said he thought about 25 gigawatts would get built. He repeated the point in his BG2 interview with Jensen Huang, the head of Nvidia. Asked where his number came from, he called it a hunch.",
+        "A gigawatt here means the electricity a datacentre is built to draw. It is the standard way the industry counts AI capacity, because the chips are useless without the power to run them. Norway's whole electricity use averages about 16 gigawatts. So the argument is over whether the world adds roughly one and a half Norways of AI datacentres next year, or close to three.",
+        "SemiAnalysis did not take it quietly. On 19 October it published 'Datacenters 2027: the year of acceleration', opening with 'let's not operate on hunches'. The next day it released a podcast episode with the blunt title 'Brad Gerstner Cut Our 2027 Forecast in Half. We Raised It.' Its analysts say the curve they have been tracking since March 2024 has barely moved across every revision of their model."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The 40 sites. SemiAnalysis's lead exhibit is a page of aerial photos of the 40 biggest AI campuses it tracks. Together they hold more than 24 gigawatts in an advanced stage of construction, most of it due for delivery in 2027, and most of them more than halfway done, with cooling and electrical equipment already installed outside. That alone roughly equals Gerstner's whole-year number, and SemiAnalysis says it is a small share of the several hundred sites it tracks in advanced construction.",
+        "The construction starts. The firm counts how many megawatts of their own datacentres the big US cloud companies (Amazon, Microsoft, Google, Meta) start building each quarter. It says that number has never been higher and is 'going parabolic', driven mainly by two of them, which it names only to paying clients.",
+        "The leases. This is the strongest leading indicator, because of how these buildings are paid for. A developer typically spends only 5 to 10% of the money on a project before it has a tenant. Then it signs a 'pre-lease', usually 15 to 20 years long, worth $30 to $50 billion over its life for each gigawatt, and borrows against it to build the rest. SemiAnalysis counts roughly a trillion dollars of binding, non-cancellable leases signed so far in 2026 (the report puts it as both 'slightly under' and 'over' a trillion in different places), and says most of the matching debt has already been raised. Oracle started the era of giant leases with about 4.5 gigawatts across three sites between August and October 2025. Meta, Amazon, Microsoft, Google, Nvidia, AMD, Anthropic and OpenAI are now all signing gigawatt-scale deals.",
+        "Why 2026 looked slower. SemiAnalysis explains the flatter growth this year with Microsoft, which drove most of the leasing market in 2023 and 2024 and then paused in late 2024. Buildings leased in a quiet year open in a quiet year. The leasing boom since mid 2025 is what opens in 2027.",
+        "How you build that much that fast. The report's answer is that the industry has changed how it builds. Google has replaced much of the outdoor cabling that had to be assembled on site with prefabricated electrical modules. Meta has built datacentres in tents. Amazon has a simplified shell design and prefabricated data halls, with construction now under 10 months, and SemiAnalysis says modular methods can cut the specialist electrical and plumbing labour by up to 63%. A Singapore developer called DayOne has leased about 3 gigawatts with build times of about 9 months, against more than 18 for traditional builders.",
+        "Power and geography. On electricity, SemiAnalysis's view, labelled here as its opinion, is that the problem 'has broadly been solved', because AI companies now build their own power plants next to the datacentre rather than waiting five to ten years for a grid connection, using everything from fuel cells to truck engines to refurbished turbines. (We covered Meta's gas plants on 18 October.) It also expects the build outside the US to accelerate sharply in 2027, partly to escape American labour, power and permit limits.",
+        "What it does not hide. SemiAnalysis lists the problems itself: workers not showing up, delayed equipment, fundraising trouble. It says its model trims developer timelines that look too optimistic, and points to having flagged the delay at an Oracle site in New Mexico in April. It also writes that 50 gigawatts in one year would be roughly the entire world's cumulative datacentre stock up to 2024, built in twelve months. The section on whether all this ends in an oversupply is for paying subscribers only."
+      ],
+      "pullquote": "24 gigawatts is already rising at just 40 sites. The investor's estimate for the whole year was 25."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine two people arguing about how many new flats Oslo will finish next year. One says it feels like the city cannot possibly build that many: there are not enough builders, the power company is slow, interest rates are high. The other walks round town, counts the buildings that already have walls and a roof, and then asks the banks how many signed rental contracts they have lent money against. Both could be wrong. But only one of them has looked at the cranes.",
+        "That is the shape of this argument. Gerstner's case rests on real constraints that everyone in the industry talks about. SemiAnalysis's case rests on counting what is already physically standing and what is already contractually paid for, which is much harder to wave away for a single year ahead. It says less about 2028 and beyond."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Arguments about whether a building boom is real are as old as building booms. The closest precedent is the fibre-optic cable boom around 2000, when telecom companies laid far more cable than the internet of the day could use, and much of it sat dark for years after the money ran out. The bear case for AI datacentres is the same story with chips.",
+        "What is different this time is where the evidence sits. In 2000 the cable was mostly financed on hopes of future traffic. These datacentres are, by SemiAnalysis's count, mostly financed against 15 to 20 year leases signed by some of the richest companies in the world, and the firm says the binding part is already signed. That does not prove the demand will be there in 2030. It does make the 2027 number a question of construction, not of belief.",
+        "Two honest caveats. SemiAnalysis sells the Datacenter Industry Model it is quoting, so a bigger forecast is also good marketing; its track record on calling delays is a point in its favour. And Gerstner is an investor with his own reasons to sound measured. Neither number is a measurement yet. The scoreboard is the end of 2027."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, 19 October 2026: Datacenters 2027, the year of acceleration",
+          "url": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration"
+        },
+        {
+          "label": "SemiAnalysis, 20 October 2026: Ep. 039, Brad Gerstner Cut Our 2027 Forecast in Half. We Raised It.",
+          "url": "https://www.youtube.com/watch?v=I3tNGNjYcDw"
+        },
+        {
+          "label": "Our 18 October brief: Meta is building its own gas plants to feed AI",
+          "url": "https://oslovibecoding.tech/brief/meta-is-building-its-own-gas-plants-to-feed-ai"
+        },
+        {
+          "label": "Our brief: AI companies are building their own power stations",
+          "url": "https://oslovibecoding.tech/brief/ai-companies-are-building-their-own-power-stations"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "If SemiAnalysis is right, 2027 brings a flood of new computing. Its own conclusion is that this means cheaper and smarter AI, faster progress between model generations, and more revenue for the labs that sell tokens (the units AI usage is billed in). It also means 'unthinkable' spending, and SemiAnalysis expects interest rates to be pushed up by the sheer amount of borrowing needed. Its paid section hints at the next bottleneck: memory and logic chips, rather than buildings and power, may be the tightest constraint in 2027 and 2028.",
+        "For anyone in Oslo using these tools, the practical reading is simple. The supply of AI computing next year looks set by concrete already poured and contracts already signed, not by podcast sentiment. That points to AI getting cheaper per task, not dearer. For Norway, with its cheap clean power, the shift of building outside the US is worth watching: the world is about to need several more Norways of electricity for AI, and the places that can supply it quickly will be asked."
+      ],
+      "pullquote": "The 2027 number is a question of construction, not of belief. The scoreboard is the end of next year."
+    }
+  ]
+},
+{
   "slug": "anthropic-s-ipo-papers-are-public-1-dollar-of-computing-now-earns-2",
   "status": "published",
   "datePublished": "2026-10-29",
