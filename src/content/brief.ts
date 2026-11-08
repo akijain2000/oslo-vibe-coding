@@ -36,6 +36,116 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "datacentres-lost-the-us-midterms-the-fight-is-over-2028",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "Datacentres lost the US midterms. Next year's AI is already built; the fight is over 2028",
+  "dek": "On 3 November American voters elected a Texas governor who promised to pause every datacentre approval, handed Georgia's power regulator to Democrats for the first time in 30 years, and passed most of the local ballot measures that restrict AI datacentres. SemiAnalysis, the chip and datacentre research firm, had mapped the stakes just before the vote. Its verdict: the AI buildout for 2027 is mostly safe because it is already under construction. The 2028 buildout is where the election bites.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "In a 1 November article and a 4 November episode, SemiAnalysis said roughly three-quarters of the 33.8 gigawatts of US datacentre capacity due in 2027 across its top 20 states is already under construction, so the election is unlikely to stop it. Its model has 62.2 GW of US net additions in 2028, most not yet started; the 13 states with the most 2028 capacity that held state elections account for 43.5 GW (70%), and Texas alone is close to 30% of the US 2028 total. Before the vote, 9 of 20 major nominees backed a pause on new datacentre construction and 11 backed conditions, split about evenly by party. SemiAnalysis estimated about 30 GW of 2028 capacity sat in states where a pause candidate was running, versus 5.7 GW if the conditions-only candidates won everywhere. On 3 November Democrat Gina Hinojosa won the Texas governorship (taking office 19 January) after promising a moratorium on all datacentre approvals until the legislature passes new laws; the Texas legislative session runs 12 January to 31 May 2027, and SemiAnalysis estimates that could extend the current Texas permit freeze, in place since September, by five to nine months beyond a December restart. Democrats won a 3-2 majority on Georgia's Public Service Commission, the utility regulator, for the first time in 30 years. An NBC News exit poll found 76% of voters opposed datacentres in their own communities, and of 45 local ballot measures on datacentres, 33 were set to restrict them as of 4 November (Redbud Consulting tally reported by The Verge). Meta's president said building will now be 'harder'; OpenAI has dropped non-disclosure agreements for its projects.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+  "sourceLabel": "Read the SemiAnalysis analysis of the datacentre backlash",
+  "about": "The effect of the 3 November 2026 US midterm elections on AI datacentre construction: SemiAnalysis's pre-election model of 2027 and 2028 US capacity by state, the Texas permit freeze and governor-elect Gina Hinojosa's promised moratorium, Democratic control of Georgia's Public Service Commission, local ballot measures and exit polls, candidate positions on grid costs, tax breaks and water, industry reactions from Meta and OpenAI, the precedent of 1970s and 1980s nuclear power, and what it means for AI capacity and for Norway",
+  "keywords": [
+    "datacentres",
+    "data centers",
+    "midterms",
+    "2026 US election",
+    "Texas",
+    "Gina Hinojosa",
+    "Georgia Public Service Commission",
+    "moratorium",
+    "SemiAnalysis",
+    "AI infrastructure",
+    "gigawatts",
+    "electricity prices"
+  ],
+  "heroImage": {
+    "src": "/brief/datacentres-lost-the-us-midterms-the-fight-is-over-2028.png",
+    "alt": "Bar chart titled 2027 is mostly built. The midterm fight is over 2028. Planned US datacentre additions in 2028 in gigawatts, from the SemiAnalysis model before the 3 November vote: all US 62.2 GW; the 13 biggest states with elections 43.5 GW; at risk if every pause candidate won about 30 GW; at risk if every conditions-only candidate won 5.7 GW.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Tuesday 3 November was the US midterm election, and for the first time AI datacentres (the warehouse-sized buildings full of chips that train and run AI models) were a real campaign issue. The results went against them. In Texas, the biggest datacentre market in America, Democrat Gina Hinojosa beat Governor Greg Abbott after promising: 'When I am governor I will issue a moratorium, a ban, on all data center approvals until laws can be passed by the Legislature to protect Texans.' In Georgia, Democrats won control of the Public Service Commission, the board that sets electricity prices, for the first time in 30 years. Across the country, voters faced 45 local ballot questions about datacentres, and by Wednesday morning 33 of them were set to restrict development, according to a tally reported by The Verge.",
+        "The tech press called it bluntly. The Verge's headline was 'Data centers lost the midterms'. Elon Musk, whose AI company xAI builds giant datacentres and who backed Abbott, posted: 'Data centers in space looking pretty appealing right now.' The useful question for anyone following AI is a narrower one: does this actually slow down how much AI computing power gets built, and when?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The 2027 buildout is largely locked in. Two days before the vote, SemiAnalysis published a state-by-state analysis from its datacentre model, which tracks construction sites partly by satellite. Its finding: about three-quarters of the 33.8 gigawatts due in 2027 across its top 20 US states is already under construction. A gigawatt is a lot: Norway's entire average electricity use is roughly 16 GW. Elections change the rules for new approvals, not for buildings that already have their permits and are rising out of the ground. SemiAnalysis said it remains comfortable with its forecast of about 50 GW of new datacentre capacity worldwide in 2027.",
+        "2028 is exposed. The same model has 62.2 GW of US additions in 2028, most of which has not started construction. The 13 states with the most 2028 capacity that held state elections this year account for 43.5 GW, 70% of the national total, and 10 of them were electing a governor. Texas alone is close to 30% of the US 2028 figure, which is why SemiAnalysis called a long Texas permit freeze 'the biggest risk to our buildout forecast right now'.",
+        "Texas was already paused. Abbott himself froze grid connections for datacentres in August pending an audit by ERCOT (the Texas grid operator), then froze environmental permits on 21 September. ERCOT aims to file its report on 10 December. If Abbott had won, SemiAnalysis expected a restart around then. Hinojosa takes office on 19 January and wants approvals held until the legislature, which sits from 12 January to 31 May 2027, writes new laws. SemiAnalysis estimates that would stretch the freeze to roughly eight months, or close to a year if the new rules only take effect in late summer: five to nine months longer than a December restart.",
+        "The scenarios, as SemiAnalysis drew them before the vote: if the candidate promising a pause won in every state where one was running, about 30 GW of planned 2028 capacity would sit in those states. If the 'conditions only' candidates won everywhere, that fell to 5.7 GW. Not all 30 GW would slip: how much is delayed depends on which permits each project still needs and how long a pause lasts.",
+        "This was not a one-party issue. Before the election 9 of the 20 main nominees SemiAnalysis tracked wanted a pause and 11 wanted conditions, split about evenly between Republicans and Democrats. The most common promises were to make datacentres pay their own grid costs (15 candidates), end their tax breaks (12) and limit or report their water use (11). The tax break matters more than it sounds: the sales-tax exemption on servers, chips, cooling and transformers can be worth billions of dollars per gigawatt. An NBC News exit poll found 76% of voters opposed datacentres in their own communities."
+      ],
+      "pullquote": "Elections change the rules for new approvals, not for buildings that are already rising out of the ground."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture a town in a housing boom. The houses for next year already have walls and roofs; a new council cannot un-build them. The houses planned for the year after are still drawings waiting for building permits. Now the town elects a council that promised to stop issuing permits until it writes stricter rules about who pays for the new roads and water pipes.",
+        "Next year's houses still get finished. The year after's arrive late, cost more, or move to the next town over, if that town has spare land, roads and water. That is the AI datacentre story in America right now, with Texas as the biggest town on the map."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Local opposition is not new. In September we covered SemiAnalysis's audit of more than 300 American towns and counties that had paused or banned datacentres, and its finding that only about 1.5 of 20 affected gigawatts was actually delayed. The bans were real; the delays, so far, were small. What is new is the level. A town can block one site. A governor can stop a state agency issuing permits across the largest market in the country, and a utility commission decides what every datacentre pays for power. That is why SemiAnalysis now treats state politics as a forecast input, not background noise.",
+        "There is an older precedent. In the 1970s and 1980s, American nuclear power ran into rising costs, tougher safety rules after the Three Mile Island accident and local opposition, and dozens of planned reactors were cancelled. Nobody banned nuclear power outright; the conditions changed until many projects no longer made sense. The datacentre industry's response suggests it has learned that lesson faster. Meta's president, Dina Powell McCormick, said building 'is going to be harder' and admitted the industry had 'not done as good a job as we needed' explaining the benefits. OpenAI has said it will stop requiring non-disclosure agreements for its projects and has started calling them 'compute campuses' instead of datacentres."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, 1 November 2026: The Datacenter Backlash Goes Bipartisan",
+          "url": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan"
+        },
+        {
+          "label": "SemiAnalysis Ep. 043: The Midterms and the 2028 Datacenter Buildout (video)",
+          "url": "https://www.youtube.com/watch?v=J-d7gn-8t7s"
+        },
+        {
+          "label": "The Texas Tribune: Gina Hinojosa won. What happens to Texas data centers now?",
+          "url": "https://www.texastribune.org/2026/11/04/data-center-texas-pause-gina-hinojosa-governor-policies/"
+        },
+        {
+          "label": "The Verge: Data centers lost the midterms",
+          "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results"
+        },
+        {
+          "label": "Grist via Fortune: Democrats win control of Georgia Power's regulator",
+          "url": "https://fortune.com/2026/11/06/georgia-power-psc-democrats-openai-data-center/"
+        },
+        {
+          "label": "TechCrunch: Meta warns that election backlash could make AI expansion harder",
+          "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/"
+        },
+        {
+          "label": "Our September brief: 300 American towns banned datacenters. Three projects were delayed.",
+          "url": "https://oslovibecoding.tech/brief/300-american-towns-banned-datacenters-three-projects-were-delayed"
+        },
+        {
+          "label": "Our October brief: an investor says 25 gigawatts, SemiAnalysis says 43",
+          "url": "https://oslovibecoding.tech/brief/an-investor-says-25-gigawatts-semianalysis-says-43-and-raised-it"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI you use, nothing changes soon. The chips and buildings that will serve AI models through 2027 are mostly already being built. The risk is a slower ramp in 2028 and beyond, and higher costs for whoever builds: paying for their own grid upgrades, losing tax breaks, publishing their water use. The biggest companies can afford that. SemiAnalysis's interviews with current and former Amazon, Microsoft and Google staff suggest they can pay for their own power, but money does not make a transmission line or a permit appear faster.",
+        "For Europe and Norway, the effect could cut both ways. If American states make datacentres slower and dearer to build, some demand will look elsewhere, including at places with spare clean power. But the same arguments that won votes in Texas (who pays for the grid, who gets the water, why the deals were secret) are already part of Norway's own debate about datacentres and scarce grid capacity. The lesson from 3 November is that the AI boom now needs its neighbours' consent, not just its investors' money.",
+        "Measured caveats: SemiAnalysis's scenarios were drawn before the votes were counted and take candidates' promises at face value. Campaign promises still have to become laws or agency decisions, Hinojosa is not in office until January, and the exact delay will depend on project-by-project permits. Watch two dates: ERCOT's audit report on 10 December, and what the Texas legislature does after 12 January."
+      ],
+      "pullquote": "The AI boom now needs its neighbours' consent, not just its investors' money."
+    }
+  ]
+},
+{
   "slug": "mistral-kept-its-promise-europe-s-trillion-parameter-ai-is-now-a-free-download",
   "status": "published",
   "datePublished": "2026-10-30",
