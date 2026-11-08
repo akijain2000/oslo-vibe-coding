@@ -36,6 +36,667 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-week-the-ai-money-flinched",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "The week the AI money flinched: a $2.5 trillion sell-off, a smaller OpenAI round and stalling AI spend",
+  "dek": "In the first week of November, the stock market had its worst day since April 2025 on fears that the US midterms will slow the AI buildout, OpenAI reportedly raised less than it wanted, buyers started talking down Anthropic's IPO price, and Ramp's card data showed companies are not spending more on AI even as they use more of it. None of this means the AI boom is over. It does mean the money has started asking harder questions.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "On Thursday 5 November 2026 the Nasdaq fell 5.52%, its worst day since April 2025, wiping roughly $2.5 trillion of market value on fears that Democratic midterm wins, especially in Texas, will slow AI datacentre construction (CNN). Nvidia fell 9.3% and a chipmaker index 12.3%; markets partly rebounded on Friday. On 6 November Bloomberg reported that OpenAI has raised $11 billion of a new round at a $1.25 trillion valuation, with the round expected to total about $20 billion, short of the $30 billion at $1.4 trillion it reportedly targeted in September. A day earlier OpenAI president Greg Brockman said the company could be ready to go public in 2027 and that its annualised revenue grew 70% in the third quarter, with business customers now the majority. Bloomberg, the Wall Street Journal and CNBC reported on 6 November that some potential buyers of Anthropic's IPO shares see a valuation as low as $1.1 trillion, against roughly $2 trillion discussed a month earlier. Ramp, a US corporate card company, reported that business AI token spending barely grew in August and September (1.5% across the two months) even as volumes rose, which its lead economist blames mainly on price cuts; spend reached a new high in October. Nikkei Asia reported on 3 November that US tech giants' off-balance-sheet AI obligations, such as long-term datacentre leases and power contracts, have nearly doubled in six months to about $3.2 trillion. These are reported figures and analyst views, not investment advice.",
+  "sourceUrl": "https://ramp.com/data/ai-index-oct-2026",
+  "sourceLabel": "Read Ramp's data on business AI spending",
+  "about": "The AI money picture in the first week of November 2026: the 5 November tech stock sell-off after the US midterms, OpenAI's reported $11 billion raise at a $1.25 trillion valuation and Greg Brockman's 2027 IPO comments, reported pressure on Anthropic's IPO valuation, Ramp AI Index data showing flat token spend in August and September, Nikkei Asia's estimate of $3.2 trillion in off-balance-sheet AI obligations, and a call for the SEC to block Anthropic's IPO",
+  "keywords": [
+    "AI bubble",
+    "OpenAI",
+    "Anthropic IPO",
+    "valuation",
+    "Nasdaq",
+    "Nvidia",
+    "Ramp AI Index",
+    "AI spending",
+    "off-balance-sheet debt",
+    "midterms",
+    "price war",
+    "Greg Brockman"
+  ],
+  "heroImage": {
+    "src": "/brief/the-week-the-ai-money-flinched.png",
+    "alt": "Two panels titled Is the AI money still flowing? Yes, but it flinched. Still flowing: OpenAI raises $11B at a $1.25T value (reported); OpenAI revenue run-rate up 70% in Q3 (Brockman); Anthropic IPO still heading to market; October AI spend at a new high (Ramp). The flinch: $2.5T of stock value wiped on 5 Nov; OpenAI round about $20B, not the $30B sought; IPO buyers eye Anthropic as low as $1.1T; AI spend flat in August and September (Ramp). Caption: the AI money picture, 3 to 6 November 2026.",
+    "credit": "Oslo Vibe Coding, from Bloomberg, CNN, Ramp and TechCrunch reporting",
+    "creditUrl": "https://ramp.com/data/ai-index-oct-2026"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Four pieces of news landed within four days, and together they answer a question people keep asking: is the money behind AI still flowing? The short answer is yes, but for the first time in a while it hesitated.",
+        "On Tuesday 3 November, American voters punished datacentres at the ballot box (we covered that in today's other brief). On Thursday 5 November investors reacted. The Nasdaq, the US stock index full of tech companies, fell 5.52%, its worst day since April 2025, and about $2.5 trillion of share value disappeared in a day, according to CNN. The next day, Bloomberg reported that OpenAI's newest fundraising round is coming in smaller than planned, and that buyers lining up for Anthropic's stock market listing want to pay less than hoped. Meanwhile Ramp, a US company that issues business credit cards and publishes what those cards are spent on, showed that companies' AI bills have stopped growing even though they are using more AI than ever."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The sell-off. CNN reported that Thursday's fall was driven by fear that Democratic wins, above all Texas governor-elect Gina Hinojosa's promised pause on datacentre approvals, could slow the AI buildout. Nvidia, the leading AI chipmaker, fell 9.3%, erasing its gains for the year. An index of chipmakers fell 12.3%, its worst day in about six and a half years. CoreWeave and Nebius, two 'neoclouds' (companies that rent out AI chips), fell about 10% and 15%. South Korea's main index dropped almost 9% at Friday's open, triggering a 20-minute trading halt. Prices partly recovered on Friday, though Reuters noted the Nasdaq still posted its fourth weekly loss in a row.",
+        "OpenAI. On 6 November Bloomberg reported, citing people familiar with the matter, that OpenAI has raised $11 billion of a new round valuing it at $1.25 trillion, and that the round may total about $20 billion when it closes in the coming weeks. In late September Bloomberg had reported OpenAI was aiming for $30 billion at $1.4 trillion. OpenAI did not comment to TechCrunch. The day before, at a Wall Street Journal conference, OpenAI president Greg Brockman was asked whether the company would be ready to go public next year and answered: 'I think so. Yes.' He said annualised revenue grew 70% in the third quarter and that business customers now bring in the majority of revenue, up from about 30%. He also admitted the first half of 2026 was 'pretty rough' and that OpenAI 'wasn't even in the conversation' in AI coding, where Anthropic's Claude Code had taken the lead.",
+        "Anthropic. Bloomberg, the Wall Street Journal and CNBC all reported on 6 November that big investors are pushing back on Anthropic's hoped-for price. According to Bloomberg, some potential buyers think the valuation could be as low as $1.1 trillion, compared with roughly $2 trillion that investors were said to expect a month ago. Reuters reported on 5 November that the AI backlash could even affect the IPO's timing. No price or trading date has been confirmed. For balance: Anthropic's filing, which we covered on 29 October, shows revenue growing more than tenfold in a year. Disclosure: we use Claude, Anthropic's AI, in our work.",
+        "Ramp's spending data. Ramp's lead economist Ara Kharazian reported that business spending on AI tokens (the units AI companies charge by, roughly a word fragment each) grew only 1.5% across August and September combined, after rising 42% in July alone, according to TechCrunch. Token volumes kept rising. The biggest spenders, the top 1% of firms, paid $9,568 per employee per month in September, 3.1% below their July high, and Ramp says about 80% of spending on OpenAI and Anthropic comes from that 1%. The median company spends just $12 to $15 per employee per month. Kharazian's explanation is a price war: OpenAI halved API prices for GPT-6 Sol and Luna in September, Anthropic cut prices too (TechCrunch says Anthropic's filing puts the cost at about $600 million of revenue growth), and customers have learned to send simple jobs to cheaper models. October brought a rebound: spend rose 8.9% and hit a new high.",
+        "The hidden obligations. Nikkei Asia reported on 3 November that the off-balance-sheet AI obligations of US tech giants, promises such as long-term datacentre leases and power contracts that do not show up as ordinary debt, have nearly doubled in six months to about $3.2 trillion, and that commitments and obligations at Google, Meta and others now reach about 80% of their assets. On Hacker News, several commenters pushed back that these are contracts for future spending stretched over decades, not borrowed money, and that a datacentre lease keeps some value even if AI demand disappoints."
+      ],
+      "pullquote": "Companies are using more AI than ever. They are not paying more for it."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a new restaurant district. The diners keep coming, more every month, so the landlords sign longer leases and the banks lend for more kitchens. Then a price war breaks out: every restaurant cuts its menu prices in half to win customers. The district is busier than ever, but the tills are not filling faster. That is when the landlords and lenders start asking whether next year's rent can really be paid, and new investors ask for a cheaper price to buy in.",
+        "That is roughly where AI is. Demand is real and growing. What has changed is that falling prices and political risk are making investors check the arithmetic before they write the next cheque."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Wobbles like this are normal in a boom. In January 2025, when China's DeepSeek showed a cheap, capable model, Nvidia lost about $600 billion of value in one day and the AI buildout carried on. The 2000 dot-com bust is the gloomier comparison: internet use kept growing through the crash, but many companies that had borrowed and built ahead of demand did not survive. Our October brief on AI borrowing overtaking America's car loans and our brief on Uber burning a year's AI budget in four months covered the two sides of that question.",
+        "What is new this week is that the doubts arrived together, from three different directions: voters (who decide where datacentres can be built), customers (who decide how much they pay per token) and investors (who decide the price of the two biggest AI listings ever planned). There is also a sharper critique on the table. In a widely shared op-ed for Tech Policy Press on 2 November, lawyer Matt Scherer argued that the US Securities and Exchange Commission should block Anthropic's IPO, warning that retail investors and retirees could be 'left holding the bag' if its spending commitments come due. That is one writer's argument, not a regulatory step, but it shows how quickly the mood around AI money has become a public debate."
+      ],
+      "links": [
+        {
+          "label": "Ramp Economics Lab: AI Index, October 2026 (Cracks in the AI Thesis)",
+          "url": "https://ramp.com/data/ai-index-oct-2026"
+        },
+        {
+          "label": "TechCrunch, 6 November: Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/"
+        },
+        {
+          "label": "TechCrunch, 6 November: OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/"
+        },
+        {
+          "label": "TechCrunch, 5 November: Greg Brockman says OpenAI could be IPO ready in 2027",
+          "url": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/"
+        },
+        {
+          "label": "CNN, 5 November: tech sell-off wipes $2.5 trillion",
+          "url": "https://www.cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges"
+        },
+        {
+          "label": "Nikkei Asia, 3 November: US tech giants' hidden AI debt swells 90% to $3.2tn in 6 months",
+          "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
+        },
+        {
+          "label": "Tech Policy Press, 2 November: The SEC Should Block Anthropic's IPO to Protect the Public",
+          "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/"
+        },
+        {
+          "label": "Our brief: Anthropic's IPO papers are public",
+          "url": "https://oslovibecoding.tech/brief/anthropic-s-ipo-papers-are-public-1-dollar-of-computing-now-earns-2"
+        },
+        {
+          "label": "Our brief: AI borrowing is about to pass America's car loans",
+          "url": "https://oslovibecoding.tech/brief/ai-borrowing-is-about-to-pass-america-s-car-loans"
+        },
+        {
+          "label": "Our brief: Uber burned a year of AI budget in four months",
+          "url": "https://oslovibecoding.tech/brief/uber-burned-a-year-of-ai-budget-in-four-months"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For people who use AI at work, this week is mostly good news. A price war means the same AI costs less, and Ramp's data says buyers now have the upper hand in negotiations: the long contracts AI companies offer usually come with discounts rather than lock-in. If your company's AI bill has stayed flat while usage has grown, you are seeing the same thing in miniature.",
+        "For the AI companies, the pressure points are price and patience. Selling more tokens for less money only works if volume keeps growing faster than prices fall, and building datacentres only pays if the buildings can be finished on time. The coming weeks will show how much the market will pay for Anthropic, and whether OpenAI's round closes near $20 billion.",
+        "The honest caveats: the OpenAI and Anthropic valuation figures come from anonymous sources reported by Bloomberg, the WSJ and CNBC; Ramp's data covers only its own business customers, mostly American, and Ramp says its top-1% numbers are volatile; and Nikkei's $3.2 trillion counts commitments that stretch over many years. Markets also bounced back on Friday. This is a flinch, not a crash. Nothing here is investment advice."
+      ],
+      "pullquote": "Voters, customers and investors all asked harder questions in the same week. That is the real news."
+    }
+  ]
+},
+{
+  "slug": "anthropic-s-ai-is-speeding-up-its-own-development-about-twice-as-fast",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "Anthropic's AI is speeding up its own development. An outside check says about twice as fast",
+  "dek": "In the first week of November two documents landed. On Monday 2 November Anthropic told would-be shareholders it may 'imminently' cross its own threshold for AI that dramatically speeds up AI research. On Thursday 5 November METR, an independent safety group that spent eleven weeks inside the company, said Anthropic's models are improving at roughly twice their old pace, mostly because Claude is helping build the next Claude. Here is what was measured, what was blacked out, and why it matters even if you never touch a model.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "On 2 November 2026 Anthropic filed an amended IPO prospectus (S-1/A) adding a new risk factor: 'our internal estimates and our expectations regarding future models, rather than our current models, indicate that we may imminently meet our Responsible Scaling Policy's definition of \"dramatically accelerated progress attributable to AI.\"' It says no current model has been designated as crossing that line, that it has in the past failed to spot a significant acceleration until after it happened, and that it is considering policy changes 'to keep humans in control of frontier model development'. The original 26 October filing did not contain this sentence. On 5 November METR published an independent assessment based on 11 weeks (12 August to 29 October) of privileged access to Anthropic's internal data and about 15 staff interviews. Its conclusions: as of October 2026 Anthropic is likely improving its models on well-specified tasks at about twice the rate of March 2024 to October 2025 (plausible range 1.3x to 3x); a benchmark index rose 1.9 times faster after October 2025 (95% interval 1.5x to 2.8x); METR guesses roughly 80% of today's acceleration is due to Anthropic's use of AI; it found no clear bottleneck that would stop further speed-up in the next 12 months; and the acceleration was not caused by faster growth in training compute. METR also reports that Anthropic redacted 'a majority of the evidence we found most informative', and that Anthropic dropped a planned check of how its compute is split between capabilities and safety. Oslo Vibe Coding uses Claude in its own work.",
+  "sourceUrl": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+  "sourceLabel": "Read METR's independent assessment",
+  "about": "Anthropic's 2 November 2026 amended S-1 risk factor saying it may imminently meet its Responsible Scaling Policy threshold for dramatically accelerated AI progress attributable to AI, and METR's 5 November independent assessment of AI R&D acceleration at Anthropic: the roughly 2x estimate and its range, the AECI benchmark trend, attribution to AI use, self-reported staff speedups, bottlenecks, Anthropic's redactions and the cancelled compute-allocation check, recursive self-improvement explained, precedents, and what it means for regulation and the public",
+  "keywords": [
+    "Anthropic",
+    "METR",
+    "recursive self-improvement",
+    "RSI",
+    "AI R&D acceleration",
+    "Responsible Scaling Policy",
+    "S-1",
+    "IPO",
+    "Claude",
+    "AI safety",
+    "closing the loop",
+    "independent evaluation"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-s-ai-is-speeding-up-its-own-development-about-twice-as-fast.png",
+    "alt": "Bar chart titled Anthropic's AI progress: about twice the old speed. Pace of AI capability gains in October 2026 compared with the 2024-25 pace, from METR after 11 weeks inside Anthropic: old pace 1x, low end of range 1.3x, METR best guess about 2x, high end of range 3x.",
+    "credit": "Oslo Vibe Coding, from METR",
+    "creditUrl": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Recursive self-improvement, usually shortened to RSI, is the idea that an AI becomes good enough at AI research to speed up the building of its own successor, which is then even better at it, and so on. For years it was a thought experiment. In the first week of November it showed up in two documents with numbers attached.",
+        "On Monday 2 November Anthropic, the maker of Claude, filed an updated version of its stock-market prospectus (the S-1, the document a company must publish before selling shares to the public). TechCrunch spotted a new paragraph in the risk section. Anthropic wrote that its 'internal estimates and our expectations regarding future models, rather than our current models, indicate that we may imminently meet' its own safety policy's definition of 'dramatically accelerated progress attributable to AI'. That sentence was not in the first filing a week earlier.",
+        "On Thursday 5 November METR, a non-profit that evaluates AI systems, published what it found after eleven weeks with unusual access to Anthropic's internal data. The Verge ran it under the headline that the report is 'alarming researchers'. On Hacker News one commenter called it the most important report of the year and complained it was 'barely a whisper'; another called it 'an empty shell' timed to flatter an IPO. Both reactions are worth keeping in mind."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What Anthropic told investors. The amended filing says Anthropic has not designated any current model as crossing the threshold and is still assessing the data. It also admits: 'we have in the past not identified, and may in the future not identify, a significant acceleration in our rate of development until after it has occurred.' Elsewhere it says it does 'not anticipate being able to safely use Claude to fully autonomously design and build successive generations of frontier models without meaningful human supervision or understanding', and that it is considering updates to its Responsible Scaling Policy (its public rulebook for when to add safety measures) 'to keep humans in control'. The same filing calls this loop of each Claude helping build the next 'closing the loop' and pitches it to investors as 'one of the most significant structural advantages in frontier AI'.",
+        "The supporting numbers in the filing, all Anthropic's own: in September 2026 over 90% of contributions to its codebase were written by Claude; code contributed per engineer per day was over 45 times the 2024 level; Claude's success rate on hard, loosely specified engineering problems reached about 90%, up about 50 percentage points in nine months; and the list-price value of Anthropic's internal Claude use grew more than 250-fold from January to September and in April overtook its monthly payroll (excluding stock pay).",
+        "What METR measured. From 12 August to 29 October, METR staff worked on Anthropic laptops with access to internal benchmark scores, training metrics, unreleased models' results, staff surveys and about 15 interviews. Its main conclusion: as of October 2026 Anthropic is 'likely improving the capabilities of their models on well-specified tasks at around twice the rate' it managed between March 2024 and October 2025. It 'would not be surprised' if the true figure were 1.3 times or 3 times. The hardest number behind that is a benchmark index (AECI, Anthropic's version of a public capabilities index from the research group Epoch AI) that has risen 1.9 times faster since October 2025, which METR translates as roughly two years of the old progress in one year. Other reasonable ways of cutting the data give anything from 1.1x to 2.9x.",
+        "Why METR blames the AI. It says it is confident the speed-up is not explained by faster growth in training compute (the raw chips and electricity). Its rough guess is that about 80% of today's acceleration comes from Anthropic's use of AI in its own research, mostly as an assistant to human researchers rather than working alone, though staff described 'signs of life' of more autonomous contributions. Anthropic staff, polled in Slack, reported personal speed-ups as high as 12 times by October; METR calls this 'only very loose evidence'. Most worrying, it found no clear bottleneck in algorithms, compute or data that would stop things speeding up further over the next 12 months, while warning that its view of those bottlenecks 'changed several times'.",
+        "What we were not allowed to see. METR says Anthropic redacted 'a majority of the evidence we found most informative', describing the cuts as aimed at not helping rival labs, and that the public therefore 'has to rely on METR's judgment much more than would be ideal'. Anthropic also tightened its redaction rules in the final week and dropped a part of the contract that would have checked how much of its computing goes to capabilities versus safety; Anthropic said it wanted to revisit that later. METR says it took no payment from Anthropic."
+      ],
+      "pullquote": "METR's best guess: Anthropic's models are improving about twice as fast as they did in 2024 and 2025, and most of that extra speed comes from Claude itself."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a blacksmith. For years she forges tools with the same hammer, and her output grows steadily as she gets more skilled and buys more iron. Then she starts using her best tools to forge better tools, including a better hammer. Next year she makes two years' worth of improvements, and the new hammer is waiting to help with the next round.",
+        "METR has been allowed to watch the forge for eleven weeks. It says the blacksmith is now working about twice as fast, mostly thanks to the new tools, and that it cannot see an obvious shortage of iron or coal that would stop her speeding up again. The catch is that the blacksmith decided which parts of the workshop the visitor could describe to everyone else."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Tools that help build better tools are as old as industry. Computers have helped design faster computer chips for decades, and programming languages are routinely used to write improved versions of themselves. What made AI researchers nervous about RSI was always the speed: a loop where the improver is also the thing being improved could compound faster than people can check it.",
+        "Anthropic has been building towards this disclosure in public. In September its chief executive Dario Amodei asked the industry to slow down, partly because AI was already helping build the next AI, and promised to let outside evaluators in. Six days later Anthropic's policy institute said Claude 'leads' about a quarter of the work on its next models. What is new this month is an independent group putting a measured rate on the speed-up using internal data, and the company telling investors, in a legal document where misstatements carry real liability, that it may be close to its own red line.",
+        "The measured caution cuts both ways. An S-1 is both a disclosure and a sales document, and 'our AI builds our AI faster than anyone else's' is also an attractive pitch to buyers of shares. METR itself lists reasons it could be overestimating (benchmarks favour neat, checkable tasks; Anthropic's earlier pace may have been unusually slow) and reasons it could be underestimating (growth may still be speeding up; automation could arrive suddenly)."
+      ],
+      "links": [
+        {
+          "label": "METR, 5 November 2026: Independent Assessment of AI R&D Acceleration at Anthropic",
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/"
+        },
+        {
+          "label": "Anthropic's amended S-1, filed 2 November 2026 (SEC)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm"
+        },
+        {
+          "label": "TechCrunch: Anthropic warns that it's very close to RSI capability",
+          "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/"
+        },
+        {
+          "label": "The Verge: Why a new report on Anthropic automating AI development is alarming researchers",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development"
+        },
+        {
+          "label": "Hacker News discussion of the METR report",
+          "url": "https://news.ycombinator.com/item?id=50383902"
+        },
+        {
+          "label": "Our September brief: Anthropic says Claude now leads a quarter of the work that builds the next Claude",
+          "url": "https://oslovibecoding.tech/brief/anthropic-says-claude-now-leads-a-quarter-of-the-work-building-the-next-claude"
+        },
+        {
+          "label": "Our September brief: Anthropic's boss asked the AI industry to slow down",
+          "url": "https://oslovibecoding.tech/brief/the-ai-labs-were-asked-to-slow-down-and-said-yes"
+        },
+        {
+          "label": "Our October brief on the first S-1: $1 of computing now earns Anthropic $2",
+          "url": "https://oslovibecoding.tech/brief/anthropic-s-ipo-papers-are-public-1-dollar-of-computing-now-earns-2"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For people using AI at work, the practical meaning is that the gap between model generations may keep shrinking. If Anthropic really is making two years of progress per year, tools that feel cutting-edge today will be overtaken faster than the last wave was, and plans built on 'the AI can't do that yet' age quickly.",
+        "For governments, this is the scenario safety rules were written for. Anthropic's own policy treats dramatically accelerated, AI-driven progress as a trigger for extra safeguards, and METR's work is the first serious outside attempt to measure it. The uncomfortable part is the process: the company chose what the outside reviewer could publish, and dropped the check on how much computing goes to safety. If regulators are going to lean on numbers like these, they will want reviewers who can show their evidence, not just their conclusions.",
+        "The honest bottom line: no one is saying an AI is building itself unsupervised today, and Anthropic says it intends to keep humans in charge. What two independent-ish signals now say is that the loop has started turning faster, and that the people closest to it cannot yet see what would slow it down. Disclosure: Oslo Vibe Coding uses Claude in its own work."
+      ],
+      "pullquote": "Nobody says the AI is building itself unsupervised. The news is that the loop is turning faster, and nobody can yet see what slows it down."
+    }
+  ]
+},
+{
+  "slug": "four-ai-coding-tool-scares-in-one-week-and-what-to-do",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "A fake Claude Code, a leaked email, passwords on GitHub and a pushy Postman: one week of AI coding-tool scares",
+  "dek": "Between 29 October and 7 November, four separate security and privacy problems hit the AI tools people use to write code. None of them was a clever attack on the AI itself. All four came from the same place: these tools hold the keys to your computer, and the keys leaked in ordinary ways. Here is what happened in each case, what the companies did, and five habits that would have protected you from all four.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 8,
+  "takeaway": "On 29 October 2026 an attacker published tampered copies (versions 2.1.312 and 2.1.313) of Anthropic's Claude Code extension on the marketplace used by the Cursor code editor. For about 11 hours, between 2:27am and 1:35pm Pacific time, anyone on macOS or Windows who installed or updated it got hidden code that planted an attacker's login key, set itself to restart after reboots and reported basic details of the machine back to the attacker. Cursor removed it, shut down and rebuilt its marketplace, rotated its keys and had the attacker's server taken offline; it says a bug in the malware stopped the remote-login step on most machines. Anthropic said its own systems and official channels were not compromised. On 5 November a Claude Code user reported that their email address had been sent to websites inside web request headers; an Anthropic engineer said a built-in privacy check that blocks this was already added in version 2.1.317. On 7 November the security firm Apiiro reported finding 1,122 public GitHub files where Claude Code's 'Don't ask again' approvals had saved commands containing passwords or keys into a settings file that was then published; Anthropic said the file is meant to stay local and that it is looking at secret scrubbing. Separately, the API tool Postman automatically installed plugins into users' Claude Code and Codex agents from 24 October and tried to approve its own startup instructions; after public complaints Postman reverted the change on 5 November. The original Postman report says it does not claim any data was taken.",
+  "sourceUrl": "https://cursor.com/blog/claude-code-extension-security-notice",
+  "sourceLabel": "Read Cursor's security notice on the fake Claude Code extension",
+  "about": "Four AI coding-tool security and privacy incidents between 29 October and 7 November 2026: the backdoored Claude Code extension on Cursor's marketplace, Claude Code putting users' email addresses in web request headers, Claude Code 'Don't ask again' permissions leaking passwords into public GitHub repositories, and Postman auto-installing plugins into Claude Code and Codex; what each company did, and practical habits for non-engineers using AI coding tools",
+  "keywords": [
+    "Claude Code",
+    "Cursor",
+    "supply chain attack",
+    "VS Code extension",
+    "backdoor",
+    "privacy",
+    "secrets",
+    "GitHub",
+    "Postman",
+    "Codex",
+    "coding agents",
+    "AI security"
+  ],
+  "heroImage": {
+    "src": "/brief/four-ai-coding-tool-scares-in-one-week-and-what-to-do.png",
+    "alt": "Two panels titled Four AI coding-tool scares in one week. What went wrong: a fake Claude Code on Cursor's store; email address put in web requests; passwords saved into shared files; Postman installed itself into agents. What happened next: pulled after about 11 hours; blocked by default from version 2.1.317; Anthropic is looking at scrubbing; Postman reverted the change.",
+    "credit": "Oslo Vibe Coding, from Cursor, Phorion, Anthropic, Apiiro and Postman",
+    "creditUrl": "https://cursor.com/blog/claude-code-extension-security-notice"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "AI coding tools such as Claude Code (Anthropic's coding agent), Codex (OpenAI's) and Cursor (a code editor built around AI) can read your files, run commands on your computer and reach the internet. That is what makes them useful. It also means that when something goes wrong around them, it goes wrong with your permissions.",
+        "In ten days, four things went wrong. A fake version of Claude Code was handed out through Cursor's extension store. Claude Code was found putting some users' email addresses into requests it sent to websites. A security firm found more than a thousand passwords and keys published on GitHub (the main public home for code) through a Claude Code settings file. And Postman, a popular tool for testing APIs (the connections apps use to talk to each other), quietly installed itself into people's coding agents. Each story reached the top of Hacker News, the tech community's news board. Taken together they are the most useful security lesson for vibe coders this autumn, and none of them needed a genius hacker."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "1. The fake Claude Code (29 October). Cursor runs its own store for extensions (add-ons for the editor). For about 11 hours on 29 October, from 2:27am to 1:35pm Pacific time, the store offered tampered Claude Code extension versions 2.1.312 and 2.1.313 for macOS and Windows. The security firm Phorion took the code apart: the moment the extension loaded, before you clicked anything, it added an attacker's key to the list of keys allowed to log in to your computer, tried to open a hidden tunnel to the attacker's server, set itself up to restart after every reboot under a name that imitated an Apple system file, and sent home your computer's name, username, public IP address, Git email and the names (not the values) of settings that looked like passwords or keys. Cursor removed the versions, shut its whole store down, rebuilt it with new keys and got the attacker's server taken offline. Both Cursor and Phorion found a bug in the malware that, on most Macs and Windows PCs, stopped the actual remote login from working. Both still say that uninstalling the extension is not enough, because the planted key and restart scripts stay behind. Felix Rieseberg of Anthropic wrote that 'it wasn't a compromise of Anthropic's systems', that someone 'used access to Cursor's marketplace' and that 'the versions on our official channels are not affected and this only impacts Cursor users'. Cursor has not said publicly how the attacker got publishing access.",
+        "2. The email in the header (reported 5 November). A user filed a bug saying Claude Code had sent their email address to websites inside the User-Agent header (the short label a program attaches to every web request to say what it is) while it searched the web, and blamed it for a flood of scam email. The bug drew 1,600 points on Hacker News. The likely mechanism, as commenters described it: the AI can see the email of the account it runs under, and some websites, the US Securities and Exchange Commission among them, ask automated visitors to include a contact email in exactly that header, so the model sometimes complied. An Anthropic engineer replied on Hacker News and on the bug that the team had seen the problem on Reddit days earlier and added a built-in check called cc-plugin-privacy that 'deterministically' blocks it, switched on by default from version 2.1.317. Two caveats: the reporter listed version 2.1.318, so it is not clear when the leak happened, and the link between the header and the spam is the user's belief, not something anyone has proven. One heavy user said they checked their own logs and never found the email in a request.",
+        "3. Passwords in the settings file (7 November). When Claude Code wants to run a command, it asks; if you click 'Don't ask again', it saves that exact command as allowed in a file called .claude/settings.local.json inside your project. If the command contained a password, for example a database login typed in full, the password is now in that file. Apiiro, a security company, says it found 1,122 such files in public GitHub repositories. One of the researchers added in the discussion that in 539 of 1,105 repositories they traced, a commit co-authored by Claude itself had changed the file. Boris Cherny of Anthropic's Claude Code team answered that the file 'is meant to stay local', is automatically excluded from Git when Claude creates it, and that the company is 'looking into what we can do to prevent this', such as built-in secret scanning. He also recommended Claude Code's newer auto mode, where a classifier decides what is safe instead of a growing list of manual approvals. Critics replied that a tool should not write passwords into a project folder at all. We could not load Apiiro's own write-up (it sits behind a bot check), so the figures here come from its published headline and its researcher's comments.",
+        "4. Postman moves in (24 October to 5 November). A Postman user on a Mac opened the desktop app and found that it had installed Postman plugins into both Claude Code and Codex, added a startup instruction telling Codex to use Postman for 'any non-trivial API engineering task', connected a remote Postman server and installed a Postman command-line tool. Postman's own log recorded it as an automatic upgrade on 24 October, and the installer's source code tried to mark its own startup instruction as trusted, a decision that should belong to the user. The report reached 1,500 points on Hacker News on 3 November under a headline saying Postman 'attempts to share all API data'. That headline goes further than the evidence: the original report explicitly says it 'does not claim to establish data exfiltration'. On 5 November a Postman employee wrote that the change was meant to 'simplify the setup' and that 'we are reverting this change'."
+      ],
+      "pullquote": "None of the four needed a genius hacker. Each was an ordinary leak through a tool that holds the keys to your computer."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of an AI coding agent as a builder you have given a set of house keys, so they can work while you are out. This week showed four ordinary ways that goes wrong. A stranger in the builder's uniform came through a side entrance, the Cursor store, and quietly copied a key for himself. The builder, asked by some shops to sign a visitor book, signed it with your name and home address. You told the builder your alarm code once, they wrote it on the whiteboard in the hallway, and a few people then put that whiteboard in the front window. And a second tradesman you had hired for one job rearranged your kitchen so his own tools came first, without asking.",
+        "None of that is the builder going rogue or the AI turning evil. It is the old, boring problem of keys and access, made bigger because the new tools are given so much of both."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Mostly no, and that is the useful part. Poisoned add-ons are a well-worn attack: in 2018 a popular JavaScript package called event-stream was handed to a new maintainer who slipped in code to steal from one bitcoin wallet app, and in 2020 attackers hid a backdoor inside a software update from SolarWinds that reached thousands of organisations. Passwords committed to GitHub are so common that GitHub built automatic secret scanning years ago. Apps that install extra things you did not ask for are as old as browser toolbars.",
+        "We have covered this pattern before. In September we wrote about Plugin4Shell, a flaw that let a hijacked plugin update take over Claude Code, Codex, Copilot and Gemini CLI without a click, and in October about attackers who reached an old OpenCode server and ran up users' AI bills with stolen keys. What is new is the scale of the permissions. A browser toolbar could show you ads. A coding agent can read every file in your project, run commands and reach the internet, so the same old mistakes now carry more weight. The encouraging part is speed: Cursor pulled the fake extension within hours, Anthropic shipped the email block before the story peaked, and Postman reversed course within two weeks of the first report.",
+        "A note on our own position: Oslo Vibe Coding uses Claude and Claude Code to run this site, including the tool that publishes these briefs. We have tried to report Anthropic's part in this the same way we would report anyone else's."
+      ],
+      "links": [
+        {
+          "label": "Cursor security notice, 29 October 2026: malicious Anthropic.claude-code 2.1.312 and 2.1.313",
+          "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+        },
+        {
+          "label": "Phorion: Official Claude Code extension compromise, technical advisory",
+          "url": "https://phorion.io/blog/offical-claude-code-vsx-compromise/"
+        },
+        {
+          "label": "Anthropic's Felix Rieseberg on Hacker News: not a compromise of Anthropic's systems",
+          "url": "https://news.ycombinator.com/item?id=50304129"
+        },
+        {
+          "label": "Claude Code issue 107757: email address in the User-Agent header",
+          "url": "https://github.com/anthropics/claude-code/issues/107757"
+        },
+        {
+          "label": "Apiiro: Claude Code's 'Don't ask again' exposes passwords in 1,122 public GitHub files",
+          "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again"
+        },
+        {
+          "label": "Hacker News discussion of the Apiiro findings, with replies from the Claude Code team",
+          "url": "https://news.ycombinator.com/item?id=50407882"
+        },
+        {
+          "label": "Postman issue 14370: desktop auto-installs Codex and Claude plugins (with Postman's reversal)",
+          "url": "https://github.com/postmanlabs/postman-app-support/issues/14370"
+        },
+        {
+          "label": "Our September brief: your coding agent can be hijacked by a plugin update you never clicked",
+          "url": "https://oslovibecoding.tech/brief/your-coding-agent-can-be-hijacked-by-a-plugin-update-you-never-clicked"
+        },
+        {
+          "label": "Our October brief: hackers broke into OpenCode and ran up its users' AI bills",
+          "url": "https://oslovibecoding.tech/brief/hackers-broke-into-opencode-and-ran-up-users-ai-bills"
+        }
+      ]
+    },
+    {
+      "heading": "What to do",
+      "paragraphs": [
+        "First, check the one case that could have touched you directly. If you use Cursor on a Mac or Windows PC and the Claude Code extension installed or updated itself on 29 October, follow Cursor's notice: run its check script, and if it finds anything, remove the planted key and restart scripts (uninstalling is not enough) and change any passwords or keys that were on that computer. If you use Claude Code in VS Code from Microsoft's store, or the Claude Code app itself, Anthropic says you were not affected.",
+        "Then five habits that would have protected you from all four stories. One: install add-ons only from your editor's official store and from the real publisher, and be suspicious of an update you did not expect. Two: keep your AI tools updated; the email fix, for example, only exists in Claude Code 2.1.317 and later. Three: never type a real password or key into a command you approve. Keep secrets in a .env file that your project ignores, and if you have ever clicked 'Don't ask again', open .claude/settings.local.json and check that it holds nothing secret and is listed in your .gitignore file (the list of files Git must never upload). Four: switch on secret scanning in GitHub, which warns you or blocks the upload when a password slips into your code. Five: once a month, look at what plugins and connections your agent has (in Claude Code, type /plugins) and remove anything you do not recognise.",
+        "The measured view: nobody has shown that any of this week's leaks led to a major break-in, and three of the four were fixed or reversed within days. But all four were found by users and outside researchers, not by the companies first. With tools this powerful, a few minutes of housekeeping is the cheapest insurance you can buy."
+      ],
+      "pullquote": "Never type a real password into a command you approve. The AI may remember it for you, in a file you then publish."
+    }
+  ]
+},
+{
+  "slug": "ai-is-finding-old-bugs-faster-than-humans-can-fix-them",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "AI is finding 40 years of old bugs faster than humans can fix them",
+  "dek": "In one week three stories said the same thing. A popular database delayed its release because AI tools found so many bugs. A web-language flaw that had sat ignored since 2024 turned out to be a skeleton key for millions of websites. And OpenAI says its AI found 948 ways to take over Linux computers in about ten days. Finding bugs has become cheap. Fixing them has not.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "On 30 October 2026 Robert Haas, a senior PostgreSQL developer, wrote that PostgreSQL 19 will ship late, probably in November instead of the usual mid-September to mid-October window, because people using large language models are reporting far more bugs: fixes copied back to the release being finished rose more than 60% year on year, and fixes copied back to older releases rose more than 74% (433 commits to REL_18_STABLE in 2026 versus 248 to REL_17_STABLE over the same period of 2025). Three large features were pulled late. On 2 November IEEE Spectrum reported on PHP2Shell, a flaw in the PHP web language (used by WordPress and Drupal sites) that began as a crash bug reported in 2024; an AI-assisted audit by the firm Calif, sponsored by OpenAI, turned it into a way to run code on servers within two weeks, and four engineers then spent two months on the patch. On 4 November OpenAI said a pipeline built on an upcoming cyber model scanned the Linux kernel in mid-October, flagged 2,308 candidate findings, reproduced 1,724 and produced working root-access exploits for 948 distinct vulnerabilities, at about $1.2 million in API cost; after ten days 61 were patched upstream, 43 had patches staged and 299 were being reported. Separately, a critical Linux networking flaw (CVE-2026-98432, CVSS 9.8) reported by an Anthropic researcher was fixed upstream on 11 and 15 October, but as of 5 November Ubuntu had not shipped fixed kernels for its main long-term releases. OpenAI's figures are its own.",
+  "sourceUrl": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+  "sourceLabel": "Read OpenAI's Linux kernel report",
+  "about": "AI-driven vulnerability discovery outpacing human patching capacity in late October and early November 2026: the delayed PostgreSQL 19 release and its back-patch statistics, the PHP2Shell vulnerability and the AI-assisted Calif audit, OpenAI's Linux kernel scan with 948 local privilege escalation exploits and its costs, OpenAI's new cyber model and Daybreak programme, a hobbyist finding a Debian/Ubuntu flaw with GPT 5.6 Sol, and the slow rollout of fixes for CVE-2026-98432 on Ubuntu",
+  "keywords": [
+    "cybersecurity",
+    "vulnerabilities",
+    "bugs",
+    "PostgreSQL",
+    "PHP2Shell",
+    "Linux kernel",
+    "OpenAI",
+    "Daybreak",
+    "open source",
+    "patching",
+    "CVE-2026-98432",
+    "technical debt"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-is-finding-old-bugs-faster-than-humans-can-fix-them.png",
+    "alt": "Bar chart titled AI found 948 ways to take over Linux. 61 were fixed. OpenAI's AI scan of the Linux kernel in mid-October 2026: 2,308 possible bugs flagged, 1,724 bugs reproduced, 948 working root takeovers, 61 already patched ten days after the scan started. Figures from OpenAI, 4 November 2026.",
+    "credit": "Oslo Vibe Coding, from OpenAI's report",
+    "creditUrl": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Three stories in one week told the same story from three angles. On 30 October Robert Haas, one of the core developers of PostgreSQL (a free database that runs inside a huge share of the world's apps and websites), wrote a post titled 'Postgres 19 is late, and it's AI's fault'. On 2 November IEEE Spectrum, the magazine of the world's largest engineering association, described a flaw called PHP2Shell that put sites from NASA to Wikipedia at risk, and quoted a researcher saying 'all the legacy software that was written by humans over the last 40 years is being exposed.' On 4 November OpenAI published a report on pointing its newest cyber-focused AI at the Linux kernel (the core of the operating system that runs most servers, clouds and Android phones).",
+        "All three reached the top of Hacker News, the tech community's news board, and all three make the same point: AI has made finding bugs dramatically cheaper. The people who have to fix them are still the same people."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "PostgreSQL. For a decade, new major versions have shipped between mid-September and mid-October. Version 19 will most likely arrive in November, and three big features were pulled late in testing. Haas's numbers: fixes that had to be copied back into the release being finished rose more than 60% compared with the same months of 2025, and fixes copied back into the previous release as well jumped more than 74%, from 248 to 433. His explanation is that 'a huge number of people on the Internet are now reporting bugs in PostgreSQL that they found using LLMs' (large language models, the technology behind ChatGPT and Claude). AI can draft fixes too, he writes, but they 'aren't always correct', so humans still review and commit every one, 'and those humans have not gotten any smarter between 2025 and 2026.'",
+        "PHP2Shell. PHP is a programming language from 1994 that still runs WordPress, Drupal and countless older sites. The bug behind PHP2Shell was reported in 2024 as a mere crash, the kind of report that sits in a queue for years. Earlier this year the security firm Calif, sponsored by OpenAI, audited PHP and, with AI tools, turned that crash into a way to run any code on the server within two weeks. Disaster was avoided: it was reported privately and patched before attackers found it. But it took four engineers two months to build that patch. Columbia University's Suman Jana summed up the problem: 'There is a fundamental asymmetry in finding bugs and fixing bugs.'",
+        "Linux, by OpenAI's numbers. In mid-October OpenAI ran a pipeline of AI agents built on an unreleased cyber model over the Linux kernel. It flagged 2,308 possible bugs, reproduced 1,724 of them in test machines, and produced 948 distinct 'local privilege escalation' exploits: ways for an ordinary user on a computer to make themselves its administrator, called 'root'. The whole run cost about $1.2 million in API fees; each successful exploit cost about $359. OpenAI notes that at past hacking-competition prize levels those exploits would be worth $19 million to $66 million. Ten days after the scan, 61 had been fixed upstream, 43 had fixes waiting and 299 were being reported. In July, an earlier model running the same kind of search found 166. These are OpenAI's own figures in its own report.",
+        "The long tail of fixing. A separate example shows what happens after a fix exists. A critical flaw in how Linux handles incoming internet connections, CVE-2026-98432, scored 9.8 out of 10, was reported by an Anthropic researcher, whose Claude model wrote a working attack. The Linux developers shipped a four-line fix on 11 and 15 October. Red Hat shipped fixed versions on 1 November. As of 5 November, according to a tracker by Atlas Security, Ubuntu (one of the most widely used server versions of Linux) still listed its main long-term releases as vulnerable, with fixes in testing.",
+        "And it is spreading to amateurs. TechCrunch reported on 5 November that a robotics startup founder found a severe flaw in software used by Ubuntu and Debian servers by asking OpenAI's GPT 5.6 Sol to find bugs 'as bad or worse' than one he had found years ago. It came back in two hours. He says he spent about $5,000 on subscriptions and tokens in total."
+      ],
+      "pullquote": "Finding a bug now costs a few hundred dollars of AI time. Fixing it still costs a human's week."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine an old apartment building where every flat has small cracks, leaky pipes and loose wiring that nobody ever noticed. One day the building gets an inspector with X-ray vision who walks through every flat in an afternoon and leaves a list of 2,000 problems on the caretaker's desk. The building did not get worse overnight. It was always like this. But there is still one caretaker, the list is now taller than the desk, and burglars can hire the same X-ray inspector.",
+        "That is what is happening to the software the world runs on. Most of it is maintained by small teams, often volunteers, and the AI inspector works far faster than they can repair."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Software has always had more bugs than anyone could fix, and automated bug-finding is old. In 2014 Heartbleed, a flaw in the free OpenSSL encryption library, showed that critical internet software was being kept alive by a handful of underpaid volunteers. 'Fuzzers', programs that throw random input at software until it crashes, have produced floods of bug reports since the 2010s; Google's OSS-Fuzz has reported thousands. Those floods were mostly crashes. What is new is that AI does the hard part fuzzers could not: working out which crash is dangerous, writing a real attack to prove it, and doing it in hours for a few hundred dollars. PHP2Shell is exactly that: a 2024 crash report nobody prioritised, turned into a skeleton key.",
+        "We have been tracking this curve. In August OpenAI warned that one of its own unreleased models was a 'critical' cyber risk. In October we wrote about Claude cracking a 1997 cryptography puzzle in half an hour, and about Google limiting Gemini 4 Carbon to vetted cyber defenders. This week is the first time the cost shows up in ordinary release schedules and patch queues."
+      ],
+      "links": [
+        {
+          "label": "Robert Haas, 30 October 2026: Postgres 19 is late, and it's AI's fault",
+          "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html"
+        },
+        {
+          "label": "IEEE Spectrum, 2 November 2026: PHP2Shell is a wake-up call for AI in cybersecurity",
+          "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability"
+        },
+        {
+          "label": "OpenAI, 4 November 2026: A thousand fewer paths to root",
+          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+        },
+        {
+          "label": "TechCrunch, 5 November 2026: OpenAI released a new cybersecurity model. Is that enough?",
+          "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/"
+        },
+        {
+          "label": "Atlas Security: Linux's October 2026 TCP use-after-free, CVE-2026-98432",
+          "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf"
+        },
+        {
+          "label": "Hacker News discussion of the Postgres post (850+ points)",
+          "url": "https://news.ycombinator.com/item?id=50312408"
+        },
+        {
+          "label": "Our August brief: OpenAI says one of its own unreleased models might be a critical cyber risk",
+          "url": "https://oslovibecoding.tech/brief/openai-just-called-one-of-its-own-models-a-critical-cyber-risk"
+        },
+        {
+          "label": "Our October brief: Google's Gemini 4 Carbon tops the chart. Only cyber defenders can use it",
+          "url": "https://oslovibecoding.tech/brief/google-s-gemini-4-carbon-tops-the-chart-and-only-cyber-defenders-can-use-it"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For everyone: install updates promptly. Johns Hopkins professor Matthew Green's advice in the IEEE piece is the most useful sentence in this whole story: when your phone or laptop offers a security update, 'don't wait till next week. Just do it.' Fixes are now arriving faster than ever, and so are the people looking for unpatched machines.",
+        "For builders and companies in Oslo: assume the old code you depend on will be scanned by someone's AI, friendly or not. The defensive move is to scan it yourself first, keep dependencies current, and budget human time for reviewing fixes, because that is now the bottleneck. OpenAI has announced a $1 billion programme for defenders of critical infrastructure and says it is spending a 'significant amount' of computing on open-source fixes, but TechCrunch points out its Linux scan cost about $1.2 million, a small sum next to the scale of the problem.",
+        "The measured view: this is mostly good news delivered in an uncomfortable way. Bugs that would have stayed hidden for decades are being found by defenders first, and Haas thinks PostgreSQL's delay reflects its care for quality. The worry, which Haas also voices, is the backlog: 'given that we have forty years of bugs that humans were unable to find but LLMs are quite capable of discovering, how are we ever going to catch up?' Nobody has a full answer yet."
+      ],
+      "pullquote": "The building did not get worse overnight. It just got an inspector with X-ray vision, and still has one caretaker."
+    }
+  ]
+},
+{
+  "slug": "an-ai-edited-another-ai-s-brain-directly-here-is-what-is-real",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "An AI edited another AI's 'brain' directly and its maths score jumped six times. Here is what is real",
+  "dek": "On 2 November four MIT researchers reported that OpenAI's GPT-6 Astra can look at the raw numbers inside a neural network, say what it was trained to do, and even rewrite those numbers to fix it. It became the most upvoted AI story of the week on Hacker News, and within a day a well-known AI engineer called the post misleading. Both sides have a point. Here is what was shown, what was oversold, and why it still matters.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "On 2 November 2026 Rikiya Takehi, Jayden Teoh, Alex Zhang and Omar Khattab of MIT CSAIL published 'Sparks of Weight-Space Programming', a blog post (not a peer-reviewed paper) reporting eight experiments in which OpenAI's GPT-6 Astra read or wrote neural network weights. With the raw numbers pasted into its prompt and no tools, Astra named which of four games each of four small networks (17,253 weights each) had been trained on, named the shape three small image generators draw, and fixed a stuck car-driving network (171,664 weights) so it succeeded in all 1,024 test runs by changing 3.5% of its weights. With no training at all it wrote small game-playing networks that beat networks trained for 100 million steps, though they beat the 500-million-step versions only in Breakout. The headline result, raising the small Qwen3.5-0.8B model from 7.9% to 48.1% on the MATH-500 test by editing 0.016% of its weights, used a Python workspace and 50 batches of test runs, and worked by removing a 'looping' fault rather than adding maths skill: the same method could not improve Google's Gemma 3 270M, and Astra could not spot a deliberately sycophantic model from its weights alone. On 3 November Matthew Honnibal, author of the spaCy language library, called the post misleading for presenting tool-assisted engineering alongside the 'just by looking at the raw weights' claim, which only applies to the three smallest experiments. The same day Simon Willison showed Qwen 3.8 27B, running on his laptop, naming three of the four games from the published prompts in 46 to 65 minutes each. The authors have published full logs on GitHub.",
+  "sourceUrl": "https://rikiyat.github.io/blog/weight-space-programming/",
+  "sourceLabel": "Read the MIT researchers' post on weight-space programming",
+  "about": "The 'Sparks of Weight-Space Programming' blog post of 2 November 2026 by MIT CSAIL researchers, in which OpenAI's GPT-6 Astra read and edited neural network weights: the game, shape, language, car-control, Go and Qwen maths experiments, Matthew Honnibal's rebuttal that the post mixes no-tool reading with tool-assisted engineering, Simon Willison's replication of the game experiment with Qwen 3.8 27B on a laptop, Hacker News reaction, precedents in interpretability and model editing, and what it could mean for auditing and self-improving AI",
+  "keywords": [
+    "GPT-6 Astra",
+    "OpenAI",
+    "neural network weights",
+    "weight-space programming",
+    "interpretability",
+    "Qwen",
+    "model editing",
+    "MIT CSAIL",
+    "Simon Willison",
+    "Matthew Honnibal",
+    "recursive self-improvement",
+    "Hacker News"
+  ],
+  "heroImage": {
+    "src": "/brief/an-ai-edited-another-ai-s-brain-directly-here-is-what-is-real.png",
+    "alt": "Two panels titled An AI read and rewrote another AI's numbers. What held up: named the game from 17,000 raw numbers; fixed a stuck car network, 0% to 100%; wrote game players with no training; full logs published on GitHub. What was oversold: the Qwen maths jump used code and 50 test runs; it removed a looping fault and added no maths skill; failed to spot a sycophantic model from weights; a laptop model can do the game test too. Caption: MIT post, 2 November 2026, and the rebuttals that followed.",
+    "credit": "Oslo Vibe Coding, from the MIT CSAIL post, Matthew Honnibal and Simon Willison",
+    "creditUrl": "https://rikiyat.github.io/blog/weight-space-programming/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "Every AI model is, underneath, a huge list of numbers called weights (the settings a model learns during training, which decide how it turns an input into an answer). Nobody writes them by hand. They come out of training, and to people they look like noise: reading them is a bit like being handed a page of a billion random-looking decimals and asked what they are for.",
+        "On Monday 2 November four researchers at MIT's computer science lab (Rikiya Takehi, Jayden Teoh, Alex Zhang and Omar Khattab) published a long blog post claiming that OpenAI's newest model, GPT-6 Astra, can do exactly that: read raw weights, tell what a network was trained to do, and rewrite the numbers to fix or improve it. They call it 'weight-space programming'. The headline example was dramatic: Astra edited 0.016% of the weights of Qwen3.5-0.8B, a small free model from Alibaba, and its score on a standard maths test rose from 7.9% to 48.1%. The post reached 2,960 points on Hacker News, the tech community's news board, the most of any AI story that week.",
+        "By the next morning the pushback had arrived, led by Matthew Honnibal, the author of the widely used spaCy language library, under the title 'The Astra post is misleading'. Simon Willison, a well-known developer who writes about AI, then ran one of the experiments himself on a laptop."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What Astra did with nothing but the numbers. The researchers trained four identical small networks (17,253 weights each) to play grid versions of Breakout, Pong, Pac-Man and Freeway, pasted the weights into Astra's prompt as plain text, gave it no tools, and asked which game each one played. It named all four without being told the options. It also named the shape (circle, square or triangle) that each of three tiny image generators draws. And given a car-driving network that always got stuck on a ramp (171,664 weights), plus one recording of it failing, Astra rewrote 3.5% of the weights in a single reply. The car then succeeded in all 1,024 test runs, up from zero.",
+        "Writing networks from scratch. Given only the rules and source code of three simple games, Astra wrote the weights of a playing network directly, with no training, no data and no test runs. Those networks beat ones trained the normal way for 100 million steps in all three games. Against networks trained for 500 million steps, they won clearly in Breakout and lost in the other two, a detail that sits in a table rather than in the summary.",
+        "The Qwen maths result, read closely. Here Astra was not working by eye. It had a Python workspace (a place to write and run code over the weights) and could run the model on batches of practice problems up to 50 times. It found that the small model often loops, repeating itself until it runs out of space, a fault Qwen's own documentation warns about. It traced the looping to one pattern in two layers and subtracted it. With 50 test batches, answers that hit the length limit fell from 93% to 33%, the maths score went from 7.9% to 48.1%, and an instruction-following score tripled from 21.0% to 62.3%. With 10 or 25 batches the fix barely worked. On Google's tiny Gemma 3 270M, which does not loop, Astra could not improve maths at all. The authors say it plainly: editing removed 'an obstacle that hid an ability', it did not add a new one.",
+        "Where it failed. Asked which of two copies of a small Gemma model had been trained to be sycophantic (always agreeing with the user), Astra could not tell from the weights in four attempts. It succeeded only after it was allowed to watch where each model's attention went on texts it wrote itself.",
+        "The rebuttal. Honnibal's point is about packaging. The 'just by looking at the raw weights' line in the summary describes only three experiments, all on networks of 17,000 to 172,000 weights. Every experiment on a real language model used Python, and the Qwen one also ran the model. That, he writes, is what 'a human ML engineer could do', and models of a year or two ago would have failed at it, so it is still an achievement. But it is a different achievement, and putting both under one headline makes it look like a single deep ability.",
+        "The replication. Willison took the researchers' published game prompts and ran them on Qwen 3.8 27B, a free model he runs on his own laptop. It named Pac-Man, Pong and Breakout correctly, taking 46 minutes to over an hour each, and missed Freeway. His conclusion: impressive, but 'a sufficiently experienced human being armed with a notepad and a pencil could get there with enough effort'."
+      ],
+      "pullquote": "Editing removed an obstacle that hid an ability. It did not add a new one."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of an old player piano, the kind that plays itself from a long paper roll full of punched holes. The no-tools experiments are like handing someone the roll and asking them to name the tune without playing it. For a short roll, a sharp musician can do it by spotting patterns: a run of holes here, a repeated chord there. That is surprising and genuinely interesting.",
+        "The Qwen result is a different job. That is a piano technician who notices the piano keeps repeating one bar, finds the stuck key, and fixes it with proper tools after playing the piano 50 times. The tune comes out much better. The technician did not teach the piano a new song."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Editing a model's weights by hand is not new. Since 2022 researchers have rewritten individual facts inside language models, and in 2024 a widely used technique showed that a model's tendency to refuse requests lives largely in one direction inside it, which can be subtracted out. Astra's Qwen fix is the same kind of move, aimed at looping. A whole research field, mechanistic interpretability (reverse-engineering what the parts of a network do), exists to read weights, usually with purpose-built tools. The researchers say so themselves and cite this work.",
+        "What is new is who did it. A general-purpose chatbot, used as it is, worked out a known interpretability method (finding 'copying heads', the parts that let a model repeat earlier text) without being told it existed, and did the reading in plain text on small networks. That is the part that impressed even the sceptics. On Hacker News, one commenter who works on weight-space learning urged readers to 'actually read the paper before losing your mind'; another suspected OpenAI deliberately trained Astra on this kind of data as a route to self-improving AI.",
+        "That last idea is why the story travelled. The authors list 'recursive self-improvement' (an AI improving its own successor) as one possible future use. Nothing in these experiments shows that, and the largest network Astra edited was about 0.8 billion weights, hundreds of times smaller than the frontier models themselves."
+      ],
+      "links": [
+        {
+          "label": "Takehi, Teoh, Zhang and Khattab (MIT CSAIL), 2 November 2026: Sparks of Weight-Space Programming",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+        },
+        {
+          "label": "Matthew Honnibal, 3 November 2026: The Astra post is misleading",
+          "url": "https://honnibal.dev/blog/astra-read-write-misleading"
+        },
+        {
+          "label": "Simon Willison, 3 November 2026: Qwen 3.8 27B on my laptop can interpret model weights, too",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+        },
+        {
+          "label": "Full experiment logs on GitHub",
+          "url": "https://github.com/RikiyaT/lm_understand-logs"
+        },
+        {
+          "label": "Hacker News discussion of the original post (2,960 points)",
+          "url": "https://news.ycombinator.com/item?id=50341174"
+        },
+        {
+          "label": "Hacker News discussion of the rebuttal (1,041 points)",
+          "url": "https://news.ycombinator.com/item?id=50351111"
+        },
+        {
+          "label": "Our brief on where GPT-6 Astra ranks: Google's Gemini 4 Carbon tops the chart",
+          "url": "https://oslovibecoding.tech/brief/google-s-gemini-4-carbon-tops-the-chart-and-only-cyber-defenders-can-use-it"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "The most useful near-term idea in the post is auditing. If an AI can read a network's weights and say what it does, it could one day check a downloaded model for hidden problems, such as a planted backdoor, without having to guess the right test in advance. The honest status today: that works on networks of tens of thousands of numbers, and it failed on the one realistic auditing test in the post, the sycophantic model.",
+        "The second idea is cheaper fixes. Retraining a model to cure a flaw costs data and computing time; a targeted edit of 0.016% of the weights costs neither, and leaves the rest of the model alone. For builders who run small open models, that is worth watching, especially because the tooling is ordinary Python.",
+        "The measured verdict: real, early and oversold in its summary line. The authors deserve credit for publishing every prompt, every line of code and every result, which is exactly what let Willison test it within a day and Honnibal point out the gap. That is how a surprising claim is supposed to be checked."
+      ],
+      "pullquote": "Real, early and oversold in its summary line. Publishing every log is what let the internet check it within a day."
+    }
+  ]
+},
+{
+  "slug": "a-new-ai-test-built-from-real-work-the-best-model-scores-12-percent",
+  "status": "published",
+  "datePublished": "2026-11-08",
+  "title": "A new AI test built from real expert work: the best model scores 12%",
+  "dek": "Two months ago OpenAI's newest model scored close to 100% on several of the industry's hardest exams. On 3 November SemiAnalysis, the chip and AI research firm, launched GDPx, a test built from real work in finance, law, chip design, biology and cybersecurity. The best model, Anthropic's Claude Opus 5.5, scores 12%. Here is what that number means, and what it does not.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 7,
+  "takeaway": "SemiAnalysis launched GDPx v1.0 on 3 November 2026 (article dated 2 November), a benchmark of 206 tasks across 11 domains it considers the most valuable for frontier AI: chip design, cybersecurity, biology, finance, legal, quant trading, recursive self-improvement (AI improving AI), hardware design, materials science, alignment and software engineering. Tasks came from 14 specialised data companies, each run inside a realistic work environment (for example a private-equity deal room of about 4,000 anonymised files), with up to 8 hours per task and each model run in its own native tool where one exists. The leaderboard averages all domains equally across three attempts: Claude Opus 5.5 12.0% (about $51 per task), Gemini 4 Carbon 10.9% ($16), GPT-6 Astra 9.6% ($54), Meta's Muse Wonder Full 9.0%, Claude Fable 5.1 8.5%, GPT 6.1 Sol 8.4% ($9.80), and the best open model, DeepSeek 4.1 Flash 1017, 5.4% at under $1 per task. On the intended pass-or-fail grading, every model scored 0% on finance and legal, so those domains are reported as partial credit. SemiAnalysis says safety filters lower the scores of Opus and Astra in cyber, biology and alignment. GDPx is SemiAnalysis's own benchmark built with commercial partners who sell training data to AI labs; it is new and not yet independently replicated.",
+  "sourceUrl": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+  "sourceLabel": "Read the SemiAnalysis GDPx launch article",
+  "about": "SemiAnalysis's GDPx benchmark, launched 3 November 2026: why popular AI benchmarks saturate or are unfair, how GDPx builds realistic work environments with 14 data partners across 11 domains, the leaderboard and cost per task, pass-or-fail versus partial grading, the zero scores in finance and legal, safety filters, comparison with OpenAI's GDPval and earlier saturated exams, and what a 12% score means for AI and jobs",
+  "keywords": [
+    "GDPx",
+    "SemiAnalysis",
+    "AI benchmark",
+    "GDPval",
+    "Claude Opus 5.5",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "AI agents",
+    "evaluation",
+    "finance",
+    "AI and jobs",
+    "benchmark saturation"
+  ],
+  "heroImage": {
+    "src": "/brief/a-new-ai-test-built-from-real-work-the-best-model-scores-12-percent.png",
+    "alt": "Bar chart titled A test built from real expert work. The best AI scores 12%. GDPx scores averaged across 11 high-value domains and 206 tasks: Claude Opus 5.5 12.0%, Gemini 4 Carbon 10.9%, GPT-6 Astra 9.6%, best open model DeepSeek 5.4%.",
+    "credit": "SemiAnalysis",
+    "creditUrl": "https://gdpx.semianalysis.com"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On 3 November SemiAnalysis, the research firm best known for its work on AI chips and datacentres, launched GDPx, a new benchmark (a standard test used to compare AI models). It was built with 14 small companies that make training material for AI labs, each an expert in one field. The result is 206 tasks across 11 areas where SemiAnalysis expects advanced AI to earn the most money in the next year or two: chip design, cybersecurity, biology, finance, law, quant trading (computer-driven stock trading), AI research itself, hardware design, materials science, alignment (whether a model behaves safely and stays within its instructions) and software engineering.",
+        "The headline: the best model scores 12%. That is a striking number in a year when the top models keep scoring near 100% on the industry's hardest exams. In September, OpenAI's GPT-6 Astra scored 100%, 99.9% and 97.6% on three of them, as we covered at the time. So which number is right?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The leaderboard. Averaging all 11 areas equally over three attempts per task: Anthropic's Claude Opus 5.5 12.0%, Google's Gemini 4 Carbon 10.9%, OpenAI's GPT-6 Astra 9.6%, Meta's Muse Wonder Full 9.0%, Claude Fable 5.1 8.5%, GPT 6.1 Sol 8.4% and Claude Sonnet 5.5 8.2%. The best free-to-download model, DeepSeek 4.1 Flash, scored 5.4%; China's GLM 5.3 scored 2.7%. Cost varies wildly: Opus spent about $51 per task, Gemini 4 Carbon about $16, and DeepSeek and OpenAI's cheap GPT-6 Luna under $1, for roughly half the top score.",
+        "Why the tasks are hard. Most popular tests hand the model everything it needs in one tidy prompt. GDPx drops it into a realistic workplace and lets it dig. One finance task is built from a real private-equity deal (an investment firm buying about 62% of a snack company for $880 million, with all names changed): the model must navigate a deal room of roughly 4,000 files, emails and spreadsheets, as a junior accountant on the real deal did. Cyber tasks are built on real, previously unknown security holes in running software. Materials tasks put the model inside a simulated laboratory. Each task allows up to 8 hours, and each model works in its own maker's tool where one exists, such as Claude Code for Opus.",
+        "The zeros. SemiAnalysis grades finance and law pass-or-fail by design, because a single wrong cell in a spreadsheet can sink a deal. On that grading every model scored 0% in both. The leaderboard therefore shows partial credit for those two. The failures are instructive: in the deal task, 15 runs counted the banker's success fee as debt when the purchase agreement deducts it separately, and 17 kept a family member who logged no hours on the payroll as a real business cost. In quant trading, 70 of 111 runs did worse than the simple strategy they were asked to beat.",
+        "Where each model shines. By SemiAnalysis's account Opus 5.5 wins quant trading, hardware design and chip design; Gemini 4 Carbon wins biology and narrowly software engineering; GPT-6 Astra wins AI research and materials science. SemiAnalysis also says the safety filters on Opus and Astra pull their scores down in cyber, biology and alignment, where they sometimes refuse, and that Meta's Muse Wonder Full is currently the best cyber model 'by a meaningful margin'.",
+        "Who built it. These are SemiAnalysis's own claims about its own test. Its partners sell training data to AI labs, and the two SemiAnalysis authors previously co-founded such a company. SemiAnalysis says every partner had to pass its quality checks on the first try and that it dropped several well-known ones that did not. When it ran the same checks on Terminal-Bench 4.0, a popular coding-agent test, nearly half the tasks were flagged as broken."
+      ],
+      "pullquote": "On pass-or-fail grading, every model scored zero in finance and law."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a driving test. Most AI benchmarks have been the written theory exam: clear questions, one right answer, everything you need on the page. The best models now ace it. GDPx is closer to driving through Oslo at rush hour in an unfamiliar car, with roadworks, a confusing sat-nav and a passenger who gives half the directions. Passing the theory exam with full marks is real knowledge. It just does not tell you whether someone can do the drive.",
+        "A 12% score does not mean the AI is useless. It means that on long, messy, expert-level jobs, where one mistake fails the whole task, today's best model gets the equivalent of about one in eight right on its own. Partial credit and human checking change that picture a lot, which is how most people actually use these tools."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Hard benchmarks are a recurring cycle. A test is built to be difficult, models catch up, and within a year or two it is 'saturated' (top models score so high it can no longer tell them apart). Humanity's Last Exam, launched in early 2025 as a set of questions even experts struggle with, began with top models scoring in single digits; in September we wrote about GPT-6 Astra maxing out three other hard exams. Benchmarks with low headline scores are also not new; every fresh test starts that way.",
+        "What is newer is the shape. The closest predecessor is OpenAI's GDPval from September 2025, which measured AI on tasks drawn from real jobs and is still quoted on model launch pages. SemiAnalysis argues GDPval is now inadequate because each task spoon-feeds the context in a short prompt, and because its rubric grading is noisy: OpenAI's own human experts agreed with each other only 71% of the time. GDPx's bet is that the hard part of real work is finding the right information in a pile of files, not writing the final report. SemiAnalysis also openly picked the areas by where it thinks AI money will be made, and left out fields such as government, real estate and insurance. That makes GDPx a test of the frontier, not of the average job.",
+        "The fair caution: GDPx is one week old, built by one firm and its partners, and not yet reproduced by anyone else. SemiAnalysis plans a new version every three to six months."
+      ],
+      "links": [
+        {
+          "label": "SemiAnalysis, 2 November 2026: GDPx, measuring frontier model capabilities",
+          "url": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities"
+        },
+        {
+          "label": "The GDPx leaderboard",
+          "url": "https://gdpx.semianalysis.com"
+        },
+        {
+          "label": "SemiAnalysis Ep. 042: GDPx, the benchmark for frontier AI (video)",
+          "url": "https://www.youtube.com/watch?v=WPV3F4Gt1hQ"
+        },
+        {
+          "label": "Our September brief: OpenAI's new model maxed out the tests",
+          "url": "https://oslovibecoding.tech/brief/openais-new-model-maxed-out-the-tests"
+        },
+        {
+          "label": "Our October brief: Google's Gemini 4 Carbon tops the chart",
+          "url": "https://oslovibecoding.tech/brief/google-s-gemini-4-carbon-tops-the-chart-and-only-cyber-defenders-can-use-it"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For anyone choosing an AI tool, the useful lessons are the uneven ones. No model wins everywhere: SemiAnalysis's charts show sharp spikes by field, so the best choice for a chip designer may not be the best for a biologist. Safety filters matter in practice: a model that refuses part of a security job scores lower even if it is more capable. And price is a real variable: Gemini 4 Carbon reached about 90% of the top score at about a third of Opus's cost per task.",
+        "For the bigger 'will AI take expert jobs' question, GDPx is a sober data point. On end-to-end deal accounting, contract redlining and trading research, today's best models still fail the pass-or-fail version of the job. That is the honest picture this week: very strong assistants, not yet independent professionals. The measured caveat runs the other way too. These are the hardest tasks SemiAnalysis's partners could build, and earlier 'impossible' tests did not stay hard for long. The number to watch is not 12% itself but how fast it moves in the next version."
+      ],
+      "pullquote": "Very strong assistants, not yet independent professionals. The number to watch is how fast 12% moves."
+    }
+  ]
+},
+{
   "slug": "datacentres-lost-the-us-midterms-the-fight-is-over-2028",
   "status": "published",
   "datePublished": "2026-11-08",
