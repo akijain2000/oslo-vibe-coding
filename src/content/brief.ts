@@ -36,6 +36,121 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "ai-datacentres-are-learning-to-turn-themselves-down-when-the-grid-is-stressed",
+  "status": "published",
+  "datePublished": "2026-11-09",
+  "title": "AI datacentres are learning to turn themselves down when the grid is stressed. OpenAI just made it a promise",
+  "dek": "The usual story is that AI datacentres need full power every second of every day. Field tests in Phoenix and London say otherwise: AI clusters cut their power by 25% to 40% on request without breaking the work they were doing. A week ago OpenAI turned the idea into a national pledge, starting with up to a gigawatt of flexible demand in Georgia. Here is what was actually tested, how it works, and what is still a promise.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 2 November 2026 OpenAI launched its Grid Protectors Program, a non-binding national plan to make its future US datacentre campuses cut electricity use when the grid is under strain, with the details to be agreed campus by campus with utilities. Its first model is the planned Effingham County campus in Georgia, where the agreement with Georgia Power includes up to 1,000 megawatts of flexible demand response, which OpenAI compares to the average demand of roughly 700,000 households; the campus is still in development. The idea has been tested at small scale. In May 2025 a 256-GPU Nvidia A100 cluster at an Oracle datacentre in Phoenix, run by Emerald AI's software with the utility Salt River Project and the research body EPRI, cut its power by 25% for three hours during real peak demand while keeping AI jobs within their agreed performance limits (Emerald AI paper, arXiv 2507.00909). In December 2025 a 96-GPU Nvidia Blackwell Ultra cluster at Nebius near London met every requested target across more than 200 simulated grid events, cutting power by up to 40% in under a minute and about 30% within 30 seconds, and held reductions for up to 10 hours (National Grid, NVIDIA). A 2025 Duke University study estimated the US grid could connect about 76 GW of new flexible load if it accepted cuts averaging 0.25% of the year, roughly 22 hours. The test results are reported by Emerald AI and its partners; Nvidia is an investor.",
+  "sourceUrl": "https://openai.com/index/grid-protectors-program",
+  "sourceLabel": "Read OpenAI's Grid Protectors announcement",
+  "about": "Grid-responsive AI datacentres: OpenAI's Grid Protectors Program of 2 November 2026 and its Georgia Power agreement for up to 1 GW of flexible demand, the Emerald AI field tests in Phoenix (2025) and London (2025) with Oracle, Nebius, National Grid, NVIDIA and EPRI, how AI workloads are paused, shifted or power-capped, the GPU power-performance curve discussed by SemiAnalysis and Pebble, the Duke University estimate of grid headroom for flexible load, precedents from bitcoin miners and heavy industry, and what it means for Norway",
+  "keywords": [
+    "datacentres",
+    "data centers",
+    "demand response",
+    "grid flexibility",
+    "OpenAI",
+    "Grid Protectors Program",
+    "Georgia Power",
+    "Emerald AI",
+    "National Grid",
+    "Nebius",
+    "EPRI DCFlex",
+    "electricity",
+    "SemiAnalysis",
+    "Pebble"
+  ],
+  "heroImage": {
+    "src": "/brief/ai-datacentres-are-learning-to-turn-themselves-down-when-the-grid-is-stressed.png",
+    "alt": "Bar chart titled How far an AI datacentre can turn itself down. Phoenix test, held for 3 hours: 25%. London test, within 30 seconds: about 30%. London test, in under a minute: up to 40%. Caption: every requested cut was met; OpenAI now promises up to 1 GW in Georgia.",
+    "credit": "Oslo Vibe Coding diagram; figures from Emerald AI, NVIDIA and OpenAI",
+    "creditUrl": "https://www.nvidia.com/en-us/case-studies/emerald-ai/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Monday 2 November, the day before the US midterm elections, OpenAI announced what it calls the Grid Protectors Program. The promise: its future datacentre campuses (the warehouse-sized buildings full of chips that train and run AI models) will be built so they can use less electricity when the power grid is under strain, during a heat wave or a cold snap, so that homes and businesses keep their power.",
+        "The timing was not an accident. As we wrote yesterday, datacentres became an election issue across America, mostly over who pays for the grid. OpenAI's head of energy policy, John McCarrick, told Axios that a year ago other big cloud companies were still defending the idea that a datacentre must be available 99.999% of the time, and that he doesn't think anybody's doing that now. The interesting question for the rest of us: can an AI datacentre really turn itself down without breaking, or is this a press release?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The pledge. OpenAI calls the programme an 'ambition', not a fixed policy. Arrangements will be agreed campus by campus with utilities: how much demand can be cut, how fast and for how long. The first example is its planned campus in Effingham County, Georgia, where the agreement with Georgia Power, the state's main utility, includes up to 1,000 megawatts (one gigawatt) of flexible demand response. OpenAI compares that to the average electricity use of roughly 700,000 households. The campus is still being developed, so none of this has been used yet. Georgia Power separately projects about $950 million a year in customer savings from 2029 across its large-customer deals, a utility estimate, not a measured result.",
+        "The Phoenix test. In May 2025 a startup called Emerald AI ran its control software on a 256-chip cluster of Nvidia A100 GPUs (the graphics chips that do AI work) in an Oracle datacentre in Phoenix, Arizona, together with the local utility Salt River Project and EPRI (the US electricity industry's research institute). On 3 May, a hot day when air conditioning pushed the grid to its peak, the cluster cut its power use by 25% and held it there for three hours, while every AI job stayed inside the performance limits its owner had agreed to. The results are in a paper Emerald and its partners published in June 2025.",
+        "The London test. In December 2025 the same software ran for five days on a cluster of 96 of Nvidia's newer Blackwell Ultra chips at a datacentre run by Nebius near London, drawing about 130 kilowatts, roughly 400 British homes. National Grid and EPRI sent more than 200 simulated grid emergencies, some with zero warning, some copying the surge when the whole country puts the kettle on at half time in a football match. According to National Grid and NVIDIA, the cluster met every requested target: up to 40% less power in under a minute, about 30% within 30 seconds, and cuts held for up to 10 hours.",
+        "How it works. Mostly by being clever about which work can wait. Training a model (teaching it, which can take weeks) has natural pause points, so a job can be slowed, paused or pushed to later in the night. Answering users in real time (called inference) cannot wait, so it gets protected. The software also lowers the speed and power limit of individual chips. That costs less than you might think. In a June 2026 conversation with SemiAnalysis, the chip and datacentre research firm, the startup Pebble explained that GPUs have an efficiency 'knee': past a certain power level, each extra watt buys very little extra output, so trimming power often loses only a little work. Pebble says in its own tests shifting load added only about 30 milliseconds before an answer started appearing; that is the company's claim, not an independent measurement."
+      ],
+      "pullquote": "Past a certain power level, each extra watt buys a GPU very little extra work."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Picture an airport so busy it is turning away new airlines. Building another runway would take ten years and cost a fortune, and the airport is only truly full for a few hours a year, around the holiday peaks. Emerald's founder, Varun Sivaram, puts it as a freeway that 'only faces rush hour two times a month'.",
+        "Now a new airline offers a deal: give us landing slots today, and on those few peak hours we will keep our planes on the ground. The airport says yes, because the peak hours are exactly what the new runway was for. That is the bargain flexible datacentres offer the grid: connect us sooner, and we will step aside when it really counts. A 2025 study from Duke University estimated the US grid could take on about 76 gigawatts of new flexible demand, around a tenth of the country's peak, if those loads accepted cuts averaging 0.25% of the year, roughly 22 hours."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Paying big electricity users to switch off at peak times is old. Factories and aluminium smelters have had interruptible power contracts for decades, and in Texas bitcoin miners have for years been paid millions to shut down during heat waves. Google said in 2025 that it would pause non-essential AI work at some US sites when local utilities asked. Norway's grid operator Statnett already offers some new large customers a connection on condition that they can be disconnected when the grid is tight.",
+        "What is new is who is doing it, and the scale. AI datacentres were supposed to be the one load that could never blink, because the chips are so expensive that every idle minute costs money. The tests show the software can work. What nobody has shown yet is a gigawatt campus doing it for real, through a long heat wave, with paying customers on the other end."
+      ],
+      "links": [
+        {
+          "label": "OpenAI, 2 November 2026: Introducing the Grid Protectors Program",
+          "url": "https://openai.com/index/grid-protectors-program"
+        },
+        {
+          "label": "Axios: OpenAI pledges data center power cuts",
+          "url": "https://www.axios.com/2026/11/02/openai-data-center-power-cuts"
+        },
+        {
+          "label": "DCD: OpenAI launches 'Grid Protectors Program'",
+          "url": "https://www.datacenterdynamics.com/en/news/openai-launches-grid-protectors-program-to-reduce-data-center-electricity-demand-when-the-us-grid-is-under-strain-openai-has-launched-a-plan-to-reduce-the-impact-of-its-data-centers-on-the-us-grid-the-non-binding-grid-protectors-program-aims-to-re/"
+        },
+        {
+          "label": "Emerald AI and partners: results from the Phoenix field demonstration (arXiv)",
+          "url": "https://arxiv.org/abs/2507.00909"
+        },
+        {
+          "label": "NVIDIA case study: Emerald AI and the London test",
+          "url": "https://www.nvidia.com/en-us/case-studies/emerald-ai/"
+        },
+        {
+          "label": "The Register: UK datacenter cuts AI power draw 40% on command",
+          "url": "https://www.theregister.com/on-prem/2026/03/04/flex-appeal-uk-datacenter-cuts-ai-power-draw-40-on-command/4888608"
+        },
+        {
+          "label": "SemiAnalysis with Pebble: the GPU power-performance curve most clusters ignore (video)",
+          "url": "https://www.youtube.com/watch?v=OpL-Q0YAKJU"
+        },
+        {
+          "label": "Utility Dive: Duke study finds headroom for 76 GW of flexible load",
+          "url": "https://www.utilitydive.com/news/us-grid-headroom-flexible-load-data-center-ai-ev-duke-report/739767/"
+        },
+        {
+          "label": "Our brief from yesterday: datacentres lost the US midterms",
+          "url": "https://oslovibecoding.tech/brief/datacentres-lost-the-us-midterms-the-fight-is-over-2028"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI you use, almost nothing. The work that gets slowed or delayed is mostly training and batch jobs nobody is waiting on in real time. If flexible datacentres become normal, the bigger effect is indirect: AI companies could get grid connections years sooner, and households may pay less for grid upgrades built only for a few peak hours.",
+        "Measured caveats. OpenAI's programme is non-binding, and its Georgia campus is not built. The tests so far used 96 and 256 chips; a gigawatt campus has hundreds of thousands. The results come from Emerald AI and its partners, and Nvidia is an investor in Emerald. OpenAI itself says flexibility cannot replace building new power plants and power lines. It buys time on the grid; it does not create electricity.",
+        "For Norway, the debate sounds familiar. Grid capacity is scarce in several regions, and new datacentres compete with industry and electrification for the same connections. A datacentre that can promise to step aside on the coldest days of the year is a much easier neighbour to say yes to. Watch for the first contract that writes the hours and megawatts down, and for the first real heat wave or cold snap that tests one."
+      ],
+      "pullquote": "Flexibility buys time on the grid. It does not create electricity."
+    }
+  ]
+},
+{
   "slug": "the-week-the-ai-money-flinched",
   "status": "published",
   "datePublished": "2026-11-08",
