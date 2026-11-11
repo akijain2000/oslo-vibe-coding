@@ -36,6 +36,116 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "anthropic-bought-3-4-billion-of-gas-generators-to-skip-the-power-queue",
+  "status": "published",
+  "datePublished": "2026-11-11",
+  "title": "Anthropic just bought $3.4 billion of gas generators. Here is why an AI lab wants its own power",
+  "dek": "Anthropic, the company behind Claude, has always preferred to rent its computers. Now, according to the Financial Times, it has spent $3.4 billion on enough gas-fired generators to run 1.7 gigawatts of datacentres, by taking over another company's place in a years-long equipment queue. Here is what is reported, why the maths makes sense to an AI lab, and what it costs everyone else.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "According to a Financial Times report of 8 November 2026, Anthropic agreed in late September to pay about $3.4 billion for gas-fired generators able to produce up to 1.7 gigawatts of electricity for its datacentres. The FT called it the biggest single purchase of power-generation equipment known to have been made by an AI lab. The machines are Caterpillar generators originally ordered about two years ago by OnePWR Solutions, a San Antonio, Texas equipment supplier that could not finance the purchase; Anthropic took over the orders and the engineering work to install them, without buying OnePWR or hiring its staff. Anthropic and OnePWR declined to comment, Reuters said it had not verified the report, and it is not known where the generators will be used. The deal breaks with Anthropic's habit of renting: its IPO filing showed it pays xAI $1.25 billion a month for computing power through May 2029. The likely reason is time. TechCrunch notes the backlog for gas turbines stretches into the early 2030s and grid connection queues can be as long, while SemiAnalysis estimates an AI datacentre earns roughly $10 to 12 million per megawatt per year, which would make 1.7 GW worth about $17 to 20 billion a year once filled with chips. The risks are gas prices, which one analyst forecasts could more than triple in some markets by 2030, and the emissions of burning gas.",
+  "sourceUrl": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/",
+  "sourceLabel": "Read TechCrunch's report",
+  "about": "Anthropic's reported $3.4 billion purchase of 1.7 GW of Caterpillar gas-fired generators via OnePWR Solutions (Financial Times, 8 November 2026): what is confirmed and what is not, why AI labs are generating their own power, the SemiAnalysis revenue-per-megawatt estimate, precedents from xAI, OpenAI and Oracle, and Meta, the gas price and emissions risks, and what it means for Norway",
+  "keywords": [
+    "Anthropic",
+    "Claude",
+    "natural gas",
+    "gas generators",
+    "Caterpillar",
+    "OnePWR",
+    "datacentres",
+    "data centers",
+    "electricity",
+    "bring your own generation",
+    "grid connection",
+    "SemiAnalysis",
+    "AI infrastructure",
+    "energy"
+  ],
+  "heroImage": {
+    "src": "/brief/anthropic-bought-3-4-billion-of-gas-generators-to-skip-the-power-queue.png",
+    "alt": "Bar chart titled Power is the cheap part. Gas generators, one-off: $3.4B. AI revenue from 1.7 GW, per year: about $17 to 20B. Caption: a one-off $3.4B for 1.7 GW of generators vs what 1.7 GW of AI can earn each year. Figures: FT via TechCrunch; revenue estimate SemiAnalysis.",
+    "credit": "Oslo Vibe Coding diagram; figures from the FT (via TechCrunch) and SemiAnalysis",
+    "creditUrl": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Sunday 8 November the Financial Times reported that Anthropic, the company that makes the Claude AI models, has agreed to pay about $3.4 billion for gas-fired generators to power its datacentres (the warehouse-sized buildings full of chips that train and run AI). Together the machines can produce up to 1.7 gigawatts of electricity. A gigawatt is roughly what a large conventional power station produces, so this is about one and a half to two power stations' worth, bought in one go.",
+        "The FT called it the biggest single purchase of power-generation equipment known to have been made by an AI lab. That is a surprise from this particular lab. Anthropic has always preferred to rent: its own stock-market filing shows it pays Elon Musk's xAI $1.25 billion a month, through May 2029, to use xAI's computers. So why would a company that rents everything suddenly buy its own power plant?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What is reported. The deal was signed in late September. The generators are made by Caterpillar, the American heavy-machinery company; several outlets call them turbines, while the FT describes them as gas-fired engines. They were originally ordered about two years ago by OnePWR Solutions, an equipment supplier in San Antonio, Texas, which could not raise the money to finish paying for them. Anthropic first planned to be OnePWR's customer, then took over the orders itself, together with the engineering and construction work needed to install the machines. It did not buy OnePWR, and none of OnePWR's staff moved to Anthropic. DatacenterDynamics reports the generators are expected to be available within two years.",
+        "What is not known. Anthropic and OnePWR declined to comment to the FT, and did not answer Bloomberg or Reuters either. Reuters says it has not verified the FT's account. Nobody has said where the generators will be installed. So treat the details as a well-sourced report, not an announcement.",
+        "Why now. TechCrunch notes that the waiting list for new gas turbines stretches into the early 2030s, and that queues to connect a new datacentre to the electricity grid can be just as long. SemiAnalysis, the chip and datacentre research firm, estimated in September that US utilities are sitting on around a terawatt of power requests, more than the whole US grid produces at its peak, and that the wait from request to power is about five years. Taking over someone else's order is a way to skip most of that queue."
+      ],
+      "pullquote": "Taking over someone else's order is a way to skip most of the queue."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine a popular car with a five-year waiting list. Someone near the front of the queue placed their order two years ago, but now cannot get the loan to pay for it. You step in, pay the dealer, and drive away years ahead of everyone who ordered after them. You might even pay a bit over the odds, because your business loses money every month you do not have a car.",
+        "That is roughly what Anthropic did, and the 'losing money every month' part is what makes the price look small. SemiAnalysis estimates that an AI datacentre earns roughly $10 to 12 million per megawatt per year. At that rate, 1.7 gigawatts of fully equipped datacentre would bring in something like $17 to 20 billion a year. Against that, a one-off $3.4 billion for the electricity supply is about two to three months of revenue. The expensive part of an AI datacentre is the chips; power is the part you cannot buy quickly. Our own arithmetic, built on SemiAnalysis's estimate, and it assumes the generators end up running full datacentres."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The idea is not. In 2024 xAI powered its Memphis supercomputer with rented, truck-mounted gas turbines while it waited for the grid, and it now faces a lawsuit over them. In October 2025 OpenAI and Oracle ordered a 2.3 gigawatt on-site gas plant in Texas. Meta is building gas plants inside the fence of its Ohio AI campus, and TechCrunch lists Google, Amazon and Microsoft with similar plans. The industry even has a name for it: bring your own generation.",
+        "What is new is who is buying, and how. Anthropic was the lab that rented everything from others, and this is its first known move into owning the power equipment itself. Buying a struggling supplier's place in line, rather than ordering new, also shows how tight the market for the machines has become."
+      ],
+      "links": [
+        {
+          "label": "TechCrunch, 9 November 2026: Anthropic joins AI's natural gas frenzy, buys $3.4B worth of turbines",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/"
+        },
+        {
+          "label": "Financial Times: Anthropic strikes $3.4bn deal to generate gas-fired power for data centres (paywall)",
+          "url": "https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0"
+        },
+        {
+          "label": "Reuters: Anthropic secures $3.4 billion generator deal for AI data centers, FT reports",
+          "url": "https://www.reuters.com/business/energy/anthropic-secures-34-billion-generator-deal-ai-data-centers-ft-reports-2026-11-08/"
+        },
+        {
+          "label": "Quartz: Anthropic agreed to pay $3.4 billion for gas generators",
+          "url": "https://qz.com/anthropic-gas-generators-data-centers-onepwr-110926"
+        },
+        {
+          "label": "DatacenterDynamics: Anthropic signs $3.4bn gas generator deal to support 1.7GW of data center capacity",
+          "url": "https://www.datacenterdynamics.com/en/news/anthropic-signs-34bn-gas-generator-deal-to-support-17gw-of-data-center-capacity/"
+        },
+        {
+          "label": "SemiAnalysis: How AI labs are solving the power crisis",
+          "url": "https://newsletter.semianalysis.com/p/how-ai-labs-are-solving-the-power"
+        },
+        {
+          "label": "Our brief: AI companies are building their own power stations",
+          "url": "https://oslovibecoding.tech/brief/ai-companies-are-building-their-own-power-stations"
+        },
+        {
+          "label": "Our brief: AI datacentres are learning to turn themselves down when the grid is stressed",
+          "url": "https://oslovibecoding.tech/brief/ai-datacentres-are-learning-to-turn-themselves-down-when-the-grid-is-stressed"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI you use: more capacity, eventually. Anthropic has been short of computing power for most of the year, which shows up as usage limits and slow answers at busy times. Power that arrives in two years instead of six is one way that gets better. It also tells you how Anthropic sees demand, since nobody spends $3.4 billion on generators unless they expect to fill the datacentres behind them.",
+        "Measured caveats. Burning gas releases carbon dioxide, and these machines would run around the clock, not just at peaks; that cuts against the climate goals AI companies like to talk about. Gas prices are another risk: TechCrunch cites one analyst who forecasts prices could more than triple in some US markets by the end of the decade, which could turn a smart purchase into what it calls buyer's remorse. And none of this is confirmed by Anthropic.",
+        "For Norway, the lesson is about queues. Grid connections are scarce here too, and Statnett already rations new large customers in several regions. Norway's selling point to AI companies has been clean, cheap hydropower. If the alternative in America is a private gas plant in two years, the question for Norway is whether it can offer a clean grid connection on a timetable that competes."
+      ],
+      "pullquote": "Power is the part of an AI datacentre you cannot buy quickly."
+    }
+  ]
+},
+{
   "slug": "claude-fable-5-2-and-mythos-5-2-what-is-new-and-what-is-still-a-claim",
   "status": "published",
   "datePublished": "2026-11-10",
