@@ -36,6 +36,101 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "google-s-ai-proved-signal-s-encryption-code-keeps-its-promises",
+  "status": "published",
+  "datePublished": "2026-11-12",
+  "title": "Google's AI proved that Signal's encryption code keeps its promises. Here is what that does and does not mean",
+  "dek": "Google DeepMind says its AI agents produced about 6.5 million lines of machine-checked mathematical proof that the code behind Signal's encryption really delivers key security guarantees. Five people did it in four weeks, a kind of job that used to take experts years. Here is what was proved, what was not, and why it matters for every piece of software you rely on.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "On 10 November 2026 Google DeepMind published AlphaProof Code, a system in which AI agents write and check mathematical proofs about real software. Its first target was libsignal, the official code behind the Signal protocol, the encryption also used in variants by WhatsApp, Messenger and Google Messages. According to the paper, the agents generated about 6.5 million lines of proof in Lean (a programming language for mathematical proofs that a computer can check line by line), resting on about 26,000 lines of specifications that humans must read and trust. The proofs cover Signal's post-quantum handshake and its Triple Ratchet, and establish properties such as forward secrecy (old messages stay safe if a key leaks later), authentication and recovery after a device is briefly compromised. They apply to the actual compiled machine code, not just a simplified model, which Google says is a first for a widely used cryptographic protocol implementation. The work took a team of five four weeks; by comparison, verifying the seL4 operating-system core took about twenty person-years. As a test, the team reinserted two real, already-fixed Signal bugs, and the system proved those versions insecure. The limits: only the stated properties are proved, the underlying cryptographic maths is assumed sound, the code was checked running in a test harness rather than inside the Signal app, and post-quantum 'healing' is not yet proved. All proofs are public and can be re-checked by anyone.",
+  "sourceUrl": "https://google-deepmind.github.io/code-verification/",
+  "sourceLabel": "Read Google DeepMind's paper and proofs",
+  "about": "Google DeepMind's AlphaProof Code (10 November 2026): AI agents formally verifying security properties of libsignal, the Signal protocol's reference implementation, at the machine-code level in Lean; 6.5 million lines of proof, 26,000 lines of trusted specification, five people in four weeks; reintroduced historical bugs; limits of formal verification; comparison with seL4 and CompCert; what it means for software security",
+  "keywords": [
+    "Google DeepMind",
+    "AlphaProof Code",
+    "Signal",
+    "libsignal",
+    "encryption",
+    "end-to-end encryption",
+    "formal verification",
+    "Lean",
+    "mathematical proof",
+    "AI agents",
+    "cybersecurity",
+    "WhatsApp",
+    "seL4",
+    "software security"
+  ],
+  "heroImage": {
+    "src": "/brief/google-s-ai-proved-signal-s-encryption-code-keeps-its-promises.png",
+    "alt": "Bar chart titled Proving code is secure. seL4 operating-system core (2009): about 20 person-years. CompCert compiler: about 6 person-years. Signal, 5 people plus AI agents (2026): 4 weeks. Caption: machine-checked proofs used to take years of expert work; Google's AI agents and five people did Signal's in four weeks. Figures: Google DeepMind paper, 10 Nov 2026.",
+    "credit": "Oslo Vibe Coding diagram; figures from the Google DeepMind paper",
+    "creditUrl": "https://google-deepmind.github.io/code-verification/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Tuesday 10 November Google DeepMind, Google's AI research lab, announced that its AI agents had mathematically proved that the code behind Signal's encryption does what it promises. Signal is the messaging app that security people trust most, and the same protocol (the agreed set of rules for scrambling messages) is used, in variants, by WhatsApp, Facebook Messenger and Google Messages. So this is the lock on a large share of the world's private conversations.",
+        "The headline numbers come from Google's own paper. The AI produced about 6.5 million lines of proof. A team of five people ran the agents for four weeks. Google says nobody has proved security properties like these for the actual, unmodified code of a protocol this widely used before, with or without AI. Signal's chief technology officer, Ehren Kret, called using AI agents to turn live code into checkable theorems \"a major breakthrough\"."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What normally happens. Most software is made safe by testing: you try lots of attacks and fix what breaks. Testing can show a bug exists, but it can never show that none are left. The alternative is formal verification: you write down, in precise maths, exactly what the software must guarantee, then prove that the code meets it in every possible situation. It is the gold standard, and it is brutally expensive. The paper notes that verifying seL4, a small operating-system core, took about twenty person-years, and the CompCert compiler took about six.",
+        "What Google did. Its system, called AlphaProof Code, splits the job. First, humans work with an AI 'specification writer' to state Signal's security goals in Lean (a programming language for maths proofs that a computer checks line by line). Humans approve every specification. Then a team of autonomous AI prover agents tries to prove the code meets it. A final 'gatekeeper' accepts a proof only if Lean's checker confirms it, so the AI cannot simply claim success. Google's announcement says the provers ran on its Gemini models.",
+        "What was proved. The proofs cover Signal's post-quantum handshake (how two phones agree on secret keys, designed to resist future quantum computers) and its Triple Ratchet (how keys keep changing during a chat). They establish forward secrecy (if a key leaks today, yesterday's messages stay safe), authentication (you are really talking to who you think) and post-compromise security (the conversation heals after a phone is briefly hacked). Crucially, the proofs are about the compiled machine code, the actual instructions a phone's processor runs, about 140,000 of them. Bugs often hide in the gap between a clean design and the real program, and this closes that gap for the properties checked.",
+        "The bug test. To check the system was not just rubber-stamping, the team put back two real bugs that researchers had found in Signal's code and that were already fixed. In both cases the system produced a checked proof that the buggy version was insecure."
+      ],
+      "pullquote": "Testing can show a bug exists. A proof shows that a whole class of bugs cannot."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a new bridge. Testing is driving heavy lorries over it and watching for cracks: useful, but you only learn about the lorries you tried. Formal verification is an engineer's calculation showing that every beam holds under every load up to the stated limit. Most such calculations are done on the drawings. What Google did is closer to measuring the bridge as actually built, bolt by bolt, and proving the calculation still holds for that bridge.",
+        "The catch is the phrase 'up to the stated limit'. The proof is only as good as the specification. If nobody wrote down a danger, the proof says nothing about it. That is why the 26,000 lines of human-approved specification matter more than the 6.5 million lines of proof: the computer checks the proof, but people have to check that the question was the right one."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "Parts of it are not. Computer-checked proofs of software go back decades (seL4 in 2009, CompCert before it), and researchers have analysed Signal's design formally many times; one such study found the two bugs Google reinserted. Google's AlphaProof reached silver-medal level at the International Mathematical Olympiad in 2024. And AI is already very good at finding bugs, as we wrote recently.",
+        "What is new is the combination: proofs about the real, unmodified code of software used by billions, at the level of machine instructions, in weeks instead of years. Finding bugs is a race you never finish. Proving their absence, if it becomes cheap, changes the game for defenders."
+      ],
+      "links": [
+        {
+          "label": "Google DeepMind paper: AlphaProof Code, Verifying Signal's Security at the Machine-Code Level (10 November 2026)",
+          "url": "https://google-deepmind.github.io/code-verification/"
+        },
+        {
+          "label": "The proofs on GitHub: google-deepmind/code-verification",
+          "url": "https://github.com/google-deepmind/code-verification"
+        },
+        {
+          "label": "ETV Bharat: AlphaProof Code, inside the AI breakthrough that proved Signal's encryption works",
+          "url": "https://www.etvbharat.com/en/technology/alphaproof-code-inside-the-ai-breakthrough-that-proved-signal-and-whatsapps-encryption-works-enn26111104475"
+        },
+        {
+          "label": "Our brief: AI is finding 40 years of old bugs faster than humans can fix them",
+          "url": "https://oslovibecoding.tech/brief/ai-is-finding-old-bugs-faster-than-humans-can-fix-them"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "What it does not mean. This is not a stamp saying 'Signal cannot be hacked'. The paper is clear about its limits. It proves specific properties, not everything. It assumes the underlying cryptographic maths is sound. It checked Signal's core library running in a test harness, not the full Signal app on your phone, and not WhatsApp's own implementation. One of the post-quantum guarantees is not yet proved. And this is Google's own paper, published this week, not yet independently reviewed, although the proofs are public and anyone with a big enough computer can re-check them.",
+        "What it does mean. The most expensive kind of software assurance just got dramatically cheaper. Google suggests the next targets could be things like medical-device firmware and power-grid software. As attackers use AI to find holes faster, defenders being able to prove whole classes of holes do not exist is a hopeful twist.",
+        "For builders in our community the lesson is practical: when you ask an AI to write code, the hard part is moving from 'write it' to 'state precisely what it must guarantee'. That is the human skill in this story, and it is the one worth learning."
+      ],
+      "pullquote": "The computer checks the proof. People still have to check that the question was the right one."
+    }
+  ]
+},
+{
   "slug": "anthropic-bought-3-4-billion-of-gas-generators-to-skip-the-power-queue",
   "status": "published",
   "datePublished": "2026-11-11",
