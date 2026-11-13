@@ -36,6 +36,112 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "jensen-huang-has-resigned-from-nvidia-what-changes-for-ai-and-what-does-not",
+  "status": "published",
+  "datePublished": "2026-11-13",
+  "title": "Jensen Huang has resigned from Nvidia. What changes for AI, and what does not",
+  "dek": "The man who ran the world's most important AI chip company for 33 years left on Thursday, effective immediately. Nvidia's finance chief is in charge for now. Here is what is confirmed, what is only reported, and why the chips will keep arriving while some bigger questions become less certain.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "On 12 November 2026 Nvidia announced that co-founder Jensen Huang has resigned as president, chief executive and board member, effective immediately. Finance chief Colette Kress is interim chief executive while the board searches inside and outside the company for a permanent one, and long-serving director Harvey Jones becomes Nvidia's first-ever board chair. Nvidia's statement gives no reason; Reuters and the Guardian report that the resignation follows about two weeks of revelations about Huang's personal conduct, including an alleged link to a suspected Chinese intelligence asset, which he has denied knowing about. The board says operations, customer commitments and the product roadmap continue without interruption, and results arrive as planned on 17 November. Shares closed down 4.3%. Less certain are US rules on selling chips to China and Nvidia's support for open AI models, which Huang championed.",
+  "sourceUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+  "sourceLabel": "Read Nvidia's announcement",
+  "about": "Jensen Huang's resignation as Nvidia president, chief executive and director (12 November 2026): Colette Kress as interim chief executive, Harvey Jones as first board chair, what Nvidia confirmed versus what Reuters, the Guardian and TechCrunch report, the share price reaction, precedents at Apple, Uber and OpenAI, China chip export controls, the pending Hugging Face acquisition and open-weight AI models, and what it means for Norway and Europe",
+  "keywords": [
+    "Nvidia",
+    "Jensen Huang",
+    "Colette Kress",
+    "Harvey Jones",
+    "CEO resignation",
+    "AI chips",
+    "GPU",
+    "export controls",
+    "China",
+    "Hugging Face",
+    "open-weight models",
+    "open source AI",
+    "AI infrastructure"
+  ],
+  "heroImage": {
+    "src": "/brief/jensen-huang-has-resigned-from-nvidia-what-changes-for-ai-and-what-does-not.png",
+    "alt": "Diagram titled Nvidia without Jensen Huang. Left column, What changes: finance chief Colette Kress is interim CEO; first-ever board chair, Harvey Jones; search for a permanent CEO begins; open AI models lose their loudest backer. Right column, What the board says stays: chip roadmap for the next few years; customer orders and deliveries; the engineering and leadership team; results on 17 November, as planned. Sources: Nvidia statement of 12 November 2026, Reuters, TechCrunch.",
+    "credit": "Oslo Vibe Coding diagram; facts from Nvidia, Reuters and TechCrunch",
+    "creditUrl": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 12 November Nvidia announced that Jensen Huang has resigned as president, chief executive and board member, effective immediately. Nvidia designs GPUs (graphics processing units, the chips that train and run almost every major AI model). Huang co-founded the company in 1993 and had led it ever since.",
+        "Colette Kress, Nvidia's finance chief since 2013, is now interim chief executive while the board searches for a permanent one, inside and outside the company. Harvey Jones, a long-serving director and former boss of the chip-design software firm Synopsys, becomes the first board chair Nvidia has ever had. So is the most important supplier of the AI boom in trouble?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What Nvidia has confirmed. Huang is out of all three roles. Kress keeps her finance job while she fills in. The board says it has full confidence in her and the leadership team, and that it expects 'the company's operations, customer commitments and product roadmap to continue without interruption'. Quarterly results will be published on Tuesday 17 November, as already scheduled. The statement thanks Huang for his contributions and gives no reason for his departure.",
+        "What is reported. Reuters, the Guardian and others report that he stepped down after about two weeks of revelations about his personal conduct. According to the Guardian, he admitted on Sunday to having been unfaithful to his wife. News reports link him to a businesswoman whom US authorities suspect of working for Chinese intelligence, and to relationships with Nvidia employees. Huang has denied knowing of any intelligence link, Beijing denies that she is a spy, and the US Attorney General said on Thursday that the Justice Department has not reached a conclusion. Earlier this month Nvidia's board opened an independent investigation into whether he had been the target of a foreign intelligence effort. We will leave the personal story there. The rest of this brief is about what the change means for AI.",
+        "How the market took it. The Guardian reports that Nvidia shares fell 13% when trading opened and closed the day down 4.3%, which removed more than $180 billion of value and left the company worth about $4 trillion. Reuters notes that small investors bought heavily as the price fell, and that rival chip designers AMD and Broadcom each rose about 6%. Huang still owns about 3.6% of Nvidia."
+      ],
+      "pullquote": "Nvidia's statement names a stand-in and a date for the next results. It does not give a reason."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of an orchestra that loses its conductor in the middle of a season. The concerts are already programmed, the scores are printed and the musicians know their parts. Next week's performance will sound much the same. The conductor's real work was something else: choosing what to play three years from now, and keeping every section in time with the others.",
+        "That is close to how one investor put it to Reuters. Michael Feldman of ClearBridge Investments said the risk is not that Nvidia loses its technology roadmap, which is largely visible for the next several years. The risk is execution, because Huang had been 'the chief conductor of an extraordinarily complex system'. The Guardian reports that about 60 people reported directly to him, far more than is usual for a chief executive. A company arranged around one person is the hard thing to hand over."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "A founder leaving is not new. Apple lost Steve Jobs in 2011, handed the company to its operations chief Tim Cook, and went on to become far more valuable. Uber's founder Travis Kalanick resigned under investor pressure in 2017 and an outsider took over. In November 2023 OpenAI's board removed Sam Altman and had him back within five days.",
+        "What is new is where this company sits. Nearly every AI lab, cloud provider and datacentre builder depends on Nvidia's chips, and Nvidia has put much of its own cash back into those customers. Then there is the politics. Reuters reports that lawmakers from both American parties are calling for tighter limits on selling advanced AI chips to China, that the Speaker of the House sees a growing consensus for it, and that Huang has agreed to testify before Congress. He was the industry's loudest voice for keeping the Chinese market open."
+      ],
+      "links": [
+        {
+          "label": "Nvidia, 12 November 2026: NVIDIA Announces CEO Transition",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+        },
+        {
+          "label": "Reuters: Nvidia CEO Jensen Huang resigns in blow to AI boom he helped foster",
+          "url": "https://www.reuters.com/business/retail-consumer/nvidia-ceo-jensen-huang-step-down-big-blow-ai-boom-2026-11-12/"
+        },
+        {
+          "label": "The Guardian: Jensen Huang resigns as Nvidia CEO",
+          "url": "https://www.theguardian.com/technology/2026/nov/12/nvidia-ceo-jensen-huang-resigns"
+        },
+        {
+          "label": "TechCrunch: Jensen Huang's exit puts Nvidia's support for open source in question",
+          "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/"
+        },
+        {
+          "label": "Our brief: Nvidia just became the central bank of AI",
+          "url": "https://oslovibecoding.tech/brief/nvidia-just-became-the-central-bank-of-ai"
+        },
+        {
+          "label": "Our brief: Nvidia is buying the internet's model library",
+          "url": "https://oslovibecoding.tech/brief/nvidia-is-buying-the-internets-model-library"
+        },
+        {
+          "label": "Our brief: The fight over whether AI should be downloadable",
+          "url": "https://oslovibecoding.tech/brief/the-fight-over-whether-ai-should-be-downloadable"
+        }
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For the AI you use: very little changes soon. Next year's chips are already designed and ordered, the engineers are the same people, and the stand-in boss has explained Nvidia's numbers to investors for 13 years. The first real test comes on Tuesday 17 November, when Nvidia reports its results and Kress answers questions as chief executive for the first time.",
+        "What is less certain: open models. Huang was the most powerful backer of open-weight AI models (models whose trained files anyone can download and run on their own computers, such as Mistral's or DeepSeek's). Nvidia has agreed to buy Hugging Face, the website where most of those models are shared, for about $13 billion. TechCrunch reports that the deal has not closed and still needs approval from regulators. Hugging Face's chief executive, Clem Delangue, says his company will keep fighting for open source whatever happens, and an Nvidia employee told TechCrunch that work on Nvidia's own open models is not expected to change. Still, a new leader may be more cautious, and American rules on chips for China look more likely to tighten than a week ago.",
+        "Who gets the job. Reuters says investors see Kress and the long-time Nvidia engineer Ian Buck as the leading internal candidates. Outside names, from Apple's Tim Cook to AMD's Lisa Su, are being floated in the press. Treat all of them as speculation until the board speaks.",
+        "For Norway and Europe, two things to watch. The datacentres being built here are filled with Nvidia chips, so a steady handover matters for their timetables. And open models are what let a small European company run capable AI on its own machines, without sending its data to an American lab. Losing their best-connected defender in Washington is a slow-moving cost, but a real one."
+      ],
+      "pullquote": "The music for the next few years is already written. The open question is who keeps everyone in time."
+    }
+  ]
+},
+{
   "slug": "google-s-ai-proved-signal-s-encryption-code-keeps-its-promises",
   "status": "published",
   "datePublished": "2026-11-12",
