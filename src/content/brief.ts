@@ -36,6 +36,125 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "google-s-new-small-ai-model-beats-its-bigger-sibling-and-now-answers-your-searches",
+  "status": "published",
+  "datePublished": "2026-11-14",
+  "title": "Google's new small AI model beats its bigger sibling. It now answers your searches",
+  "dek": "On Thursday Google released Gemini 4 Hydrogen, its fast everyday model, and put it behind Google Search for everyone. Independent tests show it scoring a point above the larger Gemini 4 Argon at well under half the cost. Here is what is measured, what is still Google's own claim, and where the catches are.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 5,
+  "takeaway": "On 12 November 2026 Google released Gemini 4 Hydrogen, the fast, cheaper model in its Gemini 4 family, and made it the model behind Google Search's AI answers for all users worldwide. The independent testing firm Artificial Analysis scores it 51 on its Intelligence Index at the default setting, one point above the larger Gemini 4 Argon (50), at $1.87 per test task against $4.97 and about 8 minutes per task against 29. Google's own claims, not yet independently confirmed, are that it is 2.5 times faster than the model it replaces and makes up facts five times less often. The catches: it trails on some coding work, its top setting nearly doubles the bill, and according to VentureBeat's price table it costs twice what the old Gemini 3.8 Flash costs today.",
+  "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+  "sourceLabel": "Read Google's announcement",
+  "about": "Google's Gemini 4 Hydrogen release (12 November 2026): what the model is, its rollout to Google Search AI Mode and the Gemini app, independent Artificial Analysis scores against Gemini 4 Argon and Carbon, Google's own speed and accuracy claims, API pricing against Gemini 3.8 Flash and rival small models, the weaknesses found in independent tests, and what it means for people and small companies in Norway and Europe",
+  "keywords": [
+    "Google",
+    "Gemini 4 Hydrogen",
+    "Gemini 4 Argon",
+    "Gemini 4 Carbon",
+    "Gemini 3.8 Flash",
+    "Google Search",
+    "AI Mode",
+    "Artificial Analysis",
+    "small AI models",
+    "AI pricing",
+    "AI benchmarks",
+    "AI agents"
+  ],
+  "heroImage": {
+    "src": "/brief/google-s-new-small-ai-model-beats-its-bigger-sibling-and-now-answers-your-searches.png",
+    "alt": "Diagram titled The small model wins. Left column, Gemini 4 Argon (the bigger one): intelligence score 50; $4.97 per test task; 29 minutes per task; $2 in, $10 out per million tokens. Right column, Gemini 4 Hydrogen (new, smaller): intelligence score 51; $1.87 per test task; 8 minutes per task; $1.50 in, $7.50 out per million. Caption: same independent tests, both at their default setting. Figures: Artificial Analysis, November 2026.",
+    "credit": "Oslo Vibe Coding diagram; figures from Artificial Analysis",
+    "creditUrl": "https://artificialanalysis.ai/models/comparisons/gemini-4-hydrogen-vs-gemini-4-argon"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Thursday 12 November Google released Gemini 4 Hydrogen. Gemini is Google's family of AI models (the software behind its chatbot and its AI search answers). The newest generation, Gemini 4, is named after chemical elements. Carbon and Argon are the big, slow, expensive models for the hardest problems. Hydrogen is the small one: built to be fast and cheap enough to use all day.",
+        "Google switched it on almost everywhere at once. It replaces the previous fast model, Gemini 3.8 Flash, across Google's products. Most visibly, it now writes the AI answers in Google Search for every user worldwide. Robby Stein, the product chief for Search, calls it 'the biggest model upgrade to Search yet'. The surprise is in the test scores: the small model came out ahead of its bigger sibling. Can that be right?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "What independent testers measured. Artificial Analysis is a firm that runs the same battery of tests on every major AI model and publishes one combined score, its Intelligence Index. Hydrogen scores 51 at its default setting. Argon, the bigger model that Google made generally available only about four weeks ago, scores 50. Google's top model, Carbon, scores 59. The old Flash scored 31, according to VentureBeat's reading of the same data.",
+        "The cost gap is larger than the score gap. Artificial Analysis also tracks what each model costs and how long it takes to get through its test tasks. Hydrogen averaged $1.87 and about 8 minutes per task. Argon averaged $4.97 and about 29 minutes. So the newer model was a point better, well under half the price and roughly three and a half times faster.",
+        "What Google itself claims. Google says Hydrogen finishes tasks 2.5 times faster than the old Flash and cuts 'fabricated claims' (the model stating things that are not true) by more than five times. Those are the company's own measurements. One outside number points the same way: The Decoder reports that in an Artificial Analysis test of factual reliability, Hydrogen made things up about 8% of the time, which the testers count as rare.",
+        "What it costs developers. Companies that build on Hydrogen pay $1.50 per million tokens going in and $7.50 per million coming out. (Tokens are the word fragments an AI reads and writes. A million is roughly a few thick novels.) Argon and Carbon cost $2 and $10 on an introductory offer, and Ars Technica reports that this doubles to $4 and $20 next month."
+      ],
+      "pullquote": "One point smarter, less than half the price, and done in 8 minutes instead of 29."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of phones. Every year there is an expensive flagship and a cheaper mid-range model. Normally the mid-range phone of 2026 is about as good as the flagship of 2024. You wait two years, and yesterday's luxury becomes today's ordinary.",
+        "Now imagine the mid-range phone arriving four weeks after the flagship and taking better photos. That is roughly what happened here. The Decoder points out that just two days before Hydrogen appeared, Google was still recommending Argon for everyday coding work. In AI, the waiting time between 'best available' and 'cheap and everywhere' has shrunk from years to weeks, inside a single company."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The pattern is old. In every recent generation the small, cheap model has ended up beating the previous generation's large one. Engineers learn how to squeeze the same ability into something smaller and faster, and prices fall. We have written about that before.",
+        "Two things are different this time. The first is the speed: a small model overtaking a large one from the same generation, within a month. The second is the reach. This is not a tool for specialists. The model was placed directly behind Google Search, which billions of people use without choosing or even noticing which AI is answering."
+      ],
+      "links": [
+        {
+          "label": "Google, 12 November 2026: Introducing Gemini 4 Hydrogen",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "label": "Google: Google Search gets a major upgrade with Gemini 4 Hydrogen",
+          "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+        },
+        {
+          "label": "Artificial Analysis: Gemini 4 Hydrogen vs Gemini 4 Argon",
+          "url": "https://artificialanalysis.ai/models/comparisons/gemini-4-hydrogen-vs-gemini-4-argon"
+        },
+        {
+          "label": "The Decoder: Gemini 4 Hydrogen outscores the bigger Argon just four weeks after its launch",
+          "url": "https://the-decoder.com/googles-gemini-4-hydrogen-outscores-the-bigger-argon-just-four-weeks-after-its-launch/"
+        },
+        {
+          "label": "Ars Technica: Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+          "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/"
+        },
+        {
+          "label": "VentureBeat: a faster, smarter, pricier Flash successor",
+          "url": "https://venturebeat.com/technology/google-launches-gemini-4-hydrogen-a-faster-smarter-pricier-flash-successor"
+        },
+        {
+          "label": "Our brief: Claude Fable 5.2 and Mythos 5.2, what is new and what is still a claim",
+          "url": "https://oslovibecoding.tech/brief/claude-fable-5-2-and-mythos-5-2-what-is-new-and-what-is-still-a-claim"
+        },
+        {
+          "label": "Our brief: AI is now writing the code that makes AI cheaper",
+          "url": "https://oslovibecoding.tech/brief/ai-is-now-writing-the-code-that-makes-ai-cheaper"
+        }
+      ]
+    },
+    {
+      "heading": "The catches",
+      "paragraphs": [
+        "It does not win everywhere. On Terminal-Bench (a test where the AI has to operate a computer's command line by itself to finish programming jobs), Artificial Analysis has Hydrogen at 54% and the bigger Argon at 57%. The Decoder reports that Anthropic's Claude Sonnet 5.5, a rival in the same price class, reaches 64%.",
+        "The best score costs extra. Hydrogen has four 'thinking levels', which set how long it reasons before it answers. The top level lifts its score from 51 to 54, but it uses nearly twice as many tokens and the cost per task rises from $1.87 to $3.16. At the two lowest levels the scores fall to 41 and 27. The headline number belongs to one setting, not to the model in general.",
+        "Cheaper than its sibling is not the same as cheap. VentureBeat's price table shows the old Flash at $0.75 and $3.75 until the end of the year, so Hydrogen costs twice as much as the model it replaces today. It is also about 15 times the price of the cheapest small models from Anthropic, OpenAI and Meta.",
+        "Not everyone gets it in the same way. In Search it is on for all users. In the Gemini app, Google's own footnote says people on the free plan get Hydrogen only when an automatic picker decides a question needs it. And Google's promise that the new Search answers will link to a wider range of websites deserves patience: as Ars Technica dryly notes, Google has said that before."
+      ],
+      "pullquote": "The headline score belongs to one setting. Turn the thinking down and it drops from 51 to 27."
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For you: nothing to install. If you use Google Search, your longer and messier questions are now handled by a noticeably stronger model. Google says it copes better with questions in several parts, with typos and with very specific requests, and that answers improve in every language its AI search mode supports. Treat those as claims to test yourself. Ask it something complicated this weekend and check the answer against a source you trust.",
+        "For anyone paying for AI: the most expensive model is no longer the automatic choice. For everyday work such as drafting, summarising, reading spreadsheets or routine coding, a small model at a fraction of the price may now do the job as well. Google is building this into its own tools, with a feature that switches between the big and the small model during a single task and, by Google's figures, uses 24% less of a user's allowance.",
+        "For Norway and Europe: this is good news for small companies. A two-person firm in Oslo can now rent, for a few dollars per task, the level of AI that only the top tier offered a month ago. The other side of it is that websites which live on visitors from Google should watch their traffic numbers over the next weeks. Whether richer AI answers send more readers onwards, or fewer, is something only the data will show."
+      ],
+      "pullquote": "The most expensive model is no longer the automatic choice."
+    }
+  ]
+},
+{
   "slug": "jensen-huang-has-resigned-from-nvidia-what-changes-for-ai-and-what-does-not",
   "status": "published",
   "datePublished": "2026-11-13",
