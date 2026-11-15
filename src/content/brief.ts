@@ -36,6 +36,133 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-us-grounded-every-flight-days-after-an-ai-rollout-officials-point-to-a-router",
+  "status": "published",
+  "datePublished": "2026-11-15",
+  "title": "The US grounded every flight days after an AI rollout. Officials point to a router",
+  "dek": "On Friday the United States stopped all departing flights for more than four hours, three days after its aviation agency switched on an AI traffic tool nationwide. Many people blamed the AI. Here is what officials say actually broke, what the AI tool does and does not do, and what nobody has independently confirmed yet.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 13 November 2026 the US Federal Aviation Administration halted every departing flight in the country for more than four hours, the longest such pause since 11 September 2001. It came three days after the agency said its $875 million AI advisory tool, SMART, would be used at all 22 long-distance control centres, and many people online blamed the AI. Officials give a different account: a router at a remote FAA site, part of a contractor's job replacing old copper lines with fibre, flooded the air traffic network with more than 1,000 connection attempts every four to five seconds. The FAA's chief says there is 'zero evidence' AI was involved, and the tool's maker denies any link. The exact fault is still under investigation and no independent technical report has been published.",
+  "sourceUrl": "https://www.transportation.gov/briefing-room/icymi-us-transportation-secretary-sean-p-duffy-provides-update-restoration-airspace",
+  "sourceLabel": "Read the US Department of Transportation's account",
+  "about": "The US nationwide ground stop of 13 November 2026: what the FAA and Department of Transportation say caused it (a router fault during an L3Harris copper-to-fibre telecom upgrade), the scale of cancellations, the FAA's SMART AI advisory tool from Air Space Intelligence and its nationwide expansion on 10 November, the denials of an AI link, earlier outages in January 2023 and July 2024, what remains unconfirmed, and lessons for anyone deploying AI on top of old infrastructure",
+  "keywords": [
+    "FAA",
+    "ground stop",
+    "air traffic control",
+    "SMART",
+    "Air Space Intelligence",
+    "L3Harris",
+    "Sean Duffy",
+    "AI in aviation",
+    "legacy infrastructure",
+    "AI blame",
+    "outage",
+    "AI deployment"
+  ],
+  "heroImage": {
+    "src": "/brief/the-us-grounded-every-flight-days-after-an-ai-rollout-officials-point-to-a-router.png",
+    "alt": "Diagram titled The AI got the blame. Officials name a router. Left column, The new AI tool (SMART): went nationwide on 10 November; suggests routes, humans decide; cannot control aircraft; not linked to radar systems, says US DOT. Right column, What officials say failed: a router at a remote FAA site; copper line being moved to fibre; 1,000+ connection attempts every 5 seconds; flooded the air traffic network. Caption: all US departures halted for over four hours on 13 November, cause still under investigation. Sources: US DOT, FAA, CNBC.",
+    "credit": "Oslo Vibe Coding diagram; account from the US Department of Transportation",
+    "creditUrl": "https://www.transportation.gov/briefing-room/icymi-us-transportation-secretary-sean-p-duffy-provides-update-restoration-airspace"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Friday afternoon, 13 November, the United States stopped every plane from taking off. The Federal Aviation Administration (the FAA, the agency that runs American air traffic control) ordered a nationwide ground stop just before 4 pm Eastern time and lifted it at about 8.15 pm. A ground stop means that planes already in the air carry on and land, and nothing new departs.",
+        "Three days earlier, on Tuesday 10 November, the same agency had announced that an $875 million AI tool called SMART would now be used across all 22 of its long-distance control centres. Within hours of the shutdown, people online had joined the dots: new AI on Tuesday, a grounded country on Friday. Is that what happened?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The scale. More than 3,500 aircraft were in the air when the order came, and all of them landed safely, according to the US Department of Transportation. The flight-tracking site FlightAware counted more than 9,000 cancelled US flights on Friday, about a third of the day's schedule, and nearly 6,500 more on Saturday. CNBC, which reported those figures, notes that bad weather caused some of Friday's cancellations, and calls this the longest halt to departures since the attacks of 11 September 2001. Reuters reports the FAA's chief expects disruption to last until late Sunday.",
+        "What officials say broke. Transportation Secretary Sean Duffy gave this account on Saturday. At a remote FAA site, a contractor called L3Harris was moving an old copper telephone-style line over to fibre-optic cable. A router involved in that swap (a router is a box that directs data between networks) started bombarding the other routers in the air traffic network with more than 1,000 connection attempts every four to five seconds. That disturbed some radio links with aircraft and some radar feeds.",
+        "Why they stopped everything. FAA Administrator Bryan Bedford said no control centre went dark. The data feeds had become unstable, for about 45 minutes nobody knew why, and the agency was 'unwilling to take any risk' that a centre would lose contact with aircraft. Once the work at the remote site was isolated, Duffy said, the systems came back.",
+        "What is not settled. Duffy said investigators have not yet determined whether the contractor made an installation mistake or the router itself was faulty. L3Harris says it is supporting the investigation."
+      ],
+      "pullquote": "More than 1,000 connection attempts every five seconds, from one router at a remote site."
+    },
+    {
+      "heading": "Where the AI comes in",
+      "paragraphs": [
+        "SMART stands for Strategic Management of Airspace, Routing and Trajectories. It is built by a company called Air Space Intelligence. The FAA describes it, as reported by Ars Technica, as a cloud-based system (one that runs in rented datacentres) that combines weather, flight paths, traffic and controller staffing to predict congestion, then suggests better routes and arrival orders.",
+        "It advises. It does not steer. A team of FAA specialists in Washington checks its suggestions before passing them on, and local controllers can decline them. The FAA's own wording is that SMART 'cannot be used to replace' controllers 'or take over control of an aircraft'. It started in the airspace around Washington on 21 September. The agency says it has since rerouted 180 flights, saving an average of 10 minutes and almost 80 gallons of fuel each. Those are the FAA's own figures.",
+        "The denials came fast. Air Space Intelligence posted while the ground stop was still in force that it was 'not based on or a result of the SMART system'. Duffy said SMART is not connected to the radar and flight-data systems that controllers work from, and that 'there's no possible way SMART would have impacted what happened'. Bedford said there was 'zero evidence' of anything related to AI. Homeland Security Secretary Markwayne Mullin said investigators had found no sign of a cyberattack."
+      ]
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Imagine you buy a smart speaker on Tuesday. On Friday every light in the house goes out. The speaker is the newest thing in the home, so it is the first thing everyone suspects.",
+        "Then you learn that an electrician was in the basement that afternoon, replacing wiring from the 1980s, and that one bad connection tripped the whole fuse box. The speaker was plugged into a wall socket. It was never wired into the fuse box. That is the official account of Friday: the new AI tool sits to one side making suggestions, and the failure came from the old wiring underneath, during a routine job to replace it."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "No, and the earlier cases point the same way. The last nationwide ground stop was in January 2023, when the FAA system that sends safety notices to pilots failed. Reuters reports it lasted under two hours and disrupted more than 10,000 flights. The FAA traced it to contract staff who had unintentionally deleted files. In July 2024 a faulty software update from the security firm CrowdStrike crashed Windows computers around the world and grounded thousands of flights. Neither involved AI.",
+        "The weakness underneath is well documented. The US Government Accountability Office (the auditor that works for Congress) reported in 2024 that the FAA rated 51 of its 138 air traffic control systems as unsustainable and another 54 as potentially unsustainable. Reuters adds that some replacement parts for obsolete equipment are bought on online auction sites.",
+        "What is new is the reflex. AI is now the first suspect when something big breaks. The Associated Press ran a piece this weekend on exactly that mood, after a week that also included an hours-long global Microsoft outage."
+      ],
+      "links": [
+        {
+          "label": "US Department of Transportation, 14 November 2026: Secretary Duffy's update on the ground stop",
+          "url": "https://www.transportation.gov/briefing-room/icymi-us-transportation-secretary-sean-p-duffy-provides-update-restoration-airspace"
+        },
+        {
+          "label": "FAA, 13 November 2026: Statement on nationwide ground stop",
+          "url": "https://www.faa.gov/newsroom/faa-statement-nationwide-ground-stop"
+        },
+        {
+          "label": "CNBC: Ground stop followed contractor upgrade to L3Harris telecom system",
+          "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html"
+        },
+        {
+          "label": "Ars Technica: FAA expands AI advice to manage air traffic congestion across entire US airspace",
+          "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/"
+        },
+        {
+          "label": "The Hill: Company behind FAA AI tool denies link to ground stop",
+          "url": "https://thehill.com/policy/transportation/6220416-faa-smart-ai-ground-stop-denial/"
+        },
+        {
+          "label": "AVweb: FAA rules out SMART AI system as cause of nationwide ground stop",
+          "url": "https://avweb.com/aviation-news/faa-nationwide-ground-stop-lifts-smart-ai/"
+        },
+        {
+          "label": "Reuters (via Investing.com): US flight shutdown exposes deepening air traffic network crisis",
+          "url": "https://www.investing.com/news/stock-market-news/us-flight-shutdown-exposes-deepening-air-traffic-network-crisis-5026935"
+        },
+        {
+          "label": "Associated Press: Could everything be broken? Grounded jets, Microsoft outage, AI chaos make some wonder",
+          "url": "https://apnews.com/article/flights-grounded-microsoft-ai-chaos-ea5f7a1f95a38f65dd57e58cfc17672b"
+        }
+      ]
+    },
+    {
+      "heading": "What we still do not know",
+      "paragraphs": [
+        "Everything above is the account of officials and companies, given within 48 hours. Each has a stake in the answer. The vendor wants its product cleared. The transportation secretary used the same briefings to ask Congress for $50 billion to rebuild the system. Questions like this are settled by an independent technical report, and none has been published.",
+        "'Not plugged in' deserves a closer look. SMART has to read live information to make its predictions, so it is connected to something. The official claim is narrower: that it is not connected to the systems that failed. That is plausible. It is also exactly what an investigation should confirm.",
+        "Clearing the AI of Friday does not clear it of every concern. The air traffic controllers' union, which represents more than 15,000 members, says it was not involved in designing or testing SMART. In October, Democrats on the House transportation committee asked for an audit of the tool. And Ars Technica notes the FAA has not shown how its suggestions have affected passenger flights."
+      ],
+      "pullquote": "There is no independent report yet. Everything we know comes from people with a stake in the answer."
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For you: if you or someone close to you is flying to or from the United States, check the flight with the airline before leaving home. The larger habit is worth keeping too. When something breaks a few days after an AI launch, ask what else changed that week. Here, on the evidence so far, the answer was a cable replacement.",
+        "For anyone bringing AI into a workplace: you will be blamed for failures you did not cause, and quickly. Air Space Intelligence could answer in under two hours because the edges of its system were clear: what it reads, and what it is able to change, which is nothing. If you put an AI tool into your company, be ready to say the same in one sentence. And involve the people who have to use it before launch, so they are not hearing about it from the news.",
+        "For Norway and Europe: the lesson travels. Hospitals, railways and power grids here also run new software on top of old equipment. The risk that deserves attention is often the unglamorous one: a decades-old network, a single box, a routine upgrade on a Friday afternoon. AI adds new questions on top of those. The old ones are still there."
+      ],
+      "pullquote": "When something breaks days after an AI launch, ask what else changed that week."
+    }
+  ]
+},
+{
   "slug": "google-s-new-small-ai-model-beats-its-bigger-sibling-and-now-answers-your-searches",
   "status": "published",
   "datePublished": "2026-11-14",
