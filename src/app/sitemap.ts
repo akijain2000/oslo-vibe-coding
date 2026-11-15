@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/community`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/events`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/presentations`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/presentations/tokenomics.html`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/presentations/build-your-first-agent.html`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/agent/README.md`, changeFrequency: "monthly", priority: 0.4 },
     { url: `${SITE_URL}/presentations/context-engineering.html`, changeFrequency: "yearly", priority: 0.5 },
