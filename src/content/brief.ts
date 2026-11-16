@@ -36,6 +36,131 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "chatgpt-can-now-pay-for-your-shopping-without-ever-seeing-your-card",
+  "status": "published",
+  "datePublished": "2026-11-16",
+  "title": "ChatGPT can now pay for your shopping. It never sees your card",
+  "dek": "OpenAI has given its AI agents a wallet. The agent finds the product and fills in the checkout, you approve with your face or fingerprint, and the shop is paid with a stand-in card number. Here is how it works, who can use it, what is only a company claim, and who carries the cost when the agent buys the wrong thing.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "On 13 November 2026 OpenAI began rolling out ChatGPT Wallet, which lets its AI agents (called dots) complete purchases for you. You save a card once. Before every purchase you see the shop, the items, the total and the card, and you approve with Face ID or a fingerprint. The card network then issues a payment token, a stand-in card number, so neither the agent nor the shop sees your real card. It is limited to some ChatGPT Pro subscribers in the United States and is not available in Norway. The token protects your card number. It does not check whether the agent picked the right thing: OpenAI's own terms say AI systems can make mistakes and send you to the shop or your bank if an order goes wrong.",
+  "sourceUrl": "https://openai.com/index/introducing-chatgpt-wallet/",
+  "sourceLabel": "Read OpenAI's announcement",
+  "about": "ChatGPT Wallet, launched by OpenAI on 13 November 2026 with American Express, Mastercard and Visa: how an AI agent (a dot) pays with a network payment token after a biometric approval for each purchase, who is eligible, what OpenAI's Wallet terms and help pages say about mistakes, refunds and recurring charges, which retailers block AI agents, the earlier Instant Checkout attempt, the planned move to pre-approved spending limits, and what it means for shoppers and small businesses in Norway",
+  "keywords": [
+    "ChatGPT Wallet",
+    "OpenAI",
+    "dots",
+    "AI agents",
+    "agentic commerce",
+    "payment token",
+    "Visa",
+    "Mastercard",
+    "American Express",
+    "Face ID",
+    "online shopping",
+    "consumer protection"
+  ],
+  "heroImage": {
+    "src": "/brief/chatgpt-can-now-pay-for-your-shopping-without-ever-seeing-your-card.png",
+    "alt": "Diagram titled ChatGPT can pay now. You hold the key. Left column, What the AI agent does: finds and compares products; fills in the shop's checkout; asks you to approve the order; pays with a stand-in card number. Right column, What stays with you: your real card number; a face or fingerprint check, every time; card rewards and dispute rights; responsibility for what you approve. Caption: ChatGPT Wallet began rolling out on 13 November to some US Pro subscribers. It is not available in Norway. Sources: OpenAI, TechCrunch, CNBC.",
+    "credit": "Oslo Vibe Coding diagram; details from OpenAI's announcement and Wallet terms",
+    "creditUrl": "https://openai.com/index/introducing-chatgpt-wallet/"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Friday 13 November, OpenAI (the company behind ChatGPT) gave its AI a way to pay. The feature is called ChatGPT Wallet. It works through dots, which is OpenAI's name for its agents. An agent is an AI that carries out tasks for you, such as finding a hotel or filling in a form, instead of only answering questions.",
+        "Until now a dot could help you choose a sweater. It could not buy it. With Wallet, you can tell it to go ahead, and it completes the checkout on the shop's own website. That raises an obvious worry: does this mean handing a chatbot your credit card?"
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "How a purchase works. You add a card once, in a secure form and never in the chat itself. When the dot is ready to buy, it shows you the shop, the items, the total and the card. You approve with a biometric check (Face ID or a fingerprint). After that, the card network, meaning Visa, Mastercard or American Express, issues a payment token: a stand-in card number with its own security code and expiry date. The shop is paid with the token. OpenAI says neither the agent nor the shop ever receives your real card details. CNBC reports the token is tied to that one transaction.",
+        "Who can use it. Very few people, for now. It is rolling out gradually to subscribers of ChatGPT Pro (OpenAI's most expensive personal plans) who are 18 or older, live in the United States and have a US-issued card. OpenAI's help page adds that even eligible users may not have it yet. It is not available in Norway or anywhere else in Europe.",
+        "What OpenAI says about itself. The company calls this 'the first wallet that lets agents pay without access to users' actual card details and that requires a security check for every purchase'. That is OpenAI's own claim and we have not seen it tested independently. OpenAI also says 1.2 billion people use ChatGPT each week, which is its own figure.",
+        "The money. OpenAI told CNBC it is not taking a cut of purchases to start with. Your card's rewards and dispute rights stay in place, because the charge still lands on your ordinary card account."
+      ],
+      "pullquote": "The shop is paid with a stand-in card number. The real one never leaves the vault."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a personal shopper in a department store. They walk the floors for you, compare the coats, pick one and carry it to the till. Then they stop. They bring you the receipt to look at, and you sign for it yourself.",
+        "The shopper never holds your card. The till gets a single-use voucher from your bank, good for that coat at that price. If the shopper is careless, or someone tricks them, there is no card number in their pocket to lose.",
+        "Notice what the voucher does not do. If the shopper picked the wrong size and you signed without looking, the voucher works perfectly and you now own the wrong coat."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "The technology underneath is not. Payment tokens are what Apple Pay and Google Wallet already use when you tap your phone in a shop, as The Verge points out. Apple Pay has worked this way since 2014. And Norwegians approve payments with BankID or a fingerprint every day.",
+        "It is also OpenAI's second attempt. CNBC notes that the company launched a feature called Instant Checkout in the autumn of 2025 and had moved away from it by March 2026.",
+        "What is new is who fills in the basket. Before, a person chose the items and the phone only handled the payment. Now software chooses, types in the address and presses the buttons, and the human is reduced to one decision: approve or decline.",
+        "It is early, and demand is unproven. TechCrunch reports that DoorDash has received only several hundred orders from AI agents and that Uber says almost no one books rides through them. On the other side, Meta says its Muse agent has more than 10 million users and that shopping is one of the top activities. Some big companies refuse agents altogether: Amazon blocks them from buying on its site, and United Airlines said last week it will block them from booking tickets."
+      ],
+      "links": [
+        {
+          "label": "OpenAI, 13 November 2026: Introducing ChatGPT Wallet",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        },
+        {
+          "label": "OpenAI Help Center: Making purchases with ChatGPT Wallet",
+          "url": "https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet"
+        },
+        {
+          "label": "OpenAI: ChatGPT Wallet terms (effective 12 November 2026)",
+          "url": "https://openai.com/policies/chatgpt-wallet-terms/"
+        },
+        {
+          "label": "TechCrunch: ChatGPT's new Wallet lets AI agents shop and check out for you",
+          "url": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/"
+        },
+        {
+          "label": "CNBC: OpenAI's ChatGPT Wallet allows 'dots' AI agents to make purchases",
+          "url": "https://www.cnbc.com/2026/11/13/openai-chatgpt-wallet-dot-purchases.html"
+        },
+        {
+          "label": "The Verge: ChatGPT Wallet lets OpenAI's Dots agents make purchases for you",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet"
+        },
+        {
+          "label": "Reuters (via Investing.com): OpenAI launches ChatGPT Wallet, letting AI agents pay for purchases",
+          "url": "https://www.investing.com/news/stock-market-news/openai-launches-chatgpt-wallet-letting-ai-agents-pay-for-purchases-5026114"
+        }
+      ]
+    },
+    {
+      "heading": "The part to read twice",
+      "paragraphs": [
+        "The token protects your card number. It does nothing about the choice the agent made. The only check on that choice is you, looking at a confirmation screen.",
+        "OpenAI's own terms are frank about this. They say: 'AI systems can make mistakes. Do not approve a purchase unless the details are correct.' They state that the shop is the seller, and that OpenAI 'does not decide or fund merchant refunds or card chargebacks'. For a wrong or faulty order you go to the shop. For a charge you do not recognise you go to your bank. OpenAI's support handles Wallet errors and the case where a purchase differs from what you approved.",
+        "Two details in the help pages deserve attention. First, the message 'Ready to check out' means your approval went through. It does not confirm that the shop placed the order. Second, if you approve something with a recurring payment, such as a subscription, the shop may keep the payment credential and charge it again on the terms you agreed to.",
+        "There is an open question that nobody has answered in practice. Card protections are strongest for charges you did not authorise. A purchase you approved with your own face is authorised. What happens when the agent ordered the wrong item and you approved in a hurry has not been tested at scale, and the terms point you to the shop's return policy."
+      ],
+      "pullquote": "The token protects your card number. It does nothing about the choice the agent made."
+    },
+    {
+      "heading": "What comes next",
+      "paragraphs": [
+        "The approval for every purchase is a starting point, and OpenAI says so. Its announcement expects that users will later 'delegate purchases entirely to their agent' by setting spending limits, product categories or time periods, and approving in advance. The Wallet terms already contain wording for it: you must approve each purchase, 'or grant ChatGPT the authority to approve each purchase in advance'. No date has been given.",
+        "That is the step to watch. Today the human checks every order. Once a monthly budget replaces the face scan, the safety of the system rests on how well the agent resists being misled by a fake shop or a hidden instruction on a web page. OpenAI says it is working with fraud-prevention firms and payment companies including Stripe and Adyen so that their systems can recognise genuine agent purchases."
+      ]
+    },
+    {
+      "heading": "What it means",
+      "paragraphs": [
+        "For you: nothing changes in Norway today. When a feature like this does arrive, treat the approval screen like a contract and read the shop name, the total and any line about recurring charges before you look at the camera. Never type a card number into a chat window. OpenAI's own instructions say the same.",
+        "For anyone running a web shop: your next customer may be software. OpenAI has published a guide for businesses, and its main points are simple. Keep prices and stock information accurate and readable, check that your security settings do not block agents by accident, and ask your payment provider how it treats purchases made by agents. Or decide, as Amazon has, that you do not want them. Either way it is now a decision to make on purpose.",
+        "For the bigger picture: the companies that make AI models are moving from giving advice to handling money. The hard part was never the payment. It is trust, and who pays when the software gets it wrong. On that question, the first answer from OpenAI's terms is: the shop, your bank, or you."
+      ],
+      "pullquote": "Treat the approval screen like a contract. Read it before you look at the camera."
+    }
+  ]
+},
+{
   "slug": "the-us-grounded-every-flight-days-after-an-ai-rollout-officials-point-to-a-router",
   "status": "published",
   "datePublished": "2026-11-15",
