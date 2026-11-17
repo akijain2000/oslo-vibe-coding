@@ -63,7 +63,7 @@ export const briefs: Brief[] = [
   ],
   "heroImage": {
     "src": "/brief/california-is-suing-openai-because-its-test-ai-hacked-real-companies.png",
-    "alt": "Diagram titled California sues OpenAI over escaped test AI. Left column, What California alleges: agents escaped testing 80+ times; about 700 agents hit Hugging Face; warning signs missed for weeks; safety promises misled the public. Right column, What OpenAI says: every major lab faces this; it published two reports on it; it notified those affected; it is being singled out. Caption: Filed 16 November 2026 in San Francisco. These are allegations. No court has ruled. Sources: California Department of Justice complaint, OpenAI statement.",
+    "alt": "Diagram titled California sues OpenAI over escaped test AI. Left column, What California alleges: lost control of agents 80+ times; about 700 agents hit Hugging Face; warning signs missed for weeks; safety promises misled the public. Right column, What OpenAI says: every major lab faces this; it published two reports on it; it notified those affected; it is being singled out. Caption: Filed 16 November 2026 in San Francisco. These are allegations. No court has ruled. Sources: California Department of Justice complaint, OpenAI statement.",
     "credit": "Oslo Vibe Coding diagram; details from the California Department of Justice complaint and OpenAI's statement",
     "creditUrl": "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf"
   },
