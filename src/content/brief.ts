@@ -36,6 +36,135 @@ const IS_PROD = process.env.VERCEL_ENV === "production";
 
 export const briefs: Brief[] = [
 {
+  "slug": "the-biggest-ipo-ever-landed-in-ai-stocks-worst-week-since-2020",
+  "status": "published",
+  "datePublished": "2026-11-21",
+  "title": "The biggest stock market launch ever landed in AI's worst week since 2020",
+  "dek": "Anthropic, the company behind Claude, raised more money by going public than any company before it. Two days later its shares were back near the starting price, and AI stocks had their worst week since the pandemic. Here is what happened, what the company's own numbers say, and what the fall does and does not tell us.",
+  "author": "Oslo Vibe Coding",
+  "readingTimeMin": 6,
+  "takeaway": "Anthropic sold 980 million shares at 83 dollars on 18 November 2026 and raised 81.3 billion dollars, the largest stock market launch on record, rising to 93.5 billion once its banks sold extra shares. The stock closed its first day up 17 percent at 97.17 dollars, then fell 8.5 percent on Friday to 88.91 dollars as AI stocks sold off around the world. The Nasdaq lost about 10 percent in the week, its biggest weekly fall since 2020. Investors quoted by Reuters and the BBC say the doubt is about the price of AI growth, with interest rates up and data centres facing political resistance, more than about Anthropic itself. Whether this is a pause or the start of something longer is not known.",
+  "sourceUrl": "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6",
+  "sourceLabel": "Read the Associated Press breakdown of the numbers",
+  "about": "Anthropic's initial public offering on the Nasdaq under the ticker ANT (priced 18 November 2026, first trading day 19 November): the 81.3 billion dollars raised and the 93.5 billion total after the overallotment, the comparison with SpaceX, SK Hynix and Saudi Aramco, the first two days of trading, the sell-off in AI and chip stocks on 20 November, the S&P 500 correction and the Nasdaq's weekly fall, the reasons investors give (interest rates, the US midterm elections and data centre opposition, Nvidia's leadership turmoil), Anthropic's reported third-quarter revenue, margins and computing commitments, analyst views, and the Facebook and SpaceX precedents",
+  "keywords": [
+    "Anthropic",
+    "IPO",
+    "Claude",
+    "Nasdaq",
+    "ANT",
+    "AI stocks",
+    "AI bubble",
+    "Nvidia",
+    "SpaceX",
+    "stock market correction",
+    "data centres",
+    "OpenAI"
+  ],
+  "heroImage": {
+    "src": "/brief/the-biggest-ipo-ever-landed-in-ai-stocks-worst-week-since-2020.png",
+    "alt": "Diagram titled Biggest IPO ever, then a rough landing. Four steps in a row: priced at 83 dollars; day one open, 111.50 dollars; day one close, 97.17 dollars; day two close, 88.91 dollars. Caption: Anthropic raised a record 81.3 billion dollars, then fell in the Nasdaq's biggest weekly drop since 2020.",
+    "credit": "Oslo Vibe Coding diagram; figures from the Associated Press, CNBC and Reuters",
+    "creditUrl": "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6"
+  },
+  "sections": [
+    {
+      "heading": "What happened",
+      "paragraphs": [
+        "On Wednesday 18 November, Anthropic (the company that makes the AI model Claude) sold shares to the public for the first time. This is called an IPO, an initial public offering: the moment a private company lets anyone buy a piece of it on a stock exchange. It sold 980 million shares at 83 dollars each and raised 81.3 billion dollars. No company has ever raised more this way.",
+        "On Thursday the shares began trading on the Nasdaq (the American exchange where most big technology companies are listed) under the name ANT. They opened at 111.50 dollars and closed the day at 97.17 dollars, 17 percent above the starting price.",
+        "On Friday they fell 8.5 percent to 88.91 dollars. The BBC reports they touched about 85 dollars during the day. At the same time, AI and chip stocks fell hard across the world. By the weekend, the largest launch in stock market history sat a few dollars above where it started, inside the worst week for technology shares since the pandemic."
+      ]
+    },
+    {
+      "heading": "The facts",
+      "paragraphs": [
+        "The size. The Associated Press puts the earlier record at about 75 billion dollars, set by SpaceX (Elon Musk's rocket and AI company) in June. Next on its list are the Korean memory chip maker SK Hynix at 26.5 billion dollars in July and the oil company Saudi Aramco at 25.6 billion in 2019. On Friday Anthropic's banks used a standard clause, known as a greenshoe, that lets them sell about 15 percent more shares when demand is there. CNBC reports that took the total to 93.5 billion dollars. Reuters gives SpaceX's comparable total as 85.7 billion.",
+        "The value. At Thursday's close the whole company was worth roughly 1.75 trillion dollars, according to the Associated Press. At Friday's close Reuters put it at about 1.6 trillion if you count shares promised to staff and investors but not yet issued, and 1.2 trillion on the shares that exist today. Anthropic is the first of the big AI labs to become a public company. It is a little under six years old.",
+        "The week around it. On Friday the S&P 500 (an index of 500 large American companies) fell 3.7 percent and is now in what investors call a correction, meaning more than 10 percent below its recent high, which was on 6 October. The Nasdaq fell 5.3 percent on the day and about 10 percent in the week, which Reuters and NPR describe as its biggest weekly drop since 2020. Nvidia and AMD, the two best known makers of AI chips, each lost more than 13 percent on Friday. The BBC reports that Taiwan's stock market fell about 6 percent on the day and more than 17 percent in the week.",
+        "Why investors are nervous. The reporting names three things. The US central bank raised interest rates in September for the first time in more than three years, and AI companies borrow enormous sums to build data centres (the warehouse-sized buildings full of chips where AI runs). Democrats won both chambers of Congress in the November midterm elections after promising to slow data centre construction. And Nvidia lost its chief executive, Jensen Huang, this month. The BBC adds that Reuters has reported a US regulator is looking into Nvidia's accounting, which the BBC had not confirmed.",
+        "Anthropic's own numbers. In material filed with the US securities regulator, the company reports revenue of 17.0 billion dollars for July to September, more than 12 times the same quarter a year earlier. It reports a net loss of 23.3 billion dollars for the quarter, of which it says 21.9 billion is an accounting charge caused by its own rising value and involves no cash leaving the company. Its ordinary operating result, which does not include that charge, was a loss of about 3 percent of revenue. On its preferred adjusted measure, which leaves out some costs, it reports a profit margin of 15 percent. Adjusted figures are the company's own presentation.",
+        "The bill ahead. Crunchbase News, reading the same filing, counts 895.4 billion dollars in commitments to buy and rent computing power, about half of it due before the end of 2030. Reuters puts the share price at about 40 times the company's sales over the past year. Most large companies trade at a small fraction of that."
+      ],
+      "pullquote": "The largest launch in stock market history sat a few dollars above where it started, inside the worst week for technology shares since the pandemic."
+    },
+    {
+      "heading": "The everyday version",
+      "paragraphs": [
+        "Think of a house on the most fashionable street in town. On Wednesday it sells for the highest price the city has ever seen, and there is a queue of bidders. On Friday the bank raises mortgage rates again, the council talks about restricting new building on the street, and every house on it is marked down, including the one that just sold.",
+        "Nothing about the house changed in those two days. The mood of the street did. That is roughly what investors told reporters. One fund manager quoted by Reuters said he did not think buyers saw anything wrong with the company, its managers or its business, only with the market around it.",
+        "The comparison has a limit. A house is worth something even if the street goes quiet. A share at 40 times sales is a bet that sales keep multiplying for years. If growth slows, the price has much further to fall than a house does."
+      ]
+    },
+    {
+      "heading": "Is this actually new?",
+      "paragraphs": [
+        "A famous launch followed by a slide is a familiar pattern. CNBC points out that Facebook needed more than a year after its 2012 launch to get back to its first-day value, and that SpaceX shares are still below their first-day close five months on. Facebook went on to become one of the most valuable companies in the world. A weak first week says very little about the next ten years, in either direction.",
+        "The fear of a bubble is not new either. In the dot-com crash of 2000, investors lost fortunes on internet companies that had no profits and often no sales. One strategist told NPR the difference this time is that the spending is led by companies like Meta and Apple that earn real money, and Nvidia reported strong results this very week.",
+        "Two things are new. The first is scale: the BBC reports that a handful of technology companies spent more than a trillion dollars on AI in the past year, and the companies involved lend to, invest in and buy from each other. NPR notes that Nvidia both owns shares in AI companies such as Anthropic and sells them chips. If one link struggles, others feel it. The second is the product. One research firm that covers the stock, Seaport, rated it neutral and called the valuation \"an incredible leap of faith by investors\". Its list of risks included the possibility of AI systems that escape human control. Analysts do not usually have to write that about a company."
+      ]
+    },
+    {
+      "heading": "What it means for you",
+      "paragraphs": [
+        "If you use Claude, ChatGPT or any other AI tool, nothing changes this week. Share prices do not switch products off. The offering raised more than 90 billion dollars, and Crunchbase News notes the company already had over 100 billion on its balance sheet.",
+        "If you have a pension or a global index fund, you own a small slice of these companies whether you chose to or not, because AI and chip stocks now make up a large part of the world's stock markets. Reuters cites one estimate that index-tracking funds could end up buying as much as 30 percent of Anthropic's shares by the end of the year. That is an estimate from an analytics firm, not a fact yet.",
+        "If you are building with AI, the more interesting question is price. These companies have promised to spend hundreds of billions on computing power. If investors become less willing to fund that, the cheap or free AI access many people are used to is one of the first things that could tighten. Nobody has announced that. It is a thing to watch."
+      ]
+    },
+    {
+      "heading": "What nobody knows yet",
+      "paragraphs": [
+        "Whether this is a bad fortnight or the start of a long decline. One investment strategist told NPR he does not expect a quick recovery and thinks AI could stay out of favour through next year. Another told the Associated Press that the idea of unlimited AI spending holding up the stock market is ending, but that the wider rise in share prices since 2022 is not. Both are opinions.",
+        "Whether Anthropic can grow into its price. Its next quarterly results will be the first it publishes as a public company, and the first real test.",
+        "What OpenAI does. Reuters reports that the maker of ChatGPT has indicated it may go public next year. After this week, it will be watching closely how the market treats the first AI lab through the door."
+      ],
+      "links": [
+        {
+          "label": "Associated Press, 19 November 2026: Anthropic pulled off the biggest IPO ever, by the numbers",
+          "url": "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6"
+        },
+        {
+          "label": "CNBC, 20 November 2026: Anthropic raises 93.5 billion dollars total as underwriters take the overallotment",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html"
+        },
+        {
+          "label": "CNBC, 20 November 2026: Anthropic falls nearly 9 percent in first full day of trading",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html"
+        },
+        {
+          "label": "Reuters via Investing.com, 20 November 2026: Anthropic's post-debut stumble delivers reality check for AI trade",
+          "url": "https://www.investing.com/news/economy-news/anthropics-postdebut-stumble-delivers-reality-check-for-ai-trade-5041125"
+        },
+        {
+          "label": "Associated Press, 20 November 2026: S&P 500 sinks 3.7 percent as tech sell-off worsens",
+          "url": "https://apnews.com/article/stock-markets-anthropic-ai-chips-boom-c4c3f4878b12989347f8a930ed813dad"
+        },
+        {
+          "label": "BBC News, 20 November 2026: Tech stock sell-off drags markets down as Anthropic shares slide",
+          "url": "https://www.bbc.com/news/articles/c6808ym10vzgo"
+        },
+        {
+          "label": "NPR, 21 November 2026: The AI boom had a really bad week",
+          "url": "https://www.npr.org/2026/11/21/nx-s1-6048729/ai-stock-markets-anthropic-nvidia"
+        },
+        {
+          "label": "CNBC, 20 November 2026: Why Anthropic's IPO couldn't escape the stock market correction",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-ipo-ai-stock-market-selloff.html"
+        },
+        {
+          "label": "Anthropic's IPO website material filed with the US Securities and Exchange Commission, 10 November 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm"
+        },
+        {
+          "label": "Crunchbase News, 18 November 2026: The key numbers as Anthropic makes its IPO debut",
+          "url": "https://news.crunchbase.com/ai/anthropic-ant-ipo-revenue-growth-risks-s1-analysis/"
+        }
+      ]
+    }
+  ]
+},
+{
   "slug": "california-is-suing-openai-because-its-test-ai-hacked-real-companies",
   "status": "published",
   "datePublished": "2026-11-17",
